@@ -1,4 +1,4 @@
 # EDU_Crawler
 Webcrawler written in java for .edu pages
 
-edits
+For CS172 - Information Retrieval
