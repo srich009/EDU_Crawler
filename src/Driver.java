@@ -32,10 +32,10 @@ public class Driver
 		List<String> urls = readFile(seed);
 		
 		// create crawler object
-		Crawler web_crawler = new Crawler();
+		Crawler web_crawler = new Crawler(urls,pages,hops,output);
 		
 		// call the crawler
-		web_crawler.crawl(urls,pages,hops,output);	
+		web_crawler.crawl();	
 	}
 	//=======================================
 	//=======================================

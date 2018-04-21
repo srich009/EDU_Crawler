@@ -7,19 +7,47 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-public class Jthread 
+public class Jthread extends Thread
 {
-	public Crawler jt_crawler;
-	RobotExclusionUtil jt_robo;
+	private Thread t;
+	private String t_name;
 	
-	public Jthread(Crawler c)
+	public Crawler jt_crawler;
+	public RobotExclusionUtil jt_robo;
+	
+	public Jthread(Crawler c, String s)
 	{
+		t_name = s;
 		jt_crawler = c;
 		jt_robo = new RobotExclusionUtil();
 	}
 
-	// download/parse html
+	// not static on pupose
+	public void start() 
+	{
+		if(t == null)
+		{
+			System.out.println("start thread: " + t_name);
+			t = new Thread(this, t_name);
+			t.start();
+		}		
+	}
 	
+	// download/parse html
 	// add hyperlinks to list
+	
+	// not static on purpose
+	public void run()
+	{
+		while(!jt_crawler.urls.isEmpty() && jt_crawler.count < jt_crawler.pages)
+		{
+			System.out.printf("current url: %s\n", jt_crawler.urls.get(0));
+			
+			String url = jt_crawler.urls.remove(0); // pop front of list
+			
+			// etc ...
+			
+		}
+	}
 	
 }

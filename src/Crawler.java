@@ -7,31 +7,34 @@ import java.util.*;
 
 public class Crawler
 {
-	public Integer count = 0;
-	public Set<String> seen = new HashSet<String>();
+	public List<String>  urls;
+	public Integer pages;
+	public Integer hops;
+	public String  output;
+	public Integer count;
+	public Set<String> seen;
+	
+	public Crawler(List<String> u_lst, Integer num_pag, Integer num_hop, String out)
+	{ 
+		urls   = u_lst;
+		pages  = num_pag;
+		hops   = num_hop;
+		output = out;
+		count  = 0;
+		seen   = new HashSet<String>();
+	}
 
 	/*
 	 * function spawns the threads
 	 * is not a static function so can use 'this' as argument to the jthread
 	 */
-	public void crawl(List<String> urls, Integer pages, Integer hops, String output)
+	public void crawl()
 	{
 		System.out.println("-> inside Crawler");
 		
-		Integer pages_visited = 0;
-
-		while(!urls.isEmpty() && pages_visited < pages)
-		{
-			System.out.printf("current url: %s\n", urls.get(0));
-			
-			String url = urls.remove(0); // pop front of list
-			
-			// do jsoup stuff with threads
-			Jthread thread2 = new Jthread(this);
-			
-			// etc ...
-			
-		}
+		// do jsoup stuff with threads
+		Jthread thread1 = new Jthread(this, "thread1");
+		thread1.start();
 
 	}
 	//---------------------------------------
