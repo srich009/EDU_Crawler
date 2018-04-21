@@ -30,9 +30,17 @@ public class Driver
 	
 		// read initial urls from seed file
 		List<String> urls = readFile(seed);
+		LinkedList<url_hop> urls2 = new LinkedList<url_hop>();
+		
+		for (String s : urls) {
+			url_hop uh = new url_hop();
+			uh.url_name = s;
+			uh.num_hops = 0;
+			urls2.addLast(uh);
+		}
 		
 		// create crawler object
-		Crawler web_crawler = new Crawler(urls,pages,hops,output);
+		Crawler web_crawler = new Crawler(urls2,pages,hops,output);
 		
 		// call the crawler
 		web_crawler.crawl();	

@@ -40,11 +40,9 @@ public class Jthread extends Thread
 	public void run()
 	{
 		while(!jt_crawler.urls.isEmpty() && jt_crawler.count < jt_crawler.pages)
-		{
-			System.out.printf("current url: %s\n", jt_crawler.urls.get(0));
-			
-			String url = jt_crawler.urls.remove(0); // pop front of list
-			
+		{			
+			url_hop urlh = jt_crawler.pull(); // pop url string off front of list
+			System.out.println("current url: " + urlh.url_name + " " + urlh.num_hops);
 			// etc ...
 			
 		}
