@@ -1,11 +1,9 @@
 // main driver for crawler
 // the driver should open && read in the seed file
 
-
 // imports
 import java.io.*;
 import java.util.*;
-
 
 public class Driver 
 {

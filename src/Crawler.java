@@ -1,22 +1,20 @@
-// mockup of the crawler part..
+// mockup of the crawler part...
 
 // imports
+
 import java.io.*;
 import java.util.*;
 
-// jsoup stuff
-import org.jsoup.Jsoup;
-import org.jsoup.Connection;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
-
 public class Crawler
 {
+	public Integer count = 0;
+	public Set<String> seen = new HashSet<String>();
+
 	/*
-	 * this function should 
+	 * function spawns the threads
+	 * is not a static function so can use 'this' as argument to the jthread
 	 */
-	public static void crawl(List<String> urls, Integer pages, Integer hops, String output)
+	public void crawl(List<String> urls, Integer pages, Integer hops, String output)
 	{
 		System.out.println("-> inside Crawler");
 		
@@ -28,11 +26,8 @@ public class Crawler
 			
 			String url = urls.remove(0); // pop front of list
 			
-			// do jsoup stuff
-			
-			// download/parse html
-			
-			// add hyperlinks to list
+			// do jsoup stuff with threads
+			Jthread thread2 = new Jthread(this);
 			
 			// etc ...
 			
