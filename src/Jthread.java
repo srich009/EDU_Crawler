@@ -6,6 +6,8 @@ import org.jsoup.Connection;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import java.io.IOException;
+import java.util.List;
 
 public class Jthread extends Thread
 {
@@ -34,18 +36,36 @@ public class Jthread extends Thread
 	}
 	
 	// download/parse html
-	// add hyperlinks to list
+	// add hyperlinks to list (jake)
 	
 	// not static on purpose
-	public void run()
+	public void run() //needs IOException
 	{
-		while(!jt_crawler.urls.isEmpty() && jt_crawler.count < jt_crawler.pages)
-		{			
-			url_hop urlh = jt_crawler.pull(); // pop url string off front of list
-			System.out.println("current url: " + urlh.url_name + " " + urlh.num_hops);
-			// etc ...
-			
+		try{
+			while(!jt_crawler.urls.isEmpty() && jt_crawler.count < jt_crawler.pages)
+			{			
+				url_hop urlh = jt_crawler.pull(); // pop url string off front of list
+				System.out.println("crawling -> url: " + urlh.url_name + " num hops:" + urlh.num_hops);
+				
+				//Jsoup getting webpage, extracting hyperlinks, and adding to list
+				Document doc = Jsoup.connect(urlh.url_name).get();
+					// save document somehow
+		        Elements links = doc.select("a[href]");
+		        
+		        //List<String> newURLs = new List<String>;
+		        for (Element link : links) {
+		        	//filter for only .edu page FIXME
+		        	String tempLink = link.attr("abs:href"); // gets full URL
+		        	System.out.println("Found a link: " + tempLink + "n");
+		        	//newURLS.add(tempLink);		        	
+		        }
+		        //jt_crawler.push(newURLS, urlh.num_hops + 1); 
+			}
 		}
+		catch(IOException ex){
+			System.out.println("Error while parsing document \n");
+		}
+	
 	}
 	
 }
