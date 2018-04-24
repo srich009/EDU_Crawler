@@ -55,7 +55,7 @@ public class Jthread extends Thread
 		        //List<String> newURLs = new List<String>;
 		        for (Element link : links) {
 		        	//filter for only .edu page FIXME
-		        	String tempLink = link.attr("abs:href"); // gets full URL
+		        	String tempLink = link.attr("href"); // gets full URL
 		        	System.out.println("Found a link: " + tempLink + "n");
 		        	//newURLS.add(tempLink);		        	
 		        }
