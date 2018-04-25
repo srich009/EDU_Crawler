@@ -4,21 +4,23 @@
 
 import java.io.*;
 import java.util.*;
+import java.util.concurrent.locks.*;
 
 public class Crawler
 {
-	public LinkedList<url_hop>  urls;
-	public Integer pages;
-	public Integer hops;
+	public LinkedList<url_hop> urls;
+	public Integer max_pages;
+	public Integer max_hops;
 	public String  output;
 	public Integer count;
 	public Set<String> seen;
+	ReentrantLock lock = new ReentrantLock();
 	
 	public Crawler(LinkedList<url_hop> u_lst, Integer num_pag, Integer num_hop, String out)
 	{ 
 		urls   = u_lst;
-		pages  = num_pag;
-		hops   = num_hop;
+		max_pages  = num_pag;
+		max_hops   = num_hop;
 		output = out;
 		count  = 0;
 		seen   = new HashSet<String>();
@@ -45,43 +47,50 @@ public class Crawler
 	}
 	//---------------------------------------
 	
-	public void push(List<String> str_lst, int curr_hop)
+	public url_hop isDone() 
+	{
+		url_hop ret_uh = new url_hop("", -1, false);
+		lock.lock();
+		try {
+			if (count < max_pages) {
+				// Still want thread to continue working
+				if (!urls.isEmpty()) { //go ahead and return a real url
+					ret_uh = this.urls.removeFirst();
+				}
+				else {
+					ret_uh.isDone = false;
+				}
+			}
+			else {
+				ret_uh.isDone = true;
+			}
+		} finally {
+			lock.unlock();
+		}
+		return ret_uh;
+	}
+	
+	//-------------------------------------------------
+	
+	public void push(LinkedList<String> str_lst, int curr_hop)
 	{
 		synchronized(this)
 		{
+			if (curr_hop == max_hops) 
+			{
+				return;
+			}
 			for(String s : str_lst)
 			{
 				if(!seen.contains(s))
 				{
 					seen.add(s);     // add to hash of seen
-					url_hop uh = new url_hop();
-					uh.url_name = s;
-					uh.num_hops = curr_hop;
+					url_hop uh = new url_hop(s, curr_hop + 1, false);
 					urls.addLast(uh); // add to list to crawl
 				}
 			}
 		}
 	}
 	//---------------------------------------
-
-	public url_hop pull()
-    {
-		synchronized(this)
-		{
-			if(!urls.isEmpty())
-			{
-				return this.urls.remove(0);
-			}
-			else
-			{
-				url_hop uh = new url_hop();
-				uh.url_name = "";
-				return uh; // ?
-			}
-		}
-    }
-	//---------------------------------------
-	
-	
 
 }

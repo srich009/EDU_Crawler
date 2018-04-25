@@ -7,10 +7,13 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import java.util.*;
+
 public class Jthread extends Thread
 {
 	private Thread t;
 	private String t_name;
+	private url_hop curr_uh;
 	
 	public Crawler jt_crawler;
 	public RobotExclusionUtil jt_robo;
@@ -39,13 +42,47 @@ public class Jthread extends Thread
 	// not static on purpose
 	public void run()
 	{
-		while(!jt_crawler.urls.isEmpty() && jt_crawler.count < jt_crawler.pages)
-		{			
-			url_hop urlh = jt_crawler.pull(); // pop url string off front of list
-			System.out.println("current url: " + urlh.url_name + " " + urlh.num_hops);
-			// etc ...
+		do 
+		{	
+			curr_uh = jt_crawler.isDone();
+			while ( (!curr_uh.isDone) && (curr_uh.url_name == "") ) {
+				try {
+					sleep(10);
+				} catch (Exception e) {
+					System.out.println("Sleep was interrupted.");
+				}
+				curr_uh = jt_crawler.isDone();
+			}
 			
-		}
+			if (!curr_uh.isDone)
+			{
+				try {
+					// get document connection with jsoup
+					Document doc = Jsoup.connect(curr_uh.url_name).get();
+					// get other hyperlinks
+					Elements links = doc.select("a[href]");
+					LinkedList<String> hyperlinks = new LinkedList<String>();
+					for (Element e : links) 
+					{
+						String abs_ref = e.attr("abs:href");
+						System.out.println(abs_ref);
+						hyperlinks.add(abs_ref);
+					}
+					
+					jt_crawler.push(hyperlinks, curr_uh.num_hops);
+				
+				
+				} catch (Exception e) {
+					System.out.println("Url: " + curr_uh.url_name + " could not be reached by Jsoup.");
+				}
+				
+				
+				
+			
+			}
+			
+			
+		} while(!curr_uh.isDone);
 	}
 	
 }

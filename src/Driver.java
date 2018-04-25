@@ -33,10 +33,7 @@ public class Driver
 		LinkedList<url_hop> urls2 = new LinkedList<url_hop>();
 		
 		for (String s : urls) {
-			url_hop uh = new url_hop();
-			uh.url_name = s;
-			uh.num_hops = 0;
-			urls2.addLast(uh);
+			urls2.addLast(new url_hop(s, 0, false));
 		}
 		
 		// create crawler object
