@@ -41,6 +41,8 @@ public class Driver
 		
 		// call the crawler
 		web_crawler.crawl();	
+		
+		System.out.println("CRAWL RETURNED");
 	}
 	//=======================================
 	//=======================================

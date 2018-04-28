@@ -47,7 +47,7 @@ public class Jthread extends Thread
 			curr_uh = jt_crawler.isDone();
 			while ( (!curr_uh.isDone) && (curr_uh.url_name == "") ) {
 				try {
-					sleep(10);
+					Thread.yield();
 				} catch (Exception e) {
 					System.out.println("Sleep was interrupted.");
 				}
@@ -61,28 +61,38 @@ public class Jthread extends Thread
 					Document doc = Jsoup.connect(curr_uh.url_name).get();
 					// get other hyperlinks
 					Elements links = doc.select("a[href]");
-					LinkedList<String> hyperlinks = new LinkedList<String>();
+					System.out.println("Thread: " + t_name + " -- acquired " + links.size() + " hyperlinks");
 					for (Element e : links) 
 					{
 						String abs_ref = e.attr("abs:href");
-						System.out.println(abs_ref);
-						hyperlinks.add(abs_ref);
+						//first check if it is an edu page
+						if (abs_ref.contains(".edu")) {
+							//check if has been seen before
+							if (!jt_crawler.beenSeen(abs_ref)) {
+								//now see if it's crawlable
+								if (RobotExclusionUtil.robotsShouldFollow(abs_ref)) {
+									jt_crawler.push(abs_ref, true, curr_uh.num_hops);
+								}
+								else {
+									jt_crawler.push(abs_ref, false, curr_uh.num_hops);
+								}
+							}
+						}
 					}
-					
-					jt_crawler.push(hyperlinks, curr_uh.num_hops);
-				
 				
 				} catch (Exception e) {
-					System.out.println("Url: " + curr_uh.url_name + " could not be reached by Jsoup.");
+					System.out.println(e.getMessage());
+					//System.out.println("Url: " + curr_uh.url_name + " could not be reached by Jsoup.");
+				} catch (Error e) {
+					System.out.println(e.getMessage());
 				}
-				
-				
-				
-			
 			}
 			
 			
 		} while(!curr_uh.isDone);
+	
+		System.out.println("Thread: " + t_name + " has exited while loop and will die.");
+		jt_crawler.killThread();
 	}
 	
 }
