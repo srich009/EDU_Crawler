@@ -19,7 +19,7 @@ public class Crawler
 	private Set<String> seen;
 	private ReentrantLock fifo_lock = new ReentrantLock();
 	private ReentrantLock hash_lock = new ReentrantLock();
-	private Integer fileCounter = 1;
+	private Integer fileCounter;
 	private LinkedList<String> fileList;
 	//private Integer nthreads = 100;
 	
@@ -32,6 +32,7 @@ public class Crawler
 		count  = 0;
 		running_threads = 100;
 		seen   = new HashSet<String>();
+		fileCounter = 1;
 	}
 
 	/*
@@ -64,12 +65,11 @@ public class Crawler
 			System.out.println("Running Threads: " + running_threads);
 		} while (running_threads > 0);
 		// print file list here?
-		String currDir = System.getProperty("user.dir"); //change to jt_crawler.output
-		File dir = new File(currDir + "/pages");
+		File dir = new File(output + "/pages");
 		if(!dir.exists()){
 			dir.mkdir();
 		}
-		File file = new File(currDir + "/pages/0-manifest.txt");
+		File file = new File(output + "/pages/0-manifest.txt");
 		try{ FileWriter fw = new FileWriter(file.getAbsoluteFile());
 	        BufferedWriter bw = new BufferedWriter(fw);
 	        for (String line : fileList){
@@ -83,15 +83,21 @@ public class Crawler
 		
 	}
 	
+	public String getOuputDir()
+	{
+		return output;
+	}
+	
 	public String nextName(String url)
 	{
+		String num;
 		synchronized (this)
 		{
-			String num = Integer.toString(fileCounter);
+			num = Integer.toString(fileCounter);
 			fileCounter++;
-			fileList.add(num + " " + url + "\n");
-			return num + ".html";
+			fileList.addLast(num + " " + url + "\n");
 		}		
+		return (num + ".html");
 	}
 	//---------------------------------------
 	

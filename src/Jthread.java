@@ -6,8 +6,6 @@ import org.jsoup.Connection;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-import java.io.IOException;
-import java.util.List;
 
 import java.io.File;
 import java.util.*;
@@ -43,12 +41,11 @@ public class Jthread extends Thread
 	}
 	
 	// download/parse html
-	// add hyperlinks to list (jake)
+	// add hyperlinks to list
 	
 	// not static on purpose
-	public void run() //needs IOException
+	public void run()
 	{
-<<<<<<< HEAD
 		do 
 		{	
 			curr_uh = jt_crawler.isDone();
@@ -60,26 +57,37 @@ public class Jthread extends Thread
 				}
 				curr_uh = jt_crawler.isDone();
 			}
-			
+
 			if (!curr_uh.isDone)
 			{
 				try {
 					// get document connection with jsoup
 					Document doc = Jsoup.connect(curr_uh.url_name).get();
 					// get other hyperlinks
+					System.out.println("Here1");
 					String body = doc.toString();
-					String currDir = System.getProperty("user.dir"); //change to jt_crawler.output. currently just pages
-					System.out.println(currDir);
+					System.out.println("Here2");
 					String fileName = jt_crawler.nextName(curr_uh.url_name);
-					File dir = new File(currDir + "/pages");
+					System.out.println("Here3");
+					String outDir = jt_crawler.getOuputDir();
+					System.out.println("Here4");
+					File dir = new File(outDir + "/pages");
+					System.out.println("Here5");
 					if(!dir.exists()){
 						dir.mkdir();
 					}
-					File file = new File(currDir + "/pages/" + fileName);
+					System.out.println("Here5");
+					File file = new File(outDir + "/pages/" + fileName);
+					System.out.println("Here6");
 					FileWriter fw = new FileWriter(file.getAbsoluteFile());
-			        BufferedWriter bw = new BufferedWriter(fw);
-			        bw.write(body);
-			        bw.close();
+					System.out.println("Here7");
+					BufferedWriter bw = new BufferedWriter(fw);
+					System.out.println("Here8");
+					bw.write(body);
+					System.out.println("Here9");
+					bw.close();
+					System.out.println("Here10");
+			        
 					/*try{
 						
 					}
@@ -120,33 +128,6 @@ public class Jthread extends Thread
 	
 		System.out.println("Thread: " + t_name + " has exited while loop and will die.");
 		jt_crawler.killThread();
-=======
-		try{
-			while(!jt_crawler.urls.isEmpty() && jt_crawler.count < jt_crawler.pages)
-			{			
-				url_hop urlh = jt_crawler.pull(); // pop url string off front of list
-				System.out.println("crawling -> url: " + urlh.url_name + " num hops:" + urlh.num_hops);
-				
-				//Jsoup getting webpage, extracting hyperlinks, and adding to list
-				Document doc = Jsoup.connect(urlh.url_name).get();
-					// save document somehow
-		        Elements links = doc.select("a[href]");
-		        
-		        //List<String> newURLs = new List<String>;
-		        for (Element link : links) {
-		        	//filter for only .edu page FIXME
-		        	String tempLink = link.attr("href"); // gets full URL
-		        	System.out.println("Found a link: " + tempLink + "n");
-		        	//newURLS.add(tempLink);		        	
-		        }
-		        //jt_crawler.push(newURLS, urlh.num_hops + 1); 
-			}
-		}
-		catch(IOException ex){
-			System.out.println("Error while parsing document \n");
-		}
-	
->>>>>>> e1952c6e0d8c44788eeb334e59d67d3a622a4c20
 	}
 	
 }
