@@ -7,7 +7,11 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import java.io.File;
 import java.util.*;
+import java.io.IOException;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 
 public class Jthread extends Thread
 {
@@ -60,6 +64,26 @@ public class Jthread extends Thread
 					// get document connection with jsoup
 					Document doc = Jsoup.connect(curr_uh.url_name).get();
 					// get other hyperlinks
+					String body = doc.toString();
+					String currDir = System.getProperty("user.dir"); //change to jt_crawler.output. currently just pages
+					System.out.println(currDir);
+					String fileName = jt_crawler.nextName(curr_uh.url_name);
+					File dir = new File(currDir + "/pages");
+					if(!dir.exists()){
+						dir.mkdir();
+					}
+					File file = new File(currDir + "/pages/" + fileName);
+					FileWriter fw = new FileWriter(file.getAbsoluteFile());
+			        BufferedWriter bw = new BufferedWriter(fw);
+			        bw.write(body);
+			        bw.close();
+					/*try{
+						
+					}
+					catch (IOException e){
+						System.out.println("Error writing to HTML file");
+					}*/
+					
 					Elements links = doc.select("a[href]");
 					System.out.println("Thread: " + t_name + " -- acquired " + links.size() + " hyperlinks");
 					for (Element e : links) 

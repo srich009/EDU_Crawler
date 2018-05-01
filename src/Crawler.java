@@ -19,6 +19,8 @@ public class Crawler
 	private Set<String> seen;
 	private ReentrantLock fifo_lock = new ReentrantLock();
 	private ReentrantLock hash_lock = new ReentrantLock();
+	private Integer fileCounter = 1;
+	private LinkedList<String> fileList;
 	//private Integer nthreads = 100;
 	
 	public Crawler(LinkedList<url_hop> u_lst, Integer num_pag, Integer num_hop, String out)
@@ -61,7 +63,35 @@ public class Crawler
 			}
 			System.out.println("Running Threads: " + running_threads);
 		} while (running_threads > 0);
+		// print file list here?
+		String currDir = System.getProperty("user.dir"); //change to jt_crawler.output
+		File dir = new File(currDir + "/pages");
+		if(!dir.exists()){
+			dir.mkdir();
+		}
+		File file = new File(currDir + "/pages/0-manifest.txt");
+		try{ FileWriter fw = new FileWriter(file.getAbsoluteFile());
+	        BufferedWriter bw = new BufferedWriter(fw);
+	        for (String line : fileList){
+	        	bw.write(line);
+	        }
+	        bw.close();
+		}
+		catch(IOException e){
+			System.out.println("Failed to print manifest file.");
+		}
 		
+	}
+	
+	public String nextName(String url)
+	{
+		synchronized (this)
+		{
+			String num = Integer.toString(fileCounter);
+			fileCounter++;
+			fileList.add(num + " " + url + "\n");
+			return num + ".html";
+		}		
 	}
 	//---------------------------------------
 	
