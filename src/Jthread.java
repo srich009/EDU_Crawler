@@ -63,30 +63,21 @@ public class Jthread extends Thread
 				try {
 					// get document connection with jsoup
 					Document doc = Jsoup.connect(curr_uh.url_name).get();
+					System.out.println(curr_uh.url_name);
 					// get other hyperlinks
-					System.out.println("Here1");
+					
 					String body = doc.toString();
-					System.out.println("Here2");
 					String fileName = jt_crawler.nextName(curr_uh.url_name);
-					System.out.println("Here3");
 					String outDir = jt_crawler.getOuputDir();
-					System.out.println("Here4");
 					File dir = new File(outDir + "/pages");
-					System.out.println("Here5");
 					if(!dir.exists()){
 						dir.mkdir();
 					}
-					System.out.println("Here5");
 					File file = new File(outDir + "/pages/" + fileName);
-					System.out.println("Here6");
 					FileWriter fw = new FileWriter(file.getAbsoluteFile());
-					System.out.println("Here7");
 					BufferedWriter bw = new BufferedWriter(fw);
-					System.out.println("Here8");
 					bw.write(body);
-					System.out.println("Here9");
 					bw.close();
-					System.out.println("Here10");
 			        
 					/*try{
 						
@@ -117,8 +108,10 @@ public class Jthread extends Thread
 				
 				} catch (Exception e) {
 					System.out.println(e.getMessage());
+					System.out.println("Exception Catch");
 					//System.out.println("Url: " + curr_uh.url_name + " could not be reached by Jsoup.");
 				} catch (Error e) {
+					System.out.println("Error Catch");
 					System.out.println(e.getMessage());
 				}
 			}

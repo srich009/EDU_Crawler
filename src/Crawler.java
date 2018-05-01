@@ -20,7 +20,7 @@ public class Crawler
 	private ReentrantLock fifo_lock = new ReentrantLock();
 	private ReentrantLock hash_lock = new ReentrantLock();
 	private Integer fileCounter;
-	private LinkedList<String> fileList;
+	private LinkedList<String> fileList = new LinkedList<String>();
 	//private Integer nthreads = 100;
 	
 	public Crawler(LinkedList<url_hop> u_lst, Integer num_pag, Integer num_hop, String out)
@@ -70,10 +70,11 @@ public class Crawler
 			dir.mkdir();
 		}
 		File file = new File(output + "/pages/0-manifest.txt");
-		try{ FileWriter fw = new FileWriter(file.getAbsoluteFile());
+		try	{ 
+			FileWriter fw = new FileWriter(file.getAbsoluteFile());
 	        BufferedWriter bw = new BufferedWriter(fw);
 	        for (String line : fileList){
-	        	bw.write(line);
+	        	bw.write(line + "\n");
 	        }
 	        bw.close();
 		}
@@ -90,14 +91,13 @@ public class Crawler
 	
 	public String nextName(String url)
 	{
-		String num;
-		synchronized (this)
-		{
-			num = Integer.toString(fileCounter);
-			fileCounter++;
-			fileList.addLast(num + " " + url + "\n");
-		}		
-		return (num + ".html");
+		Integer ret_num;
+		synchronized (this) {
+			//num = Integer.toString(fileCounter);
+			fileList.addLast(fileCounter + " " + url);
+			ret_num = fileCounter++;
+		}
+		return (ret_num + ".html");
 	}
 	//---------------------------------------
 	

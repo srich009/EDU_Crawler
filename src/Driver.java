@@ -25,6 +25,7 @@ public class Driver
 		Integer pages  = Integer.parseInt(args[1]);
 		Integer hops   = Integer.parseInt(args[2]);
 		String  output = args[3];
+		System.out.println(output);
 		
 		// System.out.printf("seed = %s | pages = %d | hops = %d | output = %s\n",seed,pages,hops,output);
 	
