@@ -55,31 +55,33 @@ public class Crawler
 			temp_jt.start();
 		}
 		
-		do {
-			try {
-				Thread.sleep(10000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			System.out.println("Running Threads: " + running_threads);
-		} while (running_threads > 0);
-		// print file list here?
 		File dir = new File(output + "/pages");
 		if(!dir.exists()){
 			dir.mkdir();
 		}
-		File file = new File(output + "/pages/0-manifest.txt");
-		try	{ 
-			FileWriter fw = new FileWriter(file.getAbsoluteFile());
-	        BufferedWriter bw = new BufferedWriter(fw);
-	        for (String line : fileList){
-	        	bw.write(line + "\n");
-	        }
-	        bw.close();
+		try{			
+			do {
+				try {
+					File file = new File(output + "/pages/0-manifest.txt");
+					FileWriter fw = new FileWriter(file.getAbsoluteFile(), true);
+			        BufferedWriter bw = new BufferedWriter(fw);
+					for (int i = fileList.size(); i > 0; i--){
+						String temp = fileList.removeFirst();
+						bw.write(temp);
+					}
+					bw.close();
+					Thread.sleep(10000);
+				}
+				catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				System.out.println("Running Threads: " + running_threads);
+			} while (running_threads > 0);
 		}
-		catch(IOException e){
-			System.out.println("Failed to print manifest file.");
+		catch (IOException e){
+			e.printStackTrace();
+			System.out.println("Error with manifest file.");
 		}
 		
 	}
@@ -94,7 +96,7 @@ public class Crawler
 		Integer ret_num;
 		synchronized (this) {
 			//num = Integer.toString(fileCounter);
-			fileList.addLast(fileCounter + " " + url);
+			fileList.addLast(fileCounter + " " + url + "\n");
 			ret_num = fileCounter++;
 		}
 		return (ret_num + ".html");
