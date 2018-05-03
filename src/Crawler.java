@@ -103,7 +103,6 @@ public class Crawler
 	{
 		Integer ret_num;
 		synchronized (this) {
-			//num = Integer.toString(fileCounter);
 			fileList.addLast(fileCounter + " " + url + "\n");
 			ret_num = fileCounter++;
 		}

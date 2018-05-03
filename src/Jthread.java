@@ -37,9 +37,6 @@ public class Jthread extends Thread
 		}		
 	}
 	
-	// download/parse html
-	// add hyperlinks to list
-	
 	// not static on purpose
 	public void run()
 	{
@@ -61,28 +58,18 @@ public class Jthread extends Thread
 					// get document connection with jsoup
 					Document doc = Jsoup.connect(curr_uh.url_name).get();
 					System.out.println(curr_uh.url_name);
-					// get other hyperlinks
 					
+					// save file to local storage
 					String body = doc.toString();
 					String fileName = jt_crawler.nextName(curr_uh.url_name);
 					String outDir = jt_crawler.getOuputDir();
-					File dir = new File(outDir + "/pages");
-					if(!dir.exists()){
-						dir.mkdir();
-					}
 					File file = new File(outDir + "/pages/" + fileName);
 					FileWriter fw = new FileWriter(file.getAbsoluteFile());
 					BufferedWriter bw = new BufferedWriter(fw);
 					bw.write(body);
 					bw.close();
-			        
-					/*try{
-						
-					}
-					catch (IOException e){
-						System.out.println("Error writing to HTML file");
-					}*/
 					
+					// get other hyperlinks
 					Elements links = doc.select("a[href]");
 					System.out.println("Thread: " + t_name + " -- acquired " + links.size() + " hyperlinks");
 					for (Element e : links) 
@@ -105,8 +92,7 @@ public class Jthread extends Thread
 				
 				} catch (Exception e) {
 					System.out.println(e.getMessage());
-					System.out.println("Exception Catch");
-					//System.out.println("Url: " + curr_uh.url_name + " could not be reached by Jsoup.");
+					System.out.println("Url: " + curr_uh.url_name + " could not be reached by Jsoup.");
 				} catch (Error e) {
 					System.out.println("Error Catch");
 					System.out.println(e.getMessage());
