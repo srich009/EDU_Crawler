@@ -56,7 +56,15 @@ public class Crawler
 		}
 		
 		File dir = new File(output + "/pages");
-		if(!dir.exists()){
+		if(dir.exists()){
+			String[]entries = dir.list();
+			for(String s: entries){
+			    File currentFile = new File(dir.getPath(),s);
+			    currentFile.delete();
+			}
+			dir.mkdir();
+		}
+		else{
 			dir.mkdir();
 		}
 		try{			
