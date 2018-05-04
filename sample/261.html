@@ -1,0 +1,335 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ <head> 
+  <title>UC Application</title> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <meta http-equiv="Content-Script-Type" content="text/javascript"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=8"> 
+  <meta name="keywords" content="University of California, University, California, UC, UCOP, UC admission, UC admissions, undergraduate admission, undergraduate admissions, college admission, college admissions, university admission, university admissions, admission,  admissions, application, apply, college, campus, major, degree, scholarships, academics, activities, awards, Cal, UC  Berkeley, UCB, UC  Davis, UCD, UC  Irvine, UCI, UC  Los Angeles, UCLA, UC  Merced, UCM, UC  Riverside, UCR, UC San Diego, UCSD, UC Santa Barbara, UCSB, UC Santa Cruz, UCSC, My UC Application"> 
+  <meta name="description" content="This is University of California's application for undergraduate admission and scholarships. Here you can apply online to these UC campuses: Berkeley, Davis, Irvine, Los Angeles, Merced, Riverside, San Diego, Santa Barbara, Santa Cruz."> 
+  <link rel="shortcut icon" type="image/png" href="/applicant/images/favicon.ico"> 
+  <link rel="stylesheet" type="text/css" media="screen" href="/applicant/css/layout.css"> 
+  <link rel="stylesheet" type="text/css" media="screen" href="/applicant/css/smoothness/jquery-ui-1.7.2.custom.css"> 
+  <link rel="stylesheet" type="text/css" media="screen" href="/applicant/css/shadowbox.css"> 
+  <script type="text/javascript" src="/applicant/dwr/util.js"></script> 
+  <script type="text/javascript" src="/applicant/dwr/engine.js"></script> 
+  <script src="/applicant/js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script> 
+  <script src="/applicant/js/jquery-migrate-1.2.1.js" type="text/javascript" charset="utf-8"></script> 
+  <script src="/applicant/js/jquery-ui-1.7.2.custom.min.js" type="text/javascript" charset="utf-8"></script> 
+  <script src="/applicant/js/plugins/jquery.maskedinput-1.2.2.min.js" type="text/javascript" charset="utf-8"></script> 
+  <script src="/applicant/js/plugins/jquery.form.js" type="text/javascript" charset="utf-8"></script> 
+  <script src="/applicant/js/plugins/jquery.metadata.js" type="text/javascript" charset="utf-8"></script> 
+  <script src="/applicant/js/plugins/jquery.validate.min.js" type="text/javascript" charset="utf-8"></script> 
+  <script src="/applicant/js/plugins/jquery.autocomplete.js" type="text/javascript" charset="utf-8"></script> 
+  <script src="/applicant/js/application.js" type="text/javascript" charset="utf-8"></script> 
+  <script src="/applicant/js/ucop.js" type="text/javascript" charset="utf-8"></script> 
+  <script src="/applicant/js/applicant/textUtils.js" type="text/javascript" charset="utf-8"></script> 
+  <script src="/applicant/js/applicant/applicantCommon.js" type="text/javascript" charset="utf-8"></script> 
+  <script src="/applicant/js/RegExValidation.js" type="text/javascript" charset="utf-8"></script> 
+  <script src="/applicant/js/hyphenate.js" type="text/javascript" charset="utf-8"></script> 
+  <script type="text/javascript" src="/applicant/js/shadowbox/shadowbox.js"></script> 
+  <script type="text/javascript">
+  Shadowbox.init({
+    // Skip the automatic setup because we don't have any
+    // properly configured link elements on the page.
+    skipSetup: true,
+    // Prevent modal from closing when clicking on the overlay
+    modal: true,
+    // Include the players to display content.
+    //players: ["inline","iframe","html"]
+    players: ["html"]
+  });
+</script> 
+  <!-- noscript><div style="background-color:#fce9c0;background-position: 15px;border-top:2px solid #dbac48;border-bottom:2px solid #dbac48;padding: 15px 10px 15px 50px;"><p>It appears that JavaScript is not enabled in this web browser however ApplyUC requires it. Please enable it or try another web browser.</p></div></noscript --> 
+ </head> 
+ <body> 
+  <div class="page_margins">
+   <!-- begin: page_margins div --> 
+   <div class="page">
+    <!-- begin: page div --> 
+    <div id="page_header"> 
+     <div id="header">
+      <!-- begin: header div --> 
+      <img src="images/uc_banner_left.png" width="369" height="95" alt="University of California">
+      <img src="images/uc_banner_right_basic.png" width="589" height="95" alt="University of California"> 
+     </div>
+     <!-- end: header div --> 
+    </div> 
+    <!-- end: page_header div --> 
+    <div id="main">
+     <!-- begin: main div --> 
+     <div id="col1"> 
+      <div id="col1_content" class="clearfix"> 
+       <div class="sidebar_box">
+        <!-- begin:  Statement of Integrity --> 
+        <div class="middle"> 
+         <p><span class="bold"><a href="https://admissions.universityofcalifornia.edu/docs/StatementOfIntegrity.pdf" title="Download Statement of Integrity. Clicking this link will open a new tab/window." target="_blank">Statement of Integrity</a></span></p> 
+        </div> 
+        <div class="bottom"></div> 
+       </div>
+       <!-- end:  Statement of Integrity --> 
+       <div class="sidebar_box">
+        <!-- begin:  Need Help? --> 
+        <div class="middle"> 
+         <div id="need_help"> 
+          <p><span class="bold">Need Help?</span></p> 
+          <p>Call the UC Application Center at <span style="white-space:nowrap;">(800) 207-1710</span> (within U.S.) or <span style="white-space:nowrap;">(925) 298-6856</span> (outside U.S.), or <span style="white-space:nowrap;">email</span> <a href="mailto:ucinfo@applyucsupport.net" title="Email ucinfo@applyucsupport.net">ucinfo@applyucsupport.net</a>.</p> 
+         </div> 
+        </div> 
+        <div class="bottom"></div> 
+       </div>
+       <!-- end:  Need Help? --> 
+       <!-- begin: Common Questions --> 
+       <div class="sidebar_box"> 
+        <div class="middle"> 
+         <img src="images/common_questions.jpg" width="170" height="20" alt="Common Questions"> 
+         <ul class="questions_nav"> 
+          <li><a class="expandable_question" href="#" title="If I've already submitted my application and want to apply to an additional campus, should I start a new application?">If I've already submitted my application and want to apply to an additional campus, should I start a new application?</a> <p>No. If the campus you want to apply to is still open, you can add it to your existing application. You will have to pay an additional application fee.</p> </li> 
+         </ul> 
+         <!--  More/Fewer Questions link not needed --> 
+         <!--  a id="more_questions_link" href="#" title="More Questions">More Questions</a --> 
+        </div> 
+        <div class="bottom"></div> 
+       </div> 
+       <!-- end: Common Questions --> 
+      </div> 
+     </div> 
+     <div id="col3"> 
+      <!-- begin: col3 div --> 
+      <div id="col3_content" class="clearfix">
+       <!-- begin: col3_content div --> 
+       <!-- begin: skiplink anchor: navigation --> 
+       <a id="content" name="content"></a> 
+       <!-- end: skiplink anchor: navigation --> 
+       <!-- begin: If JavaScript is disabled. --> 
+       <noscript> 
+        <div id="noscript">
+          JavaScript is not enabled in your web browser. Please enable it or try another JavaScript enabled browser. 
+        </div> 
+       </noscript> 
+       <!-- end: If JavaScript is disabled. --> 
+       <script type="text/javascript">
+	$().ready(function() {
+		  $('form').preventDoubleSubmission();
+	});  
+</script> 
+       <div class="floatbox"> 
+        <h1 class="my_uc_application_title" title="My UC Application"><span class="hidden_title">My UC Application</span></h1> 
+       </div> 
+       <form id="loginForm" class="yform" action="/applicant/login.htm" method="post"> 
+        <!-- begin: Message section - Notice--> 
+        <!-- end: Message section - Notice --> 
+        <!-- Begin: Validation Error Box --> 
+        <div id="error_signin" class="hidden"> 
+         <div class="notice error"> 
+          <h6>Oops! There are errors on the page that need to be corrected.</h6> 
+          <div></div> 
+          <div></div> 
+         </div> 
+        </div> 
+        <!-- End: Validation Error Box --> 
+        <div class="indent"> 
+         <div id="loginErrorMessage" class="visible">
+          <p class="indent"><span class="instructions_error"></span></p>
+         </div> 
+         <div id="sign_in"> 
+          <h5>Sign In</h5> 
+          <div class="type-text"> 
+           <label for="emailAddress">Email Address <span id="signin_email_errors" class="instructions_error"></span></label> 
+           <input class="large" type="text" name="emailAddress" id="emailAddress" value="" size="20" maxlength="50" tabindex="1"> 
+          </div> 
+          <div class="type-text"> 
+           <label for="password">Password</label> 
+           <div id="signin_password_errors" class="instructions_error"></div> 
+           <input class="large" type="password" name="password" id="password" value="" size="20" maxlength="15" tabindex="2"> 
+          </div> 
+          <br> 
+          <div id="form_signin_submit" class="floatbox"> 
+           <div class="float_left"> 
+            <a tabindex="3" class="next" href="javascript:validatePage()" title="Go"><span>Go</span></a> 
+           </div> 
+           <div class="float_left"> 
+            <div id="signin_lost_password">
+             <a tabindex="4" href="lostPassword.htm" title="Forgot your password?">Forgot your password?</a>
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <div id="create_account"> 
+          <h5>Create a New Account</h5> 
+          <p class="indent">If you don't have an account you can create one here.</p> 
+          <br> 
+          <a tabindex="3" class="next" href="accountLogin.htm?clear=" title="Create an Account"><span>New Account</span></a> 
+         </div> 
+         <br class="clear_both"> 
+        </div> 
+        <input id="hidden_submit" type="submit" style="display:none"> 
+       </form> 
+       <div class="preload_01"></div> 
+       <div class="preload_02"></div> 
+       <div class="preload_03"></div> 
+       <div class="preload_04"></div> 
+       <div class="preload_05"></div> 
+       <div class="preload_06"></div> 
+       <div class="preload_07"></div> 
+       <div class="preload_08"></div> 
+       <div class="preload_09"></div> 
+       <div class="preload_10"></div> 
+       <div class="preload_11"></div> 
+       <div class="preload_12"></div> 
+       <div class="preload_13"></div> 
+       <div class="preload_14"></div> 
+       <div class="preload_15"></div> 
+       <div class="preload_16"></div> 
+       <div class="preload_17"></div> 
+       <div class="preload_18"></div> 
+       <div class="preload_19"></div> 
+       <div class="preload_20"></div> 
+       <div class="preload_21"></div> 
+       <div class="preload_22"></div> 
+       <div class="preload_23"></div> 
+       <div class="preload_24"></div> 
+       <div class="preload_25"></div> 
+       <div class="preload_26"></div> 
+       <div class="preload_27"></div> 
+       <div class="preload_28"></div> 
+       <div class="preload_29"></div> 
+       <div class="preload_30"></div> 
+       <div class="preload_31"></div> 
+       <div class="preload_32"></div> 
+       <div class="preload_33"></div> 
+       <div class="preload_34"></div> 
+       <div class="preload_35"></div> 
+       <div class="preload_36"></div> 
+       <div class="preload_37"></div> 
+       <div class="preload_38"></div> 
+       <div class="preload_39"></div> 
+       <div class="preload_40"></div> 
+       <div class="preload_41"></div> 
+       <div class="preload_42"></div> 
+       <div class="preload_43"></div> 
+       <div class="preload_44"></div> 
+       <div class="preload_45"></div> 
+       <div class="preload_46"></div> 
+       <div class="preload_47"></div> 
+       <div class="preload_48"></div> 
+       <div class="preload_49"></div> 
+       <div class="preload_50"></div> 
+       <div class="preload_51"></div> 
+       <div class="preload_52"></div> 
+       <div class="preload_53"></div> 
+       <div class="preload_54"></div> 
+       <script type="text/javascript">
+
+$(function(){
+    $('input').keydown(function(e){ 
+        if (e.keyCode == 13) { 
+        	validatePage();
+        }
+    });
+});
+
+  function validatePage() {
+
+	var ok = true;
+
+	var errorBox = document.getElementById('error_signin');
+	//var errorEmailBlank = document.getElementById('error_signin_email');
+	//var errorPasswordBlank = document.getElementById('error_signin_password');
+	var emailErrors = document.getElementById('signin_email_errors');
+	var passwordErrors = document.getElementById('signin_password_errors');
+	var email = document.getElementById('emailAddress');
+	var password = document.getElementById('password');
+
+	errorBox.className = 'hidden';
+	//errorEmailBlank.className = 'hidden';
+	//errorPasswordBlank.className = 'hidden';
+
+	clearErrors(emailErrors);
+	clearErrors(passwordErrors);
+	email.className = "large";
+	password.className = "large";
+
+	if (email.value == "") {
+		//errorEmailBlank.className = 'visible';
+		email.className = "large highlight_error";
+		addError(emailErrors, 'Please enter your email address.');
+		email.focus();
+		ok = false;
+	}
+	if (password.value == "") {
+		//errorPasswordBlank.className = 'visible';
+		password.className = "large highlight_error";
+		addError(passwordErrors, 'Please enter your password.');
+		password.focus();
+		ok = false;
+	}
+
+	if(ok) {
+	  //document.forms[0].submit();
+	  document.getElementById("hidden_submit").click();
+	}
+	else {
+	  errorBox.className = 'visible';
+	}
+  }
+
+  function addError(div, error) {
+	  if (div.innerHTML != '') {
+		  div.innerHTML += '<br />';
+	  }
+	  div.innerHTML += error;
+  }
+
+  function clearErrors(div) {
+	  div.innerHTML = '';
+  }
+
+</script> 
+      </div> 
+      <!-- end: col3_content div --> 
+      <div id="ie_clearing">
+       &nbsp;
+      </div> 
+      <!-- IE Column Clearing -->
+     </div> 
+     <!-- end: col3 div -->
+    </div> 
+    <!-- end: main div -->
+   </div> 
+   <!-- end: page div --> 
+   <div id="border-bottom"> 
+    <div id="edge-bl"></div> 
+    <div id="edge-br"></div> 
+   </div> 
+  </div> 
+  <!-- end: page_margins div --> 
+  <div id="footer">
+   <!-- begin: footer_content div --> 
+   <div id="footer_content"> 
+    <div id="unauthorized_access">
+     Pursuant to section 502 of the California Penal Code, unauthorized access to applicant information will be prosecuted to the full extent of the law.
+    </div> 
+    <br> 
+    <div class="floatbox"> 
+     <div class="float_left"> 
+      <ul> 
+       <li><a href="http://www.universityofcalifornia.edu/admissions/" title="admissions home. Clicking this link will open a new tab/window." target="_blank">admissions home</a></li> 
+       <li>|</li> 
+       <li><a id="help_link_footer" href="https://admissions.universityofcalifornia.edu/docs/html/help.html" title="help. Clicking this link will open a new tab/window." target="_blank">help</a></li> 
+       <li>|</li> 
+       <li><a href="https://admissions.universityofcalifornia.edu/docs/html/terms_of_use.html" title="terms of use. Clicking this link will open a new tab/window." target="_blank">terms of use</a></li> 
+      </ul> 
+     </div> 
+     <div class="float_right"> 
+      <p>Copyright © Regents of the University of California</p> 
+     </div> 
+    </div> 
+   </div> 
+   <!-- end: footer_content div -->
+  </div> 
+  <script type="text/javascript"> 
+	appendOrigSessionId('T9aTepDxHjgTZu6OJ-a3eud3le5616izo6JBYdtz');
+</script>   
+ </body>
+</html>

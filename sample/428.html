@@ -1,0 +1,146 @@
+<!doctype html>
+<html>
+ <head> 
+  <base href="https://sa.ucla.edu/RCO"> 
+  <meta charset="utf-8"> 
+  <script type="text/javascript">
+        var isProduction = true;
+        var BaseUrl = "https://sa.ucla.edu/rco" + "/";
+        var UseBundle = "true";
+        var DebugBundle = "false";
+    </script> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+  <title>Student Organizations</title> 
+  <link rel="icon" type="image/png" href="/RCO/favicon.ico"> 
+  <!-- 1. Load libraries --> 
+  <!-- IE required polyfills, in this exact order --> 
+  <script src="/RCO/node_modules/core-js/client/shim.min.js"></script> 
+  <script src="/RCO/node_modules/zone.js/dist/zone.js"></script> 
+  <script src="/RCO/node_modules/systemjs/dist/system.src.js"></script> 
+  <script src="/RCO/systemjs.config.js"></script> 
+  <script src="/RCO/iwe/SOLE/js/jQueryV1-7-1.js"></script> 
+  <link rel="stylesheet" href="https://iwe.myucla.it.ucla.edu/iwe-static/RC1/iwe-template-Final.min.css" no-shim> 
+  <link rel="import" href="https://iwe.myucla.it.ucla.edu/iwe-static/RC1/vulc-min.html"> 
+  <script src="https://iwe.myucla.it.ucla.edu/iwe-static/RC1/Iwe_Style_Guide.min.js"></script> 
+  <link href="/RCO/iwe/SOLE/Skin.css" rel="stylesheet"> 
+  <link href="/RCO/iwe/SOLE/css/Custom.css" rel="stylesheet"> 
+  <link href="/RCO/iwe/SOLE/css/fancybox.css" rel="stylesheet"> 
+  <link href="/RCO/iwe/SOLE/css/fixed.css" rel="stylesheet"> 
+  <link href="/RCO/iwe/SOLE/css/flexslider.css" rel="stylesheet"> 
+  <link href="/RCO/iwe/SOLE/css/responsive.css" rel="stylesheet"> 
+  <link href="/RCO/iwe/SOLE/PageCSS/home.css" rel="stylesheet"> 
+  <link href="/RCO/iwe/SOLE/PageCSS/Socialmedia.css" rel="stylesheet"> 
+  <link href="/RCO/iwe/SOLE/TopNav/TopNav.css" rel="stylesheet"> 
+  <script src="/RCO/iwe/SOLE/js/analytics-event-tracking.js"></script> 
+  <script src="/RCO/iwe/SOLE/js/analytics.js"></script> 
+  <script src="/RCO/iwe/SOLE/js/Devglobal.js"></script> 
+  <script src="/RCO/iwe/SOLE/js/Devplugins.js"></script> 
+  <script src="/RCO/iwe/SOLE/js/general_controls.js"></script> 
+  <script src="/RCO/iwe/SOLE/js/global.js"></script> 
+  <script src="/RCO/iwe/SOLE/js/jQueryV1-7-1.js"></script> 
+  <script src="/RCO/iwe/SOLE/js/plugins.js"></script> 
+  <script src="/RCO/iwe/SOLE/js/respond.js"></script> 
+  <script src="/RCO/iwe/SOLE/js/responsive.js"></script> 
+  <link href="/RCO/Content/site.css" rel="stylesheet"> 
+  <link href="/RCO/Content/font-image.css" rel="stylesheet"> 
+  <script src="/RCO/Scripts/modernizr-2.6.2.js"></script> 
+ </head> 
+ <body> 
+  <div id="top-bar" role="navigation"> 
+   <div id="top-bar-content"> 
+    <!-- DDRmenu v02.00.01 - TopNav template -->
+    <ul id="audience-nav"> 
+     <li> <a href="http://www.sole.ucla.edu/About-Us" target="">About Us</a> </li> 
+     <li> <a href="http://www.sole.ucla.edu/FAQs" target="">FAQs</a> </li> 
+    </ul> 
+    <ul id="audience-nav-mobile"> 
+     <li> <a href="http://www.sole.ucla.edu/About-Us" target="">About Us</a> </li> 
+     <li> <a href="http://www.sole.ucla.edu/FAQs" target="">FAQs</a> </li> 
+    </ul> &nbsp; 
+   </div> 
+  </div>
+  <div id="header" role="banner"> 
+   <!-- Header --> 
+   <div id="header-content"> 
+    <div id="ucla_logo"> 
+     <a id="dnn_dnnLOGO_hypLogo" title="UCLA - Student Organizations, Leadership &amp; Engagement" href="http://www.sole.ucla.edu/"><img id="dnn_dnnLOGO_imgLogo" src="https://sa.ucla.edu/RCO/iwe/SOLE/img//UCLA_Logo_SOLE.fw.png" alt="UCLA - Student Organizations, Leadership &amp; Engagement"></a> 
+    </div> 
+    <div id="mobile-buttons" role="navigation"> 
+     <a href="#" id="nav-control" style="display: inline;"><span class="HideAltText">Mobile Button</span></a> 
+    </div> 
+    <!-- DNN Search !--> 
+    <div id="header-nav"> 
+     <!-- End DNN Search !--> 
+     <!-- DDRmenu v02.00.01 - MainNav template -->
+     <div id="main-nav-wrapper" role="navigation"> 
+      <ul id="main-nav"> 
+       <li> <a href="http://www.sole.ucla.edu/Resources" target="" title="UCLA SOLE - Resources">Resources</a> </li> 
+       <li> <a href="http://www.sole.ucla.edu/Policies" target="" title="UCLA SOLE - Policies">Policies</a> </li> 
+       <li> <a href="http://www.sole.ucla.edu/testcalendar" target="" title="UCLA SOLE - Events">Test Calendars</a> </li> 
+       <li> <a href="http://www.sole.ucla.edu/Organizations" target="" title="UCLA SOLE - Organizations">Organizations</a> </li> 
+       <li> <a href="http://www.sole.ucla.edu/Leadership" target="" title="UCLA SOLE - Leadership">Leadership</a> </li> 
+       <li> <a href="http://www.sole.ucla.edu/Funding" target="" title="UCLA SOLE - Funding">Funding</a> </li> 
+       <li> <a href="http://www.sole.ucla.edu/CEY-Award" target="" title="UCLA SOLE - CEY Award">CEY Award</a> </li> 
+      </ul> 
+      <div id="dropdown-spacer" style="height: 0px;"></div> 
+     </div> 
+     <!--
+	   
+--> 
+     <!-- Main navigation bar --> 
+     <div id="top-bar-content-mobile">
+      <!-- DDRmenu v02.00.01 - TopNav template -->
+      <ul id="audience-nav"> 
+       <li> <a href="http://www.sole.ucla.edu/About-Us" target="">About Us</a> </li> 
+       <li> <a href="http://www.sole.ucla.edu/FAQs" target="">FAQs</a> </li> 
+      </ul> 
+      <ul id="audience-nav-mobile"> 
+       <li> <a href="http://www.sole.ucla.edu/About-Us" target="">About Us</a> </li> 
+       <li> <a href="http://www.sole.ucla.edu/FAQs" target="">FAQs</a> </li> 
+      </ul> 
+     </div>
+     <!-- Top navigation bar --> 
+     <div id="buttons"> 
+      <!-- DDRmenu v02.00.01 - YellowButton template -->
+      <ul id="callout-nav"> 
+       <li> <a href="https://www.facebook.com/UCLASOLE/" target="_new">Follow</a> </li> 
+      </ul> 
+      <!-- Yellow Now Button --> 
+      <!-- DDRmenu v02.00.01 - BlueButton template -->
+      <ul id="callout-nav-give-now"> 
+      </ul> 
+      <!-- Blue Now Button --> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="margin-top-0 max-width-960" id="layoutContentArea"> 
+   <section id="layoutContentArea"> 
+    <my-app path="https://sa.ucla.edu/RCO">
+     <img src="/RCO/Content/img/BG-spinner.gif" class="mc-spinner">
+    </my-app> 
+   </section> 
+   <!-- 2. Configure SystemJS --> 
+   <script src="/RCO/Areas/RCO/Scripts/AppModule/dist/bundle-rco.min.js"></script> 
+   <script src="/RCO/Areas/RCO/Scripts/AppModule/dist/systemjs.config-rco.min.js"></script> 
+   <script async src="/RCO/bundle-rxjs.min.js"></script> 
+  </div> 
+  <div id="footer"> 
+   <!-- Footer --> 
+   <div id="footer-content"> 
+    <ul id="footer-nav"> 
+     <!-- <li class="adaLogo"><a target="_blank" href="http://www.ucla.edu/accessibility" alt="Disability Logo"><span class="HideAltText">Disability Access Web</span></a></li> --> 
+     <li><a href="http://www.ucla.edu/accessibility" target="_new">Accessibility</a></li> 
+     <li><a href="http://www.ucla.edu/" target="_new">UCLA</a></li> 
+     <li><a href="http://www.studentaffairs.ucla.edu/" target="_new">Student Affairs</a></li> 
+     <li><a href="http://www.ucla.edu/maps-directions-parking" target="_new">Maps, Directions, Parking</a></li> 
+     <li><a href="http://www.registrar.ucla.edu/calendars/Overview" target="_new">Academic Calendar</a></li> 
+     <!-- <li><a href="http://www.directory.ucla.edu/" target="_new">Campus Directory</a></li> --> 
+     <li><a href="http://www.universityofcalifornia.edu/" target="_new">University of California</a></li> 
+     <li><a href="http://www.ucla.edu/terms-of-use" target="_new">Terms of Use</a></li> 
+    </ul> 
+   </div> 
+  </div>   
+ </body>
+</html>

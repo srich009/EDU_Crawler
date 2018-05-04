@@ -1,0 +1,1468 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6 lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="no-js ie7 lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="no-js ie8 lt-ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html class="no-js" lang="en">
+ <!--<![endif]-->
+ <!--
+  _                     _ _     _
+ | |                   | (_)   | |
+ | |     ___   ___ __ _| |_ ___| |_
+ | |    / _ \ / __/ _` | | / __| __|
+ | |___| (_) | (_| (_| | | \__ \ |_
+ |______\___/ \___\__,_|_|_|___/\__|
+
+The event marketing calendar.
+
+-->
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"b4c5954d77","applicationID":"2296387","transactionName":"IVhWEBRdWF1XEExTDANZVgEKbURQVQdMQwwNQA==","queueTime":2,"applicationTime":36,"agent":""}</script> 
+  <script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VwMCV15bGwECXVdRDwY="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(12),c={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,o.indexOf("dev")!==-1&&(c.dev=!0),o.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&i.on("internal-error",function(t){r(t.stack)}),c.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,c){try{p?p-=1:o(c||new UncaughtException(t,e,n),!0)}catch(f){try{i("ierr",[f,s.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t,e){var n=e?null:s.now();i("err",[t,n])}var i=t("handle"),a=t(13),c=t("ee"),s=t("loader"),f=t("gos"),u=window.onerror,d=!1,l="nr@seenError",p=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(5),t(4),"addEventListener"in window&&t(3),s.xhrWrappable&&t(6),d=!0)}c.on("fn-start",function(t,e,n){d&&(p+=1)}),c.on("fn-err",function(t,e,n){d&&!n[l]&&(f(n,l,function(){return!0}),this.thrown=!0,o(n))}),c.on("fn-end",function(){d&&!this.thrown&&p>0&&(p-=1)}),c.on("internal-error",function(t){i("ierr",[t,s.now(),!0])})},{}],3:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){c.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),c=t(15)(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],4:[function(t,e,n){var r=t("ee").get("raf"),o=t(15)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],5:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(15)(i),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(s+u,r),i.on(c+u,o)},{}],6:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,w,"fn-",c)}function i(t){g.push(t),h&&(b?b.then(a):v?v(a):(E=-E,O.data=E))}function a(){for(var t=0;t<g.length;t++)r([],g[t]);g.length&&(g=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(3);var f=t("ee"),u=f.get("xhr"),d=t(15)(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,v=l.SI,y="readystatechange",w=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],g=[];e.exports=u;var x=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(y,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(p,x),x.prototype=p.prototype,d.inPlace(x.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var b=m&&m.resolve();if(!v&&!m){var E=1,O=document.createTextNode(E);new h(a).observe(O,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===y||a()})},{}],7:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=a.now()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var s=t.getResponseHeader("X-NewRelic-App-Data");s&&(e.cat=s.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return h(r)}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(8),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(11),h=t(10),m=window.XMLHttpRequest;a.features.xhr=!0,t(6),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=h(r);i&&(n.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var c=0;c<d;c++)e.addEventListener(u[c],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,e],e)})}},{}],8:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],9:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[f.now()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(12),c=t(13),s=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,e){u[e]=o(l+e,!0,"api")}),u.addPageAction=o(l+"addPageAction",!0),u.setCurrentRouteName=o(l+"routeName",!0),e.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(p+"tracer",[f.now(),t,n],r),function(){if(s.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return e.apply(this,arguments)}catch(t){throw s.emit("fn-err",[arguments,this,t],n),t}finally{s.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){h[e]=o(p+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now()])}},{}],10:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],11:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],12:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],13:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],14:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],15:[function(t,e,n){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(13),a="nr@original",c=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t,e){function n(t,e,n,o){function nrWrapper(){var r,a,c,s;try{a=this,r=i(arguments),c="function"==typeof n?n(r,a):n||{}}catch(f){l([f,"",[r,a,o],c])}u(e+"start",[r,a,o],c);try{return s=t.apply(a,r)}catch(d){throw u(e+"err",[r,a,d],c),d}finally{u(e+"end",[r,a,s],c)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,e,o,i){o||(o="");var a,c,s,f="-"===o.charAt(0);for(s=0;s<e.length;s++)c=e[s],a=t[c],r(a)||(t[c]=n(a,f?c+o:o,i,c))}function u(n,r,o){if(!s||e){var i=s;s=!0;try{t.emit(n,r,o,e)}catch(a){l([a,n,r,o])}s=i}}function d(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){l([r])}for(var o in t)c.call(t,o)&&(e[o]=t[o]);return e}function l(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),n.inPlace=f,n.flag=a,n}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,c,i):i()}function n(n,r,o,i){if(!l.aborted||i){t&&t(n,r,o);for(var a=e(o),c=h(n),s=c.length,f=0;f<s;f++)c[f].apply(a,r);var d=u[w[n]];return d&&d.push([g,n,r,a]),a}}function p(t,e){y[t]=h(t).concat(e)}function h(t){return y[t]||[]}function m(t){return d[t]=d[t]||o(n)}function v(t,e){f(t,function(t,n){e=e||"feature",w[n]=e,e in u||(u[e]=[])})}var y={},w={},g={on:p,emit:n,get:m,listeners:h,context:e,buffer:v,abort:a,aborted:!1};return g}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var c="nr@context",s=t("gos"),f=t(12),u={},d={},l=e.exports=o();l.backlog=u},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!b++){var t=x.info=NREUM.info,e=l.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(w,function(e,n){t[e]||(t[e]=n)}),s("mark",["onload",a()+x.offset],null,"api");var n=l.createElement("script");n.src="https://"+t.agent,e.parentNode.insertBefore(n,e)}}function o(){"complete"===l.readyState&&i()}function i(){s("mark",["domContent",a()+x.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(c=Math.max((new Date).getTime(),c))-x.offset}var c=(new Date).getTime(),s=t("handle"),f=t(12),u=t("ee"),d=window,l=d.document,p="addEventListener",h="attachEvent",m=d.XMLHttpRequest,v=m&&m.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:m,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var y=""+location,w={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},g=m&&v&&v[p]&&!/CriOS/.test(navigator.userAgent),x=e.exports={offset:c,now:a,origin:y,features:{},xhrWrappable:g};t(9),l[p]?(l[p]("DOMContentLoaded",i,!1),d[p]("load",r,!1)):(l[h]("onreadystatechange",o),d[h]("onload",r)),s("mark",["firstbyte",c],null,"api");var b=0,E=t(14)},{}]},{},["loader",2,7]);</script> 
+  <title>Events Calendar - UC Riverside</title> 
+  <meta name="description" content="UC Riverside things to do and UC Riverside events, powered by Localist"> 
+  <!-- End LOCALIST code --> 
+  <meta charset="utf-8"> 
+  <meta name="MobileOptimized" content="width"> 
+  <meta name="HandheldFriendly" content="true"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <!-- Absolute path for css files --> 
+  <!--<link rel="stylesheet" href="css/default.min_.css" /> --> 
+  <link rel="stylesheet" href="//assets.ucr.edu/localist/css/default-silkwrapper.min.css"> 
+  <!--<link rel="stylesheet" href="http://localist.dev-ucr.acsitefactory.com/sites/g/files/rcwecm5391dev/files/2018-02/default-silkwrapper.min__22.css" />--> 
+  <!-- Start LOCALIST code --> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link href="https://events.ucr.edu/platform/stylesheet/224/694/1524541378.css" rel="stylesheet" type="text/css"> 
+  <script type="text/javascript">
+//<![CDATA[
+var LOCALIST_SETTINGS = {"theme_base":"base","icheck":true,"photo_aspect_ratio":1.0};
+//]]>
+</script>
+  <script src="https://d3e1o4bcbhmj8g.cloudfront.net/assets/application-e588d96e5a5865f53111a6038ea1679b.js" type="text/javascript"></script> 
+ </head> 
+ <body class="homepage"> 
+  <!-- End LOCALIST code --> 
+  <header> 
+   <div class="grid-container full"> 
+    <div class="grid-x"> 
+     <div class="cell small-order-2 medium-order-1 audience-container"> 
+      <div class="grid-container"> 
+       <div class="grid-x align-middle"> 
+        <div class="cell auto" id="block-organizationname" data-block-plugin-id="ucr_global_organization_name"> 
+         <p class="parent-org-title"> <a href="https://ucr.edu">University of California, Riverside</a> </p> 
+        </div> 
+        <div class="cell medium-shrink show-for-medium"> 
+         <section class="google-search" role="search"> 
+          <form id="audience-search-form" action="https://www.ucr.edu/search.php"> 
+           <label class="show-for-sr" for="audience-search">Search for:</label> 
+           <input type="text" maxlength="255" id="audience-search" name="q" value="" placeholder=" "> 
+           <button type="submit" class="button show-for-small-only" value="">Search</button> 
+          </form> 
+         </section> 
+        </div> 
+        <div class="cell shrink hide-for-medium" data-responsive-toggle="main-menu-container" data-hide-for="medium"> 
+         <!--<button class="mdi mdi-menu button mobile-menu-expander" type="button" data-toggle="main-menu-container">
+                            </button>--> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="cell small-order-1 medium-order-2 masthead-container"> 
+      <div class="grid-container"> 
+       <div class="grid-x align-middle"> 
+        <div class="cell shrink"> 
+         <a class="masthead-logo" href="/"> <span class="show-for-sr">UC Riverside</span> </a> 
+        </div> 
+        <div class="cell auto"> 
+         <h1 class="masthead-title"> <a href="/"> Calendar of Events </a> </h1> 
+        </div> 
+        <div class="cell medium-shrink show-for-medium"> 
+         <p class="slogan"></p> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+     <!--<div class="cell small-order-3 medium-order-3 main-nav-bar">
+                <div class="grid-container" id="main-menu-container" data-animate="fade-in fade-out">
+                    <div class="grid-x">
+                        <div class="cell hide-for-medium">
+
+
+                            <section class="google-search" role="search">
+                                <form id="audience-search-form" action="https://www.ucr.edu/search.php">
+                                    <label class="show-for-sr" for="audience-search">Search for:</label>
+                                    <input type="text" maxlength="255" id="audience-search" name="q" value="" placeholder=" " />
+                                    <button type="submit" class="button show-for-small-only" value="">Search</button>
+                                </form>
+                            </section>
+
+                        </div>
+                    </div>
+                </div>
+            </div>--> 
+    </div> 
+   </div> 
+  </header> 
+  <!-- Start LOCALIST code --> 
+  <div class="content-wrapper"> 
+   <div class="wrapper"> 
+    <div class="grid_container"> 
+     <div id="menu"> 
+      <ul class="action_menu"> 
+       <li class="login"><a href="https://events.ucr.edu/signup?school_id=220"><i class="fa fa-user-plus"></i> Sign Up</a></li> 
+       <li class="login"><a href="https://events.ucr.edu/auth/login" rel="ibox;url=#login-lightbox"><i class="fa fa-sign-in"></i> Log In</a></li> 
+      </ul> 
+     </div> 
+     <div class="search_action"> 
+      <form method="get" id="topsearch" action="/search"> 
+       <label for="top-search" class="sr-only">Search</label> 
+       <input id="top-search" type="text" name="search" value="" placeholder="Search places, events, groups"> 
+       <button id="top-submit" type="submit"><i class="localist-icon-search-small"><span class="sr-only">Search</span></i></button> 
+      </form> 
+     </div> 
+     <div class="grid_8 alpha content"> 
+      <div class="tabs_component "> 
+       <div class="box_title box_header"> 
+        <!-- navigation tabs --> 
+        <h4 data-section-tabs="container" data-section-tabs-selector="#tabs-6789-panels .tabs-component-panel"> <span data-section-tabs="title">Featured Events</span> </h4> 
+       </div> 
+       <div id="tabs-6789-panels"> 
+        <div id="tabs-6789-6791" class="tabs-component-panel"> 
+         <div class="featured_section_component "> 
+          <div data-featured-section="true" id="featured_section_812" class="featured_carousel"> 
+           <div class="featured_item_wrapper" data-num-items="" data-rotate="true"> 
+            <div class="item featured_item" id="featured_section_812_item_0"> 
+             <a href="https://events.ucr.edu/event/citrus_grand_cherry_mfa_exhibition_2018" class="box_left"> <img alt="Citrus Grand Cherry: MFA Exhibition 2018" class="img_big_square" height="200" src="https://d3e1o4bcbhmj8g.cloudfront.net/photos/654540/big_square/558eb81a2a18a04d6678b6249218efc3eaeca210.jpg" width="200"> </a> 
+             <div class="item_content_featured"> 
+              <div class="heading"> 
+               <h3 class="summary"><a href="https://events.ucr.edu/event/citrus_grand_cherry_mfa_exhibition_2018">Citrus Grand Cherry: MFA Exhibition 2018</a></h3> 
+              </div> 
+              <h4 class="description">UCR ARTSblock presents the annual MFA Thesis Exhibition, Citrus Grand Cherry, with works by three graduating Master of Fine Arts students in UCR's Department...</h4> 
+              <div class="actionbar"> 
+               <div class="dateright"> 
+                <abbr title="2018-05-03T00:00:00-04:00" class="dtstart"> <i class="fa fa-clock-o"></i> 5/3 </abbr> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <div class="item featured_item" id="featured_section_812_item_1"> 
+             <a href="https://events.ucr.edu/event/summer_sessions_-_application_filing_period" class="box_left"> <img alt="Summer Sessions - Application Filing Period" class="img_big_square" height="200" src="https://d3e1o4bcbhmj8g.cloudfront.net/photos/650737/big_square/20ba2e97da7f37e71434a224f1a553e09cead6af.jpg" width="200"> </a> 
+             <div class="item_content_featured"> 
+              <div class="heading"> 
+               <h3 class="summary"><a href="https://events.ucr.edu/event/summer_sessions_-_application_filing_period">Summer Sessions - Application Filing Period</a></h3> 
+              </div> 
+              <h4 class="description">Why attend UCR's summer sessions? Stay on track (or get ahead) so you can finish in four! Smaller class size means more opportunity to interact with...</h4> 
+              <div class="actionbar"> 
+               <div class="dateright"> 
+                <abbr title="2018-05-03T00:00:00-04:00" class="dtstart"> <i class="fa fa-clock-o"></i> 5/3 </abbr> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <div class="item featured_item" id="featured_section_812_item_2"> 
+             <a href="https://events.ucr.edu/event/opening_doors_contemporary_african_american_surgeons" class="box_left"> <img alt="Opening Doors: Contemporary African American Surgeons" class="img_big_square" height="200" src="https://d3e1o4bcbhmj8g.cloudfront.net/photos/652312/big_square/85280888a5d9e7074b3be5073aa40d99126c4dca.jpg" width="200"> </a> 
+             <div class="item_content_featured"> 
+              <div class="heading"> 
+               <h3 class="summary"><a href="https://events.ucr.edu/event/opening_doors_contemporary_african_american_surgeons">Opening Doors: Contemporary African American...</a></h3> 
+              </div> 
+              <h4 class="description">Opening Doors: Contemporary African American Academic Surgeons is an exhibition celebrating the contributions of African American academic surgeons to...</h4> 
+              <div class="actionbar"> 
+               <div class="dateright"> 
+                <abbr title="2018-05-03T09:00:00-04:00" class="dtstart"> <i class="fa fa-clock-o"></i> 5/3 9:00am </abbr> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <div class="item featured_item" id="featured_section_812_item_3"> 
+             <a href="https://events.ucr.edu/event/creatr_lab_anniversary_showcase" class="box_left"> <img alt="Creat'R Lab Anniversary Showcase" class="img_big_square" height="200" src="https://d3e1o4bcbhmj8g.cloudfront.net/photos/653436/big_square/d2e325810214c9690570ed77025bf013f1ed1472.jpg" width="200"> </a> 
+             <div class="item_content_featured"> 
+              <div class="heading"> 
+               <h3 class="summary"><a href="https://events.ucr.edu/event/creatr_lab_anniversary_showcase">Creat'R Lab Anniversary Showcase</a></h3> 
+              </div> 
+              <h4 class="description">The UCR Library and the Office of Research and Economic Development (RED) invite you to celebrate Creat'R Lab's first successful year at our Anniversary...</h4> 
+              <div class="actionbar"> 
+               <div class="dateright"> 
+                <abbr title="2018-05-03T16:00:00-04:00" class="dtstart"> <i class="fa fa-clock-o"></i> 5/3 4:00pm </abbr> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <div class="item featured_item" id="featured_section_812_item_4"> 
+             <a href="https://events.ucr.edu/event/business_succession_planning" class="box_left"> <img alt="Business Succession Planning" class="img_big_square" height="200" src="https://d3e1o4bcbhmj8g.cloudfront.net/photos/651433/big_square/ca751ab360c7254d6f49ef730f9e423d544f3bcf.jpg" width="200"> </a> 
+             <div class="item_content_featured"> 
+              <div class="heading"> 
+               <h3 class="summary"><a href="https://events.ucr.edu/event/business_succession_planning">Business Succession Planning</a></h3> 
+              </div> 
+              <h4 class="description">Create and preserve value by carefully planning your business succession. Learn how to exit your business on your own terms while getting the most value out...</h4> 
+              <div class="actionbar"> 
+               <div class="dateright"> 
+                <abbr title="2018-05-03T17:00:00-04:00" class="dtstart"> <i class="fa fa-clock-o"></i> 5/3 5:00pm </abbr> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <div class="item featured_item" id="featured_section_812_item_5"> 
+             <a href="https://events.ucr.edu/event/indigenous_choreographers_at_riverside_gathering" class="box_left"> <img alt="Indigenous Choreographers at Riverside Gathering" class="img_big_square" height="200" src="https://d3e1o4bcbhmj8g.cloudfront.net/photos/653669/big_square/8985731cc896a0889314abada9a1ffdd539670d8.jpg" width="200"> </a> 
+             <div class="item_content_featured"> 
+              <div class="heading"> 
+               <h3 class="summary"><a href="https://events.ucr.edu/event/indigenous_choreographers_at_riverside_gathering">Indigenous Choreographers at Riverside Gathering</a></h3> 
+              </div> 
+              <h4 class="description">Department of Dance and ARTSblock present Indigenous Choreographers at Riverside Gathering April 27 and May 1-6, 2018 Hosted and co-directed by Jacqueline...</h4> 
+              <div class="actionbar"> 
+               <div class="dateright"> 
+                <abbr title="2018-05-03T18:45:00-04:00" class="dtstart"> <i class="fa fa-clock-o"></i> 5/3 6:45pm </abbr> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <div class="item featured_item" id="featured_section_812_item_6"> 
+             <a href="https://events.ucr.edu/event/film_rogue_one_a_star_wars_story" class="box_left"> <img alt="Film: Rogue One: A Star Wars Story" class="img_big_square" height="200" src="https://d3e1o4bcbhmj8g.cloudfront.net/photos/654545/big_square/bb0eefafa5f0f71f5f7bcd594551b26d0594e68a.jpg" width="200"> </a> 
+             <div class="item_content_featured"> 
+              <div class="heading"> 
+               <h3 class="summary"><a href="https://events.ucr.edu/event/film_rogue_one_a_star_wars_story">Film: Rogue One: A Star Wars Story</a></h3> 
+              </div> 
+              <h4 class="description">Screening and Discussion! In a time of conflict, a group of unlikely heroes band together on a mission to steal the plans to the Death Star, the Empire’s...</h4> 
+              <div class="actionbar"> 
+               <div class="dateright"> 
+                <abbr title="2018-05-04T18:00:00-04:00" class="dtstart"> <i class="fa fa-clock-o"></i> 5/4 6:00pm </abbr> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <div class="item featured_item" id="featured_section_812_item_7"> 
+             <a href="https://events.ucr.edu/event/event_inlandia_institutes_conversations_at_the_culver" class="box_left"> <img alt="Inlandia Institute's Conversations at the Culver" class="img_big_square" height="200" src="https://d3e1o4bcbhmj8g.cloudfront.net/photos/659025/big_square/a466c32621bc212eea5b44ce29b379bf6643b473.jpg" width="200"> </a> 
+             <div class="item_content_featured"> 
+              <div class="heading"> 
+               <h3 class="summary"><a href="https://events.ucr.edu/event/event_inlandia_institutes_conversations_at_the_culver">Inlandia Institute's Conversations at the Culver</a></h3> 
+              </div> 
+              <h4 class="description">This event is FREE and open to the public. The event will be followed by light refreshments. When They All Still Lived: A Film Screening and Discussion...</h4> 
+              <div class="actionbar"> 
+               <div class="dateright"> 
+                <abbr title="2018-05-06T13:00:00-04:00" class="dtstart"> <i class="fa fa-clock-o"></i> 5/6 1:00pm </abbr> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <div class="item featured_item" id="featured_section_812_item_8"> 
+             <a href="https://events.ucr.edu/event/49th_hays_press-enterprise_lecture" class="box_left"> <img alt="The News Isn't Fake, But It's Flawed" class="img_big_square" height="200" src="https://d3e1o4bcbhmj8g.cloudfront.net/photos/654897/big_square/4b1fd6c076fced656108324230ea333a6b9d5a58.jpg" width="200"> </a> 
+             <div class="item_content_featured"> 
+              <div class="heading"> 
+               <h3 class="summary"><a href="https://events.ucr.edu/event/49th_hays_press-enterprise_lecture">The News Isn't Fake, But It's Flawed</a></h3> 
+              </div> 
+              <h4 class="description">49th Hays Press-Enterprise Lecture Presented by: Frank Bruni, New York Times Op-Ed Columnist and Best-Selling Author Bio: Mr. Bruni's career at The Times...</h4> 
+              <div class="actionbar"> 
+               <div class="dateright"> 
+                <abbr title="2018-05-18T16:00:00-04:00" class="dtstart"> <i class="fa fa-clock-o"></i> 5/18 4:00pm </abbr> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <div class="item featured_item" id="featured_section_812_item_9"> 
+             <a href="https://events.ucr.edu/event/fiesta_familiar_explorando_la_ciencia_juntos" class="box_left"> <img alt="Fiesta Familiar: Explorando la Ciencia Juntos" class="img_big_square" height="200" src="https://d3e1o4bcbhmj8g.cloudfront.net/photos/656371/big_square/9c9d322e4691cf1e3907dbd2f5404a9861ef1f1e.jpg" width="200"> </a> 
+             <div class="item_content_featured"> 
+              <div class="heading"> 
+               <h3 class="summary"><a href="https://events.ucr.edu/event/fiesta_familiar_explorando_la_ciencia_juntos">Fiesta Familiar: Explorando la Ciencia Juntos</a></h3> 
+              </div> 
+              <h4 class="description">Este es un evento público, gratuito y en español organizado por la Universidad de California, sede Riverside. Niños, adolescentes, jóvenes y adultos están...</h4> 
+              <div class="actionbar"> 
+               <div class="dateright"> 
+                <abbr title="2018-05-19T10:00:00-04:00" class="dtstart"> <i class="fa fa-clock-o"></i> 5/19 10:00am </abbr> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="tabs_component "> 
+       <div class="box_title box_header"> 
+        <!-- navigation tabs --> 
+        <h4 data-section-tabs="container" data-section-tabs-selector="#tabs-6790-panels .tabs-component-panel"> <span data-section-tabs="title">Trending Events</span> 
+         <div class="tabs"> 
+          <a href="#tabs-6790-6792" class="dark_colorfive" data-title="Trending Events">Trending</a> 
+          <a href="#tabs-6790-6793" class="dark_colorfive" data-title="Upcoming Events">Upcoming</a> 
+         </div> </h4> 
+       </div> 
+       <div id="tabs-6790-panels"> 
+        <div id="tabs-6790-" class="tabs-component-panel"> 
+         <div class="event_group event_list_component "> 
+          <script type="application/ld+json">{"@context":"http://schema.org","@type":"Event","name":"Fiesta Familiar: Explorando la Ciencia Juntos","startDate":"2018-05-19T10:00:00-04:00","endDate":"2018-05-19T13:00:00-04:00","location":{"@type":"Place","name":"Student Recreation Center (SRC)","address":"","sameAs":"https://events.ucr.edu/student_recreation_center","url":"https://events.ucr.edu/student_recreation_center"},"url":"https://events.ucr.edu/event/fiesta_familiar_explorando_la_ciencia_juntos","image":"https://d3e1o4bcbhmj8g.cloudfront.net/photos/656371/medium/9c9d322e4691cf1e3907dbd2f5404a9861ef1f1e.jpg"}</script> 
+          <div class="item event_item vevent" id="event_instance_3549712"> 
+           <a href="https://events.ucr.edu/event/fiesta_familiar_explorando_la_ciencia_juntos" class="box_left"><img alt="Fiesta Familiar: Explorando la Ciencia Juntos" class="img_medium" height="80" src="https://d3e1o4bcbhmj8g.cloudfront.net/photos/656371/medium/9c9d322e4691cf1e3907dbd2f5404a9861ef1f1e.jpg" width="80"></a> 
+           <div class="item_content_medium"> 
+            <div class="heading"> 
+             <h3 class="summary"> <a href="https://events.ucr.edu/event/fiesta_familiar_explorando_la_ciencia_juntos">Fiesta Familiar: Explorando la Ciencia Juntos</a> </h3> 
+            </div> 
+            <h4 class="description">Este es un evento público, gratuito y en español organizado por la Universidad de California, sede Riverside. Niños, adolescentes, jóvenes y adultos están...</h4> 
+            <div class="actionbar grid_container"> 
+             <div class="left"> 
+              <div class="dateright"> 
+               <abbr title="2018-05-19T10:00:00-04:00" class="dtstart"> <i class="fa fa-clock-o"></i> 5/19 10am </abbr> 
+              </div> 
+              <div class="location"> 
+               <a href="https://events.ucr.edu/student_recreation_center" class="event_item_venue"><i class="fa fa-map-marker"></i> Student Recreation Center (SRC), MAC Gym</a> &nbsp; 
+              </div> 
+             </div> 
+             <div class="right">
+              <div class="action_button" id="actions_event_instance_3549712">
+               <a href="/event/1274935/watch?button=true&amp;dom_id=actions_event_instance_3549712" class="watchthis" data-action="event-watch" data-disable-with="..." data-ga-action="Watch This" data-ga-category="Event" data-ga-event="true" data-ga-label="Fiesta Familiar: Explorando la Ciencia Juntos" data-post-login-action="https://events.ucr.edu/event/1274935/watch?return=https%3A%2F%2Fevents.ucr.edu%2F" data-remote="true" rel="ibox;url=#login-lightbox">Watch This</a>
+               <a href="/event/1274935/confirm?button=true&amp;date=2018-05-19&amp;dom_id=actions_event_instance_3549712&amp;instance_id=3549712" class="imgoing" data-action="event-going" data-disable-with="..." data-ga-action="I'm Going" data-ga-category="Event" data-ga-event="true" data-ga-label="Fiesta Familiar: Explorando la Ciencia Juntos" data-post-login-action="https://events.ucr.edu/event/1274935/confirm?date=2018-05-19&amp;instance_id=3549712&amp;return=https%3A%2F%2Fevents.ucr.edu%2F" data-remote="true" rel="ibox;url=#login-lightbox">I'm Interested</a>
+              </div>
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <script type="application/ld+json">{"@context":"http://schema.org","@type":"Event","name":"\u201cSummer of 2017 Natural Disaster Symposium\u201d ","startDate":"2018-05-03T14:00:00-04:00","endDate":"2018-05-03T17:00:00-04:00","location":{"@type":"Place","name":"CHASS Interdisciplinary South","address":"","sameAs":"https://events.ucr.edu/chass_interdisciplinary_south","url":"https://events.ucr.edu/chass_interdisciplinary_south"},"url":"https://events.ucr.edu/event/summer_of_2017_natural_disaster_symposium","image":"https://d3e1o4bcbhmj8g.cloudfront.net/photos/658279/medium/770da652a0f7fc58d3c883333564ce32eb898e13.jpg"}</script> 
+          <div class="item event_item vevent" id="event_instance_3559266"> 
+           <a href="https://events.ucr.edu/event/summer_of_2017_natural_disaster_symposium" class="box_left"><img alt="“Summer of 2017 Natural Disaster Symposium” " class="img_medium" height="80" src="https://d3e1o4bcbhmj8g.cloudfront.net/photos/658279/medium/770da652a0f7fc58d3c883333564ce32eb898e13.jpg" width="80"></a> 
+           <div class="item_content_medium"> 
+            <div class="heading"> 
+             <h3 class="summary"> <a href="https://events.ucr.edu/event/summer_of_2017_natural_disaster_symposium">“Summer of 2017 Natural Disaster Symposium” </a> </h3> 
+            </div> 
+            <h4 class="description">Dr. Jenniffer M. Santos-Hernández College of Social Sciences University of Puerto Rico-Río Piedras An Unfolding Catastrophe and a Compromised Recovery in...</h4> 
+            <div class="actionbar grid_container"> 
+             <div class="left"> 
+              <div class="dateright"> 
+               <abbr title="2018-05-03T14:00:00-04:00" class="dtstart"> <i class="fa fa-clock-o"></i> 5/3 2pm </abbr> 
+              </div> 
+              <div class="location"> 
+               <a href="https://events.ucr.edu/chass_interdisciplinary_south" class="event_item_venue"><i class="fa fa-map-marker"></i> CHASS Interdisciplinary South, 1113</a> &nbsp; 
+              </div> 
+             </div> 
+             <div class="right">
+              <div class="action_button" id="actions_event_instance_3559266">
+               <a href="/event/1275236/watch?button=true&amp;dom_id=actions_event_instance_3559266" class="watchthis" data-action="event-watch" data-disable-with="..." data-ga-action="Watch This" data-ga-category="Event" data-ga-event="true" data-ga-label="“Summer of 2017 Natural Disaster Symposium” " data-post-login-action="https://events.ucr.edu/event/1275236/watch?return=https%3A%2F%2Fevents.ucr.edu%2F" data-remote="true" rel="ibox;url=#login-lightbox">Watch This</a>
+               <a href="/event/1275236/confirm?button=true&amp;date=2018-05-03&amp;dom_id=actions_event_instance_3559266&amp;instance_id=3559266" class="imgoing" data-action="event-going" data-disable-with="..." data-ga-action="I'm Going" data-ga-category="Event" data-ga-event="true" data-ga-label="“Summer of 2017 Natural Disaster Symposium” " data-post-login-action="https://events.ucr.edu/event/1275236/confirm?date=2018-05-03&amp;instance_id=3559266&amp;return=https%3A%2F%2Fevents.ucr.edu%2F" data-remote="true" rel="ibox;url=#login-lightbox">I'm Interested</a>
+              </div>
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <script type="application/ld+json">{"@context":"http://schema.org","@type":"Event","name":"Trina L. Ray - Cassini\u2019s Legacy: Saturn\u2019s Secrets Revealed","startDate":"2018-05-10T16:00:00-04:00","endDate":"2018-05-10T17:00:00-04:00","offers":{"@type":"Offer","url":"https://www.eventbrite.com/e/trina-l-ray-cassinis-legacy-saturns-secrets-revealed-tickets-44167919436"},"location":{"@type":"Place","name":"HUB (Highlander Union Building)","address":"","sameAs":"https://events.ucr.edu/HUB","url":"https://events.ucr.edu/HUB"},"url":"https://events.ucr.edu/event/trina_l_ray_-_cassinis_legacy_saturns_secrets_revealed","image":"https://d3e1o4bcbhmj8g.cloudfront.net/photos/644602/medium/49ea76cbc48dbeb4ae30aae7c84fd1259455a2e8.jpg"}</script> 
+          <div class="item event_item vevent" id="event_instance_3495320"> 
+           <a href="https://events.ucr.edu/event/trina_l_ray_-_cassinis_legacy_saturns_secrets_revealed" class="box_left"><img alt="Trina L. Ray - Cassini’s Legacy: Saturn’s Secrets Revealed" class="img_medium" height="80" src="https://d3e1o4bcbhmj8g.cloudfront.net/photos/644602/medium/49ea76cbc48dbeb4ae30aae7c84fd1259455a2e8.jpg" width="80"></a> 
+           <div class="item_content_medium"> 
+            <div class="heading"> 
+             <h3 class="summary"> <a href="https://events.ucr.edu/event/trina_l_ray_-_cassinis_legacy_saturns_secrets_revealed">Trina L. Ray - Cassini’s Legacy: Saturn’s...</a> </h3> 
+            </div> 
+            <h4 class="description">Trina L. Ray will highlight the most exciting discoveries of NASA’s 20-year mission to Saturn, which ended with the Grand Finale on September 15, 2017. Even...</h4> 
+            <div class="actionbar grid_container"> 
+             <div class="left"> 
+              <div class="dateright"> 
+               <abbr title="2018-05-10T16:00:00-04:00" class="dtstart"> <i class="fa fa-clock-o"></i> 5/10 4pm </abbr> 
+              </div> 
+              <div class="location"> 
+               <a href="https://events.ucr.edu/HUB" class="event_item_venue"><i class="fa fa-map-marker"></i> HUB (Highlander Union Building), 269</a> &nbsp; 
+              </div> 
+             </div> 
+             <div class="right">
+              <div class="action_button" id="actions_event_instance_3495320">
+               <a href="https://www.eventbrite.com/e/trina-l-ray-cassinis-legacy-saturns-secrets-revealed-tickets-44167919436" class="buytickets">Register</a>
+               <a href="/event/1246930/watch?button=true&amp;dom_id=actions_event_instance_3495320" class="watchthis" data-action="event-watch" data-disable-with="..." data-ga-action="Watch This" data-ga-category="Event" data-ga-event="true" data-ga-label="Trina L. Ray - Cassini’s Legacy: Saturn’s Secrets Revealed" data-post-login-action="https://events.ucr.edu/event/1246930/watch?return=https%3A%2F%2Fevents.ucr.edu%2F" data-remote="true" rel="ibox;url=#login-lightbox">Watch This</a>
+               <a href="/event/1246930/confirm?button=true&amp;date=2018-05-10&amp;dom_id=actions_event_instance_3495320&amp;instance_id=3495320" class="imgoing" data-action="event-going" data-disable-with="..." data-ga-action="I'm Going" data-ga-category="Event" data-ga-event="true" data-ga-label="Trina L. Ray - Cassini’s Legacy: Saturn’s Secrets Revealed" data-post-login-action="https://events.ucr.edu/event/1246930/confirm?date=2018-05-10&amp;instance_id=3495320&amp;return=https%3A%2F%2Fevents.ucr.edu%2F" data-remote="true" rel="ibox;url=#login-lightbox">I'm Interested</a>
+              </div>
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <script type="application/ld+json">{"@context":"http://schema.org","@type":"Event","name":"Implications of Genetic Modifications in Humans and Other Organisms","startDate":"2018-05-10T18:00:00-04:00","endDate":null,"location":{"@type":"Place","name":"University Theatre","address":"","geo":{"@type":"GeoCoordinates","latitude":"33.972462","longitude":"-117.327005"},"sameAs":"https://events.ucr.edu/university_theatre","url":"https://events.ucr.edu/university_theatre"},"url":"https://events.ucr.edu/event/lego_language_and_the_life_of_bacteria","image":"https://d3e1o4bcbhmj8g.cloudfront.net/photos/622649/medium/486ae55c055e8014a808e7af5d66361de226f283.jpg"}</script> 
+          <div class="item event_item vevent" id="event_instance_3476699"> 
+           <a href="https://events.ucr.edu/event/lego_language_and_the_life_of_bacteria" class="box_left"><img alt="Implications of Genetic Modifications in Humans and Other Organisms" class="img_medium" height="80" src="https://d3e1o4bcbhmj8g.cloudfront.net/photos/622649/medium/486ae55c055e8014a808e7af5d66361de226f283.jpg" width="80"></a> 
+           <div class="item_content_medium"> 
+            <div class="heading"> 
+             <h3 class="summary"> <a href="https://events.ucr.edu/event/lego_language_and_the_life_of_bacteria">Implications of Genetic Modifications in Humans...</a> </h3> 
+            </div> 
+            <h4 class="description">Speaker: Carl Cranor, Distinguished Professor of Philosophy, UC Riverside College of Humanitities and Social Sciences THIS EVENT IS FREE AND OPEN TO THE...</h4> 
+            <div class="actionbar grid_container"> 
+             <div class="left"> 
+              <div class="dateright"> 
+               <abbr title="2018-05-10T18:00:00-04:00" class="dtstart"> <i class="fa fa-clock-o"></i> 5/10 6pm </abbr> 
+              </div> 
+              <div class="location"> 
+               <a href="https://events.ucr.edu/university_theatre" class="event_item_venue"><i class="fa fa-map-marker"></i> University Theatre, Humanities 400</a> &nbsp; 
+              </div> 
+             </div> 
+             <div class="right">
+              <div class="action_button" id="actions_event_instance_3476699">
+               <a href="/event/1237977/watch?button=true&amp;dom_id=actions_event_instance_3476699" class="watchthis" data-action="event-watch" data-disable-with="..." data-ga-action="Watch This" data-ga-category="Event" data-ga-event="true" data-ga-label="Implications of Genetic Modifications in Humans and Other Organisms" data-post-login-action="https://events.ucr.edu/event/1237977/watch?return=https%3A%2F%2Fevents.ucr.edu%2F" data-remote="true" rel="ibox;url=#login-lightbox">Watch This</a>
+               <a href="/event/1237977/confirm?button=true&amp;date=2018-05-10&amp;dom_id=actions_event_instance_3476699&amp;instance_id=3476699" class="imgoing" data-action="event-going" data-disable-with="..." data-ga-action="I'm Going" data-ga-category="Event" data-ga-event="true" data-ga-label="Implications of Genetic Modifications in Humans and Other Organisms" data-post-login-action="https://events.ucr.edu/event/1237977/confirm?date=2018-05-10&amp;instance_id=3476699&amp;return=https%3A%2F%2Fevents.ucr.edu%2F" data-remote="true" rel="ibox;url=#login-lightbox">I'm Interested</a>
+              </div>
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <script type="application/ld+json">{"@context":"http://schema.org","@type":"Event","name":"9th Annual UC Walks","startDate":"2018-05-16T11:30:00-04:00","endDate":"2018-05-16T13:30:00-04:00","offers":{"@type":"Offer","url":"http://ucriverside.az1.qualtrics.com/jfe/form/SV_55aJQ0PPF1Ek7oV"},"location":{"@type":"Place","name":"UC Riverside Track","address":"852 W Linden St, Riverside, CA 92507","geo":{"@type":"GeoCoordinates","latitude":"33.979323","longitude":"-117.330143"},"sameAs":"https://events.ucr.edu/ucr_track","url":"https://events.ucr.edu/ucr_track"},"url":"https://events.ucr.edu/event/9th_annual_uc_walks","image":"https://d3e1o4bcbhmj8g.cloudfront.net/photos/654620/medium/8dfda971a324724f5785bf38a24043dd3a5c330d.jpg"}</script> 
+          <div class="item event_item vevent" id="event_instance_3540174"> 
+           <a href="https://events.ucr.edu/event/9th_annual_uc_walks" class="box_left"><img alt="9th Annual UC Walks" class="img_medium" height="80" src="https://d3e1o4bcbhmj8g.cloudfront.net/photos/654620/medium/8dfda971a324724f5785bf38a24043dd3a5c330d.jpg" width="80"></a> 
+           <div class="item_content_medium"> 
+            <div class="heading"> 
+             <h3 class="summary"> <a href="https://events.ucr.edu/event/9th_annual_uc_walks">9th Annual UC Walks</a> </h3> 
+            </div> 
+            <h4 class="description">Let's get moving at the 9th Annual UC Walks! Free T-shirt to participants Games | FunHealthy Refreshments Raffle prizes Chair Massage (first come, first...</h4> 
+            <div class="actionbar grid_container"> 
+             <div class="left"> 
+              <div class="dateright"> 
+               <abbr title="2018-05-16T11:30:00-04:00" class="dtstart"> <i class="fa fa-clock-o"></i> 5/16 11:30am </abbr> 
+              </div> 
+              <div class="location"> 
+               <a href="https://events.ucr.edu/ucr_track" class="event_item_venue"><i class="fa fa-map-marker"></i> UC Riverside Track</a> &nbsp; 
+              </div> 
+             </div> 
+             <div class="right">
+              <div class="action_button" id="actions_event_instance_3540174">
+               <a href="http://ucriverside.az1.qualtrics.com/jfe/form/SV_55aJQ0PPF1Ek7oV" class="buytickets">Register</a>
+               <a href="/event/1250492/watch?button=true&amp;dom_id=actions_event_instance_3540174" class="watchthis" data-action="event-watch" data-disable-with="..." data-ga-action="Watch This" data-ga-category="Event" data-ga-event="true" data-ga-label="9th Annual UC Walks" data-post-login-action="https://events.ucr.edu/event/1250492/watch?return=https%3A%2F%2Fevents.ucr.edu%2F" data-remote="true" rel="ibox;url=#login-lightbox">Watch This</a>
+               <a href="/event/1250492/confirm?button=true&amp;date=2018-05-16&amp;dom_id=actions_event_instance_3540174&amp;instance_id=3540174" class="imgoing" data-action="event-going" data-disable-with="..." data-ga-action="I'm Going" data-ga-category="Event" data-ga-event="true" data-ga-label="9th Annual UC Walks" data-post-login-action="https://events.ucr.edu/event/1250492/confirm?date=2018-05-16&amp;instance_id=3540174&amp;return=https%3A%2F%2Fevents.ucr.edu%2F" data-remote="true" rel="ibox;url=#login-lightbox">I'm Interested</a>
+              </div>
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <script type="application/ld+json">{"@context":"http://schema.org","@type":"Event","name":"The News Isn't Fake, But It's Flawed","startDate":"2018-05-18T16:00:00-04:00","endDate":null,"offers":{"@type":"Offer","url":"https://myadv.ucr.edu/forms/hayslecture"},"location":{"@type":"Place","name":"University Theatre","address":"","geo":{"@type":"GeoCoordinates","latitude":"33.972462","longitude":"-117.327005"},"sameAs":"https://events.ucr.edu/university_theatre","url":"https://events.ucr.edu/university_theatre"},"url":"https://events.ucr.edu/event/49th_hays_press-enterprise_lecture","image":"https://d3e1o4bcbhmj8g.cloudfront.net/photos/654897/medium/4b1fd6c076fced656108324230ea333a6b9d5a58.jpg"}</script> 
+          <div class="item event_item vevent" id="event_instance_3367614"> 
+           <a href="https://events.ucr.edu/event/49th_hays_press-enterprise_lecture" class="box_left"><img alt="The News Isn't Fake, But It's Flawed" class="img_medium" height="80" src="https://d3e1o4bcbhmj8g.cloudfront.net/photos/654897/medium/4b1fd6c076fced656108324230ea333a6b9d5a58.jpg" width="80"></a> 
+           <div class="item_content_medium"> 
+            <div class="heading"> 
+             <h3 class="summary"> <a href="https://events.ucr.edu/event/49th_hays_press-enterprise_lecture">The News Isn't Fake, But It's Flawed</a> </h3> 
+            </div> 
+            <h4 class="description">49th Hays Press-Enterprise Lecture Presented by: Frank Bruni, New York Times Op-Ed Columnist and Best-Selling Author Bio: Mr. Bruni's career at The Times...</h4> 
+            <div class="actionbar grid_container"> 
+             <div class="left"> 
+              <div class="dateright"> 
+               <abbr title="2018-05-18T16:00:00-04:00" class="dtstart"> <i class="fa fa-clock-o"></i> 5/18 4pm </abbr> 
+              </div> 
+              <div class="location"> 
+               <a href="https://events.ucr.edu/university_theatre" class="event_item_venue"><i class="fa fa-map-marker"></i> University Theatre</a> &nbsp; 
+              </div> 
+             </div> 
+             <div class="right">
+              <div class="action_button" id="actions_event_instance_3367614">
+               <a href="https://myadv.ucr.edu/forms/hayslecture" class="buytickets">Register</a>
+               <a href="/event/1194376/watch?button=true&amp;dom_id=actions_event_instance_3367614" class="watchthis" data-action="event-watch" data-disable-with="..." data-ga-action="Watch This" data-ga-category="Event" data-ga-event="true" data-ga-label="The News Isn't Fake, But It's Flawed" data-post-login-action="https://events.ucr.edu/event/1194376/watch?return=https%3A%2F%2Fevents.ucr.edu%2F" data-remote="true" rel="ibox;url=#login-lightbox">Watch This</a>
+               <a href="/event/1194376/confirm?button=true&amp;date=2018-05-18&amp;dom_id=actions_event_instance_3367614&amp;instance_id=3367614" class="imgoing" data-action="event-going" data-disable-with="..." data-ga-action="I'm Going" data-ga-category="Event" data-ga-event="true" data-ga-label="The News Isn't Fake, But It's Flawed" data-post-login-action="https://events.ucr.edu/event/1194376/confirm?date=2018-05-18&amp;instance_id=3367614&amp;return=https%3A%2F%2Fevents.ucr.edu%2F" data-remote="true" rel="ibox;url=#login-lightbox">I'm Interested</a>
+              </div>
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <script type="application/ld+json">{"@context":"http://schema.org","@type":"Event","name":"Indigenous Dance Exchange","startDate":"2018-05-03T18:30:00-04:00","endDate":"2018-05-03T21:15:00-04:00","location":{"@type":"Place","name":"ARTSblock","address":"3824 Main St, Riverside, CA 92501","geo":{"@type":"GeoCoordinates","latitude":"33.981438","longitude":"-117.374333"},"sameAs":"https://events.ucr.edu/artsblock","url":"https://events.ucr.edu/artsblock"},"url":"https://events.ucr.edu/event/indigenous_dance_exchange","image":"https://d3e1o4bcbhmj8g.cloudfront.net/photos/660665/medium/a3bda0d4d1c543630909ba31e40277ac6ca3a118.jpg"}</script> 
+          <div class="item event_item vevent" id="event_instance_3599087"> 
+           <a href="https://events.ucr.edu/event/indigenous_dance_exchange" class="box_left"><img alt="Indigenous Dance Exchange" class="img_medium" height="80" src="https://d3e1o4bcbhmj8g.cloudfront.net/photos/660665/medium/a3bda0d4d1c543630909ba31e40277ac6ca3a118.jpg" width="80"></a> 
+           <div class="item_content_medium"> 
+            <div class="heading"> 
+             <h3 class="summary"> <a href="https://events.ucr.edu/event/indigenous_dance_exchange">Indigenous Dance Exchange</a> </h3> 
+            </div> 
+            <h4 class="description">Indigenous Choreographers at Riverside Gathering Co-directed by Jacqueline Shea Murphy and María Regina Firmino-Castillo Magnolia Yang Sao Yia, Assistant...</h4> 
+            <div class="actionbar grid_container"> 
+             <div class="left"> 
+              <div class="dateright"> 
+               <abbr title="2018-05-03T18:30:00-04:00" class="dtstart"> <i class="fa fa-clock-o"></i> 5/3 6:30pm </abbr> 
+              </div> 
+              <div class="location"> 
+               <a href="https://events.ucr.edu/artsblock" class="event_item_venue"><i class="fa fa-map-marker"></i> ARTSblock, Culver Center of the Arts, Coil Brothers Atrium</a> &nbsp; 
+              </div> 
+             </div> 
+             <div class="right">
+              <div class="action_button" id="actions_event_instance_3599087">
+               <a href="/event/1282458/watch?button=true&amp;dom_id=actions_event_instance_3599087" class="watchthis" data-action="event-watch" data-disable-with="..." data-ga-action="Watch This" data-ga-category="Event" data-ga-event="true" data-ga-label="Indigenous Dance Exchange" data-post-login-action="https://events.ucr.edu/event/1282458/watch?return=https%3A%2F%2Fevents.ucr.edu%2F" data-remote="true" rel="ibox;url=#login-lightbox">Watch This</a>
+               <a href="/event/1282458/confirm?button=true&amp;date=2018-05-03&amp;dom_id=actions_event_instance_3599087&amp;instance_id=3599087" class="imgoing" data-action="event-going" data-disable-with="..." data-ga-action="I'm Going" data-ga-category="Event" data-ga-event="true" data-ga-label="Indigenous Dance Exchange" data-post-login-action="https://events.ucr.edu/event/1282458/confirm?date=2018-05-03&amp;instance_id=3599087&amp;return=https%3A%2F%2Fevents.ucr.edu%2F" data-remote="true" rel="ibox;url=#login-lightbox">I'm Interested</a>
+              </div>
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <script type="application/ld+json">{"@context":"http://schema.org","@type":"Event","name":"Zumba De Mayo!","startDate":"2018-05-03T18:30:00-04:00","endDate":null,"offers":{"@type":"Offer","url":"http://recreation.ucr.edu/"},"location":{"@type":"Place","name":"Student Recreation Center (SRC)","address":"","sameAs":"https://events.ucr.edu/student_recreation_center","url":"https://events.ucr.edu/student_recreation_center"},"url":"https://events.ucr.edu/event/zumba_de_mayo","image":"https://d3e1o4bcbhmj8g.cloudfront.net/photos/586977/medium/49d7126b2e16869306b50c1a6f84b09f7f05382a.jpg"}</script> 
+          <div class="item event_item vevent" id="event_instance_3474233"> 
+           <a href="https://events.ucr.edu/event/zumba_de_mayo" class="box_left"><img alt="Zumba De Mayo!" class="img_medium" height="80" src="https://d3e1o4bcbhmj8g.cloudfront.net/photos/586977/medium/49d7126b2e16869306b50c1a6f84b09f7f05382a.jpg" width="80"></a> 
+           <div class="item_content_medium"> 
+            <div class="heading"> 
+             <h3 class="summary"> <a href="https://events.ucr.edu/event/zumba_de_mayo">Zumba De Mayo!</a> </h3> 
+            </div> 
+            <h4 class="description"></h4> 
+            <div class="actionbar grid_container"> 
+             <div class="left"> 
+              <div class="dateright"> 
+               <abbr title="2018-05-03T18:30:00-04:00" class="dtstart"> <i class="fa fa-clock-o"></i> 5/3 6:30pm </abbr> 
+              </div> 
+              <div class="location"> 
+               <a href="https://events.ucr.edu/student_recreation_center" class="event_item_venue"><i class="fa fa-map-marker"></i> Student Recreation Center (SRC), MPR A</a> &nbsp; 
+              </div> 
+             </div> 
+             <div class="right">
+              <div class="action_button" id="actions_event_instance_3474233">
+               <a href="http://recreation.ucr.edu/" class="buytickets">Register</a>
+               <a href="/event/1236934/watch?button=true&amp;dom_id=actions_event_instance_3474233" class="watchthis" data-action="event-watch" data-disable-with="..." data-ga-action="Watch This" data-ga-category="Event" data-ga-event="true" data-ga-label="Zumba De Mayo!" data-post-login-action="https://events.ucr.edu/event/1236934/watch?return=https%3A%2F%2Fevents.ucr.edu%2F" data-remote="true" rel="ibox;url=#login-lightbox">Watch This</a>
+               <a href="/event/1236934/confirm?button=true&amp;date=2018-05-03&amp;dom_id=actions_event_instance_3474233&amp;instance_id=3474233" class="imgoing" data-action="event-going" data-disable-with="..." data-ga-action="I'm Going" data-ga-category="Event" data-ga-event="true" data-ga-label="Zumba De Mayo!" data-post-login-action="https://events.ucr.edu/event/1236934/confirm?date=2018-05-03&amp;instance_id=3474233&amp;return=https%3A%2F%2Fevents.ucr.edu%2F" data-remote="true" rel="ibox;url=#login-lightbox">I'm Interested</a>
+              </div>
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <script type="application/ld+json">{"@context":"http://schema.org","@type":"Event","name":"Film: Rogue One: A Star Wars Story","startDate":"2018-05-04T18:00:00-04:00","endDate":null,"offers":{"@type":"Offer","url":"https://tickets.vendini.com/ticket-software.html?t=tix&e=dc2263aa20e2e2e91e343b24970cdb2a&vqitq=00acddb1-f5f1-4b01-add6-6c12e150ece7&vqitp=e4d9d629-999d-4536-a9b4-9595b892ca02&vqitts=1524170814&vqitc=vendini&vqite=itl&vqitrt=Safetynet&vqith=ec99bf34c8cb6c30167f53a0fa3a8aeb"},"location":{"@type":"Place","name":"ARTSblock","address":"3824 Main St, Riverside, CA 92501","geo":{"@type":"GeoCoordinates","latitude":"33.981438","longitude":"-117.374333"},"sameAs":"https://events.ucr.edu/artsblock","url":"https://events.ucr.edu/artsblock"},"url":"https://events.ucr.edu/event/film_rogue_one_a_star_wars_story","image":"https://d3e1o4bcbhmj8g.cloudfront.net/photos/654545/medium/bb0eefafa5f0f71f5f7bcd594551b26d0594e68a.jpg"}</script> 
+          <div class="item event_item vevent" id="event_instance_3539840"> 
+           <a href="https://events.ucr.edu/event/film_rogue_one_a_star_wars_story" class="box_left"><img alt="Film: Rogue One: A Star Wars Story" class="img_medium" height="80" src="https://d3e1o4bcbhmj8g.cloudfront.net/photos/654545/medium/bb0eefafa5f0f71f5f7bcd594551b26d0594e68a.jpg" width="80"></a> 
+           <div class="item_content_medium"> 
+            <div class="heading"> 
+             <h3 class="summary"> <a href="https://events.ucr.edu/event/film_rogue_one_a_star_wars_story">Film: Rogue One: A Star Wars Story</a> </h3> 
+            </div> 
+            <h4 class="description">Screening and Discussion! In a time of conflict, a group of unlikely heroes band together on a mission to steal the plans to the Death Star, the Empire’s...</h4> 
+            <div class="actionbar grid_container"> 
+             <div class="left"> 
+              <div class="dateright"> 
+               <abbr title="2018-05-04T18:00:00-04:00" class="dtstart"> <i class="fa fa-clock-o"></i> 5/4 6pm </abbr> 
+              </div> 
+              <div class="location"> 
+               <a href="https://events.ucr.edu/artsblock" class="event_item_venue"><i class="fa fa-map-marker"></i> ARTSblock</a> &nbsp; 
+              </div> 
+             </div> 
+             <div class="right">
+              <div class="action_button" id="actions_event_instance_3539840">
+               <a href="https://tickets.vendini.com/ticket-software.html?t=tix&amp;e=dc2263aa20e2e2e91e343b24970cdb2a&amp;vqitq=00acddb1-f5f1-4b01-add6-6c12e150ece7&amp;vqitp=e4d9d629-999d-4536-a9b4-9595b892ca02&amp;vqitts=1524170814&amp;vqitc=vendini&amp;vqite=itl&amp;vqitrt=Safetynet&amp;vqith=ec99bf34c8cb6c30167f53a0fa3a8aeb" class="buytickets">Register</a>
+               <a href="/event/1270571/watch?button=true&amp;dom_id=actions_event_instance_3539840" class="watchthis" data-action="event-watch" data-disable-with="..." data-ga-action="Watch This" data-ga-category="Event" data-ga-event="true" data-ga-label="Film: Rogue One: A Star Wars Story" data-post-login-action="https://events.ucr.edu/event/1270571/watch?return=https%3A%2F%2Fevents.ucr.edu%2F" data-remote="true" rel="ibox;url=#login-lightbox">Watch This</a>
+               <a href="/event/1270571/confirm?button=true&amp;date=2018-05-04&amp;dom_id=actions_event_instance_3539840&amp;instance_id=3539840" class="imgoing" data-action="event-going" data-disable-with="..." data-ga-action="I'm Going" data-ga-category="Event" data-ga-event="true" data-ga-label="Film: Rogue One: A Star Wars Story" data-post-login-action="https://events.ucr.edu/event/1270571/confirm?date=2018-05-04&amp;instance_id=3539840&amp;return=https%3A%2F%2Fevents.ucr.edu%2F" data-remote="true" rel="ibox;url=#login-lightbox">I'm Interested</a>
+              </div>
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <script type="application/ld+json">{"@context":"http://schema.org","@type":"Event","name":"UCR Third Annual Courts for Life Doubles Charity Tournament","startDate":"2018-05-05T08:00:00-04:00","endDate":"2018-05-05T17:00:00-04:00","offers":{"@type":"Offer","url":"VenMo @courtsforlife or on tournament day at SRC"},"location":{"@type":"Place","name":"Student Recreation Center (SRC)","address":"","sameAs":"https://events.ucr.edu/student_recreation_center","url":"https://events.ucr.edu/student_recreation_center"},"url":"https://events.ucr.edu/event/ucr_third_annual_courts_for_life_doubles_charity_tournament","image":"https://d3e1o4bcbhmj8g.cloudfront.net/photos/647514/medium/aac042c3721eb26dbe6728043ecf02236d327ca8.jpg"}</script> 
+          <div class="item event_item vevent" id="event_instance_3505078"> 
+           <a href="https://events.ucr.edu/event/ucr_third_annual_courts_for_life_doubles_charity_tournament" class="box_left"><img alt="UCR Third Annual Courts for Life Doubles Charity Tournament" class="img_medium" height="80" src="https://d3e1o4bcbhmj8g.cloudfront.net/photos/647514/medium/aac042c3721eb26dbe6728043ecf02236d327ca8.jpg" width="80"></a> 
+           <div class="item_content_medium"> 
+            <div class="heading"> 
+             <h3 class="summary"> <a href="https://events.ucr.edu/event/ucr_third_annual_courts_for_life_doubles_charity_tournament">UCR Third Annual Courts for Life Doubles...</a> </h3> 
+            </div> 
+            <h4 class="description">Attention All Tennis Players! Courts for Life and Tennis On Campus at UCR are partnering up to host our 3rd Annual Charity Doubles Tournament to promote...</h4> 
+            <div class="actionbar grid_container"> 
+             <div class="left"> 
+              <div class="dateright"> 
+               <abbr title="2018-05-05T08:00:00-04:00" class="dtstart"> <i class="fa fa-clock-o"></i> 5/5 8am </abbr> 
+              </div> 
+              <div class="location"> 
+               <a href="https://events.ucr.edu/student_recreation_center" class="event_item_venue"><i class="fa fa-map-marker"></i> Student Recreation Center (SRC), Tennis Courts</a> &nbsp; 
+              </div> 
+             </div> 
+             <div class="right">
+              <div class="action_button" id="actions_event_instance_3505078">
+               <a href="mailto:VenMo @courtsforlife or on tournament day at SRC" class="buytickets">Buy Tickets</a>
+               <a href="/event/1251261/watch?button=true&amp;dom_id=actions_event_instance_3505078" class="watchthis" data-action="event-watch" data-disable-with="..." data-ga-action="Watch This" data-ga-category="Event" data-ga-event="true" data-ga-label="UCR Third Annual Courts for Life Doubles Charity Tournament" data-post-login-action="https://events.ucr.edu/event/1251261/watch?return=https%3A%2F%2Fevents.ucr.edu%2F" data-remote="true" rel="ibox;url=#login-lightbox">Watch This</a>
+               <a href="/event/1251261/confirm?button=true&amp;date=2018-05-05&amp;dom_id=actions_event_instance_3505078&amp;instance_id=3505078" class="imgoing" data-action="event-going" data-disable-with="..." data-ga-action="I'm Going" data-ga-category="Event" data-ga-event="true" data-ga-label="UCR Third Annual Courts for Life Doubles Charity Tournament" data-post-login-action="https://events.ucr.edu/event/1251261/confirm?date=2018-05-05&amp;instance_id=3505078&amp;return=https%3A%2F%2Fevents.ucr.edu%2F" data-remote="true" rel="ibox;url=#login-lightbox">I'm Interested</a>
+              </div>
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div id="tabs-6790-6792" class="tabs-component-panel" style="display: none;"> 
+         <div class="event_group event_list_component "> 
+          <script type="application/ld+json">{"@context":"http://schema.org","@type":"Event","name":"Fiesta Familiar: Explorando la Ciencia Juntos","startDate":"2018-05-19T10:00:00-04:00","endDate":"2018-05-19T13:00:00-04:00","location":{"@type":"Place","name":"Student Recreation Center (SRC)","address":"","sameAs":"https://events.ucr.edu/student_recreation_center","url":"https://events.ucr.edu/student_recreation_center"},"url":"https://events.ucr.edu/event/fiesta_familiar_explorando_la_ciencia_juntos","image":"https://d3e1o4bcbhmj8g.cloudfront.net/photos/656371/medium/9c9d322e4691cf1e3907dbd2f5404a9861ef1f1e.jpg"}</script> 
+          <div class="item event_item vevent" id="event_instance_3549712"> 
+           <a href="https://events.ucr.edu/event/fiesta_familiar_explorando_la_ciencia_juntos" class="box_left"><img alt="Fiesta Familiar: Explorando la Ciencia Juntos" class="img_medium" height="80" src="https://d3e1o4bcbhmj8g.cloudfront.net/photos/656371/medium/9c9d322e4691cf1e3907dbd2f5404a9861ef1f1e.jpg" width="80"></a> 
+           <div class="item_content_medium"> 
+            <div class="heading"> 
+             <h3 class="summary"> <a href="https://events.ucr.edu/event/fiesta_familiar_explorando_la_ciencia_juntos">Fiesta Familiar: Explorando la Ciencia Juntos</a> </h3> 
+            </div> 
+            <h4 class="description">Este es un evento público, gratuito y en español organizado por la Universidad de California, sede Riverside. Niños, adolescentes, jóvenes y adultos están...</h4> 
+            <div class="actionbar grid_container"> 
+             <div class="left"> 
+              <div class="dateright"> 
+               <abbr title="2018-05-19T10:00:00-04:00" class="dtstart"> <i class="fa fa-clock-o"></i> 5/19 10am </abbr> 
+              </div> 
+              <div class="location"> 
+               <a href="https://events.ucr.edu/student_recreation_center" class="event_item_venue"><i class="fa fa-map-marker"></i> Student Recreation Center (SRC), MAC Gym</a> &nbsp; 
+              </div> 
+             </div> 
+             <div class="right">
+              <div class="action_button" id="actions_event_instance_3549712">
+               <a href="/event/1274935/watch?button=true&amp;dom_id=actions_event_instance_3549712" class="watchthis" data-action="event-watch" data-disable-with="..." data-ga-action="Watch This" data-ga-category="Event" data-ga-event="true" data-ga-label="Fiesta Familiar: Explorando la Ciencia Juntos" data-post-login-action="https://events.ucr.edu/event/1274935/watch?return=https%3A%2F%2Fevents.ucr.edu%2F" data-remote="true" rel="ibox;url=#login-lightbox">Watch This</a>
+               <a href="/event/1274935/confirm?button=true&amp;date=2018-05-19&amp;dom_id=actions_event_instance_3549712&amp;instance_id=3549712" class="imgoing" data-action="event-going" data-disable-with="..." data-ga-action="I'm Going" data-ga-category="Event" data-ga-event="true" data-ga-label="Fiesta Familiar: Explorando la Ciencia Juntos" data-post-login-action="https://events.ucr.edu/event/1274935/confirm?date=2018-05-19&amp;instance_id=3549712&amp;return=https%3A%2F%2Fevents.ucr.edu%2F" data-remote="true" rel="ibox;url=#login-lightbox">I'm Interested</a>
+              </div>
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <script type="application/ld+json">{"@context":"http://schema.org","@type":"Event","name":"\u201cSummer of 2017 Natural Disaster Symposium\u201d ","startDate":"2018-05-03T14:00:00-04:00","endDate":"2018-05-03T17:00:00-04:00","location":{"@type":"Place","name":"CHASS Interdisciplinary South","address":"","sameAs":"https://events.ucr.edu/chass_interdisciplinary_south","url":"https://events.ucr.edu/chass_interdisciplinary_south"},"url":"https://events.ucr.edu/event/summer_of_2017_natural_disaster_symposium","image":"https://d3e1o4bcbhmj8g.cloudfront.net/photos/658279/medium/770da652a0f7fc58d3c883333564ce32eb898e13.jpg"}</script> 
+          <div class="item event_item vevent" id="event_instance_3559266"> 
+           <a href="https://events.ucr.edu/event/summer_of_2017_natural_disaster_symposium" class="box_left"><img alt="“Summer of 2017 Natural Disaster Symposium” " class="img_medium" height="80" src="https://d3e1o4bcbhmj8g.cloudfront.net/photos/658279/medium/770da652a0f7fc58d3c883333564ce32eb898e13.jpg" width="80"></a> 
+           <div class="item_content_medium"> 
+            <div class="heading"> 
+             <h3 class="summary"> <a href="https://events.ucr.edu/event/summer_of_2017_natural_disaster_symposium">“Summer of 2017 Natural Disaster Symposium” </a> </h3> 
+            </div> 
+            <h4 class="description">Dr. Jenniffer M. Santos-Hernández College of Social Sciences University of Puerto Rico-Río Piedras An Unfolding Catastrophe and a Compromised Recovery in...</h4> 
+            <div class="actionbar grid_container"> 
+             <div class="left"> 
+              <div class="dateright"> 
+               <abbr title="2018-05-03T14:00:00-04:00" class="dtstart"> <i class="fa fa-clock-o"></i> 5/3 2pm </abbr> 
+              </div> 
+              <div class="location"> 
+               <a href="https://events.ucr.edu/chass_interdisciplinary_south" class="event_item_venue"><i class="fa fa-map-marker"></i> CHASS Interdisciplinary South, 1113</a> &nbsp; 
+              </div> 
+             </div> 
+             <div class="right">
+              <div class="action_button" id="actions_event_instance_3559266">
+               <a href="/event/1275236/watch?button=true&amp;dom_id=actions_event_instance_3559266" class="watchthis" data-action="event-watch" data-disable-with="..." data-ga-action="Watch This" data-ga-category="Event" data-ga-event="true" data-ga-label="“Summer of 2017 Natural Disaster Symposium” " data-post-login-action="https://events.ucr.edu/event/1275236/watch?return=https%3A%2F%2Fevents.ucr.edu%2F" data-remote="true" rel="ibox;url=#login-lightbox">Watch This</a>
+               <a href="/event/1275236/confirm?button=true&amp;date=2018-05-03&amp;dom_id=actions_event_instance_3559266&amp;instance_id=3559266" class="imgoing" data-action="event-going" data-disable-with="..." data-ga-action="I'm Going" data-ga-category="Event" data-ga-event="true" data-ga-label="“Summer of 2017 Natural Disaster Symposium” " data-post-login-action="https://events.ucr.edu/event/1275236/confirm?date=2018-05-03&amp;instance_id=3559266&amp;return=https%3A%2F%2Fevents.ucr.edu%2F" data-remote="true" rel="ibox;url=#login-lightbox">I'm Interested</a>
+              </div>
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <script type="application/ld+json">{"@context":"http://schema.org","@type":"Event","name":"Trina L. Ray - Cassini\u2019s Legacy: Saturn\u2019s Secrets Revealed","startDate":"2018-05-10T16:00:00-04:00","endDate":"2018-05-10T17:00:00-04:00","offers":{"@type":"Offer","url":"https://www.eventbrite.com/e/trina-l-ray-cassinis-legacy-saturns-secrets-revealed-tickets-44167919436"},"location":{"@type":"Place","name":"HUB (Highlander Union Building)","address":"","sameAs":"https://events.ucr.edu/HUB","url":"https://events.ucr.edu/HUB"},"url":"https://events.ucr.edu/event/trina_l_ray_-_cassinis_legacy_saturns_secrets_revealed","image":"https://d3e1o4bcbhmj8g.cloudfront.net/photos/644602/medium/49ea76cbc48dbeb4ae30aae7c84fd1259455a2e8.jpg"}</script> 
+          <div class="item event_item vevent" id="event_instance_3495320"> 
+           <a href="https://events.ucr.edu/event/trina_l_ray_-_cassinis_legacy_saturns_secrets_revealed" class="box_left"><img alt="Trina L. Ray - Cassini’s Legacy: Saturn’s Secrets Revealed" class="img_medium" height="80" src="https://d3e1o4bcbhmj8g.cloudfront.net/photos/644602/medium/49ea76cbc48dbeb4ae30aae7c84fd1259455a2e8.jpg" width="80"></a> 
+           <div class="item_content_medium"> 
+            <div class="heading"> 
+             <h3 class="summary"> <a href="https://events.ucr.edu/event/trina_l_ray_-_cassinis_legacy_saturns_secrets_revealed">Trina L. Ray - Cassini’s Legacy: Saturn’s...</a> </h3> 
+            </div> 
+            <h4 class="description">Trina L. Ray will highlight the most exciting discoveries of NASA’s 20-year mission to Saturn, which ended with the Grand Finale on September 15, 2017. Even...</h4> 
+            <div class="actionbar grid_container"> 
+             <div class="left"> 
+              <div class="dateright"> 
+               <abbr title="2018-05-10T16:00:00-04:00" class="dtstart"> <i class="fa fa-clock-o"></i> 5/10 4pm </abbr> 
+              </div> 
+              <div class="location"> 
+               <a href="https://events.ucr.edu/HUB" class="event_item_venue"><i class="fa fa-map-marker"></i> HUB (Highlander Union Building), 269</a> &nbsp; 
+              </div> 
+             </div> 
+             <div class="right">
+              <div class="action_button" id="actions_event_instance_3495320">
+               <a href="https://www.eventbrite.com/e/trina-l-ray-cassinis-legacy-saturns-secrets-revealed-tickets-44167919436" class="buytickets">Register</a>
+               <a href="/event/1246930/watch?button=true&amp;dom_id=actions_event_instance_3495320" class="watchthis" data-action="event-watch" data-disable-with="..." data-ga-action="Watch This" data-ga-category="Event" data-ga-event="true" data-ga-label="Trina L. Ray - Cassini’s Legacy: Saturn’s Secrets Revealed" data-post-login-action="https://events.ucr.edu/event/1246930/watch?return=https%3A%2F%2Fevents.ucr.edu%2F" data-remote="true" rel="ibox;url=#login-lightbox">Watch This</a>
+               <a href="/event/1246930/confirm?button=true&amp;date=2018-05-10&amp;dom_id=actions_event_instance_3495320&amp;instance_id=3495320" class="imgoing" data-action="event-going" data-disable-with="..." data-ga-action="I'm Going" data-ga-category="Event" data-ga-event="true" data-ga-label="Trina L. Ray - Cassini’s Legacy: Saturn’s Secrets Revealed" data-post-login-action="https://events.ucr.edu/event/1246930/confirm?date=2018-05-10&amp;instance_id=3495320&amp;return=https%3A%2F%2Fevents.ucr.edu%2F" data-remote="true" rel="ibox;url=#login-lightbox">I'm Interested</a>
+              </div>
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <script type="application/ld+json">{"@context":"http://schema.org","@type":"Event","name":"Implications of Genetic Modifications in Humans and Other Organisms","startDate":"2018-05-10T18:00:00-04:00","endDate":null,"location":{"@type":"Place","name":"University Theatre","address":"","geo":{"@type":"GeoCoordinates","latitude":"33.972462","longitude":"-117.327005"},"sameAs":"https://events.ucr.edu/university_theatre","url":"https://events.ucr.edu/university_theatre"},"url":"https://events.ucr.edu/event/lego_language_and_the_life_of_bacteria","image":"https://d3e1o4bcbhmj8g.cloudfront.net/photos/622649/medium/486ae55c055e8014a808e7af5d66361de226f283.jpg"}</script> 
+          <div class="item event_item vevent" id="event_instance_3476699"> 
+           <a href="https://events.ucr.edu/event/lego_language_and_the_life_of_bacteria" class="box_left"><img alt="Implications of Genetic Modifications in Humans and Other Organisms" class="img_medium" height="80" src="https://d3e1o4bcbhmj8g.cloudfront.net/photos/622649/medium/486ae55c055e8014a808e7af5d66361de226f283.jpg" width="80"></a> 
+           <div class="item_content_medium"> 
+            <div class="heading"> 
+             <h3 class="summary"> <a href="https://events.ucr.edu/event/lego_language_and_the_life_of_bacteria">Implications of Genetic Modifications in Humans...</a> </h3> 
+            </div> 
+            <h4 class="description">Speaker: Carl Cranor, Distinguished Professor of Philosophy, UC Riverside College of Humanitities and Social Sciences THIS EVENT IS FREE AND OPEN TO THE...</h4> 
+            <div class="actionbar grid_container"> 
+             <div class="left"> 
+              <div class="dateright"> 
+               <abbr title="2018-05-10T18:00:00-04:00" class="dtstart"> <i class="fa fa-clock-o"></i> 5/10 6pm </abbr> 
+              </div> 
+              <div class="location"> 
+               <a href="https://events.ucr.edu/university_theatre" class="event_item_venue"><i class="fa fa-map-marker"></i> University Theatre, Humanities 400</a> &nbsp; 
+              </div> 
+             </div> 
+             <div class="right">
+              <div class="action_button" id="actions_event_instance_3476699">
+               <a href="/event/1237977/watch?button=true&amp;dom_id=actions_event_instance_3476699" class="watchthis" data-action="event-watch" data-disable-with="..." data-ga-action="Watch This" data-ga-category="Event" data-ga-event="true" data-ga-label="Implications of Genetic Modifications in Humans and Other Organisms" data-post-login-action="https://events.ucr.edu/event/1237977/watch?return=https%3A%2F%2Fevents.ucr.edu%2F" data-remote="true" rel="ibox;url=#login-lightbox">Watch This</a>
+               <a href="/event/1237977/confirm?button=true&amp;date=2018-05-10&amp;dom_id=actions_event_instance_3476699&amp;instance_id=3476699" class="imgoing" data-action="event-going" data-disable-with="..." data-ga-action="I'm Going" data-ga-category="Event" data-ga-event="true" data-ga-label="Implications of Genetic Modifications in Humans and Other Organisms" data-post-login-action="https://events.ucr.edu/event/1237977/confirm?date=2018-05-10&amp;instance_id=3476699&amp;return=https%3A%2F%2Fevents.ucr.edu%2F" data-remote="true" rel="ibox;url=#login-lightbox">I'm Interested</a>
+              </div>
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <script type="application/ld+json">{"@context":"http://schema.org","@type":"Event","name":"9th Annual UC Walks","startDate":"2018-05-16T11:30:00-04:00","endDate":"2018-05-16T13:30:00-04:00","offers":{"@type":"Offer","url":"http://ucriverside.az1.qualtrics.com/jfe/form/SV_55aJQ0PPF1Ek7oV"},"location":{"@type":"Place","name":"UC Riverside Track","address":"852 W Linden St, Riverside, CA 92507","geo":{"@type":"GeoCoordinates","latitude":"33.979323","longitude":"-117.330143"},"sameAs":"https://events.ucr.edu/ucr_track","url":"https://events.ucr.edu/ucr_track"},"url":"https://events.ucr.edu/event/9th_annual_uc_walks","image":"https://d3e1o4bcbhmj8g.cloudfront.net/photos/654620/medium/8dfda971a324724f5785bf38a24043dd3a5c330d.jpg"}</script> 
+          <div class="item event_item vevent" id="event_instance_3540174"> 
+           <a href="https://events.ucr.edu/event/9th_annual_uc_walks" class="box_left"><img alt="9th Annual UC Walks" class="img_medium" height="80" src="https://d3e1o4bcbhmj8g.cloudfront.net/photos/654620/medium/8dfda971a324724f5785bf38a24043dd3a5c330d.jpg" width="80"></a> 
+           <div class="item_content_medium"> 
+            <div class="heading"> 
+             <h3 class="summary"> <a href="https://events.ucr.edu/event/9th_annual_uc_walks">9th Annual UC Walks</a> </h3> 
+            </div> 
+            <h4 class="description">Let's get moving at the 9th Annual UC Walks! Free T-shirt to participants Games | FunHealthy Refreshments Raffle prizes Chair Massage (first come, first...</h4> 
+            <div class="actionbar grid_container"> 
+             <div class="left"> 
+              <div class="dateright"> 
+               <abbr title="2018-05-16T11:30:00-04:00" class="dtstart"> <i class="fa fa-clock-o"></i> 5/16 11:30am </abbr> 
+              </div> 
+              <div class="location"> 
+               <a href="https://events.ucr.edu/ucr_track" class="event_item_venue"><i class="fa fa-map-marker"></i> UC Riverside Track</a> &nbsp; 
+              </div> 
+             </div> 
+             <div class="right">
+              <div class="action_button" id="actions_event_instance_3540174">
+               <a href="http://ucriverside.az1.qualtrics.com/jfe/form/SV_55aJQ0PPF1Ek7oV" class="buytickets">Register</a>
+               <a href="/event/1250492/watch?button=true&amp;dom_id=actions_event_instance_3540174" class="watchthis" data-action="event-watch" data-disable-with="..." data-ga-action="Watch This" data-ga-category="Event" data-ga-event="true" data-ga-label="9th Annual UC Walks" data-post-login-action="https://events.ucr.edu/event/1250492/watch?return=https%3A%2F%2Fevents.ucr.edu%2F" data-remote="true" rel="ibox;url=#login-lightbox">Watch This</a>
+               <a href="/event/1250492/confirm?button=true&amp;date=2018-05-16&amp;dom_id=actions_event_instance_3540174&amp;instance_id=3540174" class="imgoing" data-action="event-going" data-disable-with="..." data-ga-action="I'm Going" data-ga-category="Event" data-ga-event="true" data-ga-label="9th Annual UC Walks" data-post-login-action="https://events.ucr.edu/event/1250492/confirm?date=2018-05-16&amp;instance_id=3540174&amp;return=https%3A%2F%2Fevents.ucr.edu%2F" data-remote="true" rel="ibox;url=#login-lightbox">I'm Interested</a>
+              </div>
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <script type="application/ld+json">{"@context":"http://schema.org","@type":"Event","name":"The News Isn't Fake, But It's Flawed","startDate":"2018-05-18T16:00:00-04:00","endDate":null,"offers":{"@type":"Offer","url":"https://myadv.ucr.edu/forms/hayslecture"},"location":{"@type":"Place","name":"University Theatre","address":"","geo":{"@type":"GeoCoordinates","latitude":"33.972462","longitude":"-117.327005"},"sameAs":"https://events.ucr.edu/university_theatre","url":"https://events.ucr.edu/university_theatre"},"url":"https://events.ucr.edu/event/49th_hays_press-enterprise_lecture","image":"https://d3e1o4bcbhmj8g.cloudfront.net/photos/654897/medium/4b1fd6c076fced656108324230ea333a6b9d5a58.jpg"}</script> 
+          <div class="item event_item vevent" id="event_instance_3367614"> 
+           <a href="https://events.ucr.edu/event/49th_hays_press-enterprise_lecture" class="box_left"><img alt="The News Isn't Fake, But It's Flawed" class="img_medium" height="80" src="https://d3e1o4bcbhmj8g.cloudfront.net/photos/654897/medium/4b1fd6c076fced656108324230ea333a6b9d5a58.jpg" width="80"></a> 
+           <div class="item_content_medium"> 
+            <div class="heading"> 
+             <h3 class="summary"> <a href="https://events.ucr.edu/event/49th_hays_press-enterprise_lecture">The News Isn't Fake, But It's Flawed</a> </h3> 
+            </div> 
+            <h4 class="description">49th Hays Press-Enterprise Lecture Presented by: Frank Bruni, New York Times Op-Ed Columnist and Best-Selling Author Bio: Mr. Bruni's career at The Times...</h4> 
+            <div class="actionbar grid_container"> 
+             <div class="left"> 
+              <div class="dateright"> 
+               <abbr title="2018-05-18T16:00:00-04:00" class="dtstart"> <i class="fa fa-clock-o"></i> 5/18 4pm </abbr> 
+              </div> 
+              <div class="location"> 
+               <a href="https://events.ucr.edu/university_theatre" class="event_item_venue"><i class="fa fa-map-marker"></i> University Theatre</a> &nbsp; 
+              </div> 
+             </div> 
+             <div class="right">
+              <div class="action_button" id="actions_event_instance_3367614">
+               <a href="https://myadv.ucr.edu/forms/hayslecture" class="buytickets">Register</a>
+               <a href="/event/1194376/watch?button=true&amp;dom_id=actions_event_instance_3367614" class="watchthis" data-action="event-watch" data-disable-with="..." data-ga-action="Watch This" data-ga-category="Event" data-ga-event="true" data-ga-label="The News Isn't Fake, But It's Flawed" data-post-login-action="https://events.ucr.edu/event/1194376/watch?return=https%3A%2F%2Fevents.ucr.edu%2F" data-remote="true" rel="ibox;url=#login-lightbox">Watch This</a>
+               <a href="/event/1194376/confirm?button=true&amp;date=2018-05-18&amp;dom_id=actions_event_instance_3367614&amp;instance_id=3367614" class="imgoing" data-action="event-going" data-disable-with="..." data-ga-action="I'm Going" data-ga-category="Event" data-ga-event="true" data-ga-label="The News Isn't Fake, But It's Flawed" data-post-login-action="https://events.ucr.edu/event/1194376/confirm?date=2018-05-18&amp;instance_id=3367614&amp;return=https%3A%2F%2Fevents.ucr.edu%2F" data-remote="true" rel="ibox;url=#login-lightbox">I'm Interested</a>
+              </div>
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <script type="application/ld+json">{"@context":"http://schema.org","@type":"Event","name":"Indigenous Dance Exchange","startDate":"2018-05-03T18:30:00-04:00","endDate":"2018-05-03T21:15:00-04:00","location":{"@type":"Place","name":"ARTSblock","address":"3824 Main St, Riverside, CA 92501","geo":{"@type":"GeoCoordinates","latitude":"33.981438","longitude":"-117.374333"},"sameAs":"https://events.ucr.edu/artsblock","url":"https://events.ucr.edu/artsblock"},"url":"https://events.ucr.edu/event/indigenous_dance_exchange","image":"https://d3e1o4bcbhmj8g.cloudfront.net/photos/660665/medium/a3bda0d4d1c543630909ba31e40277ac6ca3a118.jpg"}</script> 
+          <div class="item event_item vevent" id="event_instance_3599087"> 
+           <a href="https://events.ucr.edu/event/indigenous_dance_exchange" class="box_left"><img alt="Indigenous Dance Exchange" class="img_medium" height="80" src="https://d3e1o4bcbhmj8g.cloudfront.net/photos/660665/medium/a3bda0d4d1c543630909ba31e40277ac6ca3a118.jpg" width="80"></a> 
+           <div class="item_content_medium"> 
+            <div class="heading"> 
+             <h3 class="summary"> <a href="https://events.ucr.edu/event/indigenous_dance_exchange">Indigenous Dance Exchange</a> </h3> 
+            </div> 
+            <h4 class="description">Indigenous Choreographers at Riverside Gathering Co-directed by Jacqueline Shea Murphy and María Regina Firmino-Castillo Magnolia Yang Sao Yia, Assistant...</h4> 
+            <div class="actionbar grid_container"> 
+             <div class="left"> 
+              <div class="dateright"> 
+               <abbr title="2018-05-03T18:30:00-04:00" class="dtstart"> <i class="fa fa-clock-o"></i> 5/3 6:30pm </abbr> 
+              </div> 
+              <div class="location"> 
+               <a href="https://events.ucr.edu/artsblock" class="event_item_venue"><i class="fa fa-map-marker"></i> ARTSblock, Culver Center of the Arts, Coil Brothers Atrium</a> &nbsp; 
+              </div> 
+             </div> 
+             <div class="right">
+              <div class="action_button" id="actions_event_instance_3599087">
+               <a href="/event/1282458/watch?button=true&amp;dom_id=actions_event_instance_3599087" class="watchthis" data-action="event-watch" data-disable-with="..." data-ga-action="Watch This" data-ga-category="Event" data-ga-event="true" data-ga-label="Indigenous Dance Exchange" data-post-login-action="https://events.ucr.edu/event/1282458/watch?return=https%3A%2F%2Fevents.ucr.edu%2F" data-remote="true" rel="ibox;url=#login-lightbox">Watch This</a>
+               <a href="/event/1282458/confirm?button=true&amp;date=2018-05-03&amp;dom_id=actions_event_instance_3599087&amp;instance_id=3599087" class="imgoing" data-action="event-going" data-disable-with="..." data-ga-action="I'm Going" data-ga-category="Event" data-ga-event="true" data-ga-label="Indigenous Dance Exchange" data-post-login-action="https://events.ucr.edu/event/1282458/confirm?date=2018-05-03&amp;instance_id=3599087&amp;return=https%3A%2F%2Fevents.ucr.edu%2F" data-remote="true" rel="ibox;url=#login-lightbox">I'm Interested</a>
+              </div>
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <script type="application/ld+json">{"@context":"http://schema.org","@type":"Event","name":"Zumba De Mayo!","startDate":"2018-05-03T18:30:00-04:00","endDate":null,"offers":{"@type":"Offer","url":"http://recreation.ucr.edu/"},"location":{"@type":"Place","name":"Student Recreation Center (SRC)","address":"","sameAs":"https://events.ucr.edu/student_recreation_center","url":"https://events.ucr.edu/student_recreation_center"},"url":"https://events.ucr.edu/event/zumba_de_mayo","image":"https://d3e1o4bcbhmj8g.cloudfront.net/photos/586977/medium/49d7126b2e16869306b50c1a6f84b09f7f05382a.jpg"}</script> 
+          <div class="item event_item vevent" id="event_instance_3474233"> 
+           <a href="https://events.ucr.edu/event/zumba_de_mayo" class="box_left"><img alt="Zumba De Mayo!" class="img_medium" height="80" src="https://d3e1o4bcbhmj8g.cloudfront.net/photos/586977/medium/49d7126b2e16869306b50c1a6f84b09f7f05382a.jpg" width="80"></a> 
+           <div class="item_content_medium"> 
+            <div class="heading"> 
+             <h3 class="summary"> <a href="https://events.ucr.edu/event/zumba_de_mayo">Zumba De Mayo!</a> </h3> 
+            </div> 
+            <h4 class="description"></h4> 
+            <div class="actionbar grid_container"> 
+             <div class="left"> 
+              <div class="dateright"> 
+               <abbr title="2018-05-03T18:30:00-04:00" class="dtstart"> <i class="fa fa-clock-o"></i> 5/3 6:30pm </abbr> 
+              </div> 
+              <div class="location"> 
+               <a href="https://events.ucr.edu/student_recreation_center" class="event_item_venue"><i class="fa fa-map-marker"></i> Student Recreation Center (SRC), MPR A</a> &nbsp; 
+              </div> 
+             </div> 
+             <div class="right">
+              <div class="action_button" id="actions_event_instance_3474233">
+               <a href="http://recreation.ucr.edu/" class="buytickets">Register</a>
+               <a href="/event/1236934/watch?button=true&amp;dom_id=actions_event_instance_3474233" class="watchthis" data-action="event-watch" data-disable-with="..." data-ga-action="Watch This" data-ga-category="Event" data-ga-event="true" data-ga-label="Zumba De Mayo!" data-post-login-action="https://events.ucr.edu/event/1236934/watch?return=https%3A%2F%2Fevents.ucr.edu%2F" data-remote="true" rel="ibox;url=#login-lightbox">Watch This</a>
+               <a href="/event/1236934/confirm?button=true&amp;date=2018-05-03&amp;dom_id=actions_event_instance_3474233&amp;instance_id=3474233" class="imgoing" data-action="event-going" data-disable-with="..." data-ga-action="I'm Going" data-ga-category="Event" data-ga-event="true" data-ga-label="Zumba De Mayo!" data-post-login-action="https://events.ucr.edu/event/1236934/confirm?date=2018-05-03&amp;instance_id=3474233&amp;return=https%3A%2F%2Fevents.ucr.edu%2F" data-remote="true" rel="ibox;url=#login-lightbox">I'm Interested</a>
+              </div>
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <script type="application/ld+json">{"@context":"http://schema.org","@type":"Event","name":"Film: Rogue One: A Star Wars Story","startDate":"2018-05-04T18:00:00-04:00","endDate":null,"offers":{"@type":"Offer","url":"https://tickets.vendini.com/ticket-software.html?t=tix&e=dc2263aa20e2e2e91e343b24970cdb2a&vqitq=00acddb1-f5f1-4b01-add6-6c12e150ece7&vqitp=e4d9d629-999d-4536-a9b4-9595b892ca02&vqitts=1524170814&vqitc=vendini&vqite=itl&vqitrt=Safetynet&vqith=ec99bf34c8cb6c30167f53a0fa3a8aeb"},"location":{"@type":"Place","name":"ARTSblock","address":"3824 Main St, Riverside, CA 92501","geo":{"@type":"GeoCoordinates","latitude":"33.981438","longitude":"-117.374333"},"sameAs":"https://events.ucr.edu/artsblock","url":"https://events.ucr.edu/artsblock"},"url":"https://events.ucr.edu/event/film_rogue_one_a_star_wars_story","image":"https://d3e1o4bcbhmj8g.cloudfront.net/photos/654545/medium/bb0eefafa5f0f71f5f7bcd594551b26d0594e68a.jpg"}</script> 
+          <div class="item event_item vevent" id="event_instance_3539840"> 
+           <a href="https://events.ucr.edu/event/film_rogue_one_a_star_wars_story" class="box_left"><img alt="Film: Rogue One: A Star Wars Story" class="img_medium" height="80" src="https://d3e1o4bcbhmj8g.cloudfront.net/photos/654545/medium/bb0eefafa5f0f71f5f7bcd594551b26d0594e68a.jpg" width="80"></a> 
+           <div class="item_content_medium"> 
+            <div class="heading"> 
+             <h3 class="summary"> <a href="https://events.ucr.edu/event/film_rogue_one_a_star_wars_story">Film: Rogue One: A Star Wars Story</a> </h3> 
+            </div> 
+            <h4 class="description">Screening and Discussion! In a time of conflict, a group of unlikely heroes band together on a mission to steal the plans to the Death Star, the Empire’s...</h4> 
+            <div class="actionbar grid_container"> 
+             <div class="left"> 
+              <div class="dateright"> 
+               <abbr title="2018-05-04T18:00:00-04:00" class="dtstart"> <i class="fa fa-clock-o"></i> 5/4 6pm </abbr> 
+              </div> 
+              <div class="location"> 
+               <a href="https://events.ucr.edu/artsblock" class="event_item_venue"><i class="fa fa-map-marker"></i> ARTSblock</a> &nbsp; 
+              </div> 
+             </div> 
+             <div class="right">
+              <div class="action_button" id="actions_event_instance_3539840">
+               <a href="https://tickets.vendini.com/ticket-software.html?t=tix&amp;e=dc2263aa20e2e2e91e343b24970cdb2a&amp;vqitq=00acddb1-f5f1-4b01-add6-6c12e150ece7&amp;vqitp=e4d9d629-999d-4536-a9b4-9595b892ca02&amp;vqitts=1524170814&amp;vqitc=vendini&amp;vqite=itl&amp;vqitrt=Safetynet&amp;vqith=ec99bf34c8cb6c30167f53a0fa3a8aeb" class="buytickets">Register</a>
+               <a href="/event/1270571/watch?button=true&amp;dom_id=actions_event_instance_3539840" class="watchthis" data-action="event-watch" data-disable-with="..." data-ga-action="Watch This" data-ga-category="Event" data-ga-event="true" data-ga-label="Film: Rogue One: A Star Wars Story" data-post-login-action="https://events.ucr.edu/event/1270571/watch?return=https%3A%2F%2Fevents.ucr.edu%2F" data-remote="true" rel="ibox;url=#login-lightbox">Watch This</a>
+               <a href="/event/1270571/confirm?button=true&amp;date=2018-05-04&amp;dom_id=actions_event_instance_3539840&amp;instance_id=3539840" class="imgoing" data-action="event-going" data-disable-with="..." data-ga-action="I'm Going" data-ga-category="Event" data-ga-event="true" data-ga-label="Film: Rogue One: A Star Wars Story" data-post-login-action="https://events.ucr.edu/event/1270571/confirm?date=2018-05-04&amp;instance_id=3539840&amp;return=https%3A%2F%2Fevents.ucr.edu%2F" data-remote="true" rel="ibox;url=#login-lightbox">I'm Interested</a>
+              </div>
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <script type="application/ld+json">{"@context":"http://schema.org","@type":"Event","name":"UCR Third Annual Courts for Life Doubles Charity Tournament","startDate":"2018-05-05T08:00:00-04:00","endDate":"2018-05-05T17:00:00-04:00","offers":{"@type":"Offer","url":"VenMo @courtsforlife or on tournament day at SRC"},"location":{"@type":"Place","name":"Student Recreation Center (SRC)","address":"","sameAs":"https://events.ucr.edu/student_recreation_center","url":"https://events.ucr.edu/student_recreation_center"},"url":"https://events.ucr.edu/event/ucr_third_annual_courts_for_life_doubles_charity_tournament","image":"https://d3e1o4bcbhmj8g.cloudfront.net/photos/647514/medium/aac042c3721eb26dbe6728043ecf02236d327ca8.jpg"}</script> 
+          <div class="item event_item vevent" id="event_instance_3505078"> 
+           <a href="https://events.ucr.edu/event/ucr_third_annual_courts_for_life_doubles_charity_tournament" class="box_left"><img alt="UCR Third Annual Courts for Life Doubles Charity Tournament" class="img_medium" height="80" src="https://d3e1o4bcbhmj8g.cloudfront.net/photos/647514/medium/aac042c3721eb26dbe6728043ecf02236d327ca8.jpg" width="80"></a> 
+           <div class="item_content_medium"> 
+            <div class="heading"> 
+             <h3 class="summary"> <a href="https://events.ucr.edu/event/ucr_third_annual_courts_for_life_doubles_charity_tournament">UCR Third Annual Courts for Life Doubles...</a> </h3> 
+            </div> 
+            <h4 class="description">Attention All Tennis Players! Courts for Life and Tennis On Campus at UCR are partnering up to host our 3rd Annual Charity Doubles Tournament to promote...</h4> 
+            <div class="actionbar grid_container"> 
+             <div class="left"> 
+              <div class="dateright"> 
+               <abbr title="2018-05-05T08:00:00-04:00" class="dtstart"> <i class="fa fa-clock-o"></i> 5/5 8am </abbr> 
+              </div> 
+              <div class="location"> 
+               <a href="https://events.ucr.edu/student_recreation_center" class="event_item_venue"><i class="fa fa-map-marker"></i> Student Recreation Center (SRC), Tennis Courts</a> &nbsp; 
+              </div> 
+             </div> 
+             <div class="right">
+              <div class="action_button" id="actions_event_instance_3505078">
+               <a href="mailto:VenMo @courtsforlife or on tournament day at SRC" class="buytickets">Buy Tickets</a>
+               <a href="/event/1251261/watch?button=true&amp;dom_id=actions_event_instance_3505078" class="watchthis" data-action="event-watch" data-disable-with="..." data-ga-action="Watch This" data-ga-category="Event" data-ga-event="true" data-ga-label="UCR Third Annual Courts for Life Doubles Charity Tournament" data-post-login-action="https://events.ucr.edu/event/1251261/watch?return=https%3A%2F%2Fevents.ucr.edu%2F" data-remote="true" rel="ibox;url=#login-lightbox">Watch This</a>
+               <a href="/event/1251261/confirm?button=true&amp;date=2018-05-05&amp;dom_id=actions_event_instance_3505078&amp;instance_id=3505078" class="imgoing" data-action="event-going" data-disable-with="..." data-ga-action="I'm Going" data-ga-category="Event" data-ga-event="true" data-ga-label="UCR Third Annual Courts for Life Doubles Charity Tournament" data-post-login-action="https://events.ucr.edu/event/1251261/confirm?date=2018-05-05&amp;instance_id=3505078&amp;return=https%3A%2F%2Fevents.ucr.edu%2F" data-remote="true" rel="ibox;url=#login-lightbox">I'm Interested</a>
+              </div>
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <div class="pagination_container"> 
+           <div class="page_link"> 
+            <a href="https://events.ucr.edu/calendar">View more events...</a> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div id="tabs-6790-6793" class="tabs-component-panel" style="display: none;"> 
+         <div class="event_group event_list_component "> 
+          <script type="application/ld+json">{"@context":"http://schema.org","@type":"Event","name":"Citrus Grand Cherry: MFA Exhibition 2018","startDate":"2018-05-03T00:00:00-04:00","endDate":null,"location":{"@type":"Place","name":"ARTSblock","address":"3824 Main St, Riverside, CA 92501","geo":{"@type":"GeoCoordinates","latitude":"33.981438","longitude":"-117.374333"},"sameAs":"https://events.ucr.edu/artsblock","url":"https://events.ucr.edu/artsblock"},"url":"https://events.ucr.edu/event/citrus_grand_cherry_mfa_exhibition_2018","image":"https://d3e1o4bcbhmj8g.cloudfront.net/photos/654540/medium/558eb81a2a18a04d6678b6249218efc3eaeca210.jpg"}</script> 
+          <div class="item event_item vevent" id="event_instance_3539831"> 
+           <a href="https://events.ucr.edu/event/citrus_grand_cherry_mfa_exhibition_2018" class="box_left"><img alt="Citrus Grand Cherry: MFA Exhibition 2018" class="img_medium" height="80" src="https://d3e1o4bcbhmj8g.cloudfront.net/photos/654540/medium/558eb81a2a18a04d6678b6249218efc3eaeca210.jpg" width="80"></a> 
+           <div class="item_content_medium"> 
+            <div class="heading"> 
+             <h3 class="summary"> <a href="https://events.ucr.edu/event/citrus_grand_cherry_mfa_exhibition_2018">Citrus Grand Cherry: MFA Exhibition 2018</a> </h3> 
+            </div> 
+            <h4 class="description">UCR ARTSblock presents the annual MFA Thesis Exhibition, Citrus Grand Cherry, with works by three graduating Master of Fine Arts students in UCR's Department...</h4> 
+            <div class="actionbar grid_container"> 
+             <div class="left"> 
+              <div class="dateright"> 
+               <abbr title="2018-05-03T00:00:00-04:00" class="dtstart"> <i class="fa fa-clock-o"></i> 5/3 </abbr> 
+              </div> 
+              <div class="location"> 
+               <a href="https://events.ucr.edu/artsblock" class="event_item_venue"><i class="fa fa-map-marker"></i> ARTSblock, Culver Center of the Arts - Sweeney Art Gallery</a> &nbsp; 
+              </div> 
+             </div> 
+             <div class="right">
+              <div class="action_button" id="actions_event_instance_3539831">
+               <a href="/event/1270566/watch?button=true&amp;dom_id=actions_event_instance_3539831" class="watchthis" data-action="event-watch" data-disable-with="..." data-ga-action="Watch This" data-ga-category="Event" data-ga-event="true" data-ga-label="Citrus Grand Cherry: MFA Exhibition 2018" data-post-login-action="https://events.ucr.edu/event/1270566/watch?return=https%3A%2F%2Fevents.ucr.edu%2F" data-remote="true" rel="ibox;url=#login-lightbox">Watch This</a>
+               <a href="/event/1270566/confirm?button=true&amp;date=2018-05-03&amp;dom_id=actions_event_instance_3539831&amp;instance_id=3539831" class="imgoing" data-action="event-going" data-disable-with="..." data-ga-action="I'm Going" data-ga-category="Event" data-ga-event="true" data-ga-label="Citrus Grand Cherry: MFA Exhibition 2018" data-post-login-action="https://events.ucr.edu/event/1270566/confirm?date=2018-05-03&amp;instance_id=3539831&amp;return=https%3A%2F%2Fevents.ucr.edu%2F" data-remote="true" rel="ibox;url=#login-lightbox">I'm Interested</a>
+              </div>
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <script type="application/ld+json">{"@context":"http://schema.org","@type":"Event","name":"Fictive Kin","startDate":"2018-05-03T00:00:00-04:00","endDate":null,"location":{"@type":"Place","name":"ARTSblock","address":"3824 Main St, Riverside, CA 92501","geo":{"@type":"GeoCoordinates","latitude":"33.981438","longitude":"-117.374333"},"sameAs":"https://events.ucr.edu/artsblock","url":"https://events.ucr.edu/artsblock"},"url":"https://events.ucr.edu/event/new_exhibition_fictive_kin","image":"https://d3e1o4bcbhmj8g.cloudfront.net/photos/609606/medium/5b470828bcb6da5114b6cd03d49f8c1fa54b7af9.jpg"}</script> 
+          <div class="item event_item vevent" id="event_instance_3343409"> 
+           <a href="https://events.ucr.edu/event/new_exhibition_fictive_kin" class="box_left"><img alt="Fictive Kin" class="img_medium" height="80" src="https://d3e1o4bcbhmj8g.cloudfront.net/photos/609606/medium/5b470828bcb6da5114b6cd03d49f8c1fa54b7af9.jpg" width="80"></a> 
+           <div class="item_content_medium"> 
+            <div class="heading"> 
+             <h3 class="summary"> <a href="https://events.ucr.edu/event/new_exhibition_fictive_kin">Fictive Kin</a> </h3> 
+            </div> 
+            <h4 class="description">Sarah Conaway, Annette Kelm, Kim Schoen Fictive kinships mimic familial relationships but are ultimately defined on their own terms. Fictive Kinpresents...</h4> 
+            <div class="actionbar grid_container"> 
+             <div class="left"> 
+              <div class="dateright"> 
+               <abbr title="2018-05-03T00:00:00-04:00" class="dtstart"> <i class="fa fa-clock-o"></i> 5/3 </abbr> 
+              </div> 
+              <div class="location"> 
+               <a href="https://events.ucr.edu/artsblock" class="event_item_venue"><i class="fa fa-map-marker"></i> ARTSblock, Culver Center of the Arts</a> &nbsp; 
+              </div> 
+             </div> 
+             <div class="right">
+              <div class="action_button" id="actions_event_instance_3343409">
+               <a href="/event/1184051/watch?button=true&amp;dom_id=actions_event_instance_3343409" class="watchthis" data-action="event-watch" data-disable-with="..." data-ga-action="Watch This" data-ga-category="Event" data-ga-event="true" data-ga-label="Fictive Kin" data-post-login-action="https://events.ucr.edu/event/1184051/watch?return=https%3A%2F%2Fevents.ucr.edu%2F" data-remote="true" rel="ibox;url=#login-lightbox">Watch This</a>
+               <a href="/event/1184051/confirm?button=true&amp;date=2018-05-03&amp;dom_id=actions_event_instance_3343409&amp;instance_id=3343409" class="imgoing" data-action="event-going" data-disable-with="..." data-ga-action="I'm Going" data-ga-category="Event" data-ga-event="true" data-ga-label="Fictive Kin" data-post-login-action="https://events.ucr.edu/event/1184051/confirm?date=2018-05-03&amp;instance_id=3343409&amp;return=https%3A%2F%2Fevents.ucr.edu%2F" data-remote="true" rel="ibox;url=#login-lightbox">I'm Interested</a>
+              </div>
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <script type="application/ld+json">{"@context":"http://schema.org","@type":"Event","name":"Free Mobile App Download","startDate":"2018-05-03T00:00:00-04:00","endDate":null,"offers":{"@type":"Offer","url":"http://go.ucr.edu/src"},"location":{"@type":"Place","name":"Student Recreation Center (SRC)","address":"","sameAs":"https://events.ucr.edu/student_recreation_center","url":"https://events.ucr.edu/student_recreation_center"},"url":"https://events.ucr.edu/event/free_mobile_app_download","image":"https://d3e1o4bcbhmj8g.cloudfront.net/photos/647652/medium/1edea1d3c5d549ebadef718a486de7d89c7e9d33.jpg"}</script> 
+          <div class="item event_item vevent" id="event_instance_3473783"> 
+           <a href="https://events.ucr.edu/event/free_mobile_app_download" class="box_left"><img alt="Free Mobile App Download" class="img_medium" height="80" src="https://d3e1o4bcbhmj8g.cloudfront.net/photos/647652/medium/1edea1d3c5d549ebadef718a486de7d89c7e9d33.jpg" width="80"></a> 
+           <div class="item_content_medium"> 
+            <div class="heading"> 
+             <h3 class="summary"> <a href="https://events.ucr.edu/event/free_mobile_app_download">Free Mobile App Download</a> </h3> 
+            </div> 
+            <h4 class="description">Download the UCRSRC Mobile APP today! Visit go.ucr.ed/src and maximize your SRC experience!</h4> 
+            <div class="actionbar grid_container"> 
+             <div class="left"> 
+              <div class="dateright"> 
+               <abbr title="2018-05-03T00:00:00-04:00" class="dtstart"> <i class="fa fa-clock-o"></i> 5/3 </abbr> 
+              </div> 
+              <div class="location"> 
+               <a href="https://events.ucr.edu/student_recreation_center" class="event_item_venue"><i class="fa fa-map-marker"></i> Student Recreation Center (SRC)</a> &nbsp; 
+              </div> 
+             </div> 
+             <div class="right">
+              <div class="action_button" id="actions_event_instance_3473783">
+               <a href="http://go.ucr.edu/src" class="buytickets">Register</a>
+               <a href="/event/1236901/watch?button=true&amp;dom_id=actions_event_instance_3473783" class="watchthis" data-action="event-watch" data-disable-with="..." data-ga-action="Watch This" data-ga-category="Event" data-ga-event="true" data-ga-label="Free Mobile App Download" data-post-login-action="https://events.ucr.edu/event/1236901/watch?return=https%3A%2F%2Fevents.ucr.edu%2F" data-remote="true" rel="ibox;url=#login-lightbox">Watch This</a>
+               <a href="/event/1236901/confirm?button=true&amp;date=2018-05-03&amp;dom_id=actions_event_instance_3473783&amp;instance_id=3473783" class="imgoing" data-action="event-going" data-disable-with="..." data-ga-action="I'm Going" data-ga-category="Event" data-ga-event="true" data-ga-label="Free Mobile App Download" data-post-login-action="https://events.ucr.edu/event/1236901/confirm?date=2018-05-03&amp;instance_id=3473783&amp;return=https%3A%2F%2Fevents.ucr.edu%2F" data-remote="true" rel="ibox;url=#login-lightbox">I'm Interested</a>
+              </div>
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <script type="application/ld+json">{"@context":"http://schema.org","@type":"Event","name":"Summer Sessions - Application Filing Period","startDate":"2018-05-03T00:00:00-04:00","endDate":null,"url":"https://events.ucr.edu/event/summer_sessions_-_application_filing_period","image":"https://d3e1o4bcbhmj8g.cloudfront.net/photos/650737/medium/20ba2e97da7f37e71434a224f1a553e09cead6af.jpg"}</script> 
+          <div class="item event_item vevent" id="event_instance_3515752"> 
+           <a href="https://events.ucr.edu/event/summer_sessions_-_application_filing_period" class="box_left"><img alt="Summer Sessions - Application Filing Period" class="img_medium" height="80" src="https://d3e1o4bcbhmj8g.cloudfront.net/photos/650737/medium/20ba2e97da7f37e71434a224f1a553e09cead6af.jpg" width="80"></a> 
+           <div class="item_content_medium"> 
+            <div class="heading"> 
+             <h3 class="summary"> <a href="https://events.ucr.edu/event/summer_sessions_-_application_filing_period">Summer Sessions - Application Filing Period</a> </h3> 
+            </div> 
+            <h4 class="description">Why attend UCR's summer sessions? Stay on track (or get ahead) so you can finish in four! Smaller class size means more opportunity to interact with...</h4> 
+            <div class="actionbar grid_container"> 
+             <div class="left"> 
+              <div class="dateright"> 
+               <abbr title="2018-05-03T00:00:00-04:00" class="dtstart"> <i class="fa fa-clock-o"></i> 5/3 </abbr> 
+              </div> 
+              <div class="location">
+                &nbsp; 
+              </div> 
+             </div> 
+             <div class="right">
+              <div class="action_button" id="actions_event_instance_3515752">
+               <a href="/event/1256009/watch?button=true&amp;dom_id=actions_event_instance_3515752" class="watchthis" data-action="event-watch" data-disable-with="..." data-ga-action="Watch This" data-ga-category="Event" data-ga-event="true" data-ga-label="Summer Sessions - Application Filing Period" data-post-login-action="https://events.ucr.edu/event/1256009/watch?return=https%3A%2F%2Fevents.ucr.edu%2F" data-remote="true" rel="ibox;url=#login-lightbox">Watch This</a>
+               <a href="/event/1256009/confirm?button=true&amp;date=2018-05-03&amp;dom_id=actions_event_instance_3515752&amp;instance_id=3515752" class="imgoing" data-action="event-going" data-disable-with="..." data-ga-action="I'm Going" data-ga-category="Event" data-ga-event="true" data-ga-label="Summer Sessions - Application Filing Period" data-post-login-action="https://events.ucr.edu/event/1256009/confirm?date=2018-05-03&amp;instance_id=3515752&amp;return=https%3A%2F%2Fevents.ucr.edu%2F" data-remote="true" rel="ibox;url=#login-lightbox">I'm Interested</a>
+              </div>
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <script type="application/ld+json">{"@context":"http://schema.org","@type":"Event","name":"Everest Club","startDate":"2018-05-03T06:00:00-04:00","endDate":null,"offers":{"@type":"Offer","url":"http://recreation.ucr.edu/"},"location":{"@type":"Place","name":"Student Recreation Center (SRC)","address":"","sameAs":"https://events.ucr.edu/student_recreation_center","url":"https://events.ucr.edu/student_recreation_center"},"url":"https://events.ucr.edu/event/everest_club","image":"https://d3e1o4bcbhmj8g.cloudfront.net/photos/586977/medium/49d7126b2e16869306b50c1a6f84b09f7f05382a.jpg"}</script> 
+          <div class="item event_item vevent" id="event_instance_3474125"> 
+           <a href="https://events.ucr.edu/event/everest_club" class="box_left"><img alt="Everest Club" class="img_medium" height="80" src="https://d3e1o4bcbhmj8g.cloudfront.net/photos/586977/medium/49d7126b2e16869306b50c1a6f84b09f7f05382a.jpg" width="80"></a> 
+           <div class="item_content_medium"> 
+            <div class="heading"> 
+             <h3 class="summary"> <a href="https://events.ucr.edu/event/everest_club">Everest Club</a> </h3> 
+            </div> 
+            <h4 class="description"></h4> 
+            <div class="actionbar grid_container"> 
+             <div class="left"> 
+              <div class="dateright"> 
+               <abbr title="2018-05-03T06:00:00-04:00" class="dtstart"> <i class="fa fa-clock-o"></i> 5/3 6am </abbr> 
+              </div> 
+              <div class="location"> 
+               <a href="https://events.ucr.edu/student_recreation_center" class="event_item_venue"><i class="fa fa-map-marker"></i> Student Recreation Center (SRC), SRC North</a> &nbsp; 
+              </div> 
+             </div> 
+             <div class="right">
+              <div class="action_button" id="actions_event_instance_3474125">
+               <a href="http://recreation.ucr.edu/" class="buytickets">Register</a>
+               <a href="/event/1236929/watch?button=true&amp;dom_id=actions_event_instance_3474125" class="watchthis" data-action="event-watch" data-disable-with="..." data-ga-action="Watch This" data-ga-category="Event" data-ga-event="true" data-ga-label="Everest Club" data-post-login-action="https://events.ucr.edu/event/1236929/watch?return=https%3A%2F%2Fevents.ucr.edu%2F" data-remote="true" rel="ibox;url=#login-lightbox">Watch This</a>
+               <a href="/event/1236929/confirm?button=true&amp;date=2018-05-03&amp;dom_id=actions_event_instance_3474125&amp;instance_id=3474125" class="imgoing" data-action="event-going" data-disable-with="..." data-ga-action="I'm Going" data-ga-category="Event" data-ga-event="true" data-ga-label="Everest Club" data-post-login-action="https://events.ucr.edu/event/1236929/confirm?date=2018-05-03&amp;instance_id=3474125&amp;return=https%3A%2F%2Fevents.ucr.edu%2F" data-remote="true" rel="ibox;url=#login-lightbox">I'm Interested</a>
+              </div>
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <script type="application/ld+json">{"@context":"http://schema.org","@type":"Event","name":"Free Group Fitness","startDate":"2018-05-03T06:00:00-04:00","endDate":"2018-05-03T20:00:00-04:00","offers":{"@type":"Offer","url":"http://recreation.ucr.edu/"},"location":{"@type":"Place","name":"Student Recreation Center (SRC)","address":"","sameAs":"https://events.ucr.edu/student_recreation_center","url":"https://events.ucr.edu/student_recreation_center"},"url":"https://events.ucr.edu/event/free_group_fitness","image":"https://d3e1o4bcbhmj8g.cloudfront.net/photos/647667/medium/40ff2bca3671cba1608f3521dfd2c17ee4c7e44a.jpg"}</script> 
+          <div class="item event_item vevent" id="event_instance_3473131"> 
+           <a href="https://events.ucr.edu/event/free_group_fitness" class="box_left"><img alt="Free Group Fitness" class="img_medium" height="80" src="https://d3e1o4bcbhmj8g.cloudfront.net/photos/647667/medium/40ff2bca3671cba1608f3521dfd2c17ee4c7e44a.jpg" width="80"></a> 
+           <div class="item_content_medium"> 
+            <div class="heading"> 
+             <h3 class="summary"> <a href="https://events.ucr.edu/event/free_group_fitness">Free Group Fitness</a> </h3> 
+            </div> 
+            <h4 class="description">Everyday comes a new adventure! From Cycling to Yoga, to Zumba and Pilates. Diversify your workouts and try something fun, new, and exciting! Download our...</h4> 
+            <div class="actionbar grid_container"> 
+             <div class="left"> 
+              <div class="dateright"> 
+               <abbr title="2018-05-03T06:00:00-04:00" class="dtstart"> <i class="fa fa-clock-o"></i> 5/3 6am </abbr> 
+              </div> 
+              <div class="location"> 
+               <a href="https://events.ucr.edu/student_recreation_center" class="event_item_venue"><i class="fa fa-map-marker"></i> Student Recreation Center (SRC)</a> &nbsp; 
+              </div> 
+             </div> 
+             <div class="right">
+              <div class="action_button" id="actions_event_instance_3473131">
+               <a href="http://recreation.ucr.edu/" class="buytickets">Register</a>
+               <a href="/event/1185326/watch?button=true&amp;dom_id=actions_event_instance_3473131" class="watchthis" data-action="event-watch" data-disable-with="..." data-ga-action="Watch This" data-ga-category="Event" data-ga-event="true" data-ga-label="Free Group Fitness" data-post-login-action="https://events.ucr.edu/event/1185326/watch?return=https%3A%2F%2Fevents.ucr.edu%2F" data-remote="true" rel="ibox;url=#login-lightbox">Watch This</a>
+               <a href="/event/1185326/confirm?button=true&amp;date=2018-05-03&amp;dom_id=actions_event_instance_3473131&amp;instance_id=3473131" class="imgoing" data-action="event-going" data-disable-with="..." data-ga-action="I'm Going" data-ga-category="Event" data-ga-event="true" data-ga-label="Free Group Fitness" data-post-login-action="https://events.ucr.edu/event/1185326/confirm?date=2018-05-03&amp;instance_id=3473131&amp;return=https%3A%2F%2Fevents.ucr.edu%2F" data-remote="true" rel="ibox;url=#login-lightbox">I'm Interested</a>
+              </div>
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <script type="application/ld+json">{"@context":"http://schema.org","@type":"Event","name":"Personal Training","startDate":"2018-05-03T06:00:00-04:00","endDate":null,"offers":{"@type":"Offer","url":"http://recreation.ucr.edu/"},"location":{"@type":"Place","name":"Student Recreation Center (SRC)","address":"","sameAs":"https://events.ucr.edu/student_recreation_center","url":"https://events.ucr.edu/student_recreation_center"},"url":"https://events.ucr.edu/event/personal_training","image":"https://d3e1o4bcbhmj8g.cloudfront.net/photos/586977/medium/49d7126b2e16869306b50c1a6f84b09f7f05382a.jpg"}</script> 
+          <div class="item event_item vevent" id="event_instance_3473709"> 
+           <a href="https://events.ucr.edu/event/personal_training" class="box_left"><img alt="Personal Training" class="img_medium" height="80" src="https://d3e1o4bcbhmj8g.cloudfront.net/photos/586977/medium/49d7126b2e16869306b50c1a6f84b09f7f05382a.jpg" width="80"></a> 
+           <div class="item_content_medium"> 
+            <div class="heading"> 
+             <h3 class="summary"> <a href="https://events.ucr.edu/event/personal_training">Personal Training</a> </h3> 
+            </div> 
+            <h4 class="description"></h4> 
+            <div class="actionbar grid_container"> 
+             <div class="left"> 
+              <div class="dateright"> 
+               <abbr title="2018-05-03T06:00:00-04:00" class="dtstart"> <i class="fa fa-clock-o"></i> 5/3 6am </abbr> 
+              </div> 
+              <div class="location"> 
+               <a href="https://events.ucr.edu/student_recreation_center" class="event_item_venue"><i class="fa fa-map-marker"></i> Student Recreation Center (SRC)</a> &nbsp; 
+              </div> 
+             </div> 
+             <div class="right">
+              <div class="action_button" id="actions_event_instance_3473709">
+               <a href="http://recreation.ucr.edu/" class="buytickets">Buy Tickets</a>
+               <a href="/event/1236900/watch?button=true&amp;dom_id=actions_event_instance_3473709" class="watchthis" data-action="event-watch" data-disable-with="..." data-ga-action="Watch This" data-ga-category="Event" data-ga-event="true" data-ga-label="Personal Training" data-post-login-action="https://events.ucr.edu/event/1236900/watch?return=https%3A%2F%2Fevents.ucr.edu%2F" data-remote="true" rel="ibox;url=#login-lightbox">Watch This</a>
+               <a href="/event/1236900/confirm?button=true&amp;date=2018-05-03&amp;dom_id=actions_event_instance_3473709&amp;instance_id=3473709" class="imgoing" data-action="event-going" data-disable-with="..." data-ga-action="I'm Going" data-ga-category="Event" data-ga-event="true" data-ga-label="Personal Training" data-post-login-action="https://events.ucr.edu/event/1236900/confirm?date=2018-05-03&amp;instance_id=3473709&amp;return=https%3A%2F%2Fevents.ucr.edu%2F" data-remote="true" rel="ibox;url=#login-lightbox">I'm Interested</a>
+              </div>
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <script type="application/ld+json">{"@context":"http://schema.org","@type":"Event","name":"Private and Semi-Private Swim Lessons","startDate":"2018-05-03T06:00:00-04:00","endDate":null,"offers":{"@type":"Offer","url":"http://recreation.ucr.edu/"},"location":{"@type":"Place","name":"Student Recreation Center (SRC)","address":"","sameAs":"https://events.ucr.edu/student_recreation_center","url":"https://events.ucr.edu/student_recreation_center"},"url":"https://events.ucr.edu/event/private_and_semi-private_swim_lessons","image":"https://d3e1o4bcbhmj8g.cloudfront.net/photos/586977/medium/49d7126b2e16869306b50c1a6f84b09f7f05382a.jpg"}</script> 
+          <div class="item event_item vevent" id="event_instance_3473958"> 
+           <a href="https://events.ucr.edu/event/private_and_semi-private_swim_lessons" class="box_left"><img alt="Private and Semi-Private Swim Lessons" class="img_medium" height="80" src="https://d3e1o4bcbhmj8g.cloudfront.net/photos/586977/medium/49d7126b2e16869306b50c1a6f84b09f7f05382a.jpg" width="80"></a> 
+           <div class="item_content_medium"> 
+            <div class="heading"> 
+             <h3 class="summary"> <a href="https://events.ucr.edu/event/private_and_semi-private_swim_lessons">Private and Semi-Private Swim Lessons</a> </h3> 
+            </div> 
+            <h4 class="description"></h4> 
+            <div class="actionbar grid_container"> 
+             <div class="left"> 
+              <div class="dateright"> 
+               <abbr title="2018-05-03T06:00:00-04:00" class="dtstart"> <i class="fa fa-clock-o"></i> 5/3 6am </abbr> 
+              </div> 
+              <div class="location"> 
+               <a href="https://events.ucr.edu/student_recreation_center" class="event_item_venue"><i class="fa fa-map-marker"></i> Student Recreation Center (SRC)</a> &nbsp; 
+              </div> 
+             </div> 
+             <div class="right">
+              <div class="action_button" id="actions_event_instance_3473958">
+               <a href="http://recreation.ucr.edu/" class="buytickets">Buy Tickets</a>
+               <a href="/event/1236916/watch?button=true&amp;dom_id=actions_event_instance_3473958" class="watchthis" data-action="event-watch" data-disable-with="..." data-ga-action="Watch This" data-ga-category="Event" data-ga-event="true" data-ga-label="Private and Semi-Private Swim Lessons" data-post-login-action="https://events.ucr.edu/event/1236916/watch?return=https%3A%2F%2Fevents.ucr.edu%2F" data-remote="true" rel="ibox;url=#login-lightbox">Watch This</a>
+               <a href="/event/1236916/confirm?button=true&amp;date=2018-05-03&amp;dom_id=actions_event_instance_3473958&amp;instance_id=3473958" class="imgoing" data-action="event-going" data-disable-with="..." data-ga-action="I'm Going" data-ga-category="Event" data-ga-event="true" data-ga-label="Private and Semi-Private Swim Lessons" data-post-login-action="https://events.ucr.edu/event/1236916/confirm?date=2018-05-03&amp;instance_id=3473958&amp;return=https%3A%2F%2Fevents.ucr.edu%2F" data-remote="true" rel="ibox;url=#login-lightbox">I'm Interested</a>
+              </div>
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <script type="application/ld+json">{"@context":"http://schema.org","@type":"Event","name":"Swim to the C Challenge","startDate":"2018-05-03T06:00:00-04:00","endDate":null,"offers":{"@type":"Offer","url":"http://recreation.ucr.edu/"},"location":{"@type":"Place","name":"Student Recreation Center (SRC)","address":"","sameAs":"https://events.ucr.edu/student_recreation_center","url":"https://events.ucr.edu/student_recreation_center"},"url":"https://events.ucr.edu/event/swim_to_the_c_challenge","image":"https://d3e1o4bcbhmj8g.cloudfront.net/photos/586977/medium/49d7126b2e16869306b50c1a6f84b09f7f05382a.jpg"}</script> 
+          <div class="item event_item vevent" id="event_instance_3473206"> 
+           <a href="https://events.ucr.edu/event/swim_to_the_c_challenge" class="box_left"><img alt="Swim to the C Challenge" class="img_medium" height="80" src="https://d3e1o4bcbhmj8g.cloudfront.net/photos/586977/medium/49d7126b2e16869306b50c1a6f84b09f7f05382a.jpg" width="80"></a> 
+           <div class="item_content_medium"> 
+            <div class="heading"> 
+             <h3 class="summary"> <a href="https://events.ucr.edu/event/swim_to_the_c_challenge">Swim to the C Challenge</a> </h3> 
+            </div> 
+            <h4 class="description"></h4> 
+            <div class="actionbar grid_container"> 
+             <div class="left"> 
+              <div class="dateright"> 
+               <abbr title="2018-05-03T06:00:00-04:00" class="dtstart"> <i class="fa fa-clock-o"></i> 5/3 6am </abbr> 
+              </div> 
+              <div class="location"> 
+               <a href="https://events.ucr.edu/student_recreation_center" class="event_item_venue"><i class="fa fa-map-marker"></i> Student Recreation Center (SRC)</a> &nbsp; 
+              </div> 
+             </div> 
+             <div class="right">
+              <div class="action_button" id="actions_event_instance_3473206">
+               <a href="http://recreation.ucr.edu/" class="buytickets">Register</a>
+               <a href="/event/1236889/watch?button=true&amp;dom_id=actions_event_instance_3473206" class="watchthis" data-action="event-watch" data-disable-with="..." data-ga-action="Watch This" data-ga-category="Event" data-ga-event="true" data-ga-label="Swim to the C Challenge" data-post-login-action="https://events.ucr.edu/event/1236889/watch?return=https%3A%2F%2Fevents.ucr.edu%2F" data-remote="true" rel="ibox;url=#login-lightbox">Watch This</a>
+               <a href="/event/1236889/confirm?button=true&amp;date=2018-05-03&amp;dom_id=actions_event_instance_3473206&amp;instance_id=3473206" class="imgoing" data-action="event-going" data-disable-with="..." data-ga-action="I'm Going" data-ga-category="Event" data-ga-event="true" data-ga-label="Swim to the C Challenge" data-post-login-action="https://events.ucr.edu/event/1236889/confirm?date=2018-05-03&amp;instance_id=3473206&amp;return=https%3A%2F%2Fevents.ucr.edu%2F" data-remote="true" rel="ibox;url=#login-lightbox">I'm Interested</a>
+              </div>
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <script type="application/ld+json">{"@context":"http://schema.org","@type":"Event","name":"Tennis Classes","startDate":"2018-05-03T06:00:00-04:00","endDate":null,"offers":{"@type":"Offer","url":"http://recreation.ucr.edu/"},"location":{"@type":"Place","name":"Student Recreation Center (SRC)","address":"","sameAs":"https://events.ucr.edu/student_recreation_center","url":"https://events.ucr.edu/student_recreation_center"},"url":"https://events.ucr.edu/event/tennis_classes","image":"https://d3e1o4bcbhmj8g.cloudfront.net/photos/586977/medium/49d7126b2e16869306b50c1a6f84b09f7f05382a.jpg"}</script> 
+          <div class="item event_item vevent" id="event_instance_3473593"> 
+           <a href="https://events.ucr.edu/event/tennis_classes" class="box_left"><img alt="Tennis Classes" class="img_medium" height="80" src="https://d3e1o4bcbhmj8g.cloudfront.net/photos/586977/medium/49d7126b2e16869306b50c1a6f84b09f7f05382a.jpg" width="80"></a> 
+           <div class="item_content_medium"> 
+            <div class="heading"> 
+             <h3 class="summary"> <a href="https://events.ucr.edu/event/tennis_classes">Tennis Classes</a> </h3> 
+            </div> 
+            <h4 class="description"></h4> 
+            <div class="actionbar grid_container"> 
+             <div class="left"> 
+              <div class="dateright"> 
+               <abbr title="2018-05-03T06:00:00-04:00" class="dtstart"> <i class="fa fa-clock-o"></i> 5/3 6am </abbr> 
+              </div> 
+              <div class="location"> 
+               <a href="https://events.ucr.edu/student_recreation_center" class="event_item_venue"><i class="fa fa-map-marker"></i> Student Recreation Center (SRC), The Rock</a> &nbsp; 
+              </div> 
+             </div> 
+             <div class="right">
+              <div class="action_button" id="actions_event_instance_3473593">
+               <a href="http://recreation.ucr.edu/" class="buytickets">Buy Tickets</a>
+               <a href="/event/1236897/watch?button=true&amp;dom_id=actions_event_instance_3473593" class="watchthis" data-action="event-watch" data-disable-with="..." data-ga-action="Watch This" data-ga-category="Event" data-ga-event="true" data-ga-label="Tennis Classes" data-post-login-action="https://events.ucr.edu/event/1236897/watch?return=https%3A%2F%2Fevents.ucr.edu%2F" data-remote="true" rel="ibox;url=#login-lightbox">Watch This</a>
+               <a href="/event/1236897/confirm?button=true&amp;date=2018-05-03&amp;dom_id=actions_event_instance_3473593&amp;instance_id=3473593" class="imgoing" data-action="event-going" data-disable-with="..." data-ga-action="I'm Going" data-ga-category="Event" data-ga-event="true" data-ga-label="Tennis Classes" data-post-login-action="https://events.ucr.edu/event/1236897/confirm?date=2018-05-03&amp;instance_id=3473593&amp;return=https%3A%2F%2Fevents.ucr.edu%2F" data-remote="true" rel="ibox;url=#login-lightbox">I'm Interested</a>
+              </div>
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <div class="pagination_container"> 
+           <div class="page_link"> 
+            <a href="https://events.ucr.edu/calendar">View more events...</a> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="grid_4 omega sidebar"> 
+      <div class="submit_event_button_component "> 
+       <div class="widget widget-filter form-box"> 
+        <div class="widget-content"> 
+         <a href="https://events.ucr.edu/event/create" class="btn btn-large fullwidth btn-color-alt nav_createevent" rel="ibox;url=#login-lightbox" data-post-login-action="https://events.ucr.edu/event/create"> <i class="fa fa-plus-circle"></i>Submit an Event </a> 
+        </div> 
+       </div> 
+      </div>
+      <div class="platform_nav_component "> 
+       <div class="widget homepage_nav_container sidebar-topnav"> 
+        <div id="homepage_nav" class="table-buttons  horizontal-nav"> 
+         <a class="nav_calendar" href="https://events.ucr.edu/calendar"> <span class="icon icon-Agenda"></span> All Events </a> 
+         <a class="nav_place" href="https://events.ucr.edu/browse/places"> <span class="icon icon-Pointer"></span> Places to Go </a> 
+         <a class="nav_department" href="https://events.ucr.edu/browse/departments"> <span class="icon icon-Briefcase"></span> Departments </a> 
+         <a class="nav_group" href="https://events.ucr.edu/browse/groups"> <span class="icon icon-Users"></span> Groups </a> 
+        </div> 
+       </div> 
+      </div>
+      <div class="minicalendar_component "> 
+       <div class="widget mini_calendar box_container light_colorone" data-minicalendar="true" data-minicalendar-class-prefix="localist-minical" data-minicalendar-today="2018-05-03" data-minicalendar-link-template="/calendar/day/@YEAR@/@MONTH@/@DAY@" data-minicalendar-format-month="MMMM" data-minicalendar-format-month-year="MMMM yyyy"> 
+        <!-- <h2 class="dark_colorone">Mini Calendar</h2> --> 
+        <div class="box_content"> 
+         <div class="pagination_container minical"> 
+          <a href="#" id="localist-minical-prev-month" data-minicalendar="previous"><i class="fa fa-chevron-left"><span class="sr-only">Previous Month</span></i></a> 
+          <a href="#" id="localist-minical-next-month" data-minicalendar="next" class="right"><i class="fa fa-chevron-right"><span class="sr-only">Next Month</span></i></a> 
+          <div class="page_heading"> 
+           <h1 id="month-name" data-minicalendar="month-label">May</h1> 
+          </div> 
+         </div> 
+         <div id="localist-minical-month-05"> 
+          <table id="minicalendar" class="minicalendar" cellspacing="3" cellpadding="0"> 
+           <caption>
+            Calendar Date Navigation
+           </caption> 
+           <tbody>
+            <tr> 
+             <th>S</th> 
+             <th>M</th> 
+             <th>T</th> 
+             <th>W</th> 
+             <th>T</th> 
+             <th>F</th> 
+             <th>S</th> 
+            </tr> 
+           </tbody>
+           <tbody data-minicalendar="calendar"> 
+            <tr>
+             <td class="dimday"><a href="/calendar/day/2018/4/29">29</a></td>
+             <td class="dimday"><a href="/calendar/day/2018/4/30">30</a></td>
+             <td class="active"><a href="/calendar/day/2018/5/1">1</a></td>
+             <td class="active"><a href="/calendar/day/2018/5/2">2</a></td>
+             <td class="today active selected"><a href="/calendar/day/2018/5/3">3</a></td>
+             <td class="active"><a href="/calendar/day/2018/5/4">4</a></td>
+             <td class="active"><a href="/calendar/day/2018/5/5">5</a></td>
+            </tr>
+            <tr>
+             <td class="active"><a href="/calendar/day/2018/5/6">6</a></td>
+             <td class="active"><a href="/calendar/day/2018/5/7">7</a></td>
+             <td class="active"><a href="/calendar/day/2018/5/8">8</a></td>
+             <td class="active"><a href="/calendar/day/2018/5/9">9</a></td>
+             <td class="active"><a href="/calendar/day/2018/5/10">10</a></td>
+             <td class="active"><a href="/calendar/day/2018/5/11">11</a></td>
+             <td class="active"><a href="/calendar/day/2018/5/12">12</a></td>
+            </tr>
+            <tr>
+             <td class="active"><a href="/calendar/day/2018/5/13">13</a></td>
+             <td class="active"><a href="/calendar/day/2018/5/14">14</a></td>
+             <td class="active"><a href="/calendar/day/2018/5/15">15</a></td>
+             <td class="active"><a href="/calendar/day/2018/5/16">16</a></td>
+             <td class="active"><a href="/calendar/day/2018/5/17">17</a></td>
+             <td class="active"><a href="/calendar/day/2018/5/18">18</a></td>
+             <td class="active"><a href="/calendar/day/2018/5/19">19</a></td>
+            </tr>
+            <tr>
+             <td class="active"><a href="/calendar/day/2018/5/20">20</a></td>
+             <td class="active"><a href="/calendar/day/2018/5/21">21</a></td>
+             <td class="active"><a href="/calendar/day/2018/5/22">22</a></td>
+             <td class="active"><a href="/calendar/day/2018/5/23">23</a></td>
+             <td class="active"><a href="/calendar/day/2018/5/24">24</a></td>
+             <td class="active"><a href="/calendar/day/2018/5/25">25</a></td>
+             <td class="active"><a href="/calendar/day/2018/5/26">26</a></td>
+            </tr>
+            <tr>
+             <td class="active"><a href="/calendar/day/2018/5/27">27</a></td>
+             <td class="active"><a href="/calendar/day/2018/5/28">28</a></td>
+             <td class="active"><a href="/calendar/day/2018/5/29">29</a></td>
+             <td class="active"><a href="/calendar/day/2018/5/30">30</a></td>
+             <td class=""><a href="/calendar/day/2018/5/31">31</a></td>
+             <td class="dimday"><a href="/calendar/day/2018/6/1">1</a></td>
+             <td class="dimday"><a href="/calendar/day/2018/6/2">2</a></td>
+            </tr>
+           </tbody> 
+          </table> 
+         </div> 
+        </div> 
+       </div> 
+      </div>
+      <div class="filter_list_component "> 
+       <div class="widget widget-filter form_box filter_list"> 
+        <fieldset id="x-list-event_types"> 
+         <label class="widget-header"><span><i class="fa fa-list-ul"></i> Event Types</span></label> 
+         <div class="widget-content"> 
+          <ul data-has-selection="false" id="x-event_types">
+           <li data-count="7" id="x-list-event_types-item-116359"><a href="https://events.ucr.edu/calendar?event_types%5B%5D=116359">Arts (7)</a></li>
+           <li data-count="7" id="x-list-event_types-item-116359-children">
+            <ul data-has-selection="false" id="x-event_types-116359-list">
+             <li data-count="4" id="x-list-event_types-item-116365"><a href="https://events.ucr.edu/calendar?event_types%5B%5D=116365">› Exhibitions (4)</a></li>
+             <li data-count="3" id="x-list-event_types-item-116361"><a href="https://events.ucr.edu/calendar?event_types%5B%5D=116361">› Dance (3)</a></li>
+             <li data-count="2" id="x-list-event_types-item-116360"><a href="https://events.ucr.edu/calendar?event_types%5B%5D=116360">› Music &amp; Concerts (2)</a></li>
+             <li data-count="1" id="x-list-event_types-item-116363"><a href="https://events.ucr.edu/calendar?event_types%5B%5D=116363">› Theatre &amp; Plays (1)</a></li>
+             <li data-additional="true" data-count="0" id="x-list-event_types-item-116364" style="display:none;"><a href="https://events.ucr.edu/calendar?event_types%5B%5D=116364">› Auditions (0)</a></li>
+             <li data-additional="true" data-count="0" id="x-list-event_types-item-116362" style="display:none;"><a href="https://events.ucr.edu/calendar?event_types%5B%5D=116362">› Film &amp; Screenings (0)</a></li>
+             <li class="sub_show_more" data-show-more="true"><a href="#" data-action="toggle-filter-list" data-collapsed-label="Expand &amp;darr;" data-expanded-label="Hide &amp;uarr;">Expand ?</a></li>
+            </ul></li>
+           <li data-count="5" id="x-list-event_types-item-116368"><a href="https://events.ucr.edu/calendar?event_types%5B%5D=116368">Lectures &amp; Presentations (5)</a></li>
+           <li data-count="2" id="x-list-event_types-item-116358"><a href="https://events.ucr.edu/calendar?event_types%5B%5D=116358">Meetings &amp; Training (2)</a></li>
+           <li data-count="1" id="x-list-event_types-item-118167"><a href="https://events.ucr.edu/calendar?event_types%5B%5D=118167">Seminars (1)</a></li>
+           <li data-count="0" id="x-list-event_types-item-116366"><a href="https://events.ucr.edu/calendar?event_types%5B%5D=116366">Conferences (0)</a></li>
+           <li data-count="0" id="x-list-event_types-item-116367"><a href="https://events.ucr.edu/calendar?event_types%5B%5D=116367">Fundraisers (0)</a></li>
+          </ul> 
+         </div> 
+        </fieldset> 
+        <fieldset id="x-list-event_topic"> 
+         <label class="widget-header"><span><i class="fa fa-list-ul"></i> Topic</span></label> 
+         <div class="widget-content"> 
+          <ul data-has-selection="false" id="x-event_topic">
+           <li data-count="4" id="x-list-event_types-item-116372"><a href="https://events.ucr.edu/calendar?event_types%5B%5D=116372">Technology &amp; Innovation (4)</a></li>
+           <li data-count="3" id="x-list-event_types-item-116375"><a href="https://events.ucr.edu/calendar?event_types%5B%5D=116375">Recreation (3)</a></li>
+           <li data-count="1" id="x-list-event_types-item-116373"><a href="https://events.ucr.edu/calendar?event_types%5B%5D=116373">Ceremonies &amp; Traditions (1)</a></li>
+           <li data-count="1" id="x-list-event_types-item-116369"><a href="https://events.ucr.edu/calendar?event_types%5B%5D=116369">Diversity &amp; Inclusion (1)</a></li>
+           <li data-count="1" id="x-list-event_types-item-116370"><a href="https://events.ucr.edu/calendar?event_types%5B%5D=116370">Health &amp; Wellness (1)</a></li>
+           <li data-count="0" id="x-list-event_types-item-116374"><a href="https://events.ucr.edu/calendar?event_types%5B%5D=116374">Admissions (0)</a></li>
+           <li data-additional="true" data-count="0" id="x-list-event_types-item-116371" style="display:none;"><a href="https://events.ucr.edu/calendar?event_types%5B%5D=116371">Sustainability (0)</a></li>
+           <li class="sub_show_more" data-show-more="true"><a href="#" data-action="toggle-filter-list" data-collapsed-label="Show More &amp;darr;" data-expanded-label="Show Less &amp;uarr;">Show More ?</a></li>
+          </ul> 
+         </div> 
+        </fieldset> 
+        <fieldset id="x-list-event_audience"> 
+         <label class="widget-header"><span><i class="fa fa-list-ul"></i> Audience</span></label> 
+         <div class="widget-content"> 
+          <ul data-has-selection="false" id="x-event_audience">
+           <li data-count="34" id="x-list-event_types-item-116378"><a href="https://events.ucr.edu/calendar?event_types%5B%5D=116378">Graduate Students (34)</a></li>
+           <li data-count="32" id="x-list-event_types-item-116380"><a href="https://events.ucr.edu/calendar?event_types%5B%5D=116380">Undergraduate Students (32)</a></li>
+           <li data-count="15" id="x-list-event_types-item-116376"><a href="https://events.ucr.edu/calendar?event_types%5B%5D=116376">Faculty &amp; Staff (15)</a></li>
+           <li data-count="14" id="x-list-event_types-item-117789"><a href="https://events.ucr.edu/calendar?event_types%5B%5D=117789">Transfer Students (14)</a></li>
+           <li data-count="13" id="x-list-event_types-item-118257"><a href="https://events.ucr.edu/calendar?event_types%5B%5D=118257">General Public (13)</a></li>
+           <li data-count="13" id="x-list-event_types-item-117784"><a href="https://events.ucr.edu/calendar?event_types%5B%5D=117784">International Students (13)</a></li>
+           <li data-additional="true" data-count="12" id="x-list-event_types-item-116381" style="display:none;"><a href="https://events.ucr.edu/calendar?event_types%5B%5D=116381">Alumni (12)</a></li>
+           <li data-additional="true" data-count="8" id="x-list-event_types-item-116379" style="display:none;"><a href="https://events.ucr.edu/calendar?event_types%5B%5D=116379">Prospective Students (8)</a></li>
+           <li data-additional="true" data-count="6" id="x-list-event_types-item-121250" style="display:none;"><a href="https://events.ucr.edu/calendar?event_types%5B%5D=121250">Parents (6)</a></li>
+           <li class="sub_show_more" data-show-more="true"><a href="#" data-action="toggle-filter-list" data-collapsed-label="Show More &amp;darr;" data-expanded-label="Show Less &amp;uarr;">Show More ?</a></li>
+          </ul> 
+         </div> 
+        </fieldset> 
+        <fieldset id="x-list-event_athletics"> 
+         <label class="widget-header"><span><i class="fa fa-list-ul"></i> Athletics</span></label> 
+         <div class="widget-content"> 
+          <ul data-has-selection="false" id="x-event_athletics">
+           <li data-count="0" id="x-list-event_types-item-116382"><a href="https://events.ucr.edu/calendar?event_types%5B%5D=116382">Baseball (0)</a></li>
+           <li data-count="0" id="x-list-event_types-item-116383"><a href="https://events.ucr.edu/calendar?event_types%5B%5D=116383">Basketball (0)</a></li>
+           <li data-count="0" id="x-list-event_types-item-116384"><a href="https://events.ucr.edu/calendar?event_types%5B%5D=116384">Cross Country (0)</a></li>
+           <li data-count="0" id="x-list-event_types-item-116385"><a href="https://events.ucr.edu/calendar?event_types%5B%5D=116385">Golf (0)</a></li>
+           <li data-count="0" id="x-list-event_types-item-116391"><a href="https://events.ucr.edu/calendar?event_types%5B%5D=116391">Intramural Sports (0)</a></li>
+           <li data-count="0" id="x-list-event_types-item-116386"><a href="https://events.ucr.edu/calendar?event_types%5B%5D=116386">Soccer (0)</a></li>
+           <li data-additional="true" data-count="0" id="x-list-event_types-item-116387" style="display:none;"><a href="https://events.ucr.edu/calendar?event_types%5B%5D=116387">Softball (0)</a></li>
+           <li data-additional="true" data-count="0" id="x-list-event_types-item-116388" style="display:none;"><a href="https://events.ucr.edu/calendar?event_types%5B%5D=116388">Tennis (0)</a></li>
+           <li data-additional="true" data-count="0" id="x-list-event_types-item-116389" style="display:none;"><a href="https://events.ucr.edu/calendar?event_types%5B%5D=116389">Track &amp; Field (0)</a></li>
+           <li data-additional="true" data-count="0" id="x-list-event_types-item-116390" style="display:none;"><a href="https://events.ucr.edu/calendar?event_types%5B%5D=116390">Volleyball (0)</a></li>
+           <li class="sub_show_more" data-show-more="true"><a href="#" data-action="toggle-filter-list" data-collapsed-label="Show More &amp;darr;" data-expanded-label="Show Less &amp;uarr;">Show More ?</a></li>
+          </ul> 
+         </div> 
+        </fieldset> 
+       </div> 
+      </div> 
+      <div class="add_event_block_component "> 
+       <div id="share_events_block" class="widget box_container light_colorfive"> 
+        <h2 class="widget-header dark_colorfive">Share Events</h2> 
+        <div class="widget-content box_content"> 
+         <p>Want to list an event? Use our simple <a href="https://events.ucr.edu/event/create" class="add_event_icon">event submission form</a>. It only takes a minute!</p> 
+         <p>Want these events on your own site? <a href="/help/widget">Build a widget</a>.</p> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <!-- End LOCALIST code --> 
+  <footer> 
+   <div class="grid-container"> 
+    <div class="grid-x grid-padding-x align-center"> 
+     <div class="cell footer-google-search" id="block-ucriversidefootersearchblock" data-block-plugin-id="ucr_global_footer_search"> 
+      <section class="google-search"> 
+       <form action="https://www.ucr.edu/search.php"> 
+        <label class="show-for-sr" for="footer-search">Search for:</label> 
+        <input type="text" maxlength="255" id="footer-search" name="q" value="" placeholder=" "> 
+       </form> 
+      </section> 
+     </div> 
+    </div> 
+    <div class="grid-x grid-padding-x footer-columns"> 
+     <div class="cell medium-auto"> 
+      <section class="footer-item ucr-footer-info"> 
+       <span class="footer-logo"><span class="show-for-sr">University of California, Riverside</span></span> 
+       <address> 900 University Ave.<br> Riverside, CA 92521<br><br> Tel: (951) 827-1012 </address> 
+       <ul class="footer-links"> 
+        <li><a href="http://library.ucr.edu/" target="_blank">UCR Library</a></li> 
+        <li><a href="http://campusstatus.ucr.edu/" target="_blank">Campus Status</a></li> 
+        <li><a href="http://campusstore.ucr.edu/" target="_blank">Campus Store</a></li> 
+        <li><a href="http://www.ucr.edu/employment.html" target="_blank">Career Opportunities</a></li> 
+        <li><a href="http://diversity.ucr.edu/" target="_blank">Diversity</a></li> 
+        <li><a href="http://www.ucr.edu/about/directions.html" target="_blank">Maps and Directions</a></li> 
+        <li><a href="http://tours.ucr.edu/" target="_blank">Visit UCR</a></li> 
+       </ul> 
+      </section> 
+     </div> 
+     <div class="cell medium-auto"> 
+      <section class="footer-item footer-dept-info" id="block-ucriversidefooterdeptinformationblock" data-block-plugin-id="ucr_global_footer_dept_info"> 
+       <h3>University of California, Riverside</h3> 
+       <address> <a href="https://campusmap.ucr.edu" target="_blank"> 900 University Ave. <br>Riverside, CA 92521 </a><br> <br> Tel: (951) 827-1012<br> E-mail: <a href="mailto:webmaster@ucr.edu">webmaster@ucr.edu</a> </address> 
+       <p> <a href="https://campusmap.ucr.edu" target="_blank"> <i class="fa fa-map-marker"></i>Find Us<br><br> 
+         <!-- Absolute path for image file  --> 
+         <!--<img src="images/googlemap.png" alt="Find Us"></a>--> <img src="//assets.ucr.edu/localist/images/googlemap.png" alt="Find Us"> 
+         <!--<img src="http://localist.dev-ucr.acsitefactory.com/sites/g/files/rcwecm5451dev/files/googlemap.png" alt="Find Us">--> </a> </p> 
+      </section> 
+     </div> 
+     <div class="cell medium-auto"> 
+      <div data-contextual-id="block:block=ucriversidefooterfollowuslinksblock:langcode=en"></div> 
+      <section class="UcrGlobalFooterFollowUsBlock"> 
+       <h3>RELATED LINKS</h3> 
+       <ul class="footer-links-other"> 
+        <li><a href="http://campusmap.ucr.edu/" target="_blank">Campus Map</a></li> 
+        <li><a href="http://parking.ucr.edu/" target="_blank">Transportation and Parking Services</a></li> 
+        <li><a href="http://riversidecvb.com/" target="_blank">Riverside Convention and Visitors Bureau</a></li> 
+       </ul> 
+       <br> 
+       <h4 class="separator">Follow us:</h4> 
+       <div class="button-group"> 
+        <a href="http://facebook.com/ucriverside/" target="_blank" class="button mdi mdi-facebook" title="Facebook"><span class="show-for-sr">Facebook</span></a> 
+        <a href="http://twitter.com/ucriverside/" target="_blank" class="button mdi mdi-twitter" title="Twitter"><span class="show-for-sr">Twitter</span></a> 
+        <a href="http://youtube.com/ucriverside/" target="_blank" class="button mdi mdi-youtube-play" title="YouTube"><span class="show-for-sr">YouTube</span></a> 
+        <a href="http://instagram.com/ucriversideofficial/" target="_blank" class="button mdi mdi-instagram" title="Instagram"><span class="show-for-sr">Instagram</span></a> 
+        <a href="https://www.linkedin.com/school/university-of-california-riverside/" target="_blank" class="button mdi mdi-linkedin" title="LinkedIn"><span class="show-for-sr">LinkedIn</span></a> 
+       </div> 
+      </section> 
+      <!--<section class="footer-item" id="block-ucriversidefooternewsletterblock" data-block-plugin-id="ucr_global_footer_newsletter">
+
+
+                    <h3>Newsletter</h3>
+                    <p>Sign up for our monthly newsletter.</p>
+                    <form>
+                        <label class="show-for-sr" for="footer-newsletter">E-mail address:</label>
+                        <input type="text" id="footer-newsletter">
+                    </form>
+
+                </section>--> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="site-legal-footer"> 
+    <div class="grid-container"> 
+     <div class="grid-x grid-padding-x"> 
+      <div class="cell"> 
+       <ul> 
+        <li><a href="http://www.ucr.edu/privacy.html">Privacy Policy</a></li> 
+        <li><a href="http://www.ucr.edu/terms.html">Terms and Conditions</a></li> 
+        <li>© 2018 Regents of the University of California</li> 
+       </ul> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </footer> 
+  <!-- Start LOCALIST code --> 
+  <div id="lclst_footer" style="height:50px;"> 
+   <a rel="nofollow" style="margin-left:auto;margin-right:auto;display:block;font-weight:normal;font-size:16px;line-height:50px;font-family:inherit;text-align:center;color:#666;" href="http://www.localist.com?utm_source=UC%20Riverside&amp;utm_campaign=platform_footer&amp;utm_medium=branded%20link" title="Events calendar powered by Localist software">Events calendar powered by Localist software.</a> 
+  </div> 
+  <div style="display: none;" id="login-lightbox-container"> 
+   <div id="login-lightbox"> 
+    <div class="grid_container localist_modal localist_modal_medium localist_login_modal"> 
+     <div class="localist-modal-inner"> 
+      <div class="box_title box_header"> 
+       <h4><span>Login to UC Riverside Events Calendar</span></h4> 
+      </div> 
+      <h5>UCR Users:</h5> 
+      <p>You may login with your UCR NetID</p> 
+      <div class="form_box" data-login="container"> 
+       <form class="login_form" method="post" action="https://events.ucr.edu/auth/login"> 
+        <input type="hidden" name="previous_url" value="https://events.ucr.edu/"> 
+        <!-- CAS Login --> 
+        <div class="button_cont" style="text-align:center;"> 
+         <a class="btn btn-color profile_cas_button" style="width:50%;" href="https://events.ucr.edu/auth/cas_login?previous_url=https%3A%2F%2Fevents.ucr.edu%2F">Login with School ID</a> 
+        </div> 
+        <!-- All other User Statement --> 
+        <div class="signup_statement" style="margin-top: 1em; border-top: 1px solid #efefef; padding-top: 1em;border-bottom: none;"> 
+         <h5>All Other Users:</h5> 
+         <p>When creating an account, please create it with your first and last name, otherwise, it may be deleted.</p> 
+        </div> 
+        <!-- Social Media/External Login methods     --> 
+        <div class="login_methods clearfix"> 
+         <div class="user_action login"> 
+          <a class="btn btn-facebook profile_facebook_button" href="#" data-action="facebook-login" data-previous-url="https://events.ucr.edu/"><i class="fa fa-facebook"></i>Login with Facebook</a> 
+          <a class="btn btn-linkedin profile_linkedin_button" href="https://events.ucr.edu/auth/linkedin_login?return_to=https%3A%2F%2Fevents.ucr.edu%2F" data-action="linkedin-login" data-previous-url="https://events.ucr.edu/"><i class="fa fa-linkedin"></i>Login with LinkedIn</a> 
+          <a class="btn btn-twitter profile_twitter_button" href="https://events.ucr.edu/auth/twitter_login?previous_url=https%3A%2F%2Fevents.ucr.edu%2F" data-action="twitter-login" data-previous-url="https://events.ucr.edu/"><i class="fa fa-twitter"></i>Login with Twitter</a> 
+         </div> 
+        </div> 
+        <!-- Local Localist login user name and password --> 
+        <fieldset class="top2M" style="margin-top:2em;"> 
+         <label for="login_user"> <span class="sr-only">Email Address</span> <input id="login_user" style="margin:0;" type="text" name="username" class="fullwidth" aria-label="Email Address" placeholder="Email Address"> </label> 
+         <label for="login_password"> <span class="sr-only">Password</span> <input id="login_password" type="password" name="password" class="fullwidth" aria-label="Password" placeholder="Password"> </label> 
+        </fieldset> 
+        <div class="action_button"> 
+         <a href="/auth/forgot" class="btn btn-simple link" id="forgot_link">Forgot Password?</a> 
+         <input type="submit" value="Login" class="btn btn-color pull-right btn-padding" data-disable-with="Logging in..."> 
+         <a href="https://events.ucr.edu/signup?school_id=220" class="btn btn-color pull-right btn-padding btn-signup">Sign Up</a> 
+        </div> 
+       </form> 
+       <div class="top2M" style="margin-top:2em;"> 
+        <h5>Note on Event Submission:</h5> 
+        <p>In order to submit events, users must have a UCR email address (@ucr.edu). All events submitted by non-UCR users WILL be deleted.</p> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div id="fb-root"></div> 
+  <script src="//connect.facebook.net/en_US/all.js"></script> 
+  <script type="text/javascript">
+  FB.init({
+    appId: '1871797459801957',
+    status: true,
+    cookie: true,
+    xfbml: true,
+    channelUrl: document.location.protocol + '//' + document.location.host + '/channel.html',
+    oauth: true
+  });
+</script> 
+  <!-- autopilot --> 
+  <script type="text/javascript">(function(o){var b="https://api.autopilothq.com/anywhere/",t="b015a9fc235440e48cf7fdf3c03b29238e604000fcf0488cbb953e92125097ce",a=window.AutopilotAnywhere={_runQueue:[],run:function(){this._runQueue.push(arguments);}},c=encodeURIComponent,s="SCRIPT",d=document,l=d.getElementsByTagName(s)[0],p="t="+c(d.title||"")+"&u="+c(d.location.href||"")+"&r="+c(d.referrer||""),j="text/javascript",z,y;if(!window.Autopilot) window.Autopilot=a;if(o.app) p="devmode=true&"+p;z=function(src,asy){var e=d.createElement(s);e.src=src;e.type=j;e.async=asy;l.parentNode.insertBefore(e,l);};y=function(){z(b+t+'?'+p,true);};if(window.attachEvent){window.attachEvent("onload",y);}else{window.addEventListener("load",y,false);}})({"app":true});</script> 
+  <script type="text/javascript">
+        var _gaq = _gaq || [];
+
+        _gaq.push(['_setAccount', 'UA-38181101-1']); _gaq.push(['_trackPageview']);
+_gaq.push(['t2._setAccount', 'UA-3051875-1']); _gaq.push(['t2._trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+      </script>   
+ </body>
+</html>
