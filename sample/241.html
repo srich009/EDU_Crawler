@@ -1,280 +1,335 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
  <head> 
-  <title>UCLA Happenings - Lyrics of Complaint from York, Norwich, and St. Paul - May 3, 2018</title> 
-  <meta name="description" content="Listing of performing arts, museums and galleries, films, exhibitions, lectures, and athletic events open to the entire community. Check it out."> 
-  <meta name="keywords" content="UCLA, events, calendar, events calendar, University of California Los Angeles, UCLA Bruins, UCLA Events"> 
+  <title>UC Application</title> 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
-  <meta http-equiv="imagetoolbar" content="no"> 
-  <meta property="og:title" content="Lyrics of Complaint from York, Norwich, and St. Paul - May 3, 2018"> 
-  <meta property="og:type" content="activity"> 
-  <meta property="og:image" content="http://happenings.ucla.edu/images/facebook-logo.jpg"> 
-  <meta property="og:site_name" content="UCLA Happenings"> 
-  <meta property="fb:app_id" content="140651848758"> 
-  <meta property="twitter:account_id" content="18918483"> 
-  <link href="/global/main.css" rel="stylesheet" type="text/css"> 
-  <link href="/global/jquery-ui-1.7.2.custom.min.css" rel="stylesheet" type="text/css"> 
-  <link href="/global/global.calendar.css" rel="stylesheet" type="text/css"> 
-  <link href="/global/accordion.min.css" rel="stylesheet" type="text/css"> 
-  <link href="/global/print.css" rel="stylesheet" type="text/css" media="print"> 
-  <!--<script type="text/javascript" src="http://m.ucla.edu/assets/redirect/js.php?d=http%3A%2F%2Fhappenings.ucla.edu&m=http%3A%2F%2Fm.happenings.ucla.edu%2Fall%2F30days%2Fevent%2F266332"></script>--> 
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script> 
-  <script type="text/javascript" src="/js/ui/jquery-ui-1.8.4.custom.min.js"></script> 
-  <script type="text/javascript" src="/js/jquery.getUrlParam.min.js"></script> 
-  <script type="text/javascript" src="/js/jquery.cookie.min.js"></script> 
-  <script type="text/javascript" src="/js/jquery.infinite-carousel.min.js"></script> 
-  <script type="text/javascript" src="/js/func.carousel.viewport.min.js"></script> 
-  <script type="text/javascript" src="/js/func.global.min.js"></script> 
-  <script type="text/javascript" src="/js/twitter.min.js"></script> 
-  <!--EVENT DETAIL PAGE--> 
-  <link href="/global/dialog.css" rel="stylesheet" type="text/css"> 
-  <link href="/global/shareit.css" rel="stylesheet" type="text/css"> 
-  <script type="text/javascript" src="/js/ga_social_tracking.js"></script> 
-  <script type="text/javascript" src="/js/external/bgiframe/jquery.bgiframe.min.js"></script> 
-  <script type="text/javascript" src="/js/event_detail.js"></script> 
-  <!--CONTACT US PAGE--> 
-  <!--SUBMIT PAGE--> 
-  <!--RSS List--> 
-  <link rel="alternate" type="application/rss+xml" title="Today's Events" href="http://feeds.feedburner.com/uclahappenings-all-today"> 
-  <link rel="alternate" type="application/rss+xml" title="This Weekend's Events" href="http://feeds.feedburner.com/uclahappenings-all-weekend"> 
-  <link rel="alternate" type="application/rss+xml" title="Next 30 Days Events" href="http://feeds.feedburner.com/uclahappenings-all-30days"> 
-  <!--[if lte IE 6]><script src="/js/ie6/ie6-upgrade.min.js"></script><![endif]--> 
-  <link rel="shortcut icon" href="/favicon.ico"> 
+  <meta http-equiv="Content-Script-Type" content="text/javascript"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=8"> 
+  <meta name="keywords" content="University of California, University, California, UC, UCOP, UC admission, UC admissions, undergraduate admission, undergraduate admissions, college admission, college admissions, university admission, university admissions, admission,  admissions, application, apply, college, campus, major, degree, scholarships, academics, activities, awards, Cal, UC  Berkeley, UCB, UC  Davis, UCD, UC  Irvine, UCI, UC  Los Angeles, UCLA, UC  Merced, UCM, UC  Riverside, UCR, UC San Diego, UCSD, UC Santa Barbara, UCSB, UC Santa Cruz, UCSC, My UC Application"> 
+  <meta name="description" content="This is University of California's application for undergraduate admission and scholarships. Here you can apply online to these UC campuses: Berkeley, Davis, Irvine, Los Angeles, Merced, Riverside, San Diego, Santa Barbara, Santa Cruz."> 
+  <link rel="shortcut icon" type="image/png" href="/applicant/images/favicon.ico"> 
+  <link rel="stylesheet" type="text/css" media="screen" href="/applicant/css/layout.css"> 
+  <link rel="stylesheet" type="text/css" media="screen" href="/applicant/css/smoothness/jquery-ui-1.7.2.custom.css"> 
+  <link rel="stylesheet" type="text/css" media="screen" href="/applicant/css/shadowbox.css"> 
+  <script type="text/javascript" src="/applicant/dwr/util.js"></script> 
+  <script type="text/javascript" src="/applicant/dwr/engine.js"></script> 
+  <script src="/applicant/js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script> 
+  <script src="/applicant/js/jquery-migrate-1.2.1.js" type="text/javascript" charset="utf-8"></script> 
+  <script src="/applicant/js/jquery-ui-1.7.2.custom.min.js" type="text/javascript" charset="utf-8"></script> 
+  <script src="/applicant/js/plugins/jquery.maskedinput-1.2.2.min.js" type="text/javascript" charset="utf-8"></script> 
+  <script src="/applicant/js/plugins/jquery.form.js" type="text/javascript" charset="utf-8"></script> 
+  <script src="/applicant/js/plugins/jquery.metadata.js" type="text/javascript" charset="utf-8"></script> 
+  <script src="/applicant/js/plugins/jquery.validate.min.js" type="text/javascript" charset="utf-8"></script> 
+  <script src="/applicant/js/plugins/jquery.autocomplete.js" type="text/javascript" charset="utf-8"></script> 
+  <script src="/applicant/js/application.js" type="text/javascript" charset="utf-8"></script> 
+  <script src="/applicant/js/ucop.js" type="text/javascript" charset="utf-8"></script> 
+  <script src="/applicant/js/applicant/textUtils.js" type="text/javascript" charset="utf-8"></script> 
+  <script src="/applicant/js/applicant/applicantCommon.js" type="text/javascript" charset="utf-8"></script> 
+  <script src="/applicant/js/RegExValidation.js" type="text/javascript" charset="utf-8"></script> 
+  <script src="/applicant/js/hyphenate.js" type="text/javascript" charset="utf-8"></script> 
+  <script type="text/javascript" src="/applicant/js/shadowbox/shadowbox.js"></script> 
+  <script type="text/javascript">
+  Shadowbox.init({
+    // Skip the automatic setup because we don't have any
+    // properly configured link elements on the page.
+    skipSetup: true,
+    // Prevent modal from closing when clicking on the overlay
+    modal: true,
+    // Include the players to display content.
+    //players: ["inline","iframe","html"]
+    players: ["html"]
+  });
+</script> 
+  <!-- noscript><div style="background-color:#fce9c0;background-position: 15px;border-top:2px solid #dbac48;border-bottom:2px solid #dbac48;padding: 15px 10px 15px 50px;"><p>It appears that JavaScript is not enabled in this web browser however ApplyUC requires it. Please enable it or try another web browser.</p></div></noscript --> 
  </head> 
  <body> 
-  <div id="ie6Warning"></div> 
-  <!--EVENT DETAIL PAGE--> 
-  <div id="fb-root"></div> 
-  <input type="hidden" id="thisEventDate" value="05/03/2018"> 
-  <div id="dialog" title="Email This Event" style="display: none;"> 
-   <div class="ui-widget1"> 
-    <div class="ui-state-highlight ui-corner-all" style="margin-top: 0px; padding: 0 .7em;"> 
-     <p><span class="ui-icon ui-icon-info" style="float: left; margin-right: .3em;"></span> <strong>Sent!</strong><br>An email has been sent to <span id="receiverEmailThis"></span>.</p> 
+  <div class="page_margins">
+   <!-- begin: page_margins div --> 
+   <div class="page">
+    <!-- begin: page div --> 
+    <div id="page_header"> 
+     <div id="header">
+      <!-- begin: header div --> 
+      <img src="images/uc_banner_left.png" width="369" height="95" alt="University of California">
+      <img src="images/uc_banner_right_basic.png" width="589" height="95" alt="University of California"> 
+     </div>
+     <!-- end: header div --> 
     </div> 
-   </div> 
-   <div class="ui-widget2"> 
-    <div class="ui-state-error ui-corner-all" style="padding: 0 .7em;"> 
-     <p><span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span> <strong>Alert:</strong> We're experiencing technical difficulties. Please try again later.</p> 
-    </div> 
-   </div> 
-   <form name="reminderForm" id="reminderForm" action="" method="post" style="display: inline;"> 
-    <p>Send an email to someone that contains a link to this event:</p> 
-    <table width="440" class="mainBody"> 
-     <tbody>
-      <tr> 
-       <td width="89"><span class="mandatoryField">*</span>Email to</td> 
-       <td width="338"><input type="text" name="email_to" size="30" class="input_text" id="email_to"></td> 
-      </tr> 
-      <tr> 
-       <td><span class="mandatoryField">*</span>E-mail from</td> 
-       <td><input type="text" name="email_from" size="30" class="input_text" id="email_from"></td> 
-      </tr> 
-      <tr> 
-       <td valign="top">Comment</td> 
-       <td><textarea name="comment" cols="40" rows="10" class="input_text" id="comment"></textarea></td> 
-      </tr> 
-      <tr> 
-       <td></td> 
-       <td><input type="submit" class="input_button2" value="Send"></td> 
-      </tr> 
-     </tbody>
-    </table> 
-    <input type="hidden" name="action" value="sendEmailThis"> 
-    <input type="hidden" name="url" value="http://happenings.ucla.edu/all/event/266332"> 
-   </form> 
-  </div> 
-  <div id="visual-wrapper"> 
-   <div id="top"> 
-    <div id="header"> 
-     <p class="hiddenStructure"> <a accesskey="2" href="#featured">Skip to featured events.</a> <a accesskey="3" href="#eventlistings">Skip to event listings.</a> </p> 
-     <h1 id="logo"><a href="/" accesskey="1"><span>UCLA Happenings</span></a></h1> 
-     <h5 class="hiddenStructure">Sections</h5> 
-     <ul id="nav"> 
-      <li id="all-events"><a href="/all" class="selected">All Events</a></li> 
-      <li id="sports"><a href="/sports">Sports</a></li> 
-      <li id="arts"><a href="/arts">Arts</a></li> 
-      <li id="lectures"><a href="/lectures">Lectures</a></li> 
-     </ul> 
-    </div> 
-   </div> 
-   <div class="visualClear">
-    <!-- -->
-   </div> 
-   <div id="content"> 
-    <div id="column-one"> 
-     <div id="event-details"> 
-      <a name="eventlistings"></a> 
-      <div id="document-actions"> 
-       <ul id="add-event-to"> 
-        <li id="email-link"><a href="#" id="emailThis">Email this</a></li> 
-        <li id="print-link"><a href="javascript:this.print();" title="">Print this</a></li> 
-        <li id="shareit-button"><a href="#" rel="shareit">Share this</a></li> 
-       </ul> 
-       <div id="shareit-box"> 
-        <div id="shareit-header"></div> 
-        <ul id="shareit-links"> 
-         <img src="/images/close-button.gif" alt="Close Share Items" id="shareit-box-close"> 
-         <li id="facebook-link"> <a href="http://www.facebook.com/sharer.php?u=http://happenings.ucla.edu/all/event/266332&amp;t=Lyrics+of+Complaint+from+York%2C+Norwich%2C+and+St.+Paul" target="_blank">Facebook</a> </li> 
-         <li id="delicious-link"> <a href="http://delicious.com/save" onclick="window.open('http://delicious.com/save?v=5&amp;noui&amp;jump=close&amp;url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title), 'delicious','toolbar=no,width=550,height=550'); return false;">Delicious</a> </li> 
-         <li id="digg-link"> <a href="http://digg.com/submit?url=http%3A%2F%2Fhappenings.ucla.edu%2Fall%2Fevent%2F266332&amp;title=Lyrics+of+Complaint+from+York%2C+Norwich%2C+and+St.+Paul&amp;bodytext=Literary+Networks+of+the+Vicars+Choral+and+the+Clerical+Proletariat+in+Late+Medieval+English+Cathedrals&amp;media=news&amp;topic=">Digg</a> </li> 
-         <li id="twitter-link"> <a href="http://twitter.com/share?text=Lyrics+of+Complaint+from+York%2C+Norwich%2C+and+St.+Paul&amp;ur=http%3A%2F%2Fhappenings.ucla.edu%2Fall%2Fevent%2F266332&amp;via=uclahappenings" title="Share this event with your Twitter followers" target="_blank">Twitter</a> </li> 
-         <li id="ical-link"><a href="/all/ical/happenings-266332.ics" target="_blank">iCal</a></li> 
-         <li id="vcal-link"><a href="/all/vcal/happenings-266332.vcs" target="_blank">vCal</a></li> 
-        </ul> 
+    <!-- end: page_header div --> 
+    <div id="main">
+     <!-- begin: main div --> 
+     <div id="col1"> 
+      <div id="col1_content" class="clearfix"> 
+       <div class="sidebar_box">
+        <!-- begin:  Statement of Integrity --> 
+        <div class="middle"> 
+         <p><span class="bold"><a href="https://admissions.universityofcalifornia.edu/docs/StatementOfIntegrity.pdf" title="Download Statement of Integrity. Clicking this link will open a new tab/window." target="_blank">Statement of Integrity</a></span></p> 
+        </div> 
+        <div class="bottom"></div> 
+       </div>
+       <!-- end:  Statement of Integrity --> 
+       <div class="sidebar_box">
+        <!-- begin:  Need Help? --> 
+        <div class="middle"> 
+         <div id="need_help"> 
+          <p><span class="bold">Need Help?</span></p> 
+          <p>Call the UC Application Center at <span style="white-space:nowrap;">(800) 207-1710</span> (within U.S.) or <span style="white-space:nowrap;">(925) 298-6856</span> (outside U.S.), or <span style="white-space:nowrap;">email</span> <a href="mailto:ucinfo@applyucsupport.net" title="Email ucinfo@applyucsupport.net">ucinfo@applyucsupport.net</a>.</p> 
+         </div> 
+        </div> 
+        <div class="bottom"></div> 
+       </div>
+       <!-- end:  Need Help? --> 
+       <!-- begin: Common Questions --> 
+       <div class="sidebar_box"> 
+        <div class="middle"> 
+         <img src="images/common_questions.jpg" width="170" height="20" alt="Common Questions"> 
+         <ul class="questions_nav"> 
+          <li><a class="expandable_question" href="#" title="If I've already submitted my application and want to apply to an additional campus, should I start a new application?">If I've already submitted my application and want to apply to an additional campus, should I start a new application?</a> <p>No. If the campus you want to apply to is still open, you can add it to your existing application. You will have to pay an additional application fee.</p> </li> 
+         </ul> 
+         <!--  More/Fewer Questions link not needed --> 
+         <!--  a id="more_questions_link" href="#" title="More Questions">More Questions</a --> 
+        </div> 
+        <div class="bottom"></div> 
        </div> 
+       <!-- end: Common Questions --> 
       </div> 
-      <h2>Lyrics of Complaint from York, Norwich, and St. Paul</h2> 
-      <p id="more-info"> Thursday, May 3, 2018<br> 4:00 pm - 5:10 pm, Royce Hall Conf/Seminar - - Humanities Conf Room 314 </p> 
-      <p class="description"> Literary Networks of the Vicars Choral and the Clerical Proletariat in Late Medieval English Cathedrals </p> 
-      <p>See below for <a href="#additional-info">additional information</a>.</p> 
-      <p id="recommendButton"> 
-       <fb:like href="http://happenings.ucla.edu/all/event/266332" send="false" width="450" show_faces="false" action="recommend"></fb:like> </p> 
-      <h3>Admission</h3>
-      <p>Free and open to the public. <a href="http://cmrs.ucla.edu/event/literary-networks-vicars-choral-clerical-proletariat-late-medieval-english-cathedrals-lyrics-complaint-york-norwich-st-pauls/">Advance registration</a> required.</p> 
-      <h3>Contact</h3>
-      <p><a href="http://cmrs.ucla.edu/">Center for Medieval and Renaissance Studies</a><br>(310) 825-1880<br><a href="mailto:cmrs@humnet.ucla.edu">cmrs@humnet.ucla.edu</a></p> 
-      <h3>Website</h3>
-      <p><a href="http://cmrs.ucla.edu/event/literary-networks-vicars-choral-clerical-proletariat-late-medieval-english-cathedrals-lyrics-complaint-york-norwich-st-pauls/">http://cmrs.ucla.edu/event/literary-networks-vicars-cho...</a></p> 
-      <a name="additional-info"></a>
-      <h3>Additional Information</h3>
-      <p>When Margery Kempe visited York Minster in 1417 she was befriended by two of the choral vicarii, John Kendale “and another preste whech song be the bischopys grave.”</p> 
-      <p>The grave in question belonged to Archbishop Richard Scrope, who was executed under Henry IV and whose semi-suppressed cult remained a matter of some delicacy. Kendale and his unnamed fellow were not only counseling Kempe, but introducing her to the Minster’s history, saints, and monuments—an official part of the daily job of cathedral vicarii.</p> 
-      <p>Kendale was also an owner of Piers Plowman. If we link such information about the literary interests of the vicarii with some of the contemporary Latin writings produced at York Minster and other cathedral networks, we get a rare view of literary circles of the clerks lower down the ladder in episcopal familia.</p> 
-      <p>Some of the texts that survive are more generally indicative of a cathedral’s local pride in its history, and its zeal to protect its power and privileges. Other survivals, for instance at York, relate directly to the Scrope execution, such as poems of traumatic mourning in liturgical Latin (his death was personally witnessed by many of his cathedral familia in 1405), and fragmentary in-house chronicles—sometimes versified.</p> 
-      <p>Despite the royal and ecclesiastical censorship efforts—in fact likely because of them—a stunning range of literature sprang up from York Minster, giving us a rare chance to look at multilingual literary production within a normally invisible group.</p> 
-      <p>Private lyrics on love, loneliness, and chorister experience also survive from the cathedrals at York, St. Paul’s, Norwich, and elsewhere.</p> 
-      <p>In this talk, CMRS Distinguished Visiting Scholar Kathryn Kerby-Fulton (Notre Dame Professor of English, Notre Dame University) compares poetry from manuscripts connected to these and other cathedrals, especially those containing poems about the woes of chorister life or clerical isolation.</p> 
      </div> 
-    </div> 
-    <div id="column-two"> 
-     <div id="portlet-search-date"> 
-      <dl class="portlet"> 
-       <dt class="portlet-header">
-         Search by Date 
-       </dt> 
-       <dd> 
-        <!-- DATE PICKER JQUERY --> 
-        <div id="calendarPicker"></div> 
-       </dd> 
-       <dd id="calendar-views"> 
-        <p>?&nbsp;<a href="/search/k/mEvent/c/0422201804282018/Search/searchCal">Prev Week</a> | <a href="/search/k/mEvent/c/0506201805122018/Search/searchCal">Next Week</a>&nbsp;?</p> 
-        <p>View: <a href="/search/k/mEvent/c/0503201805032018/Search/searchCal">Today</a> | <a href="/search/k/mEvent/c/0429201805052018/Search/searchCal">This Week</a> | <a href="/search/k/mEvent/c/0501201805312018/Search/searchCal">This Month</a></p> 
-       </dd> 
-      </dl> 
-     </div> 
-     <p><a href="http://www.ucla.edu/optimists/?utm_campaign=optimists-fall-2017&amp;utm_source=happenings.ucla.edu&amp;utm_medium=affiliate&amp;utm_content=rotating-banner&amp;utm_size=230x192"><img src="/images/ads/230x192-optimists-fall2017-retina.gif" alt="Optimism makes no excuses. Optimism always finds a way. Powered by optimism. Explore How" height="192" width="230"></a></p> 
-     <div id="portlet-search"> 
-      <dl class="portlet"> 
-       <dt class="portlet-header">
-        Search by Keyword
-       </dt> 
-       <dd id="searchbox"> 
-        <form name="searchForm" method="get" action="/search" onsubmit="return searchSubmit(this)"> 
-         <label for="searchGadget" class="hiddenStructure">Search Site</label> 
-         <input name="keywords" type="text" size="18" title="Search Site" accesskey="4" id="searchGadget"> 
-         <input name="Beginning_Date" type="hidden" value="05-03-2018"> 
-         <input name="Ending_Date" type="hidden" value="05-03-2020"> 
-         <input class="searchButton" type="submit" value=""> 
-         <input type="hidden" name="action" value="searchCal"> 
-        </form> 
-       </dd> 
-      </dl> 
-     </div> 
-     <div id="portlet-category"> 
-      <dl class="portlet"> 
-       <dt class="portlet-header">
-        Events by Category
-       </dt> 
-       <dd> 
-        <ul> 
-         <li><a href="/category/conference">Conference</a></li> 
-         <li><a href="/category/exhibitions">Exhibitions</a></li> 
-         <li><a href="/category/film">Film</a></li> 
-         <li><a href="/category/performance">Performance</a></li> 
-         <li><a href="/category/workshop">Workshop</a></li> 
-         <li><a href="/most-recommended">Most Recommended</a></li> 
-        </ul> 
-       </dd> 
-      </dl> 
-     </div> 
-     <div id="portlet-related"> 
-      <dl class="portlet"> 
-       <dt class="portlet-header">
-         Event Related Websites 
-       </dt> 
-       <dd> 
-        <ul> 
-         <div id="accordion"> 
-          <h3>Visitor Information</h3> 
-          <div> 
-           <ul> 
-            <li><a href="https://main.transportation.ucla.edu/campus-parking/visitors/general-event-parking">Parking</a></li> 
-            <li><a href="/related/shopping">Shopping</a></li> 
-            <li><a href="/related/dining">Dining</a></li> 
-            <li><a href="https://weather.atmos.ucla.edu/fiveday.php">Weather</a></li> 
-            <li><a href="http://www.adminpolicies.ucla.edu/">Visitor Conduct</a></li> 
-           </ul> 
+     <div id="col3"> 
+      <!-- begin: col3 div --> 
+      <div id="col3_content" class="clearfix">
+       <!-- begin: col3_content div --> 
+       <!-- begin: skiplink anchor: navigation --> 
+       <a id="content" name="content"></a> 
+       <!-- end: skiplink anchor: navigation --> 
+       <!-- begin: If JavaScript is disabled. --> 
+       <noscript> 
+        <div id="noscript">
+          JavaScript is not enabled in your web browser. Please enable it or try another JavaScript enabled browser. 
+        </div> 
+       </noscript> 
+       <!-- end: If JavaScript is disabled. --> 
+       <script type="text/javascript">
+	$().ready(function() {
+		  $('form').preventDoubleSubmission();
+	});  
+</script> 
+       <div class="floatbox"> 
+        <h1 class="my_uc_application_title" title="My UC Application"><span class="hidden_title">My UC Application</span></h1> 
+       </div> 
+       <form id="loginForm" class="yform" action="/applicant/login.htm" method="post"> 
+        <!-- begin: Message section - Notice--> 
+        <!-- end: Message section - Notice --> 
+        <!-- Begin: Validation Error Box --> 
+        <div id="error_signin" class="hidden"> 
+         <div class="notice error"> 
+          <h6>Oops! There are errors on the page that need to be corrected.</h6> 
+          <div></div> 
+          <div></div> 
+         </div> 
+        </div> 
+        <!-- End: Validation Error Box --> 
+        <div class="indent"> 
+         <div id="loginErrorMessage" class="visible">
+          <p class="indent"><span class="instructions_error"></span></p>
+         </div> 
+         <div id="sign_in"> 
+          <h5>Sign In</h5> 
+          <div class="type-text"> 
+           <label for="emailAddress">Email Address <span id="signin_email_errors" class="instructions_error"></span></label> 
+           <input class="large" type="text" name="emailAddress" id="emailAddress" value="" size="20" maxlength="50" tabindex="1"> 
           </div> 
-          <h3>Academic Calendar</h3> 
-          <div> 
-           <ul> 
-            <li><a href="http://www.registrar.ucla.edu/calendar/">Academic/Administrative Calendars</a></li> 
-           </ul> 
+          <div class="type-text"> 
+           <label for="password">Password</label> 
+           <div id="signin_password_errors" class="instructions_error"></div> 
+           <input class="large" type="password" name="password" id="password" value="" size="20" maxlength="15" tabindex="2"> 
+          </div> 
+          <br> 
+          <div id="form_signin_submit" class="floatbox"> 
+           <div class="float_left"> 
+            <a tabindex="3" class="next" href="javascript:validatePage()" title="Go"><span>Go</span></a> 
+           </div> 
+           <div class="float_left"> 
+            <div id="signin_lost_password">
+             <a tabindex="4" href="lostPassword.htm" title="Forgot your password?">Forgot your password?</a>
+            </div> 
+           </div> 
           </div> 
          </div> 
-        </ul> 
-       </dd> 
-      </dl> 
+         <div id="create_account"> 
+          <h5>Create a New Account</h5> 
+          <p class="indent">If you don't have an account you can create one here.</p> 
+          <br> 
+          <a tabindex="3" class="next" href="accountLogin.htm?clear=" title="Create an Account"><span>New Account</span></a> 
+         </div> 
+         <br class="clear_both"> 
+        </div> 
+        <input id="hidden_submit" type="submit" style="display:none"> 
+       </form> 
+       <div class="preload_01"></div> 
+       <div class="preload_02"></div> 
+       <div class="preload_03"></div> 
+       <div class="preload_04"></div> 
+       <div class="preload_05"></div> 
+       <div class="preload_06"></div> 
+       <div class="preload_07"></div> 
+       <div class="preload_08"></div> 
+       <div class="preload_09"></div> 
+       <div class="preload_10"></div> 
+       <div class="preload_11"></div> 
+       <div class="preload_12"></div> 
+       <div class="preload_13"></div> 
+       <div class="preload_14"></div> 
+       <div class="preload_15"></div> 
+       <div class="preload_16"></div> 
+       <div class="preload_17"></div> 
+       <div class="preload_18"></div> 
+       <div class="preload_19"></div> 
+       <div class="preload_20"></div> 
+       <div class="preload_21"></div> 
+       <div class="preload_22"></div> 
+       <div class="preload_23"></div> 
+       <div class="preload_24"></div> 
+       <div class="preload_25"></div> 
+       <div class="preload_26"></div> 
+       <div class="preload_27"></div> 
+       <div class="preload_28"></div> 
+       <div class="preload_29"></div> 
+       <div class="preload_30"></div> 
+       <div class="preload_31"></div> 
+       <div class="preload_32"></div> 
+       <div class="preload_33"></div> 
+       <div class="preload_34"></div> 
+       <div class="preload_35"></div> 
+       <div class="preload_36"></div> 
+       <div class="preload_37"></div> 
+       <div class="preload_38"></div> 
+       <div class="preload_39"></div> 
+       <div class="preload_40"></div> 
+       <div class="preload_41"></div> 
+       <div class="preload_42"></div> 
+       <div class="preload_43"></div> 
+       <div class="preload_44"></div> 
+       <div class="preload_45"></div> 
+       <div class="preload_46"></div> 
+       <div class="preload_47"></div> 
+       <div class="preload_48"></div> 
+       <div class="preload_49"></div> 
+       <div class="preload_50"></div> 
+       <div class="preload_51"></div> 
+       <div class="preload_52"></div> 
+       <div class="preload_53"></div> 
+       <div class="preload_54"></div> 
+       <script type="text/javascript">
+
+$(function(){
+    $('input').keydown(function(e){ 
+        if (e.keyCode == 13) { 
+        	validatePage();
+        }
+    });
+});
+
+  function validatePage() {
+
+	var ok = true;
+
+	var errorBox = document.getElementById('error_signin');
+	//var errorEmailBlank = document.getElementById('error_signin_email');
+	//var errorPasswordBlank = document.getElementById('error_signin_password');
+	var emailErrors = document.getElementById('signin_email_errors');
+	var passwordErrors = document.getElementById('signin_password_errors');
+	var email = document.getElementById('emailAddress');
+	var password = document.getElementById('password');
+
+	errorBox.className = 'hidden';
+	//errorEmailBlank.className = 'hidden';
+	//errorPasswordBlank.className = 'hidden';
+
+	clearErrors(emailErrors);
+	clearErrors(passwordErrors);
+	email.className = "large";
+	password.className = "large";
+
+	if (email.value == "") {
+		//errorEmailBlank.className = 'visible';
+		email.className = "large highlight_error";
+		addError(emailErrors, 'Please enter your email address.');
+		email.focus();
+		ok = false;
+	}
+	if (password.value == "") {
+		//errorPasswordBlank.className = 'visible';
+		password.className = "large highlight_error";
+		addError(passwordErrors, 'Please enter your password.');
+		password.focus();
+		ok = false;
+	}
+
+	if(ok) {
+	  //document.forms[0].submit();
+	  document.getElementById("hidden_submit").click();
+	}
+	else {
+	  errorBox.className = 'visible';
+	}
+  }
+
+  function addError(div, error) {
+	  if (div.innerHTML != '') {
+		  div.innerHTML += '<br />';
+	  }
+	  div.innerHTML += error;
+  }
+
+  function clearErrors(div) {
+	  div.innerHTML = '';
+  }
+
+</script> 
+      </div> 
+      <!-- end: col3_content div --> 
+      <div id="ie_clearing">
+       &nbsp;
+      </div> 
+      <!-- IE Column Clearing -->
      </div> 
-     <div id="portlet-rss"> 
-      <dl class="portlet"> 
-       <dt class="portlet-header">
-         Event RSS Feeds 
-       </dt> 
-       <dd> 
-        <ul> 
-         <li><a title="Subscribe to RSS feed" href="http://feeds.feedburner.com/uclahappenings-all-today">Today's Events</a></li> 
-         <li><a title="Subscribe to RSS feed" href="http://feeds.feedburner.com/uclahappenings-all-weekend">This Weekend</a></li> 
-         <li><a title="Subscribe to RSS feed" href="http://feeds.feedburner.com/uclahappenings-all-30days">30 Days Events</a></li> 
-         <li style="background:none;"><a title="Subscribe to RSS feed" href="/rss">View All Available</a></li> 
-        </ul> 
-       </dd> 
-      </dl> 
+     <!-- end: col3 div -->
+    </div> 
+    <!-- end: main div -->
+   </div> 
+   <!-- end: page div --> 
+   <div id="border-bottom"> 
+    <div id="edge-bl"></div> 
+    <div id="edge-br"></div> 
+   </div> 
+  </div> 
+  <!-- end: page_margins div --> 
+  <div id="footer">
+   <!-- begin: footer_content div --> 
+   <div id="footer_content"> 
+    <div id="unauthorized_access">
+     Pursuant to section 502 of the California Penal Code, unauthorized access to applicant information will be prosecuted to the full extent of the law.
+    </div> 
+    <br> 
+    <div class="floatbox"> 
+     <div class="float_left"> 
+      <ul> 
+       <li><a href="http://www.universityofcalifornia.edu/admissions/" title="admissions home. Clicking this link will open a new tab/window." target="_blank">admissions home</a></li> 
+       <li>|</li> 
+       <li><a id="help_link_footer" href="https://admissions.universityofcalifornia.edu/docs/html/help.html" title="help. Clicking this link will open a new tab/window." target="_blank">help</a></li> 
+       <li>|</li> 
+       <li><a href="https://admissions.universityofcalifornia.edu/docs/html/terms_of_use.html" title="terms of use. Clicking this link will open a new tab/window." target="_blank">terms of use</a></li> 
+      </ul> 
+     </div> 
+     <div class="float_right"> 
+      <p>Copyright Â© Regents of the University of California</p> 
      </div> 
     </div> 
    </div> 
+   <!-- end: footer_content div -->
   </div> 
-  <div class="visualClear">
-   <!-- -->
-  </div> 
-  <div id="footer-wrapper"> 
-   <div id="footer"> 
-    <div id="suggestions"> 
-     <h2>Suggestions/Feedback</h2> 
-     <p>We want to hear from you! Your suggestions and feedback are greatly appreciated. <a href="/contact">Contact us</a></p> 
-     <h2>Submit Events</h2> 
-     <p>To have your event considered for listing on Happenings, <a href="/submit">submit here</a>.</p> 
-    </div> 
-    <div id="about"> 
-     <h2>About Us</h2> 
-     <p>Happenings is a collaboration between the <a href="http://events.ucla.edu">UCLA Events Office</a> and <a href="http://www.ucla.edu/extaffairs/ucomm.html">UCLA Communications and Public Outreach</a>.</p> 
-     <p>All Happenings events are published by UCLA Events Office. Featured events are published by UCLA Communications and Public Outreach.</p> 
-    </div> 
-    <div class="visualClear">
-     <!-- -->
-    </div> 
-    <ul id="colophon"> 
-     <li class="first-item"><a href="http://www.ucla.edu/">UCLA.edu</a></li> 
-     <li><a href="http://www.universityofcalifornia.edu">University of California</a> © 2018 UC Regents</li> 
-     <li class="last-item"><a href="http://map.ais.ucla.edu/go/1002549">Powered by Events Online</a></li> 
-    </ul> 
-   </div> 
-  </div> 
-  <!-- start google analytics --> 
-  <script type="text/javascript" src="/js/analytics.js"></script> 
-  <!-- end google analytics --> 
-  <!-- start crazyegg --> 
-  <script type="text/javascript" src="http://s3.amazonaws.com/new.cetrk.com/pages/scripts/0009/1290.js"> </script> 
-  <!-- end crazyegg -->   
+  <script type="text/javascript"> 
+	appendOrigSessionId('o5uhuILf_5caDC-ylAQElz_a6lMY-ntI2GnN98ht');
+</script>   
  </body>
 </html>

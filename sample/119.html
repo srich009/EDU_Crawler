@@ -1,1698 +1,436 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
- <head>
-  <title>
-	MyUCLA
-</title>
-  <link rel="shortcut icon" href="/iwe/img/favicon.ico" type="image/x-icon">
-  <meta name="viewport" content="width=device-width">
-  <link href="/iwe/css/themes/ui-lightness/jquery-ui-1.9.0.css" rel="stylesheet" type="text/css">
-  <link href="/iwe/scripts/Plugins/Autocomplete/jquery.ui.autocomplete.css" rel="stylesheet" type="text/css">
-  <link href="/iwe/scripts/Plugins/Combobox/ui.combobox.css" rel="stylesheet" type="text/css">
-  <link href="/iwe/scripts/Plugins/Pagination/style.css" rel="stylesheet" type="text/css">
-  <link href="/iwe/scripts/Plugins/Slider/css/ui.slider.extras.css" rel="stylesheet" type="text/css">
-  <link href="/iwe/css/blocks.css" rel="stylesheet" type="text/css">
-  <link href="/iwe/css/iwe_icon_fonts.css" rel="stylesheet" type="text/css"> 
-  <!--
-		<link href="/iwe/css/main.css" rel="stylesheet" type="text/css" /><link href="/iwe/css/fixed.css" rel="stylesheet" type="text/css" /><link href="/iwe/css/iwe.css" rel="stylesheet" type="text/css" /><link href="/iwe/css/sait.css" rel="stylesheet" type="text/css" />	
---> 
-  <link href="/iwe/css/ResponsiveTemplate.css" rel="stylesheet" type="text/css"> 
-  <script src="/iwe/scripts/jquery-1.8.2.min.js" type="text/javascript"></script> 
-  <script src="/iwe/scripts/UI/jquery-ui-1.9.0.min.js" type="text/javascript"></script> 
-  <script src="/iwe/scripts/UI/jquery.ui.core.js" type="text/javascript"></script> 
-  <script src="/iwe/scripts/UI/jquery.ui.widget.js" type="text/javascript"></script> 
-  <script src="/iwe/scripts/UI/jquery.ui.position.js" type="text/javascript"></script> 
-  <script src="/iwe/scripts/UI/jquery.ui.menu.js" type="text/javascript"></script> 
-  <script src="/iwe/scripts/Plugins/Autocomplete/jquery.ui.autocomplete.js" type="text/javascript"></script> 
-  <script src="/iwe/scripts/Plugins/Dialog/jquery.ui.dialog.js" type="text/javascript"></script> 
-  <script src="/iwe/scripts/Plugins/Combobox/ui.combobox.js" type="text/javascript"></script> 
-  <script src="/iwe/scripts/Plugins/Dropdown/dropdown.js" type="text/javascript"></script> 
-  <script src="/iwe/scripts/Plugins/Pagination/jquery.paginate.js" type="text/javascript"></script> 
-  <script src="/iwe/scripts/Plugins/Slider/js/selectToUISlider.jQuery.js" type="text/javascript"></script> 
-  <script src="/iwe/scripts/Iwe/global.js" type="text/javascript"></script> 
-  <script src="/iwe/scripts/Iwe/plugins.js" type="text/javascript"></script> 
-  <script src="/iwe/scripts/modernizr-2.0.6-development-only.js" type="text/javascript"></script> 
-  <script src="/iwe/scripts/jquery.unobtrusive-ajax.js" type="text/javascript"></script> 
-  <script src="/iwe/scripts/jquery.validate.js" type="text/javascript"></script> 
-  <script src="/iwe/scripts/jquery.validate.unobtrusive.js" type="text/javascript"></script> 
-  <script src="/iwe/js/blocks.js" type="text/javascript"></script> 
-  <script src="/iwe/js/blocks-ie.js" type="text/javascript"></script> 
-  <!-- script src="/iwe/scripts/Plugins/Popover/popover.js" type="text/javascript"></script --> 
-  <script src="/iwe/scripts/Plugins/Utils/bootstrap-utils.js" type="text/javascript"></script> 
-  <link rel="stylesheet" href="/iwe/css/jquery-ui-1.10.3.custom.css"> 
-  <script src="/iwe/scripts/UI/jquery-ui-1.10.3.custom.js"></script> 
-  <script src="/iwe/scripts/Iwe/jquery.collapsible.min.js" type="text/javascript"></script> 
-  <link rel="Stylesheet" href="/css/iweFixes.css">
-  <link id="ctl00_Link1" rel="Stylesheet" href="css/portal.css"> 
-  <script type="text/javascript">
-		    $(document).ready(function () {
-		        $(".show-mega-menu").on("click", showMegaMenu);
-		    });
-
-		    function showMegaMenu() {
-		        $("#main-nav").toggleClass("hide-medium-small")
-		        return false; //don't follow the link
-		    }
-
-		    //when clicking on a smallmenu, open the menu directly below it, or close all menus below it
-		    $(document).on("click", "[id^='smallmenu_']", function () {
-		        var thisID = $(this).attr('id');
-		        $('.' + thisID).toggle();
-		        $(this).find('.smallmenu_icon').toggleClass('icon-plus-sign').toggleClass('icon-minus-sign');
-		        $("[class^='" + thisID + "_']").hide();
-		        $("." + thisID + " .smallmenu_icon").removeClass('icon-minus-sign').addClass('icon-plus-sign');
-		        return false; //don't follow the link
-		    });
-
-		    $(document).ready(function () {
-
-		        // bind a click event to the 'skip' link
-		        $("#skip-nav").on("click", function (event) {
-
-		            // strip the leading hash and declare
-		            // the content we're skipping to
-		            var skipTo = "#" + this.href.split('#')[1];
-
-		            // Setting 'tabindex' to -1 takes an element out of normal 
-		            // tab flow but allows it to be focused via javascript
-		            $(skipTo).attr('tabindex', -1).on('blur focusout', function () {
-
-		                // when focus leaves this element, 
-		                // remove the tabindex attribute
-		                $(this).removeAttr('tabindex');
-
-		            }).focus(); // focus on the content container
-		        });
-
-		    });
-		</script> 
-  <script src="/scripts/BrowserDetect.js" type="text/javascript"></script> 
-  <script src="//www.google-analytics.com/urchin.js" type="text/javascript"></script> 
-  <style type="text/css">
-        /*
-        @media screen and (min-width: 640px) {
-            .calendar_content { overflow-y:scroll; max-height:350px; }
-        }
-        */
-    </style> 
-  <script>
-            (function (i, s, o, g, r, a, m) {i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-            (i[r].q = i[r].q || []).push(arguments)}, i[r].l = 1 * new Date(); a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
-            ga('create', 'UA-709446-1', 'auto', { 'allowLinker': true });
-            ga('require', 'linker');
-            ga('linker:autoLink', ['studentweb.it.ucla.edu', 'be.my.ucla.edu']); // 'sa.ucla.edu', 
-            ga('send', 'pageview');
-        </script> 
-  <style type="text/css">
-            #skip-nav {
-                position: absolute;
-                top: -1000px;
-                left: -1000px;
-                height: 1px;
-                width: 1px;
-                text-align: left;
-                overflow: hidden;
-            }
-    
-            #skip-nav:active, 
-            #skip-nav:focus, 
-            #skip-nav:hover {
-                left: 0; 
-                top: 0;
-                width: auto; 
-                height: auto; 
-                overflow: visible;
-                background-color: White;
-                color: Black;
-            }
-        </style> 
+ <head> 
+  <meta charset="utf-8"> 
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"> 
+  <meta content="initial-scale=1.0" name="viewport"> 
+  <meta content="7MiYjX2ZghMOWvtKRWlar--c6mD2ose5EcbQFQ6szFA" name="google-site-verification"> 
+  <title>Blink: Information for UC San Diego Faculty &amp; Staff</title> 
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"> 
+  <meta content="University of California, San Diego" name="ORGANIZATION"> 
+  <meta content="index,follow,noarchive" name="robots"> 
+  <meta content="Blink" name="SITE"> 
+  <meta content="Blink: Information for UC San Diego Faculty &amp; Staff" name="PAGETITLE"> 
+  <meta content="Blink provides information for UC San Diego faculty and staff.  " name="DESCRIPTION"> 
+  <link rel="stylesheet" href="//blink.ucsd.edu/_resources/css/bootstrap.min.css"> 
+  <link rel="stylesheet" href="//blink.ucsd.edu/_resources/css/bootstrap-responsive.min.css"> 
+  <link rel="stylesheet" href="//www.ucsd.edu/common/cwp/3.2.0/base-min.css"> 
+  <link rel="stylesheet" href="//www.ucsd.edu/common/cwp/3.2.0/cms-min.css"> 
+  <!-- Site-specific CSS files --> 
+  <link href="_resources/css/homepage.css" media="all" rel="stylesheet" type="text/css"> 
+  <script src="//www.ucsd.edu/common/cwp/3.2.0/base-min.js"></script> 
+  <script src="//www.ucsd.edu/common/cwp/3.2.0/cms-min.js"></script> 
+  <script src="_resources/js/blink-cookies-min.js"></script> 
+  <!--[if lt IE 9]>
+<link rel="stylesheet" href="//blink.ucsd.edu/_resources/css/tdr_search2-ie.css">
+<![endif]--> 
+  <!-- Site-specific javascript files --> 
+  <script src="_resources/js/myblink-homepage.js" type="text/javascript"></script> 
+  <script src="_resources/js/sso-manager.js" type="text/javascript"></script> 
+  <script type="text/javascript" src="//www.ucsd.edu/common/_emergency-broadcast/message.js"></script> 
  </head> 
- <body class="ajax-none iweResponsive"> 
-  <div id="ie6Warning"></div> 
-  <form name="aspnetForm" method="post" action="./" id="aspnetForm"> 
-   <div> 
-    <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value=""> 
-    <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value=""> 
-    <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTczNjcwMDM5Nw9kFgJmD2QWAgIDD2QWFGYPFgIeB1Zpc2libGVnZAICDxYCHgRUZXh0BUw8YSBpZD0iZWR1LWxpbmsiIGhyZWY9Imh0dHA6Ly93d3cudWNsYS5lZHUvIiBjbGFzcz0iaGlkZS1zbWFsbCI+VUNMQS5lZHU8L2E+ZAIDDxYCHwEFxAE8YSBocmVmPSJodHRwczovL3dlYXRoZXIuYXRtb3MudWNsYS5lZHUvPyIgdGFyZ2V0PSJfYmxhbmsiPjxpbWcgYm9yZGVyPSIwIiBhbHQ9IiIgc3JjPSIvaW1hZ2VzL21jbGVhci5naWYiIC8+PHNwYW4gY2xhc3M9ImhpZGUteHhzbWFsbCI+IEZhaXIsPC9zcGFuPiA2NC4wIMKwRjwvYT48IS0tIFVwZGF0ZWQ6IDEuNTEgbWludXRlcyBhZ28gLS0+ZAIEDxYCHwEFFFNwcmluZyAyMDE4IC0gV2VlayA1ZAIFDw8WAh4LTmF2aWdhdGVVcmwFF2h0dHBzOi8vYmUubXkudWNsYS5lZHUvZGQCBg8PFgIfAgUXaHR0cHM6Ly9iZS5teS51Y2xhLmVkdS9kZAIJDxYCHwEFB2NvbC0yTVJkAgwPFgIfAWVkAg0PZBYCZg9kFgICAQ9kFgICAQ8WAh8BBSJHb29kIEFmdGVybm9vbi4gV2VsY29tZSB0byBNeVVDTEEhZAIOD2QWAmYPZBYGZg9kFgQCAQ8WAh8AZxYCAgEPZBYCAgEPFgIeBGhyZWYFF2h0dHBzOi8vYmUubXkudWNsYS5lZHUvZAIDDw8WAh8AZ2QWAgIBD2QWBAIBDxYCHwEF5hc8ZGl2IGNsYXNzPSJjYWxlbmRhcl9kYXRlIj5UaHVyc2RheSwgTWF5IDM8L2Rpdj4NCjxkaXYgY2xhc3M9ImNhbGVuZGFyX2l0ZW0iPjg6MzAgQU0gPGEgaHJlZj0iaHR0cHM6Ly9teS51Y2xhLmVkdS9kaXJlY3RMaW5rLmFzcHg/ZmVhdHVyZUlEPTc5JmV2ZW50SUQ9MzcxNzQiIF9ibGFuaz5BQVAgKEFjYWRlbWljIEFkdmFuY2VtZW50IFByb2dyYW0pIC0gQUFQIGlHcmFkICAtIDx1PlNpZ24gaW48L3U+IHRvIHJlZ2lzdGVyITwvYT48L2Rpdj4NCjxkaXYgY2xhc3M9ImNhbGVuZGFyX2l0ZW0iPjM6MDAgUE0gPGEgaHJlZj0iaHR0cDovL2hhc3MudWdyZXNlYXJjaC51Y2xhLmVkdS93b3Jrc2hvcHMuaHRtIiBfYmxhbms+VW5kZXJncmFkdWF0ZSBSZXNlYXJjaCBDZW50ZXIgLSBIdW1hbml0aWVzLCBBcnRzLCBhbmQgU29jaWFsIFNjaWVuY2VzIC0gUG9zdGVyIFdvcmtzaG9wPC9hPjwvZGl2Pg0KPGRpdiBjbGFzcz0iY2FsZW5kYXJfaXRlbSI+NDowMCBQTSA8YSBocmVmPSJodHRwczovL215LnVjbGEuZWR1L2RpcmVjdExpbmsuYXNweD9mZWF0dXJlSUQ9NzkmZXZlbnRJRD0zNzIwMyIgX2JsYW5rPlNjaG9sYXJzaGlwIFJlc291cmNlIENlbnRlciAtIEhvdyB0byBHZXQgTGV0dGVycyBvZiBSZWNvbW1lbmRhdGlvbiAtIDx1PlNpZ24gaW48L3U+IHRvIHJlZ2lzdGVyITwvYT48L2Rpdj4NCjxkaXYgY2xhc3M9ImNhbGVuZGFyX2l0ZW0iPjQ6MDAgUE0gPGEgaHJlZj0iaHR0cHM6Ly9teS51Y2xhLmVkdS9kaXJlY3RMaW5rLmFzcHg/ZmVhdHVyZUlEPTc5JmV2ZW50SUQ9MzcwNDkiIF9ibGFuaz5VbmRlcmdyYWR1YXRlIFJlc2VhcmNoIENlbnRlciAtIEh1bWFuaXRpZXMsIEFydHMsIGFuZCBTb2NpYWwgU2NpZW5jZXMgLSBDb2xsZWN0aW5nIGFuZCBDaXRpbmcgU291cmNlcyAtIDx1PlNpZ24gaW48L3U+IHRvIHJlZ2lzdGVyITwvYT48L2Rpdj4NCjxkaXYgY2xhc3M9ImNhbGVuZGFyX2l0ZW0iPjU6MDAgUE0gPGEgaHJlZj0iaHR0cHM6Ly9teS51Y2xhLmVkdS9kaXJlY3RMaW5rLmFzcHg/ZmVhdHVyZUlEPTc5JmV2ZW50SUQ9MzcyNDIiIF9ibGFuaz5BQVAgR3JhZHVhdGUgTWVudG9yaW5nIFByb2dyYW1zIC0gTWVkIFN0dWRlbnQgUGFuZWwgJiBBTUNBUyBNZWQgU2Nob29sIEFwcGxpY2F0aW9uIFdvcmtzaG9wIC0gPHU+U2lnbiBpbjwvdT4gdG8gcmVnaXN0ZXIhPC9hPjwvZGl2Pg0KPGRpdiBjbGFzcz0iY2FsZW5kYXJfZGF0ZSI+RnJpZGF5LCBNYXkgNDwvZGl2Pg0KPGRpdiBjbGFzcz0iY2FsZW5kYXJfaXRlbSI+MjowMCBQTSA8YSBocmVmPSJodHRwczovL215LnVjbGEuZWR1L2RpcmVjdExpbmsuYXNweD9mZWF0dXJlSUQ9NzkmZXZlbnRJRD0zNzE3NSIgX2JsYW5rPkFBUCAoQWNhZGVtaWMgQWR2YW5jZW1lbnQgUHJvZ3JhbSkgLSBBQVAgaUdyYWQgIC0gPHU+U2lnbiBpbjwvdT4gdG8gcmVnaXN0ZXIhPC9hPjwvZGl2Pg0KPGRpdiBjbGFzcz0iY2FsZW5kYXJfaXRlbSI+MzowMCBQTSA8YSBocmVmPSJodHRwOi8vd3d3Lm9yaWVudGF0aW9uLnVjbGEuZWR1LyIgX2JsYW5rPkZpcnN0IFllYXIgQWRtaXRzIC0gT3JpZW50YXRpb24gU2lnbnVwcyBCZWdpbjwvYT48L2Rpdj4NCjxkaXYgY2xhc3M9ImNhbGVuZGFyX2RhdGUiPk1vbmRheSwgTWF5IDc8L2Rpdj4NCjxkaXYgY2xhc3M9ImNhbGVuZGFyX2l0ZW0iPjU6MDAgUE0gPGEgaHJlZj0iaHR0cHM6Ly9teS51Y2xhLmVkdS9kaXJlY3RMaW5rLmFzcHg/ZmVhdHVyZUlEPTc5JmV2ZW50SUQ9MzcxOTIiIF9ibGFuaz5TY2hvbGFyc2hpcCBSZXNvdXJjZSBDZW50ZXIgLSBTZWNyZXRzIHRvIFdpbm5pbmcgQ29sbGVnZSBDYXNoIC0gPHU+U2lnbiBpbjwvdT4gdG8gcmVnaXN0ZXIhPC9hPjwvZGl2Pg0KPGRpdiBjbGFzcz0iY2FsZW5kYXJfZGF0ZSI+VHVlc2RheSwgTWF5IDg8L2Rpdj4NCjxkaXYgY2xhc3M9ImNhbGVuZGFyX2l0ZW0iPjExOjMwIEFNIDxhIGhyZWY9Imh0dHBzOi8vbXkudWNsYS5lZHUvZGlyZWN0TGluay5hc3B4P2ZlYXR1cmVJRD03OSZldmVudElEPTM3MjQ0IiBfYmxhbms+U3VtbWVyIFNlc3Npb25zIC0gSW5mbyBTZXNzaW9uIC0gVGVjaG5vbG9neSBMZWFkZXJzaGlwIFN1bW1lciBJbnN0aXR1dGUgLSA8dT5TaWduIGluPC91PiB0byByZWdpc3RlciE8L2E+PC9kaXY+DQo8ZGl2IGNsYXNzPSJjYWxlbmRhcl9pdGVtIj4yOjAwIFBNIDxhIGhyZWY9Imh0dHBzOi8vbXkudWNsYS5lZHUvZGlyZWN0TGluay5hc3B4P2ZlYXR1cmVJRD03OSZldmVudElEPTM3MjI1IiBfYmxhbms+Q29sbGVnZSBBY2FkZW1pYyBDb3Vuc2VsaW5nIC0gQ2l2aWMgRW5nYWdlbWVudCBNaW5vciBJbmZvIFNlc3Npb24gLSA8dT5TaWduIGluPC91PiB0byByZWdpc3RlciE8L2E+PC9kaXY+DQo8ZGl2IGNsYXNzPSJjYWxlbmRhcl9pdGVtIj42OjAwIFBNIDxhIGhyZWY9Imh0dHBzOi8vbXkudWNsYS5lZHUvZGlyZWN0TGluay5hc3B4P2ZlYXR1cmVJRD03OSZldmVudElEPTM3MjQxIiBfYmxhbms+Q29sbGVnZSBBY2FkZW1pYyBDb3Vuc2VsaW5nIC0gQXR0YWNraW5nIHRoZSBBTUNBUzogSG93IHRvIEFwcGx5IHRvIE1lZGljYWwgU2Nob29sIC0gPHU+U2lnbiBpbjwvdT4gdG8gcmVnaXN0ZXIhPC9hPjwvZGl2Pg0KPGRpdiBjbGFzcz0iY2FsZW5kYXJfZGF0ZSI+V2VkbmVzZGF5LCBNYXkgOTwvZGl2Pg0KPGRpdiBjbGFzcz0iY2FsZW5kYXJfaXRlbSI+MjowMCBQTSA8YSBocmVmPSJodHRwczovL215LnVjbGEuZWR1L2RpcmVjdExpbmsuYXNweD9mZWF0dXJlSUQ9NzkmZXZlbnRJRD0zNzIzMyIgX2JsYW5rPkFBUCAoQWNhZGVtaWMgQWR2YW5jZW1lbnQgUHJvZ3JhbSkgLSBIYXBweSBIb3VyIHdpdGggeW91ciBQQyAtIDx1PlNpZ24gaW48L3U+IHRvIHJlZ2lzdGVyITwvYT48L2Rpdj4NCjxkaXYgY2xhc3M9ImNhbGVuZGFyX2l0ZW0iPjY6MDAgUE0gPGEgaHJlZj0iaHR0cHM6Ly9teS51Y2xhLmVkdS9kaXJlY3RMaW5rLmFzcHg/ZmVhdHVyZUlEPTc5JmV2ZW50SUQ9MzY4NDEiIF9ibGFuaz5SZXNpZGVudGlhbCBMaWZlIC0gRGVjaXNpb24gTWFraW5nIFdvcmtzaG9wIC0gPHU+U2lnbiBpbjwvdT4gdG8gcmVnaXN0ZXIhPC9hPjwvZGl2Pg0KZAIDDw8WBB8BBRYmIzk2NjA7IG5leHQgNyBkYXlzLi4uHg9Db21tYW5kQXJndW1lbnQFCTUvMTAvMjAxOGRkAgEPFgIfAQUKcGFuZWwtOSBjZmQCAw9kFgQCAQ8WAh8BBQhoYXBJdGVtMGQCAw8WAh8BBQZncm91cDBkZBap8R9qP/r6biSnfhnHttfoBUDapJ0W4pQb45CXXtN+"> 
+ <body> 
+  <div id="uc-emergency"></div> 
+  <div id="tdr_login">
+   <!-- Start page controls --> 
+   <span class="tdr_login_content"></span> 
+   <!-- End page controls --> 
+  </div> 
+  <div id="tdr_title"> 
+   <div id="tdr_title_content">
+    <a href="http://www.ucsd.edu" id="tdr_title_ucsd_title">UC San Diego</a> 
+    <div id="tdr_title_page_title"> 
+     <a href="/"> Faculty &amp; Staff </a> 
+    </div> 
+    <a class="search-button" id="tdr_title_search_link">Search</a> 
+    <a id="tdr_title_menu_link">Menu</a>
    </div> 
-   <script type="text/javascript">
-//<![CDATA[
-var theForm = document.forms['aspnetForm'];
-if (!theForm) {
-    theForm = document.aspnetForm;
-}
-function __doPostBack(eventTarget, eventArgument) {
-    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
-        theForm.__EVENTTARGET.value = eventTarget;
-        theForm.__EVENTARGUMENT.value = eventArgument;
-        theForm.submit();
+  </div> 
+  <div id="tdr_search">
+   <script src="https://www.google.com/jsapi" type="text/javascript">// <![CDATA[
+
+// ]]></script> 
+   <script type="text/javascript">// <![CDATA[
+google.load('search', '1');
+google.setOnLoadCallback(function() {
+    if(document.getElementById('q') != null){
+        google.search.CustomSearchControl.attachAutoCompletion(
+        '004685874581245502426:palsaetk1kk',
+        document.getElementById('q'),
+        'sitesearch');
     }
-}
-//]]>
-</script> 
-   <script src="/WebResource.axd?d=QSV1zEtccfCpTFOU7-HtDBwNPiBeDkpWFacgDT-FFOGFEju_wX9VSE1UtfagTgWaw03hAujPhV_8sLDekx3DIEcVteAQOjSUFAGTPvxHpCo1&amp;t=636475834140000000" type="text/javascript"></script> 
-   <script src="/ScriptResource.axd?d=mOjJ7fL4YdeujJZzLDHY_2ZGVwZ007VUBo91D10NgFfy_1NZ0Hp7Y_hei9vgkV89slcs539WWNOTj8EeSUUUDyEVCgiodQ8hEIQOkf1HC06586lg1HGXp9NhA7_jScVeMuH1CSvbxRFjbfrkjaQ8yv5jRimL9yCW0iTIccpNOQI1&amp;t=ffffffffad4b7194" type="text/javascript"></script> 
-   <script src="/ScriptResource.axd?d=v8j0gd8J1Rlhv_b0ELKeL6Yax-m8_jfEEl1ZpaYqfaxxjzz-DMq_UckBABGWGzILa4iYkACQB6zBimP1Kcc3Em0Cp75nc4PUwFIc1v1MVuc-_v9K6vk5iX6Wt4CxPk0sMNoP6MY5Bxtz_vTY74g_QJYO0pUfReBreUciPb-o8iw53oBCsNLkbdeuvTbTF1UL0&amp;t=ffffffffad4b7194" type="text/javascript"></script> 
-   <script type="text/javascript">
-//<![CDATA[
-var PageMethods = function() {
-PageMethods.initializeBase(this);
-this._timeout = 0;
-this._userContext = null;
-this._succeeded = null;
-this._failed = null;
-}
-PageMethods.prototype = {
-_get_path:function() {
- var p = this.get_path();
- if (p) return p;
- else return PageMethods._staticInstance.get_path();},
-logTab:function(id,succeededCallback, failedCallback, userContext) {
-return this._invoke(this._get_path(), 'logTab',false,{id:id},succeededCallback,failedCallback,userContext); }}
-PageMethods.registerClass('PageMethods',Sys.Net.WebServiceProxy);
-PageMethods._staticInstance = new PageMethods();
-PageMethods.set_path = function(value) { PageMethods._staticInstance.set_path(value); }
-PageMethods.get_path = function() { return PageMethods._staticInstance.get_path(); }
-PageMethods.set_timeout = function(value) { PageMethods._staticInstance.set_timeout(value); }
-PageMethods.get_timeout = function() { return PageMethods._staticInstance.get_timeout(); }
-PageMethods.set_defaultUserContext = function(value) { PageMethods._staticInstance.set_defaultUserContext(value); }
-PageMethods.get_defaultUserContext = function() { return PageMethods._staticInstance.get_defaultUserContext(); }
-PageMethods.set_defaultSucceededCallback = function(value) { PageMethods._staticInstance.set_defaultSucceededCallback(value); }
-PageMethods.get_defaultSucceededCallback = function() { return PageMethods._staticInstance.get_defaultSucceededCallback(); }
-PageMethods.set_defaultFailedCallback = function(value) { PageMethods._staticInstance.set_defaultFailedCallback(value); }
-PageMethods.get_defaultFailedCallback = function() { return PageMethods._staticInstance.get_defaultFailedCallback(); }
-PageMethods.set_enableJsonp = function(value) { PageMethods._staticInstance.set_enableJsonp(value); }
-PageMethods.get_enableJsonp = function() { return PageMethods._staticInstance.get_enableJsonp(); }
-PageMethods.set_jsonpCallbackParameter = function(value) { PageMethods._staticInstance.set_jsonpCallbackParameter(value); }
-PageMethods.get_jsonpCallbackParameter = function() { return PageMethods._staticInstance.get_jsonpCallbackParameter(); }
-PageMethods.set_path("default.aspx");
-PageMethods.logTab= function(id,onSuccess,onFailed,userContext) {PageMethods._staticInstance.logTab(id,onSuccess,onFailed,userContext); }
-//]]>
-</script> 
-   <div> 
-    <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334"> 
-    <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAAS53IdfniwNPaZdcXR4YfKFXPRrBz/do/n4PsQJMnpHp2IHPGh4B6zhit7fl5NoemJ15eD5pT8xEblBxjJdf/SVIPptUsAeKcjivZMWZfCHYj+W6wAPz75sNhnBbeDC8+s="> 
-   </div> 
-   <script>
 
-            function toggleMiniMenu(setClass) {
-                $('.' + setClass + ".toggle-icon").toggleClass("icon-plus-sign").toggleClass("icon-minus-sign");
-                $('.' + setClass + ":not(.toggle-icon)").toggle();
-                return false;
-            }
+    if(document.getElementById('search-term') != null){
+        google.search.CustomSearchControl.attachAutoCompletion(
+        '004685874581245502426:palsaetk1kk',
+        document.getElementById('search-term'),
+        'sitesearch-box');
+    }
+});
+// ]]></script> 
+   <script src="https://www.google.com/cse/brand?form=%20sitesearch%20&amp;lang=en" type="text/javascript">// <![CDATA[
 
-            $(document).ready(function () {
-                //$('#main-nav').load("quicklinks.html");
+// ]]></script> 
+   <script src="https://www.google.com/cse/brand?form=%20sitesearch-box%20&amp;lang=en" type="text/javascript">// <![CDATA[
 
-                tryLoadJQueryElements();
+// ]]></script> 
+   <script type="text/javascript">// <![CDATA[
+var radioHandler = function() {
+                                if (this.checked == true) {
+                                        this.className = "active";
+                                        $("#" + this.id + "-label").each(function() {
+                                                this.className = "active";
+                                        });
+                                } else {
+                                        this.className = "inactive";
+                                        $("#" + this.id + "-label").each(function() {
+                                                this.className = "inactive";
+                                        });
+                                }
+        }
 
-                // only do this once, and do it after the objects have been collapsed
-                var uncollapsers = $('.page_collapsible_show');
-                if (uncollapsers) {
-                    uncollapsers.collapsible('open');
-                }
+        $(document).ready(function() {
+                $("#tdr_search2_content input[type=radio]").click(function() {
+                        $("input[type=radio]", this.form).each(radioHandler);
+                });
+                $("#tdr_search2_content input[type=radio]").each(radioHandler);
 
-                // Add the jQuery center() method...
-                jQuery.fn.center = function () {
-                    this.css("position", "absolute");
-                    // consoleLog("vCenter ($(window).height()[" + $(window).height() + "] - this.height()[" + this.height() + "]) / 2 + $(window).scrollTop()[" + $(window).scrollTop() + "] -> " + (($(window).height() - this.height()) / 2 + $(window).scrollTop()));
-                    // consoleLog("hCenter ($(window).width()[" + $(window).width() + "] - this.width()[" + this.width() + "]) / 2 + $(window).scrollLeft()[" + $(window).scrollLeft() + "] -> " + (($(window).width() - this.width()) / 2 + $(window).scrollLeft()));
-                    var offLeft = 0;
-                    var offTop = 0;
+                $('#sitesearch').on('submit', function() { if ($('#search-scope2').is(':checked')) { var q = $('#q').val() + ' more:cascade-cwp'; var loc = 'https://act.ucsd.edu/cwp/tools/search?search-scope=default_collection&q='+q+'&site=blink2'; window.location.href = loc; return false; } });
 
-
-
-                    var main = $("#main-content");
-                    if ($(this).closest(main).length > 0) {
-                        var contentOffset = main.offset();
-                        var offLeft = contentOffset.left;
-                        var offTop = contentOffset.top;
-                    }
-                    this.css("top", ($(window).height() - this.height()) / 2 + $(window).scrollTop() - offTop + "px");
-                    this.css("left", ($(window).width() - this.width()) / 2 + $(window).scrollLeft() - offLeft + "px");
-                    return this;
-                };
-
-                $("body").prepend("<div id='PleaseWait' style='display:none;'><img border='0' src='/iwe/img/bg-spinner.gif' alt='loading' title='loading' /><br />Please wait...</div>");
-
-            });
-	</script> 
-   <script>
-        $(document).ready(function () {
-            try {
-                var prm_m;
-                if (typeof Sys != 'undefined' && Sys.WebForms && Sys.WebForms.PageRequestManager && (prm_m = Sys.WebForms.PageRequestManager.getInstance())) {
-                    prm_m.add_beginRequest(BeginRequestHandler_mp);
-                    prm_m.add_endRequest(EndRequestHandler_mp);
-                }
-            } catch (e) {
-                //alert("Unable to attach events to PageRequestManager! " + e.message);
-            }
         });
-	</script> 
-   <script type="text/javascript">
-//<![CDATA[
-Sys.WebForms.PageRequestManager._initialize('ctl00$scriptManager1', 'aspnetForm', ['tctl00$UpdatePanel1','','tctl00$contentwrapper',''], [], [], 90, 'ctl00');
-//]]>
-</script> 
-   <div id="page-wrap"> 
-    <!--Top Bar Content--> 
-    <a id="skip-nav" href="#main-content">Skip to Main Content</a> 
-    <!--
-			<ul id="skip-nav">
-				<li><a href="#audience-nav">Skip to Audience Navigation</a></li>
-				<li><a href="#main-nav">Skip to Main Menu</a></li>
-				<li><a href="#searchform">Skip to Search</a></li>
-				<li><a href="#main-content">Skip to Main Content</a></li>
-			</ul>
-            --> 
-    <div id="top-bar" role="navigation" class="hide-medium-small"> 
-     <div id="top-bar-content" class="container"> 
-      <a id="edu-link" href="http://www.ucla.edu/" class="hide-small">UCLA.edu</a> 
-      <!--<a href="" id="edu-link" class="hide-small">Home Page</a> Put home page in href--> 
-      <ul id="audience-nav" class="float-right"> 
-       <li id="nav-li-weather">
-        <!-- ugh, css defined only with IDs --> <a href="https://weather.atmos.ucla.edu/?" target="_blank"><img border="0" alt="" src="/images/mclear.gif"><span class="hide-xxsmall"> Fair,</span> 64.0 °F</a>
-        <!-- Updated: 1.51 minutes ago --> </li> 
-       <li id="nav-li-date"> <span class="hide-small">Thursday, May 3, 2018</span> </li> 
-       <li id="nav-li-logout"> Spring 2018 - Week 5 </li> 
+// ]]></script> 
+   <div class="container"> 
+    <div id="tdr_search_content">
+     <form action="/search/index.html" id="cse-search-box" method="get" style="float: left;">
+      <fieldset>
+       <legend>Search</legend> 
+       <label>Search:</label> 
+       <span id="site-1"> <input checked id="search-scope1" name="search-scope" style="border: 0px none; width: 10px;" type="radio" value="blink2"> <label for="search-scope1" id="search-scope1-label">This Site</label> &nbsp; </span> 
+       <span id="site-2"> <input id="search-scope2" name="search-scope" style="border: 0px none; width: 10px;" type="radio" value="default_collection"> <label for="search-scope2" id="search-scope2-label">All UCSD Sites</label> &nbsp; </span> 
+       <input id="search-term" name="search-term" size="20" type="text"> 
+       <button alt="Submit button" type="submit">Search!</button>
+      </fieldset>
+      <input name="site" type="hidden" value="blink2">
+     </form>
+     <form action="https://act.ucsd.edu/directory/search" id="peoplesearch" method="get" style="float: right;">
+      <fieldset>
+       <legend>Find Faculty/Staff</legend> 
+       <label for="search-scope3">Find Faculty/Staff</label> 
+       <input name="jlinkevent" type="hidden" value="Redirect"> 
+       <input name="entry" size="20" type="text"> 
+       <button alt="Submit button" type="submit">Search!</button>
+      </fieldset>
+      <input name="site" type="hidden" value="blink2">
+     </form>
+    </div> 
+   </div> 
+   <div id="tdr_search_content-2">
+    <form action="/search/index.html" id="cse-search-box" method="get">
+     <label for="search-scope">Search</label>
+     <select id="search-scope" name="search-scope"> <option selected value="blink2">This Site</option> <option value="default_collection">All UCSD Sites</option> <option value="faculty-staff">Faculty/Staff</option> </select>
+     <label for="search-term" id="search-term-label">Search Term</label> 
+     <input class="search-term" id="search-term" name="search-term" size="20" type="search"> 
+     <input name="client" type="hidden" value="google-csbe"> 
+     <input alt="Submit button" class="search-button" type="submit" value="Search"> 
+     <input name="site" type="hidden" value="blink2">
+    </form>
+   </div>
+  </div> 
+  <div class="tdr_fonts" id="tdr_content"> 
+   <div id="tdr_content_content">
+    <!-- display the main content --> 
+    <div class="navbar"> 
+     <div class="navbar-inner"> 
+      <div class="container">
+       <button class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse" type="button">Menu</button> 
+       <span id="logo"><a class="brand" href="http://blink.ucsd.edu">Blink: Information for UC San Diego Faculty and Staff</a></span> 
+       <div class="nav-collapse collapse pull-right"> 
+        <ul class="nav"> 
+         <li class="dropdown" id="blink"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Blink Topics</a> 
+          <ul class="dropdown-menu"> 
+           <li><a href="buy-pay/index.html">Buy &amp; Pay</a></li> 
+           <li><a href="facilities/index.html">Facilities &amp; Services</a></li> 
+           <li><a href="faculty/index.html">Faculty Resources</a></li> 
+           <li><a href="finance/index.html">Finance</a></li> 
+           <li><a href="HR/index.html">Human Resources</a></li> 
+           <li><a href="research/index.html">Research</a></li> 
+           <li><a href="safety/index.html">Safety</a></li> 
+           <li><a href="instructors/index.html">Student / Class Info</a></li> 
+           <li><a href="technology/index.html">Technology</a></li> 
+           <li><a href="travel/index.html">Travel</a></li> 
+          </ul> </li> 
+         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Personal Tools</a> 
+          <ul class="dropdown-menu"> 
+           <li><a href="https://atyourserviceonline.ucop.edu/ayso/">At Your Service via AYSO</a></li> 
+           <li><a href="http://ayso.ucsd.edu">At Your Service via SSO</a></li> 
+           <li><a href="http://ucnet.universityofcalifornia.edu/compensation-and-benefits/total-compensation-calculator.php">Compensation Calculator</a></li> 
+           <li><a href="http://edben.ucsd.edu">Educational Benefits</a></li> 
+           <li><a href="https://jobs.ucsd.edu/bulletin/default.aspx">Job Bulletin</a></li> 
+           <li><a href="https://act.ucsd.edu/mydirectory/updater">My Directory</a></li> 
+           <li><a href="http://myleavebalances.ucsd.edu">My LeaveBalances</a></li> 
+           <li><a href="http://mytime.ucsd.edu">My Time (Online)</a></li> 
+           <li><a href="https://act.ucsd.edu/employeeTimesheets/timesheets">My Time (Paper)</a></li> 
+           <li><a href="http://uclearning.ucsd.edu">My Training</a></li> 
+           <li><a href="http://mytravel.ucsd.edu">My Travel</a></li> 
+           <li><a href="http://skillportsso.ucsd.edu/">SkillSoft eLearning</a></li> 
+           <li><a href="http://uclearning.ucsd.edu">UC Learning Center</a></li> 
+           <li><a href="http://ucnet.universityofcalifornia.edu/">UCnet</a></li> 
+           <li class="more"><a href="http://blink.ucsd.edu/_tool-page/index.html">All tools</a></li> 
+          </ul> </li> 
+         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Business Tools</a> 
+          <ul class="dropdown-menu"> 
+           <li><a href="http://aps.ucsd.edu/training/apol/index.html">AP On-Line</a></li> 
+           <li><a href="https://ask.ucsd.edu/">ASK (BFSupport)</a></li> 
+           <li><a href="http://cams.ucsd.edu/">CAMS</a></li> 
+           <li><a href="http://booktravel.ucsd.edu/">Connexxus</a></li> 
+           <li><a href="http://control-tracker.ucsd.edu">Control Tracker</a></li> 
+           <li><a href="http://blink.ucsd.edu/finance/accounting/deficit/">Deficit Balance Analytics</a></li> 
+           <li><a href="http://employeelink.ucsd.edu/">EmployeeLink</a></li> 
+           <li><a href="https://act.ucsd.edu/financial">FinancialLink</a></li> 
+           <li><a href="https://hireonline.ucsd.edu/">HireOnline</a></li> 
+           <li><a href="http://jdonline.ucsd.edu/">JDOnline</a></li> 
+           <li><a href="http://marketplace.ucsd.edu/">Marketplace</a></li> 
+           <li><a href="http://myapprovals.ucsd.edu">MyApprovals</a></li> 
+           <li><a href="http://myevents.ucsd.edu/">MyEvents</a></li> 
+           <li><a href="http://myfunds.ucsd.edu">MyFunds</a></li> 
+           <li><a href="http://mymobilebill.ucsd.edu">MyMobileBill</a></li> 
+           <li><a href="https://act.ucsd.edu/mypayments/inbox.htm">MyPayments</a></li> 
+           <li><a href="http://mytravel.ucsd.edu">MyTravel</a></li> 
+           <li><a href="https://crm.ucsd.edu/hr">Onboarding</a></li> 
+           <li><a href="http://foundation.ucsd.edu/accounting/star.html">STAR</a></li> 
+           <li><a href="http://hr.ucsd.edu/tpp/">Title &amp; Pay Look-up</a></li> 
+           <li class="more"><a href="http://blink.ucsd.edu/_tool-page/index.html">All tools</a></li> 
+          </ul> </li> 
+         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Instruction Tools</a> 
+          <ul class="dropdown-menu"> 
+           <li><a href="http://www.assist.org/web-assist/welcome.html">ASSIST</a></li> 
+           <li><a href="https://act.ucsd.edu/cgi-bin/blink.pl/4/faculty/student/advanced_class_list.pl">Class lists</a></li> 
+           <li><a href="faculty/instruction/tech-guide/classroom/details.html">Classroom details</a></li> 
+           <li><a href="https://myccr.ucsd.edu/home.htm">Co-Curricular Record</a></li> 
+           <li><a href="https://act.ucsd.edu/studentDarsFacultyAudit/viewgroup.htm">View DARS audits</a></li> 
+           <li><a href="http://egrades.ucsd.edu/">eGrades</a></li> 
+           <li><a href="https://act.ucsd.edu/cgi-bin/blink.pl/4/faculty/resource/enroll_list.pl">Enrollment/waitlists</a></li> 
+           <li><a href="https://act.ucsd.edu/cgi-bin/blink.pl/5/faculty/student/student_name_lookup.pl">Find a student</a></li> 
+           <li><a href="http://ucsd.edu/catalog/">General Catalog</a></li> 
+           <li><a href="https://act.ucsd.edu/cgi-bin/blink.pl/4/faculty/student/major_list.pl">Majors list</a></li> 
+           <li><a href="https://act.ucsd.edu/cgi-bin/blink.pl/4/faculty/student/minor_list.pl">Minors list</a></li> 
+           <li><a href="https://act.ucsd.edu/cgi-bin/blink.pl/4/faculty/queries.html">Queries</a></li> 
+           <li><a href="https://act.ucsd.edu/studentRegistration/status?registrationEvent=checkStatus">Registration status</a></li> 
+           <li><a href="https://act.ucsd.edu/cgi-bin/blink.pl/1/faculty/schedule_of_classes.pl">Schedule of Classes</a></li> 
+           <li><a href="https://act.ucsd.edu/studentdirectory/search">Student Directory</a></li> 
+           <li><a href="https://act.ucsd.edu/cgi-bin/blink.pl/4/faculty/student/audit/">Term audit</a></li> 
+           <li><a href="http://tritoned.ucsd.edu/">TritonEd</a></li> 
+           <li class="more"><a href="http://blink.ucsd.edu/_tool-page/index.html">All tools</a></li> 
+          </ul> </li> 
+         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Research Tools</a> 
+          <ul class="dropdown-menu"> 
+           <li><a href="http://emta.ucsd.edu/">eMTA</a></li> 
+           <li><a href="https://epd.ucsd.edu/coeus">ePD</a></li> 
+           <li><a href="research/data-analysis/erap-reporting-project/reports.html">ERAP Reports</a></li> 
+           <li><a href="https://act.ucsd.edu/GoogleResearchDirectory/research">Faculty Expertise</a></li> 
+           <li><a href="http://myeffort.ucsd.edu">MyEffort</a></li> 
+           <li><a href="http://ehs.ucsd.edu/myresearchsafety/">My Research Safety</a></li> 
+           <li><a href="http://rapids.ucsd.edu/">RAPIDS</a></li> 
+           <li><a href="http://ora.ucsd.edu/sharedfacilities/">Shared Facilities</a></li> 
+           <li><a href="https://bfs.ucsd.edu/start">Award Financial Training</a></li> 
+           <li><a href="http://blink.ucsd.edu/_tool-page/index.html">All tools</a></li> 
+          </ul> </li> 
+        </ul> 
+       </div> 
+       <!--/.nav-collapse -->
+      </div> 
+     </div> 
+    </div> 
+    <div id="topnews"> 
+     <div class="flexslider"> 
+      <ul class="slides"> 
+       <li><a href="https://go.ucsd.edu/2FHw848"><img alt="From left, MFA candidates Yonatan Gebeyehu and DeLeon Dallas at the Graduate Actor Student Showcase in Los Angeles. Photos by Erik Jepsen/ UC San Diego Publications" src="_images/homepage/lead-news/general-ucsd/graduate-actor-student-showcase-2018.jpg"></a> <p class="flex-caption"> <a href="https://go.ucsd.edu/2FHw848">From students to the stage</a> </p> </li> 
+       <li><a href="https://go.ucsd.edu/2reSAxn"><img alt="Police with new automated external defibrillators" src="_images/homepage/lead-news/police-aed.jpg"></a> <p class="flex-caption"> <a href="https://go.ucsd.edu/2reSAxn">UC San Diego Police Department has 10 new PowerheartÂ® G5 AED units</a> </p> </li> 
+       <li><a href="https://go.ucsd.edu/2jiBs5v"><img alt="Dolphins jumping" src="_images/homepage/lead-news/dolphins-jumping-large.jpg"></a> <p class="flex-caption"> <a href="https://go.ucsd.edu/2jiBs5v">Flourish in May: Special events for Mental Health Awareness Month</a> </p> </li> 
       </ul> 
+      <div class="controls"></div> 
      </div> 
-    </div> 
-    <span id="print-logo"><img src="/IWE/img/logo-print.gif" alt="UCLA Logo"></span> 
-    <!--MegaMenu Bar--> 
-    <div id="header" role="banner"> 
-     <div id="header-content" class="container"> 
-      <a href="#" class="float-right hide-above-medium-small secondary light gradient show-mega-menu headerButton" id="showHideMegaMenuButton"><span class="icon-list" id="showHideMegaMenuButtonIcon"></span></a> 
-      <h1 id="logo" aria-hidden="true"><a id="ctl00_homeFeatureLinkLogo" href="https://be.my.ucla.edu/">MyUCLA</a></h1> 
-      <!--Put home page in href--> 
-      <h2 id="subhead-logotype"><a id="ctl00_homeFeatureLink" href="https://be.my.ucla.edu/">MyUCLA</a></h2>
-      <!--Put home page in href--> 
-      <div id="header-nav"> 
-       <div id="searchbox" class=""> 
-        <div class="formBox hide-medium-small" id="searchform" name="searchform"> 
-         <input name="ctl00$searchQuery" type="text" maxlength="255" id="searchQuery" class="google-search searchbox-background" title="Search UCLA.edu" placeholder="Search UCLA.edu"> 
-         <a id="searchboxbtn" class="searchbutton text-primary" type="submit" href="javascript:__doPostBack('ctl00$searchboxbtn','')"><span class="icon-search text-primary"></span></a> 
-         <script>
-                                    $('#searchQuery').keydown(function (e) {
-                                        if (e.keyCode == 13) {
-                                            e.preventDefault();
-                                            __doPostBack('ctl00$searchboxbtn', '')
-                                            return false;
-                                        }
-                                    });
-                                </script> 
-        </div> 
-       </div> 
-       <div id="main-nav-wrapper" role="navigation"> 
-        <!--Mega Menu--> 
-        <div id="main-nav" class="hide-medium-small"> 
-         <!-- Main Nav --> 
-         <!-- QuickLinks updated 5/3/2018 6:45:02 AM --> 
-         <ul class="hide-medium-small">
-          <li> <a href="#" class="dropdown-link">New to UCLA?</a> 
-           <ul class="dropdown-wrapper" role="region" aria-live="polite"> 
-            <li> 
-             <ul class="nav-column"> 
-              <li class="group-title">Sign-Up</li> 
-              <li class="group-item"><a href="http://www.studenthealth.ucla.edu/Lists/ChannelContent/CustDispForm.aspx?ID=88&amp;Title=Waiving%20UC%20SHIP%20FAQs&amp;Channel=Insurance" target="_blank"><p>Student Health Insurance (UC SHIP) Enrollment and Waiver</p></a></li> 
-              <li class="group-item"><a href="http://housing.ucla.edu" target="_blank"><p>Housing Application</p></a></li> 
-              <li class="group-item"><a href="http://transportation.ucla.edu" target="_blank"><p>Parking Application</p></a></li> 
-              <li class="group-item"><a href="http://www.bruincard.ucla.edu" target="_blank"><p>BruinCard</p></a></li> 
-             </ul> 
-             <ul class="nav-column"> 
-              <li class="group-title">Help</li> 
-              <li class="group-item"><a href="https://be.my.ucla.edu/MyUCLATutorials.aspx"><p>MyUCLA Tutorials</p></a></li> 
-              <li class="group-item"><a href="http://my.ucla.edu/studentservices.aspx" target="_blank"><p>Student Services Directory</p></a></li> 
-             </ul> 
-             <ul class="nav-column"> 
-              <li class="group-title">New Students</li> 
-              <li class="group-item"><a href="http://www.admission.ucla.edu/NewBruins/NSG.htm" target="_blank"><p>New Student Guide</p></a></li> 
-              <li class="group-item"><a href="http://www.housing.ucla.edu/" target="_blank"><p>Housing</p></a></li> 
-              <li class="group-item"><a href="http://www.studenthealth.ucla.edu/immune" target="_blank"><p>Immunizations</p></a></li> 
-              <li class="group-item"><a href="http://www.gdnet.ucla.edu/orientation.html" target="_blank"><p>Orientation Grad</p></a></li> 
-              <li class="group-item"><a href="http://newstudents.ucla.edu" target="_blank"><p>Orientation Undergrad</p></a></li> 
-              <li class="group-item"><a href="http://cis.ucla.edu/studyArea/" target="_blank"><p>Study Areas</p></a></li> 
-              <li class="group-item"><a href="http://www.transfers.ucla.edu/" target="_blank"><p>Transfer Student Support</p></a></li> 
-              <li class="group-item"><a href="http://www.transportation.ucla.edu/" target="_blank"><p>Transportation</p></a></li> 
-             </ul> 
-             <ul class="nav-column"> 
-              <li class="group-title">Visiting Students</li> 
-              <li class="group-item"><a href="http://www.summer.ucla.edu" target="_blank"><p>Summer Sessions</p></a></li> 
-              <li class="group-item"><a href="http://www.unex.ucla.edu" target="_blank"><p>UCLA Extension</p></a></li> 
-              <li class="group-title">International Students</li> 
-              <li class="group-item"><a href="http://www.isop.ucla.edu/eap" target="_blank"><p>Education Abroad Program</p></a></li> 
-              <li class="group-item"><a href="http://www.healthcare.ucla.edu/international-relations/" target="_blank"><p>UCLA Medical Center - International Relations</p></a></li> 
-              <li class="group-item"><a href="http://www.internationalcenter.ucla.edu/" target="_blank"><p>Dashew Center for International Students and Scholars</p></a></li> 
-             </ul> 
-             <ul class="nav-column"> 
-              <li class="group-title">Prospective Students</li> 
-              <li class="group-item"><a href="http://www.gdnet.ucla.edu/prospective.html" target="_blank"><p>Graduate Admissions</p></a></li> 
-              <li class="group-item"><a href="http://www.admission.ucla.edu/infoprospective.htm" target="_blank"><p>Undergraduate Admissions</p></a></li> 
-             </ul> <a href="" class="close">close (X)</a></li>
-           </ul></li> 
-          <li> <a href="#" class="dropdown-link">Alumni</a> 
-           <ul class="dropdown-wrapper" role="region" aria-live="polite"> 
-            <li> 
-             <ul class="nav-column"> 
-              <li class="group-title">Diplomas</li> 
-              <li class="group-item"><a href="http://www.registrar.ucla.edu/Student-Records/Diplomas/Diploma-Request" target="_blank"><p>Diploma Request</p></a></li> 
-              <li class="group-item"><a href="http://www.registrar.ucla.edu/Student-Records/Diplomas/Replacement-Diploma" target="_blank"><p>Diploma Replacement (Duplicate)</p></a></li> 
-              <li class="group-item"><a href="http://www.registrar.ucla.edu/Portals/50/forms/diplomaagentauth.pdf" target="_blank"><p>Diploma Agent Authorization</p></a></li> 
-             </ul> 
-             <ul class="nav-column"> 
-              <li class="group-title">Transcripts and Degrees</li> 
-              <li class="group-item"><a href="http://www.registrar.ucla.edu/Student-Records/Academic-Transcript" target="_blank"><p>Transcript - Academic</p></a></li> 
-              <li class="group-item"><a href="http://www.registrar.ucla.edu/Student-Records/Verification-Transcript/Verification-Transcript-Format" target="_blank"><p>Proof of Enrollement</p></a></li> 
-              <li class="group-item"><a href="http://www.registrar.ucla.edu/Student-Records/Academic-Transcript/Transcript-Availability#specialdegsrv" target="_blank"><p>Special Degree Services Request</p></a></li> 
-             </ul> 
-             <ul class="nav-column"> 
-              <li class="group-title">UCLA Logon</li> 
-              <li class="group-item"><a href="https://accounts.iam.ucla.edu/register" target="_blank"><p>Create UCLA Logon ID</p></a></li> 
-              <li class="group-item"><a href="https://accounts.iam.ucla.edu" target="_blank"><p>Manage UCLA Logon ID</p></a></li> 
-              <li class="group-item"><a href="https://accounts.iam.ucla.edu/lookup" target="_blank"><p>Look Up UCLA Logon ID</p></a></li> 
-              <li class="group-item"><a href="https://accounts.iam.ucla.edu/security/reset" target="_blank"><p>Reset Password</p></a></li> 
-             </ul> <a href="" class="close">close (X)</a></li>
-           </ul></li> 
-          <li> <a href="#" class="dropdown-link">Students</a> 
-           <ul class="dropdown-wrapper" role="region" aria-live="polite"> 
-            <li> 
-             <ul class="nav-column"> 
-              <li class="group-title">Student Top Links</li> 
-              <li class="group-item"><a href="http://www.calendar.ucla.edu" target="_blank"><p>UCLA Calendar</p></a></li> 
-              <li class="group-item"><a href="http://www.castudentvote.org/register-to-vote" target="_blank"><p>Voter Registration</p></a></li> 
-              <li class="group-title">Academic</li> 
-              <li class="group-item"><a href="http://www.registrar.ucla.edu/Calendars/Overview" target="_blank"><p>Academic Calendar</p></a></li> 
-              <li class="group-item"><a href="http://www.college.ucla.edu/up/ccl/" target="_blank"><p>Community Learning</p></a></li> 
-              <li class="group-item"><a href="http://www.deanofstudents.ucla.edu" target="_blank"><p>Dean of Students</p></a></li> 
-              <li class="group-item"><a href="http://my.ucla.edu/dprfaq.htm" target="_blank"><p>DPR FAQs</p></a></li> 
-              <li class="group-item"><a href="http://catalog.registrar.ucla.edu/" target="_blank"><p>General Catalog</p></a></li> 
-              <li class="group-item"><a href="http://www.gdnet.ucla.edu/gasaa/library/pgmrqintro.htm" target="_blank"><p>Graduate Study</p></a></li> 
-              <li class="group-item"><a href="http://www.iei.ucla.edu/" target="_blank"><p>Instructional Enhancement Initiative (IEI)</p></a></li> 
-              <li class="group-item"><a href="http://ecampus.humnet.ucla.edu/" target="_blank"><p>Humanities E-Campus</p></a></li> 
-              <li class="group-item"><a href="https://sa.ucla.edu/ro/public/soc" target="_blank"><p>Schedule of Classes</p></a></li> 
-              <li class="group-item"><a href="http://www.registrar.ucla.edu/Student-Records/Academic-Transcript" target="_blank"><p>Transcript - Academic</p></a></li> 
-              <li class="group-item"><a href="http://www.registrar.ucla.edu/Student-Records/Verification-Transcript" target="_blank"><p>Transcript - Verification</p></a></li> 
-              <li class="group-item"><a href="http://www.ugresearch.ucla.edu/" target="_blank"><p>Undergraduate Research</p></a></li> 
-              <li class="group-title">Computing</li> 
-              <li class="group-item"><a href="http://www.ats.ucla.edu" target="_blank"><p>Academic Technology Services</p></a></li> 
-              <li class="group-item"><a href="http://www.bol.ucla.edu" target="_blank"><p>Bruin OnLine</p></a></li> 
-              <li class="group-item"><a href="http://map.ais.ucla.edu/go/1004110" target="_blank"><p>Computer Labs</p></a></li> 
-              <li class="group-item"><a href="http://www.dcp.ucla.edu" target="_blank"><p>Disabilities and Computing Program</p></a></li> 
-              <li class="group-item"><a href="http://www.ats.ucla.edu/software/product_list.htm#Sophos" target="_blank"><p>Free Anti-Virus Software</p></a></li> 
-              <li class="group-item"><a href="http://learnit.ucla.edu/" target="_blank"><p>LearnIT</p></a></li> 
-             </ul> 
-             <ul class="nav-column"> 
-              <li class="group-title">Financial</li> 
-              <li class="group-item"><a href="http://www.bruincard.ucla.edu/" target="_blank"><p>BruinCard</p></a></li> 
-              <li class="group-item"><a href="http://www.financialaid.ucla.edu/" target="_blank"><p>Financial Aid</p></a></li> 
-              <li class="group-item"><a href="http://www.financialwellness.ucla.edu/" target="_blank"><p>Financial Wellness</p></a></li> 
-              <li class="group-item"><a href="http://www.gdnet.ucla.edu/grpinst.htm" target="_blank"><p>Graduate Fellowships</p></a></li> 
-              <li class="group-item"><a href="https://www.finance.ucla.edu/business-finance-services/payment-solutions-and-compliance/payment-methods" target="_blank"><p>Payments</p></a></li> 
-              <li class="group-item"><a href="http://scholarshipcenter.ucla.edu" target="_blank"><p>Scholarship Resource Center (SRC)</p></a></li> 
-              <li class="group-item"><a href="https://www.finance.ucla.edu/business-finance-services/student-accounts/" target="_blank"><p>Student Accounting</p></a></li> 
-              <li class="group-item"><a href="http://www.loans.ucla.edu" target="_blank"><p>Student Loan Services &amp; Collections</p></a></li> 
-              <li class="group-item"><a href="http://www.ucu.org/" target="_blank"><p>University Credit Union</p></a></li> 
-              <li class="group-title">Housing</li> 
-              <li class="group-item"><a href="http://www.housing.ucla.edu" target="_blank"><p>Housing</p></a></li> 
-              <li class="group-title">Health</li> 
-              <li class="group-item"><a href="http://www.counseling.ucla.edu/" target="_blank"><p>Counseling and Psychological Services</p></a></li> 
-              <li class="group-item"><a href="http://www.healthy.ucla.edu/" target="_blank"><p>Healthy Campus Initiative</p></a></li> 
-              <li class="group-item"><a href="http://www.studenthealth.ucla.edu" target="_blank"><p>Student Health Services</p></a></li> 
-              <li class="group-title">Happenings</li> 
-              <li class="group-item"><a href="http://www.calendar.ucla.edu" target="_blank"><p>Todays Events</p></a></li> 
-              <li class="group-item"><a href="http://www.happenings.ucla.edu/" target="_blank"><p>Happenings Home</p></a></li> 
-              <li class="group-item"><a href="http://www.happenings.ucla.edu/sports/" target="_blank"><p>Sports</p></a></li> 
-              <li class="group-item"><a href="http://www.happenings.ucla.edu/arts/" target="_blank"><p>Arts</p></a></li> 
-              <li class="group-item"><a href="http://www.happenings.ucla.edu/lectures/" target="_blank"><p>Lectures</p></a></li> 
-              <li class="group-item"><a href="http://odeo.com/channels/125791-UCLA-Happenings-TV-Podcasts" target="_blank"><p>Happenings TV</p></a></li> 
-             </ul> 
-             <ul class="nav-column"> 
-              <li class="group-title">Library</li> 
-              <li class="group-item"><a href="http://www.library.ucla.edu/" target="_blank"><p>UCLA Library</p></a></li> 
-              <li class="group-item"><a href="http://www.library.ucla.edu/search/library-apps" target="_blank"><p>Library Apps (web, tablet, iOS, Android)</p></a></li> 
-              <li class="group-item"><a href="http://catalog.library.ucla.edu" target="_blank"><p>UCLA Library Catalog</p></a></li> 
-              <li class="group-item"><a href="http://catalog.library.ucla.edu/vwebv/enterCourseReserve.do" target="_blank"><p>UCLA Library Course Reserve Search</p></a></li> 
-              <li class="group-item"><a href="http://help.library.ucla.edu" target="_blank"><p>UCLA Library Live Online Help</p></a></li> 
-              <li class="group-item"><a href="http://guides.library.ucla.edu/" target="_blank"><p>UCLA Library Research Guides</p></a></li> 
-              <li class="group-title">Media</li> 
-              <li class="group-item"><a href="http://www.bruinlife.com" target="_blank"><p>Bruin Life Yearbook</p></a></li> 
-              <li class="group-item"><a href="http://www.dailybruin.ucla.edu" target="_blank"><p>Daily Bruin</p></a></li> 
-              <li class="group-item"><a href="http://www.uclaradio.com" target="_blank"><p>UCLA Radio</p></a></li> 
-              <li class="group-item"><a href="http://www.uclatv.com" target="_blank"><p>UCLAtv</p></a></li> 
-              <li class="group-title">Recreation</li> 
-              <li class="group-item"><a href="http://www.campusevents.ucla.edu" target="_blank"><p>Campus Events</p></a></li> 
-              <li class="group-item"><a href="http://www.recreation.ucla.edu/im" target="_blank"><p>Intramural Sports</p></a></li> 
-              <li class="group-item"><a href="http://www.recreation.ucla.edu/oa" target="_blank"><p>Outdoor Adventures</p></a></li> 
-              <li class="group-item"><a href="http://www.recreation.ucla.edu/register" target="_blank"><p>Recreation Classes</p></a></li> 
-              <li class="group-item"><a href="http://www.studentgroups.ucla.edu/" target="_blank"><p>Student Groups</p></a></li> 
-              <li class="group-item"><a href="http://www.arts.ucla.edu/" target="_blank"><p>UCLA Arts</p></a></li> 
-              <li class="group-item"><a href="http://www.uclabruins.com/" target="_blank"><p>UCLA Athletics</p></a></li> 
-              <li class="group-item"><a href="http://www.recreation.ucla.edu" target="_blank"><p>UCLA Recreation</p></a></li> 
-              <li class="group-item"><a href="http://asucla.ucla.edu/where-to-eat/" target="_blank"><p>UCLA Restaurants</p></a></li> 
-              <li class="group-item"><a href="http://shop.uclastore.com" target="_blank"><p>UCLA Store</p></a></li> 
-             </ul> 
-             <ul class="nav-column"> 
-              <li class="group-title">Services</li> 
-              <li class="group-item"><a href="https://www.emergency.ucla.edu/bruinalert" target="_blank"><p>BruinAlert</p></a></li> 
-              <li class="group-item"><a href="http://www.career.ucla.edu/" target="_blank"><p>Career Center</p></a></li> 
-              <li class="group-item"><a href="http://www.tickets.ucla.edu/" target="_blank"><p>Central Ticket Office (CTO)</p></a></li> 
-              <li class="group-item"><a href="http://www.childcare.ucla.edu/" target="_blank"><p>Child Care</p></a></li> 
-              <li class="group-item"><a href="http://www.cho.ucla.edu/" target="_blank"><p>Community Housing</p></a></li> 
-              <li class="group-item"><a href="http://map.ais.ucla.edu/go/1000050" target="_blank"><p>Community Service Officer (CSO) Programs</p></a></li> 
-              <li class="group-item"><a href="http://www.accessweb.ucla.edu/" target="_blank"><p>Disability Access Web</p></a></li> 
-              <li class="group-item"><a href="http://www.dcp.ucla.edu/" target="_blank"><p>Disabilities and Computing Program</p></a></li> 
-              <li class="group-item"><a href="http://www.ems.ucla.edu/" target="_blank"><p>Emergency Medical Services</p></a></li> 
-              <li class="group-item"><a href="http://www.getlegal.ucla.edu/" target="_blank"><p>Entertainment Downloads</p></a></li> 
-              <li class="group-item"><a href="http://www.ucla.edu/employment.html" target="_blank"><p>Jobs at UCLA</p></a></li> 
-              <li class="group-item"><a href="http://www.lgbt.ucla.edu" target="_blank"><p>LGBT Resources</p></a></li> 
-              <li class="group-item"><a href="http://www.osd.ucla.edu/" target="_blank"><p>Office for Students with Disabilities</p></a></li> 
-              <li class="group-item"><a href="http://www.ombuds.ucla.edu/" target="_blank"><p>Ombuds</p></a></li> 
-              <li class="group-item"><a href="http://www.ucpd.ucla.edu/" target="_blank"><p>Police Department</p></a></li> 
-              <li class="group-item"><a href="http://scholarshipcenter.ucla.edu" target="_blank"><p>Scholarship Resource Center (SRC)</p></a></li> 
-              <li class="group-item"><a href="http://www.sexualharassment.ucla.edu" target="_blank"><p>Sexual Harassment Prevention</p></a></li> 
-              <li class="group-item"><a href="http://www.studentlegal.ucla.edu/" target="_blank"><p>Student Legal Services</p></a></li> 
-              <li class="group-item"><a href="http://www.student-travel.ucla.edu/" target="_blank"><p>Student Travel</p></a></li> 
-              <li class="group-item"><a href="http://asucla.ucla.edu/" target="_blank"><p>UCLA Store and Restaurants</p></a></li> 
-             </ul> 
-             <ul class="nav-column"> 
-              <li class="group-title">Sustainability</li> 
-              <li class="group-item"><a href="http://www.sustain.ucla.edu" target="_blank"><p>UCLA Sustainability</p></a></li> 
-              <li class="group-item"><a href="http://www.sustain.ucla.edu/news/index.asp" target="_blank"><p>UCLA Sustainability News</p></a></li> 
-              <li class="group-item"><a href="http://www.sustain.ucla.edu/emaileditor.asp" target="_blank"><p>UCLA Sustainability Feedback</p></a></li> 
-              <li class="group-item"><a href="http://www.sustain.ucla.edu/get_involved/article.asp?parentid=246" target="_blank"><p>Get Involved</p></a></li> 
-              <li class="group-item"><a href="http://www.universityofcalifornia.edu/sustainability/" target="_blank"><p>Sustainability at UC</p></a></li> 
-              <li class="group-item"><a href="http://www.ecofoot.org/" target="_blank"><p>Ecological Footprint</p></a></li> 
-              <li class="group-title">Transportation</li> 
-              <li class="group-item"><a href="http://www.bruinbus.ucla.edu" target="_blank"><p>BruinBus</p></a></li> 
-              <li class="group-item"><a href="https://main.transportation.ucla.edu/getting-to-ucla/commute-options" target="_blank"><p>Commute Options</p></a></li> 
-              <li class="group-item"><a href="https://main.transportation.ucla.edu/getting-to-ucla/public-transit" target="_blank"><p>Public Transit</p></a></li> 
-              <li class="group-item"><a href="https://main.transportation.ucla.edu/campus-parking/students" target="_blank"><p>Student Parking</p></a></li> 
-              <li class="group-item"><a href="https://main.transportation.ucla.edu/getting-around-campus/zipcar" target="_blank"><p>Zipcar</p></a></li> 
-             </ul> <a href="" class="close">close (X)</a></li>
-           </ul></li> 
-          <li> <a href="#" class="dropdown-link">True Bruin</a> 
-           <ul class="dropdown-wrapper" role="region" aria-live="polite"> 
-            <li> 
-             <ul class="nav-column"> 
-              <li class="group-title">True Bruin Links</li> 
-              <li class="group-item"><a href="http://www.truebruin.ucla.edu" target="_blank"><p>True Bruin</p></a></li> 
-              <li class="group-item"><a href="http://www.reportincidents.ucla.edu" target="_blank"><p>Hostile Incident Report Procedure</p></a></li> 
-              <li class="group-item"><a href="http://www.deanofstudents.ucla.edu/Report-an-Incident-of-BIAS" target="_blank"><p>Bias Report Form</p></a></li> 
-             </ul> 
-             <ul class="nav-column"> 
-              <li class="group-title">Community Standards</li> 
-              <li class="group-item"><a href="http://www.deanofstudents.ucla.edu/Student-Conduct-Code" target="_blank"><p>Student Conduct</p></a></li> 
-              <li class="group-item"><a href="http://www.deanofstudents.ucla.edu/Academic-Integrity" target="_blank"><p>Academic Integrity</p></a></li> 
-              <li class="group-item"><a href="http://www.adminpolicies.ucla.edu/pdf/230-1.pdf" target="_blank"><p>Non-discrimination Policies</p></a></li> 
-             </ul> <a href="" class="close">close (X)</a></li>
-           </ul></li> 
-          <li> <a href="#" class="dropdown-link">Faculty/Staff</a> 
-           <ul class="dropdown-wrapper" role="region" aria-live="polite"> 
-            <li> 
-             <ul class="nav-column"> 
-              <li class="group-title">Academic</li> 
-              <li class="group-item"><a href="http://www.registrar.ucla.edu/Calendars/Overview" target="_blank"><p>Academic Calendar</p></a></li> 
-              <li class="group-item"><a href="http://www.apo.ucla.edu/" target="_blank"><p>Academic Personnel Office</p></a></li> 
-              <li class="group-item"><a href="http://www.senate.ucla.edu/" target="_blank"><p>Academic Senate</p></a></li> 
-              <li class="group-item"><a href="http://www.college.ucla.edu/up/ccl" target="_blank"><p>Center for Community Learning</p></a></li> 
-              <li class="group-item"><a href="http://www.iei.ucla.edu/" target="_blank"><p>Instructional Enhancement Initiative (IEI)</p></a></li> 
-              <li class="group-item"><a href="http://www.calendar.ucla.edu/" target="_blank"><p>UCLA Calendar</p></a></li> 
-              <li class="group-title">Administrative</li> 
-              <li class="group-item"><a href="http://www.policies.ucla.edu" target="_blank"><p>Administrative Policies &amp; Delegations</p></a></li> 
-              <li class="group-item"><a href="http://www.apb.ucla.edu/" target="_blank"><p>Campus Profiles</p></a></li> 
-              <li class="group-title">Computing</li> 
-              <li class="group-item"><a href="http://map.ais.ucla.edu/go/1004110" target="_blank"><p>Computer Labs</p></a></li> 
-              <li class="group-item"><a href="http://www.dcp.ucla.edu/" target="_blank"><p>Disabilities and Computing Program</p></a></li> 
-              <li class="group-item"><a href="http://www.bol.ucla.edu/software/sophos/" target="_blank"><p>Free Anti-Virus Software</p></a></li> 
-             </ul> 
-             <ul class="nav-column"> 
-              <li class="group-title">Employment</li> 
-              <li class="group-item"><a href="http://atyourservice.ucop.edu/" target="_blank"><p>At Your Service</p></a></li> 
-              <li class="group-item"><a href="http://hr.mycareer.ucla.edu" target="_blank"><p>Current UCLA Job Openings</p></a></li> 
-              <li class="group-item"><a href="https://atyourserviceonline.ucop.edu" target="_blank"><p>Health &amp; Welfare (At Your Service)</p></a></li> 
-              <li class="group-item"><a href="http://www.chr.ucla.edu/chr/ppaa/index.html" target="_blank"><p>Personnel Policies and Agreements</p></a></li> 
-              <li class="group-item"><a href="https://atyourserviceonline.ucop.edu" target="_blank"><p>Retirement (At Your Service)</p></a></li> 
-              <li class="group-item"><a href="http://www.chr.ucla.edu/chr/emp/index.html" target="_blank"><p>Staff Employment Services</p></a></li> 
-              <li class="group-item"><a href="http://atyourservice.ucop.edu/employees/policies/staff_policies/index.html" target="_blank"><p>Staff Personnel Policies</p></a></li> 
-              <li class="group-item"><a href="https://trs.it.ucla.edu/" target="_blank"><p>Timesheet - TRS</p></a></li> 
-              <li class="group-item"><a href="https://atyourserviceonline.ucop.edu" target="_blank"><p>UC Benefits (At Your Service)</p></a></li> 
-              <li class="group-item"><a href="http://www.apo.ucla.edu/facultyhandbook/" target="_blank"><p>UC Faculty Handbook</p></a></li> 
-              <li class="group-item"><a href="http://www.today.ucla.edu/" target="_blank"><p>UCLA Today - Staff &amp; Faculty News</p></a></li> 
-              <li class="group-title">Financial</li> 
-              <li class="group-item"><a href="http://www.bruincard.ucla.edu/" target="_blank"><p>Bruin Card</p></a></li> 
-              <li class="group-item"><a href="http://www.finance.ucla.edu/" target="_blank"><p>Corporate Financial Services</p></a></li> 
-              <li class="group-item"><a href="https://atyourserviceonline.ucop.edu" target="_blank"><p>Earnings Statement (At Your Service)</p></a></li> 
-              <li class="group-item"><a href="https://atyourserviceonline.ucop.edu" target="_blank"><p>Income &amp; Taxes (At Your Service)</p></a></li> 
-              <li class="group-item"><a href="http://www.payroll.ucla.edu/" target="_blank"><p>Payroll Services</p></a></li> 
-              <li class="group-item"><a href="http://www.ucu.org/" target="_blank"><p>University Credit Union</p></a></li> 
-              <li class="group-title">Gradebook</li> 
-              <li class="group-item"><a href="http://www.registrar.ucla.edu/Portals/50/Documents/facultystaff/gradebookquickref.pdf" target="_blank"><p>Gradebook Express Overview</p></a></li> 
-              <li class="group-item"><a href="https://be.my.ucla.edu/gradebook_dot_net/faq/faq.html"><p>Gradebook Express FAQ</p></a></li> 
-              <li class="group-item"><a href="http://my.ucla.edu/gradebook/quickstart.pdf" target="_blank"><p>Gradebook Quick Start Guide</p></a></li> 
-              <li class="group-item"><a href="http://my.ucla.edu/gradebook/print.pdf" target="_blank"><p>Gradebook Users Manual</p></a></li> 
-             </ul> 
-             <ul class="nav-column"> 
-              <li class="group-title">Health</li> 
-              <li class="group-item"><a href="http://www.healthcare.ucla.edu/" target="_blank"><p>Healthcare</p></a></li> 
-              <li class="group-item"><a href="http://www.healthy.ucla.edu/" target="_blank"><p>Healthy Campus Initiative</p></a></li> 
-              <li class="group-item"><a href="http://www.uclahealth.org/" target="_blank"><p>UCLA Medical Center</p></a></li> 
-              <li class="group-title">Instruction</li> 
-              <li class="group-item"><a href="http://www.humnet.ucla.edu/emeriti/" target="_blank"><p>Emeriti/Retiree Relations Center</p></a></li> 
-              <li class="group-item"><a href="http://www.oid.ucla.edu/" target="_blank"><p>Office of Instructional Development</p></a></li> 
-              <li class="group-title">Library</li> 
-              <li class="group-item"><a href="http://www.library.ucla.edu/" target="_blank"><p>UCLA Library</p></a></li> 
-              <li class="group-item"><a href="http://catalog.library.ucla.edu" target="_blank"><p>UCLA Library Catalog</p></a></li> 
-              <li class="group-item"><a href="http://services.library.ucla.edu/welcome/services/fac-ta/request_form.htm" target="_blank"><p>UCLA Library Faculty Reserves Request Form</p></a></li> 
-              <li class="group-title">Recreation</li> 
-              <li class="group-item"><a href="http://www.campusevents.ucla.edu" target="_blank"><p>Campus Events</p></a></li> 
-              <li class="group-item"><a href="http://www.recreation.ucla.edu/oa" target="_blank"><p>Outdoor Adventures</p></a></li> 
-              <li class="group-item"><a href="https://secure.recreation.ucla.edu/SignedOut/browse.aspx" target="_blank"><p>Recreation Classes</p></a></li> 
-              <li class="group-item"><a href="http://www.uclabruins.com/" target="_blank"><p>UCLA Athletics</p></a></li> 
-              <li class="group-item"><a href="http://www.recreation.ucla.edu" target="_blank"><p>UCLA Recreation</p></a></li> 
-              <li class="group-item"><a href="http://asucla.ucla.edu/where-to-eat/" target="_blank"><p>UCLA Restaurants</p></a></li> 
-              <li class="group-item"><a href="http://shop.uclastore.com" target="_blank"><p>UCLA Store</p></a></li> 
-             </ul> 
-             <ul class="nav-column"> 
-              <li class="group-title">Research</li> 
-              <li class="group-item"><a href="http://www.research.ucla.edu/chal/chalmain_tables.htm" target="_blank"><p>Challenge</p></a></li> 
-              <li class="group-item"><a href="http://www.research.ucla.edu/ocga/" target="_blank"><p>Sponsored Research</p></a></li> 
-              <li class="group-title">Services</li> 
-              <li class="group-item"><a href="http://www.qdb.ucla.edu/" target="_blank"><p>AIS Query Database</p></a></li> 
-              <li class="group-item"><a href="http://www.chr.ucla.edu/" target="_blank"><p>Campus Human Resources</p></a></li> 
-              <li class="group-item"><a href="http://www.tickets.ucla.edu/" target="_blank"><p>Central Ticket Office (CTO)</p></a></li> 
-              <li class="group-item"><a href="http://www.childcare.ucla.edu/" target="_blank"><p>Child Care</p></a></li> 
-              <li class="group-item"><a href="http://www.cho.ucla.edu/" target="_blank"><p>Community Housing</p></a></li> 
-              <li class="group-item"><a href="http://www.conferences.ucla.edu/" target="_blank"><p>Conference &amp; Event Management</p></a></li> 
-              <li class="group-item"><a href="http://www.accessweb.ucla.edu/" target="_blank"><p>Disability Access Web</p></a></li> 
-              <li class="group-item"><a href="http://www.dcp.ucla.edu/" target="_blank"><p>Disabilities and Computing Program</p></a></li> 
-              <li class="group-item"><a href="http://www.getlegal.ucla.edu/" target="_blank"><p>Entertainment Downloads</p></a></li> 
-              <li class="group-item"><a href="http://facultycenter.ucla.edu/" target="_blank"><p>Faculty Center</p></a></li> 
-              <li class="group-item"><a href="http://facultycenter.ucla.edu/Member-Dining/Daily-Lunch-Menu.aspx" target="_blank"><p>Faculty Center Menu</p></a></li> 
-              <li class="group-item"><a href="http://www.lgbt.ucla.edu" target="_blank"><p>LGBT Resources</p></a></li> 
-              <li class="group-item"><a href="http://www.maildoc.ucla.edu/" target="_blank"><p>Mail &amp; Document Services</p></a></li> 
-              <li class="group-item"><a href="http://www.ucpd.ucla.edu/" target="_blank"><p>Police Department</p></a></li> 
-              <li class="group-item"><a href="http://www.purchasing.ucla.edu/" target="_blank"><p>Purchasing</p></a></li> 
-              <li class="group-item"><a href="http://www.sexualharassment.ucla.edu" target="_blank"><p>Sexual Harassment Prevention</p></a></li> 
-              <li class="group-item"><a href="http://www.travel.ucla.edu/" target="_blank"><p>Travel Center</p></a></li> 
-              <li class="group-item"><a href="http://asucla.ucla.edu/" target="_blank"><p>UCLA Store and Restaurants</p></a></li> 
-             </ul> 
-             <ul class="nav-column"> 
-              <li class="group-title">Transportation</li> 
-              <li class="group-item"><a href="http://www.transportation.ucla.edu/" target="_blank"><p>Transportation Services</p></a></li> 
-              <li class="group-item"><a href="http://www.zimride.com/ucla" target="_blank"><p>Zimride</p></a></li> 
-              <li class="group-title">Turnitin</li> 
-              <li class="group-item"><a href="http://my.ucla.edu/turnitin/GradeMark_manual.pdf" target="_blank"><p>Turnitin Manual - GradeMark</p></a></li> 
-              <li class="group-item"><a href="http://my.ucla.edu/turnitin/PeerMark_manual.pdf" target="_blank"><p>Turnitin Manual - PeerMark</p></a></li> 
-              <li class="group-item"><a href="http://turnitin.com/en_us/training/instructor-training/viewing-originality-reports" target="_blank"><p>Turnitin Video - Instructor Originality Report</p></a></li> 
-             </ul> <a href="" class="close">close (X)</a></li>
-           </ul></li> 
-          <li> <a href="#" class="dropdown-link">Community</a> 
-           <ul class="dropdown-wrapper" role="region" aria-live="polite"> 
-            <li> 
-             <ul class="nav-column"> 
-              <li class="group-title">Community Top Links</li> 
-              <li class="group-item"><a href="http://www.avclub.com/" target="_blank"><p>A.V. Club</p></a></li> 
-              <li class="group-item"><a href="http://www.chow.com/places/regions/2" target="_blank"><p>CHOW</p></a></li> 
-              <li class="group-item"><a href="http://losangeles.citysearch.com/" target="_blank"><p>Citysearch</p></a></li> 
-              <li class="group-item"><a href="http://losangeles.craigslist.org/" target="_blank"><p>Craigslist</p></a></li> 
-              <li class="group-item"><a href="http://www.experiencela.com/" target="_blank"><p>ExperienceLA</p></a></li> 
-              <li class="group-item"><a href="http://www.losangeles.com/" target="_blank"><p>LosAngeles.com</p></a></li> 
-              <li class="group-item"><a href="http://www.yelp.com/la" target="_blank"><p>Yelp</p></a></li> 
-              <li class="group-title">Activities</li> 
-              <li class="group-item"><a href="http://www.cinema.ucla.edu/" target="_blank"><p>Film &amp; Television Archive</p></a></li> 
-              <li class="group-item"><a href="http://www.geffenplayhouse.com" target="_blank"><p>Geffen Playhouse</p></a></li> 
-              <li class="group-item"><a href="http://www.japanesegarden.ucla.edu/" target="_blank"><p>Hannah Carter Japanese Garden</p></a></li> 
-              <li class="group-item"><a href="http://www.botgard.ucla.edu/index.html" target="_blank"><p>Mildred E. Mathias Botanical Garden</p></a></li> 
-              <li class="group-item"><a href="http://www.astro.ucla.edu/faculty/planet.html" target="_blank"><p>Planetarium &amp; Observatory Domes</p></a></li> 
-              <li class="group-item"><a href="http://www.uclalive.org/" target="_blank"><p>UCLA LIVE</p></a></li> 
-              <li class="group-title">Alumni</li> 
-              <li class="group-item"><a href="http://www.uclalumni.net/TravelAndRec/BruinWoods/" target="_blank"><p>Bruin Woods</p></a></li> 
-              <li class="group-item"><a href="http://www.alumni.ucla.edu" target="_blank"><p>UCLA Alumni Association</p></a></li> 
-             </ul> 
-             <ul class="nav-column"> 
-              <li class="group-title">Dining</li> 
-              <li class="group-item"><a href="http://www.cpk.com/" target="_blank"><p>California Pizza Kitchen</p></a></li> 
-              <li class="group-item"><a href="http://www.thecheesecakefactory.com/" target="_blank"><p>The Cheesecake Factory</p></a></li> 
-              <li class="group-item"><a href="http://medievaltimes.com/" target="_blank"><p>Medieval Times</p></a></li> 
-              <li class="group-item"><a href="http://www.pfchangs.com/locations/" target="_blank"><p>P.F. Chang's China Bistro</p></a></li> 
-              <li class="group-item"><a href="http://www.oldspaghettifactory.com/" target="_blank"><p>The Old Spaghetti Factory</p></a></li> 
-              <li class="group-item"><a href="http://thestinkingrose.com/" target="_blank"><p>The Stinking Rose</p></a></li> 
-              <li class="group-item"><a href="http://www.roscoeschickenandwaffles.com/" target="_blank"><p>Roscoe's Chicken &amp; Waffles</p></a></li> 
-              <li class="group-item"><a href="http://www.hardrock.com/" target="_blank"><p>Hard Rock Cafe</p></a></li> 
-              <li class="group-title">Family/Friends Info</li> 
-              <li class="group-item"><a href="https://be.my.ucla.edu/how_works.htm"><p>About MyUCLA</p></a></li> 
-              <li class="group-item"><a href="http://www.childcare.ucla.edu/" target="_blank"><p>Child Care</p></a></li> 
-              <li class="group-item"><a href="http://map.ais.ucla.edu/go/Emergency-Medical-Services" target="_blank"><p>Emergency &amp; Safety Services</p></a></li> 
-              <li class="group-item"><a href="http://www.ehs.ucla.edu/" target="_blank"><p>Environment Health &amp; Safety</p></a></li> 
-              <li class="group-item"><a href="http://www.ucla.edu/chancellor/index.html" target="_blank"><p>Meet the Chancellor</p></a></li> 
-              <li class="group-item"><a href="http://www.research.ucla.edu/" target="_blank"><p>Research</p></a></li> 
-              <li class="group-item"><a href="http://www.ucop.edu/ucophome/ucservers.html" target="_blank"><p>University of California Links</p></a></li> 
-              <li class="group-item"><a href="http://www.calendar.ucla.edu/" target="_blank"><p>UCLA Calendar</p></a></li> 
-              <li class="group-item"><a href="http://www.ucla.edu/" target="_blank"><p>UCLA Home</p></a></li> 
-              <li class="group-item"><a href="http://asucla.ucla.edu/where-to-eat/" target="_blank"><p>UCLA Restaurants</p></a></li> 
-              <li class="group-item"><a href="http://shop.uclastore.com" target="_blank"><p>UCLA Store</p></a></li> 
-              <li class="group-item"><a href="http://www.uclabruins.com/camps/ucla-camps.html" target="_blank"><p>Summer Camps, Tours, Courses</p></a></li> 
-             </ul> 
-             <ul class="nav-column"> 
-              <li class="group-title">Movies</li> 
-              <li class="group-item"><a href="http://movies.yahoo.com/showtimes/showtimes.html?z=90024&amp;r=sim" target="_blank"><p>movie times</p></a></li> 
-              <li class="group-item"><a href="http://www.moviefone.com/" target="_blank"><p>moviefone.com</p></a></li> 
-              <li class="group-item"><a href="http://www.boxofficereport.com" target="_blank"><p>Box Office Report</p></a></li> 
-              <li class="group-title">Museums</li> 
-              <li class="group-item"><a href="http://hammer.ucla.edu/" target="_blank"><p>Armand Hammer Museum of Art and Cultural Center</p></a></li> 
-              <li class="group-item"><a href="http://www.autry-museum.org/" target="_blank"><p>Autry Museum of Western Heritage</p></a></li> 
-              <li class="group-item"><a href="http://www.californiasciencecenter.org/" target="_blank"><p>California Science Center</p></a></li> 
-              <li class="group-item"><a href="http://www.fmch.ucla.edu/" target="_blank"><p>Fowler Museum at UCLA</p></a></li> 
-              <li class="group-item"><a href="http://www.getty.edu/museum/" target="_blank"><p>J. Paul Getty Museum</p></a></li> 
-              <li class="group-item"><a href="http://www.lacma.org/" target="_blank"><p>Los Angeles County Museum of Art</p></a></li> 
-              <li class="group-item"><a href="http://www.moca.org/" target="_blank"><p>Museum of Contemporary Art</p></a></li> 
-              <li class="group-item"><a href="http://www.mtr.org/" target="_blank"><p>Museum of Television &amp; Radio</p></a></li> 
-              <li class="group-title">Music</li> 
-              <li class="group-item"><a href="http://www.billboard.com/#/" target="_blank"><p>Billboard Charts</p></a></li> 
-              <li class="group-item"><a href="http://www.hollywoodbowl.com/" target="_blank"><p>Hollywood Bowl</p></a></li> 
-              <li class="group-title">Patients</li> 
-              <li class="group-item"><a href="http://www.healthcare.ucla.edu/" target="_blank"><p>Healthcare</p></a></li> 
-              <li class="group-item"><a href="http://www.uclahealth.org/" target="_blank"><p>UCLA Medical Center</p></a></li> 
-              <li class="group-title">Radio</li> 
-              <li class="group-item"><a href="http://www.kcrw.com/" target="_blank"><p>KCRW</p></a></li> 
-              <li class="group-item"><a href="http://www.uclaradio.com/" target="_blank"><p>UCLA Radio</p></a></li> 
-             </ul> 
-             <ul class="nav-column"> 
-              <li class="group-title">Recreation</li> 
-              <li class="group-item"><a href="http://www.campusevents.ucla.edu" target="_blank"><p>Campus Events</p></a></li> 
-              <li class="group-item"><a href="http://www.tickets.ucla.edu/" target="_blank"><p>Central Ticket Office (CTO)</p></a></li> 
-              <li class="group-item"><a href="http://www.uclabruins.com/" target="_blank"><p>UCLA Athletics</p></a></li> 
-              <li class="group-title">Sports</li> 
-              <li class="group-item"><a href="http://www.uclabruins.com/" target="_blank"><p>UCLA Bruins</p></a></li> 
-              <li class="group-item"><a href="http://www.nba.com/lakers/" target="_blank"><p>Los Angeles Lakers</p></a></li> 
-              <li class="group-item"><a href="http://www.nba.com/clippers/" target="_blank"><p>Los Angeles Clippers</p></a></li> 
-              <li class="group-item"><a href="http://www.wnba.com/sparks/" target="_blank"><p>Los Angeles Sparks</p></a></li> 
-              <li class="group-item"><a href="http://www.angelsbaseball.com/" target="_blank"><p>Los Angeles Angels</p></a></li> 
-              <li class="group-item"><a href="http://www.dodgers.com/" target="_blank"><p>Los Angeles Dodgers</p></a></li> 
-              <li class="group-item"><a href="http://www.mightyducks.com/" target="_blank"><p>Anaheim Mighty Ducks</p></a></li> 
-              <li class="group-item"><a href="http://www.lakings.com/" target="_blank"><p>Los Angeles Kings</p></a></li> 
-              <li class="group-item"><a href="http://www.lagalaxy.com/" target="_blank"><p>Los Angeles Galaxy</p></a></li> 
-              <li class="group-title">Stocks</li> 
-              <li class="group-item"><a href="http://finance.yahoo.com/?u" target="_blank"><p>Yahoo! Finance</p></a></li> 
-              <li class="group-title">Television</li> 
-              <li class="group-item"><a href="http://www.happenings.ucla.edu/tv/" target="_blank"><p>Happenings TV</p></a></li> 
-              <li class="group-item"><a href="http://www.tvguide.com/" target="_blank"><p>TV Guide Online</p></a></li> 
-              <li class="group-item"><a href="http://www.uclatv.com" target="_blank"><p>UCLAtv</p></a></li> 
-              <li class="group-item"><a href="http://www.ultimatetv.com/" target="_blank"><p>Ultimate TV</p></a></li> 
-             </ul> 
-             <ul class="nav-column"> 
-              <li class="group-title">Theatre</li> 
-              <li class="group-item"><a href="http://www.losangelesopera.com/" target="_blank"><p>Los Angeles Opera</p></a></li> 
-              <li class="group-item"><a href="http://www.odysseytheatre.com" target="_blank"><p>The Odyssey Theatre</p></a></li> 
-              <li class="group-title">Theme Parks</li> 
-              <li class="group-item"><a href="http://disneyland.disney.go.com/disneyland/en_US/home/home?name=HomePage&amp;bhcp=1" target="_blank"><p>Disneyland</p></a></li> 
-              <li class="group-item"><a href="http://www.knotts.com/" target="_blank"><p>Knott's Berry Farm</p></a></li> 
-              <li class="group-item"><a href="http://www.sixflags.com/magicMountain/index.aspx" target="_blank"><p>Six Flags Magic Mountain</p></a></li> 
-              <li class="group-item"><a href="http://www.universalstudios.com/unicity2/" target="_blank"><p>Universal Studios Hollywood</p></a></li> 
-              <li class="group-title">Visitors</li> 
-              <li class="group-item"><a href="http://www.ucla.edu/" target="_blank"><p>UCLA Home Page</p></a></li> 
-              <li class="group-item"><a href="http://www.directory.ucla.edu" target="_blank"><p>Campus Directory</p></a></li> 
-              <li class="group-item"><a href="http://www.ucla.edu/map/" target="_blank"><p>Campus Map</p></a></li> 
-              <li class="group-item"><a href="http://www.ucla.edu/extaffairs/index.html" target="_blank"><p>External Affairs</p></a></li> 
-              <li class="group-item"><a href="http://www.chr.ucla.edu/chr/emp/cur_job.html" target="_blank"><p>Current UCLA Job Openings</p></a></li> 
-              <li class="group-item"><a href="http://www.admissions.ucla.edu/tours/accommodations.htm" target="_blank"><p>Hotels</p></a></li> 
-              <li class="group-item"><a href="http://www.transportation.ucla.edu/" target="_blank"><p>Transportation Services</p></a></li> 
-              <li class="group-item"><a href="http://www.ucpd.ucla.edu/" target="_blank"><p>UCLA Police Department</p></a></li> 
-              <li class="group-item"><a href="http://asucla.ucla.edu/" target="_blank"><p>UCLA Store and Restaurants</p></a></li> 
-             </ul> <a href="" class="close">close (X)</a></li>
-           </ul></li> 
-          <li> <a href="https://g.ucla.edu/" target="_blank">WebMail</a> </li> 
-          <li> <a href="#" class="dropdown-link">Campus</a> 
-           <ul class="dropdown-wrapper" role="region" aria-live="polite"> 
-            <li> 
-             <ul class="nav-column"> 
-              <li class="group-title">Campus Top Links</li> 
-              <li class="group-item"><a href="http://www.directory.ucla.edu/" target="_blank"><p>Directory</p></a></li> 
-              <li class="group-item"><a href="http://www.ucla.edu/map/" target="_blank"><p>Map</p></a></li> 
-             </ul> 
-             <ul class="nav-column"> 
-              <li class="group-title">Menus</li> 
-              <li class="group-item"><a href="http://www.asucla.ucla.edu/restaurants/restaurants.asp" target="_blank"><p>ASUCLA</p></a></li> 
-              <li class="group-item"><a href="http://facultycenter.ucla.edu/Member-Dining/Daily-Lunch-Menu.aspx" target="_blank"><p>Faculty Center</p></a></li> 
-              <li class="group-item"><a href="http://149.142.49.118/foodpro/todaysentrees.asp" target="_blank"><p>Residence Halls</p></a></li> 
-             </ul> <a href="" class="close">close (X)</a></li>
-           </ul></li> 
-          <li> <a href="http://maps.google.com/?ie=UTF8&amp;ll=34.069725,-118.269196&amp;spn=0.582437,0.983276&amp;z=10&amp;om=1&amp;layer=t" target="_blank">Traffic</a> </li> 
-          <li><a href="http://my.ucla.edu/mobile/" aria-label="mobile" style="padding-right: 0;"><span style="font-size: 2em; color: Yellow; margin-top: -5px;" class="icon-mobile" aria-hidden="true"></span></a></li> 
-         </ul>
-         <div id="smallmenu" class="hide-above-medium-small">
-          <a href="javascript:void(0)" id="smallmenu_357" class="smallmenu_title secondary light gradient hoverYellow"><span>New to UCLA?</span><span class="icon-plus-sign smallmenu_icon"></span></a>
-          <div class="smallmenu_357 hide"> 
-           <a href="javascript:void(0)" id="smallmenu_357_358" class="smallmenu_title default light secondTier">Sign-Up<span class="icon-plus-sign smallmenu_icon"></span></a>
-           <div class="smallmenu_357_358 hide"> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.studenthealth.ucla.edu/Lists/ChannelContent/CustDispForm.aspx?ID=88&amp;Title=Waiving%20UC%20SHIP%20FAQs&amp;Channel=Insurance" target="_blank"><span>Student Health Insurance (UC SHIP) Enrollment and Waiver</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://housing.ucla.edu" target="_blank"><span>Housing Application</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://transportation.ucla.edu" target="_blank"><span>Parking Application</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.bruincard.ucla.edu" target="_blank"><span>BruinCard</span></a> 
-           </div> 
-           <a href="javascript:void(0)" id="smallmenu_357_359" class="smallmenu_title default light secondTier">Help<span class="icon-plus-sign smallmenu_icon"></span></a>
-           <div class="smallmenu_357_359 hide"> 
-            <a class="smallmenu_title default light thirdTier" href="https://be.my.ucla.edu/MyUCLATutorials.aspx"><span>MyUCLA Tutorials</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://my.ucla.edu/studentservices.aspx" target="_blank"><span>Student Services Directory</span></a> 
-           </div> 
-           <a href="javascript:void(0)" id="smallmenu_357_76" class="smallmenu_title default light secondTier">New Students<span class="icon-plus-sign smallmenu_icon"></span></a>
-           <div class="smallmenu_357_76 hide"> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.admission.ucla.edu/NewBruins/NSG.htm" target="_blank"><span>New Student Guide</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.housing.ucla.edu/" target="_blank"><span>Housing</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.studenthealth.ucla.edu/immune" target="_blank"><span>Immunizations</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.gdnet.ucla.edu/orientation.html" target="_blank"><span>Orientation Grad</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://newstudents.ucla.edu" target="_blank"><span>Orientation Undergrad</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://cis.ucla.edu/studyArea/" target="_blank"><span>Study Areas</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.transfers.ucla.edu/" target="_blank"><span>Transfer Student Support</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.transportation.ucla.edu/" target="_blank"><span>Transportation</span></a> 
-           </div> 
-           <a href="javascript:void(0)" id="smallmenu_357_84" class="smallmenu_title default light secondTier">Visiting Students<span class="icon-plus-sign smallmenu_icon"></span></a>
-           <div class="smallmenu_357_84 hide"> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.summer.ucla.edu" target="_blank"><span>Summer Sessions</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.unex.ucla.edu" target="_blank"><span>UCLA Extension</span></a> 
-           </div> 
-           <a href="javascript:void(0)" id="smallmenu_357_87" class="smallmenu_title default light secondTier">International Students<span class="icon-plus-sign smallmenu_icon"></span></a>
-           <div class="smallmenu_357_87 hide"> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.isop.ucla.edu/eap" target="_blank"><span>Education Abroad Program</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.healthcare.ucla.edu/international-relations/" target="_blank"><span>UCLA Medical Center - International Relations</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.internationalcenter.ucla.edu/" target="_blank"><span>Dashew Center for International Students and Scholars</span></a> 
-           </div> 
-           <a href="javascript:void(0)" id="smallmenu_357_91" class="smallmenu_title default light secondTier">Prospective Students<span class="icon-plus-sign smallmenu_icon"></span></a>
-           <div class="smallmenu_357_91 hide"> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.gdnet.ucla.edu/prospective.html" target="_blank"><span>Graduate Admissions</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.admission.ucla.edu/infoprospective.htm" target="_blank"><span>Undergraduate Admissions</span></a> 
-           </div> 
-          </div> 
-          <a href="javascript:void(0)" id="smallmenu_371" class="smallmenu_title secondary light gradient hoverYellow"><span>Alumni</span><span class="icon-plus-sign smallmenu_icon"></span></a>
-          <div class="smallmenu_371 hide"> 
-           <a href="javascript:void(0)" id="smallmenu_371_394" class="smallmenu_title default light secondTier">Diplomas<span class="icon-plus-sign smallmenu_icon"></span></a>
-           <div class="smallmenu_371_394 hide"> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.registrar.ucla.edu/Student-Records/Diplomas/Diploma-Request" target="_blank"><span>Diploma Request</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.registrar.ucla.edu/Student-Records/Diplomas/Replacement-Diploma" target="_blank"><span>Diploma Replacement (Duplicate)</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.registrar.ucla.edu/Portals/50/forms/diplomaagentauth.pdf" target="_blank"><span>Diploma Agent Authorization</span></a> 
-           </div> 
-           <a href="javascript:void(0)" id="smallmenu_371_372" class="smallmenu_title default light secondTier">Transcripts and Degrees<span class="icon-plus-sign smallmenu_icon"></span></a>
-           <div class="smallmenu_371_372 hide"> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.registrar.ucla.edu/Student-Records/Academic-Transcript" target="_blank"><span>Transcript - Academic</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.registrar.ucla.edu/Student-Records/Verification-Transcript/Verification-Transcript-Format" target="_blank"><span>Proof of Enrollement</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.registrar.ucla.edu/Student-Records/Academic-Transcript/Transcript-Availability#specialdegsrv" target="_blank"><span>Special Degree Services Request</span></a> 
-           </div> 
-           <a href="javascript:void(0)" id="smallmenu_371_377" class="smallmenu_title default light secondTier">UCLA Logon<span class="icon-plus-sign smallmenu_icon"></span></a>
-           <div class="smallmenu_371_377 hide"> 
-            <a class="smallmenu_title default light thirdTier" href="https://accounts.iam.ucla.edu/register" target="_blank"><span>Create UCLA Logon ID</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="https://accounts.iam.ucla.edu" target="_blank"><span>Manage UCLA Logon ID</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="https://accounts.iam.ucla.edu/lookup" target="_blank"><span>Look Up UCLA Logon ID</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="https://accounts.iam.ucla.edu/security/reset" target="_blank"><span>Reset Password</span></a> 
-           </div> 
-          </div> 
-          <a href="javascript:void(0)" id="smallmenu_1" class="smallmenu_title secondary light gradient hoverYellow"><span>Students</span><span class="icon-plus-sign smallmenu_icon"></span></a>
-          <div class="smallmenu_1 hide"> 
-           <a href="javascript:void(0)" id="smallmenu_1_366" class="smallmenu_title default light secondTier">Student Top Links<span class="icon-plus-sign smallmenu_icon"></span></a>
-           <div class="smallmenu_1_366 hide"> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.calendar.ucla.edu" target="_blank"><span>UCLA Calendar</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.castudentvote.org/register-to-vote" target="_blank"><span>Voter Registration</span></a> 
-           </div> 
-           <a href="javascript:void(0)" id="smallmenu_1_6" class="smallmenu_title default light secondTier">Academic<span class="icon-plus-sign smallmenu_icon"></span></a>
-           <div class="smallmenu_1_6 hide"> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.registrar.ucla.edu/Calendars/Overview" target="_blank"><span>Academic Calendar</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.college.ucla.edu/up/ccl/" target="_blank"><span>Community Learning</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.deanofstudents.ucla.edu" target="_blank"><span>Dean of Students</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://my.ucla.edu/dprfaq.htm" target="_blank"><span>DPR FAQs</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://catalog.registrar.ucla.edu/" target="_blank"><span>General Catalog</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.gdnet.ucla.edu/gasaa/library/pgmrqintro.htm" target="_blank"><span>Graduate Study</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.iei.ucla.edu/" target="_blank"><span>Instructional Enhancement Initiative (IEI)</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://ecampus.humnet.ucla.edu/" target="_blank"><span>Humanities E-Campus</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="https://sa.ucla.edu/ro/public/soc" target="_blank"><span>Schedule of Classes</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.registrar.ucla.edu/Student-Records/Academic-Transcript" target="_blank"><span>Transcript - Academic</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.registrar.ucla.edu/Student-Records/Verification-Transcript" target="_blank"><span>Transcript - Verification</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.ugresearch.ucla.edu/" target="_blank"><span>Undergraduate Research</span></a> 
-           </div> 
-           <a href="javascript:void(0)" id="smallmenu_1_21" class="smallmenu_title default light secondTier">Computing<span class="icon-plus-sign smallmenu_icon"></span></a>
-           <div class="smallmenu_1_21 hide"> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.ats.ucla.edu" target="_blank"><span>Academic Technology Services</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.bol.ucla.edu" target="_blank"><span>Bruin OnLine</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://map.ais.ucla.edu/go/1004110" target="_blank"><span>Computer Labs</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.dcp.ucla.edu" target="_blank"><span>Disabilities and Computing Program</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.ats.ucla.edu/software/product_list.htm#Sophos" target="_blank"><span>Free Anti-Virus Software</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://learnit.ucla.edu/" target="_blank"><span>LearnIT</span></a> 
-           </div> 
-           <a href="javascript:void(0)" id="smallmenu_1_28" class="smallmenu_title default light secondTier">Financial<span class="icon-plus-sign smallmenu_icon"></span></a>
-           <div class="smallmenu_1_28 hide"> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.bruincard.ucla.edu/" target="_blank"><span>BruinCard</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.financialaid.ucla.edu/" target="_blank"><span>Financial Aid</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.financialwellness.ucla.edu/" target="_blank"><span>Financial Wellness</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.gdnet.ucla.edu/grpinst.htm" target="_blank"><span>Graduate Fellowships</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="https://www.finance.ucla.edu/business-finance-services/payment-solutions-and-compliance/payment-methods" target="_blank"><span>Payments</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://scholarshipcenter.ucla.edu" target="_blank"><span>Scholarship Resource Center (SRC)</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="https://www.finance.ucla.edu/business-finance-services/student-accounts/" target="_blank"><span>Student Accounting</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.loans.ucla.edu" target="_blank"><span>Student Loan Services &amp; Collections</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.ucu.org/" target="_blank"><span>University Credit Union</span></a> 
-           </div> 
-           <div class="nosub_smallmenu_1_303">
-            <a href="http://www.housing.ucla.edu" target="_blank" " class="smallmenu_title secondTier default light"><span class="secondTierNoExpand">Housing</span></a>
-           </div> 
-           <a href="javascript:void(0)" id="smallmenu_1_35" class="smallmenu_title default light secondTier">Health<span class="icon-plus-sign smallmenu_icon"></span></a>
-           <div class="smallmenu_1_35 hide"> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.counseling.ucla.edu/" target="_blank"><span>Counseling and Psychological Services</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.healthy.ucla.edu/" target="_blank"><span>Healthy Campus Initiative</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.studenthealth.ucla.edu" target="_blank"><span>Student Health Services</span></a> 
-           </div> 
-           <a href="javascript:void(0)" id="smallmenu_1_291" class="smallmenu_title default light secondTier">Happenings<span class="icon-plus-sign smallmenu_icon"></span></a>
-           <div class="smallmenu_1_291 hide"> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.calendar.ucla.edu" target="_blank"><span>Todays Events</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.happenings.ucla.edu/" target="_blank"><span>Happenings Home</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.happenings.ucla.edu/sports/" target="_blank"><span>Sports</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.happenings.ucla.edu/arts/" target="_blank"><span>Arts</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.happenings.ucla.edu/lectures/" target="_blank"><span>Lectures</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://odeo.com/channels/125791-UCLA-Happenings-TV-Podcasts" target="_blank"><span>Happenings TV</span></a> 
-           </div> 
-           <a href="javascript:void(0)" id="smallmenu_1_38" class="smallmenu_title default light secondTier">Library<span class="icon-plus-sign smallmenu_icon"></span></a>
-           <div class="smallmenu_1_38 hide"> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.library.ucla.edu/" target="_blank"><span>UCLA Library</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.library.ucla.edu/search/library-apps" target="_blank"><span>Library Apps (web, tablet, iOS, Android)</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://catalog.library.ucla.edu" target="_blank"><span>UCLA Library Catalog</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://catalog.library.ucla.edu/vwebv/enterCourseReserve.do" target="_blank"><span>UCLA Library Course Reserve Search</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://help.library.ucla.edu" target="_blank"><span>UCLA Library Live Online Help</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://guides.library.ucla.edu/" target="_blank"><span>UCLA Library Research Guides</span></a> 
-           </div> 
-           <a href="javascript:void(0)" id="smallmenu_1_286" class="smallmenu_title default light secondTier">Media<span class="icon-plus-sign smallmenu_icon"></span></a>
-           <div class="smallmenu_1_286 hide"> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.bruinlife.com" target="_blank"><span>Bruin Life Yearbook</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.dailybruin.ucla.edu" target="_blank"><span>Daily Bruin</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.uclaradio.com" target="_blank"><span>UCLA Radio</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.uclatv.com" target="_blank"><span>UCLAtv</span></a> 
-           </div> 
-           <a href="javascript:void(0)" id="smallmenu_1_44" class="smallmenu_title default light secondTier">Recreation<span class="icon-plus-sign smallmenu_icon"></span></a>
-           <div class="smallmenu_1_44 hide"> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.campusevents.ucla.edu" target="_blank"><span>Campus Events</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.recreation.ucla.edu/im" target="_blank"><span>Intramural Sports</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.recreation.ucla.edu/oa" target="_blank"><span>Outdoor Adventures</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.recreation.ucla.edu/register" target="_blank"><span>Recreation Classes</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.studentgroups.ucla.edu/" target="_blank"><span>Student Groups</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.arts.ucla.edu/" target="_blank"><span>UCLA Arts</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.uclabruins.com/" target="_blank"><span>UCLA Athletics</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.recreation.ucla.edu" target="_blank"><span>UCLA Recreation</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://asucla.ucla.edu/where-to-eat/" target="_blank"><span>UCLA Restaurants</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://shop.uclastore.com" target="_blank"><span>UCLA Store</span></a> 
-           </div> 
-           <a href="javascript:void(0)" id="smallmenu_1_56" class="smallmenu_title default light secondTier">Services<span class="icon-plus-sign smallmenu_icon"></span></a>
-           <div class="smallmenu_1_56 hide"> 
-            <a class="smallmenu_title default light thirdTier" href="https://www.emergency.ucla.edu/bruinalert" target="_blank"><span>BruinAlert</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.career.ucla.edu/" target="_blank"><span>Career Center</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.tickets.ucla.edu/" target="_blank"><span>Central Ticket Office (CTO)</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.childcare.ucla.edu/" target="_blank"><span>Child Care</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.cho.ucla.edu/" target="_blank"><span>Community Housing</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://map.ais.ucla.edu/go/1000050" target="_blank"><span>Community Service Officer (CSO) Programs</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.accessweb.ucla.edu/" target="_blank"><span>Disability Access Web</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.dcp.ucla.edu/" target="_blank"><span>Disabilities and Computing Program</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.ems.ucla.edu/" target="_blank"><span>Emergency Medical Services</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.getlegal.ucla.edu/" target="_blank"><span>Entertainment Downloads</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.ucla.edu/employment.html" target="_blank"><span>Jobs at UCLA</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.lgbt.ucla.edu" target="_blank"><span>LGBT Resources</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.osd.ucla.edu/" target="_blank"><span>Office for Students with Disabilities</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.ombuds.ucla.edu/" target="_blank"><span>Ombuds</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.ucpd.ucla.edu/" target="_blank"><span>Police Department</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://scholarshipcenter.ucla.edu" target="_blank"><span>Scholarship Resource Center (SRC)</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.sexualharassment.ucla.edu" target="_blank"><span>Sexual Harassment Prevention</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.studentlegal.ucla.edu/" target="_blank"><span>Student Legal Services</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.student-travel.ucla.edu/" target="_blank"><span>Student Travel</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://asucla.ucla.edu/" target="_blank"><span>UCLA Store and Restaurants</span></a> 
-           </div> 
-           <a href="javascript:void(0)" id="smallmenu_1_332" class="smallmenu_title default light secondTier">Sustainability<span class="icon-plus-sign smallmenu_icon"></span></a>
-           <div class="smallmenu_1_332 hide"> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.sustain.ucla.edu" target="_blank"><span>UCLA Sustainability</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.sustain.ucla.edu/news/index.asp" target="_blank"><span>UCLA Sustainability News</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.sustain.ucla.edu/emaileditor.asp" target="_blank"><span>UCLA Sustainability Feedback</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.sustain.ucla.edu/get_involved/article.asp?parentid=246" target="_blank"><span>Get Involved</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.universityofcalifornia.edu/sustainability/" target="_blank"><span>Sustainability at UC</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.ecofoot.org/" target="_blank"><span>Ecological Footprint</span></a> 
-           </div> 
-           <a href="javascript:void(0)" id="smallmenu_1_301" class="smallmenu_title default light secondTier">Transportation<span class="icon-plus-sign smallmenu_icon"></span></a>
-           <div class="smallmenu_1_301 hide"> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.bruinbus.ucla.edu" target="_blank"><span>BruinBus</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="https://main.transportation.ucla.edu/getting-to-ucla/commute-options" target="_blank"><span>Commute Options</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="https://main.transportation.ucla.edu/getting-to-ucla/public-transit" target="_blank"><span>Public Transit</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="https://main.transportation.ucla.edu/campus-parking/students" target="_blank"><span>Student Parking</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="https://main.transportation.ucla.edu/getting-around-campus/zipcar" target="_blank"><span>Zipcar</span></a> 
-           </div> 
-          </div> 
-          <a href="javascript:void(0)" id="smallmenu_325" class="smallmenu_title secondary light gradient hoverYellow"><span>True Bruin</span><span class="icon-plus-sign smallmenu_icon"></span></a>
-          <div class="smallmenu_325 hide"> 
-           <a href="javascript:void(0)" id="smallmenu_325_367" class="smallmenu_title default light secondTier">True Bruin Links<span class="icon-plus-sign smallmenu_icon"></span></a>
-           <div class="smallmenu_325_367 hide"> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.truebruin.ucla.edu" target="_blank"><span>True Bruin</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.reportincidents.ucla.edu" target="_blank"><span>Hostile Incident Report Procedure</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.deanofstudents.ucla.edu/Report-an-Incident-of-BIAS" target="_blank"><span>Bias Report Form</span></a> 
-           </div> 
-           <a href="javascript:void(0)" id="smallmenu_325_329" class="smallmenu_title default light secondTier">Community Standards<span class="icon-plus-sign smallmenu_icon"></span></a>
-           <div class="smallmenu_325_329 hide"> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.deanofstudents.ucla.edu/Student-Conduct-Code" target="_blank"><span>Student Conduct</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.deanofstudents.ucla.edu/Academic-Integrity" target="_blank"><span>Academic Integrity</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.adminpolicies.ucla.edu/pdf/230-1.pdf" target="_blank"><span>Non-discrimination Policies</span></a> 
-           </div> 
-          </div> 
-          <a href="javascript:void(0)" id="smallmenu_9" class="smallmenu_title secondary light gradient hoverYellow"><span>Faculty/Staff</span><span class="icon-plus-sign smallmenu_icon"></span></a>
-          <div class="smallmenu_9 hide"> 
-           <a href="javascript:void(0)" id="smallmenu_9_10" class="smallmenu_title default light secondTier">Academic<span class="icon-plus-sign smallmenu_icon"></span></a>
-           <div class="smallmenu_9_10 hide"> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.registrar.ucla.edu/Calendars/Overview" target="_blank"><span>Academic Calendar</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.apo.ucla.edu/" target="_blank"><span>Academic Personnel Office</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.senate.ucla.edu/" target="_blank"><span>Academic Senate</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.college.ucla.edu/up/ccl" target="_blank"><span>Center for Community Learning</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.iei.ucla.edu/" target="_blank"><span>Instructional Enhancement Initiative (IEI)</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.calendar.ucla.edu/" target="_blank"><span>UCLA Calendar</span></a> 
-           </div> 
-           <a href="javascript:void(0)" id="smallmenu_9_99" class="smallmenu_title default light secondTier">Administrative<span class="icon-plus-sign smallmenu_icon"></span></a>
-           <div class="smallmenu_9_99 hide"> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.policies.ucla.edu" target="_blank"><span>Administrative Policies &amp; Delegations</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.apb.ucla.edu/" target="_blank"><span>Campus Profiles</span></a> 
-           </div> 
-           <a href="javascript:void(0)" id="smallmenu_9_103" class="smallmenu_title default light secondTier">Computing<span class="icon-plus-sign smallmenu_icon"></span></a>
-           <div class="smallmenu_9_103 hide"> 
-            <a class="smallmenu_title default light thirdTier" href="http://map.ais.ucla.edu/go/1004110" target="_blank"><span>Computer Labs</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.dcp.ucla.edu/" target="_blank"><span>Disabilities and Computing Program</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.bol.ucla.edu/software/sophos/" target="_blank"><span>Free Anti-Virus Software</span></a> 
-           </div> 
-           <a href="javascript:void(0)" id="smallmenu_9_107" class="smallmenu_title default light secondTier">Employment<span class="icon-plus-sign smallmenu_icon"></span></a>
-           <div class="smallmenu_9_107 hide"> 
-            <a class="smallmenu_title default light thirdTier" href="http://atyourservice.ucop.edu/" target="_blank"><span>At Your Service</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://hr.mycareer.ucla.edu" target="_blank"><span>Current UCLA Job Openings</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="https://atyourserviceonline.ucop.edu" target="_blank"><span>Health &amp; Welfare (At Your Service)</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.chr.ucla.edu/chr/ppaa/index.html" target="_blank"><span>Personnel Policies and Agreements</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="https://atyourserviceonline.ucop.edu" target="_blank"><span>Retirement (At Your Service)</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.chr.ucla.edu/chr/emp/index.html" target="_blank"><span>Staff Employment Services</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://atyourservice.ucop.edu/employees/policies/staff_policies/index.html" target="_blank"><span>Staff Personnel Policies</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="https://trs.it.ucla.edu/" target="_blank"><span>Timesheet - TRS</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="https://atyourserviceonline.ucop.edu" target="_blank"><span>UC Benefits (At Your Service)</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.apo.ucla.edu/facultyhandbook/" target="_blank"><span>UC Faculty Handbook</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.today.ucla.edu/" target="_blank"><span>UCLA Today - Staff &amp; Faculty News</span></a> 
-           </div> 
-           <a href="javascript:void(0)" id="smallmenu_9_119" class="smallmenu_title default light secondTier">Financial<span class="icon-plus-sign smallmenu_icon"></span></a>
-           <div class="smallmenu_9_119 hide"> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.bruincard.ucla.edu/" target="_blank"><span>Bruin Card</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.finance.ucla.edu/" target="_blank"><span>Corporate Financial Services</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="https://atyourserviceonline.ucop.edu" target="_blank"><span>Earnings Statement (At Your Service)</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="https://atyourserviceonline.ucop.edu" target="_blank"><span>Income &amp; Taxes (At Your Service)</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.payroll.ucla.edu/" target="_blank"><span>Payroll Services</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.ucu.org/" target="_blank"><span>University Credit Union</span></a> 
-           </div> 
-           <a href="javascript:void(0)" id="smallmenu_9_126" class="smallmenu_title default light secondTier">Gradebook<span class="icon-plus-sign smallmenu_icon"></span></a>
-           <div class="smallmenu_9_126 hide"> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.registrar.ucla.edu/Portals/50/Documents/facultystaff/gradebookquickref.pdf" target="_blank"><span>Gradebook Express Overview</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="https://be.my.ucla.edu/gradebook_dot_net/faq/faq.html"><span>Gradebook Express FAQ</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://my.ucla.edu/gradebook/quickstart.pdf" target="_blank"><span>Gradebook Quick Start Guide</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://my.ucla.edu/gradebook/print.pdf" target="_blank"><span>Gradebook Users Manual</span></a> 
-           </div> 
-           <a href="javascript:void(0)" id="smallmenu_9_132" class="smallmenu_title default light secondTier">Health<span class="icon-plus-sign smallmenu_icon"></span></a>
-           <div class="smallmenu_9_132 hide"> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.healthcare.ucla.edu/" target="_blank"><span>Healthcare</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.healthy.ucla.edu/" target="_blank"><span>Healthy Campus Initiative</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.uclahealth.org/" target="_blank"><span>UCLA Medical Center</span></a> 
-           </div> 
-           <a href="javascript:void(0)" id="smallmenu_9_135" class="smallmenu_title default light secondTier">Instruction<span class="icon-plus-sign smallmenu_icon"></span></a>
-           <div class="smallmenu_9_135 hide"> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.humnet.ucla.edu/emeriti/" target="_blank"><span>Emeriti/Retiree Relations Center</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.oid.ucla.edu/" target="_blank"><span>Office of Instructional Development</span></a> 
-           </div> 
-           <a href="javascript:void(0)" id="smallmenu_9_138" class="smallmenu_title default light secondTier">Library<span class="icon-plus-sign smallmenu_icon"></span></a>
-           <div class="smallmenu_9_138 hide"> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.library.ucla.edu/" target="_blank"><span>UCLA Library</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://catalog.library.ucla.edu" target="_blank"><span>UCLA Library Catalog</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://services.library.ucla.edu/welcome/services/fac-ta/request_form.htm" target="_blank"><span>UCLA Library Faculty Reserves Request Form</span></a> 
-           </div> 
-           <a href="javascript:void(0)" id="smallmenu_9_146" class="smallmenu_title default light secondTier">Recreation<span class="icon-plus-sign smallmenu_icon"></span></a>
-           <div class="smallmenu_9_146 hide"> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.campusevents.ucla.edu" target="_blank"><span>Campus Events</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.recreation.ucla.edu/oa" target="_blank"><span>Outdoor Adventures</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="https://secure.recreation.ucla.edu/SignedOut/browse.aspx" target="_blank"><span>Recreation Classes</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.uclabruins.com/" target="_blank"><span>UCLA Athletics</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.recreation.ucla.edu" target="_blank"><span>UCLA Recreation</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://asucla.ucla.edu/where-to-eat/" target="_blank"><span>UCLA Restaurants</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://shop.uclastore.com" target="_blank"><span>UCLA Store</span></a> 
-           </div> 
-           <a href="javascript:void(0)" id="smallmenu_9_151" class="smallmenu_title default light secondTier">Research<span class="icon-plus-sign smallmenu_icon"></span></a>
-           <div class="smallmenu_9_151 hide"> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.research.ucla.edu/chal/chalmain_tables.htm" target="_blank"><span>Challenge</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.research.ucla.edu/ocga/" target="_blank"><span>Sponsored Research</span></a> 
-           </div> 
-           <a href="javascript:void(0)" id="smallmenu_9_154" class="smallmenu_title default light secondTier">Services<span class="icon-plus-sign smallmenu_icon"></span></a>
-           <div class="smallmenu_9_154 hide"> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.qdb.ucla.edu/" target="_blank"><span>AIS Query Database</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.chr.ucla.edu/" target="_blank"><span>Campus Human Resources</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.tickets.ucla.edu/" target="_blank"><span>Central Ticket Office (CTO)</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.childcare.ucla.edu/" target="_blank"><span>Child Care</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.cho.ucla.edu/" target="_blank"><span>Community Housing</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.conferences.ucla.edu/" target="_blank"><span>Conference &amp; Event Management</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.accessweb.ucla.edu/" target="_blank"><span>Disability Access Web</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.dcp.ucla.edu/" target="_blank"><span>Disabilities and Computing Program</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.getlegal.ucla.edu/" target="_blank"><span>Entertainment Downloads</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://facultycenter.ucla.edu/" target="_blank"><span>Faculty Center</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://facultycenter.ucla.edu/Member-Dining/Daily-Lunch-Menu.aspx" target="_blank"><span>Faculty Center Menu</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.lgbt.ucla.edu" target="_blank"><span>LGBT Resources</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.maildoc.ucla.edu/" target="_blank"><span>Mail &amp; Document Services</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.ucpd.ucla.edu/" target="_blank"><span>Police Department</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.purchasing.ucla.edu/" target="_blank"><span>Purchasing</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.sexualharassment.ucla.edu" target="_blank"><span>Sexual Harassment Prevention</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.travel.ucla.edu/" target="_blank"><span>Travel Center</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://asucla.ucla.edu/" target="_blank"><span>UCLA Store and Restaurants</span></a> 
-           </div> 
-           <a href="javascript:void(0)" id="smallmenu_9_316" class="smallmenu_title default light secondTier">Transportation<span class="icon-plus-sign smallmenu_icon"></span></a>
-           <div class="smallmenu_9_316 hide"> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.transportation.ucla.edu/" target="_blank"><span>Transportation Services</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.zimride.com/ucla" target="_blank"><span>Zimride</span></a> 
-           </div> 
-           <a href="javascript:void(0)" id="smallmenu_9_342" class="smallmenu_title default light secondTier">Turnitin<span class="icon-plus-sign smallmenu_icon"></span></a>
-           <div class="smallmenu_9_342 hide"> 
-            <a class="smallmenu_title default light thirdTier" href="http://my.ucla.edu/turnitin/GradeMark_manual.pdf" target="_blank"><span>Turnitin Manual - GradeMark</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://my.ucla.edu/turnitin/PeerMark_manual.pdf" target="_blank"><span>Turnitin Manual - PeerMark</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://turnitin.com/en_us/training/instructor-training/viewing-originality-reports" target="_blank"><span>Turnitin Video - Instructor Originality Report</span></a> 
-           </div> 
-          </div> 
-          <a href="javascript:void(0)" id="smallmenu_227" class="smallmenu_title secondary light gradient hoverYellow"><span>Community</span><span class="icon-plus-sign smallmenu_icon"></span></a>
-          <div class="smallmenu_227 hide"> 
-           <a href="javascript:void(0)" id="smallmenu_227_368" class="smallmenu_title default light secondTier">Community Top Links<span class="icon-plus-sign smallmenu_icon"></span></a>
-           <div class="smallmenu_227_368 hide"> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.avclub.com/" target="_blank"><span>A.V. Club</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.chow.com/places/regions/2" target="_blank"><span>CHOW</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://losangeles.citysearch.com/" target="_blank"><span>Citysearch</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://losangeles.craigslist.org/" target="_blank"><span>Craigslist</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.experiencela.com/" target="_blank"><span>ExperienceLA</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.losangeles.com/" target="_blank"><span>LosAngeles.com</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.yelp.com/la" target="_blank"><span>Yelp</span></a> 
-           </div> 
-           <a href="javascript:void(0)" id="smallmenu_227_179" class="smallmenu_title default light secondTier">Activities<span class="icon-plus-sign smallmenu_icon"></span></a>
-           <div class="smallmenu_227_179 hide"> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.cinema.ucla.edu/" target="_blank"><span>Film &amp; Television Archive</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.geffenplayhouse.com" target="_blank"><span>Geffen Playhouse</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.japanesegarden.ucla.edu/" target="_blank"><span>Hannah Carter Japanese Garden</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.botgard.ucla.edu/index.html" target="_blank"><span>Mildred E. Mathias Botanical Garden</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.astro.ucla.edu/faculty/planet.html" target="_blank"><span>Planetarium &amp; Observatory Domes</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.uclalive.org/" target="_blank"><span>UCLA LIVE</span></a> 
-           </div> 
-           <a href="javascript:void(0)" id="smallmenu_227_191" class="smallmenu_title default light secondTier">Alumni<span class="icon-plus-sign smallmenu_icon"></span></a>
-           <div class="smallmenu_227_191 hide"> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.uclalumni.net/TravelAndRec/BruinWoods/" target="_blank"><span>Bruin Woods</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.alumni.ucla.edu" target="_blank"><span>UCLA Alumni Association</span></a> 
-           </div> 
-           <a href="javascript:void(0)" id="smallmenu_227_228" class="smallmenu_title default light secondTier">Dining<span class="icon-plus-sign smallmenu_icon"></span></a>
-           <div class="smallmenu_227_228 hide"> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.cpk.com/" target="_blank"><span>California Pizza Kitchen</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.thecheesecakefactory.com/" target="_blank"><span>The Cheesecake Factory</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://medievaltimes.com/" target="_blank"><span>Medieval Times</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.pfchangs.com/locations/" target="_blank"><span>P.F. Chang's China Bistro</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.oldspaghettifactory.com/" target="_blank"><span>The Old Spaghetti Factory</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://thestinkingrose.com/" target="_blank"><span>The Stinking Rose</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.roscoeschickenandwaffles.com/" target="_blank"><span>Roscoe's Chicken &amp; Waffles</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.hardrock.com/" target="_blank"><span>Hard Rock Cafe</span></a> 
-           </div> 
-           <a href="javascript:void(0)" id="smallmenu_227_195" class="smallmenu_title default light secondTier">Family/Friends Info<span class="icon-plus-sign smallmenu_icon"></span></a>
-           <div class="smallmenu_227_195 hide"> 
-            <a class="smallmenu_title default light thirdTier" href="https://be.my.ucla.edu/how_works.htm"><span>About MyUCLA</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.childcare.ucla.edu/" target="_blank"><span>Child Care</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://map.ais.ucla.edu/go/Emergency-Medical-Services" target="_blank"><span>Emergency &amp; Safety Services</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.ehs.ucla.edu/" target="_blank"><span>Environment Health &amp; Safety</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.ucla.edu/chancellor/index.html" target="_blank"><span>Meet the Chancellor</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.research.ucla.edu/" target="_blank"><span>Research</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.ucop.edu/ucophome/ucservers.html" target="_blank"><span>University of California Links</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.calendar.ucla.edu/" target="_blank"><span>UCLA Calendar</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.ucla.edu/" target="_blank"><span>UCLA Home</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://asucla.ucla.edu/where-to-eat/" target="_blank"><span>UCLA Restaurants</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://shop.uclastore.com" target="_blank"><span>UCLA Store</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.uclabruins.com/camps/ucla-camps.html" target="_blank"><span>Summer Camps, Tours, Courses</span></a> 
-           </div> 
-           <a href="javascript:void(0)" id="smallmenu_227_237" class="smallmenu_title default light secondTier">Movies<span class="icon-plus-sign smallmenu_icon"></span></a>
-           <div class="smallmenu_227_237 hide"> 
-            <a class="smallmenu_title default light thirdTier" href="http://movies.yahoo.com/showtimes/showtimes.html?z=90024&amp;r=sim" target="_blank"><span>movie times</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.moviefone.com/" target="_blank"><span>moviefone.com</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.boxofficereport.com" target="_blank"><span>Box Office Report</span></a> 
-           </div> 
-           <a href="javascript:void(0)" id="smallmenu_227_241" class="smallmenu_title default light secondTier">Museums<span class="icon-plus-sign smallmenu_icon"></span></a>
-           <div class="smallmenu_227_241 hide"> 
-            <a class="smallmenu_title default light thirdTier" href="http://hammer.ucla.edu/" target="_blank"><span>Armand Hammer Museum of Art and Cultural Center</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.autry-museum.org/" target="_blank"><span>Autry Museum of Western Heritage</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.californiasciencecenter.org/" target="_blank"><span>California Science Center</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.fmch.ucla.edu/" target="_blank"><span>Fowler Museum at UCLA</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.getty.edu/museum/" target="_blank"><span>J. Paul Getty Museum</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.lacma.org/" target="_blank"><span>Los Angeles County Museum of Art</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.moca.org/" target="_blank"><span>Museum of Contemporary Art</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.mtr.org/" target="_blank"><span>Museum of Television &amp; Radio</span></a> 
-           </div> 
-           <a href="javascript:void(0)" id="smallmenu_227_248" class="smallmenu_title default light secondTier">Music<span class="icon-plus-sign smallmenu_icon"></span></a>
-           <div class="smallmenu_227_248 hide"> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.billboard.com/#/" target="_blank"><span>Billboard Charts</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.hollywoodbowl.com/" target="_blank"><span>Hollywood Bowl</span></a> 
-           </div> 
-           <a href="javascript:void(0)" id="smallmenu_227_209" class="smallmenu_title default light secondTier">Patients<span class="icon-plus-sign smallmenu_icon"></span></a>
-           <div class="smallmenu_227_209 hide"> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.healthcare.ucla.edu/" target="_blank"><span>Healthcare</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.uclahealth.org/" target="_blank"><span>UCLA Medical Center</span></a> 
-           </div> 
-           <a href="javascript:void(0)" id="smallmenu_227_275" class="smallmenu_title default light secondTier">Radio<span class="icon-plus-sign smallmenu_icon"></span></a>
-           <div class="smallmenu_227_275 hide"> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.kcrw.com/" target="_blank"><span>KCRW</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.uclaradio.com/" target="_blank"><span>UCLA Radio</span></a> 
-           </div> 
-           <a href="javascript:void(0)" id="smallmenu_227_212" class="smallmenu_title default light secondTier">Recreation<span class="icon-plus-sign smallmenu_icon"></span></a>
-           <div class="smallmenu_227_212 hide"> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.campusevents.ucla.edu" target="_blank"><span>Campus Events</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.tickets.ucla.edu/" target="_blank"><span>Central Ticket Office (CTO)</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.uclabruins.com/" target="_blank"><span>UCLA Athletics</span></a> 
-           </div> 
-           <a href="javascript:void(0)" id="smallmenu_227_251" class="smallmenu_title default light secondTier">Sports<span class="icon-plus-sign smallmenu_icon"></span></a>
-           <div class="smallmenu_227_251 hide"> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.uclabruins.com/" target="_blank"><span>UCLA Bruins</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.nba.com/lakers/" target="_blank"><span>Los Angeles Lakers</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.nba.com/clippers/" target="_blank"><span>Los Angeles Clippers</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.wnba.com/sparks/" target="_blank"><span>Los Angeles Sparks</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.angelsbaseball.com/" target="_blank"><span>Los Angeles Angels</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.dodgers.com/" target="_blank"><span>Los Angeles Dodgers</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.mightyducks.com/" target="_blank"><span>Anaheim Mighty Ducks</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.lakings.com/" target="_blank"><span>Los Angeles Kings</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.lagalaxy.com/" target="_blank"><span>Los Angeles Galaxy</span></a> 
-           </div> 
-           <a href="javascript:void(0)" id="smallmenu_227_261" class="smallmenu_title default light secondTier">Stocks<span class="icon-plus-sign smallmenu_icon"></span></a>
-           <div class="smallmenu_227_261 hide"> 
-            <a class="smallmenu_title default light thirdTier" href="http://finance.yahoo.com/?u" target="_blank"><span>Yahoo! Finance</span></a> 
-           </div> 
-           <a href="javascript:void(0)" id="smallmenu_227_264" class="smallmenu_title default light secondTier">Television<span class="icon-plus-sign smallmenu_icon"></span></a>
-           <div class="smallmenu_227_264 hide"> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.happenings.ucla.edu/tv/" target="_blank"><span>Happenings TV</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.tvguide.com/" target="_blank"><span>TV Guide Online</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.uclatv.com" target="_blank"><span>UCLAtv</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.ultimatetv.com/" target="_blank"><span>Ultimate TV</span></a> 
-           </div> 
-           <a href="javascript:void(0)" id="smallmenu_227_267" class="smallmenu_title default light secondTier">Theatre<span class="icon-plus-sign smallmenu_icon"></span></a>
-           <div class="smallmenu_227_267 hide"> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.losangelesopera.com/" target="_blank"><span>Los Angeles Opera</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.odysseytheatre.com" target="_blank"><span>The Odyssey Theatre</span></a> 
-           </div> 
-           <a href="javascript:void(0)" id="smallmenu_227_270" class="smallmenu_title default light secondTier">Theme Parks<span class="icon-plus-sign smallmenu_icon"></span></a>
-           <div class="smallmenu_227_270 hide"> 
-            <a class="smallmenu_title default light thirdTier" href="http://disneyland.disney.go.com/disneyland/en_US/home/home?name=HomePage&amp;bhcp=1" target="_blank"><span>Disneyland</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.knotts.com/" target="_blank"><span>Knott's Berry Farm</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.sixflags.com/magicMountain/index.aspx" target="_blank"><span>Six Flags Magic Mountain</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.universalstudios.com/unicity2/" target="_blank"><span>Universal Studios Hollywood</span></a> 
-           </div> 
-           <a href="javascript:void(0)" id="smallmenu_227_216" class="smallmenu_title default light secondTier">Visitors<span class="icon-plus-sign smallmenu_icon"></span></a>
-           <div class="smallmenu_227_216 hide"> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.ucla.edu/" target="_blank"><span>UCLA Home Page</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.directory.ucla.edu" target="_blank"><span>Campus Directory</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.ucla.edu/map/" target="_blank"><span>Campus Map</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.ucla.edu/extaffairs/index.html" target="_blank"><span>External Affairs</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.chr.ucla.edu/chr/emp/cur_job.html" target="_blank"><span>Current UCLA Job Openings</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.admissions.ucla.edu/tours/accommodations.htm" target="_blank"><span>Hotels</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.transportation.ucla.edu/" target="_blank"><span>Transportation Services</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.ucpd.ucla.edu/" target="_blank"><span>UCLA Police Department</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://asucla.ucla.edu/" target="_blank"><span>UCLA Store and Restaurants</span></a> 
-           </div> 
-          </div> 
-          <a href="https://g.ucla.edu/" target="_blank" " class="smallmenu_title secondary light gradient noExpand hoverYellow secondTier"><span>WebMail</span></a> 
-          <a href="javascript:void(0)" id="smallmenu_326" class="smallmenu_title secondary light gradient hoverYellow"><span>Campus</span><span class="icon-plus-sign smallmenu_icon"></span></a>
-          <div class="smallmenu_326 hide"> 
-           <a href="javascript:void(0)" id="smallmenu_326_369" class="smallmenu_title default light secondTier">Campus Top Links<span class="icon-plus-sign smallmenu_icon"></span></a>
-           <div class="smallmenu_326_369 hide"> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.directory.ucla.edu/" target="_blank"><span>Directory</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.ucla.edu/map/" target="_blank"><span>Map</span></a> 
-           </div> 
-           <a href="javascript:void(0)" id="smallmenu_326_278" class="smallmenu_title default light secondTier">Menus<span class="icon-plus-sign smallmenu_icon"></span></a>
-           <div class="smallmenu_326_278 hide"> 
-            <a class="smallmenu_title default light thirdTier" href="http://www.asucla.ucla.edu/restaurants/restaurants.asp" target="_blank"><span>ASUCLA</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://facultycenter.ucla.edu/Member-Dining/Daily-Lunch-Menu.aspx" target="_blank"><span>Faculty Center</span></a> 
-            <a class="smallmenu_title default light thirdTier" href="http://149.142.49.118/foodpro/todaysentrees.asp" target="_blank"><span>Residence Halls</span></a> 
-           </div> 
-          </div> 
-          <a href="http://maps.google.com/?ie=UTF8&amp;ll=34.069725,-118.269196&amp;spn=0.582437,0.983276&amp;z=10&amp;om=1&amp;layer=t" target="_blank" " class="smallmenu_title secondary light gradient noExpand hoverYellow secondTier"><span>Traffic</span></a> 
-         </div> 
-         <!-- End Main Nav --> 
-        </div> 
-        <div id="dropdown-spacer"> 
-        </div> 
-       </div> 
-      </div> 
-     </div> 
-    </div> 
-    <div id="container" class="container"> 
-     <div id="content-section-wrapper" class="col-2MR leftWide"> 
-      <div id="page_header_section"> 
-       <div id="ctl00_UpdatePanel1"> 
-        <h2 id="interior-split-page-header-full">Good Afternoon. Welcome to MyUCLA!</h2> 
-       </div> 
-      </div> 
-      <div id="ctl00_contentwrapper" class="row right medium-collapse"> 
-       <!-- Right Side Bar --> 
-       <div id="right-sidebar" class="panel-3 row small-collapse large-column"> 
-        <div class="panel-6"> 
-         <div class="widget_container" id="loginWidget" style="display: none;"> 
-          <div class="message required light text-center browserversioninfo" id="browserWarning" style="display: none;"> 
-           <strong style="font-size:1.5em">MyUCLA does not support this browser...</strong> 
-          </div> 
-          <div class="widget_section generic_widget"> 
-           <div id="browserLinks" class="browserversioninfo" style="display: none; padding-bottom: 12px;">
-             This site officially supports the latest versions of the following browsers:
-            <br> 
-            <br> 
-            <div class="widget_content" style="margin-left: auto; margin-right: auto; width: 12em"> 
-             <a target="_blank" href="http://www.mozilla.org/en-US/firefox/new/" class="bullet">Firefox</a>
-             <br> 
-             <a target="_blank" href="https://www.google.com/intl/en/chrome/browser/" class="bullet">Chrome</a>
-             <br> 
-             <a target="_blank" href="http://support.apple.com/downloads/#safari" class="bullet">Safari</a>
-             <br> 
-             <a target="_blank" href="http://windows.microsoft.com/en-us/internet-explorer/download-ie" class="bullet">Internet Explorer (11+)</a> 
-            </div> 
-           </div> 
-           <div class="widget_content text-center"> 
-            <a href="https://be.my.ucla.edu/" id="ctl00_signInLink" class="button primary">Sign In</a>
-            <br> 
-            <br> 
-            <a href="https://accounts.iam.ucla.edu/lookup" target="_blank">Forgot UCLA Logon?</a>
-            <br> 
-            <br> 
-            <a href="https://accounts.iam.ucla.edu/security/reset" target="_blank">Forgot Password?</a>
-            <br> 
-            <br> New to MyUCLA?
-            <br>
-            <a href="https://accounts.iam.ucla.edu/register" target="_blank">Create UCLA Logon/Password</a> 
-           </div> 
-          </div> 
-         </div> 
-         <script>
-                                    $(document).ready(function () {
-                                        // if we're this far, javascript is running; check the browser version
-                                        // (these will have to be updated at some point)
-                                        var showWarning = true;
-                                        var isIE11 = !!window.MSStream;
-                                        switch (BrowserDetect.browser) {
-                                            case "Chrome":
-                                                if (BrowserDetect.version >= 30) showWarning = false;
-                                                break;
-                                            case "Explorer":
-                                                if (BrowserDetect.version >= 11) showWarning = false;
-                                                break;
-                                            case "Firefox":
-                                                if (BrowserDetect.version >= 24) showWarning = false;
-                                                break;
-                                            case "Safari":
-                                                if (BrowserDetect.version > 530) showWarning = false;
-                                                break;
-                                            case "Other":
-                                                showWarning = !isIE11;
-                                                break;
-                                        }
-                                        if (showWarning) $("div.browserversioninfo").show();
-                                        $("#loginWidget").show();
-                                    });
-                                </script> 
-         <noscript> 
-          <div class="widget_container"> 
-           <div class="message required light text-center"> 
-            <strong style="font-size: 1.5em">MyUCLA requires javascript enabled...</strong> 
-           </div> 
-           <div class="widget_section generic_widget"> 
-            <div class="widget_content">
-              Currently this browser has javascript disabled. This site has features that are only functional when javascript is enabled. To enable, refer to the tutorial to enable for:
-             <br> 
-             <br> 
-             <div> 
-              <div style="margin-left: auto; margin-right: auto; width: 10em"> 
-               <a href="https://support.mozilla.org/en-US/questions/967344" target="_blank" class="bullet">Firefox</a>
-               <br> 
-               <a href="https://support.google.com/adsense/answer/12654?hl=en" target="_blank" class="bullet">Chrome</a>
-               <br> 
-               <a href="http://support.apple.com/kb/PH11886" target="_blank" class="bullet">Safari</a>
-               <br> 
-               <a href="http://support.microsoft.com/gp/howtoscript" target="_blank" class="bullet">Internet Explorer</a> 
-              </div> 
-              <br> 
-              <div class="text-center"> 
-               <input type="submit" value="Sign In" title="Sign In" class="button" disabled style="border-color: #C9C7B9; color: #C9C7B9; background-color: #F3F2EB;">
-               <br> 
-               <br> 
-               <a href="https://accounts.iam.ucla.edu/lookup">Forgot UCLA Logon?</a>
-               <br> 
-               <br> 
-               <a href="https://accounts.iam.ucla.edu/security/reset">Forgot Password?</a>
-               <br> 
-               <br> New to MyUCLA?
-               <br>
-               <a href="https://accounts.iam.ucla.edu/register" target="_blank">Create UCLA Logon/Password</a> 
-              </div> 
-             </div> 
-            </div> 
-           </div> 
-          </div> 
-         </noscript> 
-        </div> 
-        <div class="panel-6"> 
-         <div id="ctl00_CustomSidePanel" class="widget_container"> 
-          <div class="widget_title"> 
-           <span>Workshops and Announcements</span> 
-          </div> 
-          <div class="widget_section calendar_content"> 
-           <div class="widget_content"> 
-            <div> 
-             <div class="calendar_date">
-              Thursday, May 3
-             </div> 
-             <div class="calendar_item">
-              8:30 AM 
-              <a href="https://my.ucla.edu/directLink.aspx?featureID=79&amp;eventID=37174" _blank>AAP (Academic Advancement Program) - AAP iGrad - <u>Sign in</u> to register!</a>
-             </div> 
-             <div class="calendar_item">
-              3:00 PM 
-              <a href="http://hass.ugresearch.ucla.edu/workshops.htm" _blank>Undergraduate Research Center - Humanities, Arts, and Social Sciences - Poster Workshop</a>
-             </div> 
-             <div class="calendar_item">
-              4:00 PM 
-              <a href="https://my.ucla.edu/directLink.aspx?featureID=79&amp;eventID=37203" _blank>Scholarship Resource Center - How to Get Letters of Recommendation - <u>Sign in</u> to register!</a>
-             </div> 
-             <div class="calendar_item">
-              4:00 PM 
-              <a href="https://my.ucla.edu/directLink.aspx?featureID=79&amp;eventID=37049" _blank>Undergraduate Research Center - Humanities, Arts, and Social Sciences - Collecting and Citing Sources - <u>Sign in</u> to register!</a>
-             </div> 
-             <div class="calendar_item">
-              5:00 PM 
-              <a href="https://my.ucla.edu/directLink.aspx?featureID=79&amp;eventID=37242" _blank>AAP Graduate Mentoring Programs - Med Student Panel &amp; AMCAS Med School Application Workshop - <u>Sign in</u> to register!</a>
-             </div> 
-             <div class="calendar_date">
-              Friday, May 4
-             </div> 
-             <div class="calendar_item">
-              2:00 PM 
-              <a href="https://my.ucla.edu/directLink.aspx?featureID=79&amp;eventID=37175" _blank>AAP (Academic Advancement Program) - AAP iGrad - <u>Sign in</u> to register!</a>
-             </div> 
-             <div class="calendar_item">
-              3:00 PM 
-              <a href="http://www.orientation.ucla.edu/" _blank>First Year Admits - Orientation Signups Begin</a>
-             </div> 
-             <div class="calendar_date">
-              Monday, May 7
-             </div> 
-             <div class="calendar_item">
-              5:00 PM 
-              <a href="https://my.ucla.edu/directLink.aspx?featureID=79&amp;eventID=37192" _blank>Scholarship Resource Center - Secrets to Winning College Cash - <u>Sign in</u> to register!</a>
-             </div> 
-             <div class="calendar_date">
-              Tuesday, May 8
-             </div> 
-             <div class="calendar_item">
-              11:30 AM 
-              <a href="https://my.ucla.edu/directLink.aspx?featureID=79&amp;eventID=37244" _blank>Summer Sessions - Info Session - Technology Leadership Summer Institute - <u>Sign in</u> to register!</a>
-             </div> 
-             <div class="calendar_item">
-              2:00 PM 
-              <a href="https://my.ucla.edu/directLink.aspx?featureID=79&amp;eventID=37225" _blank>College Academic Counseling - Civic Engagement Minor Info Session - <u>Sign in</u> to register!</a>
-             </div> 
-             <div class="calendar_item">
-              6:00 PM 
-              <a href="https://my.ucla.edu/directLink.aspx?featureID=79&amp;eventID=37241" _blank>College Academic Counseling - Attacking the AMCAS: How to Apply to Medical School - <u>Sign in</u> to register!</a>
-             </div> 
-             <div class="calendar_date">
-              Wednesday, May 9
-             </div> 
-             <div class="calendar_item">
-              2:00 PM 
-              <a href="https://my.ucla.edu/directLink.aspx?featureID=79&amp;eventID=37233" _blank>AAP (Academic Advancement Program) - Happy Hour with your PC - <u>Sign in</u> to register!</a>
-             </div> 
-             <div class="calendar_item">
-              6:00 PM 
-              <a href="https://my.ucla.edu/directLink.aspx?featureID=79&amp;eventID=36841" _blank>Residential Life - Decision Making Workshop - <u>Sign in</u> to register!</a>
-             </div> 
-             <a id="ctl00_customSideContents_calendarWidgetNext" class="calendarWidget" href="javascript:__doPostBack('ctl00$customSideContents$calendarWidgetNext','')">? next 7 days...</a> 
-            </div> 
-           </div> 
-          </div> 
-         </div> 
-        </div> 
-       </div> 
-       <!-- End Right Side Bar --> 
-       <!-- Main Content --> 
-       <div id="main-content" role="main1" class="panel-9 cf maincontent"> 
-        <script>
-    var selectedHapGroup = 'hapItem0';
-    var selectedHedGroup = 'group0';
-</script> 
-        <script src="scripts/portal.js" type="text/javascript"></script> 
-        <!-- Spotlight updated 5/3/2018 6:45:03 AM --> 
-        <div class="spotlightcontainer"> 
-         <a class="spotlightlink group0" href="http://my.ucla.edu/directLink.aspx?featureID=20&amp;goin=Y" target="_blank"><img src="http://my.ucla.edu/files/spotlight_180430.png" alt="Vote on my.ucla.edu - 10:00a April 30 - 3:00p May 4"></a> 
-        </div> 
-        <!-- Headlines updated 5/3/2018 6:45:03 AM --> 
-        <h3 style="font-size:18px;">Headlines</h3> 
-        <table id="headlinebar"> 
-         <tbody>
-          <tr> 
-           <td class="chevronCell"><a id="headlinePrev" onclick="return false;" href="#" title="previous headline group"><span class="icon-chevron-left"></span></a></td> 
-           <td valign="middle" style="vertical-align: middle;" class="hide-above-small"><a id="littleHeadline" class="headlinetab" href="#" onclick="return false;">Headlines</a></td> 
-           <td class="row small-collapse hide-small" style="vertical-align: middle;"> 
-            <div class="panel-4">
-             <div class="group0 headlinecell" prevgroup="group2" nextgroup="group1">
-              <a onclick="showGroup('group0'); return false;" href="#" class="headlinetab">Student Services</a>
-             </div>
-            </div> 
-            <div class="panel-4">
-             <div class="group1 headlinecell" prevgroup="group0" nextgroup="group2">
-              <a onclick="showGroup('group1'); return false;" href="#" class="headlinetab">Daily Bruin</a>
-             </div>
-            </div> 
-            <div class="panel-4">
-             <div class="group2 headlinecell" prevgroup="group1" nextgroup="group0">
-              <a onclick="showGroup('group2'); return false;" href="#" class="headlinetab">Campus News</a>
-             </div>
-            </div> </td> 
-           <td class="chevronCell"><a id="headlineNext" onclick="return false;" href="#" title="next headline group"><span class="icon-chevron-right"></span></a></td> 
-          </tr> 
-         </tbody>
-        </table> 
-        <br> 
-        <ul class="list bullet headlinebody bodygroup0"> 
-         <li><a href="http://my.ucla.edu/directLink.aspx?featureID=203 " target="_blank">Summer Sessions 2018 Enrollment is Now Open! </a></li> 
-        </ul> 
-        <ul class="list bullet headlinebody bodygroup1"> 
-         <li><a href="http://stack.dailybruin.com/2018/04/30/usac-campaign-finances/" target="_blank">A Look Inside USAC Candidate Campaign Finances</a></li> 
-         <li><a href="http://dailybruin.com/2018/05/01/alumnus-sci-fi-musical-inspired-by-aliens-monsters-and-soviet-union/" target="_blank">Alumnus’ sci-fi musical inspired by aliens, monsters and Soviet Union</a></li> 
-         <li><a href="http://dailybruin.com/2018/05/01/baseball-extends-win-streak-to-eight-after-shutting-out-irvine/" target="_blank">Baseball extends win streak to eight after shutting out Irvine</a></li> 
-         <li><a href="http://dailybruin.com/2018/05/01/emily-merz-usac-candidates-feminist-advocacy-just-an-empty-political-talking-point/" target="_blank">Emily Merz: USAC candidates’ feminist advocacy just an empty political talking point</a></li> 
-         <li><a href="http://dailybruin.com/2018/05/01/la-metro-purple-line-subway-extension-enters-preconstruction-stage/" target="_blank">LA Metro Purple Line Subway Extension enters preconstruction stage</a></li> 
-         <li><a href="http://dailybruin.com/2018/05/02/mens-tennis-clinches-pac-12-title-in-win-against-crosstown-rival/" target="_blank">Men’s tennis clinches Pac-12 title in win against crosstown rival</a></li> 
-         <li><a href="http://dailybruin.com/2018/05/02/mens-volleyball-defeats-harvard-advance-to-ncaa-semifinals/" target="_blank">Men’s volleyball defeats Harvard, advances to NCAA semifinals</a></li> 
-         <li><a href="http://dailybruin.com/2018/05/01/researchers-study-how-hormones-influence-disease-control-in-mice/" target="_blank">Researchers study how hormones influence disease control in mice</a></li> 
-         <li><a href="http://dailybruin.com/2018/05/01/scott-bays-further-reducing-campaign-spending-limits-would-democratize-usac-elections/" target="_blank">Scott Bays: Further reducing campaign spending limits would democratize USAC elections</a></li> 
-         <li><a href="http://dailybruin.com/2018/05/02/softball-lacked-typical-dominance-in-defeat-over-cal-state-fullerton/" target="_blank">Softball lacked typical dominance in defeat over Cal State Fullerton</a></li> 
-         <li><a href="http://dailybruin.com/2018/05/01/three-students-report-to-ucpd-about-property-stolen-from-dorm-room/" target="_blank">Three students report to UCPD about property stolen from dorm room</a></li> 
-         <li><a href="http://dailybruin.com/2018/05/01/three-time-alumnus-remembered-for-dedication-to-ucla-community/" target="_blank">Three-time alumnus remembered for dedication to UCLA community</a></li> 
-         <li><a href="http://dailybruin.com/2018/05/02/top-seeded-beach-volleyball-prepares-for-ncaa-championship/" target="_blank">Top-seeded beach volleyball prepares for NCAA championship</a></li> 
-         <li><a href="http://dailybruin.com/2018/05/01/ucla-award-recognizes-students-who-have-helped-other-students-in-crisis/" target="_blank">UCLA award recognizes students who have helped other students in crisis</a></li> 
-         <li><a href="http://dailybruin.com/2018/05/01/ucla-mens-volleyball-to-take-on-harvard-in-ncaa-quarterfinals/" target="_blank">UCLA men’s volleyball to take on Harvard in NCAA quarterfinals</a></li> 
-         <li><a href="http://dailybruin.com/2018/05/01/ucla-research-advances-understanding-of-infertility-and-miscarriages/" target="_blank">UCLA research advances understanding of infertility and miscarriages</a></li> 
-         <li><a href="https://features.dailybruin.com/2018/usac-election/#/endorsements" target="_blank">USAC Election Endorsements</a></li> 
-         <li><a href="http://dailybruin.com/2018/05/01/video-activists-protest-use-of-animals-in-ucla-laboratories/" target="_blank">Video: Activists protest use of animals in UCLA laboratories</a></li> 
-         <li><a href="http://dailybruin.com/2018/05/01/wine-about-it-go-over-the-velvet-moon-for-cabernet-sauvignon/" target="_blank">Wine About It: Go over the Velvet Moon for cabernet sauvignon</a></li> 
-         <li><a href="http://dailybruin.com/2018/05/01/songs-of-ourselves-spotlights-diversity-with-concerts-breakout-panels/" target="_blank">‘Songs of Ourselves’ spotlights diversity with concerts, breakout panels</a></li> 
-        </ul> 
-        <ul class="list bullet headlinebody bodygroup2"> 
-         <li><a href="http://newsroom.ucla.edu/stories/3-wishes-project-brings-dignity-to-dying-patients" target="_blank">3 Wishes Project brings dignity to dying patients</a></li> 
-         <li><a href="http://newsroom.ucla.edu/dept/faculty/kang-wang-awarded-international-honor-for-seminal-discovery-in-magnetism" target="_blank">Engineering professor awarded international honor for seminal discovery in magnetism</a></li> 
-         <li><a href="http://newsroom.ucla.edu/releases/fowler-museum-exhibit-reveals-the-artistry-of-african-blacksmiths" target="_blank">Fowler Museum exhibit reveals the artistry of African blacksmiths</a></li> 
-         <li><a href="http://newsroom.ucla.edu/stories/heroes-of-405-freeway-crash-included-rescuers-from-ucla" target="_blank">Heroes of fiery 405 truck crash included rescuers from UCLA</a></li> 
-         <li><a href="http://newsroom.ucla.edu/stories/ice-men:-ucla-law-alums-steer-top-nhl-teams" target="_blank">Ice men: UCLA Law alums steer top NHL teams</a></li> 
-         <li><a href="http://newsroom.ucla.edu/dept/faculty/may-2:-panel-on-rohingya-genocide" target="_blank">May 2: Panel on Rohingya genocide </a></li> 
-         <li><a href="http://newsroom.ucla.edu/stories/metro-purple-line-construction-impacts" target="_blank">Metro Purple Line construction begins in Westwood</a></li> 
-         <li><a href="http://newsroom.ucla.edu/dept/faculty/pediatric-dentistry-selected-as-a-fellow-by-the-american-college-of-dentistry" target="_blank">Pediatric dentist selected as fellow by the American College of Dentistry </a></li> 
-         <li><a href="http://newsroom.ucla.edu/dept/faculty/professor-receives-award-for-work-on-population-research" target="_blank">Professor receives award for work on population research</a></li> 
-         <li><a href="http://newsroom.ucla.edu/releases/scientists-identify-new-hormones-that-burn-fat-faster-prevent-and-reverse-diabetes-in-mice" target="_blank">Scientists identify 2 hormones that burn fat faster, prevent and reverse diabetes in mice</a></li> 
-         <li><a href="http://newsroom.ucla.edu/stories/students-honored-for-work-as-advocates-for-women-s-empowerment" target="_blank">Students honored for work as advocates for womenâ€™s empowerment and leadership</a></li> 
-         <li><a href="http://newsroom.ucla.edu/releases/two-ucla-professors-elected-to-the-national-academy-of-sciences-for-2018" target="_blank">Two UCLA professors elected to the National Academy of Sciences for 2018</a></li> 
-         <li><a href="http://newsroom.ucla.edu/stories/ucla-healthy-campus-initiative-has-game-and-goats" target="_blank">UCLA Healthy Campus Initiative has game â€¦ and goats</a></li> 
-         <li><a href="http://newsroom.ucla.edu/in-the-news/ucla-in-the-news-april-26-2018" target="_blank">UCLA In the News April 26, 2018</a></li> 
-         <li><a href="http://newsroom.ucla.edu/in-the-news/ucla-in-the-news-april-27-2018" target="_blank">UCLA In the News April 27, 2018</a></li> 
-         <li><a href="http://newsroom.ucla.edu/in-the-news/ucla-in-the-news-april-30-2018" target="_blank">UCLA In the News April 30, 2018</a></li> 
-         <li><a href="http://newsroom.ucla.edu/in-the-news/ucla-in-the-news-may-1-2018" target="_blank">UCLA In the News May 1, 2018</a></li> 
-         <li><a href="http://newsroom.ucla.edu/stories/hundreds-of-bruins-celebrate-greatest-comeback-in-college-athletics-history-gymnastics-7th-ncaa-championship" target="_blank">UCLA gymnastics champions celebrated for great comeback to win NCAA title</a></li> 
-         <li><a href="http://newsroom.ucla.edu/stories/ucla-historian-curates-exhibit-on-african-american-artists-in-los-angeles" target="_blank">UCLA historian curates exhibit on African-American artists in Los Angeles</a></li> 
-         <li><a href="http://newsroom.ucla.edu/stories/working-class-families-visit-ucla-to-make-connections" target="_blank">UCLA students host working-class families to forge connections to campus</a></li> 
-        </ul> 
-        <!-- Happenings updated 5/3/2018 6:45:03 AM --> 
-        <h3><a style="font-size:18px; color: #4e8db6;" href="http://happenings.ucla.edu/" target="_blank">Happenings</a></h3> 
-        <table style="width: 100%" id="happeningsTable"> 
-         <tbody>
-          <tr> 
-           <td class="chevronCell hide-small"><a id="happeningPrev" aria-label="see newer happenings" onclick="return false;" href="#"><span aria-hidden="true" class="icon-chevron-left"></span></a></td> 
-           <td> 
-            <div class="row small-collapse"> 
-             <div class="panel-4 happeningsCell" id="hapcell0"> 
-              <div class="happeningsitem" id="hapItem0">
-               <a href="http://feedproxy.google.com/~r/happenings-myucla/~3/xlmVoZONEb8/266187" target="_blank" aria-hidden="true"><img width="230" height="90" border="0" src="http://my.ucla.edu/files/2777-myucla.jpg" alt="" title=""></a>
-               <br> 
-               <a href="http://feedproxy.google.com/~r/happenings-myucla/~3/xlmVoZONEb8/266187" target="_blank">5/11 - Blockage (2017) &amp; Valderrama (2016)</a> 
-              </div> 
-             </div> 
-             <div class="panel-4 happeningsCell" id="hapcell1"> 
-              <div class="happeningsitem" id="hapItem1">
-               <a href="http://feedproxy.google.com/~r/happenings-myucla/~3/sUjko6aibuU/266332" target="_blank" aria-hidden="true"><img width="230" height="90" border="0" src="http://my.ucla.edu/files/2774-myucla.jpg" alt="" title=""></a>
-               <br> 
-               <a href="http://feedproxy.google.com/~r/happenings-myucla/~3/sUjko6aibuU/266332" target="_blank">5/3 - Lyrics of Complaint--York, Norwich, and St. Paul</a> 
-              </div> 
-             </div> 
-             <div class="panel-4 happeningsCell" id="hapcell2"> 
-              <div class="happeningsitem" id="hapItem2">
-               <a href="http://feedproxy.google.com/~r/happenings-myucla/~3/XlHnVEf0EPQ/266184" target="_blank" aria-hidden="true"><img width="230" height="90" border="0" src="http://my.ucla.edu/files/2776-myucla.jpg" alt="" title=""></a>
-               <br> 
-               <a href="http://feedproxy.google.com/~r/happenings-myucla/~3/XlHnVEf0EPQ/266184" target="_blank">5/4 - The Home (2017)</a> 
-              </div> 
-             </div> 
-             <div class="panel-4 happeningsCell hide-above-small" id="hapcell3"> 
-              <div class="happeningsitem" id="hapItem3">
-               <a href="http://feedproxy.google.com/~r/happenings-myucla/~3/lb45ng6t7mE/265891" target="_blank" aria-hidden="true"><img width="230" height="90" border="0" src="http://my.ucla.edu/files/2778-myucla.jpg" alt="" title=""></a>
-               <br> 
-               <a href="http://feedproxy.google.com/~r/happenings-myucla/~3/lb45ng6t7mE/265891" target="_blank">5/8 - Chameleon Street</a> 
-              </div> 
-             </div> 
-            </div> </td> 
-           <td class="chevronCell hide-small"><a id="happeningNext" aria-label="see older happenings" onclick="return false;" href="#"><span aria-hidden="true" class="icon-chevron-right"></span></a></td> 
-          </tr> 
-         </tbody>
-        </table> 
-       </div> 
-       <!-- End Main Content--> 
-      </div> 
-     </div> 
-    </div> 
-    <div id="footer-push"> 
-    </div> 
-   </div> 
-   <!--Footer--> 
-   <div id="footer"> 
-    <div id="footer-content" class="container"> 
-     <ul id="footer-nav"> 
-      <li><a href="http://www.ucla.edu/">UCLA Home</a></li> 
-      <li><a href="http://www.ucla.edu/maps-directions-parking/">Maps, Directions, Parking</a></li> 
-      <li><a href="http://www.directory.ucla.edu">Directory</a></li> 
-      <li><a href="http://www.registrar.ucla.edu/Calendars/Overview">Academic Calendar</a></li> 
-      <li><a href="https://hr.mycareer.ucla.edu/applicants/jsp/shared/frameset/Frameset.jsp?time=1332455457640">Careers</a></li> 
-      <li><a href="http://welcome.diversity.ucla.edu/">Diversity</a></li> 
-      <li><a href="http://www.universityofcalifornia.edu/">University of California</a></li> 
-      <li><a href="http://www.ucla.edu/terms-of-use/">Terms of Use</a></li> 
+     <ul id="secondary_news"> 
+      <li><a href="http://go.ucsd.edu/2t5Y0Ke" title="Chancellor's blog: Broadening the path to higher education"><img alt="Chancellorâ€™s Associates Scholarship Program" src="_images/homepage/chancellor-blog/chancellor-associates-scholarship-program-2018.jpg"></a> <p class="secondary-caption"> <a href="http://go.ucsd.edu/2t5Y0Ke">Chancellor's blog: Broadening the path to higher education</a> </p></li> 
+      <li><a href="https://go.ucsd.edu/2rfKc0H" title="Is your family growing by two feet? Attend the Expectant Parent Workshop: May 9"><img alt="Baby shoes" src="_images/homepage/baby-shoes.jpg"></a> <p class="secondary-caption"> <a href="https://go.ucsd.edu/2rfKc0H">Is your family growing by two feet? Attend the Expectant Parent Workshop: May 9</a> </p></li> 
+      <li><a href="https://go.ucsd.edu/2GVawWZ" title="Register for UCSD Extension: Team Inspiration Techniques, May 12"><img alt="UCSD Extension class" src="_images/homepage/ucsd-extension.jpg"></a> <p class="secondary-caption"> <a href="https://go.ucsd.edu/2GVawWZ">Register for UCSD Extension: Team Inspiration Techniques, May 12</a> </p></li> 
+      <li><a href="https://go.ucsd.edu/2HINMq3" title="Gender bias, sexism and stereotypes in STEM with Latina feminist Patricia Valoy: May 10"><img alt="Patricia Valoy" src="_images/homepage/patricia-valoy.jpg"></a> <p class="secondary-caption"> <a href="https://go.ucsd.edu/2HINMq3">Gender bias, sexism and stereotypes in STEM with Latina feminist Patricia Valoy: May 10</a> </p></li> 
      </ul> 
-     <div id="social-media" class="hide-medium"> 
-      <a href="http://www.facebook.com/uclabruins" title="UCLA on Facebook" class="facebook">UCLA on Facebook</a> 
-      <a href="http://twitter.com/ucla" title="UCLA on Twitter" class="twitter">UCLA on Twitter</a> 
-      <a href="https://foursquare.com/ucla" title="UCLA on Foursquare" class="foursquare">UCLA on Foursquare</a> 
-      <a href="http://youtube.ucla.edu" title="UCLA on YouTube" class="youtube">UCLA on YouTube</a> 
-      <a href="http://itunes.ucla.edu/" title="UCLA on iTunes" class="itunes">UCLA on iTunes</a> 
+     <hr class="clearing" style="clear: both; background: transparent; color: #fff; margin: 0; padding: 0; height: 0;"> 
+    </div> 
+    <div class="col" id="col_1_of_4">
+     <h2>MyBlink</h2> 
+     <div style="vertical-align: top; padding-right: 15px;"> 
+      <ul class="styled" id="_myblink_toolbox"> 
+       <li><a href="#">Activate MyBlink</a></li> 
+      </ul> 
+     </div>
+    </div> 
+    <div class="col" id="col_2_of_4"> 
+     <h2>Important Dates</h2> 
+     <dl> 
+      <dt>
+       May 4
+      </dt> 
+      <dd>
+       <a href="http://blink.ucsd.edu/sponsor/BFS/divisions/general-accounting/ledger-dates.html">Ledger Cutoff</a>
+      </dd> 
+      <dt>
+       May 11
+      </dt> 
+      <dd>
+       <a href="http://blink.ucsd.edu/finance/accounting/expense-transfers/index.html#Overview-and-Deadlines">EPET due date</a>
+      </dd> 
+      <dt>
+       May 16
+      </dt> 
+      <dd>
+       <a href="http://www-bfs.ucsd.edu/pay/pdf/cal18.pdf">Biweekly pay date (PDF)</a>
+      </dd> 
+      <dt>
+       May 28
+      </dt> 
+      <dd>
+       <a href="https://blink.ucsd.edu/HR/benefits/time-off/holidays.html">Memorial Day observance</a>
+      </dd> 
+      <dt>
+       May 30
+      </dt> 
+      <dd>
+       <a href="http://www-bfs.ucsd.edu/pay/pdf/cal18.pdf">Biweekly pay date (PDF)</a>
+      </dd> 
+      <dt>
+       June 1
+      </dt> 
+      <dd>
+       <a href="http://www-bfs.ucsd.edu/pay/pdf/cal18.pdf">Monthly pay date (PDF)</a>
+      </dd> 
+      <dt>
+       June 1
+      </dt> 
+      <dd>
+       <a href="http://blink.ucsd.edu/finance/accounting/expense-transfers/index.html#Overview-and-Deadlines">ENPET due date</a>
+       <a href="HR/benefits/time-off/holidays.html"></a>
+      </dd> 
+     </dl> 
+     <a href="sponsor/blink/resources/calendars/index.html">More calendars ...</a> 
+    </div> 
+    <div class="col" id="col_3_of_4"> 
+     <h2>Popular on Blink</h2> 
+     <div></div> 
+     <ul> 
+      <li><a href="http://blink.ucsd.edu/technology/help-desk/directory/departments-quick/index.html">Department Directory Listing</a></li> 
+      <li><a href="http://ucsd.edu/about/a-to-z-index/index.html">Aâ€“Z Site Index</a></li> 
+      <li><a href="instructors/resources/academic/calendars/2017.html">Academic Calendar 2017â€“2018</a></li> 
+      <li><a href="http://transportation.ucsd.edu/">Transportation Services</a></li> 
+      <li><a href="sponsor/scspoc/ideawave/index.html">IdeaWave</a></li> 
+      <li><a href="http://blink.ucsd.edu/technology/email/tasks/web.html">Checking Your UCSD Email from the Web</a></li> 
+      <li><a href="technology/email/upgrade/index.html">Email Upgrade</a></li> 
+      <li><a href="http://blink.ucsd.edu/technology/network/access/">UC San Diego Accounts and Passwords</a></li> 
+      <li><a href="http://blink.ucsd.edu/technology/file-sharing/skype/download.html">How to Download the Skype for Business (Lync) Client</a></li> 
+      <li><a href="finance/payroll/timekeeping/mte/index.html">MyTime Entry Overview</a></li> 
+     </ul> 
+     <h2>Tip of the Week</h2> 
+     <ul> 
+      <li> <p><a href="https://go.ucsd.edu/2IH5cUe">Get started with Zoom video and web conferencing</a></p> </li> 
+     </ul> 
+     <p style="text-align: right;"><em>Have a tip? <a href="mailto:cwo@ucsd.edu">Let us know</a>.</em></p> 
+    </div> 
+    <div class="col" id="col_4_of_4"> 
+     <div class="system-status status"> 
+      <h2>System Status</h2> 
+      <p class="system-status-message"></p> 
      </div> 
+     <div class="status email"> 
+      <h2><a href="http://mail.ucsd.edu">UCSD email</a></h2> 
+      <p><a href="http://mail.ucsd.edu">Connect to UCSD-Exchange mail</a></p> 
+     </div> 
+     <div class="status shuttle"> 
+      <h2><a class="nounderline" href="http://www.ucsdbus.com/map?showHeader=0">Shuttle Status</a></h2> 
+      <p>See real-time locations and estimated arrivals of campus shuttles.</p> 
+     </div> 
+     <div class="status maplink"> 
+      <h2><a href="http://act.ucsd.edu/maps/?traffic=1">Maps &amp; Traffic</a></h2> 
+      <p>Locate campus buildings and services with<span data-mce-mark="1" style="line-height: 1.2;">&nbsp;current traffic conditions.</span></p> 
+     </div> 
+     <script src="_resources/js/site-specific.js" type="text/javascript">// <![CDATA[
+
+// ]]></script> 
+     <div class="box_2" id="wthr-widget"> 
+      <div class="wthr_box"> 
+       <h3 class="wthr">Weather</h3> 
+       <div class="ws-icon" id="ws-icon-w">
+        <img alt="Current Weather" id="weather-img" style="visibility: hidden;">
+       </div> 
+       <div class="ws-data" id="weather-temp"></div> 
+      </div> 
+      <div class="srf_box"> 
+       <h3 class="srf">Surf</h3> 
+       <div class="ws-icon" id="ws-icon-s"></div> 
+       <div class="ws-data" id="weather-surf"></div> 
+      </div> 
+      <a href="http://forecast.io/#/f/32.8829929,-117.2409542" id="full-w">7-day forecast</a>
+     </div> 
+     <script type="text/javascript">// <![CDATA[
+function jsonpCallback(jsonStr) {
+        var json = JSON.parse(jsonStr);
+        $('#_myblink_toolbox').html(json.message);
+    }
+    
+function myBlinkLogout() {
+    // delete cookie
+    document.cookie = '_myblink_user=; Path=/; domain=.ucsd.edu; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    $.ajax('https://act.ucsd.edu/myblink-client/bookmarks/j-logout.htm');
+}
+// ]]></script> 
+     <script src="https://act.ucsd.edu/myblink-client/bookmarks/getItemsV2.htm" type="text/javascript">// <![CDATA[
+
+// ]]></script>
     </div> 
    </div> 
-   <script type="text/javascript">
-    var selectedTabIndex = 0;
-    var showWaitSpinner = 0;
-    var collapsedObjects;
-
-    function tryLoadJQueryElements() {
-        try {
-            var dt;
-
-            if (dt = $('.dropdown-toggle')) { dt.dropdown(); }
-
-            if (dt = $('.uit-popover')) { dt.popover({ html: true }).css({ cursor: "pointer" }); }
-
-            if (dt = $('.uit-popover-bottom')) { dt.popover({ placement: 'bottom', html: true }).css({ cursor: "pointer" }); }
-
-            if (dt = $('.uit-popover-left')) { dt.popover({ placement: 'left', html: true }).css({ cursor: "pointer" }); }
-
-            if (dt = $('.uit-clickover')) { dt.clickover({ html: true }).css({ cursor: "pointer" }); }
-
-            if (dt = $('.uit-clickover-bottom')) { dt.clickover({ placement: 'bottom', html: true }).css({ cursor: "pointer" }); }
-
-            if (dt = $('.uit-clickover-left')) { dt.clickover({ placement: 'left', html: true }).css({ cursor: "pointer" }); }
-
-            if (dt = $('#tabs')) { dt.tabs({ active: selectedTabIndex }); }
-
-            if (dt = $('.page_collapsible')) {
-                dt.collapsible();
-            }
-
-        } catch (e) {
-            if (/popover/i.test(e.message)) {
-                alert("There was an error while loading the page.  This is sometimes caused by certain browser plugins.  Please disable AdBlock or other similar browser plugins and reload the page.");
-            } else {
-                alert("tryLoadJQueryElements Error: " + e.message);
-            }
-        }
-    }
-
+  </div> 
+  <div id="tdr_footer"> 
+   <div id="tdr_footer_content"> 
+    <div id="tdr_address"> 
+     <span id="tdr_address_place">UC San Diego</span> 
+     <span id="tdr_address_street">9500 Gilman Dr.</span> 
+     <span id="tdr_address_city_state_zip">La Jolla, CA 92093</span> 
+     <span id="tdr_address_phone">(858) 534-2230</span> 
+    </div> 
+    <div id="tdr_copyright">
+     Copyright Â©
+     <span id="tdr_copyright_year">2018</span> Regents of the University of California. All rights reserved.
+    </div> 
+    <ul id="tdr_footer_links"> 
+     <li><a href="http://ucsd.edu/about/terms-of-use.html">Terms &amp; Conditions</a></li> 
+     <li id="tdr_footer_feedback"> <a href="https://eforms.ucsd.edu/view.php?id=252329">Feedback</a> </li> 
+    </ul> 
+    <script src="https://cdn.ucsd.edu/cms/decorator-4.5/scripts/decorator.js" type="text/javascript"></script> 
+    <script type="text/javascript">
+    (function($) {
+        $(document).ready(function() {
+                    initFooter("https://eforms.ucsd.edu/view.php?id=252329");
+                    initCopyright();
+        });
+    })(jQuery);
     </script> 
-   <script type="text/javascript">
+    <script type="text/javascript">
+// <![CDATA[
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-    function EndRequestHandler_mp(sender, args) {
-        try {
-            // hide spinnerbox if visible, cancel timer if not
-            $('#PleaseWait').hide();
-            $("#loginWidget").show();
-
-            $('body').removeClass('ajax-spinner');
-            showWaitSpinner = 0;
-
-            if (args.get_error() != undefined) {
-                var errorMessage = args.get_error().message;
-                args.set_errorHandled(true);
-                alert("Ajax Error: " + errorMessage);
-            }
-
-            tryLoadJQueryElements();
-
-            if (collapsedObjects) {
-                for (var i = 0; i < collapsedObjects.length; i++) {
-                    if (dt = $('#' + collapsedObjects[i])) {
-                        dt.collapsible('open');
-                    }
-                }
-            }
-
-            if (eval('typeof(EndRequestHandler_client) == "function"')) {
-                EndRequestHandler_client(sender, args)
-            }
-
-            //alert("EndRequestHandler_mp success");
-        } catch (e) {
-            alert("EndRequestHandler_mp Error: " + e.message);
-        }
-    }
-
-    function BeginRequestHandler_mp(sender, args) {
-        try {
-            if (eval('typeof(BeginRequestHandler_client) == "function"')) {
-                BeginRequestHandler_client(sender, args)
-            }
-
-
-            if (dt = $('#tabs')) { selectedTabIndex = dt.tabs('option', 'active'); }
-
-            // set timer to show spinnerbox after 0.5 seconds
-            showWaitSpinner = 1;
-            setTimeout(function () {
-                if (showWaitSpinner == 1) {
-                    $('#PleaseWait').center().show(); // have to recenter it every time because the user has probably scrolled
-                    $('body').addClass('ajax-spinner');
-                }
-            }, 100);
-
-
-            collapsedObjects = new Array();
-            if (dt = $('.collapse-open')) {
-                dt.each(function (i) { collapsedObjects.push(this.id); });
-            }
-
-        } catch (e) {
-            alert("BeginRequestHandler_mp Error: " + e.message);
-        }
-    }
-
-    </script> 
-  </form>  
+  ga('create', 'UA-3409104-3', 'auto');
+  ga('send', 'pageview');
+// ]]>
+</script> 
+   </div> 
+   <script src="_resources/js/bootstrap.min.js" type="text/javascript">
+</script> 
+   <script src="//act.ucsd.edu/cwp/homepage/psweather" type="text/javascript"> </script> 
+   <script src="_resources/js/weather-widget.js" type="text/javascript">
+</script> 
+  </div>  
  </body>
 </html>

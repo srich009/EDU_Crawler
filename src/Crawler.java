@@ -10,18 +10,17 @@ import java.util.concurrent.locks.*;
 
 public class Crawler
 {
-	private LinkedList<url_hop> urls;
+	private LinkedList<url_hop> urls; //frontier of uncrawled webpages
 	private Integer max_pages;
 	private Integer max_hops;
 	private String  output;
 	private Integer count;
 	private Integer running_threads;
-	private Set<String> seen;
+	private Set<String> seen; //keep track of pages already crawled
 	private ReentrantLock fifo_lock = new ReentrantLock();
 	private ReentrantLock hash_lock = new ReentrantLock();
 	private Integer fileCounter;
 	private LinkedList<String> fileList = new LinkedList<String>();
-	//private Integer nthreads = 100;
 	
 	public Crawler(LinkedList<url_hop> u_lst, Integer num_pag, Integer num_hop, String out)
 	{ 
@@ -45,16 +44,7 @@ public class Crawler
 		
 		//ExecutorService executor = Executors.newFixedThreadPool(nthreads);
 		List<Jthread> jthreads = new ArrayList<Jthread>();
-	
-		for (int i = 0; i < running_threads; i++) {
-			String tname = "thread" + i;
-			jthreads.add(new Jthread(this, tname));
-		}
-		
-		for (Jthread temp_jt : jthreads) {
-			temp_jt.start();
-		}
-		
+		// Create Pages directory
 		File dir = new File(output + "/pages");
 		if(dir.exists()){
 			String[]entries = dir.list();
@@ -67,18 +57,32 @@ public class Crawler
 		else{
 			dir.mkdir();
 		}
+		// Initiate threads for crawling
+		for (int i = 0; i < running_threads; i++) {
+			String tname = "thread" + i;
+			jthreads.add(new Jthread(this, tname));
+		}
+		//start individual threads
+		for (Jthread temp_jt : jthreads) {
+			temp_jt.start();
+		}
+		
 		try{			
 			do {
 				try {
+					//update manifest with new pages
 					File file = new File(output + "/pages/0-manifest.txt");
 					FileWriter fw = new FileWriter(file.getAbsoluteFile(), true);
 			        BufferedWriter bw = new BufferedWriter(fw);
 					for (int i = fileList.size(); i > 0; i--){
 						String temp = fileList.removeFirst();
-						bw.write(temp);
+						bw.write(temp); 
 					}
 					bw.close();
-					Thread.sleep(10000);
+					//let users know how many pages have been pulled so far
+					System.out.println("Pages pulled: " + count);
+					
+					Thread.sleep(10000); //sleep for 10 secs while threads continue
 				}
 				catch (InterruptedException e) {
 					// TODO Auto-generated catch block
@@ -99,7 +103,7 @@ public class Crawler
 		return output;
 	}
 	
-	public String nextName(String url)
+	public String nextName(String url) 
 	{
 		Integer ret_num;
 		synchronized (this) {
@@ -116,10 +120,6 @@ public class Crawler
 		fifo_lock.lock();
 		try {
 			if (count < max_pages) {
-				if (count % 10 == 0) {
-					System.out.println("Pages pulled: " + count);
-				}
-				
 				// Still want thread to continue working
 				if (!urls.isEmpty()) { //go ahead and return a real url
 					ret_uh = this.urls.removeFirst();
@@ -144,13 +144,23 @@ public class Crawler
 	{
 		hash_lock.lock();
 		try {
+			//final check on hash since last time
+			if (seen.contains(url)) {
+				return;
+			}
+			
 			seen.add(url);
 			if (curr_hop == max_hops) {
 				return;
 			}
 			if (crawlable) {
 				url_hop uh = new url_hop(url, curr_hop+1, false);
-				urls.addLast(uh);
+				fifo_lock.lock();
+				try {
+					urls.addLast(uh);
+				} finally {
+					fifo_lock.unlock();
+				}
 			}
 			
 		} finally {
