@@ -1,0 +1,4 @@
+http://www.ucr.edu
+http://www.uci.edu
+http://www.ucla.edu
+http://www.ucsd.edu
