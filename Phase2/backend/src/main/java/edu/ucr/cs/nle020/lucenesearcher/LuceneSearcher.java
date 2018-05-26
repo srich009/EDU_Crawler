@@ -6,11 +6,12 @@ import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field;
 import org.apache.lucene.document.TextField;
 import org.apache.lucene.index.DirectoryReader;
+import org.apache.lucene.index.IndexReader;
 import org.apache.lucene.index.IndexWriter;
 import org.apache.lucene.index.IndexWriterConfig;
 import org.apache.lucene.queryparser.classic.MultiFieldQueryParser;
 import org.apache.lucene.queryparser.classic.ParseException;
-import org.apache.lucene.queryparser.classic.QueryParser;
+//import org.apache.lucene.queryparser.classic.QueryParser;
 import org.apache.lucene.search.IndexSearcher;
 import org.apache.lucene.search.Query;
 import org.apache.lucene.search.ScoreDoc;
@@ -23,10 +24,22 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.annotation.PostConstruct;
+
+import org.springframework.web.bind.annotation.*;
+import javax.annotation.PreDestroy;
+
+
+// ***** URL: http://localhost:8080/api/articles?input=UCR
+
+
 /**
  * Lucene simple demo. Based on:
  * https://lucene.apache.org/core/7_3_0/core/overview-summary.html#overview.description
  */
+@RestController
+@RequestMapping("/api")
+@CrossOrigin("*")
 public class LuceneSearcher {
     static class Page {
         String title;
@@ -39,7 +52,9 @@ public class LuceneSearcher {
     }
     Directory directory1;
     Analyzer analyzer1;
+    IndexReader indexReader1;
 
+    @PostConstruct
     public void index() throws IOException, ParseException {
         Analyzer analyzer = new StandardAnalyzer();
         analyzer1 = analyzer;
@@ -67,11 +82,22 @@ public class LuceneSearcher {
         indexWriter.close();
     }
 
-    public String search(String input) throws IOException, ParseException{
+    @PreDestroy
+	public void cleanUp() throws IOException{
+      System.out.println("Cleanup Time");
+        indexReader1.close();
+        directory1.close();
+	}
+
+    @GetMapping("/articles")
+    public String searchArticles(
+            @RequestParam(required=false, defaultValue="") String input) throws IOException, ParseException{
         
         String answer = "Answer";
+
         // Now search the index:
         DirectoryReader indexReader = DirectoryReader.open(directory1);
+        indexReader1 = indexReader;
         IndexSearcher indexSearcher = new IndexSearcher(indexReader);
 
         String[] fields = {"title", "content"};
@@ -83,7 +109,7 @@ public class LuceneSearcher {
         // Query query = parser.parse("UCR discussion");
         // QueryParser parser = new QueryParser("content", analyzer);
         // Query query = parser.parse("(title:ucr)^1.0 (content:ucr)^0.5");
-        answer = query.toString() + " -- ";
+        answer = query.toString() + " -- \n";
         int topHitCount = 10;
         ScoreDoc[] hits = indexSearcher.search(query, topHitCount).scoreDocs;
 
@@ -91,11 +117,9 @@ public class LuceneSearcher {
         for (int rank = 0; rank < hits.length; ++rank) {
             Document hitDoc = indexSearcher.doc(hits[rank].doc);
             answer = answer + (rank + 1) + " (score:" + hits[rank].score + ") --> " +
-                               hitDoc.get("title") + " - " + hitDoc.get("content");
+                               hitDoc.get("title") + " - " + hitDoc.get("content") + "\n";
             // System.out.println(indexSearcher.explain(query, hits[rank].doc));
         }
-        // indexReader.close();
-        // directory.close();
         return answer;
     }
 }
