@@ -21,6 +21,7 @@ import org.apache.lucene.store.RAMDirectory;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -90,10 +91,8 @@ public class LuceneSearcher {
 	}
 
     @GetMapping("/articles")
-    public String searchArticles(
+    public List<Result> searchArticles(
             @RequestParam(required=false, defaultValue="") String input) throws IOException, ParseException{
-        
-        String answer = "Answer";
 
         // Now search the index:
         DirectoryReader indexReader = DirectoryReader.open(directory1);
@@ -109,17 +108,19 @@ public class LuceneSearcher {
         // Query query = parser.parse("UCR discussion");
         // QueryParser parser = new QueryParser("content", analyzer);
         // Query query = parser.parse("(title:ucr)^1.0 (content:ucr)^0.5");
-        answer = query.toString() + " -- \n";
+        //answer = query.toString() + " -- \n";
         int topHitCount = 10;
         ScoreDoc[] hits = indexSearcher.search(query, topHitCount).scoreDocs;
-
+            
+        List<Result> results = new ArrayList<Result>();
         // Iterate through the results:
         for (int rank = 0; rank < hits.length; ++rank) {
             Document hitDoc = indexSearcher.doc(hits[rank].doc);
-            answer = answer + (rank + 1) + " (score:" + hits[rank].score + ") --> " +
-                               hitDoc.get("title") + " - " + hitDoc.get("content") + "\n";
+            // answer = answer + (rank + 1) + " (score:" + hits[rank].score + ") --> " +
+            //                    hitDoc.get("title") + " - " + hitDoc.get("content") + "\n";
+            results.add(new Result(rank+1, hitDoc.get("title"), hitDoc.get("content")));
             // System.out.println(indexSearcher.explain(query, hits[rank].doc));
         }
-        return answer;
+        return results;
     }
 }
