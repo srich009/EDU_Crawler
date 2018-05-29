@@ -12,10 +12,10 @@ import org.jsoup.select.Elements;
 
 public class soup
 {
-	
+/*	// test harness
 	public static void main(String[] args) 
 	{
-		String location = "C:\\Users\\duluoz\\Documents\\Eclipse\\part2\\src\\html_files"; // this is awful... 
+		String location = "C:\Users\duluoz\Documents\Eclipse\part2\src\html_files"; // local html
 		List<Page> ps = processFiles(location);
 		for(Page p : ps)
 		{
@@ -23,7 +23,7 @@ public class soup
 		}
 	}
 	//-------------------------------------------
-
+*/
 	public static List<Page> processFiles(String folder)
 	{
 		List<org.jsoup.nodes.Document> docs = new ArrayList<org.jsoup.nodes.Document>();
