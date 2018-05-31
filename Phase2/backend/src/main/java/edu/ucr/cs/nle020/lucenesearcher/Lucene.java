@@ -59,7 +59,7 @@ public class Lucene{
 	        //-------------------------------
 	
 	        //for each page - grab necessary attributes
-	        for (Page page: pages)
+	        for (Page page : pages)
 	        {
 	        	org.apache.lucene.document.Document doc = new Document();
 	        	
@@ -76,7 +76,8 @@ public class Lucene{
 		}
 		catch (Exception | Error e)
 	    {
-			System.out.println("Exception | Error");
+            System.out.println("Exception | Error");
+            System.out.println("here is the error in soup.java");
 			System.out.println(e.getMessage());
 		} 
     }
