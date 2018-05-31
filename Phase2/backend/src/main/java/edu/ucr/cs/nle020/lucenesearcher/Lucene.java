@@ -135,7 +135,7 @@ public class Lucene{
         List<Result> results = new ArrayList<Result>(); // returning this for now - Jake
         for (int rank = 0; rank < hits.length; ++rank) {
             Document hitDoc = indexSearcher.doc(hits[rank].doc);
-            results.add(new Result(rank+1, hitDoc.get("title"), hitDoc.get("content")));
+            results.add(new Result(rank+1, hitDoc.get("title"), hitDoc.get("content"), "", 0));
             // System.out.println(indexSearcher.explain(query, hits[rank].doc));
         }
         indexReader.close();

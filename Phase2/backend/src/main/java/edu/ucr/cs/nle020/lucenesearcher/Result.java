@@ -4,14 +4,18 @@ public class Result {
 
     public int id;
     public String title;
-    public String body;
+    public String url;
+    public String snippet;
+    public double score;
 
     public Result(){}
 
-    public Result(int id, String title, String body) {
+    public Result(int id, String title, String url, String snippet, double score) {
         this.id = id;
         this.title = title;
-        this.body = body;
+        this.url = url;
+        this.snippet = snippet;
+        this.score = score;
     }
 
     public int getId() {
@@ -30,16 +34,32 @@ public class Result {
         this.title = title;
     }
 
-    public String getBody() {
-        return body;
+    public String getUrl() {
+        return url;
     }
 
-    public void setBody(String body) {
-        this.body = body;
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public String getSnippet() {
+        return snippet;
+    }
+
+    public void setSnippet(String snippet) {
+        this.snippet = snippet;
+    }
+
+    public double getScore() {
+        return score;
+    }
+
+    public void setScore(Double score) {
+        this.score = score;
     }
 
     @Override
     public String toString() {
-        return String.format("Article[id=%d, title=%s, body=%s]", id, title, body);
+        return String.format("Article[id=%d, title=%s, url=%s, snippet=%s, score=%f]", id, title, url, snippet, score);
     }
 }
