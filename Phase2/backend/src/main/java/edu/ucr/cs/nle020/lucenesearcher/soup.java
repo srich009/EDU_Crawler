@@ -83,11 +83,8 @@ public class soup
 			{
 				System.out.println(urls.get(i));
 			}*/
-<<<<<<< HEAD
 			//System.out.printf("docs: %d\n",docs.size());
 			//System.out.printf("urls: %d\n",urls.size());
-=======
->>>>>>> 2d89eebd2493d98111637330b3668516aa9817ef
 
 			// check size must be the same
 			if(docs.size() != urls.size())
