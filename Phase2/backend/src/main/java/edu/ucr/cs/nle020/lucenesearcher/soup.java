@@ -9,6 +9,10 @@ import org.jsoup.Jsoup;
 // import org.jsoup.nodes.Document;
 // import org.jsoup.nodes.Element;
 // import org.jsoup.select.Elements;
+import org.springframework.core.annotation.Order;
+
+// util
+import java.util.Arrays;
 
 public class soup
 {
@@ -33,7 +37,16 @@ public class soup
 		{
 			File directory = new File(folder);
 			File[] contents = directory.listFiles();
+
+			//files not stroed in consecutive numeric Order
+			// sort files
+			Arrays.sort(contents);
 			
+			/*for(int i = 0; i < contents.length; i++)
+			{
+				System.out.println(contents[i]);
+			}*/
+
 			// parse raw html to jsoup documents
 			for (File f : contents) 
 			{ 
@@ -61,11 +74,19 @@ public class soup
 			
 			// remove index numbers, keep only urls
 			// urls are only in the odd positions of array
-			for( int i = 1; i < chop.length; i+=2 )
+			for(int i = 1; i < chop.length; i+=2)
 			{
 				urls.add(chop[i]);
 			}
+
+			/*for( int i = 1; i < urls.size();  i++) // test
+			{
+				System.out.println(urls.get(i));
+			}*/
 			
+			System.out.printf("docs: %d\n",docs.size());
+			System.out.printf("urls: %d\n",urls.size());
+
 			// check size must be the same
 			if(docs.size() != urls.size())
 			{

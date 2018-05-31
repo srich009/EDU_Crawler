@@ -123,7 +123,7 @@ public class Lucene{
         System.out.println(query.toString());
         
         //Number of websites to return
-        int topHitCount = 50;
+        int topHitCount = 10;
         
         //Search Index for hits that match the query most
         ScoreDoc[] hits = indexSearcher.search(query, topHitCount).scoreDocs;
