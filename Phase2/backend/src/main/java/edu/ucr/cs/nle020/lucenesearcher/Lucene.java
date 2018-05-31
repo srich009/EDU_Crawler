@@ -37,10 +37,8 @@ public class Lucene{
     public static void index() {
         try
 		{
-
-            
-            String html_location  = "/home/jake/EDU_Crawler/pages";//"C:\\Users\\duluoz\\Documents\\Eclipse\\part2\\src\\html_files";  // local html
-			String index_location = "/home/jake/EDU_Crawler/Phase2/backend/index_files";//"C:\\Users\\duluoz\\Documents\\Eclipse\\part2\\src\\index_files"; // local index
+            String html_location  = "./html"; // local html
+			String index_location = "./indx"; // local index
 			
 			//index directory path
             Path the_path = Paths.get(index_location);
@@ -91,7 +89,7 @@ public class Lucene{
         // Opens currently existing directory
         // should catch errors and exceptions
         
-        String idx_location = "C:\\Users\\duluoz\\Documents\\Eclipse\\part2\\src\\index_files"; // local index
+        String idx_location = "./indx"; // local index
         
         //index directory path
         Path a_path = FileSystems.getDefault().getPath(idx_location);
