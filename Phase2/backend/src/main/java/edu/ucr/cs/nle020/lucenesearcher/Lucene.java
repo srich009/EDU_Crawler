@@ -54,12 +54,8 @@ public class Lucene{
 	        IndexWriter indexWriter = new IndexWriter(directory, config);
 	        
             //Need to parse our html files and created a real list of pages
-            System.out.println("out");
-
 	        //-------------------------------
             List<Page> pages = soup.processFiles(html_location);
-            System.out.println("out");
-
 	        //-------------------------------
 	
 	        //for each page - grab necessary attributes
@@ -112,8 +108,8 @@ public class Lucene{
         
         MultiFieldQueryParser parser = new MultiFieldQueryParser(fields, analyzer, boosts);
                 
-        Query query = parser.parse("UCR");
-        // Query query = parser.parse("UCR discussion");
+        // Query query = parser.parse("UCR");
+        Query query = parser.parse("UCR discussion");
         
         /* parser for if want to specify fields and do fancy stuff */
         // QueryParser parser = new QueryParser("content", analyzer);
@@ -135,7 +131,7 @@ public class Lucene{
         List<Result> results = new ArrayList<Result>(); // returning this for now - Jake
         for (int rank = 0; rank < hits.length; ++rank) {
             Document hitDoc = indexSearcher.doc(hits[rank].doc);
-            results.add(new Result(rank+1, hitDoc.get("title"), hitDoc.get("content"), "", 0));
+            results.add( new Result( rank+1, hitDoc.get("title"), hitDoc.get("url"), "SNIPPET" /*hitDoc.get("content")*/, 0 ) ); // need to trim snippet out of content
             // System.out.println(indexSearcher.explain(query, hits[rank].doc));
         }
         indexReader.close();
