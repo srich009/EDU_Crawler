@@ -54,11 +54,8 @@ public class Lucene{
 	        IndexWriter indexWriter = new IndexWriter(directory, config);
 	        
             //Need to parse our html files and created a real list of pages
-            System.out.println("out");
-
 	        //-------------------------------
             List<Page> pages = soup.processFiles(html_location);
-            System.out.println("out");
 
 	        //-------------------------------
 	
