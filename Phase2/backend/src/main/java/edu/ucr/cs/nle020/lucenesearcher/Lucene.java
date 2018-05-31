@@ -28,6 +28,7 @@ import java.util.Map;
 
 //Seans imports
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.io.IOException;
 import java.nio.file.FileSystems;
 
@@ -36,14 +37,16 @@ public class Lucene{
     public static void index() {
         try
 		{
-            String html_location  = "C:\\Users\\duluoz\\Documents\\Eclipse\\part2\\src\\html_files";  // local html
-			String index_location = "C:\\Users\\duluoz\\Documents\\Eclipse\\part2\\src\\index_files"; // local index
+
+            
+            String html_location  = "/home/jake/EDU_Crawler/pages";//"C:\\Users\\duluoz\\Documents\\Eclipse\\part2\\src\\html_files";  // local html
+			String index_location = "/home/jake/EDU_Crawler/Phase2/backend/index_files";//"C:\\Users\\duluoz\\Documents\\Eclipse\\part2\\src\\index_files"; // local index
 			
 			//index directory path
-			Path the_path = FileSystems.getDefault().getPath(index_location);
+            Path the_path = Paths.get(index_location);
 			
 	        // To store an index on disk:
-	        Directory directory = FSDirectory.open(the_path);
+            Directory directory = FSDirectory.open(the_path);
 	        
 	        //config details for writer
 	        Analyzer analyzer = new StandardAnalyzer();
@@ -52,9 +55,13 @@ public class Lucene{
 	        //instantiate writer for creating index
 	        IndexWriter indexWriter = new IndexWriter(directory, config);
 	        
-	        //Need to parse our html files and created a real list of pages
+            //Need to parse our html files and created a real list of pages
+            System.out.println("out");
+
 	        //-------------------------------
-			List<Page> pages = soup.processFiles(html_location);
+            List<Page> pages = soup.processFiles(html_location);
+            System.out.println("out");
+
 	        //-------------------------------
 	
 	        //for each page - grab necessary attributes
@@ -72,7 +79,6 @@ public class Lucene{
 	        }
 	 
 	        indexWriter.close();
-	        System.out.println("a");
 		}
 		catch (Exception | Error e)
 	    {
