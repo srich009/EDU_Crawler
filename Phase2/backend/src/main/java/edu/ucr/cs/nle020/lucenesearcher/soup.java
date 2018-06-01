@@ -16,18 +16,6 @@ import java.util.Arrays;
 
 public class soup
 {
-/*	// test harness
-	public static void main(String[] args) 
-	{
-		String location = "C:\Users\duluoz\Documents\Eclipse\part2\src\html_files"; // local html
-		List<Page> ps = processFiles(location);
-		for(Page p : ps)
-		{
-			p.pagePrint();
-		}
-	}
-	//-------------------------------------------
-*/
 	public static List<Page> processFiles(String folder)
 	{
 		List<org.jsoup.nodes.Document> docs = new ArrayList<org.jsoup.nodes.Document>();
@@ -94,7 +82,7 @@ public class soup
 			
 			for( int i = 0; i < docs.size(); i++)
 			{
-				pages.add( new Page( urls.get(i), docs.get(i).title(), docs.get(i).text() ) );
+				pages.add( new Page( urls.get(i), docs.get(i).title(), docs.get(i).text(), 0.0f /*rank*/ ) );
 			}
 		}
 		catch (Exception | Error e)

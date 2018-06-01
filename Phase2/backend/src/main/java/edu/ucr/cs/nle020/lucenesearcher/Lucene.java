@@ -64,9 +64,10 @@ public class Lucene{
 	        	org.apache.lucene.document.Document doc = new Document();
 	        	
 	        	//attributes to store about each feature
-	        	doc.add(new TextField("url", page.url, Field.Store.YES));
-	            doc.add(new TextField("title", page.title, Field.Store.YES));
-	            doc.add(new TextField("content", page.content, Field.Store.YES));
+	        	doc.add(new TextField("url",     page.url,     Field.Store.YES));
+	            doc.add(new TextField("title",   page.title,   Field.Store.YES));
+                doc.add(new TextField("content", page.content, Field.Store.YES));
+                doc.add(new TextField("rank",    page.rank.toString(),    Field.Store.YES));
 	            
 	            //add document to index
 	            indexWriter.addDocument(doc);
@@ -99,7 +100,7 @@ public class Lucene{
         IndexSearcher indexSearcher = new IndexSearcher(indexReader);
         Analyzer analyzer = new StandardAnalyzer();
 
-        String[] fields = {"url", "title", "content"};
+        String[] fields = {"url", "title", "content", "rank"};
         Map<String, Float> boosts = new HashMap<>();
         
         //Weight importance of different document attributes

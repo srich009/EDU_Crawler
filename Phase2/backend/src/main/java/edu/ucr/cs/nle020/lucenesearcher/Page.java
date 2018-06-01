@@ -2,36 +2,31 @@ package edu.ucr.cs.nle020.lucenesearcher;
 
 public class Page 
 {
-	String   url;
-    String   title;
-    String   content;
-    /*String[] meta;
-    String[] header;*/
+	String url;
+    String title;
+    String content;
+    Float  rank;
 
-    Page(String url, String title, String content /*, String[] meta, String[] header*/) 
+    Page(String url, String title, String content, Float rank) 
     {
     	this.url     = url;
         this.title   = title;
         this.content = content;
-        /*this.meta    = meta;
-        this.header  = header;*/
+        this.rank    = rank;
     }
     
     void pagePrint()
     {			
     	System.out.println("URL");
-    	System.out.println(this.url);
+        System.out.println(this.url);
+        System.out.println("RANK");
+		System.out.println(this.rank);
     	System.out.println("TITLE");
 		System.out.println(this.title);
 		System.out.println("CONTENT");
 		System.out.println(this.content);
-		/*System.out.println("META");
-		System.out.println(this.meta);
-		System.out.println("HEADER");
-		System.out.println(this.header);*/
     }
 }
-
 
 /*
  * using jsoup to get title && content for the pages
