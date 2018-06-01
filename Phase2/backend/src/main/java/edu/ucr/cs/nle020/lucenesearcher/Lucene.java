@@ -32,9 +32,10 @@ import java.nio.file.Paths;
 import java.io.IOException;
 import java.nio.file.FileSystems;
 
-public class Lucene{
-
-    public static void index() {
+public class Lucene
+{
+    public static void index() 
+    {
         try
 		{
             String html_location  = "./html"; // local html
@@ -83,7 +84,9 @@ public class Lucene{
 		} 
     }
 
-    public static List<Result> search(String input) throws IOException, ParseException {
+    public static List<Result> search(String input) 
+        throws IOException, ParseException 
+    {
         // Opens currently existing directory
         // should catch errors and exceptions
         
@@ -131,7 +134,8 @@ public class Lucene{
         //   -Instead of outputting, should put them into JSON file
         //   -give back JSON to web server
         List<Result> results = new ArrayList<Result>(); // returning this for now - Jake
-        for (int rank = 0; rank < hits.length; ++rank) {
+        for (int rank = 0; rank < hits.length; ++rank) 
+        {
             Document hitDoc = indexSearcher.doc(hits[rank].doc);
             results.add( new Result( rank+1, hitDoc.get("title"), hitDoc.get("url"), "SNIPPET" /*hitDoc.get("content")*/, 0 ) ); // need to trim snippet out of content
             // System.out.println(indexSearcher.explain(query, hits[rank].doc));

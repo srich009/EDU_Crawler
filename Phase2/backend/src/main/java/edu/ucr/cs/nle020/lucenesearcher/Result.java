@@ -1,7 +1,7 @@
 package edu.ucr.cs.nle020.lucenesearcher;
 
-public class Result {
-
+public class Result 
+{
     public int id;
     public String title;
     public String url;
@@ -10,7 +10,8 @@ public class Result {
 
     public Result(){}
 
-    public Result(int id, String title, String url, String snippet, double score) {
+    public Result(int id, String title, String url, String snippet, double score) 
+    {
         this.id = id;
         this.title = title;
         this.url = url;

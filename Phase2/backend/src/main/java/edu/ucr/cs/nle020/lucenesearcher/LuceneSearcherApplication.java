@@ -7,10 +7,17 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class LuceneSearcherApplication {
+public class LuceneSearcherApplication 
+{
+	public static void main(String[] args) 
+		throws IOException, ParseException
+	{
+		// test
+		snipper.test();
+		// test
+		
+		Lucene.index(); // THIS SHOULD BE COMMENTED OUT ONCE THE FINAL STABLE INDEX IS MADE
 
-	public static void main(String[] args) throws IOException, ParseException{
-		Lucene.index();
 		SpringApplication.run(LuceneSearcherApplication.class, args);
 	}
 }
