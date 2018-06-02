@@ -116,6 +116,9 @@ public class snipper
         String ary[] = new String[] 
         { 
             "professors",
+            "UCR",
+            "UCLA",
+            "UCSD"
         };
         List<String> keywords = Arrays.asList(ary);
         List<String> snippets = snip(keywords);
