@@ -16,7 +16,7 @@ public class LuceneSearcherApplication
 		snipper.test();
 		// test
 		
-		Lucene.index(); // THIS SHOULD BE COMMENTED OUT ONCE THE FINAL STABLE INDEX IS MADE
+		// Lucene.index(); // THIS SHOULD BE COMMENTED OUT ONCE THE FINAL STABLE INDEX IS MADE
 
 		SpringApplication.run(LuceneSearcherApplication.class, args);
 	}
