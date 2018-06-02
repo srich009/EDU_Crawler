@@ -32,13 +32,16 @@ public class Lucene_Indexer {
 	
 	public static void main(String[] args) {
 		
+		/*
 		// Arguments passed into main function
 		//index directory path
 		Path dirPath = Paths.get(args[0]); //path to make lucene index
 		String pagesFolder = args[1]; //folder that contains html and manifest pages
 		Integer numDocs = Integer.parseInt(args[2]);
-		
-		List<org.jsoup.nodes.Document> docs = new ArrayList<org.jsoup.nodes.Document>();
+		*/
+		Path dirPath = Paths.get("C:\\Users\\lonelogical\\Documents\\Computer_Science\\CS172_Information_Retrieval\\proj_phase2\\EDU_Crawler\\Phase2\\LuceneIndex");
+		String pagesFolder = "C:\\Users\\lonelogical\\Documents\\Computer_Science\\CS172_Information_Retrieval\\proj_phase2\\EDU_Crawler\\Phase1\\sample";
+		Integer numDocs = 496;
 		
 		try {
 			//Grab manifest information and put in hashmap
@@ -58,6 +61,7 @@ public class Lucene_Indexer {
 			}
 			System.out.println("Hashmap was made. map size: " + docMap.size());
 			
+			/*
 			//Grab pagerank file and put it in hashmap
 			HashMap<Integer, Integer> rankMap = new HashMap<>();
 			String pagerankLocation = pagesFolder + "\\pagerankFile.csv";
@@ -69,6 +73,7 @@ public class Lucene_Indexer {
 	            rankMap.put(dID, dRank);
 	        }
 	        scanner.close();
+	        */
 	        
 	        // To store an index on disk:
 	        Directory directory = FSDirectory.open(dirPath);
@@ -85,22 +90,22 @@ public class Lucene_Indexer {
 			    File docInput = new File(docIFile);
 				org.jsoup.nodes.Document doc = Jsoup.parse(docInput, "UTF-8");
 				
+				System.out.println(doc.title());
+				
 				Document lucDoc = new Document();
 	            lucDoc.add(new TextField("title", doc.title(), Field.Store.YES));
 	            lucDoc.add(new TextField("url", docMap.get(i), Field.Store.YES));
 	            lucDoc.add(new TextField("content", doc.body().text(), Field.Store.NO));
-	            //lucDoc.setBoost(3.0f);
 	            
 	            //add document to index
 	            indexWriter.addDocument(lucDoc);
 			}
-	        
 	        indexWriter.close();
-			
+			System.out.println("Done indexing");
 		} catch (Exception e) {
-			
+			System.out.println(e);
 		} catch (Error e) {
-			
+			System.out.println(e);
 		}
 		
         
