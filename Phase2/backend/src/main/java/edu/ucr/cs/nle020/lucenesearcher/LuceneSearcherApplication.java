@@ -11,11 +11,7 @@ public class LuceneSearcherApplication
 {
 	public static void main(String[] args) 
 		throws IOException, ParseException
-	{
-		// test
-		snipper.test();
-		// test
-		
+	{	
 		// Lucene.index(); // THIS SHOULD BE COMMENTED OUT ONCE THE FINAL STABLE INDEX IS MADE
 
 		SpringApplication.run(LuceneSearcherApplication.class, args);

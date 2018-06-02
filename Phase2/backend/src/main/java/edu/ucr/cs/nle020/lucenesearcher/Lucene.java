@@ -32,6 +32,15 @@ import java.nio.file.Paths;
 import java.io.IOException;
 import java.nio.file.FileSystems;
 
+// hashmapper
+import org.jsoup.Jsoup;
+import java.util.StringTokenizer;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+
 public class Lucene
 {
     public static void index() 
@@ -88,11 +97,28 @@ public class Lucene
     public static List<Result> search(String input) 
         throws IOException, ParseException 
     {
-        // Opens currently existing directory
-        // should catch errors and exceptions
-        
         String idx_location = "./indx"; // local index
-        
+        String html_location = "./html"; // local html
+
+        //Grab manifest information and put in hashmap
+        // grab the manifest
+        String manLocation = html_location + "/0-manifest.txt";    
+        File manFile = new File(manLocation);
+        org.jsoup.nodes.Document manifest = Jsoup.parse(manFile, "UTF-8");
+        String manText = manifest.text();
+        //tokenize manifest and create hashmap
+        HashMap<String, Integer> docMap = new HashMap<>();
+        StringTokenizer st = new StringTokenizer(manText);
+        while (st.hasMoreTokens()) 
+        {
+            String temp = st.nextToken();
+            Integer dID = Integer.parseInt(temp);
+            temp = st.nextToken();
+            docMap.put(temp,dID);
+        }
+        System.out.println("Hashmap was made");
+        System.out.println("map size: " + docMap.size());
+
         //index directory path
         Path a_path = FileSystems.getDefault().getPath(idx_location);
         
@@ -115,22 +141,12 @@ public class Lucene
         MultiFieldQueryParser parser = new MultiFieldQueryParser(fields, analyzer, boosts);
              
         Query query = parser.parse(input);
-
-        // Query query = parser.parse("UCR");
-        // Query query = parser.parse("UCR discussion");
-        
-        /* parser for if want to specify fields and do fancy stuff */
-        // QueryParser parser = new QueryParser("content", analyzer);
-        // Query query = parser.parse("(title:ucr)^1.0 (content:ucr)^0.5");
-        
-        //Don't know what this outputs, but it'll be more than query string
-        // System.out.println(query.toString());
         
         //Number of websites to return
         int topHitCount = 10;
         
         //Search Index for hits that match the query most
-        ScoreDoc[] hits = indexSearcher.search(query, topHitCount).scoreDocs;
+        ScoreDoc[] hits = indexSearcher.search(query,topHitCount).scoreDocs;
 
         // Iterate through the results: 
         //   -Assuming they are sorted by rank high to low already
@@ -140,7 +156,25 @@ public class Lucene
         for (int rank = 0; rank < hits.length; ++rank) 
         {
             Document hitDoc = indexSearcher.doc(hits[rank].doc);
-            results.add( new Result( rank+1, hitDoc.get("title"), hitDoc.get("url"), "SNIPPET", 0 ) );
+            
+            // get document number from hashmap
+            int pos = docMap.get(hitDoc.get("url"));
+
+            //grab document associated with position
+            String docIFile = html_location + "/" + pos + ".html";	    
+            File docInput = new File(docIFile);
+            org.jsoup.nodes.Document document = Jsoup.parse(docInput, "UTF-8");
+
+            // make snippet 
+            String snip1 = "No Snippet :(";
+            List<String> snipLst = snipper.snip(input,document);
+
+            if(snipLst.size() > 0)
+            {
+                snip1 = snipLst.get(0);
+            }
+
+            results.add( new Result( rank+1, hitDoc.get("title"), hitDoc.get("url"), snip1, 0 ) );
             // System.out.println(indexSearcher.explain(query, hits[rank].doc));
         }
         indexReader.close();
