@@ -137,7 +137,7 @@ public class Lucene
         for (int rank = 0; rank < hits.length; ++rank) 
         {
             Document hitDoc = indexSearcher.doc(hits[rank].doc);
-            results.add( new Result( rank+1, hitDoc.get("title"), hitDoc.get("url"), "SNIPPET" /*hitDoc.get("content")*/, 0 ) ); // need to trim snippet out of content
+            results.add( new Result( rank+1, hitDoc.get("title"), hitDoc.get("url"), "SNIPPET", 0 ) );
             // System.out.println(indexSearcher.explain(query, hits[rank].doc));
         }
         indexReader.close();

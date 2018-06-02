@@ -95,9 +95,6 @@ public class snipper
         {
             if(s.equals(str))
             {
-                // System.out.println("key: "+"--"+s+"--");
-                // System.out.println("qur: "+"--"+str+"--");
-                // System.out.println("true\n");
                 return true;
             }
         }
@@ -114,8 +111,14 @@ public class snipper
 
     public static void test()
     {
-        List<String> key_words = Arrays.asList("professors");
-        List<String> snippets = snip(key_words);
+        // for test purposes now
+        // will have to get key words as user input
+        String ary[] = new String[] 
+        { 
+            "professors",
+        };
+        List<String> keywords = Arrays.asList(ary);
+        List<String> snippets = snip(keywords);
         printer(snippets);
     }
 }
