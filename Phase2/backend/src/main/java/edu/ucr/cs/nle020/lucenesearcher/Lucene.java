@@ -65,10 +65,10 @@ public class Lucene
 	        	org.apache.lucene.document.Document doc = new Document();
 	        	
 	        	//attributes to store about each feature
-	        	doc.add(new TextField("url",     page.url,     Field.Store.YES));
-	            doc.add(new TextField("title",   page.title,   Field.Store.YES));
-                doc.add(new TextField("content", page.content, Field.Store.YES));
-                doc.add(new TextField("rank",    page.rank.toString(),    Field.Store.YES));
+	        	doc.add(new TextField("url",     page.url,             Field.Store.YES));
+	            doc.add(new TextField("title",   page.title,           Field.Store.YES));
+                doc.add(new TextField("content", page.content,         Field.Store.YES));
+                doc.add(new TextField("rank",    page.rank.toString(), Field.Store.YES));
 	            
 	            //add document to index
 	            indexWriter.addDocument(doc);
@@ -83,6 +83,7 @@ public class Lucene
 			System.out.println(e.getMessage());
 		} 
     }
+    //-------------------------------------------------------------------------
 
     public static List<Result> search(String input) 
         throws IOException, ParseException 
@@ -112,16 +113,18 @@ public class Lucene
         boosts.put(fields[2], 1.0f); // content
         
         MultiFieldQueryParser parser = new MultiFieldQueryParser(fields, analyzer, boosts);
-                
+             
+        Query query = parser.parse(input);
+
         // Query query = parser.parse("UCR");
-        Query query = parser.parse("UCR discussion");
+        // Query query = parser.parse("UCR discussion");
         
         /* parser for if want to specify fields and do fancy stuff */
         // QueryParser parser = new QueryParser("content", analyzer);
         // Query query = parser.parse("(title:ucr)^1.0 (content:ucr)^0.5");
         
         //Don't know what this outputs, but it'll be more than query string
-        System.out.println(query.toString());
+        // System.out.println(query.toString());
         
         //Number of websites to return
         int topHitCount = 10;
@@ -144,4 +147,5 @@ public class Lucene
         a_directory.close();
         return results;
     }
+    //-------------------------------------------------------------------------
 }
