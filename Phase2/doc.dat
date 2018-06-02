@@ -1,0 +1,52 @@
+help doc
+-------------------
+ANGULAR JS
+
+apt-get install:
+npm,
+ng-common,
+nodejs-legacy
+
+npm install:
+angular,
+-g @angular/cli,
+nodejs
+
+open up angular webpage
+ng serve --open
+
+http://localhost:8080/api/articles
+http://localhost:8080/api/articles?query=blahblah
+
+----------------------------------
+
+START UP
+
+* cd into Phase2/backend
+* mvn package && java -jar target/lucene-searcher-0.0.1-SNAPSHOT.jar
+* curl http://localhost:8080/search?query=STRING
+
+----------------------
+
+weird error
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The Tomcat connector configured to listen on port 8080 failed to start. The port may already be in use or the connector may be misconfigured.
+
+Action:
+
+Verify the connector's configuration, identify and stop any process that's listening on port 8080, or configure this application to listen on another port.
+
+-----------------------
+
+
+netstat -tulpn
+
+look for process attached to port 8080
+
+kill -9 PID

@@ -9,21 +9,13 @@ import org.jsoup.Jsoup;
 // import org.jsoup.nodes.Document;
 // import org.jsoup.nodes.Element;
 // import org.jsoup.select.Elements;
+//import org.springframework.core.annotation.Order;
+
+// util
+import java.util.Arrays;
 
 public class soup
 {
-/*	// test harness
-	public static void main(String[] args) 
-	{
-		String location = "C:\Users\duluoz\Documents\Eclipse\part2\src\html_files"; // local html
-		List<Page> ps = processFiles(location);
-		for(Page p : ps)
-		{
-			p.pagePrint();
-		}
-	}
-	//-------------------------------------------
-*/
 	public static List<Page> processFiles(String folder)
 	{
 		List<org.jsoup.nodes.Document> docs = new ArrayList<org.jsoup.nodes.Document>();
@@ -33,7 +25,16 @@ public class soup
 		{
 			File directory = new File(folder);
 			File[] contents = directory.listFiles();
+
+			//files not stroed in consecutive numeric Order
+			// sort files
+			Arrays.sort(contents);
 			
+			/*for(int i = 0; i < contents.length; i++)
+			{
+				System.out.println(contents[i]);
+			}*/
+
 			// parse raw html to jsoup documents
 			for (File f : contents) 
 			{ 
@@ -61,11 +62,18 @@ public class soup
 			
 			// remove index numbers, keep only urls
 			// urls are only in the odd positions of array
-			for( int i = 1; i < chop.length; i+=2 )
+			for(int i = 1; i < chop.length; i+=2)
 			{
 				urls.add(chop[i]);
 			}
-			
+
+			/*for( int i = 1; i < urls.size();  i++) // test
+			{
+				System.out.println(urls.get(i));
+			}*/
+			//System.out.printf("docs: %d\n",docs.size());
+			//System.out.printf("urls: %d\n",urls.size());
+
 			// check size must be the same
 			if(docs.size() != urls.size())
 			{
@@ -74,7 +82,7 @@ public class soup
 			
 			for( int i = 0; i < docs.size(); i++)
 			{
-				pages.add( new Page( urls.get(i), docs.get(i).title(), docs.get(i).text() ) );
+				pages.add( new Page( urls.get(i), docs.get(i).title(), docs.get(i).text(), 0.0f /*rank*/ ) );
 			}
 		}
 		catch (Exception | Error e)

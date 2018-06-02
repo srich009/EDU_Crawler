@@ -32,9 +32,10 @@ import java.nio.file.Paths;
 import java.io.IOException;
 import java.nio.file.FileSystems;
 
-public class Lucene{
-
-    public static void index() {
+public class Lucene
+{
+    public static void index() 
+    {
         try
 		{
             String html_location  = "./html"; // local html
@@ -54,23 +55,20 @@ public class Lucene{
 	        IndexWriter indexWriter = new IndexWriter(directory, config);
 	        
             //Need to parse our html files and created a real list of pages
-            System.out.println("out");
-
 	        //-------------------------------
             List<Page> pages = soup.processFiles(html_location);
-            System.out.println("out");
-
 	        //-------------------------------
 	
 	        //for each page - grab necessary attributes
-	        for (Page page: pages)
+	        for (Page page : pages)
 	        {
 	        	org.apache.lucene.document.Document doc = new Document();
 	        	
 	        	//attributes to store about each feature
-	        	doc.add(new TextField("url", page.url, Field.Store.YES));
-	            doc.add(new TextField("title", page.title, Field.Store.YES));
-	            doc.add(new TextField("content", page.content, Field.Store.YES));
+	        	doc.add(new TextField("url",     page.url,     Field.Store.YES));
+	            doc.add(new TextField("title",   page.title,   Field.Store.YES));
+                doc.add(new TextField("content", page.content, Field.Store.YES));
+                doc.add(new TextField("rank",    page.rank.toString(),    Field.Store.YES));
 	            
 	            //add document to index
 	            indexWriter.addDocument(doc);
@@ -80,12 +78,15 @@ public class Lucene{
 		}
 		catch (Exception | Error e)
 	    {
-			System.out.println("Exception | Error");
+            System.out.println("Exception | Error");
+            System.out.println("here is the error in soup.java");
 			System.out.println(e.getMessage());
 		} 
     }
 
-    public static List<Result> search(String input) throws IOException, ParseException {
+    public static List<Result> search(String input) 
+        throws IOException, ParseException 
+    {
         // Opens currently existing directory
         // should catch errors and exceptions
         
@@ -102,7 +103,7 @@ public class Lucene{
         IndexSearcher indexSearcher = new IndexSearcher(indexReader);
         Analyzer analyzer = new StandardAnalyzer();
 
-        String[] fields = {"url", "title", "content"};
+        String[] fields = {"url", "title", "content", "rank"};
         Map<String, Float> boosts = new HashMap<>();
         
         //Weight importance of different document attributes
@@ -112,8 +113,8 @@ public class Lucene{
         
         MultiFieldQueryParser parser = new MultiFieldQueryParser(fields, analyzer, boosts);
                 
-        Query query = parser.parse("UCR");
-        // Query query = parser.parse("UCR discussion");
+        // Query query = parser.parse("UCR");
+        Query query = parser.parse("UCR discussion");
         
         /* parser for if want to specify fields and do fancy stuff */
         // QueryParser parser = new QueryParser("content", analyzer);
@@ -123,7 +124,7 @@ public class Lucene{
         System.out.println(query.toString());
         
         //Number of websites to return
-        int topHitCount = 50;
+        int topHitCount = 10;
         
         //Search Index for hits that match the query most
         ScoreDoc[] hits = indexSearcher.search(query, topHitCount).scoreDocs;
@@ -133,9 +134,10 @@ public class Lucene{
         //   -Instead of outputting, should put them into JSON file
         //   -give back JSON to web server
         List<Result> results = new ArrayList<Result>(); // returning this for now - Jake
-        for (int rank = 0; rank < hits.length; ++rank) {
+        for (int rank = 0; rank < hits.length; ++rank) 
+        {
             Document hitDoc = indexSearcher.doc(hits[rank].doc);
-            results.add(new Result(rank+1, hitDoc.get("title"), hitDoc.get("content"), "", 0));
+            results.add( new Result( rank+1, hitDoc.get("title"), hitDoc.get("url"), "SNIPPET" /*hitDoc.get("content")*/, 0 ) ); // need to trim snippet out of content
             // System.out.println(indexSearcher.explain(query, hits[rank].doc));
         }
         indexReader.close();

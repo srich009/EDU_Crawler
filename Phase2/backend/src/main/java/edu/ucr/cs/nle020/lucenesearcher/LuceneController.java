@@ -13,10 +13,12 @@ import org.springframework.web.bind.annotation.*;
  * https://lucene.apache.org/core/7_3_0/core/overview-summary.html#overview.description
  */
 @RestController
-public class LuceneController {
-
+public class LuceneController 
+{
     @GetMapping("/search")
-    public List<Result> searchLucene(@RequestParam(name="query",required=false, defaultValue="") String input) throws IOException, org.apache.lucene.queryparser.classic.ParseException {
+    public List<Result> searchLucene(@RequestParam(name="query",required=false, defaultValue="") String input) 
+        throws IOException, org.apache.lucene.queryparser.classic.ParseException 
+    {
         return Lucene.search(input);
     }
 }
