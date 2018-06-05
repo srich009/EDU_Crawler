@@ -142,7 +142,8 @@ public class Lucene
 			Collections.sort(results, new ResultComp());
 		}
 
-		for (int rank = 0; rank < results.size(); ++rank) {
+        for (int rank = 0; rank < results.size(); ++rank) 
+        {
 	            //grab document associated with position
 	            String docIFile = html_location + "/" + results.get(rank).docId + ".html";	    
 	            File docInput = new File(docIFile);
@@ -152,10 +153,29 @@ public class Lucene
 	            String snip1 = "No Snippet :(";
 	            List<String> snipLst = snipper.snip(input, document);
 
+                int numSnips = 0;
 	            if(snipLst.size() > 0)
 	            {
-	                snip1 = snipLst.get(0);
-	            }
+                    if(rank < 3) 
+                    {
+                        numSnips = 5;
+                    } 
+                    else if (rank < 6) 
+                    {
+                        numSnips = 3;
+                    } else 
+                    {
+                        numSnips = 2;
+                    }
+                    
+                    snip1 = "";
+                    for (int s = 0; s < snipLst.size() && s < numSnips; s++) 
+                    {
+                        String temp = snipLst.get(s);
+                        snip1 = snip1 + temp;
+                    }
+                }
+                
 	            results.get(rank).snippet = snip1;
 		}
 

@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="fixed">
+      <img width=200px alt="Nhat Logo" src='http://www.cs.ucr.edu/~nle020/nhat-circular.png'>
+    </div>
+    <div class="flex-item">
+      <h1>{{ title }}</h1>
+      <input #searchBox id="search-box"
+        (keyup.enter)="search(searchBox.value, numResult.value)"/>
+      <button class="popup"
+        (click)="search(searchBox.value, numResult.value)" 
+        (click)="myFunction()">Search
+        <span class="popuptext" id="myPopup">Nhat</span>
+    </button>
+    <br>
+      <input type="radio" name="YesNo" (click)="setPR('false')" checked> Lucene
+      <input type="radio" name="YesNo" (click)="setPR('true')"> Lucene with PageRank
+      <br>
+      <input #numResult type="text" name="numResults" value=10>
+    </div>
+</div>
+
+<h2 *ngIf="articles">Relevant Articles:</h2>
+<ul class="articles" *ngIf="articles">
+  <li *ngFor="let article of articles"
+    (click)="onClick(article)">
+    <span class="badge">{{article.score}}</span>    
+    <span>{{article.title | uppercase}}</span>    
+    <span class ="content">{{article.snippet}}</span>  
+  </li>
+</ul>
+<h4 *ngIf="articles==false "><i>"No Results..."</i></h4>
