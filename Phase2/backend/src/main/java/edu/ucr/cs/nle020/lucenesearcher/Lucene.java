@@ -138,7 +138,7 @@ public class Lucene
         }
 
 
-		if (withPR==("Sure")) {
+		if (withPR.equals("true")) {
 			Collections.sort(results, new ResultComp());
 		}
 
