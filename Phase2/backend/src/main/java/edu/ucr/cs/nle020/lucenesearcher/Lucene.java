@@ -25,6 +25,8 @@ import java.util.HashMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Collections;
+import java.util.Comparator;
 
 //Seans imports
 import java.nio.file.Path;
@@ -40,61 +42,31 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+class ResultComp implements Comparator<Result> {
+
+	@Override
+	public int compare(Result r1, Result r2) {
+		if (r1.pageRank < r2.pageRank) {
+			return 1;
+		}
+		else if (r1.pageRank == r2.pageRank) {
+			if (r1.lucRank < r2.lucRank) {
+				return 1;
+			} else {
+				return -1;
+			}
+		}
+		else {
+			return -1;
+		}
+	}
+
+}
 
 public class Lucene
 {
-    public static void index() 
-    {
-        try
-		{
-            String html_location  = "./html"; // local html
-			String index_location = "./indx"; // local index
-			
-			//index directory path
-            Path the_path = Paths.get(index_location);
-			
-	        // To store an index on disk:
-            Directory directory = FSDirectory.open(the_path);
-	        
-	        //config details for writer
-	        Analyzer analyzer = new StandardAnalyzer();
-	        IndexWriterConfig config = new IndexWriterConfig(analyzer);
-	        
-	        //instantiate writer for creating index
-	        IndexWriter indexWriter = new IndexWriter(directory, config);
-	        
-            //Need to parse our html files and created a real list of pages
-	        //-------------------------------
-            List<Page> pages = soup.processFiles(html_location);
-	        //-------------------------------
-	
-	        //for each page - grab necessary attributes
-	        for (Page page : pages)
-	        {
-	        	org.apache.lucene.document.Document doc = new Document();
-	        	
-	        	//attributes to store about each feature
-	        	doc.add(new TextField("url",     page.url,             Field.Store.YES));
-	            doc.add(new TextField("title",   page.title,           Field.Store.YES));
-                doc.add(new TextField("content", page.content,         Field.Store.YES));
-                doc.add(new TextField("rank",    page.rank.toString(), Field.Store.YES));
-	            
-	            //add document to index
-	            indexWriter.addDocument(doc);
-	        }
-	 
-	        indexWriter.close();
-		}
-		catch (Exception | Error e)
-	    {
-            System.out.println("Exception | Error");
-            System.out.println("here is the error in soup.java");
-			System.out.println(e.getMessage());
-		} 
-    }
-    //-------------------------------------------------------------------------
-
-    public static List<Result> search(String input) 
+    
+    public static List<Result> search(String input, String withPR, Integer count) 
         throws IOException, ParseException 
     {
         String idx_location = "./indx"; // local index
@@ -130,56 +102,66 @@ public class Lucene
         IndexSearcher indexSearcher = new IndexSearcher(indexReader);
         Analyzer analyzer = new StandardAnalyzer();
 
-        String[] fields = {"url", "title", "content", "rank"};
+        String[] fields = {"url", "title", "content", "pageRank"};
         Map<String, Float> boosts = new HashMap<>();
         
         //Weight importance of different document attributes
         boosts.put(fields[0], 1.0f); // url
         boosts.put(fields[1], 2.0f); // title
         boosts.put(fields[2], 1.0f); // content
+        boosts.put(fields[3], 0.0f); //value)
         
         MultiFieldQueryParser parser = new MultiFieldQueryParser(fields, analyzer, boosts);
              
         Query query = parser.parse(input);
         
         //Number of websites to return
-        int topHitCount = 10;
+        int topHitCount = count;
         
         //Search Index for hits that match the query most
         ScoreDoc[] hits = indexSearcher.search(query,topHitCount).scoreDocs;
 
         // Iterate through the results: 
         //   -Assuming they are sorted by rank high to low already
-        //   -Instead of outputting, should put them into JSON file
-        //   -give back JSON to web server
-        List<Result> results = new ArrayList<Result>(); // returning this for now - Jake
-        for (int rank = 0; rank < hits.length; ++rank) 
+        List<Result> results = new ArrayList<Result>();
+        for (int lucRank = 0; lucRank < hits.length; ++lucRank) 
         {
-            Document hitDoc = indexSearcher.doc(hits[rank].doc);
+            Document hitDoc = indexSearcher.doc(hits[lucRank].doc);
             
             // get document number from hashmap
-            int pos = docMap.get(hitDoc.get("url"));
+            int docID = docMap.get(hitDoc.get("url"));
 
-            //grab document associated with position
-            String docIFile = html_location + "/" + pos + ".html";	    
-            File docInput = new File(docIFile);
-            org.jsoup.nodes.Document document = Jsoup.parse(docInput, "UTF-8");
-
-            // make snippet 
-            String snip1 = "No Snippet :(";
-            List<String> snipLst = snipper.snip(input,document);
-
-            if(snipLst.size() > 0)
-            {
-                snip1 = snipLst.get(0);
-            }
-
-            results.add( new Result( rank+1, hitDoc.get("title"), hitDoc.get("url"), snip1, 0 ) );
-            // System.out.println(indexSearcher.explain(query, hits[rank].doc));
+            results.add( new Result( docID, lucRank+1, Float.parseFloat(hitDoc.get("pageRank")), 
+            						hitDoc.get("title"), hitDoc.get("url"), 
+            						Float.parseFloat(hitDoc.get("score")) ) );
+            
         }
-        indexReader.close();
-        a_directory.close();
-        return results;
+
+
+		if (withPR==("Sure")) {
+			Collections.sort(results, new ResultComp());
+		}
+
+		for (int rank = 0; rank < results.size(); ++rank) {
+	            //grab document associated with position
+	            String docIFile = html_location + "/" + results.get(rank).docId + ".html";	    
+	            File docInput = new File(docIFile);
+	            org.jsoup.nodes.Document document = Jsoup.parse(docInput, "UTF-8");
+
+	            // make snippet 
+	            String snip1 = "No Snippet :(";
+	            List<String> snipLst = snipper.snip(input, document);
+
+	            if(snipLst.size() > 0)
+	            {
+	                snip1 = snipLst.get(0);
+	            }
+	            results.get(rank).snippet = snip1;
+		}
+
+	    indexReader.close();
+	    a_directory.close();
+	    return results;
     }
     //-------------------------------------------------------------------------
 }
