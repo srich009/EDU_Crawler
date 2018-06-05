@@ -2,23 +2,26 @@ package edu.ucr.cs.nle020.lucenesearcher;
 
 public class Result 
 {
-    public int id;
+    public int docId;
+    public int lucRank;
+    public float pageRank;
     public String title;
     public String url;
     public String snippet;
-    public double score;
+    public float score;
 
     public Result(){}
 
-    public Result(int id, String title, String url, String snippet, double score) 
+    public Result(int docId, int lucr, float pr, String title, String url, float score) 
     {
-        this.id = id;
+        this.docId = docId;
+        this.lucRank = lucr;
+        this.pageRank = pr;
         this.title = title;
         this.url = url;
-        this.snippet = snippet;
         this.score = score;
     }
-
+	/*
     public int getId() {
         return id;
     }
@@ -58,6 +61,7 @@ public class Result
     public void setScore(Double score) {
         this.score = score;
     }
+	*/
 
     @Override
     public String toString() {
