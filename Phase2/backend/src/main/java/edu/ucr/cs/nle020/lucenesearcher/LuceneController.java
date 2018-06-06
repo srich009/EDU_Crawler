@@ -13,12 +13,15 @@ import org.springframework.web.bind.annotation.*;
  * https://lucene.apache.org/core/7_3_0/core/overview-summary.html#overview.description
  */
 @RestController
+@CrossOrigin("*")
 public class LuceneController 
 {
     @GetMapping("/search")
-    public List<Result> searchLucene(@RequestParam(name="query",required=false, defaultValue="") String input) 
+    public List<Result> searchLucene(@RequestParam(name="query",required=false, defaultValue="ucr") String input,
+    @RequestParam(name="withPR",required=false, defaultValue="") String withPR,
+    @RequestParam(name="count",required=false, defaultValue="") Integer count) 
         throws IOException, org.apache.lucene.queryparser.classic.ParseException 
     {
-        return Lucene.search(input);
+        return Lucene.search(input, withPR, count);
     }
 }
