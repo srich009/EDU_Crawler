@@ -1,374 +1,509 @@
 <!doctype html>
-<html class="no-js desktop" lang="en-US">
+<!--[if lt IE 7 ]> <html class="no-js ie6 lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="no-js ie7 lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="no-js ie8 lt-ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html class="no-js" lang="en">
+ <!--<![endif]-->
+ <!--
+  _                     _ _     _
+ | |                   | (_)   | |
+ | |     ___   ___ __ _| |_ ___| |_
+ | |    / _ \ / __/ _` | | / __| __|
+ | |___| (_) | (_| (_| | | \__ \ |_
+ |______\___/ \___\__,_|_|_|___/\__|
+
+The event marketing calendar.
+
+-->
  <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"b4c5954d77","applicationID":"2296387","transactionName":"IVhWEBRdWF1XEExXFg1CSEsVWltG","queueTime":1,"applicationTime":215,"agent":""}</script> 
+  <script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VwMCV15bGwECXVdRDwY="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(12),c={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,o.indexOf("dev")!==-1&&(c.dev=!0),o.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&i.on("internal-error",function(t){r(t.stack)}),c.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,c){try{p?p-=1:o(c||new UncaughtException(t,e,n),!0)}catch(f){try{i("ierr",[f,s.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t,e){var n=e?null:s.now();i("err",[t,n])}var i=t("handle"),a=t(13),c=t("ee"),s=t("loader"),f=t("gos"),u=window.onerror,d=!1,l="nr@seenError",p=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(5),t(4),"addEventListener"in window&&t(3),s.xhrWrappable&&t(6),d=!0)}c.on("fn-start",function(t,e,n){d&&(p+=1)}),c.on("fn-err",function(t,e,n){d&&!n[l]&&(f(n,l,function(){return!0}),this.thrown=!0,o(n))}),c.on("fn-end",function(){d&&!this.thrown&&p>0&&(p-=1)}),c.on("internal-error",function(t){i("ierr",[t,s.now(),!0])})},{}],3:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){c.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),c=t(15)(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],4:[function(t,e,n){var r=t("ee").get("raf"),o=t(15)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],5:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(15)(i),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(s+u,r),i.on(c+u,o)},{}],6:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,w,"fn-",c)}function i(t){g.push(t),h&&(b?b.then(a):v?v(a):(E=-E,O.data=E))}function a(){for(var t=0;t<g.length;t++)r([],g[t]);g.length&&(g=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(3);var f=t("ee"),u=f.get("xhr"),d=t(15)(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,v=l.SI,y="readystatechange",w=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],g=[];e.exports=u;var x=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(y,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(p,x),x.prototype=p.prototype,d.inPlace(x.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var b=m&&m.resolve();if(!v&&!m){var E=1,O=document.createTextNode(E);new h(a).observe(O,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===y||a()})},{}],7:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=a.now()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var s=t.getResponseHeader("X-NewRelic-App-Data");s&&(e.cat=s.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return h(r)}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(8),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(11),h=t(10),m=window.XMLHttpRequest;a.features.xhr=!0,t(6),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=h(r);i&&(n.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var c=0;c<d;c++)e.addEventListener(u[c],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,e],e)})}},{}],8:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],9:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[f.now()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(12),c=t(13),s=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,e){u[e]=o(l+e,!0,"api")}),u.addPageAction=o(l+"addPageAction",!0),u.setCurrentRouteName=o(l+"routeName",!0),e.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(p+"tracer",[f.now(),t,n],r),function(){if(s.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return e.apply(this,arguments)}catch(t){throw s.emit("fn-err",[arguments,this,t],n),t}finally{s.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){h[e]=o(p+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now()])}},{}],10:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],11:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],12:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],13:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],14:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],15:[function(t,e,n){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(13),a="nr@original",c=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t,e){function n(t,e,n,o){function nrWrapper(){var r,a,c,s;try{a=this,r=i(arguments),c="function"==typeof n?n(r,a):n||{}}catch(f){l([f,"",[r,a,o],c])}u(e+"start",[r,a,o],c);try{return s=t.apply(a,r)}catch(d){throw u(e+"err",[r,a,d],c),d}finally{u(e+"end",[r,a,s],c)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,e,o,i){o||(o="");var a,c,s,f="-"===o.charAt(0);for(s=0;s<e.length;s++)c=e[s],a=t[c],r(a)||(t[c]=n(a,f?c+o:o,i,c))}function u(n,r,o){if(!s||e){var i=s;s=!0;try{t.emit(n,r,o,e)}catch(a){l([a,n,r,o])}s=i}}function d(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){l([r])}for(var o in t)c.call(t,o)&&(e[o]=t[o]);return e}function l(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),n.inPlace=f,n.flag=a,n}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,c,i):i()}function n(n,r,o,i){if(!l.aborted||i){t&&t(n,r,o);for(var a=e(o),c=h(n),s=c.length,f=0;f<s;f++)c[f].apply(a,r);var d=u[w[n]];return d&&d.push([g,n,r,a]),a}}function p(t,e){y[t]=h(t).concat(e)}function h(t){return y[t]||[]}function m(t){return d[t]=d[t]||o(n)}function v(t,e){f(t,function(t,n){e=e||"feature",w[n]=e,e in u||(u[e]=[])})}var y={},w={},g={on:p,emit:n,get:m,listeners:h,context:e,buffer:v,abort:a,aborted:!1};return g}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var c="nr@context",s=t("gos"),f=t(12),u={},d={},l=e.exports=o();l.backlog=u},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!b++){var t=x.info=NREUM.info,e=l.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(w,function(e,n){t[e]||(t[e]=n)}),s("mark",["onload",a()+x.offset],null,"api");var n=l.createElement("script");n.src="https://"+t.agent,e.parentNode.insertBefore(n,e)}}function o(){"complete"===l.readyState&&i()}function i(){s("mark",["domContent",a()+x.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(c=Math.max((new Date).getTime(),c))-x.offset}var c=(new Date).getTime(),s=t("handle"),f=t(12),u=t("ee"),d=window,l=d.document,p="addEventListener",h="attachEvent",m=d.XMLHttpRequest,v=m&&m.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:m,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var y=""+location,w={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},g=m&&v&&v[p]&&!/CriOS/.test(navigator.userAgent),x=e.exports={offset:c,now:a,origin:y,features:{},xhrWrappable:g};t(9),l[p]?(l[p]("DOMContentLoaded",i,!1),d[p]("load",r,!1)):(l[h]("onreadystatechange",o),d[h]("onload",r)),s("mark",["firstbyte",c],null,"api");var b=0,E=t(14)},{}]},{},["loader",2,7]);</script> 
+  <title>UCR ARTSblock - UC Riverside</title> 
+  <meta name="description" content=", powered by Localist"> 
+  <!-- End LOCALIST code --> 
   <meta charset="utf-8"> 
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-  <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0"> 
-  <title>Admission | UCLA</title> 
-  <meta name="description" content="UCLA advances knowledge, addresses pressing societal needs and creates a university enriched by diverse perspectives where all individuals can flourish."> 
-  <meta name="keywords" content="UCLA, University of California Los Angeles, Bruins, equity, diversity, inclusion, arts, art, college, institution, architecture, engineering, hyperloop, romela, brain, philanthropy, STEM, anderson, law, magazine, alumni, community, optimist, optimists, optimism"> 
-  <meta name="google-site-verification" content="QS5gayPg38zC46YsAx4a9c3v4qTBkn-R69g90pQgpB0"> 
-  <meta property="twitter:account_id" content="18918483"> 
-  <link rel="shortcut icon" href="/img/favicon.ico"> 
-  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png"> 
-  <link rel="stylesheet" href="/css/main.css"> 
-  <link rel="stylesheet" href="/css/responsive.css"> 
-  <link rel="stylesheet" href="/css/print.css" media="print"> 
-  <!--LET THERE BE TAKE OVER CSS--> 
-  <script src="/js/modernizr.js"></script> 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> 
-  <script src="/js/analytics.js"></script> 
-  <!--[if lte IE 6]><script src="/js/ie6/ie6-upgrade.min.js"></script><![endif]--> 
-  <script type="application/ld+json">
-	{ "@context": "http://schema.org", "@type": "Organization", "url": "http://www.ucla.edu/", "logo": "http://www.ucla.edu/img/ucla-logotype-google.jpg" }
-	</script> 
-  <!--IMAGE CACHE--> 
- </head>
- <body>
-  <a id="feedback" href="https://www.research.net/r/GatewayWebsiteFeedback"></a>  
-  <div id="ie6Warning"></div> 
-  <!-- Page Wrap --> 
-  <div id="page-wrap"> 
-   <!-- Skip Nav --> 
-   <div id="skip-nav"> 
-    <a href="#audience-nav">Skip to Navigation</a> 
-    <a href="#searchbox">Skip to Search</a> 
-    <a href="#container">Skip to Main Content</a> 
-    <a href="#footer">Skip to Footer Links</a> 
-   </div> 
-   <!-- End Skip Nav --> 
-   <!-- Top Bar --> 
-   <div id="top-bar"> 
-    <div id="top-bar-content"> 
-     <div id="weather"></div> 
-     <!-- Audience Nav --> 
-     <div id="top-bar-nav" role="navigation">
-      <ul id="audience-nav"> 
-       <li><a href="/students/prospective-students">Prospective Students</a></li>
-       <li><a href="/students/current-students">Current Students</a></li>
-       <li><a href="/faculty">Faculty</a></li>
-       <li><a href="https://campusservices.ucla.edu/">Staff</a></li>
-       <li><a href="/alumni">Alumni</a></li>
-       <li><a href="/parents-and-families">Parents &amp; Families</a></li> 
-      </ul>
+  <meta name="MobileOptimized" content="width"> 
+  <meta name="HandheldFriendly" content="true"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <!-- Absolute path for css files --> 
+  <!--<link rel="stylesheet" href="css/default.min_.css" /> --> 
+  <link rel="stylesheet" href="//assets.ucr.edu/localist/css/default-silkwrapper.min.css"> 
+  <!--<link rel="stylesheet" href="http://localist.dev-ucr.acsitefactory.com/sites/g/files/rcwecm5391dev/files/2018-02/default-silkwrapper.min__22.css" />--> 
+  <!-- Start LOCALIST code --> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link href="https://events.ucr.edu/platform/stylesheet/224/694/1527876529.css" rel="stylesheet" type="text/css"> 
+  <script type="text/javascript">
+//<![CDATA[
+var LOCALIST_SETTINGS = {"theme_base":"base","icheck":true,"photo_aspect_ratio":1.0};
+//]]>
+</script>
+  <script src="https://d3e1o4bcbhmj8g.cloudfront.net/assets/application-c1b66f17bd029c87f86e31afde2da8cd.js" type="text/javascript"></script> 
+  <!-- Facebook "Like" Button Meta tags --> 
+  <meta property="og:title" content="UCR ARTSblock"> 
+  <meta property="og:site_name" content="UC Riverside"> 
+  <meta property="og:image" content="https://d3e1o4bcbhmj8g.cloudfront.net/photos/610926/big_square/1493179d0c0edf57983b58effe2cfb5120f11b3d.jpg"> 
+  <meta property="og:description" content=""> 
+  <meta property="og:url" content="https://events.ucr.edu/department/ucr_artsblock"> 
+ </head> 
+ <body> 
+  <!-- End LOCALIST code --> 
+  <header> 
+   <div class="grid-container full"> 
+    <div class="grid-x"> 
+     <div class="cell small-order-2 medium-order-1 audience-container"> 
+      <div class="grid-container"> 
+       <div class="grid-x align-middle"> 
+        <div class="cell auto" id="block-organizationname" data-block-plugin-id="ucr_global_organization_name"> 
+         <p class="parent-org-title"> <a href="https://ucr.edu">University of California, Riverside</a> </p> 
+        </div> 
+        <div class="cell medium-shrink show-for-medium"> 
+         <section class="google-search" role="search"> 
+          <form id="audience-search-form" action="https://www.ucr.edu/search.php"> 
+           <label class="show-for-sr" for="audience-search">Search for:</label> 
+           <input type="text" maxlength="255" id="audience-search" name="q" value="" placeholder=" "> 
+           <button type="submit" class="button show-for-small-only" value="">Search</button> 
+          </form> 
+         </section> 
+        </div> 
+        <div class="cell shrink hide-for-medium" data-responsive-toggle="main-menu-container" data-hide-for="medium"> 
+         <!--<button class="mdi mdi-menu button mobile-menu-expander" type="button" data-toggle="main-menu-container">
+                            </button>--> 
+        </div> 
+       </div> 
+      </div> 
      </div> 
-     <!-- End Audience Nav --> 
+     <div class="cell small-order-1 medium-order-2 masthead-container"> 
+      <div class="grid-container"> 
+       <div class="grid-x align-middle"> 
+        <div class="cell shrink"> 
+         <a class="masthead-logo" href="/"> <span class="show-for-sr">UC Riverside</span> </a> 
+        </div> 
+        <div class="cell auto"> 
+         <h1 class="masthead-title"> <a href="/"> Calendar of Events </a> </h1> 
+        </div> 
+        <div class="cell medium-shrink show-for-medium"> 
+         <p class="slogan"></p> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+     <!--<div class="cell small-order-3 medium-order-3 main-nav-bar">
+                <div class="grid-container" id="main-menu-container" data-animate="fade-in fade-out">
+                    <div class="grid-x">
+                        <div class="cell hide-for-medium">
+
+
+                            <section class="google-search" role="search">
+                                <form id="audience-search-form" action="https://www.ucr.edu/search.php">
+                                    <label class="show-for-sr" for="audience-search">Search for:</label>
+                                    <input type="text" maxlength="255" id="audience-search" name="q" value="" placeholder=" " />
+                                    <button type="submit" class="button show-for-small-only" value="">Search</button>
+                                </form>
+                            </section>
+
+                        </div>
+                    </div>
+                </div>
+            </div>--> 
     </div> 
    </div> 
-   <!-- End Top Bar --> 
-   <span id="print-logo"><img src="/img/logo-print.gif" alt="UCLA logo"></span> 
-   <!-- Header --> 
-   <div id="header" role="banner"> 
-    <!-- Header Content --> 
-    <div id="header-content"> 
-     <!-- UCLA --> 
-     <h1 id="logo"><a href="/">UCLA</a></h1> 
-     <!-- Responsive Buttons --> 
-     <div id="mobile-buttons" role="navigation"> 
-      <a href="http://m.ucla.edu/?utm_source=ucla.edu%2Bresponsive%2Bhomepage&amp;utm_medium=Apps%2Bbutton&amp;utm_campaign=UCLA%2Bmobile%2Breferral%2Bfrom%2Bgateway" id="mobile">Apps<span></span></a> 
-      <a href="#" id="nav-control">Menu<span></span></a> 
-     </div> 
-     <div id="header-nav"> 
-      <!-- Search Box --> 
-      <div id="searchbox"> 
-       <form id="searchform" name="searchform" role="search" method="get" action="#"> 
-        <script>
-			var adaSearchFix = function() {
-				$('img.gsc-branding-img').attr("alt", "Google Custom Search Branding");
-				$('input.gsc-search-button').attr('alt', "Google Custom Search Button");
-				$( '<label for="gsc-i-id1" class="ada-hidden">Search ucla.edu</label>' ).insertBefore( "input.gsc-input" );
-			};
-			window.__gcse = {
-				callback: adaSearchFix
-			};
-			(function() {
-   			var cx = '012032391866852527378:_8-ptelfefk';
-   			var gcse = document.createElement('script');
-				gcse.type = 'text/javascript';
-				gcse.async = true;
-				gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-				var s = document.getElementsByTagName('script')[0];
-				s.parentNode.insertBefore(gcse, s);
-			})();
-		</script> 
-        <gcse:searchbox-only enableautocomplete="false" resultsurl="http://www.ucla.edu/search"></gcse:searchbox-only> 
-       </form> 
-      </div> 
-      <!-- Main Nav --> 
-      <div id="main-nav-wrapper" role="navigation">
-       <ul id="main-nav">
-        <li><a href="/about" class="dropdown-link">ABOUT</a>
-         <ul class="dropdown-wrapper" role="region" aria-live="polite"> 
-          <li>
-           <ul class="nav-column">
-            <li><a href="/about/">Overview</a></li>
-            <li><a href="/about/chancellor">Chancellor</a></li>
-            <li><a href="/about/leadership">Leadership</a></li>
-           </ul>
-           <ul class="nav-column">
-            <li><a href="/about/mission-and-values">Mission &amp; Values</a></li>
-            <li><a href="/about/facts-and-figures">Facts &amp; Figures</a></li>
-            <li><a href="/about/awards-and-honors">Awards &amp; Honors</a></li>
-           </ul>
-           <ul class="nav-column">
-            <li><a href="/about/history">History</a></li>
-            <li><a href="/about/impact-and-accomplishments">Impact &amp; Accomplishments</a></li>
-            <li><a href="/about/iconic-and-influential-alumni">Iconic &amp; Influential Alumni</a></li>
-           </ul>
-           <ul class="nav-column">
-            <li><a href="/about/rankings">Rankings</a></li>
-            <li><a href="/about/centers-and-institutes">Centers &amp; Institutes</a></li>
-            <li><a href="/about/careers">Careers</a></li>
-           </ul><a href="" class="close">Close (X)</a> </li> 
-         </ul> </li> 
-        <li><a href="/academics" class="dropdown-link">ACADEMICS</a>
-         <ul class="dropdown-wrapper" role="region" aria-live="polite"> 
-          <li>
-           <ul class="nav-column">
-            <li><a href="/academics/">Overview</a></li>
-            <li><a href="/academics/undergraduate-education">Undergraduate Education</a></li>
-            <li><a href="/academics/graduate-and-professional-education">Graduate &amp; Professional Education</a></li>
-           </ul>
-           <ul class="nav-column">
-            <li><a href="/academics/continuing-education">Continuing Education</a></li>
-            <li><a href="/academics/academic-opportunities">Academic Opportunities</a></li>
-            <li><a href="/academics/faculty">Faculty</a></li>
-           </ul>
-           <ul class="nav-column">
-            <li><a href="/academics/departments-and-programs">Departments &amp; Programs</a></li>
-            <li><a href="/academics/libraries">Libraries</a></li>
-           </ul><a href="" class="close">Close (X)</a> </li> 
-         </ul> </li> 
-        <li><a href="/admission" class="active dropdown-link">ADMISSION</a>
-         <ul class="dropdown-wrapper" role="region" aria-live="polite"> 
-          <li>
-           <ul class="nav-column">
-            <li><a href="/admission/">Admission Overview</a></li>
-            <li><a href="/admission/undergraduate-admission">Undergraduate Admission</a></li>
-            <li><a href="/admission/graduate-admission">Graduate Admission</a></li>
-           </ul>
-           <ul class="nav-column">
-            <li><a href="/admission/extension-enrollment">Extension Enrollment</a></li>
-            <li><a href="/admission/international-admission">International Admission</a></li>
-            <li><a href="/admission/transfer-admission">Transfer Admission</a></li>
-           </ul>
-           <ul class="nav-column">
-            <li><a href="/admission/affordability">Affordability &amp; Financial Aid</a></li>
-           </ul><a href="" class="close">Close (X)</a> </li> 
-         </ul> </li> 
-        <li><a href="/ucla-in-the-community" class="dropdown-link">UCLA IN THE COMMUNITY</a>
-         <ul class="dropdown-wrapper" role="region" aria-live="polite"> 
-          <li>
-           <ul class="nav-column">
-            <li><a href="/ucla-in-the-community/">Overview</a></li>
-            <li><a href="/ucla-in-the-community/community-programs-and-partnerships">Community Programs &amp; Partnerships</a></li>
-            <li><a href="/ucla-in-the-community/k-12-education-programs-and-resources">K-12 Education Programs &amp; Resources</a></li>
-           </ul>
-           <ul class="nav-column">
-            <li><a href="/ucla-in-the-community/academic-programs">Academic Programs</a></li>
-            <li><a href="/ucla-in-the-community/health-care">Health Care</a></li>
-            <li><a href="/ucla-in-the-community/arts-and-culture">Arts &amp; Culture</a></li>
-           </ul><a href="" class="close">Close (X)</a> </li> 
-         </ul> </li> 
-        <li><a href="/the-arts" class="dropdown-link">THE ARTS</a>
-         <ul class="dropdown-wrapper" role="region" aria-live="polite"> 
-          <li>
-           <ul class="nav-column">
-            <li><a href="/the-arts/">Arts Overview</a></li>
-            <li><a href="/the-arts/school-of-the-arts-and-architecture">School of the Arts and Architecture</a></li>
-            <li><a href="/the-arts/school-of-music">Herb Alpert School of Music</a></li>
-           </ul>
-           <ul class="nav-column">
-            <li><a href="/the-arts/school-of-theater-film-and-television">School of Theater, Film and Television</a></li>
-            <li><a href="/the-arts/performing-arts">Performing Arts</a></li>
-            <li><a href="/the-arts/museums">Museums</a></li>
-           </ul>
-           <ul class="nav-column">
-            <li><a href="/the-arts/arts-in-the-community">Arts In The Community</a></li>
-           </ul><a href="" class="close">Close (X)</a> </li> 
-         </ul> </li> 
-        <li><a href="/campus-life" class="dropdown-link">CAMPUS LIFE</a>
-         <ul class="dropdown-wrapper" role="region" aria-live="polite"> 
-          <li>
-           <ul class="nav-column">
-            <li><a href="/campus-life/">Overview</a></li>
-            <li><a href="/campus-life/values">Values</a></li>
-            <li><a href="/campus-life/housing-and-dining">Housing &amp; Dining</a></li>
-           </ul>
-           <ul class="nav-column">
-            <li><a href="/campus-life/la-lifestyle">LA Lifestyle</a></li>
-            <li><a href="/campus-life/health-and-safety">Health &amp; Safety</a></li>
-            <li><a href="/campus-life/clubs-organizations-and-recreation">Clubs, Organizations &amp; Recreation</a></li>
-           </ul>
-           <ul class="nav-column">
-            <li><a href="/campus-life/student-support">Student Support</a></li>
-           </ul><a href="" class="close">Close (X)</a> </li> 
-         </ul> </li> 
-        <li><a href="/health-system" class="dropdown-link">HEALTH SYSTEM</a>
-         <ul class="dropdown-wrapper" role="region" aria-live="polite"> 
-          <li>
-           <ul class="nav-column">
-            <li><a href="/health-system/">Overview</a></li>
-            <li><a href="/health-system/for-patients">For Patients</a></li>
-            <li><a href="/health-system/for-healthcare-professionals">For Healthcare Professionals</a></li>
-           </ul>
-           <ul class="nav-column">
-            <li><a href="/health-system/education">Education</a></li>
-            <li><a href="/health-system/continuing-education">Continuing Education</a></li>
-            <li><a href="/health-system/giving-back-to-ucla">Giving Back to UCLA</a></li>
-           </ul><a href="" class="close">Close (X)</a> </li> 
-         </ul> </li> 
-        <li><a href="/research" class="dropdown-link">RESEARCH</a>
-         <ul class="dropdown-wrapper" role="region" aria-live="polite"> 
-          <li>
-           <ul class="nav-column">
-            <li><a href="/research/">Overview</a></li>
-            <li><a href="/research/research-across-campus">Research Across Campus</a></li>
-            <li><a href="/research/undergraduate-research">Undergraduate Research</a></li>
-           </ul>
-           <ul class="nav-column">
-            <li><a href="/research/graduate-research">Graduate Research</a></li>
-            <li><a href="/research/entrepreneurship">Research and Entrepreneurship</a></li>
-            <li><a href="/research/libraries">Libraries</a></li>
-           </ul>
-           <ul class="nav-column">
-            <li><a href="/research/administration-overview">Administration Overview</a></li>
-           </ul><a href="" class="close">Close (X)</a> </li> 
-         </ul> </li> 
-        <li><a href="/athletics">ATHLETICS</a></li> 
-       </ul>
-       <div id="dropdown-spacer"></div>
-      </div> 
-      <!-- Callout Nav --> 
-      <ul id="callout-nav"> 
-       <li><a href="/visit">Visit</a></li> 
-       <li><a href="/apply">Apply</a></li> 
-       <li><a href="http://giveto.ucla.edu/?utm_campaign=UCLA-Gateway&amp;utm_source=Gateway-Header&amp;utm_medium=website&amp;utm_content=Give+Now+Button">Give</a></li> 
+  </header> 
+  <!-- Start LOCALIST code --> 
+  <div class="content-wrapper"> 
+   <div class="wrapper"> 
+    <div class="grid_container"> 
+     <div id="menu"> 
+      <ul class="action_menu"> 
+       <li class="login"><a href="https://events.ucr.edu/signup?school_id=220"><i class="fa fa-user-plus"></i> Sign Up</a></li> 
+       <li class="login"><a href="https://events.ucr.edu/auth/login" rel="ibox;url=#login-lightbox"><i class="fa fa-sign-in"></i> Log In</a></li> 
       </ul> 
      </div> 
-    </div> 
-    <!-- End Header Content --> 
-   </div> 
-   <!-- End Header --> 
-   <!-- Container --> 
-   <div id="container"> 
-    <!-- Banner & Nav --> 
-    <div id="nav-image-holder"> 
-     <img src="/img/banners/admission/admission.jpg" id="hero-image" alt="Nobel laureates. Gold medalists. Rhodes Scholars. You."> 
-     <ul id="secondary-nav" role="navigation"> 
-      <li><a href="/admission/" class="active">ADMISSION OVERVIEW</a></li>
-      <li><a href="/admission/undergraduate-admission">UNDERGRADUATE ADMISSION</a></li>
-      <li><a href="/admission/graduate-admission">GRADUATE ADMISSION</a></li>
-      <li><a href="/admission/extension-enrollment">EXTENSION ENROLLMENT</a></li>
-      <li><a href="/admission/international-admission">INTERNATIONAL ADMISSION</a></li>
-      <li><a href="/admission/transfer-admission">TRANSFER ADMISSION</a></li>
-      <li><a href="/admission/affordability">AFFORDABILITY &amp; FINANCIAL AID</a></li> 
-     </ul> 
-    </div> 
-    <!-- End Banner & Nav --> 
-    <!-- Main --> 
-    <div id="main-content" role="main"> 
-     <h2 id="page-header">Admission</h2> 
-     <!-- Section --> 
-     <div class="section clear-fix"> 
-      <div class="left-column"> 
-       <span class="callout">Being accepted to UCLA is more than a badge of honor.</span> 
-       <p>It's a responsibility. As a student, you will be charged with impacting the world from the moment you step on campus. You will be given every resource and opportunity that comes with the second-highest ranked public university in the nation. You will be supported and guided by faculty who are the foremost experts in their field.</p> 
-       <p>Whether you're enrolling in our undergraduate program or pursuing a graduate degree, UCLA provides a reach and scope of academic experience that has a reputation for producing world-renowned, highly influential, game-changing graduates. They are politicians and Academy Award-winning directors. Olympic gold medalists and Nobel Prize winners. Doctors, scientists, researchers and social activists who aren't just saving lives—they're changing life as we know it.</p> 
-       <span class="callout-alt">And you could be one of them.</span> 
-       <div> 
-        <ul class="link-column bullet"> 
-         <li><a href="undergraduate-admission">Undergraduate Admission</a></li> 
-         <li><a href="graduate-admission">Graduate Admission</a></li> 
-         <li><a href="extension-enrollment">Extension Enrollment</a></li> 
-        </ul> 
-        <ul class="link-column bullet"> 
-         <li><a href="international-admission">International Admission</a></li> 
-         <li><a href="transfer-admission">Transfer Admission</a></li> 
-         <li><a href="financial-aid">Financial Aid</a></li> 
-        </ul> 
-       </div> 
-      </div> 
-      <div class="right-column"> 
-       <img src="/img/content-images/admissions.jpg" class="offset-right" alt="Students at a lecture hall"> 
-      </div> 
+     <div class="search_action"> 
+      <form method="get" id="topsearch" action="/search"> 
+       <label for="top-search" class="sr-only">Search</label> 
+       <input id="top-search" type="text" name="search" value="" placeholder="Search places, events, groups"> 
+       <button id="top-submit" type="submit"><i class="localist-icon-search-small"><span class="sr-only">Search</span></i></button> 
+      </form> 
      </div> 
-     <!-- End section --> 
-    </div> 
-    <!-- End Main --> 
-   </div> 
-   <!-- End Container --> 
-   <div id="footer-push"></div> 
-  </div> 
-  <!-- End Page Wrap --> 
-  <!-- social media --> 
-  <div id="social-media"> 
-   <a href="http://www.facebook.com/uclabruins" class="facebook"><span>UCLA on Facebook</span></a> 
-   <a href="http://twitter.com/ucla" class="twitter"><span>UCLA on Twitter</span></a> 
-   <a href="http://www.instagram.com/ucla" class="instagram"><span>UCLA on Instagram</span></a> 
-   <a href="https://www.snapchat.com/add/uclaofficial" class="snapchat"><span>UCLA on Snapchat</span></a> 
-   <a href="https://www.linkedin.com/company/ucla" class="linkedin"><span>UCLA on LinkedIn</span></a> 
-   <a href="https://www.youtube.com/user/UCLA" class="youtube"><span>UCLA on YouTube</span></a> 
-  </div> 
-  <!-- Footer --> 
-  <div id="footer" class="footer"> 
-   <div id="footer-content"> 
-    <div class="footer-wrapper"> 
-     <div class="other-links"> 
-      <div class="wrapper"> 
-       <div class="row-fluid"> 
-        <div class="span-2"> 
-         <a class="ucla-logo" href="/"> <p class="ucla-logo-white"><span class="ada-hidden">UCLA.edu Homepage</span></p> </a> 
+     <div id="breadcrumbs">
+      <ul>
+       <li class="first_crumb"><a href="/">UC Riverside</a></li>
+       <li class="breadcrumb_separator">›</li>
+       <li class=""><a href="https://events.ucr.edu/browse/departments">Departments</a></li>
+       <li class="breadcrumb_separator">›</li>
+       <li class="last_crumb">UCR ARTSblock</li>
+      </ul>
+     </div> 
+     <div class="alertmessage" style="display: none;" id="message-response"> 
+      <h3><span id="message-response-message"></span></h3> 
+     </div> 
+     <div class="grid_8 alpha"> 
+      <div class="content content-inner-pages content-place"> 
+       <div class="content-top grid_container"> 
+        <div class="box_image grid_4"> 
+         <div class="img"> 
+          <a href="https://events.ucr.edu/photo/610926" rel="ibox;url=https://d3e1o4bcbhmj8g.cloudfront.net/photos/610926/huge/1493179d0c0edf57983b58effe2cfb5120f11b3d.jpg"> <img alt="UCR ARTSblock" class="img_big_square" height="200" src="https://d3e1o4bcbhmj8g.cloudfront.net/photos/610926/big_square/1493179d0c0edf57983b58effe2cfb5120f11b3d.jpg" width="200"> </a> 
+         </div> 
         </div> 
-        <div class="span-2 footer-nav"> 
-         <em class="column-header">Information</em> 
-         <ul class="footer-nav-links"> 
-          <li> <a href="/about/careers" class="text-link"> <span>Careers</span> </a> </li> 
-          <li> <a href="http://www.directory.ucla.edu/" class="text-link"> <span>Directory</span> </a> </li> 
-          <li> <a href="/contact" class="text-link"> <span>Contact</span> </a> </li> 
-          <li> <a href="http://www.registrar.ucla.edu/Calendars/Overview" class="text-link"> <span>Academic Calendar</span> </a> </li> 
-          <li> <a href="/maps-directions-parking/" class="text-link"> <span>Maps, Directions</span> </a> </li> 
-          <li> <a href="https://main.transportation.ucla.edu/campus-parking" class="text-link"> <span>Parking &amp; Transportation</span> </a> </li> 
-          <li> <a href="https://www.emergency.ucla.edu/" class="text-link"> <span>Emergency</span> </a> </li> 
-         </ul> 
-        </div> 
-        <div class="span-2 get-involved"> 
-         <em class="column-header">Campus Values</em> 
-         <ul class="get-involved-links"> 
-          <li> <a href="https://equity.ucla.edu/" class="text-link"> <span>Equity, Diversity &amp; Inclusion</span> </a> </li> 
-          <li> <a href="/environment-and-sustainability" class="text-link"> <span>Environment &amp; Sustainability</span> </a> </li> 
-          <li> <a href="http://www.truebruin.ucla.edu/" class="text-link"> <span>True Bruin Statement</span> </a> </li> 
-          <li> <a href="http://volunteer.ucla.edu/" class="text-link"> <span>Volunteerism</span> </a> </li> 
-         </ul> 
-        </div> 
-        <div class="span-2 stay-informed"> 
-         <em class="column-header">Event Venues</em> 
-         <ul class="stay-informed-links"> 
-          <li> <a href="http://luskinconferencecenter.ucla.edu" class="text-link"> <span>Luskin Conference Center</span> </a> </li> 
-          <li> <a href="https://www.events.ucla.edu/" class="text-link"> <span>Event Planning</span> </a> </li> 
-          <li> <a href="http://uclaevents.com/filming-and-photography/" class="text-link"> <span>Film Production</span> </a> </li> 
-         </ul> 
+        <div class="box_content grid_8"> 
+         <h1 class="summary">UCR ARTSblock</h1> 
+         <p> <a href="http://artsblock.ucr.edu/">Visit Department Website</a> </p> 
+         <p class="description"></p> 
         </div> 
        </div> 
+       <div class="content-bottom"> 
+        <div class="extra_details clearfix"> 
+         <dl> 
+         </dl> 
+         <dl> 
+          <!-- custom fields --> 
+         </dl> 
+        </div> 
+        <div class="box_title sectionheader dark_colorfive"> 
+         <h3> <span>Upcoming Events</span> </h3> 
+        </div> 
+        <div id="x-future-plans" class="event_group"> 
+         <div class="event_group"> 
+          <script type="application/ld+json">{"@context":"http://schema.org","@type":"Event","name":"Exhibition: IT IS WHAT IT IS: Senior Exhibition 2018","startDate":"2018-06-06T00:00:00-04:00","endDate":null,"location":{"@type":"Place","name":"ARTSblock","address":"3824 Main St, Riverside, CA 92501","geo":{"@type":"GeoCoordinates","latitude":"33.981438","longitude":"-117.374333"},"sameAs":"https://events.ucr.edu/artsblock","url":"https://events.ucr.edu/artsblock"},"url":"https://events.ucr.edu/event/exhibition_it_is_what_it_is_senior_exhibition_2018","image":"https://d3e1o4bcbhmj8g.cloudfront.net/photos/668048/medium/65696b1959a14db656334345c05b336791fc594d.jpg"}</script> 
+          <div class="item event_item vevent" id="event_instance_3643613"> 
+           <a href="https://events.ucr.edu/event/exhibition_it_is_what_it_is_senior_exhibition_2018" class="box_left"><img alt="Exhibition: IT IS WHAT IT IS: Senior Exhibition 2018" class="img_small" height="50" src="https://d3e1o4bcbhmj8g.cloudfront.net/photos/668048/small/65696b1959a14db656334345c05b336791fc594d.jpg" width="50"></a> 
+           <div class="item_content_small"> 
+            <div class="heading"> 
+             <h3 class="summary"><a href="https://events.ucr.edu/event/exhibition_it_is_what_it_is_senior_exhibition_2018">Exhibition: IT IS WHAT IT IS: Senior Exhibition...</a></h3> 
+            </div> 
+            <h4 class="description">On View May 19 - June 10, 2018 UCR ARTSblock's Culver Center of the Arts presents IT IS WHAT IT IS: Senior Exhibition 2018 featuring works by nineteen...</h4> 
+            <div class="actionbar"> 
+             <div class="dateright"> 
+              <abbr title="2018-06-06T00:00:00-04:00" class="dtstart"> <i class="fa fa-clock-o"></i> 6/6 </abbr> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <script type="application/ld+json">{"@context":"http://schema.org","@type":"Event","name":"UCR Concert Band ","startDate":"2018-06-06T19:30:00-04:00","endDate":"2018-06-06T20:30:00-04:00","location":{"@type":"Place","name":"ARTSblock","address":"3824 Main St, Riverside, CA 92501","geo":{"@type":"GeoCoordinates","latitude":"33.981438","longitude":"-117.374333"},"sameAs":"https://events.ucr.edu/artsblock","url":"https://events.ucr.edu/artsblock"},"url":"https://events.ucr.edu/event/ucr_concert_band","image":"https://d3e1o4bcbhmj8g.cloudfront.net/photos/655964/medium/ac915ad118f80332f35e90830dc5c08a5b524251.jpg"}</script> 
+          <div class="item event_item vevent" id="event_instance_3542518"> 
+           <a href="https://events.ucr.edu/event/ucr_concert_band" class="box_left"><img alt="UCR Concert Band " class="img_small" height="50" src="https://d3e1o4bcbhmj8g.cloudfront.net/photos/655964/small/ac915ad118f80332f35e90830dc5c08a5b524251.jpg" width="50"></a> 
+           <div class="item_content_small"> 
+            <div class="heading"> 
+             <h3 class="summary"><a href="https://events.ucr.edu/event/ucr_concert_band">UCR Concert Band </a></h3> 
+            </div> 
+            <h4 class="description">Department of Music and ARTSblock present UCR Concert Band Samuel Andress, conductor An eclectic mix of wind band music, both old and new, featuring works...</h4> 
+            <div class="actionbar"> 
+             <div class="dateright"> 
+              <abbr title="2018-06-06T19:30:00-04:00" class="dtstart"> <i class="fa fa-clock-o"></i> 6/6 7:30pm </abbr> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <script type="application/ld+json">{"@context":"http://schema.org","@type":"Event","name":"Exhibition: IT IS WHAT IT IS: Senior Exhibition 2018","startDate":"2018-06-07T00:00:00-04:00","endDate":null,"location":{"@type":"Place","name":"ARTSblock","address":"3824 Main St, Riverside, CA 92501","geo":{"@type":"GeoCoordinates","latitude":"33.981438","longitude":"-117.374333"},"sameAs":"https://events.ucr.edu/artsblock","url":"https://events.ucr.edu/artsblock"},"url":"https://events.ucr.edu/event/exhibition_it_is_what_it_is_senior_exhibition_2018","image":"https://d3e1o4bcbhmj8g.cloudfront.net/photos/668048/medium/65696b1959a14db656334345c05b336791fc594d.jpg"}</script> 
+          <div class="item event_item vevent" id="event_instance_3643614"> 
+           <a href="https://events.ucr.edu/event/exhibition_it_is_what_it_is_senior_exhibition_2018" class="box_left"><img alt="Exhibition: IT IS WHAT IT IS: Senior Exhibition 2018" class="img_small" height="50" src="https://d3e1o4bcbhmj8g.cloudfront.net/photos/668048/small/65696b1959a14db656334345c05b336791fc594d.jpg" width="50"></a> 
+           <div class="item_content_small"> 
+            <div class="heading"> 
+             <h3 class="summary"><a href="https://events.ucr.edu/event/exhibition_it_is_what_it_is_senior_exhibition_2018">Exhibition: IT IS WHAT IT IS: Senior Exhibition...</a></h3> 
+            </div> 
+            <h4 class="description">On View May 19 - June 10, 2018 UCR ARTSblock's Culver Center of the Arts presents IT IS WHAT IT IS: Senior Exhibition 2018 featuring works by nineteen...</h4> 
+            <div class="actionbar"> 
+             <div class="dateright"> 
+              <abbr title="2018-06-07T00:00:00-04:00" class="dtstart"> <i class="fa fa-clock-o"></i> 6/7 </abbr> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <script type="application/ld+json">{"@context":"http://schema.org","@type":"Event","name":"ReMapped: New electronic music ","startDate":"2018-06-07T19:00:00-04:00","endDate":"2018-06-07T20:30:00-04:00","location":{"@type":"Place","name":"ARTSblock","address":"3824 Main St, Riverside, CA 92501","geo":{"@type":"GeoCoordinates","latitude":"33.981438","longitude":"-117.374333"},"sameAs":"https://events.ucr.edu/artsblock","url":"https://events.ucr.edu/artsblock"},"url":"https://events.ucr.edu/event/interactive_electronic_music_recital_new_works_for_dance_music_and_visuals_by_ucr_students","image":"https://d3e1o4bcbhmj8g.cloudfront.net/photos/670466/medium/04688f06963ab634fec26c649675fac79b80f2c2.jpg"}</script> 
+          <div class="item event_item vevent" id="event_instance_3548180"> 
+           <a href="https://events.ucr.edu/event/interactive_electronic_music_recital_new_works_for_dance_music_and_visuals_by_ucr_students" class="box_left"><img alt="ReMapped: New electronic music " class="img_small" height="50" src="https://d3e1o4bcbhmj8g.cloudfront.net/photos/670466/small/04688f06963ab634fec26c649675fac79b80f2c2.jpg" width="50"></a> 
+           <div class="item_content_small"> 
+            <div class="heading"> 
+             <h3 class="summary"><a href="https://events.ucr.edu/event/interactive_electronic_music_recital_new_works_for_dance_music_and_visuals_by_ucr_students">ReMapped: New electronic music </a></h3> 
+            </div> 
+            <h4 class="description">Department of Music and ARTSblock present ReMapped New electronic music performed by UCR music students and faculty Ian Dicke and René T.A. Lysloff, faculty...</h4> 
+            <div class="actionbar"> 
+             <div class="dateright"> 
+              <abbr title="2018-06-07T19:00:00-04:00" class="dtstart"> <i class="fa fa-clock-o"></i> 6/7 7pm </abbr> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <script type="application/ld+json">{"@context":"http://schema.org","@type":"Event","name":"Exhibition: IT IS WHAT IT IS: Senior Exhibition 2018","startDate":"2018-06-08T00:00:00-04:00","endDate":null,"location":{"@type":"Place","name":"ARTSblock","address":"3824 Main St, Riverside, CA 92501","geo":{"@type":"GeoCoordinates","latitude":"33.981438","longitude":"-117.374333"},"sameAs":"https://events.ucr.edu/artsblock","url":"https://events.ucr.edu/artsblock"},"url":"https://events.ucr.edu/event/exhibition_it_is_what_it_is_senior_exhibition_2018","image":"https://d3e1o4bcbhmj8g.cloudfront.net/photos/668048/medium/65696b1959a14db656334345c05b336791fc594d.jpg"}</script> 
+          <div class="item event_item vevent" id="event_instance_3643615"> 
+           <a href="https://events.ucr.edu/event/exhibition_it_is_what_it_is_senior_exhibition_2018" class="box_left"><img alt="Exhibition: IT IS WHAT IT IS: Senior Exhibition 2018" class="img_small" height="50" src="https://d3e1o4bcbhmj8g.cloudfront.net/photos/668048/small/65696b1959a14db656334345c05b336791fc594d.jpg" width="50"></a> 
+           <div class="item_content_small"> 
+            <div class="heading"> 
+             <h3 class="summary"><a href="https://events.ucr.edu/event/exhibition_it_is_what_it_is_senior_exhibition_2018">Exhibition: IT IS WHAT IT IS: Senior Exhibition...</a></h3> 
+            </div> 
+            <h4 class="description">On View May 19 - June 10, 2018 UCR ARTSblock's Culver Center of the Arts presents IT IS WHAT IT IS: Senior Exhibition 2018 featuring works by nineteen...</h4> 
+            <div class="actionbar"> 
+             <div class="dateright"> 
+              <abbr title="2018-06-08T00:00:00-04:00" class="dtstart"> <i class="fa fa-clock-o"></i> 6/8 </abbr> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="pagination_container"> 
+          <div class="page_link"> 
+           <a href="/department/ucr_artsblock/calendar">View full calendar...</a> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="box_title list_break"> 
+         <h3>Recent Events</h3> 
+        </div> 
+        <div class="event_group"> 
+         <script type="application/ld+json">{"@context":"http://schema.org","@type":"Event","name":"Exhibition: IT IS WHAT IT IS: Senior Exhibition 2018","startDate":"2018-06-05T00:00:00-04:00","endDate":null,"location":{"@type":"Place","name":"ARTSblock","address":"3824 Main St, Riverside, CA 92501","geo":{"@type":"GeoCoordinates","latitude":"33.981438","longitude":"-117.374333"},"sameAs":"https://events.ucr.edu/artsblock","url":"https://events.ucr.edu/artsblock"},"url":"https://events.ucr.edu/event/exhibition_it_is_what_it_is_senior_exhibition_2018","image":"https://d3e1o4bcbhmj8g.cloudfront.net/photos/668048/medium/65696b1959a14db656334345c05b336791fc594d.jpg"}</script> 
+         <div class="item event_item item-mini" id="event_instance_3643612"> 
+          <h3 class="heading"> <span><a href="https://events.ucr.edu/event/exhibition_it_is_what_it_is_senior_exhibition_2018">Exhibition: IT IS WHAT IT IS: Senior Exhibition...</a></span> </h3> 
+          <span class="dateright">6/5/2018</span> 
+         </div> 
+         <script type="application/ld+json">{"@context":"http://schema.org","@type":"Event","name":"Exhibition: IT IS WHAT IT IS: Senior Exhibition 2018","startDate":"2018-06-03T00:00:00-04:00","endDate":null,"location":{"@type":"Place","name":"ARTSblock","address":"3824 Main St, Riverside, CA 92501","geo":{"@type":"GeoCoordinates","latitude":"33.981438","longitude":"-117.374333"},"sameAs":"https://events.ucr.edu/artsblock","url":"https://events.ucr.edu/artsblock"},"url":"https://events.ucr.edu/event/exhibition_it_is_what_it_is_senior_exhibition_2018","image":"https://d3e1o4bcbhmj8g.cloudfront.net/photos/668048/medium/65696b1959a14db656334345c05b336791fc594d.jpg"}</script> 
+         <div class="item event_item item-mini" id="event_instance_3643611"> 
+          <h3 class="heading"> <span><a href="https://events.ucr.edu/event/exhibition_it_is_what_it_is_senior_exhibition_2018">Exhibition: IT IS WHAT IT IS: Senior Exhibition...</a></span> </h3> 
+          <span class="dateright">6/3/2018</span> 
+         </div> 
+         <script type="application/ld+json">{"@context":"http://schema.org","@type":"Event","name":"Film: Call Me By Your Name","startDate":"2018-06-02T19:00:00-04:00","endDate":"2018-06-02T21:00:00-04:00","offers":{"@type":"Offer","url":"https://tickets.vendini.com/ticket-software.html?t=tix&e=54544e3c03f0792761356e89615308ed&vqitq=b1fd0e00-62a4-4f2b-a743-0501f73d6060&vqitp=7b99c5c9-919e-4b21-891f-f39c65924a3b&vqitts=1525123884&vqitc=vendini&vqite=itl&vqitrt=Safetynet&vqith=ada6211d9910ecba2cf551b2ee64bae6"},"location":{"@type":"Place","name":"ARTSblock","address":"3824 Main St, Riverside, CA 92501","geo":{"@type":"GeoCoordinates","latitude":"33.981438","longitude":"-117.374333"},"sameAs":"https://events.ucr.edu/artsblock","url":"https://events.ucr.edu/artsblock"},"url":"https://events.ucr.edu/event/film_call_me_by_your_name","image":"https://d3e1o4bcbhmj8g.cloudfront.net/photos/656667/medium/940378914ede23709d1559a4bb56061d7d53c28c.jpg"}</script> 
+         <div class="item event_item item-mini" id="event_instance_3561711"> 
+          <h3 class="heading"> <span><a href="https://events.ucr.edu/event/film_call_me_by_your_name">Film: Call Me By Your Name</a></span> </h3> 
+          <span class="dateright">6/2/2018</span> 
+         </div> 
+         <script type="application/ld+json">{"@context":"http://schema.org","@type":"Event","name":"Film: Call Me By Your Name","startDate":"2018-06-02T15:00:00-04:00","endDate":"2018-06-02T17:00:00-04:00","offers":{"@type":"Offer","url":"https://tickets.vendini.com/ticket-software.html?t=tix&e=54544e3c03f0792761356e89615308ed&vqitq=b1fd0e00-62a4-4f2b-a743-0501f73d6060&vqitp=7b99c5c9-919e-4b21-891f-f39c65924a3b&vqitts=1525123884&vqitc=vendini&vqite=itl&vqitrt=Safetynet&vqith=ada6211d9910ecba2cf551b2ee64bae6"},"location":{"@type":"Place","name":"ARTSblock","address":"3824 Main St, Riverside, CA 92501","geo":{"@type":"GeoCoordinates","latitude":"33.981438","longitude":"-117.374333"},"sameAs":"https://events.ucr.edu/artsblock","url":"https://events.ucr.edu/artsblock"},"url":"https://events.ucr.edu/event/film_call_me_by_your_name","image":"https://d3e1o4bcbhmj8g.cloudfront.net/photos/656667/medium/940378914ede23709d1559a4bb56061d7d53c28c.jpg"}</script> 
+         <div class="item event_item item-mini" id="event_instance_3561710"> 
+          <h3 class="heading"> <span><a href="https://events.ucr.edu/event/film_call_me_by_your_name">Film: Call Me By Your Name</a></span> </h3> 
+          <span class="dateright">6/2/2018</span> 
+         </div> 
+         <script type="application/ld+json">{"@context":"http://schema.org","@type":"Event","name":"Exhibition: IT IS WHAT IT IS: Senior Exhibition 2018","startDate":"2018-06-02T00:00:00-04:00","endDate":null,"location":{"@type":"Place","name":"ARTSblock","address":"3824 Main St, Riverside, CA 92501","geo":{"@type":"GeoCoordinates","latitude":"33.981438","longitude":"-117.374333"},"sameAs":"https://events.ucr.edu/artsblock","url":"https://events.ucr.edu/artsblock"},"url":"https://events.ucr.edu/event/exhibition_it_is_what_it_is_senior_exhibition_2018","image":"https://d3e1o4bcbhmj8g.cloudfront.net/photos/668048/medium/65696b1959a14db656334345c05b336791fc594d.jpg"}</script> 
+         <div class="item event_item item-mini" id="event_instance_3643610"> 
+          <h3 class="heading"> <span><a href="https://events.ucr.edu/event/exhibition_it_is_what_it_is_senior_exhibition_2018">Exhibition: IT IS WHAT IT IS: Senior Exhibition...</a></span> </h3> 
+          <span class="dateright">6/2/2018</span> 
+         </div> 
+        </div> 
+        <div class="box_title sectionheader dark_colorone" id="comments"> 
+         <h3 class="space"><span>Recent Activity</span></h3> 
+        </div> 
+        <!-- recent activity list and buttons --> 
+        <div id="recent_activity_department_15531" class="recent_activity_list" data-recent-activity="wrapper"> 
+         <div class="link_action"> 
+          <a href="#" class="add_comment_button btn btn-color" rel="ibox;url=#login-lightbox">Comment</a> 
+          <a href="#" class="add_photo_button btn btn-color" rel="ibox;url=#login-lightbox">Photo</a> 
+         </div> 
+         <div id="recent_activity_department_15531_list" data-recent-activity="list"> 
+          <div class="nocontent"> 
+           <p>No recent activity</p> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
       </div> 
      </div> 
-     <div class="legal"> 
-      <div class="wrapper"> 
-       <span class="copyright">©2018 Regents of the <a href="http://www.universityofcalifornia.edu">University of California</a></span> 
-       <span class="terms"><a href="/terms-of-use">Terms of Use</a></span> 
-       <span><a href="/accessibility">Accessibility</a></span> 
+     <div class="grid_4 omega sidebar"> 
+      <div id="x-group-buttons"> 
+       <div class="user_action widget"> 
+        <div class="table-buttons"> 
+         <a href="https://events.ucr.edu/department/_/add_request/15531" title="Follow" rel="ibox;url=#login-lightbox"> <span class="fa fa-2x fa-star"></span><br> Follow </a> 
+        </div> 
+       </div> 
+      </div> 
+      <div id="x-group-members" class="widget widget-photolist"> 
+       <div class="sectionheader dark_colortwo"> 
+        <h3 class="widget-header"><span>Followers</span> (1)</h3> 
+       </div> 
+       <div class="widget-content"> 
+        <table class="icon_item"> 
+         <tbody>
+          <tr> 
+           <td> <a href="https://events.ucr.edu/nataliec_125" rel="tooltip" title="Natalie Coerper"><img alt="Natalie Coerper" height="50" src="https://d3e1o4bcbhmj8g.cloudfront.net/photos/574958/small/2a8ec8e5e9f4014b6b23ff0b17fa27b1cf6315ac.jpg" width="50"></a> </td> 
+           <td> </td> 
+           <td> </td> 
+           <td> </td> 
+           <td> </td> 
+          </tr> 
+         </tbody>
+        </table> 
+       </div> 
+      </div> 
+     </div> 
+     <!-- add friend form --> 
+     <div id="x-lightbox-container" style="display: none;"> 
+     </div> 
+     <script type="text/javascript">
+        window.CKEDITOR_BASEPATH = '/javascripts/ckeditor/';
+      </script> 
+     <script src="/javascripts/ckeditor/ckeditor.js?v=4.5.7" type="text/javascript"></script> 
+     <script type="text/javascript">
+        CKEDITOR.config.customConfig = "https://d3e1o4bcbhmj8g.cloudfront.net/assets/ckeditor_config-7a59a1db8b650c46d1272b17cf2caef8.js";
+        CKEDITOR.config.contentsCss = [CKEDITOR.getUrl('contents.css'), "https://d3e1o4bcbhmj8g.cloudfront.net/assets/ckeditor_styles-6e1631004cc97c6fe4d1809f6e0f0ca8.css"];
+        CKEDITOR.config.toolbar = "basic";
+      new Slzr.RichText.Editor;</script> 
+    </div> 
+   </div> 
+  </div> 
+  <!-- End LOCALIST code --> 
+  <footer> 
+   <div class="grid-container"> 
+    <div class="grid-x grid-padding-x align-center"> 
+     <div class="cell footer-google-search" id="block-ucriversidefootersearchblock" data-block-plugin-id="ucr_global_footer_search"> 
+      <section class="google-search"> 
+       <form action="https://www.ucr.edu/search.php"> 
+        <label class="show-for-sr" for="footer-search">Search for:</label> 
+        <input type="text" maxlength="255" id="footer-search" name="q" value="" placeholder=" "> 
+       </form> 
+      </section> 
+     </div> 
+    </div> 
+    <div class="grid-x grid-padding-x footer-columns"> 
+     <div class="cell medium-auto"> 
+      <section class="footer-item ucr-footer-info"> 
+       <span class="footer-logo"><span class="show-for-sr">University of California, Riverside</span></span> 
+       <address> 900 University Ave.<br> Riverside, CA 92521<br><br> Tel: (951) 827-1012 </address> 
+       <ul class="footer-links"> 
+        <li><a href="http://library.ucr.edu/" target="_blank">UCR Library</a></li> 
+        <li><a href="http://campusstatus.ucr.edu/" target="_blank">Campus Status</a></li> 
+        <li><a href="http://campusstore.ucr.edu/" target="_blank">Campus Store</a></li> 
+        <li><a href="http://www.ucr.edu/employment.html" target="_blank">Career Opportunities</a></li> 
+        <li><a href="http://diversity.ucr.edu/" target="_blank">Diversity</a></li> 
+        <li><a href="http://www.ucr.edu/about/directions.html" target="_blank">Maps and Directions</a></li> 
+        <li><a href="http://tours.ucr.edu/" target="_blank">Visit UCR</a></li> 
+       </ul> 
+      </section> 
+     </div> 
+     <div class="cell medium-auto"> 
+      <section class="footer-item footer-dept-info" id="block-ucriversidefooterdeptinformationblock" data-block-plugin-id="ucr_global_footer_dept_info"> 
+       <h3>University of California, Riverside</h3> 
+       <address> <a href="https://campusmap.ucr.edu" target="_blank"> 900 University Ave. <br>Riverside, CA 92521 </a><br> <br> Tel: (951) 827-1012<br> E-mail: <a href="mailto:webmaster@ucr.edu">webmaster@ucr.edu</a> </address> 
+       <p> <a href="https://campusmap.ucr.edu" target="_blank"> <i class="fa fa-map-marker"></i>Find Us<br><br> 
+         <!-- Absolute path for image file  --> 
+         <!--<img src="images/googlemap.png" alt="Find Us"></a>--> <img src="//assets.ucr.edu/localist/images/googlemap.png" alt="Find Us"> 
+         <!--<img src="http://localist.dev-ucr.acsitefactory.com/sites/g/files/rcwecm5451dev/files/googlemap.png" alt="Find Us">--> </a> </p> 
+      </section> 
+     </div> 
+     <div class="cell medium-auto"> 
+      <div data-contextual-id="block:block=ucriversidefooterfollowuslinksblock:langcode=en"></div> 
+      <section class="UcrGlobalFooterFollowUsBlock"> 
+       <h3>RELATED LINKS</h3> 
+       <ul class="footer-links-other"> 
+        <li><a href="http://campusmap.ucr.edu/" target="_blank">Campus Map</a></li> 
+        <li><a href="http://parking.ucr.edu/" target="_blank">Transportation and Parking Services</a></li> 
+        <li><a href="http://riversidecvb.com/" target="_blank">Riverside Convention and Visitors Bureau</a></li> 
+       </ul> 
+       <br> 
+       <h4 class="separator">Follow us:</h4> 
+       <div class="button-group"> 
+        <a href="http://facebook.com/ucriverside/" target="_blank" class="button mdi mdi-facebook" title="Facebook"><span class="show-for-sr">Facebook</span></a> 
+        <a href="http://twitter.com/ucriverside/" target="_blank" class="button mdi mdi-twitter" title="Twitter"><span class="show-for-sr">Twitter</span></a> 
+        <a href="http://youtube.com/ucriverside/" target="_blank" class="button mdi mdi-youtube-play" title="YouTube"><span class="show-for-sr">YouTube</span></a> 
+        <a href="http://instagram.com/ucriversideofficial/" target="_blank" class="button mdi mdi-instagram" title="Instagram"><span class="show-for-sr">Instagram</span></a> 
+        <a href="https://www.linkedin.com/school/university-of-california-riverside/" target="_blank" class="button mdi mdi-linkedin" title="LinkedIn"><span class="show-for-sr">LinkedIn</span></a> 
+       </div> 
+      </section> 
+      <!--<section class="footer-item" id="block-ucriversidefooternewsletterblock" data-block-plugin-id="ucr_global_footer_newsletter">
+
+
+                    <h3>Newsletter</h3>
+                    <p>Sign up for our monthly newsletter.</p>
+                    <form>
+                        <label class="show-for-sr" for="footer-newsletter">E-mail address:</label>
+                        <input type="text" id="footer-newsletter">
+                    </form>
+
+                </section>--> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="site-legal-footer"> 
+    <div class="grid-container"> 
+     <div class="grid-x grid-padding-x"> 
+      <div class="cell"> 
+       <ul> 
+        <li><a href="http://www.ucr.edu/privacy.html">Privacy Policy</a></li> 
+        <li><a href="http://www.ucr.edu/terms.html">Terms and Conditions</a></li> 
+        <li>© 2018 Regents of the University of California</li> 
+       </ul> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </footer> 
+  <!-- Start LOCALIST code --> 
+  <div id="lclst_footer" style="height:50px;"> 
+   <a rel="nofollow" style="margin-left:auto;margin-right:auto;display:block;font-weight:normal;font-size:16px;line-height:50px;font-family:inherit;text-align:center;color:#666;" href="http://www.localist.com?utm_source=UC%20Riverside&amp;utm_campaign=platform_footer&amp;utm_medium=branded%20link" title="Events calendar powered by Localist software">Events calendar powered by Localist software.</a> 
+  </div> 
+  <div style="display: none;" id="login-lightbox-container"> 
+   <div id="login-lightbox"> 
+    <div class="grid_container localist_modal localist_modal_medium localist_login_modal"> 
+     <div class="localist-modal-inner"> 
+      <div class="box_title box_header"> 
+       <h4><span>Login to UC Riverside Events Calendar</span></h4> 
+      </div> 
+      <h5>UCR Users:</h5> 
+      <p>You may login with your UCR NetID</p> 
+      <div class="form_box" data-login="container"> 
+       <form class="login_form" method="post" action="https://events.ucr.edu/auth/login"> 
+        <input type="hidden" name="previous_url" value="https://events.ucr.edu/department/ucr_artsblock"> 
+        <!-- CAS Login --> 
+        <div class="button_cont" style="text-align:center;"> 
+         <a class="btn btn-color profile_cas_button" style="width:50%;" href="https://events.ucr.edu/auth/cas_login?previous_url=https%3A%2F%2Fevents.ucr.edu%2Fdepartment%2Fucr_artsblock">Login with School ID</a> 
+        </div> 
+        <!-- All other User Statement --> 
+        <div class="signup_statement" style="margin-top: 1em; border-top: 1px solid #efefef; padding-top: 1em;border-bottom: none;"> 
+         <h5>All Other Users:</h5> 
+         <p>When creating an account, please create it with your first and last name, otherwise, it may be deleted.</p> 
+        </div> 
+        <!-- Social Media/External Login methods     --> 
+        <div class="login_methods clearfix"> 
+         <div class="user_action login"> 
+          <a class="btn btn-facebook profile_facebook_button" href="#" data-action="facebook-login" data-previous-url="https://events.ucr.edu/department/ucr_artsblock"><i class="fa fa-facebook"></i>Login with Facebook</a> 
+          <a class="btn btn-linkedin profile_linkedin_button" href="https://events.ucr.edu/auth/linkedin_login?return_to=https%3A%2F%2Fevents.ucr.edu%2Fdepartment%2Fucr_artsblock" data-action="linkedin-login" data-previous-url="https://events.ucr.edu/department/ucr_artsblock"><i class="fa fa-linkedin"></i>Login with LinkedIn</a> 
+          <a class="btn btn-twitter profile_twitter_button" href="https://events.ucr.edu/auth/twitter_login?previous_url=https%3A%2F%2Fevents.ucr.edu%2Fdepartment%2Fucr_artsblock" data-action="twitter-login" data-previous-url="https://events.ucr.edu/department/ucr_artsblock"><i class="fa fa-twitter"></i>Login with Twitter</a> 
+         </div> 
+        </div> 
+        <!-- Local Localist login user name and password --> 
+        <fieldset class="top2M" style="margin-top:2em;"> 
+         <label for="login_user"> <span class="sr-only">Email Address</span> <input id="login_user" style="margin:0;" type="text" name="username" class="fullwidth" aria-label="Email Address" placeholder="Email Address"> </label> 
+         <label for="login_password"> <span class="sr-only">Password</span> <input id="login_password" type="password" name="password" class="fullwidth" aria-label="Password" placeholder="Password"> </label> 
+        </fieldset> 
+        <div class="action_button"> 
+         <a href="/auth/forgot" class="btn btn-simple link" id="forgot_link">Forgot Password?</a> 
+         <input type="submit" value="Login" class="btn btn-color pull-right btn-padding" data-disable-with="Logging in..."> 
+         <a href="https://events.ucr.edu/signup?school_id=220" class="btn btn-color pull-right btn-padding btn-signup">Sign Up</a> 
+        </div> 
+       </form> 
+       <div class="top2M" style="margin-top:2em;"> 
+        <h5>Note on Event Submission:</h5> 
+        <p>In order to submit events, users must have a UCR email address (@ucr.edu). All events submitted by non-UCR users WILL be deleted.</p> 
+       </div> 
       </div> 
      </div> 
     </div> 
    </div> 
   </div> 
-  <!-- End Footer --> 
-  <!-- Scripts --> 
-  <script src="/js/respond.js"></script> 
-  <script src="/js/plugins.js"></script> 
-  <script src="/js/global.js"></script> 
-  <script src="/js/responsive.js"></script> 
-  <script src="/js/search.js"></script> 
-  <script src="/js/weather.js"></script>   
+  <div id="fb-root"></div> 
+  <script src="//connect.facebook.net/en_US/all.js"></script> 
+  <script type="text/javascript">
+  FB.init({
+    appId: '1871797459801957',
+    status: true,
+    cookie: true,
+    xfbml: true,
+    channelUrl: document.location.protocol + '//' + document.location.host + '/channel.html',
+    oauth: true
+  });
+</script> 
+  <!-- autopilot --> 
+  <script type="text/javascript">(function(o){var b="https://api.autopilothq.com/anywhere/",t="b015a9fc235440e48cf7fdf3c03b29238e604000fcf0488cbb953e92125097ce",a=window.AutopilotAnywhere={_runQueue:[],run:function(){this._runQueue.push(arguments);}},c=encodeURIComponent,s="SCRIPT",d=document,l=d.getElementsByTagName(s)[0],p="t="+c(d.title||"")+"&u="+c(d.location.href||"")+"&r="+c(d.referrer||""),j="text/javascript",z,y;if(!window.Autopilot) window.Autopilot=a;if(o.app) p="devmode=true&"+p;z=function(src,asy){var e=d.createElement(s);e.src=src;e.type=j;e.async=asy;l.parentNode.insertBefore(e,l);};y=function(){z(b+t+'?'+p,true);};if(window.attachEvent){window.attachEvent("onload",y);}else{window.addEventListener("load",y,false);}})({"app":true});</script> 
+  <script type="text/javascript">
+        var _gaq = _gaq || [];
+
+        _gaq.push(['_setAccount', 'UA-38181101-1']); _gaq.push(['_trackPageview']);
+_gaq.push(['t2._setAccount', 'UA-3051875-1']); _gaq.push(['t2._trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+      </script>   
+  <!-- powered by Localist Calendar Software --> 
+  <script src="https://d3e1o4bcbhmj8g.cloudfront.net/eventbus.js"></script> 
  </body>
 </html>

@@ -1,0 +1,1404 @@
+<!doctype html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+ <head> 
+  <meta charset="utf-8">
+  <script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[f.now()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,t){s[t]=o(d+t,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(l+"tracer",[f.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return t.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],n),e}finally{c.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=o(l+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,f.now()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],4:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o,i){if(!d.aborted||i){e&&e(n,r,o);for(var a=t(o),u=m(n),c=u.length,f=0;f<c;f++)u[f].apply(a,r);var p=s[y[n]];return p&&p.push([b,n,r,a]),a}}function l(e,t){v[e]=m(e).concat(t)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(n)}function g(e,t){f(e,function(e,n){t=t||"feature",y[n]=t,t in s||(s[t]=[])})}var v={},y={},b={on:l,emit:n,get:w,listeners:m,context:t,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},p={},d=t.exports=o();d.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=h.info=NREUM.info,t=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return s.abort();f(y,function(t,n){e[t]||(e[t]=n)}),c("mark",["onload",a()+h.offset],null,"api");var n=d.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),c=e("handle"),f=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=t.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script> 
+  <script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3051875-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");</script> 
+  <meta name="title" content="Admissions | University of California, Riverside"> 
+  <link rel="canonical" href="https://www.ucr.edu/admissions"> 
+  <meta name="Generator" content="Drupal 8 (https://www.drupal.org)"> 
+  <meta name="MobileOptimized" content="width"> 
+  <meta name="HandheldFriendly" content="true"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="shortcut icon" href="/profiles/custom/umbrella_acsf/themes/custom/ucr_umbrella/favicon.ico" type=""> 
+  <link rel="canonical" href="/admissions"> 
+  <link rel="shortlink" href="/node/8"> 
+  <link rel="revision" href="/admissions"> 
+  <title>Admissions | University of California, Riverside</title> 
+  <link rel="stylesheet" href="/sites/g/files/rcwecm986/files/css/css_WFHQDQCwfQ9-BzTeBWx4atcbS30E6C0p40FP4f4DIks.css?p9v4fy" media="all"> 
+  <link rel="stylesheet" href="/sites/g/files/rcwecm986/files/css/css_FcyvT78NZpNVmGC6Aw7ZtS7vktbyrH_bVqOTufRZN60.css?p9v4fy" media="all"> 
+  <!--[if lte IE 8]>
+<script src="/sites/g/files/rcwecm986/files/js/js_VtafjXmRvoUgAzqzYTA3Wrjkx9wcWhjP0G4ZnnqRamA.js"></script>
+<![endif]--> 
+  <script src="/core/assets/vendor/modernizr/modernizr.min.js?v=3.3.1"></script> 
+ </head> 
+ <body class="layout path-node node--type-page"> 
+  <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas> 
+   <header> 
+    <div class="grid-container full"> 
+     <div class="grid-x"> 
+      <div class="cell small-order-2 medium-order-1 audience-container"> 
+       <div class="grid-container"> 
+        <div class="grid-x align-middle"> 
+         <nav role="navigation" aria-labelledby="block-audiencemenuleftside-menu" id="block-audiencemenuleftside" data-block-plugin-id="menu_block:audience-menu-left-side" class="general-menu"> 
+          <h2 class="visually-hidden" id="block-audiencemenuleftside-menu">Audience Menu Left Side</h2> 
+          <ul class="menu"> 
+           <li><a href="/alpha" target="_self" data-drupal-link-system-path="node/93">A to Z Listing</a> </li> 
+           <li><a href="https://campusmap.ucr.edu/" target="_self">Campus Map</a> </li> 
+           <li><a href="http://profiles.ucr.edu" target="_blank">Find People</a> </li> 
+           <li><a href="http://ucrtoday.ucr.edu" target="_self">News</a> </li> 
+          </ul> 
+         </nav> 
+         <div id="block-ucriversideaudiencesearchblock-3" data-block-plugin-id="ucr_global_audience_search"> 
+          <section class="google-search" role="search"> 
+           <form id="audience-search-form" action="https://www.ucr.edu/search.php"> 
+            <label class="show-for-sr" for="audience-search">Search for:</label> 
+            <input type="text" maxlength="255" id="audience-search" name="q" value="" placeholder=" "> 
+            <button type="submit" class="button show-for-small-only" value="">Search</button> 
+           </form> 
+          </section> 
+         </div> 
+         <nav role="navigation" aria-labelledby="block-quicklinks-menu" id="block-quicklinks" data-block-plugin-id="menu_block:quick-links" class="general-menu"> 
+          <h2 id="block-quicklinks-menu">Quick Links</h2> 
+          <ul class="vertical menu"> 
+           <li><a href="/about/visitors" target="_self" data-drupal-link-system-path="node/15">Visit</a> </li> 
+           <li><a href="http://events.ucr.edu" target="_self">Events</a> </li> 
+           <li><a href="http://givenow.ucr.edu" target="_self">Make a Gift</a> </li> 
+           <li><a href="http://campusmap.ucr.edu/" target="_self">Campus Map</a> </li> 
+           <li><a href="http://jobs.ucr.edu" target="_self">Jobs</a> </li> 
+           <li><a href="http://library.ucr.edu" target="_self">Library</a> </li> 
+           <li><a href="http://transportation.ucr.edu/" target="_self">Parking and Transportation</a> </li> 
+           <li><a href="/apply" target="_self" data-drupal-link-system-path="node/29">Apply</a> </li> 
+          </ul> 
+         </nav> 
+         <div class="cell shrink hide-for-large mobile-menu-expander-wrapper" data-responsive-toggle="main-menu-container" data-hide-for="large"> 
+          <button class="mdi mdi-menu button mobile-menu-expander" type="button" data-toggle="main-menu-container"> </button> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="cell small-order-1 medium-order-2 masthead-container"> 
+       <div class="grid-container"> 
+        <div class="grid-x align-middle"> 
+         <div class="cell shrink"> 
+          <a class="masthead-logo" href="/"> <span class="show-for-sr">UC Riverside</span> </a> 
+         </div> 
+         <div class="cell auto"> 
+          <h1 class="masthead-title"> <a href="/"> University of California, Riverside </a> </h1> 
+         </div> 
+         <div class="cell auto show-for-medium"> 
+          <p class="slogan">University of California, Riverside</p> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="cell small-order-3 medium-order-3 main-nav-bar"> 
+       <div class="main-menu-outer-container"> 
+        <div class="grid-container" id="main-menu-container" data-animate="slide-in-right slide-out-right"> 
+         <div class="grid-x"> 
+          <div class="cell" id="block-ucr-umbrella-main-menu" data-block-plugin-id="system_menu_block:main"> 
+           <ul id="main-menu"> 
+            <li> <a href="/about" target="_self" class="drop-down-arrow" data-drupal-link-system-path="node/6">About</a> 
+             <div> 
+              <ul class="accessible-megamenu-panel-group"> 
+               <li> <span target="_self" data-drupal-link-system-path="<front>">Column 1</span> 
+                <div> 
+                 <ul class="accessible-megamenu-panel-group"> 
+                  <li> <a href="/about" target="_self" data-drupal-link-system-path="node/6">About Overview</a> </li> 
+                  <li> <a href="/about/ranks-and-facts" target="_self" data-drupal-link-system-path="node/11">Ranks and Facts</a> </li> 
+                 </ul> 
+                </div> </li> 
+               <li> <span target="_self" data-drupal-link-system-path="<front>">Column 2</span> 
+                <div> 
+                 <ul class="accessible-megamenu-panel-group"> 
+                  <li> <a href="/about/impact" target="_self" data-drupal-link-system-path="node/12">Impacts</a> </li> 
+                  <li> <a href="/about/history" target="_self" data-drupal-link-system-path="node/14">History</a> </li> 
+                 </ul> 
+                </div> </li> 
+               <li> <span target="_self" data-drupal-link-system-path="<front>">Column 3</span> 
+                <div> 
+                 <ul class="accessible-megamenu-panel-group"> 
+                  <li> <a href="/about/visitors" target="_self" data-drupal-link-system-path="node/15">Visitors</a> </li> 
+                  <li> <a href="/about/international" target="_self" data-drupal-link-system-path="node/17">International</a> </li> 
+                 </ul> 
+                </div> </li> 
+               <li> <span target="_self" class="decorated-column-header" data-drupal-link-system-path="<front>">Find Information For...</span> 
+                <div> 
+                 <ul class="accessible-megamenu-panel-group"> 
+                  <li> <a href="/current-students" target="_self" data-drupal-link-system-path="node/53">Current Students</a> </li> 
+                  <li> <a href="http://admissions.ucr.edu" target="_blank">Prospective Students</a> </li> 
+                  <li> <a href="/faculty" target="_self" data-drupal-link-system-path="node/90">Faculty</a> </li> 
+                  <li> <a href="/staff" target="_self" data-drupal-link-system-path="node/94">Staff</a> </li> 
+                  <li> <a href="http://admissions.ucr.edu/admissions/parents.html" target="_blank">Parents</a> </li> 
+                  <li> <a href="http://alumni.ucr.edu" target="_blank">Alumni</a> </li> 
+                 </ul> 
+                </div> </li> 
+              </ul> 
+             </div> </li> 
+            <li> <a href="/academics" target="_self" class="drop-down-arrow" data-drupal-link-system-path="node/7">Academics</a> 
+             <div> 
+              <ul class="accessible-megamenu-panel-group"> 
+               <li> <span target="_self" data-drupal-link-system-path="<front>">Column 1</span> 
+                <div> 
+                 <ul class="accessible-megamenu-panel-group"> 
+                  <li> <a href="/academics" target="_self" data-drupal-link-system-path="node/7">Academics Overview</a> </li> 
+                  <li> <a href="/academics/undergraduate-majors" target="_self" data-drupal-link-system-path="node/22">Undergraduate Majors</a> </li> 
+                 </ul> 
+                </div> </li> 
+               <li> <span target="_self" data-drupal-link-system-path="<front>">Column 2</span> 
+                <div> 
+                 <ul class="accessible-megamenu-panel-group"> 
+                  <li> <a href="http://graduate.ucr.edu/grad_programs.html" target="_blank">Graduate Programs</a> </li> 
+                  <li> <a href="http://admissions.ucr.edu/academics/index.html" target="_blank">Colleges and Schools</a> </li> 
+                 </ul> 
+                </div> </li> 
+               <li> <span target="_self" data-drupal-link-system-path="<front>">Column 3</span> 
+                <div> 
+                 <ul class="accessible-megamenu-panel-group"> 
+                  <li> <a href="http://www.extension.ucr.edu" target="_blank">UCR Extension</a> </li> 
+                 </ul> 
+                </div> </li> 
+               <li> <span target="_self" class="decorated-column-header" data-drupal-link-system-path="<front>">Find Information For...</span> 
+                <div> 
+                 <ul class="accessible-megamenu-panel-group"> 
+                  <li> <a href="http://admissions.ucr.edu" target="_blank">Prospective Students</a> </li> 
+                  <li> <a href="/current-students" target="_self" data-drupal-link-system-path="node/53">Current Students</a> </li> 
+                  <li> <a href="/faculty" target="_self" data-drupal-link-system-path="node/90">Faculty</a> </li> 
+                  <li> <a href="/staff" target="_self" data-drupal-link-system-path="node/94">Staff</a> </li> 
+                  <li> <a href="http://admissions.ucr.edu/admissions/parents.html" target="_blank">Parents</a> </li> 
+                  <li> <a href="http://alumni.ucr.edu" target="_blank">Alumni</a> </li> 
+                 </ul> 
+                </div> </li> 
+              </ul> 
+             </div> </li> 
+            <li> <a href="/admissions" target="_self" class="drop-down-arrow is-active" data-drupal-link-system-path="node/8">Admissions</a> 
+             <div> 
+              <ul class="accessible-megamenu-panel-group"> 
+               <li> <span target="_self" data-drupal-link-system-path="<front>">Column 1</span> 
+                <div> 
+                 <ul class="accessible-megamenu-panel-group"> 
+                  <li> <a href="/admissions" target="_self" data-drupal-link-system-path="node/8" class="is-active">Admissions Overview</a> </li> 
+                  <li> <a href="http://admissions.ucr.edu" target="_blank">Undergraduate Admissions</a> </li> 
+                 </ul> 
+                </div> </li> 
+               <li> <span target="_self" data-drupal-link-system-path="<front>">Column 2</span> 
+                <div> 
+                 <ul class="accessible-megamenu-panel-group"> 
+                  <li> <a href="http://graduate.ucr.edu/grad_admissions.html" target="_blank">Graduate Admissions</a> </li> 
+                  <li> <a href="http://admissions.ucr.edu/admissions/international/index.html" target="_blank">International Admissions</a> </li> 
+                 </ul> 
+                </div> </li> 
+               <li> <span target="_self" data-drupal-link-system-path="<front>">Column 3</span> 
+                <div> 
+                 <ul class="accessible-megamenu-panel-group"> 
+                  <li> <a href="http://admissions.ucr.edu/admissions/transfer/" target="_blank">Transfer Admissions</a> </li> 
+                  <li> <a href="http://admissions.ucr.edu/cost/index.html" target="_blank">Cost</a> </li> 
+                 </ul> 
+                </div> </li> 
+               <li> <span target="_self" class="decorated-column-header" data-drupal-link-system-path="<front>">Find Information For...</span> 
+                <div> 
+                 <ul class="accessible-megamenu-panel-group"> 
+                  <li> <a href="http://admissions.ucr.edu" target="_blank">Prospective Students</a> </li> 
+                  <li> <a href="/current-students" target="_self" data-drupal-link-system-path="node/53">Current Students</a> </li> 
+                  <li> <a href="/faculty" target="_self" data-drupal-link-system-path="node/90">Faculty</a> </li> 
+                  <li> <a href="/staff" target="_self" data-drupal-link-system-path="node/94">Staff</a> </li> 
+                  <li> <a href="http://admissions.ucr.edu/admissions/parents.html" target="_blank">Parents</a> </li> 
+                  <li> <a href="http://alumni.ucr.edu" target="_blank">Alumni</a> </li> 
+                 </ul> 
+                </div> </li> 
+              </ul> 
+             </div> </li> 
+            <li> <a href="/research" target="_self" class="drop-down-arrow" data-drupal-link-system-path="node/9">Research</a> 
+             <div> 
+              <ul class="accessible-megamenu-panel-group"> 
+               <li> <span target="_self" data-drupal-link-system-path="<front>">Column 1</span> 
+                <div> 
+                 <ul class="accessible-megamenu-panel-group"> 
+                  <li> <a href="/research" target="_self" data-drupal-link-system-path="node/9">Research Overview</a> </li> 
+                  <li> <a href="/research/undergrad-research" target="_self" data-drupal-link-system-path="node/30">Undergraduate Research</a> </li> 
+                 </ul> 
+                </div> </li> 
+               <li> <span target="_self" data-drupal-link-system-path="<front>">Column 2</span> 
+                <div> 
+                 <ul class="accessible-megamenu-panel-group"> 
+                  <li> <a href="http://graduate.ucr.edu/" target="_blank">Graduate Research</a> </li> 
+                  <li> <a href="/research/centers" target="_self" data-drupal-link-system-path="node/33">Centers and Facilities</a> </li> 
+                 </ul> 
+                </div> </li> 
+               <li> <span target="_self" data-drupal-link-system-path="<front>">Column 3</span> 
+                <div> 
+                 <ul class="accessible-megamenu-panel-group"> 
+                  <li> <a href="https://library.ucr.edu/" target="_blank">Library</a> </li> 
+                 </ul> 
+                </div> </li> 
+               <li> <span target="_self" class="decorated-column-header" data-drupal-link-system-path="<front>">Find Information For...</span> 
+                <div> 
+                 <ul class="accessible-megamenu-panel-group"> 
+                  <li> <a href="http://admissions.ucr.edu" target="_blank">Prospective Students</a> </li> 
+                  <li> <a href="/current-students" target="_self" data-drupal-link-system-path="node/53">Current Students</a> </li> 
+                  <li> <a href="/faculty" target="_self" data-drupal-link-system-path="node/90">Faculty</a> </li> 
+                  <li> <a href="/staff" target="_self" data-drupal-link-system-path="node/94">Staff</a> </li> 
+                  <li> <a href="http://admissions.ucr.edu/admissions/parents.html" target="_blank">Parents</a> </li> 
+                  <li> <a href="http://alumni.ucr.edu" target="_blank">Alumni</a> </li> 
+                 </ul> 
+                </div> </li> 
+              </ul> 
+             </div> </li> 
+            <li> <a href="/campus-life" target="_self" class="drop-down-arrow" data-drupal-link-system-path="node/10">Campus Life</a> 
+             <div> 
+              <ul class="accessible-megamenu-panel-group"> 
+               <li> <span target="_self" data-drupal-link-system-path="<front>">Column 1</span> 
+                <div> 
+                 <ul class="accessible-megamenu-panel-group"> 
+                  <li> <a href="/campus-life" target="_self" data-drupal-link-system-path="node/10">Campus Life Overview</a> </li> 
+                  <li> <a href="http://events.ucr.edu" target="_blank">Events</a> </li> 
+                  <li> <a href="http://campusmap.ucr.edu/" target="_blank">Map</a> </li> 
+                 </ul> 
+                </div> </li> 
+               <li> <span target="_self" data-drupal-link-system-path="<front>">Column 2</span> 
+                <div> 
+                 <ul class="accessible-megamenu-panel-group"> 
+                  <li> <a href="/campus-life/arts-and-culture" target="_self" data-drupal-link-system-path="node/42">Arts and Culture</a> </li> 
+                  <li> <a href="/campus-life/athletics-and-fitness" target="_self" data-drupal-link-system-path="node/43">Athletics and Fitness</a> </li> 
+                  <li> <a href="/campus-life/health-and-safety" target="_self" data-drupal-link-system-path="node/44">Health and Safety</a> </li> 
+                 </ul> 
+                </div> </li> 
+               <li> <span target="_self" data-drupal-link-system-path="<front>">Column 3</span> 
+                <div> 
+                 <ul class="accessible-megamenu-panel-group"> 
+                  <li> <a href="http://gardens.ucr.edu/" target="_blank">Botanic Gardens</a> </li> 
+                  <li> <a href="http://housing.ucr.edu/" target="_blank">Housing</a> </li> 
+                  <li> <a href="http://dining.ucr.edu" target="_blank">Dining</a> </li> 
+                  <li> <a href="/about/visitors" target="_self" data-drupal-link-system-path="node/15">About Riverside</a> </li> 
+                 </ul> 
+                </div> </li> 
+               <li> <span target="_self" class="decorated-column-header" data-drupal-link-system-path="<front>">Find Information For...</span> 
+                <div> 
+                 <ul class="accessible-megamenu-panel-group"> 
+                  <li> <a href="http://admissions.ucr.edu" target="_blank">Prospective Students</a> </li> 
+                  <li> <a href="/current-students" target="_self" data-drupal-link-system-path="node/53">Current Students</a> </li> 
+                  <li> <a href="/faculty" target="_self" data-drupal-link-system-path="node/90">Faculty</a> </li> 
+                  <li> <a href="/staff" target="_self" data-drupal-link-system-path="node/94">Staff</a> </li> 
+                  <li> <a href="http://admissions.ucr.edu/admissions/parents.html" target="_blank">Parents</a> </li> 
+                  <li> <a href="http://alumni.ucr.edu" target="_blank">Alumni</a> </li> 
+                 </ul> 
+                </div> </li> 
+              </ul> 
+             </div> </li> 
+            <li> <span target="_self" class="find-info-link" data-drupal-link-system-path="<front>">Find Information For...</span> 
+             <div> 
+              <ul class="accessible-megamenu-panel-group"> 
+               <li> <a href="http://admissions.ucr.edu" target="_blank">Prospective Students</a> </li> 
+               <li> <a href="/current-students" target="_self" data-drupal-link-system-path="node/53">Current Students</a> </li> 
+               <li> <a href="/faculty" target="_self" data-drupal-link-system-path="node/90">Faculty</a> </li> 
+               <li> <a href="/staff" target="_self" data-drupal-link-system-path="node/94">Staff</a> </li> 
+               <li> <a href="http://admissions.ucr.edu/admissions/parents.html" target="_blank">Parents</a> </li> 
+               <li> <a href="http://alumni.ucr.edu" target="_blank">Alumni</a> </li> 
+              </ul> 
+             </div> </li> 
+           </ul> 
+          </div> 
+         </div> 
+         <nav role="navigation" aria-labelledby="block-audiencemenuleftside-2-menu" id="block-audiencemenuleftside-2" data-block-plugin-id="menu_block:audience-menu-left-side" class="general-menu"> 
+          <h2 class="visually-hidden" id="block-audiencemenuleftside-2-menu">Audience Menu Left Side Mobile</h2> 
+          <ul class="menu"> 
+           <li><a href="/alpha" target="_self" data-drupal-link-system-path="node/93">A to Z Listing</a> </li> 
+           <li><a href="https://campusmap.ucr.edu/" target="_self">Campus Map</a> </li> 
+           <li><a href="http://profiles.ucr.edu" target="_blank">Find People</a> </li> 
+           <li><a href="http://ucrtoday.ucr.edu" target="_self">News</a> </li> 
+          </ul> 
+         </nav> 
+         <nav role="navigation" aria-labelledby="block-quicklinks-2-menu" id="block-quicklinks-2" data-block-plugin-id="menu_block:quick-links" class="general-menu"> 
+          <h2 id="block-quicklinks-2-menu">Quick Links Mobile</h2> 
+          <ul class="vertical menu"> 
+           <li><a href="/about/visitors" target="_self" data-drupal-link-system-path="node/15">Visit</a> </li> 
+           <li><a href="http://events.ucr.edu" target="_self">Events</a> </li> 
+           <li><a href="http://givenow.ucr.edu" target="_self">Make a Gift</a> </li> 
+           <li><a href="http://campusmap.ucr.edu/" target="_self">Campus Map</a> </li> 
+           <li><a href="http://jobs.ucr.edu" target="_self">Jobs</a> </li> 
+           <li><a href="http://library.ucr.edu" target="_self">Library</a> </li> 
+           <li><a href="http://transportation.ucr.edu/" target="_self">Parking and Transportation</a> </li> 
+           <li><a href="/apply" target="_self" data-drupal-link-system-path="node/29">Apply</a> </li> 
+          </ul> 
+         </nav> 
+         <nav role="navigation" aria-labelledby="block-mainnavigation-4-menu" id="block-mainnavigation-4" class="mobile-menu general-menu" data-block-plugin-id="menu_block:main"> 
+          <h2 class="visually-hidden" id="block-mainnavigation-4-menu">Main navigation (Mobile)</h2> 
+          <ul id="main-menu"> 
+           <li> <a href="/about" target="_self" class="drop-down-arrow" data-drupal-link-system-path="node/6">About</a> 
+            <div> 
+             <ul class="accessible-megamenu-panel-group"> 
+              <li> <span target="_self" data-drupal-link-system-path="<front>">Column 1</span> 
+               <div> 
+                <ul class="accessible-megamenu-panel-group"> 
+                 <li> <a href="/about" target="_self" data-drupal-link-system-path="node/6">About Overview</a> </li> 
+                 <li> <a href="/about/ranks-and-facts" target="_self" data-drupal-link-system-path="node/11">Ranks and Facts</a> </li> 
+                </ul> 
+               </div> </li> 
+              <li> <span target="_self" data-drupal-link-system-path="<front>">Column 2</span> 
+               <div> 
+                <ul class="accessible-megamenu-panel-group"> 
+                 <li> <a href="/about/impact" target="_self" data-drupal-link-system-path="node/12">Impacts</a> </li> 
+                 <li> <a href="/about/history" target="_self" data-drupal-link-system-path="node/14">History</a> </li> 
+                </ul> 
+               </div> </li> 
+              <li> <span target="_self" data-drupal-link-system-path="<front>">Column 3</span> 
+               <div> 
+                <ul class="accessible-megamenu-panel-group"> 
+                 <li> <a href="/about/visitors" target="_self" data-drupal-link-system-path="node/15">Visitors</a> </li> 
+                 <li> <a href="/about/international" target="_self" data-drupal-link-system-path="node/17">International</a> </li> 
+                </ul> 
+               </div> </li> 
+              <li> <span target="_self" class="decorated-column-header" data-drupal-link-system-path="<front>">Find Information For...</span> 
+               <div> 
+                <ul class="accessible-megamenu-panel-group"> 
+                 <li> <a href="/current-students" target="_self" data-drupal-link-system-path="node/53">Current Students</a> </li> 
+                 <li> <a href="http://admissions.ucr.edu" target="_blank">Prospective Students</a> </li> 
+                 <li> <a href="/faculty" target="_self" data-drupal-link-system-path="node/90">Faculty</a> </li> 
+                 <li> <a href="/staff" target="_self" data-drupal-link-system-path="node/94">Staff</a> </li> 
+                 <li> <a href="http://admissions.ucr.edu/admissions/parents.html" target="_blank">Parents</a> </li> 
+                 <li> <a href="http://alumni.ucr.edu" target="_blank">Alumni</a> </li> 
+                </ul> 
+               </div> </li> 
+             </ul> 
+            </div> </li> 
+           <li> <a href="/academics" target="_self" class="drop-down-arrow" data-drupal-link-system-path="node/7">Academics</a> 
+            <div> 
+             <ul class="accessible-megamenu-panel-group"> 
+              <li> <span target="_self" data-drupal-link-system-path="<front>">Column 1</span> 
+               <div> 
+                <ul class="accessible-megamenu-panel-group"> 
+                 <li> <a href="/academics" target="_self" data-drupal-link-system-path="node/7">Academics Overview</a> </li> 
+                 <li> <a href="/academics/undergraduate-majors" target="_self" data-drupal-link-system-path="node/22">Undergraduate Majors</a> </li> 
+                </ul> 
+               </div> </li> 
+              <li> <span target="_self" data-drupal-link-system-path="<front>">Column 2</span> 
+               <div> 
+                <ul class="accessible-megamenu-panel-group"> 
+                 <li> <a href="http://graduate.ucr.edu/grad_programs.html" target="_blank">Graduate Programs</a> </li> 
+                 <li> <a href="http://admissions.ucr.edu/academics/index.html" target="_blank">Colleges and Schools</a> </li> 
+                </ul> 
+               </div> </li> 
+              <li> <span target="_self" data-drupal-link-system-path="<front>">Column 3</span> 
+               <div> 
+                <ul class="accessible-megamenu-panel-group"> 
+                 <li> <a href="http://www.extension.ucr.edu" target="_blank">UCR Extension</a> </li> 
+                </ul> 
+               </div> </li> 
+              <li> <span target="_self" class="decorated-column-header" data-drupal-link-system-path="<front>">Find Information For...</span> 
+               <div> 
+                <ul class="accessible-megamenu-panel-group"> 
+                 <li> <a href="http://admissions.ucr.edu" target="_blank">Prospective Students</a> </li> 
+                 <li> <a href="/current-students" target="_self" data-drupal-link-system-path="node/53">Current Students</a> </li> 
+                 <li> <a href="/faculty" target="_self" data-drupal-link-system-path="node/90">Faculty</a> </li> 
+                 <li> <a href="/staff" target="_self" data-drupal-link-system-path="node/94">Staff</a> </li> 
+                 <li> <a href="http://admissions.ucr.edu/admissions/parents.html" target="_blank">Parents</a> </li> 
+                 <li> <a href="http://alumni.ucr.edu" target="_blank">Alumni</a> </li> 
+                </ul> 
+               </div> </li> 
+             </ul> 
+            </div> </li> 
+           <li> <a href="/admissions" target="_self" class="drop-down-arrow is-active" data-drupal-link-system-path="node/8">Admissions</a> 
+            <div> 
+             <ul class="accessible-megamenu-panel-group"> 
+              <li> <span target="_self" data-drupal-link-system-path="<front>">Column 1</span> 
+               <div> 
+                <ul class="accessible-megamenu-panel-group"> 
+                 <li> <a href="/admissions" target="_self" data-drupal-link-system-path="node/8" class="is-active">Admissions Overview</a> </li> 
+                 <li> <a href="http://admissions.ucr.edu" target="_blank">Undergraduate Admissions</a> </li> 
+                </ul> 
+               </div> </li> 
+              <li> <span target="_self" data-drupal-link-system-path="<front>">Column 2</span> 
+               <div> 
+                <ul class="accessible-megamenu-panel-group"> 
+                 <li> <a href="http://graduate.ucr.edu/grad_admissions.html" target="_blank">Graduate Admissions</a> </li> 
+                 <li> <a href="http://admissions.ucr.edu/admissions/international/index.html" target="_blank">International Admissions</a> </li> 
+                </ul> 
+               </div> </li> 
+              <li> <span target="_self" data-drupal-link-system-path="<front>">Column 3</span> 
+               <div> 
+                <ul class="accessible-megamenu-panel-group"> 
+                 <li> <a href="http://admissions.ucr.edu/admissions/transfer/" target="_blank">Transfer Admissions</a> </li> 
+                 <li> <a href="http://admissions.ucr.edu/cost/index.html" target="_blank">Cost</a> </li> 
+                </ul> 
+               </div> </li> 
+              <li> <span target="_self" class="decorated-column-header" data-drupal-link-system-path="<front>">Find Information For...</span> 
+               <div> 
+                <ul class="accessible-megamenu-panel-group"> 
+                 <li> <a href="http://admissions.ucr.edu" target="_blank">Prospective Students</a> </li> 
+                 <li> <a href="/current-students" target="_self" data-drupal-link-system-path="node/53">Current Students</a> </li> 
+                 <li> <a href="/faculty" target="_self" data-drupal-link-system-path="node/90">Faculty</a> </li> 
+                 <li> <a href="/staff" target="_self" data-drupal-link-system-path="node/94">Staff</a> </li> 
+                 <li> <a href="http://admissions.ucr.edu/admissions/parents.html" target="_blank">Parents</a> </li> 
+                 <li> <a href="http://alumni.ucr.edu" target="_blank">Alumni</a> </li> 
+                </ul> 
+               </div> </li> 
+             </ul> 
+            </div> </li> 
+           <li> <a href="/research" target="_self" class="drop-down-arrow" data-drupal-link-system-path="node/9">Research</a> 
+            <div> 
+             <ul class="accessible-megamenu-panel-group"> 
+              <li> <span target="_self" data-drupal-link-system-path="<front>">Column 1</span> 
+               <div> 
+                <ul class="accessible-megamenu-panel-group"> 
+                 <li> <a href="/research" target="_self" data-drupal-link-system-path="node/9">Research Overview</a> </li> 
+                 <li> <a href="/research/undergrad-research" target="_self" data-drupal-link-system-path="node/30">Undergraduate Research</a> </li> 
+                </ul> 
+               </div> </li> 
+              <li> <span target="_self" data-drupal-link-system-path="<front>">Column 2</span> 
+               <div> 
+                <ul class="accessible-megamenu-panel-group"> 
+                 <li> <a href="http://graduate.ucr.edu/" target="_blank">Graduate Research</a> </li> 
+                 <li> <a href="/research/centers" target="_self" data-drupal-link-system-path="node/33">Centers and Facilities</a> </li> 
+                </ul> 
+               </div> </li> 
+              <li> <span target="_self" data-drupal-link-system-path="<front>">Column 3</span> 
+               <div> 
+                <ul class="accessible-megamenu-panel-group"> 
+                 <li> <a href="https://library.ucr.edu/" target="_blank">Library</a> </li> 
+                </ul> 
+               </div> </li> 
+              <li> <span target="_self" class="decorated-column-header" data-drupal-link-system-path="<front>">Find Information For...</span> 
+               <div> 
+                <ul class="accessible-megamenu-panel-group"> 
+                 <li> <a href="http://admissions.ucr.edu" target="_blank">Prospective Students</a> </li> 
+                 <li> <a href="/current-students" target="_self" data-drupal-link-system-path="node/53">Current Students</a> </li> 
+                 <li> <a href="/faculty" target="_self" data-drupal-link-system-path="node/90">Faculty</a> </li> 
+                 <li> <a href="/staff" target="_self" data-drupal-link-system-path="node/94">Staff</a> </li> 
+                 <li> <a href="http://admissions.ucr.edu/admissions/parents.html" target="_blank">Parents</a> </li> 
+                 <li> <a href="http://alumni.ucr.edu" target="_blank">Alumni</a> </li> 
+                </ul> 
+               </div> </li> 
+             </ul> 
+            </div> </li> 
+           <li> <a href="/campus-life" target="_self" class="drop-down-arrow" data-drupal-link-system-path="node/10">Campus Life</a> 
+            <div> 
+             <ul class="accessible-megamenu-panel-group"> 
+              <li> <span target="_self" data-drupal-link-system-path="<front>">Column 1</span> 
+               <div> 
+                <ul class="accessible-megamenu-panel-group"> 
+                 <li> <a href="/campus-life" target="_self" data-drupal-link-system-path="node/10">Campus Life Overview</a> </li> 
+                 <li> <a href="http://events.ucr.edu" target="_blank">Events</a> </li> 
+                 <li> <a href="http://campusmap.ucr.edu/" target="_blank">Map</a> </li> 
+                </ul> 
+               </div> </li> 
+              <li> <span target="_self" data-drupal-link-system-path="<front>">Column 2</span> 
+               <div> 
+                <ul class="accessible-megamenu-panel-group"> 
+                 <li> <a href="/campus-life/arts-and-culture" target="_self" data-drupal-link-system-path="node/42">Arts and Culture</a> </li> 
+                 <li> <a href="/campus-life/athletics-and-fitness" target="_self" data-drupal-link-system-path="node/43">Athletics and Fitness</a> </li> 
+                 <li> <a href="/campus-life/health-and-safety" target="_self" data-drupal-link-system-path="node/44">Health and Safety</a> </li> 
+                </ul> 
+               </div> </li> 
+              <li> <span target="_self" data-drupal-link-system-path="<front>">Column 3</span> 
+               <div> 
+                <ul class="accessible-megamenu-panel-group"> 
+                 <li> <a href="http://gardens.ucr.edu/" target="_blank">Botanic Gardens</a> </li> 
+                 <li> <a href="http://housing.ucr.edu/" target="_blank">Housing</a> </li> 
+                 <li> <a href="http://dining.ucr.edu" target="_blank">Dining</a> </li> 
+                 <li> <a href="/about/visitors" target="_self" data-drupal-link-system-path="node/15">About Riverside</a> </li> 
+                </ul> 
+               </div> </li> 
+              <li> <span target="_self" class="decorated-column-header" data-drupal-link-system-path="<front>">Find Information For...</span> 
+               <div> 
+                <ul class="accessible-megamenu-panel-group"> 
+                 <li> <a href="http://admissions.ucr.edu" target="_blank">Prospective Students</a> </li> 
+                 <li> <a href="/current-students" target="_self" data-drupal-link-system-path="node/53">Current Students</a> </li> 
+                 <li> <a href="/faculty" target="_self" data-drupal-link-system-path="node/90">Faculty</a> </li> 
+                 <li> <a href="/staff" target="_self" data-drupal-link-system-path="node/94">Staff</a> </li> 
+                 <li> <a href="http://admissions.ucr.edu/admissions/parents.html" target="_blank">Parents</a> </li> 
+                 <li> <a href="http://alumni.ucr.edu" target="_blank">Alumni</a> </li> 
+                </ul> 
+               </div> </li> 
+             </ul> 
+            </div> </li> 
+           <li> <span target="_self" class="find-info-link" data-drupal-link-system-path="<front>">Find Information For...</span> 
+            <div> 
+             <ul class="accessible-megamenu-panel-group"> 
+              <li> <a href="http://admissions.ucr.edu" target="_blank">Prospective Students</a> </li> 
+              <li> <a href="/current-students" target="_self" data-drupal-link-system-path="node/53">Current Students</a> </li> 
+              <li> <a href="/faculty" target="_self" data-drupal-link-system-path="node/90">Faculty</a> </li> 
+              <li> <a href="/staff" target="_self" data-drupal-link-system-path="node/94">Staff</a> </li> 
+              <li> <a href="http://admissions.ucr.edu/admissions/parents.html" target="_blank">Parents</a> </li> 
+              <li> <a href="http://alumni.ucr.edu" target="_blank">Alumni</a> </li> 
+             </ul> 
+            </div> </li> 
+          </ul> 
+         </nav>
+        </div>  
+        <div id="block-ucriversideaudiencesearchblock-4" data-block-plugin-id="ucr_global_audience_search"> 
+         <section class="google-search" role="search"> 
+          <form id="audience-search-form" action="https://www.ucr.edu/search.php"> 
+           <label class="show-for-sr" for="audience-search">Search for:</label> 
+           <input type="text" maxlength="255" id="audience-search" name="q" value="" placeholder=" "> 
+           <button type="submit" class="button show-for-small-only" value="">Search</button> 
+          </form> 
+         </section> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </header>
+  </div>   
+  <div id="content-container"> 
+   <div id="hero-panel-area"> 
+    <div class="views-element-container" id="block-views-block-header-banner-block-1" data-block-plugin-id="views_block:header_banner-block_1"> 
+     <div>
+      <div class="header-banner-view js-view-dom-id-97e671f33fb9a4fc5cf3ede8a23104f6c2d48493dac80994af0b642c30f97705"> 
+       <div class="views-row"> 
+        <div class="views-field views-field-field-header-banner">
+         <div class="field-content"> 
+          <img src="/sites/g/files/rcwecm986/files/styles/interior_page_banner/public/admissions-hero.jpg?h=5b8344af&amp;itok=255tdyMv" width="1315" height="461" alt="admissions-hero-image" typeof="foaf:Image"> 
+         </div>
+        </div>
+        <div class="views-field views-field-field-custom-title">
+         <div class="field-content">
+          Admissions
+         </div>
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="grid-container primary-content-area"> 
+    <div class="grid-x grid-padding-x"> 
+     <div class="cell"> 
+     </div> 
+    </div> 
+    <div class="grid-x grid-padding-x"> 
+     <div class="cell"> 
+      <div id="block-breadcrumbs" data-block-plugin-id="system_breadcrumb_block"> 
+       <nav role="navigation" class="breadcrumb_container" aria-labelledby="system-breadcrumb"> 
+        <h2 id="system-breadcrumb" class="visually-hidden">Breadcrumb</h2> 
+        <ul class="breadcrumbs"> 
+         <li> <a href="/" class="mdi mdi-home breadcrumb_home"></a> </li> 
+         <li> <span>Admissions</span> </li> 
+        </ul> 
+       </nav> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="grid-x grid-padding-x"> 
+     <div class="cell large-auto small-order-3 medium-order-3 large-order-2 pca-content"> 
+      <div> 
+       <div id="block-ucr-umbrella-content" data-block-plugin-id="system_main_block"> 
+        <article class="node node--type-page node--view-mode-full clearfix"> 
+         <div> 
+          <div class="grid-x grid-padding-x theme-template"> 
+           <div class="layout__region layout__region--first-above cell medium-6 large-8"> 
+            <div class="block-region-first-above">
+             <div class="block--simple-block-body " data-block-plugin-id="block_content:1eb64abe-e80d-4339-b4dc-5c85c5fb360e"> 
+              <div class="field field--name-body field--type-text-with-summary field--label-hidden field__items"> 
+               <div class="field__item"> 
+                <h1 class="separator-line-before">Let Your Amazing Journey Begin</h1> 
+                <p>As one of the most highly ranked academic institutions in the country, we inspire our students to dream big, push boundaries, defy the odds, and blaze new trails. &nbsp;Our undergraduate and graduate programs are led by dedicated, award-winning faculty who engage students in experience-based learning and research. Our welcoming, innovative, entrepreneurial campus community embodies the very best of California.</p> 
+                <p>UCR is of the most ethnically diverse and inclusive research universities in the nation. We proudly hold the status of Hispanic-Serving Institution (HSI) and have been named the third-best college for Hispanics in the country (BestColleges.com, 2016). We are also an Asian-American, Native American, and Pacific Islander Serving Institution (AANAPISI).&nbsp;</p> 
+                <p>At UCR, 86% of undergraduate students receive financial aid and 70% of those who receive aid have their full fees covered by grants and/or scholarships. Learn more about <a href="http://financialaid.ucr.edu/">UCR Financial Aid</a>.</p> 
+                <p>Whether you’re aiming for graduate or professional school or are looking ahead to succeed in your career, UCR is the right place to help you achieve your goals.<br> &nbsp;</p> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <div class="layout__region layout__region--second-above cell medium-6 large-4"> 
+            <div class="block-region-second-above"> 
+             <div data-block-plugin-id="block_content:50688e8c-5cf0-478d-9902-3d4665f2c3cb" class="block block--quicklinks-sidebar-menu"> 
+              <h2 class="block-title">Related Topics</h2> 
+              <div class="grid-x grid-margin-x small-up-1 medium-up- large-up-"> 
+               <div class="field field--name-field-quicklinks field--type-entity-reference-revisions field--label-hidden field__items"> 
+                <div class="field__item"> 
+                 <div class="paragraph paragraph--type--quicklinks-sidebar paragraph--view-mode--default"> 
+                  <div class="field field--name-field-links field--type-link field--label-hidden field__items"> 
+                   <div class="field__item"> 
+                    <a href="/admissions">Admissions Overview</a> 
+                   </div> 
+                   <div class="field__item"> 
+                    <a href="http://admissions.ucr.edu/">Undergraduate Admissions</a> 
+                   </div> 
+                   <div class="field__item"> 
+                    <a href="http://graduate.ucr.edu/grad_admissions.html">Graduate Admissions</a> 
+                   </div> 
+                   <div class="field__item"> 
+                    <a href="http://admissions.ucr.edu/admissions/international/index.html">International Admissions</a> 
+                   </div> 
+                   <div class="field__item"> 
+                    <a href="http://admissions.ucr.edu/admissions/transfer.html">Transfer Admissions</a> 
+                   </div> 
+                   <div class="field__item"> 
+                    <a href="http://admissions.ucr.edu/cost/index.html">Cost</a> 
+                   </div> 
+                  </div> 
+                 </div> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <div class="layout__region layout__region--middle layout__region layout__region--top cell medium-12 large-12"> 
+            <div class="block-region-middle">
+             <div class="block--teaser-callout-slider " data-block-plugin-id="block_content:c030e9c3-4b90-4108-b69b-0be4cfe4c290"> 
+              <div class="field field--name-field-view field--type-viewfield field--label-hidden"> 
+               <div class="field__item field__item-label-hidden"> 
+                <div class="views-element-container">
+                 <div class="teaser-callout-slider js-view-dom-id-cf0d01ed4acaa97d04a245734e97724786750acaf757d162fa6c5744928d10f0"> 
+                  <div id="slick-views-teaser-callout-slider-default-1" class="slick slick--view--teaser-callout-slider slick--view--teaser-callout-slider--default slick--optionset--teaser-call-out">
+                   <div id="slick-views-teaser-callout-slider-default-1-slider" data-slick="{&quot;adaptiveHeight&quot;:true,&quot;dots&quot;:true,&quot;fade&quot;:true}" class="slick__slider">
+                    <div class="slick__slide slide slide--0">
+                     <div class="views-field views-field-field-tea">
+                      <div class="field-content">
+                       <div class="teaser-wrapper">
+                        <div class="teaser-image" style="background-image: url(/sites/g/files/rcwecm986/files/student-hub.jpg); ">
+                         <div class="content-wrapper Orientation
+                
+        right" style="background-color: RGBA(250,81,81,1);  ">
+                          <div class="teaser-section-title">
+                           <div class="field field--name-field-callout-title field--type-string field--label-hidden field__items">
+                            <div class="field__item">
+                              Admissions 
+                            </div>
+                           </div>
+                          </div>
+                          <div class="teaser-title">
+                           <div class="field field--name-field-title field--type-string field--label-hidden field__items">
+                            <div class="field__item">
+                              Undergraduate Admissions 
+                            </div>
+                           </div>
+                          </div>
+                          <div class="teaser-body">
+                           <div class="field field--name-field-callout-body field--type-text-long field--label-hidden field__items">
+                            <div class="field__item">
+                             <p>UC Riverside is a top-tier university on the cutting edge of science, engineering, humanities, business, and research. Our Undergraduate Admissions Office can help you with admissions requirements and important deadlines.</p>
+                            </div>
+                           </div>
+                          </div>
+                          <div class="teaser-button">
+                           <div class="field field--name-field-button field--type-link field--label-hidden field__items">
+                            <div class="field__item">
+                             <a href="http://admissions.ucr.edu">Learn More</a>
+                            </div>
+                           </div>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="paragraph paragraph--type--teaser-callout-slider paragraph--view-mode--default tabs-panel" id="">
+                         <div class="body">
+                          <div class="field field--name-field-callout-body field--type-text-long field--label-hidden field__items">
+                           <div class="field__item">
+                            <p>UC Riverside is a top-tier university on the cutting edge of science, engineering, humanities, business, and research. Our Undergraduate Admissions Office can help you with admissions requirements and important deadlines.</p>
+                           </div>
+                          </div>
+                         </div>
+                        </div>
+                       </div>
+                      </div>
+                     </div>
+                    </div>
+                    <div class="slick__slide slide slide--1">
+                     <div class="views-field views-field-field-tea">
+                      <div class="field-content">
+                       <div class="teaser-wrapper">
+                        <div class="teaser-image" style="background-image: url(/sites/g/files/rcwecm986/files/graduate-student-teaser.jpg); ">
+                         <div class="content-wrapper Orientation
+                
+        left" style="background-color: RGBA(29,54,97,1);  ">
+                          <div class="teaser-section-title">
+                           <div class="field field--name-field-callout-title field--type-string field--label-hidden field__items">
+                            <div class="field__item">
+                              Admissions 
+                            </div>
+                           </div>
+                          </div>
+                          <div class="teaser-title">
+                           <div class="field field--name-field-title field--type-string field--label-hidden field__items">
+                            <div class="field__item">
+                              Graduate Admissions 
+                            </div>
+                           </div>
+                          </div>
+                          <div class="teaser-body">
+                           <div class="field field--name-field-callout-body field--type-text-long field--label-hidden field__items">
+                            <div class="field__item">
+                             <p>With 39 Ph.D. programs, 37 Master's programs and 17 state teaching credential programs, UCR offers a wide range of opportunities for graduate study and research. Get more information on the application process and important deadlines.</p>
+                            </div>
+                           </div>
+                          </div>
+                          <div class="teaser-button">
+                           <div class="field field--name-field-button field--type-link field--label-hidden field__items">
+                            <div class="field__item">
+                             <a href="http://graduate.ucr.edu/grad_admissions.html">Learn More</a>
+                            </div>
+                           </div>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="paragraph paragraph--type--teaser-callout-slider paragraph--view-mode--default tabs-panel" id="">
+                         <div class="body">
+                          <div class="field field--name-field-callout-body field--type-text-long field--label-hidden field__items">
+                           <div class="field__item">
+                            <p>With 39 Ph.D. programs, 37 Master's programs and 17 state teaching credential programs, UCR offers a wide range of opportunities for graduate study and research. Get more information on the application process and important deadlines.</p>
+                           </div>
+                          </div>
+                         </div>
+                        </div>
+                       </div>
+                      </div>
+                     </div>
+                    </div>
+                    <div class="slick__slide slide slide--2">
+                     <div class="views-field views-field-field-tea">
+                      <div class="field-content">
+                       <div class="teaser-wrapper">
+                        <div class="teaser-image" style="background-image: url(/sites/g/files/rcwecm986/files/international-student-teaser.jpg); ">
+                         <div class="content-wrapper Orientation
+                
+        right" style="background-color: RGBA(214,51,107,1);  ">
+                          <div class="teaser-section-title">
+                           <div class="field field--name-field-callout-title field--type-string field--label-hidden field__items">
+                            <div class="field__item">
+                              Admissions 
+                            </div>
+                           </div>
+                          </div>
+                          <div class="teaser-title">
+                           <div class="field field--name-field-title field--type-string field--label-hidden field__items">
+                            <div class="field__item">
+                              International Admissions 
+                            </div>
+                           </div>
+                          </div>
+                          <div class="teaser-body">
+                           <div class="field field--name-field-callout-body field--type-text-long field--label-hidden field__items">
+                            <div class="field__item">
+                             <p>Each year, international students from more than 65 countries choose UC Riverside. We offer over 90 academic majors, highly respected advanced degrees, English language courses, and admissions counseling specifically for our international students.</p>
+                            </div>
+                           </div>
+                          </div>
+                          <div class="teaser-button">
+                           <div class="field field--name-field-button field--type-link field--label-hidden field__items">
+                            <div class="field__item">
+                             <a href="http://admissions.ucr.edu/admissions/international/index.html">Learn More</a>
+                            </div>
+                           </div>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="paragraph paragraph--type--teaser-callout-slider paragraph--view-mode--default tabs-panel" id="">
+                         <div class="body">
+                          <div class="field field--name-field-callout-body field--type-text-long field--label-hidden field__items">
+                           <div class="field__item">
+                            <p>Each year, international students from more than 65 countries choose UC Riverside. We offer over 90 academic majors, highly respected advanced degrees, English language courses, and admissions counseling specifically for our international students.</p>
+                           </div>
+                          </div>
+                         </div>
+                        </div>
+                       </div>
+                      </div>
+                     </div>
+                    </div>
+                    <div class="slick__slide slide slide--3">
+                     <div class="views-field views-field-field-tea">
+                      <div class="field-content">
+                       <div class="teaser-wrapper">
+                        <div class="teaser-image" style="background-image: url(/sites/g/files/rcwecm986/files/career-center.jpg); ">
+                         <div class="content-wrapper Orientation
+                
+        left" style="background-color: RGBA(128,34,68,1);  ">
+                          <div class="teaser-section-title">
+                           <div class="field field--name-field-callout-title field--type-string field--label-hidden field__items">
+                            <div class="field__item">
+                              Admissions 
+                            </div>
+                           </div>
+                          </div>
+                          <div class="teaser-title">
+                           <div class="field field--name-field-title field--type-string field--label-hidden field__items">
+                            <div class="field__item">
+                              Professional Studies 
+                            </div>
+                           </div>
+                          </div>
+                          <div class="teaser-body">
+                           <div class="field field--name-field-callout-body field--type-text-long field--label-hidden field__items">
+                            <div class="field__item">
+                             <p>At UCR Extension, we create educational opportunities for learners of all ages. There are no admission requirements - if you have a desire to learn, you're in! Explore our online and on-campus Extension courses and enrollment information.</p>
+                            </div>
+                           </div>
+                          </div>
+                          <div class="teaser-button">
+                           <div class="field field--name-field-button field--type-link field--label-hidden field__items">
+                            <div class="field__item">
+                             <a href="https://www.extension.ucr.edu">Learn More</a>
+                            </div>
+                           </div>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="paragraph paragraph--type--teaser-callout-slider paragraph--view-mode--default tabs-panel" id="">
+                         <div class="body">
+                          <div class="field field--name-field-callout-body field--type-text-long field--label-hidden field__items">
+                           <div class="field__item">
+                            <p>At UCR Extension, we create educational opportunities for learners of all ages. There are no admission requirements - if you have a desire to learn, you're in! Explore our online and on-campus Extension courses and enrollment information.</p>
+                           </div>
+                          </div>
+                         </div>
+                        </div>
+                       </div>
+                      </div>
+                     </div>
+                    </div>
+                    <div class="slick__slide slide slide--4">
+                     <div class="views-field views-field-field-tea">
+                      <div class="field-content">
+                       <div class="teaser-wrapper">
+                        <div class="teaser-image" style="background-image: url(/sites/g/files/rcwecm986/files/sunny-students-teaser_1.jpg); ">
+                         <div class="content-wrapper Orientation
+                
+        right" style="background-color: RGBA(58,164,220,1);  ">
+                          <div class="teaser-section-title">
+                           <div class="field field--name-field-callout-title field--type-string field--label-hidden field__items">
+                            <div class="field__item">
+                              Admissions 
+                            </div>
+                           </div>
+                          </div>
+                          <div class="teaser-title">
+                           <div class="field field--name-field-title field--type-string field--label-hidden field__items">
+                            <div class="field__item">
+                              Summer Sessions 
+                            </div>
+                           </div>
+                          </div>
+                          <div class="teaser-body">
+                           <div class="field field--name-field-callout-body field--type-text-long field--label-hidden field__items">
+                            <div class="field__item">
+                             <p>UC Riverside's Summer Sessions features over 450 available courses — including many high-demand classes — with a relaxed campus atmosphere and a convenient class schedule. Get more information on registration and important deadlines.</p>
+                            </div>
+                           </div>
+                          </div>
+                          <div class="teaser-button">
+                           <div class="field field--name-field-button field--type-link field--label-hidden field__items">
+                            <div class="field__item">
+                             <a href="http://summer.ucr.edu">Learn More</a>
+                            </div>
+                           </div>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="paragraph paragraph--type--teaser-callout-slider paragraph--view-mode--default tabs-panel" id="">
+                         <div class="body">
+                          <div class="field field--name-field-callout-body field--type-text-long field--label-hidden field__items">
+                           <div class="field__item">
+                            <p>UC Riverside's Summer Sessions features over 450 available courses — including many high-demand classes — with a relaxed campus atmosphere and a convenient class schedule. Get more information on registration and important deadlines.</p>
+                           </div>
+                          </div>
+                         </div>
+                        </div>
+                       </div>
+                      </div>
+                     </div>
+                    </div>
+                   </div>
+                   <nav class="slick__arrow">
+                    <button type="button" data-role="none" class="slick-prev" aria-label="Previous" tabindex="0" role="button">Previous</button>
+                    <button type="button" data-role="none" class="slick-next" aria-label="Next" tabindex="0" role="button">Next</button>
+                   </nav>
+                  </div> 
+                 </div> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+             <div data-block-plugin-id="block_content:5f28d30d-a273-49a8-9d13-4d6154939b4e" class="block block--color-cta"> 
+              <div class="ucr-custom-block grid-container full"> 
+               <div class="title-wrapper"> 
+               </div> 
+               <div class="grid-x small-up-1 medium-up-3 large-up-3 colorblock-cta-container" style=""> 
+                <div class="cell"> 
+                 <div class="paragraph paragraph--type--box-info paragraph--view-mode--default image-link"> 
+                  <div class="box-image"> 
+                   <div claass="color-overlay" style="background-color: #637EA4; ">
+                    &nbsp;
+                   </div> 
+                   <div class="field field--name-field-image field--type-image field--label-hidden field__items"> 
+                    <div class="field__item"> 
+                     <img src="/sites/g/files/rcwecm986/files/styles/color_block_cta/public/campus.jpg?h=1d760f9f&amp;itok=1p3OfU0i" width="406" height="406" alt="Campus" typeof="foaf:Image"> 
+                    </div> 
+                   </div> 
+                  </div> 
+                  <div class="box-title" style="color: #FFFFFF"> 
+                   <div class="field field--name-field-video-subtitle field--type-string field--label-hidden field__items"> 
+                    <div class="field__item">
+                      Colleges and Schools 
+                    </div> 
+                   </div> 
+                  </div> 
+                  <div class="box-button" style="background-color: #637EA4; "> 
+                   <div class="box-inner-button"> 
+                    <div class="field field--name-field-button-text-and-url field--type-link field--label-hidden field__items"> 
+                     <div class="field__item"> 
+                      <a href="http://admissions.ucr.edu/academics/index.html">More Information</a> 
+                     </div> 
+                    </div> 
+                   </div> 
+                  </div> 
+                 </div> 
+                </div> 
+                <div class="cell"> 
+                 <div class="paragraph paragraph--type--box-info paragraph--view-mode--default image-link"> 
+                  <div class="box-image"> 
+                   <div claass="color-overlay" style="background-color: #802244; ">
+                    &nbsp;
+                   </div> 
+                   <div class="field field--name-field-image field--type-image field--label-hidden field__items"> 
+                    <div class="field__item"> 
+                     <img src="/sites/g/files/rcwecm986/files/styles/color_block_cta/public/colorblock-img-two.png?h=1d760f9f&amp;itok=oxcyUZ26" width="406" height="406" alt="studying" typeof="foaf:Image"> 
+                    </div> 
+                   </div> 
+                  </div> 
+                  <div class="box-title" style="color: #FFFFFF"> 
+                   <div class="field field--name-field-video-subtitle field--type-string field--label-hidden field__items"> 
+                    <div class="field__item">
+                      Undergraduate Admissions 
+                    </div> 
+                   </div> 
+                  </div> 
+                  <div class="box-button" style="background-color: #802244; "> 
+                   <div class="box-inner-button"> 
+                    <div class="field field--name-field-button-text-and-url field--type-link field--label-hidden field__items"> 
+                     <div class="field__item"> 
+                      <a href="http://admissions.ucr.edu">More Information</a> 
+                     </div> 
+                    </div> 
+                   </div> 
+                  </div> 
+                 </div> 
+                </div> 
+                <div class="cell"> 
+                 <div class="paragraph paragraph--type--box-info paragraph--view-mode--default image-link"> 
+                  <div class="box-image"> 
+                   <div claass="color-overlay" style="background-color: #FA5151; ">
+                    &nbsp;
+                   </div> 
+                   <div class="field field--name-field-image field--type-image field--label-hidden field__items"> 
+                    <div class="field__item"> 
+                     <img src="/sites/g/files/rcwecm986/files/styles/color_block_cta/public/colorblock-img-three.png?h=1d760f9f&amp;itok=coEyVay6" width="406" height="406" alt="doctor" typeof="foaf:Image"> 
+                    </div> 
+                   </div> 
+                  </div> 
+                  <div class="box-title" style="color: #FFFFFF"> 
+                   <div class="field field--name-field-video-subtitle field--type-string field--label-hidden field__items"> 
+                    <div class="field__item">
+                      Graduate Admissions 
+                    </div> 
+                   </div> 
+                  </div> 
+                  <div class="box-button" style="background-color: #FA5151; "> 
+                   <div class="box-inner-button"> 
+                    <div class="field field--name-field-button-text-and-url field--type-link field--label-hidden field__items"> 
+                     <div class="field__item"> 
+                      <a href="http://graduate.ucr.edu/grad_admissions.html">More Information</a> 
+                     </div> 
+                    </div> 
+                   </div> 
+                  </div> 
+                 </div> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="block--teaser-callout-slider " data-block-plugin-id="block_content:667d71d8-f7d3-409b-83cc-7e335da8f21d"> 
+              <div class="field field--name-field-view field--type-viewfield field--label-hidden"> 
+               <div class="field__item field__item-label-hidden"> 
+                <div class="views-element-container">
+                 <div class="teaser-callout-slider js-view-dom-id-5a73c1ffe3097ce10e9d93cb6dce306ac54493f5215e1513b8754f367dd081b9"> 
+                  <div id="slick-views-teaser-callout-slider-default-2" class="slick slick--view--teaser-callout-slider slick--view--teaser-callout-slider--default slick--optionset--teaser-call-out">
+                   <div id="slick-views-teaser-callout-slider-default-2-slider" data-slick="{&quot;adaptiveHeight&quot;:true,&quot;dots&quot;:true,&quot;fade&quot;:true}" class="slick__slider">
+                    <div class="slick__slide slide slide--0">
+                     <div class="views-field views-field-field-tea">
+                      <div class="field-content">
+                       <div class="teaser-wrapper">
+                        <div class="teaser-image" style="background-image: url(/sites/g/files/rcwecm986/files/campus-tour-teaser.jpg); ">
+                         <div class="content-wrapper Orientation
+                
+        right" style="background-color: RGBA(33,37,41,0.8);  ">
+                          <div class="teaser-section-title">
+                           <div class="field field--name-field-callout-title field--type-string field--label-hidden field__items">
+                            <div class="field__item">
+                              Campus Life 
+                            </div>
+                           </div>
+                          </div>
+                          <div class="teaser-title">
+                           <div class="field field--name-field-title field--type-string field--label-hidden field__items">
+                            <div class="field__item">
+                              Explore UCR 
+                            </div>
+                           </div>
+                          </div>
+                          <div class="teaser-body">
+                           <div class="field field--name-field-callout-body field--type-text-long field--label-hidden field__items">
+                            <div class="field__item">
+                             <p>There's no better way than a campus tour to get a feel for UC Riverside. Come visit us in person; schedule a tour of UCR with a current student as your expert guide.</p>
+                            </div>
+                           </div>
+                          </div>
+                          <div class="teaser-button">
+                           <div class="field field--name-field-button field--type-link field--label-hidden field__items">
+                            <div class="field__item">
+                             <a href="http://admissions.ucr.edu/visit-ucr/index.html">SCHEDULE A TOUR</a>
+                            </div>
+                           </div>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="paragraph paragraph--type--teaser-callout-slider paragraph--view-mode--default tabs-panel" id="">
+                         <div class="body">
+                          <div class="field field--name-field-callout-body field--type-text-long field--label-hidden field__items">
+                           <div class="field__item">
+                            <p>There's no better way than a campus tour to get a feel for UC Riverside. Come visit us in person; schedule a tour of UCR with a current student as your expert guide.</p>
+                           </div>
+                          </div>
+                         </div>
+                        </div>
+                       </div>
+                      </div>
+                     </div>
+                    </div>
+                    <div class="slick__slide slide slide--1">
+                     <div class="views-field views-field-field-tea">
+                      <div class="field-content">
+                       <div class="teaser-wrapper">
+                        <div class="teaser-image" style="background-image: url(/sites/g/files/rcwecm986/files/campus-tour-teaser_0.jpg); ">
+                         <div class="content-wrapper Orientation
+                
+        right" style="background-color: RGBA(33,37,41,0.8);  ">
+                          <div class="teaser-section-title">
+                           <div class="field field--name-field-callout-title field--type-string field--label-hidden field__items">
+                            <div class="field__item">
+                              CAMPUS LIFE 
+                            </div>
+                           </div>
+                          </div>
+                          <div class="teaser-title">
+                           <div class="field field--name-field-title field--type-string field--label-hidden field__items">
+                            <div class="field__item">
+                              Virtual Tours 
+                            </div>
+                           </div>
+                          </div>
+                          <div class="teaser-body">
+                           <div class="field field--name-field-callout-body field--type-text-long field--label-hidden field__items">
+                            <div class="field__item">
+                             <p>Get an inside look at campus life before your campus visit! You can experience UCR anytime, from anywhere with our 360<sup>o</sup> virtual tours.&nbsp;</p>
+                            </div>
+                           </div>
+                          </div>
+                          <div class="teaser-button">
+                           <div class="field field--name-field-button field--type-link field--label-hidden field__items">
+                            <div class="field__item">
+                             <a href="http://admissions.ucr.edu/visit-ucr/virtual-tours.html">TAKE THE TOUR</a>
+                            </div>
+                           </div>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="paragraph paragraph--type--teaser-callout-slider paragraph--view-mode--default tabs-panel" id="">
+                         <div class="body">
+                          <div class="field field--name-field-callout-body field--type-text-long field--label-hidden field__items">
+                           <div class="field__item">
+                            <p>Get an inside look at campus life before your campus visit! You can experience UCR anytime, from anywhere with our 360<sup>o</sup> virtual tours.&nbsp;</p>
+                           </div>
+                          </div>
+                         </div>
+                        </div>
+                       </div>
+                      </div>
+                     </div>
+                    </div>
+                    <div class="slick__slide slide slide--2">
+                     <div class="views-field views-field-field-tea">
+                      <div class="field-content">
+                       <div class="teaser-wrapper">
+                        <div class="teaser-image" style="background-image: url(/sites/g/files/rcwecm986/files/students-laugh-teaser.jpg); ">
+                         <div class="content-wrapper Orientation
+                
+        left" style="background-color: RGBA(33,37,41,0.8);  ">
+                          <div class="teaser-section-title">
+                           <div class="field field--name-field-callout-title field--type-string field--label-hidden field__items">
+                            <div class="field__item">
+                              Campus Life 
+                            </div>
+                           </div>
+                          </div>
+                          <div class="teaser-title">
+                           <div class="field field--name-field-title field--type-string field--label-hidden field__items">
+                            <div class="field__item">
+                              Find Your Place 
+                            </div>
+                           </div>
+                          </div>
+                          <div class="teaser-body">
+                           <div class="field field--name-field-callout-body field--type-text-long field--label-hidden field__items">
+                            <div class="field__item">
+                             <p>Our signature music festivals, talented sports teams, and one-of-a-kind student organizations all contribute to the excitement that permeates UCR.</p>
+                            </div>
+                           </div>
+                          </div>
+                          <div class="teaser-button">
+                           <div class="field field--name-field-button field--type-link field--label-hidden field__items">
+                            <div class="field__item">
+                             <a href="/campus-life">More About Campus Life</a>
+                            </div>
+                           </div>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="paragraph paragraph--type--teaser-callout-slider paragraph--view-mode--default tabs-panel" id="">
+                         <div class="body">
+                          <div class="field field--name-field-callout-body field--type-text-long field--label-hidden field__items">
+                           <div class="field__item">
+                            <p>Our signature music festivals, talented sports teams, and one-of-a-kind student organizations all contribute to the excitement that permeates UCR.</p>
+                           </div>
+                          </div>
+                         </div>
+                        </div>
+                       </div>
+                      </div>
+                     </div>
+                    </div>
+                    <div class="slick__slide slide slide--3">
+                     <div class="views-field views-field-field-tea">
+                      <div class="field-content">
+                       <div class="teaser-wrapper">
+                        <div class="teaser-image" style="background-image: url(/sites/g/files/rcwecm986/files/rock-wall-teaser.jpg); ">
+                         <div class="content-wrapper Orientation
+                
+        right" style="background-color: RGBA(33,37,41,0.8);  ">
+                          <div class="teaser-section-title">
+                           <div class="field field--name-field-callout-title field--type-string field--label-hidden field__items">
+                            <div class="field__item">
+                              Campus Life 
+                            </div>
+                           </div>
+                          </div>
+                          <div class="teaser-title">
+                           <div class="field field--name-field-title field--type-string field--label-hidden field__items">
+                            <div class="field__item">
+                              Climb up the Walls 
+                            </div>
+                           </div>
+                          </div>
+                          <div class="teaser-body">
+                           <div class="field field--name-field-callout-body field--type-text-long field--label-hidden field__items">
+                            <div class="field__item">
+                             <p>&nbsp;UCR’s newly expanded Student Recreation Center (SRC) is bigger and better than ever — and it’s all yours! As a registered UCR student, you are automatically a member.</p>
+                            </div>
+                           </div>
+                          </div>
+                          <div class="teaser-button">
+                           <div class="field field--name-field-button field--type-link field--label-hidden field__items">
+                            <div class="field__item">
+                             <a href="http://recreation.ucr.edu">Get Active on Campus</a>
+                            </div>
+                           </div>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="paragraph paragraph--type--teaser-callout-slider paragraph--view-mode--default tabs-panel" id="">
+                         <div class="body">
+                          <div class="field field--name-field-callout-body field--type-text-long field--label-hidden field__items">
+                           <div class="field__item">
+                            <p>&nbsp;UCR’s newly expanded Student Recreation Center (SRC) is bigger and better than ever — and it’s all yours! As a registered UCR student, you are automatically a member.</p>
+                           </div>
+                          </div>
+                         </div>
+                        </div>
+                       </div>
+                      </div>
+                     </div>
+                    </div>
+                   </div>
+                   <nav class="slick__arrow">
+                    <button type="button" data-role="none" class="slick-prev" aria-label="Previous" tabindex="0" role="button">Previous</button>
+                    <button type="button" data-role="none" class="slick-next" aria-label="Next" tabindex="0" role="button">Next</button>
+                   </nav>
+                  </div> 
+                 </div> 
+                </div> 
+               </div> 
+              </div> 
+             </div>
+            </div> 
+           </div> 
+           <div class="layout__region layout__region--bottom layout__region layout__region--top cell medium-12 large-12"> 
+            <div class="block-region-bottom">
+             <div class="block--additional_information " data-block-plugin-id="block_content:50737008-dc36-4fc0-a9bf-17746037cb0c"> 
+              <h2 class="block--additional_information ">Additional Information</h2> 
+              <div class="grid-x"> 
+               <div class="paragraph paragraph--type--column paragraph--view-mode--default large-3"> 
+                <div class="field field--name-field-title field--type-string field--label-hidden field__items"> 
+                 <div class="field__item">
+                   Dining 
+                 </div> 
+                </div> 
+                <div class="field field--name-field-body field--type-text-long field--label-hidden field__items"> 
+                 <div class="field__item"> 
+                  <p>Discover a variety of on-campus restaurants and shops that serve tasty, nutritious, and diverse options to feed your cravings.&nbsp;</p> 
+                 </div> 
+                </div> 
+                <div class="field field--name-field-link field--type-link field--label-hidden field__items"> 
+                 <div class="field__item"> 
+                  <a href="http://dining.ucr.edu">More about Dining</a> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="paragraph paragraph--type--column paragraph--view-mode--default large-3"> 
+                <div class="field field--name-field-title field--type-string field--label-hidden field__items"> 
+                 <div class="field__item">
+                   Housing 
+                 </div> 
+                </div> 
+                <div class="field field--name-field-body field--type-text-long field--label-hidden field__items"> 
+                 <div class="field__item"> 
+                  <p>Live in UCR’s residential communities and enjoy programs, activities and amenities to help you adjust to college, make new friends and achieve student success.&nbsp;</p> 
+                 </div> 
+                </div> 
+                <div class="field field--name-field-link field--type-link field--label-hidden field__items"> 
+                 <div class="field__item"> 
+                  <a href="http://housing.ucr.edu ">Housing Information</a> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="paragraph paragraph--type--column paragraph--view-mode--default large-3"> 
+                <div class="field field--name-field-title field--type-string field--label-hidden field__items"> 
+                 <div class="field__item">
+                   Financial Aid 
+                 </div> 
+                </div> 
+                <div class="field field--name-field-body field--type-text-long field--label-hidden field__items"> 
+                 <div class="field__item"> 
+                  <p>UCR was recently rated among the nation's most generous public universities in awarding financial aid to freshmen. Learn more about the financial aid you could receive at UCR.&nbsp;</p> 
+                 </div> 
+                </div> 
+                <div class="field field--name-field-link field--type-link field--label-hidden field__items"> 
+                 <div class="field__item"> 
+                  <a href="http://financialaid.ucr.edu">Financial Aid Resources</a> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="paragraph paragraph--type--column paragraph--view-mode--default large-3"> 
+                <div class="field field--name-field-title field--type-string field--label-hidden field__items"> 
+                 <div class="field__item">
+                   About UCR 
+                 </div> 
+                </div> 
+                <div class="field field--name-field-body field--type-text-long field--label-hidden field__items"> 
+                 <div class="field__item"> 
+                  <p>UCR is a university of distinction and diversity. We are among 10 universities within the prestigious University of California system, and the only UC located in Inland Southern California.&nbsp;</p> 
+                 </div> 
+                </div> 
+                <div class="field field--name-field-link field--type-link field--label-hidden field__items"> 
+                 <div class="field__item"> 
+                  <a href="/about">More about UCR</a> 
+                 </div> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </article> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <footer> 
+   <div class="grid-container"> 
+    <div class="grid-x grid-padding-x align-center"> 
+     <div class="cell footer-google-search" id="block-ucriversidefootersearchblock-2" data-block-plugin-id="ucr_global_footer_search"> 
+      <section class="google-search"> 
+       <form action="https://www.ucr.edu/search.php"> 
+        <label class="show-for-sr" for="footer-search">Search for:</label> 
+        <input type="text" maxlength="255" id="footer-search" name="q" value="" placeholder=" "> 
+       </form> 
+      </section> 
+     </div> 
+    </div> 
+    <div class="grid-x grid-padding-x footer-columns"> 
+     <div class="cell medium-auto"> 
+      <section class="footer-item ucr-footer-info"> 
+       <span class="footer-logo"><span class="show-for-sr">University of California, Riverside</span></span> 
+       <address> <p>900 University Ave.<br> Riverside, CA 92521</p> <p>Tel: (951) 827-1012</p> </address> 
+       <ul class="footer-links"> 
+        <li><a href="http://library.ucr.edu/" target="_blank">UCR Library</a></li> 
+        <li><a href="http://campusstatus.ucr.edu/" target="_blank">Campus Status</a></li> 
+        <li><a href="http://campusstore.ucr.edu/" target="_blank">Campus Store</a></li> 
+        <li><a href="http://jobs.ucr.edu" target="_blank">Career Opportunities</a></li> 
+        <li><a href="http://diversity.ucr.edu/" target="_blank">Diversity</a></li> 
+        <li><a href="http://campusmap.ucr.edu/" target="_blank">Maps and Directions</a></li> 
+        <li><a href="/about/visitors">Visit UCR</a></li> 
+       </ul> 
+      </section> 
+     </div> 
+     <div class="cell medium-auto"> 
+      <section class="footer-item footer-dept-info" id="block-ucriversidefooterdeptinformationblock-2" data-block-plugin-id="ucr_global_footer_dept_info"> 
+       <h3>University Communications</h3> 
+       <address class="address_2"> <p> <a href="http://campusmap.ucr.edu/?loc=HINHL" target="_blank"> 1156 Hinderaker Hall </a><br> </p> <p> Tel: (951) 827-1012<br> E-mail: <a href="mailto:webmaster@ucr.edu">webmaster@ucr.edu</a> </p> </address> 
+       <p> <a class="link-img link-img-location" href="http://campusmap.ucr.edu/?loc=HINHL" target="_blank"> Find Us<br><br> <img src="/themes/custom/ucr_default/images/googlemap.png" alt="Find Us"></a> </p> 
+      </section> 
+      <section class="UcrGlobalFooterFollowUsBlock"> 
+       <p class="social-title">Follow US:</p> 
+       <div class="social-link"> 
+        <a href="https://www.facebook.com/UCRiverside/" target="_blank" class="button mdi mdi-facebook" title="Facebook"><span class="show-for-sr">Facebook</span></a> 
+        <a href="https://twitter.com/UCRiverside" target="_blank" class="button mdi mdi-twitter" title="Twitter"><span class="show-for-sr">Twitter</span></a> 
+        <a href="https://www.youtube.com/UCRiverside" target="_blank" class="button mdi mdi-youtube-play" title="YouTube"><span class="show-for-sr">YouTube</span></a> 
+        <a href="https://www.instagram.com/ucriversideofficial/" target="_blank" class="button mdi mdi-instagram" title="Instagram"><span class="show-for-sr">Instagram</span></a> 
+        <a href="https://www.linkedin.com/school/university-of-california-riverside/" target="_blank" class="button mdi mdi-linkedin" title="LinkedIn"><span class="show-for-sr">LinkedIn</span></a> 
+       </div> 
+      </section> 
+     </div> 
+     <div class="cell medium-auto"> 
+      <nav role="navigation" aria-labelledby="block-ucriversiderelatedlinks-2-menu" id="block-ucriversiderelatedlinks-2" data-block-plugin-id="menu_block:ucr-related-links-menu" class="general-menu"> 
+       <h2 id="block-ucriversiderelatedlinks-2-menu">UC Riverside Related Links</h2> 
+       <ul class="vertical menu"> 
+        <li><a href="http://admissions.ucr.edu" target="_self">UCR Admissions</a> </li> 
+        <li><a href="http://admissions.ucr.edu/academics/index.html" target="_self">Colleges and Schools</a> </li> 
+        <li><a href="http://graduate.ucr.edu" target="_self">Graduate Division</a> </li> 
+        <li><a href="/giving" target="_self" data-drupal-link-system-path="node/558">Support UCR</a> </li> 
+        <li><a href="http://careers.ucr.edu/" target="_self">UCR Career Center</a> </li> 
+        <li><a href="https://www.ucrhealth.org/home/" target="_self">UCR Health</a> </li> 
+        <li><a href="http://jobs.ucr.edu" target="_self">UCR Jobs</a> </li> 
+        <li><a href="https://ucrtoday.ucr.edu/" target="_self">UCRToday</a> </li> 
+       </ul> 
+      </nav> 
+      <div class="block--basic " id="block-ucrtobaccofree" data-block-plugin-id="block_content:b0ebddf5-5266-4474-9321-98363ab00dd0"> 
+       <div class="field field--name-body field--type-text-with-summary field--label-hidden field__items"> 
+        <div class="field__item"> 
+         <p><a href="http://tobaccofree.ucr.edu/" target="_blank" title="Tobacco Free"></a></p>
+         <article class="embedded-entity">
+          <a href="http://tobaccofree.ucr.edu/" target="_blank" title="Tobacco Free"><img src="/sites/g/files/rcwecm986/files/UCR-TOBACCO-FREE.png" alt="ucr tobacco free" title="ucr tobacco free logo" typeof="foaf:Image"></a>
+         </article>
+         <p></p> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="site-legal-footer"> 
+    <div class="grid-container"> 
+     <div class="grid-x grid-padding-x"> 
+      <div class="cell"> 
+       <ul> 
+        <!--<li><a href="/feedback" title="Send Feedback E-mail">Feedback</a></li>--> 
+        <li><a href="http://www.ucr.edu/privacy.html">Privacy Policy</a></li> 
+        <li><a href="http://www.ucr.edu/terms.html">Terms and Conditions</a></li> 
+        <li>© 2018 Regents of the University of California</li> 
+       </ul> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </footer>  
+  <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/8","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","ajaxPageState":{"libraries":"blazy\/loading,colorbox\/plain,colorbox_inline\/colorbox_inline,colorbox_load\/colorbox_load,core\/html5shiv,google_analytics\/google_analytics,ng_lightbox\/ng_lightbox,slick\/slick.load,system\/base,ucr_umbrella\/global-css,ucr_umbrella\/global-js,ucr_umbrella\/twocol_bricks_75_25,views\/views.module","theme":"ucr_umbrella","theme_token":null},"ajaxTrustedUrl":[],"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px"},"google_analytics":{"trackOutbound":true,"trackMailto":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":true},"field_group":{"html_element":{"mode":"default","context":"view","settings":{"id":"","classes":"grid-x","element":"div","show_label":false,"label_element":"h3","attributes":"","effect":"none","speed":"fast"}}},"slick":{"accessibility":true,"adaptiveHeight":false,"autoplay":false,"autoplaySpeed":3000,"pauseOnHover":true,"pauseOnDotsHover":false,"arrows":true,"downArrow":false,"downArrowTarget":"","downArrowOffset":0,"centerMode":false,"centerPadding":"50px","dots":false,"dotsClass":"slick-dots","draggable":true,"fade":false,"focusOnSelect":false,"infinite":true,"initialSlide":0,"lazyLoad":"ondemand","mouseWheel":false,"randomize":false,"rtl":false,"rows":1,"slidesPerRow":1,"slide":"","slidesToShow":1,"slidesToScroll":1,"speed":500,"swipe":true,"swipeToSlide":false,"edgeFriction":0.34999999999999998,"touchMove":true,"touchThreshold":5,"useCSS":true,"cssEase":"ease","cssEaseBezier":"","cssEaseOverride":"","useTransform":true,"easing":"linear","variableWidth":false,"vertical":false,"verticalSwiping":false,"waitForAnimate":true},"ajax":[],"user":{"uid":0,"permissionsHash":"191a86fe5ca26157187c24cfdb5c0da88fdb3a64a251cef8e2bbf99d52e1f83f"}}</script> 
+  <script src="/sites/g/files/rcwecm986/files/js/js_nKryhvexh7BBsBF0hqt5kt6MBQ5EYyeU9AvNpTEnJeo.js"></script> 
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"07d404edfe","applicationID":"99508828","transactionName":"MVZSYRNWCxBZB0wIWggccVYVXgoNFxRZBlA5UFFWCVI=","queueTime":0,"applicationTime":49,"atts":"HRFRF1tMGB4=","errorBeacon":"bam.nr-data.net","agent":""}</script> 
+ </body>
+</html>

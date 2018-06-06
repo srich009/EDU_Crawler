@@ -1,335 +1,295 @@
-<!doctype html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
- <head> 
-  <title>UC Application</title> 
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
-  <meta http-equiv="Content-Script-Type" content="text/javascript"> 
-  <meta http-equiv="X-UA-Compatible" content="IE=8"> 
-  <meta name="keywords" content="University of California, University, California, UC, UCOP, UC admission, UC admissions, undergraduate admission, undergraduate admissions, college admission, college admissions, university admission, university admissions, admission,  admissions, application, apply, college, campus, major, degree, scholarships, academics, activities, awards, Cal, UC  Berkeley, UCB, UC  Davis, UCD, UC  Irvine, UCI, UC  Los Angeles, UCLA, UC  Merced, UCM, UC  Riverside, UCR, UC San Diego, UCSD, UC Santa Barbara, UCSB, UC Santa Cruz, UCSC, My UC Application"> 
-  <meta name="description" content="This is University of California's application for undergraduate admission and scholarships. Here you can apply online to these UC campuses: Berkeley, Davis, Irvine, Los Angeles, Merced, Riverside, San Diego, Santa Barbara, Santa Cruz."> 
-  <link rel="shortcut icon" type="image/png" href="/applicant/images/favicon.ico"> 
-  <link rel="stylesheet" type="text/css" media="screen" href="/applicant/css/layout.css"> 
-  <link rel="stylesheet" type="text/css" media="screen" href="/applicant/css/smoothness/jquery-ui-1.7.2.custom.css"> 
-  <link rel="stylesheet" type="text/css" media="screen" href="/applicant/css/shadowbox.css"> 
-  <script type="text/javascript" src="/applicant/dwr/util.js"></script> 
-  <script type="text/javascript" src="/applicant/dwr/engine.js"></script> 
-  <script src="/applicant/js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script> 
-  <script src="/applicant/js/jquery-migrate-1.2.1.js" type="text/javascript" charset="utf-8"></script> 
-  <script src="/applicant/js/jquery-ui-1.7.2.custom.min.js" type="text/javascript" charset="utf-8"></script> 
-  <script src="/applicant/js/plugins/jquery.maskedinput-1.2.2.min.js" type="text/javascript" charset="utf-8"></script> 
-  <script src="/applicant/js/plugins/jquery.form.js" type="text/javascript" charset="utf-8"></script> 
-  <script src="/applicant/js/plugins/jquery.metadata.js" type="text/javascript" charset="utf-8"></script> 
-  <script src="/applicant/js/plugins/jquery.validate.min.js" type="text/javascript" charset="utf-8"></script> 
-  <script src="/applicant/js/plugins/jquery.autocomplete.js" type="text/javascript" charset="utf-8"></script> 
-  <script src="/applicant/js/application.js" type="text/javascript" charset="utf-8"></script> 
-  <script src="/applicant/js/ucop.js" type="text/javascript" charset="utf-8"></script> 
-  <script src="/applicant/js/applicant/textUtils.js" type="text/javascript" charset="utf-8"></script> 
-  <script src="/applicant/js/applicant/applicantCommon.js" type="text/javascript" charset="utf-8"></script> 
-  <script src="/applicant/js/RegExValidation.js" type="text/javascript" charset="utf-8"></script> 
-  <script src="/applicant/js/hyphenate.js" type="text/javascript" charset="utf-8"></script> 
-  <script type="text/javascript" src="/applicant/js/shadowbox/shadowbox.js"></script> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head id="ContentPlaceHolderDefault_head">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+	Research and Economic Development - UCR
+</title> 
+  <!-- Bootstrap core CSS --> 
+  <link href="/Content/bootstrap.min.css" rel="stylesheet"> 
+  <!-- Bootstrap theme --> 
+  <link href="/Content/bootstrap-theme.min.css" rel="stylesheet"> 
+  <script type="text/javascript" src="/Scripts/jquery-2.1.3.min.js"></script> 
+  <script type="text/javascript" src="/Scripts/bootstrap.min.js"></script> 
+  <link rel="stylesheet" type="text/css" href="/css/Or.css">
+  <link rel="stylesheet" href="/css/lightbox.min.css"> 
+  <!-- 2/18/2016 --> 
+  <!-- Icons from Font Awesome http://fortawesome.github.io/Font-Awesome/icons/ --> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"> 
+  <link href="http://or.ucr.edu/favicon.ico" rel="icon" type="image/x-icon"> 
+  <script src="/scripts/Red.js" type="text/javascript"></script> 
   <script type="text/javascript">
-  Shadowbox.init({
-    // Skip the automatic setup because we don't have any
-    // properly configured link elements on the page.
-    skipSetup: true,
-    // Prevent modal from closing when clicking on the overlay
-    modal: true,
-    // Include the players to display content.
-    //players: ["inline","iframe","html"]
-    players: ["html"]
-  });
-</script> 
-  <!-- noscript><div style="background-color:#fce9c0;background-position: 15px;border-top:2px solid #dbac48;border-bottom:2px solid #dbac48;padding: 15px 10px 15px 50px;"><p>It appears that JavaScript is not enabled in this web browser however ApplyUC requires it. Please enable it or try another web browser.</p></div></noscript --> 
+        //Redirect Old URL - See Red.js
+        RedirectOldUrl();
+      </script> 
+  <style>
+         /* ========================================================================= */
+         /* My Bootstrap Overrides */
+         /* ========================================================================= */
+             
+        /* ------------------------------------------- */       
+        /*AM22 - To make google search box appear correct - START*/
+        /* ------------------------------------------- */       
+        input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus, .gsc-search-button
+        {
+          box-sizing: content-box;
+          line-height: normal;
+        }
+       </style> 
  </head> 
  <body> 
-  <div class="page_margins">
-   <!-- begin: page_margins div --> 
-   <div class="page">
-    <!-- begin: page div --> 
-    <div id="page_header"> 
-     <div id="header">
-      <!-- begin: header div --> 
-      <img src="images/uc_banner_left.png" width="369" height="95" alt="University of California">
-      <img src="images/uc_banner_right_basic.png" width="589" height="95" alt="University of California"> 
-     </div>
-     <!-- end: header div --> 
-    </div> 
-    <!-- end: page_header div --> 
-    <div id="main">
-     <!-- begin: main div --> 
-     <div id="col1"> 
-      <div id="col1_content" class="clearfix"> 
-       <div class="sidebar_box">
-        <!-- begin:  Statement of Integrity --> 
-        <div class="middle"> 
-         <p><span class="bold"><a href="https://admissions.universityofcalifornia.edu/docs/StatementOfIntegrity.pdf" title="Download Statement of Integrity. Clicking this link will open a new tab/window." target="_blank">Statement of Integrity</a></span></p> 
-        </div> 
-        <div class="bottom"></div> 
-       </div>
-       <!-- end:  Statement of Integrity --> 
-       <div class="sidebar_box">
-        <!-- begin:  Need Help? --> 
-        <div class="middle"> 
-         <div id="need_help"> 
-          <p><span class="bold">Need Help?</span></p> 
-          <p>Call the UC Application Center at <span style="white-space:nowrap;">(800) 207-1710</span> (within U.S.) or <span style="white-space:nowrap;">(925) 298-6856</span> (outside U.S.), or <span style="white-space:nowrap;">email</span> <a href="mailto:ucinfo@applyucsupport.net" title="Email ucinfo@applyucsupport.net">ucinfo@applyucsupport.net</a>.</p> 
-         </div> 
-        </div> 
-        <div class="bottom"></div> 
-       </div>
-       <!-- end:  Need Help? --> 
-       <!-- begin: Common Questions --> 
-       <div class="sidebar_box"> 
-        <div class="middle"> 
-         <img src="images/common_questions.jpg" width="170" height="20" alt="Common Questions"> 
-         <ul class="questions_nav"> 
-          <li><a class="expandable_question" href="#" title="If I've already submitted my application and want to apply to an additional campus, should I start a new application?">If I've already submitted my application and want to apply to an additional campus, should I start a new application?</a> <p>No. If the campus you want to apply to is still open, you can add it to your existing application. You will have to pay an additional application fee.</p> </li> 
-         </ul> 
-         <!--  More/Fewer Questions link not needed --> 
-         <!--  a id="more_questions_link" href="#" title="More Questions">More Questions</a --> 
-        </div> 
-        <div class="bottom"></div> 
-       </div> 
-       <!-- end: Common Questions --> 
-      </div> 
-     </div> 
-     <div id="col3"> 
-      <!-- begin: col3 div --> 
-      <div id="col3_content" class="clearfix">
-       <!-- begin: col3_content div --> 
-       <!-- begin: skiplink anchor: navigation --> 
-       <a id="content" name="content"></a> 
-       <!-- end: skiplink anchor: navigation --> 
-       <!-- begin: If JavaScript is disabled. --> 
-       <noscript> 
-        <div id="noscript">
-          JavaScript is not enabled in your web browser. Please enable it or try another JavaScript enabled browser. 
-        </div> 
-       </noscript> 
-       <!-- end: If JavaScript is disabled. --> 
-       <script type="text/javascript">
-	$().ready(function() {
-		  $('form').preventDoubleSubmission();
-	});  
-</script> 
-       <div class="floatbox"> 
-        <h1 class="my_uc_application_title" title="My UC Application"><span class="hidden_title">My UC Application</span></h1> 
-       </div> 
-       <form id="loginForm" class="yform" action="/applicant/login.htm" method="post"> 
-        <!-- begin: Message section - Notice--> 
-        <!-- end: Message section - Notice --> 
-        <!-- Begin: Validation Error Box --> 
-        <div id="error_signin" class="hidden"> 
-         <div class="notice error"> 
-          <h6>Oops! There are errors on the page that need to be corrected.</h6> 
-          <div></div> 
-          <div></div> 
-         </div> 
-        </div> 
-        <!-- End: Validation Error Box --> 
-        <div class="indent"> 
-         <div id="loginErrorMessage" class="visible">
-          <p class="indent"><span class="instructions_error"></span></p>
-         </div> 
-         <div id="sign_in"> 
-          <h5>Sign In</h5> 
-          <div class="type-text"> 
-           <label for="emailAddress">Email Address <span id="signin_email_errors" class="instructions_error"></span></label> 
-           <input class="large" type="text" name="emailAddress" id="emailAddress" value="" size="20" maxlength="50" tabindex="1"> 
-          </div> 
-          <div class="type-text"> 
-           <label for="password">Password</label> 
-           <div id="signin_password_errors" class="instructions_error"></div> 
-           <input class="large" type="password" name="password" id="password" value="" size="20" maxlength="15" tabindex="2"> 
-          </div> 
-          <br> 
-          <div id="form_signin_submit" class="floatbox"> 
-           <div class="float_left"> 
-            <a tabindex="3" class="next" href="javascript:validatePage()" title="Go"><span>Go</span></a> 
-           </div> 
-           <div class="float_left"> 
-            <div id="signin_lost_password">
-             <a tabindex="4" href="lostPassword.htm" title="Forgot your password?">Forgot your password?</a>
-            </div> 
-           </div> 
-          </div> 
-         </div> 
-         <div id="create_account"> 
-          <h5>Create a New Account</h5> 
-          <p class="indent">If you don't have an account you can create one here.</p> 
-          <br> 
-          <a tabindex="3" class="next" href="accountLogin.htm?clear=" title="Create an Account"><span>New Account</span></a> 
-         </div> 
-         <br class="clear_both"> 
-        </div> 
-        <input id="hidden_submit" type="submit" style="display:none"> 
-       </form> 
-       <div class="preload_01"></div> 
-       <div class="preload_02"></div> 
-       <div class="preload_03"></div> 
-       <div class="preload_04"></div> 
-       <div class="preload_05"></div> 
-       <div class="preload_06"></div> 
-       <div class="preload_07"></div> 
-       <div class="preload_08"></div> 
-       <div class="preload_09"></div> 
-       <div class="preload_10"></div> 
-       <div class="preload_11"></div> 
-       <div class="preload_12"></div> 
-       <div class="preload_13"></div> 
-       <div class="preload_14"></div> 
-       <div class="preload_15"></div> 
-       <div class="preload_16"></div> 
-       <div class="preload_17"></div> 
-       <div class="preload_18"></div> 
-       <div class="preload_19"></div> 
-       <div class="preload_20"></div> 
-       <div class="preload_21"></div> 
-       <div class="preload_22"></div> 
-       <div class="preload_23"></div> 
-       <div class="preload_24"></div> 
-       <div class="preload_25"></div> 
-       <div class="preload_26"></div> 
-       <div class="preload_27"></div> 
-       <div class="preload_28"></div> 
-       <div class="preload_29"></div> 
-       <div class="preload_30"></div> 
-       <div class="preload_31"></div> 
-       <div class="preload_32"></div> 
-       <div class="preload_33"></div> 
-       <div class="preload_34"></div> 
-       <div class="preload_35"></div> 
-       <div class="preload_36"></div> 
-       <div class="preload_37"></div> 
-       <div class="preload_38"></div> 
-       <div class="preload_39"></div> 
-       <div class="preload_40"></div> 
-       <div class="preload_41"></div> 
-       <div class="preload_42"></div> 
-       <div class="preload_43"></div> 
-       <div class="preload_44"></div> 
-       <div class="preload_45"></div> 
-       <div class="preload_46"></div> 
-       <div class="preload_47"></div> 
-       <div class="preload_48"></div> 
-       <div class="preload_49"></div> 
-       <div class="preload_50"></div> 
-       <div class="preload_51"></div> 
-       <div class="preload_52"></div> 
-       <div class="preload_53"></div> 
-       <div class="preload_54"></div> 
-       <script type="text/javascript">
-
-$(function(){
-    $('input').keydown(function(e){ 
-        if (e.keyCode == 13) { 
-        	validatePage();
-        }
-    });
-});
-
-  function validatePage() {
-
-	var ok = true;
-
-	var errorBox = document.getElementById('error_signin');
-	//var errorEmailBlank = document.getElementById('error_signin_email');
-	//var errorPasswordBlank = document.getElementById('error_signin_password');
-	var emailErrors = document.getElementById('signin_email_errors');
-	var passwordErrors = document.getElementById('signin_password_errors');
-	var email = document.getElementById('emailAddress');
-	var password = document.getElementById('password');
-
-	errorBox.className = 'hidden';
-	//errorEmailBlank.className = 'hidden';
-	//errorPasswordBlank.className = 'hidden';
-
-	clearErrors(emailErrors);
-	clearErrors(passwordErrors);
-	email.className = "large";
-	password.className = "large";
-
-	if (email.value == "") {
-		//errorEmailBlank.className = 'visible';
-		email.className = "large highlight_error";
-		addError(emailErrors, 'Please enter your email address.');
-		email.focus();
-		ok = false;
-	}
-	if (password.value == "") {
-		//errorPasswordBlank.className = 'visible';
-		password.className = "large highlight_error";
-		addError(passwordErrors, 'Please enter your password.');
-		password.focus();
-		ok = false;
-	}
-
-	if(ok) {
-	  //document.forms[0].submit();
-	  document.getElementById("hidden_submit").click();
-	}
-	else {
-	  errorBox.className = 'visible';
-	}
-  }
-
-  function addError(div, error) {
-	  if (div.innerHTML != '') {
-		  div.innerHTML += '<br />';
-	  }
-	  div.innerHTML += error;
-  }
-
-  function clearErrors(div) {
-	  div.innerHTML = '';
-  }
-
-</script> 
-      </div> 
-      <!-- end: col3_content div --> 
-      <div id="ie_clearing">
-       &nbsp;
-      </div> 
-      <!-- IE Column Clearing -->
-     </div> 
-     <!-- end: col3 div -->
-    </div> 
-    <!-- end: main div -->
+  <form method="post" action="./cedi.aspx" id="ctl00"> 
+   <div class="aspNetHidden"> 
+    <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUENTM4MWRkHXu2QGRSKk0iV+RSz5OcrOTkPygvsTX6TPEs0FkjwYg="> 
    </div> 
-   <!-- end: page div --> 
-   <div id="border-bottom"> 
-    <div id="edge-bl"></div> 
-    <div id="edge-br"></div> 
-   </div> 
-  </div> 
-  <!-- end: page_margins div --> 
-  <div id="footer">
-   <!-- begin: footer_content div --> 
-   <div id="footer_content"> 
-    <div id="unauthorized_access">
-     Pursuant to section 502 of the California Penal Code, unauthorized access to applicant information will be prosecuted to the full extent of the law.
-    </div> 
-    <br> 
-    <div class="floatbox"> 
-     <div class="float_left"> 
-      <ul> 
-       <li><a href="http://www.universityofcalifornia.edu/admissions/" title="admissions home. Clicking this link will open a new tab/window." target="_blank">admissions home</a></li> 
-       <li>|</li> 
-       <li><a id="help_link_footer" href="https://admissions.universityofcalifornia.edu/docs/html/help.html" title="help. Clicking this link will open a new tab/window." target="_blank">help</a></li> 
-       <li>|</li> 
-       <li><a href="https://admissions.universityofcalifornia.edu/docs/html/terms_of_use.html" title="terms of use. Clicking this link will open a new tab/window." target="_blank">terms of use</a></li> 
+   <div id="content"> 
+    <a name="top"></a> 
+    <!-- ************** Navigation *************** --> 
+    <nav role="navigation" class="navbar navbar-inverse navbar-fixed-top"> 
+     <!-- Brand and toggle get grouped for better mobile display --> 
+     <div class="navbar-header"> 
+      <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+      <a href="/" class="navbar-brand">RED-UCR</a> 
+     </div> 
+     <!-- Collection of nav links, forms, and other content for toggling --> 
+     <div id="navbarCollapse" class="collapse navbar-collapse"> 
+      <ul id="main-nav" class="nav navbar-nav"> 
+       <li class=""><a href="/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbsp;Home</a></li> 
+       <!--<li class=""><a href="http://research.ucr.edu/about/">About</a></li>--> 
+       <li class="dropdown"> <a data-toggle="dropdown" class="dropdown-toggle" href="#">About<b class="caret"></b></a> 
+        <ul id="dept-nav" class="dropdown dropdown-menu"> 
+         <li><a href="/about/">RED Mission, Values, Depts., etc.</a></li> 
+         <li><a href="/about/calendar.aspx">Calendar</a></li> 
+         <li><a href="/about/news/news-archive.aspx">News</a></li> 
+         <li><a href="/about/staff.aspx">Staff</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a data-toggle="dropdown" class="dropdown-toggle" href="#">Departments <b class="caret"></b></a> 
+        <ul id="dept-nav" class="dropdown dropdown-menu"> 
+         <li><a href="/vcr/">RED VCR</a></li> 
+         <li class="divider"></li> 
+         <li><a href="/OCP.aspx">Corporate and Strategic Partnerships</a></li> 
+         <li><a href="/SPA.aspx">Sponsored Programs</a></li> 
+         <li><a href="/ORI.aspx">Research Integrity</a></li> 
+         <li><a href="/ORD.aspx">Research Development</a></li> 
+         <li><a href="http://www.ucreduotp.net/" target="_blank">Technology Partnerships</a></li> 
+         <li><a href="/OCV.aspx">Campus Veterinarian</a></li> 
+         <li class="divider"></li> 
+         <li><a href="/vcr/centers.aspx">Centers</a></li> 
+        </ul> </li> 
+       <!-- Departments End --> 
+      </ul> 
+      <ul class="nav navbar-nav navbar-right"> 
+       <!-- <li><a href="/about/search.aspx"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>&nbsp;Search&nbsp;</a></li> --> 
+       <!-- <li><a href="/about/sitemap.aspx">Site Map</a></li> --> 
+       <li> 
+        <!--
+                          Google Custom Search Help
+                          https://support.google.com/customsearch/answer/2630969?hl=en
+                          --> <script>
+                          (function() {
+                            var cx = '009223556551996944945:zmuy8drq1ws';
+                            var gcse = document.createElement('script');
+                            gcse.type = 'text/javascript';
+                            gcse.async = true;
+                            gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                                '//cse.google.com/cse.js?cx=' + cx;
+                            var s = document.getElementsByTagName('script')[0];
+                            s.parentNode.insertBefore(gcse, s);
+                          })();
+                          </script> 
+        <div style="width:230px;margin-top:10px;margin-right:20px;"> 
+         <gcse:searchbox-only></gcse:searchbox-only> 
+        </div> </li> 
       </ul> 
      </div> 
-     <div class="float_right"> 
-      <p>Copyright © Regents of the University of California</p> 
+    </nav> 
+    <div style="height:50px;">
+     &nbsp;
+    </div> 
+    <!-- Spacer --> 
+    <!-- ************** Navigation *************** --> 
+    <div id="heading_logo_outer"> 
+     <div class="container"> 
+      <!-- Bootstrap.  This will indent heading to match text.  Otherwise left adjusts. --> 
+      <img src="/images/theme/OrLogo650.jpg" alt="Office of Research, UC Riverside" class="img-responsive"> 
+     </div> 
+    </div> 
+    <!--   
+            <div id="heading_nav_outer">
+                <div id="nav">
+                    <a href='/'>Home</a> | <a href='/VCR.aspx'>VC-RED</a> | <a href='/SPA.aspx'>Sponsored Programs</a> | <a href='/ORI.aspx'>
+                        Research Integrity</a> | <a href='/ORD.aspx'>Research Development</a> | <a href='/OTC.aspx'>
+                            Tech Commercialization</a> | <a href='/ocv.aspx'>Campus Vet | <a href='/Centers.aspx'>Centers</a>
+              </div>
+            </div>
+            --> 
+    <div id="breadcrumbsOuter"> 
+     <div id="breadcrumbs"> 
+      <div class="container"> 
+       <!-- Bootstrap.  This will indent heading to match text.  Otherwise left adjusts. --> 
+       <ul>
+        <li><a href="/or-home.aspx">OR Home</a></li>
+        <li><a href="/vcr.aspx">VCR</a></li>
+        <li><a href="/vcr/centers.aspx">Centers</a></li>
+        <li>CEDI</li>
+       </ul> 
+      </div> 
+     </div> 
+    </div> 
+    <div id="wrapper"> 
+     <div id="section"> 
+      <div class="container"> 
+       <!-- Bootstrap.  This will indent heading to match text.  Otherwise left adjusts. --> Vice Chancellor for Research and Economic Development 
+      </div> 
+     </div> 
+     <div class="container"> 
+      <div class="row"> 
+       <div class="col-sm-9 col-sm-push-3"> 
+        <h2>Center for Economic Development and Innovation</h2> 
+        <div class="row"> 
+         <div class="col-sm-6 col-md-4"> 
+          <div class="thumbnail">
+           <img src="/images/pictures/staff/OtherSizes/FAROOQ_200x300.jpg" alt="Imran Angelov Farooq"> 
+           <div class="caption"> 
+            <h3>Imran Angelov Farooq</h3> 
+            <br> Director
+            <br> Email:&nbsp;
+            <a href="mailto:farooq@ucr.edu">farooq@ucr.edu</a>&nbsp;
+            <br> Phone:951-268-9591
+            <br> Fax: 951-827-4483
+            <br> 
+            <a href="http://or.ucr.edu/WebDocs/TC/bio/farooq.pdf">Bio</a>
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="col-sm-3 col-sm-pull-9"> 
+        <div class="panel panel-primary"> 
+         <div class="panel-body" style=""> 
+          <div id="sidebar1"> 
+           <ul> 
+            <li><a title="OR Home" href="/or-home.aspx">Home</a></li> 
+           </ul> 
+           <p class="reverseHeadingSidebar">Departments</p> 
+           <ul> 
+            <li><a title="OSP" href="/spa.aspx"><span><span>Sponsored Programs Administration</span></span></a></li> 
+            <li><a title="ORI" href="/ori.aspx"><span><span>Research Integrity</span></span></a></li> 
+            <li><a title="OTC" href="/otc.aspx"><span><span>Technology Commercialization</span></span></a></li> 
+            <li><a title="RD" href="/ord.aspx"><span><span>Research Development</span></span></a></li> 
+            <li><span><span><a href="/ocv.aspx">Campus Veterinarian</a></span></span></li> 
+            <li><span><span><a href="/vcr/centers.aspx">Centers</a><br></span></span></li> 
+           </ul> 
+           <p class="reverseHeadingSidebar">VCR Links</p> 
+           <ul> 
+            <li><a title="Awards and Recognition" href="/vcr/awards-and-recognition.aspx">Awards and Recognition</a></li> 
+            <li><a title="UCR Federal Grants Blog" href="/OrApps/SP/Blog/Awards.aspx">UCR Federal Grants Blog</a></li> 
+            <li><a title="Centers" href="/vcr/centers.aspx">Research Centers</a></li> 
+            <li><a title="Research Facilities" href="/vcr/research-facilities.aspx">Specialized University Facilities and Equipment</a></li> 
+            <li><a title="Undergraduate Research" href="http://ugr.ucr.edu/" target="_blank">Undergraduate Research</a></li> 
+            <li><a href="/OR/OrMedia/VC/RED_At_UCR.pdf">Research and Economic Development at UCR</a></li> 
+            <li><a title="News" href="/about/news.aspx">News</a></li> 
+            <li><a title="Newsletters" href="/vcr/newsletters.aspx">Newsletters from the Vice Chancellor</a></li> 
+            <li><a title="Talks" href="/vcr/talks.aspx">Talks</a></li> 
+           </ul> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
      </div> 
     </div> 
    </div> 
-   <!-- end: footer_content div -->
-  </div> 
-  <script type="text/javascript"> 
-	appendOrigSessionId('o5uhuILf_5caDC-ylAQElz_a6lMY-ntI2GnN98ht');
-</script>   
+   <br clear="all"> 
+   <br> 
+   <div id="footer"> 
+    <div style="background-color: #2d6cc0;">
+     &nbsp;
+    </div> 
+    <div class="row" style="text-align: left;"> 
+     <!-- ======= COLUMN 1 ======= --> 
+     <div class="col-sm-4"> 
+      <!-- ============ Icons ============================ --> 
+      <p style="padding: 5px;"> 
+       <!-- CALENDAR --> <a href="/about/calendar.aspx" title="Calendar"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>&nbsp;Calendar</a><br> 
+       <!-- FORMS --> <a href="/about/forms.aspx" title="Forms"><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>&nbsp;Forms</a><br> 
+       <!-- NEWS --> <a href="/about/news.aspx" title="News"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span>&nbsp;News</a><br> 
+       <!-- POLICIES --> <a href="/about/policies-ucr.aspx" title="Policies"><span class="glyphicon glyphicon-book" aria-hidden="true"></span>&nbsp;Policies</a><br> 
+       <!-- RECRUITEMENTS --> <a href="/about/recruitment.aspx" title="Recruitments"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;Recruitement</a><br> 
+       <!-- REPORTS --> <a href="/spa/reports.aspx" title="Reports"><span class="glyphicon glyphicon-print" aria-hidden="true"></span>&nbsp;Reports</a><br> 
+       <!-- SEARCH --> <a href="/about/search.aspx" title="Search"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>&nbsp;Search</a><br> 
+       <!-- STAFF --> <a href="/about/staff.aspx" title="Staff"><i class="fa fa-users"></i>&nbsp;Staff</a> </p> 
+     </div> 
+     <!-- ======= COLUMN 2 ======= --> 
+     <div class="col-sm-4" style="text-align: center;"> 
+      <b><a href="http://www.ucr.edu" target="_blank">University of California, Riverside</a></b> 
+      <br> 
+      <a href="/default.aspx">Research and Economic Development</a> 
+      <br> University Office Building Suite 200 
+      <br> Riverside, CA. 92521 
+      <br> Phone: 951-827-5535 
+      <br> 
+      <br> Copyright 1998, Regents of the University of California 
+      <br> 
+      <br> For comments on this web site, contact the 
+      <a href="mailto:stanf@ucr.edu">Webmaster</a>. 
+     </div> 
+     <!-- ======= COLUMN 3 ======= --> 
+     <div class="col-sm-4">
+      &nbsp;
+     </div> 
+    </div> 
+   </div> 
+   <div class="aspNetHidden"> 
+    <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334"> 
+   </div>
+  </form> 
+  <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+      </script> 
+  <!-- 11/17/2014 Track research.ucr.edu --> 
+  <script type="text/javascript">
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        
+        ga('create', 'UA-56832511-1', 'auto');
+        ga('send', 'pageview');
+        
+      </script> 
+  <script type="text/javascript">
+        try{
+        var pageTracker = _gat._getTracker("UA-12306598-1");
+        pageTracker._trackPageview();
+        } catch(err) {}
+      </script> 
+  <!--     4/8/2015 sf
+        Set the active bootstrap navbar link.
+        The active link is not set automatically. I found this script to do the job:
+        http://stackoverflow.com/questions/17984553/how-to-set-navbar-item-as-active-when-user-selects-it
+        The keys to using are
+        - Move it to the end of the page.
+        - Make sure the routine can find the ul list.  That means getting "ul.nav.navbar-nav" this correct.
+          I found the correct path using the "inspect element" funtion in Chrome.
+    --> 
+  <script type="text/javascript">        
+          $(document).ready(function () {
+              var url = window.location;
+              $('ul.nav.navbar-nav li a').each(function () {
+                  if (this.href == url) {
+                      $("ul.nav.navbar-nav li").each(function () {
+                          if ($(this).hasClass("active")) {
+                              $(this).removeClass("active");
+                          }
+                      });
+                      $(this).parent().addClass('active');
+                  }
+              });
+          });
+      </script> 
+  <script src="/scripts/lightbox-plus-jquery.min.js"></script>   
  </body>
 </html>

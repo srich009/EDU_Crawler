@@ -1,0 +1,104 @@
+<!doctype html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en">
+ <head profile="http://www.w3.org/2005/10/profile"> 
+  <!-- Turn off compatibility mode for this site. --> 
+  <meta http-equiv="X-UA-Compatible" content="IE=10,chrome=1"> 
+  <script>
+        var _prum = [['id', '555b77e9abe53df93eed7a74' ],
+        ['mark', 'firstbyte', (new Date()).getTime()]];
+        (function() {
+          var s = document.getElementsByTagName('script')[0]
+          , p = document.createElement('script');
+          p.async = 'async';
+          p.src = 'https://rum-static.pingdom.net/prum.min.js';
+          s.parentNode.insertBefore(p, s);
+        })();
+      </script> 
+  <link rel="icon" type="image/x-icon" href="/ldap/passwd/images/favicon.ico"> 
+  <meta charset="utf-8"> 
+  <meta name="HandheldFriendly" content="true"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, user-scalable=yes"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+  <link href="packed/font-awesome4-39022f739d4862ca8d713be0a62875ff.css" rel="stylesheet"> 
+  <link href="packed/packed-5fa9654b63687075543bcf1f1313bbd3.css" rel="stylesheet"> 
+  <script src="packed/head-c55f42388abe1c47f9e5de6438cb7b26.js"></script> 
+  <link rel="stylesheet" href="https://fast.fonts.com/cssapi/c82efabb-1bb4-4a46-969f-454af2e7db11.css"> 
+  <title>Reset NetID Password</title> 
+  <script src="https://www.google.com/recaptcha/api.js"></script> 
+ </head> 
+ <body> 
+  <nav class="top-bar" data-topbar role="navigation"> 
+   <ul class="title-area"> 
+    <li class="menu-icon name"> <a href="/ldap/passwd/"> <img src="images/logo.svg"> PASSWORD ADMINISTRATION </a> </li> 
+   </ul> 
+   <section class="top-bar-section"> 
+    <ul class="right"> 
+    </ul> 
+   </section> 
+  </nav> 
+  <div class="block"> 
+   <div class="row pagetitle">
+     Reset NetID Password 
+    <hr> 
+   </div> 
+   <div class="row"> 
+    <div class="medium-12 columns"> 
+     <div class="panel"> 
+      <form name="reset" method="POST"> 
+       <input name="csrf_token" type="hidden" value="5e7a5bb119f6ce5907e36c064aef170f2dda9fd6"> 
+       <div class="row"> 
+        <div class="medium-3 columns"> 
+         <label class="inline" for="netid">NetID</label> 
+        </div> 
+        <div class="medium-9 columns"> 
+         <input autocapitalize="none" autocomplete="off" autocorrect="off" id="netid" name="netid" type="text"> 
+        </div> 
+       </div> 
+       <div class="row pull-right"> 
+        <div class="g-recaptcha medium-12 columns pull-right" data-sitekey="6LefcQoTAAAAABpfCUT-EwGOia3C1qjci-JtZEwV"></div> 
+       </div> 
+       <div class="row"> 
+        <div class="medium-12 columns pull-right"> 
+         <input class="button right" type="submit" value="Attempt Reset"> 
+        </div> 
+       </div> 
+      </form> 
+     </div> 
+    </div> 
+   </div> 
+   <script>
+  $(document).ready(function(){
+    $('#netid').focus();
+  });
+</script> 
+  </div> 
+  <div class="page-footer"> 
+   <div class="row"> 
+    <div class="medium-2 columns"></div> 
+    <div class="medium-4 columns"> 
+     <img src="images/ucr-logo.svg"> 
+    </div> 
+    <div class="medium-4 columns copyright right"> 
+     <span class="copyright">© 2015 Regents of the University of California </span> 
+    </div> 
+    <div class="medium-2 columns"></div> 
+   </div> 
+  </div> 
+  <script src="packed/tail-c987f47d91ab700a47857e1f3d1752b1.js"></script> 
+  <script>
+        $(document).foundation({
+          abide: {
+            live_validate : true,
+            focus_on_invalid : true,
+            timeout : 500,
+            patterns : {
+              // generic password: upper-case, lower-case, number/special character, and min 8 characters
+              password : /(?=^.{8,}$)(?=.*[a-zA-Z].*[a-zA-Z].*)(?=.*[0-9].*)(?=.*[^a-zA-Z0-9].*)/,
+            }
+          }
+        });
+      </script>   
+ </body>
+</html>

@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+  <meta http-equiv="Expires" content="0"> 
+  <meta name="Description" content=""> 
+  <meta name="Author" content=""> 
+  <title>
+         
+         
+      </title> 
+  <link rel="stylesheet" type="text/css" href="//fast.fonts.net/cssapi/c4ee863e-2c76-4806-9962-29c6d10c9ab6.css"> 
+  <link rel="stylesheet" type="text/css" media="screen, projection" href="http://registrar.ucr.edu/css/blueprint/screen.css"> 
+  <link rel="stylesheet" type="text/css" media="print" href="http://registrar.ucr.edu/css/blueprint/print.css"> 
+  <link rel="stylesheet" type="text/css" media="all" href="http://registrar.ucr.edu/css/bxslider/jquery.bxslider.css"> 
+  <link rel="stylesheet" type="text/css" media="all" href="http://registrar.ucr.edu/css/site.css"> 
+  <link rel="stylesheet" type="text/css" media="all" href="http://registrar.ucr.edu/css/default.local.css"> 
+  <link rel="stylesheet" type="text/css" media="all" href="http://registrar.ucr.edu/css/custom.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="http://registrar.ucr.edu/scripts/plugins/bxslider/jquery.bxslider.js"></script>
+  <script type="text/javascript" src="http://registrar.ucr.edu/scripts/plugins/stepWizard/jquery.stepWizard.js"></script>
+  <script type="text/javascript" src="http://registrar.ucr.edu/scripts/scripts.js"></script>
+  <script type="text/javascript" src="http://registrar.ucr.edu/scripts/jquery.controls.local.js"></script>
+  <style type="text/css">
+        /*  Google Watermark Styles */
+        .GoogleWatermark
+        {
+            background: url(http://www.ucr.edu/images/design6/google_search_watermark.gif) no-repeat scroll 7px 3px #FFFFFF;
+        }
+
+        #txtGoogleSearch
+        {
+            margin-left: 20px;
+            border: 1px solid #000000;
+            padding: 3px;
+            height: 15px;
+            width: 584px;
+        }
+
+        #butGoogleSearch
+        {
+            margin-left: 35px;
+            font-size: 13px;
+            font-weight: bold;
+            font-family: Arial;
+            color: #ffffff;
+            min-width: 75px;
+            height: 26px;
+            line-height: 20px;
+            white-space: nowrap;
+            cursor: pointer;
+            outline: 0 none;
+            text-align: center;
+            border: 2px solid #23588e;
+            background: #497eb4; /* Old browsers */
+            background: -moz-linear-gradient(top, #497eb4 0%, #386da3 100%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#497eb4), color-stop(100%,#386da3)); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(top, #497eb4 0%,#386da3 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(top, #497eb4 0%,#386da3 100%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(top, #497eb4 0%,#386da3 100%); /* IE10+ */
+            background: linear-gradient(to bottom, #497eb4 0%,#386da3 100%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#497eb4', endColorstr='#386da3',GradientType=0 ); /* IE6-9 */
+        }
+    </style>
+  <script type="text/javascript">
+        // Google WaterMark Script
+        $(function () {
+            $("#txtGoogleSearch").each(function () {
+                ToggleHint($(this)); // add class on page load to elements with "hintable" class
+            });
+
+            $("#txtGoogleSearch").focus(function () {
+                $(this).removeClass("GoogleWatermark"); // handle all focus hints
+            });
+
+            $("#txtGoogleSearch").blur(function () {
+                ToggleHint(this); // handle all blur hints
+            });
+        });
+
+        function ToggleHint(obj) {
+            if ($(obj).val() == '') { $(obj).addClass("GoogleWatermark"); };
+        }
+    </script>
+  <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-503078-6']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+</script>
+  <script type="text/javascript">
+          function Search() {
+          window.location = "http://www.ucr.edu/search.php?q=" + document.getElementById("search-textbox").value; return false;
+          }
+
+          function OnFocus()
+          {
+          document.getElementById("search-textbox").className = "normal";
+          }
+
+          function OnBlur()
+          {
+          var textValue = document.getElementById("search-textbox").value;
+          if (textValue.length == 0)
+          {
+          document.getElementById("search-textbox").className = "watermark";
+          }
+          else
+          {
+          document.getElementById("search-textbox").className = "normal";
+          }
+          }
+        </script>
+ </head> 
+ <body> 
+  <div class="main container"> 
+   <div style="padding-bottom: 30px;"> 
+    <div style="font-family: Arial;"> 
+     <div>
+      <input type="Button" value="Print" onclick="javascript:window.print();"> 
+      <input type="Button" value="Close" onclick="javascript:window.close();">
+      <hr> 
+     </div> 
+     <h1>Academic Calendar</h1> 
+     <form id="ctl00" action="printpage.aspx" method="post"> 
+      <div class="aspNetHidden">
+       <input id="__VIEWSTATE" name="__VIEWSTATE" type="hidden" value="">
+      </div> 
+      <div> 
+       <table id="MainContent_gvPrintableAC" class="table ac-tableCell" style="color: black; width: 100%; border-collapse: collapse;" border="1"> 
+        <thead> 
+         <tr class="tableizer-firstrow"> 
+          <th>&nbsp;</th> 
+          <th>Winter 2018</th> 
+          <th>Spring 2018</th> 
+          <th>Summer 2018</th> 
+          <th>Fall 2018</th> 
+          <th>Winter 2019</th> 
+         </tr> 
+        </thead> 
+        <tbody> 
+         <tr> 
+          <td>First day of the quarter</td> 
+          <td>January 3, 2018</td> 
+          <td>March 28, 2018</td> 
+          <td>June 25, 2018</td> 
+          <td>September 24, 2018</td> 
+          <td>January 2, 2019</td> 
+         </tr> 
+         <tr> 
+          <td>First day of instruction</td> 
+          <td>January 8, 2018</td> 
+          <td>April 2, 2018</td> 
+          <td><a href="http://summer.ucr.edu/deadlines.html">See Summer Sessions</a></td> 
+          <td>September 27, 2018</td> 
+          <td>January 7, 2019</td> 
+         </tr> 
+         <tr> 
+          <td><strong>SCHEDULE OF CLASSES</strong></td> 
+          <td>&nbsp;</td> 
+          <td>&nbsp;</td> 
+          <td>&nbsp;</td> 
+          <td>&nbsp;</td> 
+          <td>&nbsp;</td> 
+         </tr> 
+         <tr> 
+          <td><a href="http://classes.ucr.edu">Schedule of Classes is online</a></td> 
+          <td>October 26, 2017</td> 
+          <td>February 1, 2018</td> 
+          <td>March 1, 2017</td> 
+          <td>May 10, 2018</td> 
+          <td>October 25, 2018</td> 
+         </tr> 
+         <tr> 
+          <td><strong>INITIAL ENROLLMENT</strong></td> 
+          <td>&nbsp;</td> 
+          <td>&nbsp;</td> 
+          <td>&nbsp;</td> 
+          <td>&nbsp;</td> 
+          <td>&nbsp;</td> 
+         </tr> 
+         <tr> 
+          <td><a href="http://rweb.ucr.edu/">Enrollment appointments viewable in R'Web</a></td> 
+          <td>October 31, 2017</td> 
+          <td>February 6, 2018</td> 
+          <td>February 15, 2018</td> 
+          <td>May 15, 2018</td> 
+          <td>October 30, 2018</td> 
+         </tr> 
+         <tr> 
+          <td>Continuing students register</td> 
+          <td><span>Nov. 6 - Nov. 29, 2017</span></td> 
+          <td><span>February 12 - March 11, 2018</span></td> 
+          <td><span>Beginning April 2, 2018</span></td> 
+          <td><span>May 21 - June 3, 2018</span></td> 
+          <td><span>Nov. 5 - Nov. 28, 2018</span></td> 
+         </tr> 
+         <tr> 
+          <td>New and readmitted students register</td> 
+          <td><span>N/A</span></td> 
+          <td><span>N/A</span></td> 
+          <td><span>Beginning April 10, 2018</span></td> 
+          <td><span>August 20-23, 2018</span></td> 
+          <td><span>N/A</span></td> 
+         </tr> 
+         <tr> 
+          <td>Transfer students register</td> 
+          <td><span>Nov. 27, 2017</span></td> 
+          <td><span>N/A</span></td> 
+          <td><span>Beginning April 10, 2018</span></td> 
+          <td><span>September 4 - 10, 2018</span></td> 
+          <td><span>Nov. 26, 2018</span></td> 
+         </tr> 
+         <tr> 
+          <td><strong>CONTINUING ENROLLMENT</strong></td> 
+          <td>&nbsp;</td> 
+          <td>&nbsp;</td> 
+          <td>&nbsp;</td> 
+          <td>&nbsp;</td> 
+          <td>&nbsp;</td> 
+         </tr> 
+         <tr> 
+          <td>Undergraduate 17 unit maximum load lifted</td> 
+          <td><span>November 30, 2017</span></td> 
+          <td><span>March 12, 2018</span></td> 
+          <td><span>N/A</span></td> 
+          <td><span>September 11, 2018</span></td> 
+          <td><span>November 29, 2018</span></td> 
+         </tr> 
+         <tr> 
+          <td>Makeup enrollment and add/drop</td> 
+          <td><span>Nov. 30, 2017 - Jan. 19, 2018</span></td> 
+          <td><span>March 12 - April 13, 2018</span></td> 
+          <td><a href="http://summer.ucr.edu/deadlines.html">See Summer Sessions</a></td> 
+          <td><span>June 4-22, 2018 (Continuing Students) and Sept. 11 - Oct. 12, 2017 (All Students)</span></td> 
+          <td><span>Nov. 29, 2018 - Jan. 18, 2019</span></td> 
+         </tr> 
+         <tr> 
+          <td><strong>For registration deadlines, see "LAST DAY" tab.</strong></td> 
+          <td>&nbsp;</td> 
+          <td>&nbsp;</td> 
+          <td>&nbsp;</td> 
+          <td>&nbsp;</td> 
+          <td>&nbsp;</td> 
+         </tr> 
+         <tr> 
+          <td>Statement of Account (shows fees, tuition and projected student aid) <a href="http://rweb.ucr.edu/">available in R'Web.</a></td> 
+          <td><span>mid-November, 2017</span></td> 
+          <td><span>mid - February, 2018</span></td> 
+          <td><span>TBD</span></td> 
+          <td><span>mid-August, 2018</span></td> 
+          <td><span>mid-November, 2018</span></td> 
+         </tr> 
+         <tr> 
+          <td><strong>Last day</strong> to pay fees without $50 penalty. If you do not pay, your classes are dropped. <br> Cashier's Office payments are due by <strong>3 p.m.</strong><br>R'Web and Drop Box payments due at <strong>4 p.m.</strong></td> 
+          <td><span>December 15, 2017</span></td> 
+          <td><span>March 15, 2018</span></td> 
+          <td><a href="http://summer.ucr.edu/deadlines.html">See Summer Sessions</a></td> 
+          <td><span>September 14, 2018</span></td> 
+          <td><span>December 14, 2018</span></td> 
+         </tr> 
+         <tr> 
+          <td><a href="http://www.sbs.ucr.edu">Student Aid Refunds disbursed (by direct deposit or mail) by Student Business Services Office.</a></td> 
+          <td><span>January 8, 2018</span></td> 
+          <td><span>April 2, 2018</span></td> 
+          <td><a href="http://summer.ucr.edu/deadlines.html">See Summer Sessions</a></td> 
+          <td><span>September 27, 2018</span></td> 
+          <td><span>January 7, 2019</span></td> 
+         </tr> 
+         <tr> 
+          <td><strong>Last day</strong> to enroll in classes and pay fees (with penalties). If you do not enroll/pay, <a href="../registering-for-classes/loss-of-course-lapse-status.aspx">your student status lapses</a>. <br> Cashier's Office payments are due by <strong>3 p.m.</strong><br>R'Web and Drop Box payments due at <strong>4 p.m.</strong></td> 
+          <td><span>January 26, 2018</span></td> 
+          <td><span>April 20, 2018</span></td> 
+          <td><a href="http://summer.ucr.edu/deadlines.html">See Summer Sessions</a></td> 
+          <td><span>October 19, 2018</span></td> 
+          <td><span>January 25, 2019</span></td> 
+         </tr> 
+         <tr> 
+          <td><strong>Last day</strong> to apply for readmission&nbsp;if you have been absent one or more quarters </td> 
+          <td><span>September 22, 2017</span></td> 
+          <td><span>January 8, 2018</span></td> 
+          <td><span>N/A</span></td> 
+          <td><span>June 8, 2018</span></td> 
+          <td><span>September 27, 2018</span></td> 
+         </tr> 
+         <tr> 
+          <td><strong>Last day</strong> to mail payment for tuition/fees to allow for processing time. <strong>Postmarks not considered</strong>. </td> 
+          <td><span>December 1, 2017</span></td> 
+          <td><span>March 1, 2018</span></td> 
+          <td><span>N/A</span></td> 
+          <td><span>September 1, 2018</span></td> 
+          <td><span>December 1, 2018</span></td> 
+         </tr> 
+         <tr> 
+          <td><strong>Last day</strong> to add/drop courses in R'Web (no fee) without a "W" appearing on your transcript. Enrollment closes when the Student Information System is closed for nightly procesing. To ensure your request is processed we recommend you complete your enrollment activity prior to 6 p.m. See <a href="../registering-for-classes/default.aspx">When To Register</a> for R'Web availability. </td> 
+          <td><span>January 19, 2018</span></td> 
+          <td><span>April 13, 2018</span></td> 
+          <td><a href="http://summer.ucr.edu/deadlines.html">See Summer Sessions</a></td> 
+          <td><span>October 12, 2018</span></td> 
+          <td><span>January 18, 2019</span></td> 
+         </tr> 
+         <tr> 
+          <td><strong>Last day</strong> to add a course without dean approval (no fee). <a href="http://student08.ucr.edu/EM/myforms/Forms.aspx">Enrollment Adjustment Forms are due at NOON.</a></td> 
+          <td><span>January 26, 2018</span></td> 
+          <td><span>April 20, 2018</span></td> 
+          <td><a href="http://summer.ucr.edu/deadlines.html">See Summer Sessions</a></td> 
+          <td><span>October 19, 2018</span></td> 
+          <td><span>January 25, 2019</span></td> 
+         </tr> 
+         <tr> 
+          <td><strong>Last day</strong> to withdraw from a course (no fee). </td> 
+          <td><span>January 26, 2018</span></td> 
+          <td><span>April 20, 2018</span></td> 
+          <td><a href="http://summer.ucr.edu/deadlines.html">See Summer Sessions</a></td> 
+          <td><span>October 19, 2018</span></td> 
+          <td><span>January 25, 2019</span></td> 
+         </tr> 
+         <tr> 
+          <td><strong>Last day</strong> to change grading basis (no fee). </td> 
+          <td><span>January 26, 2018</span></td> 
+          <td><span>April 20, 2018</span></td> 
+          <td><a href="http://summer.ucr.edu/deadlines.html">See Summer Sessions</a></td> 
+          <td><span>October 19, 2018</span></td> 
+          <td><span>January 25, 2019</span></td> 
+         </tr> 
+         <tr> 
+          <td><strong>Last day</strong> for undergraduates to get dean approval to enroll in 10 or fewer units (and reduced tuition). <a href="http://student08.ucr.edu/EM/myforms/Forms.aspx">Part-Time Fee Waivers are due at NOON.</a></td> 
+          <td><span>January 26, 2018</span></td> 
+          <td><span>April 20, 2018</span></td> 
+          <td><a href="http://summer.ucr.edu/deadlines.html">See Summer Sessions</a></td> 
+          <td><span>October 19, 2018</span></td> 
+          <td><span>January 25, 2019</span></td> 
+         </tr> 
+         <tr> 
+          <td><strong>Last day</strong> to withdraw from a course ($4 fee). <a href="http://student08.ucr.edu/EM/myforms/Forms.aspx">Enrollment Adjustment Forms are due at NOON. </a></td> 
+          <td><span>February 16, 2018</span></td> 
+          <td><span>May 11, 2018</span></td> 
+          <td><a href="http://summer.ucr.edu/deadlines.html">See Summer Sessions</a></td> 
+          <td><span>November 9, 2018</span></td> 
+          <td><span>February 15, 2019</span></td> 
+         </tr> 
+         <tr> 
+          <td><strong>Last day</strong> to change grading basis or variable units ($4 fee). <a href="http://student08.ucr.edu/EM/myforms/Forms.aspx">Enrollment Adjustment Forms are due at NOON.</a></td> 
+          <td><span>March 2, 2018</span></td> 
+          <td><span>May 25, 2018</span></td> 
+          <td><a href="http://summer.ucr.edu/deadlines.html">See Summer Sessions</a></td> 
+          <td><span>November 26, 2018</span></td> 
+          <td><span>March 1, 2019</span></td> 
+         </tr> 
+         <tr> 
+          <td><strong>Last day of instruction</strong></td> 
+          <td><span>March 16, 2018</span></td> 
+          <td><span>June 8, 2018</span></td> 
+          <td><a href="http://summer.ucr.edu/deadlines.html">See Summer Sessions</a></td> 
+          <td><span>December 7, 2018</span></td> 
+          <td><span>March 15, 2019</span></td> 
+         </tr> 
+         <tr> 
+          <td><strong>Last day</strong> to withdraw from UCR for the full term </td> 
+          <td><span>March 16, 2018</span></td> 
+          <td><span>June 8, 2018</span></td> 
+          <td><a href="http://summer.ucr.edu/deadlines.html">See Summer Sessions</a></td> 
+          <td><span>December 7, 2018</span></td> 
+          <td><span>March 15, 2019</span></td> 
+         </tr> 
+         <tr> 
+          <td><strong>Last day</strong> to complete work in order to remove an incomplete grade from the prior quarter </td> 
+          <td><span>March 23, 2018</span></td> 
+          <td><span>June 15, 2018</span></td> 
+          <td><span>N/A</span></td> 
+          <td><span>December 14, 2018</span></td> 
+          <td><span>March 22, 2019</span></td> 
+         </tr> 
+         <tr> 
+          <td><strong>Last day</strong> of the quarter </td> 
+          <td><span>March 23, 2018</span></td> 
+          <td><span>June 15, 2018</span></td> 
+          <td><span>TBD</span></td> 
+          <td><span>December 14, 2018</span></td> 
+          <td><span>March 22, 2019</span></td> 
+         </tr> 
+         <tr> 
+          <td><a href="final-exam-schedule.aspx">Final Examinations</a></td> 
+          <td><span>March 17-23, 2018</span></td> 
+          <td><span>June 9-15, 2018</span></td> 
+          <td><a href="http://summer.ucr.edu/deadlines.html">See Summer Sessions</a></td> 
+          <td><span>December 8-14, 2018</span></td> 
+          <td><span>March 16-22, 2019</span></td> 
+         </tr> 
+         <tr> 
+          <td><a href="http://rweb.ucr.edu/">Grades available on R'Web</a></td> 
+          <td><span>April 2, 2018</span></td> 
+          <td><span>June 25, 2018</span></td> 
+          <td><a href="http://summer.ucr.edu/deadlines.html">See Summer Sessions</a></td> 
+          <td><span>January 2, 2019</span></td> 
+          <td><span>April 1, 2019</span></td> 
+         </tr> 
+        </tbody> 
+       </table> 
+      </div> 
+     </form> 
+    </div> 
+   </div> 
+  </div> 
+  <a href="http://cms-prod-1.ucr.edu/10?skin=oucampus&amp;account=D01287&amp;site=vcsa-registrar&amp;action=de&amp;path=/registrar/academic-calendar/print-academic-calendar.pcf" target="_top">Last Modified: 5/31/18</a> 
+ </body>
+</html>

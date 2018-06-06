@@ -1,0 +1,639 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title>
+	UC Education Abroad Program
+</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Study Abroad with UCEAP">
+  <meta name="keywords" content="university of california, study abroad, study abroad scholarships, study abroad internships, study abroad in English, study languages abroad, education abroad program, UC Berkeley, UC Merced, UCLA, UCI, UCR, UCSB, UCSD, UCSC, UCSF, UCD">
+  <meta name="google-site-verification" content="z6T3ANrorsmxDVKbkeaa0XCrq0tBHIhKWSVi1qKvkNk">
+  <link href="Content/bootstrap.min.css" rel="stylesheet">
+  <link href="Content/jquery-ui.min.css" rel="stylesheet">
+  <link href="Content/jquery-ui.structure.min.css" rel="stylesheet">
+  <link href="Content/Site.css" rel="stylesheet">
+  <link href="Content/jquery-ui.theme.css" rel="stylesheet">
+ </head> 
+ <body> 
+  <!-- HEADER --> 
+  <header class="header-container"> 
+   <div class="topnav-logo"> 
+    <a href="/home"> <img src="/Content/Images/uceap-logo.gif" border="0" alt="UCEAP Logo" title="University of California Education Abroad Program" tabindex="0"> </a> 
+   </div> 
+   <!-- top small nav --> 
+   <div class="navHPtop"> 
+    <div class="navHPtoplinks-A"> 
+     <img src="/Content/Images/search_icon.jpg" class="search-image" border="0" alt="Search Icon" title="Search the UCEAP Website" onclick="GoSearch()" tabindex="4"> 
+     <input id="studyabroadsearchbox" type="text" class="search-mini" placeholder="Search this site..." title="Site Search" maxlength="200" tabindex="3"> 
+    </div> 
+    <div class="navHPtoplinks-B" style="padding-right: 20px;">
+     <a href="https://myeap.eap.ucop.edu/Galileo/outbound/login.aspx" target="_blank" title="Apply and manage your UCEAP study abroad information." tabindex="1">MyEAP</a> 
+    </div> 
+    <div class="navHPtoplinks-B" id="navHPtoplinks-bump"> 
+     <a href="http://eap.ucop.edu/OurPrograms" target="_blank" tabindex="0">A-Z Countries</a> 
+    </div> 
+   </div> 
+   <!-- primary site nav --> 
+   <nav> 
+    <ul> 
+     <li> <a href="/builder" tabindex="5">Search</a> </li> 
+     <li> <a id="nav-learn" href="#anchor-learn" tabindex="6">Learn</a> </li> 
+     <li> <a id="nav-finance" href="#anchor-finance" tabindex="7">Finance</a> </li> 
+     <li> <a id="nav-contact" href="#anchor-contact" tabindex="8">Contact</a> </li> 
+     <li class="last"> <a id="nav-apply" href="#anchor-apply" tabindex="9">Apply</a> </li> 
+    </ul> 
+   </nav> 
+  </header> 
+  <!-- main body content --> 
+  <form method="post" action="./" id="form1"> 
+   <div class="aspNetHidden"> 
+    <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value=""> 
+    <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value=""> 
+    <input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value=""> 
+    <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="e1xngyI3rybKWCC3GFR3Ro1WMBesRM8D9Pbk13pcwKA0n9uVWt+HJiy4AZYjGQPCk86KRib6g0ika7J9wpHhjbD5ICuBp6scXb1yXJjDGvRr64ZW3Pi029z10E78hcVQCVSBVIxGYwCqPRJT7AikyYiQOr0skTg/a9TQffqdRuOd7bvyM1QByRoXJrbxfLL4cu8076uEe4FjtSuNWHyTo5ZMG+GBtVzi7NeTaAjyzXRTqzpsOnahaVy/IertoXnUbP6UQq2rmsi0FM66thjoS3yazMZaMvRDYBlCyUmKz3qmivfgRjR4x8nBbmjpyccCKxNx3NYldSeLviPjXAtg7Q=="> 
+   </div> 
+   <script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script> 
+   <div class="aspNetHidden"> 
+    <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="8D0E13E6"> 
+    <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="LokgZKqFfOl42T6ra77HI5jNDrcoqSxurSG9+VW4/wefr+5t2FGiy3wQg3TjnvRQciLAVc8k3tlKZjy9fWno0Ui/CYygLNM2qOxYxXT0c4V3K2XzBQVc+CYPenwlKc2iTN7+BrNp+XsFbD95xEDEF4THRIEtWzbRcH/UpprA4zZAQLS8CRSbCqpor4S4s14kzXMm2AezYd4yM8npH4a9e7MlOksGc9n95+cvqS6Ryj8hpSa0Jl82FIf8RLIR0GltLezsPN8b24mhdNUp4gUBgkgozRsneFDraAQlCP7hYBwCxKMCRO+s4CFRMOo3cOhVazxzUlurBOF2vOu2O+6WpoYpIgLNCJomwb3Dlb9khtK6Eu4MV/XxwJAtQkuS08dcuSvlR2ctdf7dAQPTXUINHNz3vPpmS9G33Aj3Pj6G0Lo/JhWC3KJxMM5UwGyHl2/khfTFugZZzp2x0VBcuXIhdVq1jeG7Z1NZ06bw+bVV1vestv3LQLIP2CDd8Y3eh0JnZsK/ihhrENlt4lbGnCVAAXHYXxwfYoQ3NAa17fr8JLu9t+y+F666zgOreueZ4//c2ZlflgAqPJXEGLu//xHGh90BW04HBnJRDZy51KhF4BCbwYLJ69QWc5AGXuAR/lBaguhWDhjtGi1cRahI6remnSSVBUFZ9Uxe+6edZNMNRlzDH7iK+m4nNaeomHT/2QSTm9+iCU80AdQvqh5Upwhbq3T+Sgx8202zHwvvVmizmulz7PLDH1deVR4+oP2tCBFaJ1N/4K+i7/rCCXR2mmpI5CgMfhrzV3ai0HCV+zMOfnXjYY76n6Rhb3mkUCm+s935Z+Gn4ohRd1HyH3ZVk8IaukhXDnnjvwxbuhaOoNt28Y+DZvq0f8yFW2bTRrBr8n/VGWnqeFFFrmZ+6lORv8ZzQYD2BHxlvfscmeav4sgTs7ckfzaxBGQeta26xv+E5pgV6A3lhoH00TvXmEF0tGoycl7KfQQBdpJXiQWmbO9OTHHRp3pdEubsMqqEhYc7kL4dVknj6Fd+PNAntIbXGJ/GP4dgQYXOU+4XUUdJBFuAkA+LMTioLc+56tB4LR8fw2h8PCzr9uE6C4OLb8/wFtVNktKKAm0KDeNkGH6kuCpvDojMw5Ob9VW6lbJza9yNKV8x5jt900MYR+SpcgeE+azFXrk0lGLqJMuVleZ8261HVgfeRCUOKu2e4LdKn6gxVILp8nNV/+E2O5mePuxVKpAxVF4uHdHJhIQ4zwtzIiBOqnVVGl9/GTsz4hBFnJCPqpStM92N1KNRL7dapmNluDai9A=="> 
+   </div> 
+   <div class="body-content" id="body-content"> 
+    <section class="main-container"> 
+     <section class="Welcome"> 
+      <h3>WELCOME TO YOUR</h3> 
+      <h1>GATEWAY TO UC’S GLOBAL CAMPUS</h1> 
+     </section> 
+     <section class="mainphotobody-rev"> 
+      <h3>LET'S GET STARTED.</h3> 
+     </section> 
+     <article class="frontpagemainsection"> 
+      <img src="/Content/Images/Homepage-Banner-Images.jpg" title="UCEAP Student on Study Abroad" alt="UCEAP Student on Study Abroad"> 
+     </article> 
+     <article class="frontpagesearchbutton"> 
+      <a href="/builder"> <img src="/Content/Images/search_button.png" alt="Study Abroad Builder" title="Search Study Abroad Programs"> </a> 
+     </article> 
+     <!-- LEARN TAB/BOX --> 
+     <div class="FPBOX" id="learn"> 
+      <a name="anchor-learn" id="anchor-learn"></a> 
+      <a id="FPBOX-learn"> <img src="/Content/Images/Learn.png" width="211" height="208" alt="Learn About UCEAP Study Abroad" title="Learn About UCEAP Study Abroad" border="0" id="learn-img"> </a> 
+      <!-- <h4 class="FPBOX-h4">LEARN</h4>
+                    <h2 class="FPBOX-link-sub"><a class="showFPBOX-link-sub">Travel. Learn. Live.<div class="down-arrow"><img src="/Content/Images/down_arrow.png" width="14" height="13" alt="Down Arrow" title="Click to learn more about UEAP." border="0" /></div>
+                    </a></h2> --> 
+     </div> 
+     <!-- FINANCE TAB/BOX --> 
+     <div class="FPBOX" id="finance"> 
+      <a name="anchor-finance"></a> 
+      <a id="FPBOX-finance"> <img src="/Content/Images/Finance_over.png" width="211" height="208" alt="Study Abroad Financial Information" title="Study Abroad Financial Information" id="finance-img"> </a> 
+      <!-- <h4 class="FPBOX-h4">FINANCE</h4>
+                    <h2 class="FPBOX-link-sub"><a class="showFPBOX-link-sub">Investing in Your
+				Future<div class="down-arrow">
+                    <img src="/Content/Images/down_arrow.png" width="14" height="13"
+                    alt="Down Arrow" title="Click to learn more about financing study abroad." border="0" /></div></a></h2> --> 
+     </div> 
+     <!-- APPLY TAB/BOX --> 
+     <div class="FPBOX" id="apply"> 
+      <a name="anchor-apply"></a> 
+      <a id="FPBOX-apply"> <img src="/Content/Images/Apply_over.png" width="211" height="208" alt="Apply to UCEAP" title="Apply to UCEAP" id="apply-img"> </a> 
+      <!-- <h4 class="FPBOX-h4">APPLY</h4>
+                    <h2 class="FPBOX-link-sub"><a class="showFPBOX-link-sub">How to Apply<div class="down-arrow">
+                        <img src="/Content/Images/down_arrow.png" width="14" height="13" alt="Down Arrow" title="Click to view the application process." border="0" /></div></a></h2> --> 
+     </div> 
+     <!-- CONTACT TAB/BOX --> 
+     <div class="FPBOX" id="contact"> 
+      <a name="anchor-contact"></a> 
+      <a id="FPBOX-contact"> <img src="Content/Images/Contact_over.png" width="211" height="208" alt="Study Abroad Advising" title="Study Abroad Advising" id="contact-img"></a> 
+      <!-- <h4 class="FPBOX-h4">CONTACT</h4>
+                    <h2 class="FPBOX-link-sub"><a class="showFPBOX-link-sub">Connect with an
+				Advisor<div class="down-arrow">
+                    <img src="/Content/Images/down_arrow.png" width="14" height="13"
+                    alt="Down Arrow" title="Click to get advising information." border="0" /></div></a></h2> --> 
+     </div> 
+     <div class="body-spacer"> 
+      <!-- force gap for floating page elements---> 
+     </div> 
+     <div id="LearnContent" class="FPTextPara"> 
+      <div class="CampusControlHome"> 
+       <label for="ddlCampusesLearn" id="lblCampusLearn" class="CampusLabelHome uppercase">Select Your Campus</label>
+       <br> 
+       <select name="ddlCampusesLearn" onchange="javascript:setTimeout('__doPostBack(\'ddlCampusesLearn\',\'\')', 0)" id="ddlCampusesLearn" style="width:180px;"> <option value="-- Select --"></option> <option value="1">UC Berkeley</option> <option value="3">UC Davis</option> <option value="9">UC Irvine</option> <option value="4">UC Los Angeles</option> <option value="10">UC Merced</option> <option value="5">UC Riverside</option> <option value="6">UC San Diego</option> <option value="2">UC San Francisco</option> <option value="8">UC Santa Barbara</option> <option value="7">UC Santa Cruz</option> <option selected value="0">UC Systemwide</option> <option value="99">A non-U.S. institution</option> </select> 
+      </div> 
+      <div class="FPinnertextbox"> 
+       <article class="learn-content"> 
+        <!-- Learn content is static --> 
+        <!-- <div style="border: thin #f89728 dotted;margin-bottom: 20px;text-align:center;"><div style="margin: 10px; color: #f89728;"><strong>The University of California Education Abroad Program office is closed from Thursday, December 24, 2015-Friday, January 1, 2016.<br />During this time, the website may be unavailable.<br />We look forward to helping you study abroad in the new year!</strong></div></div> --> 
+        <p> <span class="content-line1">Studying abroad is an adventure that builds self-confidence, valuable skills, and global perspectives on your major. There is no better time in life to travel, meet people from around the world who share your passions and goals, experience foreign cultures, taste new foods, and grow in your understanding of the world.</span> </p> 
+        <p> <span class="content-line1">In searching for a program that fits your major, interests, and budget, consider the potential for job-related training, research, or accelerated language study. Do you want to take classes directly at a top-rated university? Or maybe a multi-site or internship program is a better fit.</span></p> 
+        <p> <span class="content-line1">Whether you join our program for four weeks or a full year, in a big city or in the forest, we are confident you’ll love it. This is <em>your</em> study abroad.</span> </p> 
+        <a href="/builder" class="action-link">Find Your Program&nbsp;<span class="chevron">&gt;&gt;</span></a> 
+       </article> 
+       <div class="learn-close-icon"> 
+        <div class="close-icon-inner"> 
+         <a href="#"> <img src="/Content/Images/close-icon.gif" alt="Close Icon" title="Click to close this content section."></a> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="body-spacerB"> 
+       <!-- force gap for floating page elements---> 
+      </div> 
+     </div> 
+     <div id="FinanceContent" class="FPTextPara"> 
+      <div class="CampusControlHome"> 
+       <span id="lblCampusFinance" class="CampusLabelHome uppercase">Select Your Campus</span>
+       <br> 
+       <select name="ddlCampusesFinance" onchange="javascript:setTimeout('__doPostBack(\'ddlCampusesFinance\',\'\')', 0)" id="ddlCampusesFinance" style="width:180px;"> <option value="-- Select --"></option> <option value="1">UC Berkeley</option> <option value="3">UC Davis</option> <option value="9">UC Irvine</option> <option value="4">UC Los Angeles</option> <option value="10">UC Merced</option> <option value="5">UC Riverside</option> <option value="6">UC San Diego</option> <option value="2">UC San Francisco</option> <option value="8">UC Santa Barbara</option> <option value="7">UC Santa Cruz</option> <option selected value="0">UC Systemwide</option> <option value="99">A non-U.S. institution</option> </select> 
+      </div> 
+      <div class="FPinnertextbox"> 
+       <p> <span class="content-line1">Regardless of your income, you can reduce costs by planning around a realistic budget and lifestyle.</span> </p> 
+       <p> We’re committed to helping you benefit from study abroad. To that end, we’ll work up a budget for you that includes everything from books and shampoo to tuition and airfare. For questions along the way, we’ll assign you a personal advisor. </p> 
+       <p>With our UC-integrated finance system, any existing UC financial aid will also be adjusted to include your study abroad. Exclusive to UCEAP programs, you’ll remain eligible for UC Cal and Pell grants as well as <a href="http://eap.ucop.edu/scholarships">our scholarships</a>.</p> 
+       <p>We offer <a href="http://blog.eap.ucop.edu/save-money-study-abroad/" target="_blank">23 countries where you save money</a> on equivalent terms at the <a href="http://admission.universityofcalifornia.edu/paying-for-uc/tuition-and-cost/index.html" target="_blank">University of California</a>. Careful research in selecting your destination can mean thousands of dollars in savings for you and your family.</p> 
+       <p>On average, the cost of studying for a year on UCEAP is about <em>$1,000 less than</em> a year at your UC campus—and that <em>includes</em> airfare. Depending on the term abroad, your campus will assess additional fees (<a href="http://eap.ucop.edu/Documents/budgets/1415/fees_misc_campus1415.pdf" target="_blank">download current fees</a>).</p> 
+       <a href="http://eap.ucop.edu/financialoverview/pages/what-does-study-abroad-cost.aspx" class="action-link">Get Budget Help&nbsp;<span class="chevron">&gt;&gt;</span></a> 
+       <div class="finance-close-icon"> 
+        <div class="close-icon-inner"> 
+         <a href="#"> <img src="/Content/Images/close-icon.gif" alt="Close Icon" title="Click to close this content section."></a> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="body-spacerB"> 
+       <!-- force gap for floating page elements---> 
+      </div> 
+     </div> 
+     <div id="ApplyContent" class="FPTextPara"> 
+      <div class="CampusControlHome"> 
+       <span id="lblCampusApply" class="CampusLabelHome uppercase">Select Your Campus</span>
+       <br> 
+       <select name="ddlCampusesApply" onchange="javascript:setTimeout('__doPostBack(\'ddlCampusesApply\',\'\')', 0)" id="ddlCampusesApply" style="width:180px;"> <option value="-- Select --"></option> <option value="1">UC Berkeley</option> <option value="3">UC Davis</option> <option value="9">UC Irvine</option> <option value="4">UC Los Angeles</option> <option value="10">UC Merced</option> <option value="5">UC Riverside</option> <option value="6">UC San Diego</option> <option value="2">UC San Francisco</option> <option value="8">UC Santa Barbara</option> <option value="7">UC Santa Cruz</option> <option selected value="0">UC Systemwide</option> <option value="99">A non-U.S. institution</option> </select> 
+      </div> 
+      <div class="FPinnertextbox"> 
+       <p><span class="content-line1">We’ll help you every step of the way with the tools and advising you need.</span><br> <br> To get the most of your experience, it is best to start planning as early as possible.</p> 
+       <p>Application deadlines are generally 6-9 months before departure dates. All degree-seeking, UC students are eligible to apply.</p> 
+       <span class="content-heading">Steps to Study Abroad:</span>
+       <br>
+       <br> 
+       <ol style="margin-bottom: 0px;"> 
+        <li><span>Use our <a href="/builder">Study Abroad Builder</a> to find the best program for your major, interests, career goals, and budget.</span></li> 
+        <li><span>Once you select a country and program, you can access specific application instructions.</span></li> 
+        <li><span>Register for a <a href="https://myeap.eap.ucop.edu/Galileo/Outbound/SetLoginID.aspx" target="_blank">MyEAP account</a> to fill out and submit the online portion of the application.</span></li> 
+        <li><span>Contact your campus <a href="http://eap.ucop.edu/contactus/pages/campusoffices.aspx">Study Abroad office</a> for questions about submitting your application and any accompanying documents.</span></li> 
+        <li><span>You should receive a status update by email within 8 weeks after the application deadline.</span></li> 
+       </ol> 
+       <br> 
+       <span class="content-heading">View Upcoming Deadlines</span>
+       <br> 
+       <a href="http://studyabroad.berkeley.edu/deadlines/uceap" class="action-link" target="_blank">UC Berkeley&nbsp;<span class="chevron">&gt;&gt;</span></a>
+       <br> 
+       <a href="http://studyabroad.ucdavis.edu/calendar/deadlines/uceap.cfm" class="action-link" target="_blank">UC Davis&nbsp;<span class="chevron">&gt;&gt;</span></a>
+       <br> 
+       <a href="http://www.studyabroad.uci.edu/prospective/deadlines.shtml" class="action-link" target="_blank">UC Irvine&nbsp;<span class="chevron">&gt;&gt;</span></a>
+       <br> 
+       <a href="http://ieo.ucla.edu/uceap/apply/deadlines" class="action-link" target="_blank">UC Los Angeles&nbsp;<span class="chevron">&gt;&gt;</span></a>
+       <br> 
+       <a href="http://studyabroad.ucmerced.edu/Deadlines#uceap" class="action-link" target="_blank">UC Merced&nbsp;<span class="chevron">&gt;&gt;</span></a>
+       <br> 
+       <a href="http://studyabroad.ucr.edu/uceap/deadlines.html" class="action-link" target="_blank">UC Riverside&nbsp;<span class="chevron">&gt;&gt;</span></a>
+       <br> 
+       <a href="http://studyabroad.ucsd.edu/getting-started/first-steps/calendar.html" class="action-link" target="_blank">UC San Diego&nbsp;<span class="chevron">&gt;&gt;</span></a>
+       <br> 
+       <a href="https://eap.ucsb.edu/apply-now/due-dates" class="action-link" target="_blank">UC San Francisco&nbsp;<span class="chevron">&gt;&gt;</span></a>
+       <br> 
+       <a href="https://eap.ucsb.edu/apply-now/due-dates" class="action-link" target="_blank">UC Santa Barbara&nbsp;<span class="chevron">&gt;&gt;</span></a>
+       <br> 
+       <a href="http://ieo.ucsc.edu/programs-abroad/program-options/uceap/how-and-when-to-apply.html" class="action-link" target="_blank">UC Santa Cruz&nbsp;<span class="chevron">&gt;&gt;</span></a>
+       <br> 
+       <div class="apply-close-icon"> 
+        <div class="close-icon-inner"> 
+         <a href="#"> <img src="/Content/Images/close-icon.gif" alt="Close Icon" title="Click to close this content section."></a> 
+        </div> 
+       </div> 
+       <div class="body-spacerB"> 
+        <!-- force gap for floating page elements---> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="ContactContent" class="FPTextPara"> 
+      <div class="CampusControlHome"> 
+       <span id="lblCampusContact" class="CampusLabelHome uppercase">Select Your Campus</span>
+       <br> 
+       <select name="ddlCampusesContact" onchange="javascript:setTimeout('__doPostBack(\'ddlCampusesContact\',\'\')', 0)" id="ddlCampusesContact" style="width:180px;"> <option value="-- Select --"></option> <option value="1">UC Berkeley</option> <option value="3">UC Davis</option> <option value="9">UC Irvine</option> <option value="4">UC Los Angeles</option> <option value="10">UC Merced</option> <option value="5">UC Riverside</option> <option value="6">UC San Diego</option> <option value="2">UC San Francisco</option> <option value="8">UC Santa Barbara</option> <option value="7">UC Santa Cruz</option> <option selected value="0">UC Systemwide</option> <option value="99">A non-U.S. institution</option> </select> 
+      </div> 
+      <div class="FPinnertextbox"> 
+       <p> <span class="content-line1">We’re ready to help you plan your study abroad trip.</span> </p> 
+       <p>Our advising team is on hand to support you with academic planning, finances and scholarships, travel and housing, and more. You can meet in person with a UCEAP advisor on campus or direct questions by phone, email, or online chat through our website (1-4 pm weekdays).</p> 
+       <p>Find a <a href="http://eap.ucop.edu/contactus/pages/campusoffices.aspx" target="_blank">Study Abroad office</a> on your campus or contact us directly:</p> 
+       <p> <span class="bold">Phone:</span> (805) 893-4762<br> <span class="bold">Email:</span> <a href="mailto:chat@eap.ucop.edu">chat@eap.ucop.edu</a><br> <span class="bold">Office Hours:</span><br>Monday-Friday: 8 am-noon, 1-5pm </p> 
+       <a href="http://eap.ucop.edu/ContactUs/Pages/CountryContacts.aspx" class="action-link" target="_blank">Contact an Advisor&nbsp;<span class="chevron">&gt;&gt;</span></a> 
+       <div class="contact-close-icon"> 
+        <div class="close-icon-inner"> 
+         <a href="#"> <img src="/Content/Images/close-icon.gif" alt="Close Icon" title="Click to close this content section."></a> 
+        </div> 
+       </div> 
+       <div class="body-spacerB"> 
+        <!-- force gap for floating page elements---> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="body-spacerC"> 
+      <!-- force gap for floating page elements---> 
+     </div> 
+     <div style="width: 100%;"> 
+      <div class="MIDLINK-blog"> 
+       <a href="http://blog.eap.ucop.edu/" title="UCEAP Blog" target="_blank"> <img src="/Content/Images/blog_link_icon75.gif" title="UCEAP Study abroad program information" alt="UCEAP Study abroad program information" height="75" border="0"> </a> 
+      </div> 
+      <div class="MIDLINK-aboutus"> 
+       <a href="#about-us" id="about-us1"> <img src="/Content/Images/UN_Building_Crop_Geneva75v2.jpg" alt="About Us" height="75" width="440" title="Learn About UCEAP" id="about-us" border="0" style="float: left;"> </a> 
+       <div id="AboutUsContent"> 
+        <span class="about-content-heading">UC Programs Abroad</span> 
+        <p>We take pride in extending the University of California’s high standard in education to our classrooms abroad. All the benefits of home—UC credit, grades, <em>and</em> financial aid—travel with you. So go ahead and see the world, be a global citizen, and get on UC’s track to success.</p> 
+        <a href="http://eap.ucop.edu/AboutUs/" class="action-link">Learn About UCEAP&nbsp;<span class="chevron">&gt;&gt;</span></a> 
+        <div class="about-us-close-icon"> 
+         <div class="close-icon-inner"> 
+          <a href="#about-us"> <img src="/Content/Images/close-icon.gif" alt="Close Icon" title="Click to close this content section."></a> 
+         </div> 
+        </div> 
+       </div> 
+       <a name="about-us"></a> 
+      </div> 
+      <a href="/builder"> 
+       <div class="MIDLINK-search"> 
+        <div class="MIDLINK-search-text">
+          Search 
+         <div class="tiny-text">
+          Build Your
+          <br> Study Abroad
+         </div> 
+        </div> 
+       </div> </a> 
+     </div> 
+     <div style="clear: both;"></div> 
+     <div class="body-spacerD"> 
+      <!-- force gap for floating page elements---> 
+     </div> 
+     <div style="clear: both;"></div> 
+    </section> 
+    <!-- #main-container --> 
+   </div> 
+   <!-- end body-content --> 
+   <!-- FOOTER --> 
+   <div class="footer"> 
+    <footer> 
+     <!-- footer - left column --> 
+     <div class="footer-col1"> 
+      <h4>UC Students</h4> 
+      <a href="http://eap.ucop.edu/OurPrograms/Pages/default.aspx?src=srch-foot-programs">A-Z Countries</a>
+      <br> 
+      <a href="http://eap.ucop.edu/Documents/guidebooks/1819/UCEAP_Guide_to_Study_Abroad.pdf?src=srch-foot-guide?src=srch-foot-guide" target="_blank">UCEAP Guide to Study Abroad</a>
+      <br> 
+      <a href="http://eap.ucop.edu/OurPrograms/Pages/CourseCatalog.htm?src=srch-foot-cat">MyEAP Course Catalog</a>
+      <br> 
+      <a href="http://eap.ucop.edu/OurPrograms/Pages/campus-credit-abroad.aspx" target="_blank">Campus Credit Abroad</a>
+      <br> 
+      <a href="http://eap.ucop.edu/Participants/Pages/default.aspx?src=srch-foot-pdc">Pre-Departure Checklists</a>
+      <br> 
+      <a href="http://eap.ucop.edu/Participants/Pages/default.aspx?src=srch-foot-part">Program Calendars &amp; Budgets</a>
+      <br> 
+      <a href="http://eap.ucop.edu/OurPrograms/Pages/GraduateStudents.aspx?src=srch-foot-grad">Graduate &amp; Professional Students</a>
+      <br> 
+      <a href="http://eap.ucop.edu/OurPrograms/Pages/TransferStudents.aspx?src=srch-foot-transfer">Transfer Students</a>
+      <br> 
+      <a href="http://eap.ucop.edu/Diversity/Pages/default.aspx?SRC=VURL&amp;KEY=diversity">Diversity in UCEAP</a> 
+      <h4>International Students</h4> 
+      <a href="http://eap.ucop.edu/ReciprocalExchanges/Pages/default.aspx?src=srch-foot-recip">Study at the University of California</a>
+      <br> 
+      <a href="http://eap.ucop.edu/ReciprocalExchanges/Pages/Discover-UC.aspx?src=srch-foot-recipdisc">Discover UC Campuses</a>
+      <br> 
+      <a href="http://eap.ucop.edu/ReciprocalExchanges/Pages/Undergraduates/ApplyUndergraduates.aspx?src=srch-foot-recipapply">How to Apply</a>
+      <br> 
+      <a href="http://eap.ucop.edu/ReciprocalExchanges/Pages/BeforeYouArrive.aspx?src=srch-foot-recipinstr">Pre-Arrival Instructions</a> 
+     </div> 
+     <!-- footer - middle column --> 
+     <div class="footer-col2"> 
+      <h4>UCEAP Community</h4> 
+      <a href="http://eap.ucop.edu/ContactUs/Pages/campusoffices.aspx?src=srch-foot-camp">UC Campus Study Abroad Offices</a>
+      <br> 
+      <a href="http://eap.ucop.edu/SharedPrograms/nrs/">Natural Reserve System (NRS)</a>
+      <br> 
+      <a href="http://eap.ucop.edu/OurPrograms/Pages/peacecorpsprep.aspx">Peace Corps Prep</a>
+      <br> 
+      <a href="https://alumni.eap.ucop.edu/home?src=srch-foot-alum">Alumni</a>
+      <br> 
+      <a href="http://eap.ucop.edu/ForParents/Pages/default.aspx?src=srch-foot-parents">Parents</a>
+      <br> 
+      <a href="http://eap.ucop.edu/FacultyStaff/Pages/default.aspx?src=srch-foot-staff">Faculty &amp; Staff</a> 
+      <h4>Emergency Info</h4> 
+      <a href="http://eap.ucop.edu/EmergencyResponseAlerts/Pages/default.aspx?src=srch-foot-alert">Worldwide Alerts</a>
+      <br> 
+      <a href="http://eap.ucop.edu/EmergencyResponseAlerts/Pages/emergency.aspx?src=srch-foot-emergency">24-Hour Emergency Contacts</a> 
+     </div> 
+     <!-- footer - right column --> 
+     <div class="footer-col3"> 
+      <h4>Resources</h4> 
+      <a href="http://media.eap.ucop.edu/albums.php?albumId=1013253" target="_blank">Advising Tools</a>
+      <br> 
+      <a href="http://media.eap.ucop.edu/albums.php?albumId=1271653" target="_blank">Booklets &amp; Posters</a>
+      <br> 
+      <a href="http://media.eap.ucop.edu/albums.php?albumId=486882" target="_blank">Logos</a>
+      <br> 
+      <a href="http://media.eap.ucop.edu/albums.php?albumId=236003" target="_blank">Photo Library</a>
+      <br> 
+      <h4>Get Connected</h4> 
+      <a href="https://alumni.eap.ucop.edu/donation-form?src=srch-foot-give" target="_blank">Give to UCEAP</a>
+      <br> 
+      <a href="http://blog.eap.ucop.edu/?src=srch-foot-blog" target="_blank">UCEAP Blog</a>
+      <br> 
+      <a href="http://eap.ucop.edu/AboutUs/Pages/newsroom.aspx?src=srch-foot-news">Newsroom</a>
+      <br> 
+      <a href="http://eap.ucop.edu/FacultyStaff/JobOpenings/Pages/default.aspx?src=srch-foot-jobs">Career Opportunities</a> 
+     </div> 
+     <!-- end footer-col3 --> 
+    </footer> 
+   </div> 
+   <!-- end footer div --> 
+   <!-- social media icons/links --> 
+   <div class="footer-bottom"> 
+    <div class="media-icons"> 
+     <a href="https://www.facebook.com/UCEAP" target="_blank"> <img src="/Content/Images/facebook.png" width="37" height="34" alt="Facebook Icon" title="Like UCEAP on Facebook" border="0"> </a> 
+     <a href="https://twitter.com/UCEAP" target="_blank"> <img src="/Content/Images/twitter.png" width="41" height="34" alt="Twitter Icon" title="Follow UCEAP on Twitter" border="0"> </a> 
+     <a href="http://www.pinterest.com/uceapabroad/" target="_blank"> <img src="/Content/Images/pinterest.png" width="36" height="34" alt="Pinterest Icon" title="See UCEAP on Pinterest" border="0"> </a> 
+     <a href="https://www.youtube.com/user/UCEAP" target="_blank"> <img src="/Content/Images/youtube.png" width="36" height="34" alt="YouTube Icon" title="Watch UCEAP on YouTube" border="0"> </a> 
+     <a href="http://instagram.com/uceap" target="_blank"> <img src="/Content/Images/instagram.png" width="36" height="34" alt="Instagram Icon" title="Explore UCEAP on Instagram" border="0"> </a> 
+     <a href="http://blog.eap.ucop.edu/" target="_blank"> <img src="/Content/Images/blog_icon.png" width="36" height="34" alt="Blog Icon" title="Read the UCEAP Study Abroad Blog" border="0"> </a> 
+    </div> 
+    <div class="copyright vertical-center">
+      Copyright © The Regents of the University of California&nbsp;&nbsp;|&nbsp;&nbsp;
+     <a href="http://eap.ucop.edu/AboutUs/Pages/TermsofUse.aspx?src=hm-foot-terms">Terms of Use</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+     <a href="http://eap.ucop.edu/AboutUs/Pages/PrivacyPolicy.aspx">Privacy</a> 
+    </div> 
+   </div> 
+   <!-- end media icons --> 
+   <script src="Scripts/jquery-1.10.2.min.js"></script> 
+   <script src="Scripts/bootstrap.min.js"></script> 
+   <script src="Scripts/jquery-ui.min.js"></script> 
+   <script>
+            /* jQuery code for homepage interactivity */
+            $(document).ready(function () {
+
+                // set default state of elements
+                $('#AboutUsContent').hide(); // hide ABOUT US content
+                $(".FPTextPara").hide(); // hide other slider content
+
+                $("#LearnContent").show(); // show LEARN by default
+
+                // hide/show About Us content
+                $("#about-us").click(function () {
+                    $("#AboutUsContent").toggle("slow");
+                });
+
+                $("#learn").click(function () {
+                    $("#FinanceContent").hide();
+                    $("#ApplyContent").hide();
+                    $("#ContactContent").hide();
+
+                    $("#finance-img").attr('src', '/Content/Images/Finance_over.png');
+                    $("#apply-img").attr('src', '/Content/Images/Apply_over.png');
+                    $("#contact-img").attr('src', '/Content/Images/Contact_over.png');
+
+                    $("#learn-img").attr('src', '/Content/Images/Learn.png');
+
+                    if ($("#LearnContent").is(':visible')) {
+                        $("#learn-img").attr('src', '/Content/Images/Learn_over.png');
+                    }
+                    else {
+                        $("#learn-img").attr('src', '/Content/Images/Learn.png');
+                    } 
+
+                    $("#LearnContent").toggle("slow");
+                });
+
+                $("#nav-learn").click(function () {
+                    $("#FinanceContent").hide();
+                    $("#ApplyContent").hide();
+                    $("#ContactContent").hide();
+
+                    $("#finance-img").attr('src', '/Content/Images/Finance_over.png');
+                    $("#apply-img").attr('src', '/Content/Images/Apply_over.png');
+                    $("#contact-img").attr('src', '/Content/Images/Contact_over.png');
+
+                    if (!$("#LearnContent").is(':visible')) {
+                        $("#learn-img").attr('src', '/Content/Images/Learn.png');
+                        $("#LearnContent").toggle("slow");
+                    }                  
+                });
+
+                $("#finance").click(function () {
+                    $("#LearnContent").hide();
+                    $("#ApplyContent").hide();
+                    $("#ContactContent").hide();
+
+                    $("#learn-img").attr('src', '/Content/Images/Learn_over.png');
+                    $("#apply-img").attr('src', '/Content/Images/Apply_over.png');
+                    $("#contact-img").attr('src', '/Content/Images/Contact_over.png');
+
+                    if ($("#FinanceContent").is(':visible')) {
+                        $("#finance-img").attr('src', '/Content/Images/Finance_over.png');
+                    }
+                    else {
+                        $("#finance-img").attr('src', '/Content/Images/Finance.png');
+                    }
+
+                    $("#FinanceContent").toggle("slow");
+                });
+
+                $("#nav-finance").click(function () {
+                    $("#LearnContent").hide();
+                    $("#ApplyContent").hide();
+                    $("#ContactContent").hide();
+
+                    $("#learn-img").attr('src', '/Content/Images/Learn_over.png');
+                    $("#apply-img").attr('src', '/Content/Images/Apply_over.png');
+                    $("#contact-img").attr('src', '/Content/Images/Contact_over.png');
+
+                    if (!$("#FinanceContent").is(':visible')) {
+                        $("#finance-img").attr('src', '/Content/Images/Finance.png');
+                        $("#FinanceContent").toggle("slow");
+                    }
+                });
+
+                $("#apply").click(function () {
+                    $("#LearnContent").hide();
+                    $("#FinanceContent").hide();
+                    $("#ContactContent").hide();
+
+                    $("#finance-img").attr('src', '/Content/Images/Finance_over.png');
+                    $("#learn-img").attr('src', '/Content/Images/Learn_over.png');
+                    $("#contact-img").attr('src', '/Content/Images/Contact_over.png');
+
+                    if ($("#ApplyContent").is(':visible')) {
+                        $("#apply-img").attr('src', '/Content/Images/Apply_over.png');
+                    }
+                    else {
+                        $("#apply-img").attr('src', '/Content/Images/Apply.png');
+                    }
+
+                    $("#ApplyContent").toggle("slow");
+                });
+
+                $("#nav-apply").click(function () {
+                    $("#LearnContent").hide();
+                    $("#FinanceContent").hide();
+                    $("#ContactContent").hide();
+
+                    $("#learn-img").attr('src', '/Content/Images/Learn_over.png');
+                    $("#finance-img").attr('src', '/Content/Images/Finance_over.png');
+                    $("#contact-img").attr('src', '/Content/Images/Contact_over.png');
+
+                    if (!$("#ApplyContent").is(':visible')) {
+                        $("#apply-img").attr('src', '/Content/Images/Apply.png');
+                        $("#ApplyContent").toggle("slow");
+                    }
+                });
+
+                $("#contact").click(function () {
+                    $("#LearnContent").hide();
+                    $("#FinanceContent").hide();
+                    $("#ApplyContent").hide();
+
+                    $("#finance-img").attr('src', '/Content/Images/Finance_over.png');
+                    $("#apply-img").attr('src', '/Content/Images/Apply_over.png');
+                    $("#learn-img").attr('src', '/Content/Images/Learn_over.png');
+
+                    if ($("#ContactContent").is(':visible')) {
+                        $("#contact-img").attr('src', '/Content/Images/Contact_over.png');
+                    }
+                    else {
+                        $("#contact-img").attr('src', '/Content/Images/Contact.png');
+                    }
+
+                    $("#ContactContent").toggle("slow");
+                });
+
+                $("#nav-contact").click(function () {
+                    $("#LearnContent").hide();
+                    $("#FinanceContent").hide();
+                    $("#ApplyContent").hide();
+
+                    $("#learn-img").attr('src', '/Content/Images/Learn_over.png');
+                    $("#finance-img").attr('src', '/Content/Images/Finance_over.png');
+                    $("#apply-img").attr('src', '/Content/Images/Apply_over.png');
+
+                    if (!$("#ContactContent").is(':visible')) {
+                        $("#contact-img").attr('src', '/Content/Images/Contact.png');
+                        $("#ContactContent").toggle("slow");
+                    }
+                });
+
+                // content close icons
+                $(".learn-close-icon").click(function () {
+                    $("#learn-img").attr('src', '/Content/Images/Learn_over.png');
+                    $("#LearnContent").toggle("slow");
+                });
+
+                $(".about-us-close-icon").click(function () {
+                    $("#AboutUsContent").toggle("slow");
+                });
+
+                $(".finance-close-icon").click(function () {
+                    $("#finance-img").attr('src', '/Content/Images/Finance_over.png');
+                    $("#FinanceContent").toggle("slow");
+                });
+
+                $(".apply-close-icon").click(function () {
+                    $("#apply-img").attr('src', '/Content/Images/Appy_over.png');
+                    $("#ApplyContent").toggle("slow");
+                });
+
+                $(".contact-close-icon").click(function () {
+                    $("#contact-img").attr('src', '/Content/Images/Contact_over.png');
+                    $("#ContactContent").toggle("slow");
+                });
+
+                // get querystring params for tab triggering from other pages
+                var vars = [], hash;
+                var q = document.URL.split('?')[1];
+                if (q != undefined)
+                {
+                    q = q.split('&');
+                    for (var i = 0; i < q.length; i++)
+                    {
+                        hash = q[i].split('=');
+                        vars.push(hash[1]);
+                        vars[hash[0]] = hash[1];
+                    }
+
+                    if (vars['t'] != undefined && vars['t'] != null)
+                    {
+                        var t = vars['t'].split('#');
+                        if (t != undefined) 
+                        {
+                            if (t[0] == 'learn') 
+                            {
+                                $("#nav-learn").trigger("click");
+                            }
+                            else if (t[0] == 'finance') {
+                                $("#nav-finance").trigger("click");
+                            }
+                            else if (t[0] == 'contact') {
+                                $("#nav-contact").trigger("click");
+                            }
+                            else if (t[0] == 'apply') {
+                                $("#nav-apply").trigger("click");
+                            }
+                        }
+                    }
+                }
+            });
+        </script> 
+   <!-- BEGIN: GOOGLE ANALYTICS TRACKING CODE --> 
+   <script type="text/javascript">
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-3595090-1', 'auto', { 'allowLinker': true });
+    ga('require', 'linker');
+    ga('linker:autoLink', ['eap.ucop.edu', 'uc.eap.ucop.edu', 'myeap.eap.ucop.edu']);
+
+    ga('send', 'pageview');
+
+</script> 
+   <!-- END: GOOGLE ANALYTICS TRACKING CODE --> 
+   <!-- SUBSTITUTE FOR SHAREPOINT SEARCH FORM --> 
+   <script>
+            function GoSearch() {
+                var term = document.getElementById('studyabroadsearchbox').value;
+                window.location = 'http://eap.ucop.edu/Search/Results.aspx?src=hm-foot-login&k=' + term;
+            }
+
+          
+
+
+            $( "#studyabroadsearchbox" ).keypress(function( searchsubmit ) {
+                if ( searchsubmit.which == 13 ) 
+                    GoSearch()
+
+
+            }
+				);
+
+        </script> 
+  </form>   
+ </body>
+</html>

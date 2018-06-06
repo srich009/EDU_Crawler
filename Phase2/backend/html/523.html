@@ -1,0 +1,736 @@
+<!DOCTYPE html SYSTEM "EMPTY">
+<html xmlns:upelemtitle="http://xml.apache.org/xalan/java/org.apereo.portal.security.xslt.XalanLayoutElementTitleHelper" xmlns:dlm="http://www.uportal.org/layout/dlm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" lang="en-US" class="respondr">
+ <head>
+  <title>Welcome | UCR Portal</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="description" content="uPortal by Apereo: The academic open source portal built for higher education by higher education">
+  <meta name="keywords" content="portal, uPortal, academic, higher education, open source, enterprise, Apereo, JA-SIG, JASIG, Jasig">
+  <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet" type="text/css">
+  <link href="/ResourceServingWebapp/rs/normalize/2.1.2/normalize-2.1.2.min.css" rel="stylesheet" type="text/css">
+  <link href="/ResourceServingWebapp/rs/fontawesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="/ResourceServingWebapp/rs/bootstrap-plugins/accessibility/1.0.2/css/bootstrap-accessibility.min.css" rel="stylesheet" type="text/css">
+  <link href="/ResourceServingWebapp/rs/jqueryui/1.10.3/theme/smoothness/jquery-ui-1.10.3-smoothness.min.css" rel="stylesheet" type="text/css">
+  <link href="/uPortal/scripts/jstree/style.min.css" rel="stylesheet" type="text/css">
+  <script src="/ResourceServingWebapp/rs/modernizr/2.6.2/modernizr-2.6.2.min.js" type="text/javascript"> </script>
+  <script src="/ResourceServingWebapp/rs/jquery/1.11.0/jquery-1.11.0.min.js" type="text/javascript"> </script>
+  <script src="/ResourceServingWebapp/rs/jquery-migrate/jquery-migrate-1.2.1.min.js" type="text/javascript"> </script>
+  <script src="/ResourceServingWebapp/rs/jqueryui/1.10.3/jquery-ui-1.10.3.min.js" type="text/javascript"> </script>
+  <script src="/ResourceServingWebapp/rs/bootstrap/3.3.5/js/bootstrap.min.js" type="text/javascript"> </script>
+  <script src="/ResourceServingWebapp/rs/bootstrap-plugins/accessibility/1.0.2/js/bootstrap-accessibility.min.js" type="text/javascript"> </script>
+  <script src="/ResourceServingWebapp/rs/fluid/1.5.0/js/fluid-custom.min.js" type="text/javascript"> </script>
+  <script src="/ResourceServingWebapp/rs/underscore/1.8.3/underscore.min.js" type="text/javascript"> </script>
+  <script src="/ResourceServingWebapp/rs/backbone/1.3.3/backbone-1.3.3.min.js" type="text/javascript"> </script>
+  <script src="/ResourceServingWebapp/rs/jquery-plugins/noty/2.2.0/jquery.noty.packaged.min.js" type="text/javascript"> </script>
+  <script src="/ResourceServingWebapp/rs/datatables/1.9.4/media/js/jquery.dataTables.min.js" type="text/javascript"> </script>
+  <script src="/ResourceServingWebapp/rs/jquery-plugins/rating/1.0/bootstrap-rating-input.min.js" type="text/javascript"> </script>
+  <script src="/ResourceServingWebapp/rs/datatables/1.9.4/plugins/integration/bootstrap/3/dataTables.bootstrap.js" type="text/javascript"> </script>
+  <script src="/ResourceServingWebapp/rs/datatables/1.9.4/extras/column-filter-widgets/js/ColumnFilterWidgets.js" type="text/javascript"> </script>
+  <script src="/uPortal/scripts/jstree/jstree.min.js" type="text/javascript"> </script>
+  <script src="/uPortal/rs/conflict-resolution/js/resolve-conflicts.min.js" type="text/javascript"> </script>
+  <script src="/uPortal/media/skins/respondr/68l6-nxa7D-efiCjfRcY4A.aggr.min.js" type="text/javascript"> </script>
+  <link rel="shortcut icon" href="/uPortal/favicon.ico" type="image/x-icon">
+  <script type="text/javascript">
+    var up = up || {};
+    up.jQuery = jQuery.noConflict(true);
+    up.fluid = fluid;
+    fluid = null;
+    fluid_1_5 = null;
+    up._ = _.noConflict();
+    up._.templateSettings = {
+      interpolate : /{{=(.+?)}}/g,
+      evaluate    : /{{(.+?)}}/g,
+      escape: /{{-([\s\S]+?)}}/g
+    };
+    up.Backbone = Backbone.noConflict();
+
+    // fix console.log in IE8,9.  Though we don't commit to supporting these IE versions, this minor fix allows
+    // these browsers to work better.
+    if (!window.console) window.console = {};
+    if (!window.console.log) window.console.log = function() {};
+    if (!window.console.trace) window.console.trace = function() {};
+
+    (function($) {
+      $(function() {
+        var navMenuToggle = function() {
+          var menu = $(".portal-nav .menu"), menuToggle = $("#up-sticky-nav .menu-toggle");
+          // Toggle the nav visibility when the button is clicked.
+          menuToggle.click(function() {
+            // Open and animate the offcanvas
+            $('.row-offcanvas').toggleClass('active');
+            // show the nav
+            // menu.toggleClass("show");
+            // scroll top
+            $('html, body').animate({
+                scrollTop: 0
+            });
+            // animate the hamburger to an arrow
+            $('.hamburger').toggleClass("is-active");
+            return false;
+          });
+        }
+
+        navMenuToggle();
+      });
+
+      $(document).ready(function() {
+          if (up.lightboxConfig) {
+            up.lightboxConfig.init();
+          }
+
+          // Unhide the portlet's options menu if there are option items to display.
+          $('div.portlet-options-menu').has('li').removeClass('hidden');
+
+          // If portlet chrome is configured to not show (shows on hover) and the portlet is not movable, the portlet chrome
+          // is hidden.  However if there are option items to display, allow the portlet chrome to show on hover.
+          $('div.hover-toolbar').filter('.hidden').has('li').removeClass('hidden');
+
+          // Attach behavior to the Move Portlet options menu
+          $('.portlet-options-menu .up-portlet-control.move').click(function() {
+             // If Move Portlet, unhide the grab handle and change the menu text
+             if ($(this).text() === $(this).attr('data-move-text')) {
+                $(this).parents('.up-portlet-titlebar').find('.grab-handle').removeClass('hidden');
+                $(this).text($(this).attr('data-cancel-move-text'));
+             } else {
+                // Else cancel the move by hiding the grab handle and reverting the text
+                $(this).parents('.up-portlet-titlebar').find('.grab-handle').addClass('hidden');
+                $(this).text($(this).attr('data-move-text'));
+             }
+          })
+      });
+
+    })(up.jQuery);
+  </script> 
+  <link rel="stylesheet" type="text/css" href="/uPortal/media/skins/respondr/rspace.css"> 
+  <script src="/uPortal/scripts/respond-1.4.2.min.js" type="text/javascript"></script>
+ </head>
+ <body class="up dashboard portal fl-theme-mist">
+  <a role="button" class="portal-header-skip-nav btn" href="#portalPageBody">Skip to page content</a>
+  <div class="row-offcanvas">
+   <div id="up-notification"></div>
+   <div id="wrapper">
+    <div id="region-page-top" class="container-fluid">
+     <div class="row">
+      <div class="col-sm-12">
+       <section id="portlet_u24l1n110" class="up-portlet-wrapper dynamic-respondr-skin"> 
+        <!-- Generate a CONFIG URL where appropriate --> 
+       </section>
+      </div>
+     </div>
+    </div>
+    <header class="portal-header" role="banner">
+     <div id="up-sticky-nav" class="container-fluid">
+      <div class="portal-global row">
+       <a href="javascript:void(0);" tabindex="0" class="menu-toggle pull-left" aria-label="Menu" role="button" title="Menu" data-toggle="offcanvas" aria-expanded="false" aria-haspopup="true" aria-controls="sidebar">
+        <div class="hamburger hamburger-arrow">
+         <div class="hamburger-box">
+          <div class="hamburger-inner"></div>
+         </div>
+        </div></a>
+       <div id="region-pre-header" class="portal-user">
+        <section id="portlet_u23l1n8" class="up-portlet-wrapper login-launcher"> 
+         <div id="webLoginContainer" class="fl-widget portal-login"> 
+          <div class="fl-widget-inner"> 
+           <div class="fl-widget-content"> 
+            <div id="portalCASLogin" class="fl-widget-content"> 
+             <a id="portalCASLoginLink" class="btn" title="Sign In via CAS" href="https://auth.ucr.edu/cas/login?service=https://portal.ucr.edu/uPortal/Login"> <i class="fa fa-sign-in" aria-hidden="true"></i> Log In </a> 
+             <a id="portalCASLoginNewLink" title="Create a new portal account" href="http://www.jasig.org/cas" class="btn"> <i class="fa fa-user-plus" aria-hidden="true"></i> New User? </a> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </section>
+       </div>
+      </div>
+     </div>
+     <div id="region-header-top" class="container-fluid">
+      <div class="row">
+       <div class="col-sm-12">
+        <section id="portlet_u24l1n210" class="up-portlet-wrapper rspace-logo"> 
+         <a href="/uPortal" class="rspace-logo"><img src="/jasig-widget-portlets/images/rspace_logo.svg" alt="R'Space Logo"></a> 
+        </section>
+        <section id="portlet_u16l1n109" class="up-portlet-wrapper ucriverside-logo"> 
+         <img class="rspace-ucriverside-logo" src="/jasig-widget-portlets/images/ucriverside_logo.svg" alt="UC Riverside Logo">
+        </section>
+       </div>
+      </div>
+     </div>
+     <div class="container-fluid portal-header-main">
+      <div class="row">
+       <div id="empty-region-header-left" class="col-sm-6 col-md-8 text-left"></div>
+       <div id="region-header-right" class="col-sm-6 col-md-4 text-right">
+        <section id="portlet_u16l1n110" class="up-portlet-wrapper search-launcher"> 
+         <div id="webSearchContainer" class="fl-widget"> 
+          <div class="fl-widget-inner"> 
+           <div class="fl-widget-content"> 
+            <form class="form-search" role="form" method="post" action="/uPortal/p/search.ctf1/normal/action.uP" id="Pluto_32_u16l1n110_14_webSearchForm"> 
+             <div class="input-group"> 
+              <input id="Pluto_32_u16l1n110_14_webSearchInput" class="searchInput input-large search-query form-control" value="" name="query" type="search" placeholder="Search" title="Search Terms"> 
+              <span class="input-group-btn"> <button id="webSearchSubmit" type="submit" name="submit" class="btn btn-default" value="Search"> <span>Search</span> <i class="fa fa-search" aria-hidden="true"></i> </button> </span> 
+             </div> 
+            </form> 
+           </div> 
+          </div> 
+         </div> 
+         <script type="text/javascript" src="/uPortal/scripts/search/autosuggestHandler.js"></script> 
+         <link rel="stylesheet" type="text/css" href="/uPortal/css/search/autosuggest.css"> 
+         <script language="javascript" type="text/javascript">(function(a){a(function(){up.initSearchAuto(a,{searchFieldSelector:"#Pluto_32_u16l1n110_14_webSearchInput",prepopulateAutoSuggestUrl:"/uPortal/api/portletList",prepopulateUrlPattern:"/uPortal/p/$fname/max",autoSuggestResultsProcessor:"portletListProcessor",autoSuggestSearchUrl:"/uPortal/p/search.ctf1/normal/retrieveSearchJSONResults.resource.uP"});});a("#Pluto_32_u16l1n110_14_webSearchForm").submit(function(b){if(a("#Pluto_32_u16l1n110_14_webSearchInput").val().trim().length==0){b.preventDefault();}else{document.getElementById("webSearchSubmit").disabled=1;}});})(up.jQuery);</script> 
+        </section>
+       </div>
+      </div>
+     </div>
+     <div id="region-header-bottom" class="container-fluid">
+      <div class="row">
+       <div class="col-sm-12">
+        <section id="portlet_u16l1n210" class="up-portlet-wrapper emergency-alert"> 
+         <script src="/ResourceServingWebapp/rs/jquery/1.11.0/jquery-1.11.0.min.js" type="text/javascript"> </script>
+         <script src="/ResourceServingWebapp/rs/jqueryui/1.10.3/jquery-ui-1.10.3.min.js" type="text/javascript"> </script> 
+         <script src="/NotificationPortlet/scripts/jquery.notice.min.js" type="text/javascript"></script> 
+         <style>
+#Pluto_46_u16l1n210_14_emergencyAlert {
+    position: relative;
+    height: 190px;
+}
+#Pluto_46_u16l1n210_14_emergencyAlert .hidden {
+    display: none;
+}
+#Pluto_46_u16l1n210_14_emergencyAlert .view-alert {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 36px 36px 36px 190px;
+    background: url(/NotificationPortlet/images/icon-alert.png) 36px center no-repeat;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    color: #fff;
+}
+#Pluto_46_u16l1n210_14_emergencyAlert .view-alert .titlebar {
+    display: block;
+}
+#Pluto_46_u16l1n210_14_emergencyAlert .view-alert .title {
+    border: none;
+    font-size: 200%;
+    font-weight: bold;
+    color: #fff;
+}
+#Pluto_46_u16l1n210_14_emergencyAlert .view-alert a {
+    color: #B2CCE1;
+}
+#Pluto_46_u16l1n210_14_emergencyAlert .view-alert a:hover {
+    color: #fff;
+}
+#Pluto_46_u16l1n210_14_emergencyAlert .view-alert .alerts-pager {
+    float: right;
+}
+#Pluto_46_u16l1n210_14_emergencyAlert .view-alert .alerts-pager li {
+    display: inline;
+    list-style-type: none;
+}
+#Pluto_46_u16l1n210_14_emergencyAlert .view-alert .alerts-pager li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: larger;
+    cursor: pointer;
+}
+#Pluto_46_u16l1n210_14_emergencyAlert .view-alert .alerts-pager li a.disabled {
+    color: #ccc;
+}
+</style> 
+         <div id="Pluto_46_u16l1n210_14_emergencyAlert" style="display: none;"> 
+          <div class="portlet view-alert template hidden" role="section"> 
+           <!-- Portlet Titlebar --> 
+           <div class="titlebar portlet-titlebar" role="sectionhead"> 
+            <ul class="alerts-pager hidden"> 
+             <li><a title="Previous" href="javascript:void(0);" class="alerts-previous disabled">«</a></li> 
+             <li><a title="Next" href="javascript:void(0);" class="alerts-next disabled">»</a></li> 
+            </ul> 
+            <h2 class="title" role="heading"></h2> 
+           </div> 
+           <!-- Portlet Body --> 
+           <div role="main"> 
+            <p class="body"></p> 
+            <a class="link" href=""></a> 
+           </div> 
+          </div> 
+         </div> 
+         <script type="text/javascript">
+
+    var Pluto_46_u16l1n210_14_ = Pluto_46_u16l1n210_14_ || {};
+    
+        
+            Pluto_46_u16l1n210_14_.jQuery = jQuery.noConflict(true);
+        
+        
+    
+
+    Pluto_46_u16l1n210_14_.jQuery(function(){
+        var $ = Pluto_46_u16l1n210_14_.jQuery;
+
+        var container = $("#Pluto_46_u16l1n210_14_emergencyAlert");
+
+        var autoAdvance = false;
+        var intervalId = -1;
+
+        upnotice.show($, container, {
+            invokeNotificationServiceUrl: '/uPortal/f/u16l1s200/p/emergency-alert.u16l1n210/normal/action.uP?pP_action=invokeNotificationService&pP_uuid=f6d5e180-27c4-4878-ad9a-7c6ae3175c16',
+            getNotificationsUrl: '/uPortal/f/u16l1s200/p/emergency-alert.u16l1n210/normal/GET-NOTIFICATIONS-UNCATEGORIZED.resource.uP',
+            readyCallback: function() {
+
+                // Grab the alerts we just created
+                var alerts = container.find('.view-alert').not('.template');
+
+                // Hide all but the first one -- (NOTE:  Need both to toggle class and to manage 'display' property')
+                alerts.not(':first').toggleClass('hidden').css('display', 'none');
+
+                var advance = function() {
+                    var outgoingAlert = alerts.filter(':visible');
+                    var incomingAlert = outgoingAlert.next();
+                    if (incomingAlert.size() == 0) {
+                      // Cycle to the beginning...
+                      incomingAlert = alerts.filter(':first');
+                    }
+                    outgoingAlert.toggle('slide', { direction: 'left' }).toggleClass('hidden');
+                    incomingAlert.toggleClass('hidden').toggle('slide', { direction: 'right' });
+                };
+
+                var recede = function() {
+                    var outgoingAlert = alerts.filter(':visible');
+                    var incomingAlert = outgoingAlert.prev();
+                    outgoingAlert.toggle('slide', { direction: 'right' }).toggleClass('hidden');
+                    incomingAlert.toggleClass('hidden').toggle('slide', { direction: 'left' });
+                };
+
+                // Show paging controls?
+                if (alerts.size() > 1) {
+                    alerts.find('.alerts-pager').toggleClass('hidden');
+                    // All but the first should enable the previous link
+                    alerts.filter(':not(:first)').find('.alerts-previous').toggleClass('disabled');
+                    // All but the last should enable the next link
+                    alerts.filter(':not(:last)').find('.alerts-next').toggleClass('disabled');
+                    // Register click handlers
+                    alerts.find('.alerts-next:not(.disabled)').click(function() {
+                        advance();
+                        window.clearInterval(intervalId);
+                    });
+                    alerts.find('.alerts-previous:not(.disabled)').click(function() {
+                        recede();
+                        window.clearInterval(intervalId);
+                    });
+                    // autoAdvance?
+                    if (autoAdvance && alerts.size() > 1) {
+                        intervalId = window.setInterval(advance, 10000);
+                    }
+                }
+
+            }
+        });
+
+    });
+
+</script> 
+        </section>
+       </div>
+      </div>
+     </div>
+     <nav class="portal-nav">
+      <div id="sidebar" class="sidebar-offcanvas container-fluid">
+       <div id="portalNavigation" class="fl-widget">
+        <div id="portalNavigationInner" class="fl-widget-inner header">
+         <ul id="portalNavigationList" class="menu fl-tabs flc-reorderer-column list-group list-group-horizontal">
+          <li id="portalNavigation_u23l1s1000" class="portal-navigation single active fl-tabs-active locked      list-group-item"><a id="tabLink_u23l1s1000" href="/uPortal/f/welcome/normal/render.uP" title="Welcome" class="portal-navigation-link  "><span title="" class="portal-navigation-label ">Welcome</span><i class="fa fa-chevron-right visible-xs"></i></a></li>
+         </ul>
+        </div>
+       </div>
+      </div>
+     </nav>
+    </header>
+    <div id="portalPageBody" class="portal-content" role="main">
+     <div class="container-fluid">
+      <div class="row">
+       <div class="col-md-12">
+        <div class="row">
+         <div id="portalPageBodyMessage" class="col-md-12"></div>
+        </div>
+        <div id="portalPageBodyColumns" class="row">
+         <div id="column_u23l1s1100" class="portal-page-column column-1 col-md-7     ">
+          <div id="inner-column_u23l1s1100" class="portal-page-column-inner"></div>
+         </div>
+         <div id="column_u23l1s1200" class="portal-page-column column-2 col-md-5     ">
+          <div id="inner-column_u23l1s1200" class="portal-page-column-inner"></div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <footer id="region-footer-first">
+     <div class="container-fluid">
+      <a name="sitemap"></a>
+      <div class="row">
+       <div class="col-md-3">
+        <h4><a href="/uPortal/f/welcome/normal/render.uP" class="">Welcome</a></h4>
+        <ul></ul>
+       </div>
+      </div>
+     </div>
+    </footer>
+    <footer id="region-footer-second" role="contentinfo">
+     <section id="portlet_u16l1n1110" class="up-portlet-wrapper login-redirect">
+      <script>
+    (function($) {
+
+        $(document).ready(function() {
+            var loginLink = $('#portalCASLoginLink');
+            if (loginLink.text().trim() == 'Log In') {
+                loginLink.click();
+            }
+            else {
+                $('.portal .up-portlet-wrapper-inner .up-portlet-titlebar.up-standard-chrome > .portlet-title .portlet-controls .dropdown-toggle').text('').css('visibility', 'visible');
+            }
+        });
+
+    })(up.jQuery);
+</script>
+     </section>
+     <section id="portlet_u16l1n1111" class="up-portlet-wrapper auth-apps-filter">
+      <script>
+    (function($) {
+
+        $(document).ready(function() {
+            var filterApps = function(filter) {
+                if (!filter || filter.length < 2) {
+                    $('.app-component.app-title').parents('.up-portlet-wrapper').show();
+                    return;
+                }
+
+                filter = filter.toLowerCase();
+
+                $('.app-component.app-title').each(function(i, el) {
+                    if ($(el).text().toLowerCase().indexOf(filter) > -1) {
+                        $(el).parents('.up-portlet-wrapper:first').show();
+                    }
+                    else {
+                        $(el).parents('.up-portlet-wrapper:first').hide();
+                    }
+                });
+            };
+
+            if (window.location.href.indexOf('uPortal/f/authorized-apps/normal/render.uP') > -1) {
+                var authAppsContainer = $('#portalPageBodyColumns');
+                authAppsContainer.css('max-width', '768px').css('margin-left', 'auto').css('margin-right', 'auto');
+
+                var searchEls = $('<div class="row"><div class="col-sm-12" style="text-align:center;margin-top:2rem;"><input id="authAppsFilter" style="max-width: 300px;width: 100%;display: inline;" class="form-control" placeholder="Filter Authorized Apps"></div></div>');
+                searchEls.prependTo(authAppsContainer);
+                $('#authAppsFilter').on('keyup', function() {
+                    filterApps($('#authAppsFilter').val());
+                });
+            }
+        });
+
+    })(up.jQuery);
+</script>
+     </section>
+     <section id="portlet_u16l1n510" class="up-portlet-wrapper legal-footer"> 
+      <div class="rspace-legal-footer"> 
+       <ul> 
+        <li><a href="https://www.ucr.edu/privacy.html" target="_blank">Privacy Policy</a></li> 
+        <li><a href="https://www.ucr.edu/terms.html" target="_blank">Terms and Conditions</a></li> 
+        <li>© 2017 Regents of the University of California</li> 
+       </ul> 
+      </div> 
+     </section>
+     <section id="portlet_u16l1n511" class="up-portlet-wrapper compress-app-launchers"> 
+      <script>
+    (function($) {
+        var selectors = {
+            columns: '.portal-page-column-inner'
+        };
+
+        var compressAppLaunchers = function() {
+            var columnEls = $(selectors.columns);
+            var maxColEl = getColumnWithMaxLaunchers();
+            var minColEl = getColumnWithMinLaunchers();
+            var maxLaunchers = maxColEl.children().length;
+            var minLaunchers = minColEl.children().length;
+
+            do {
+                //if we haven't already reached equilibrium then move a launcher from max column to min column
+                if (minLaunchers + 1 < maxLaunchers) {
+                    maxColEl.children(':last').appendTo(minColEl);
+                }
+
+                maxColEl = getColumnWithMaxLaunchers();
+                minColEl = getColumnWithMinLaunchers();
+                maxLaunchers = maxColEl.children().length;
+                minLaunchers = minColEl.children().length;
+            } while (minLaunchers + 1 < maxLaunchers);
+
+            columnEls.each(function(i, el) {
+                var maxColEl = getColumnWithMaxLaunchers();
+                var minColEl = getColumnWithMinLaunchers();
+
+                //if we haven't already reached equilibrium then move a launcher from max column to min column
+                if (minColEl.children().length + 1 < maxColEl.children().length) {
+                    maxColEl.children(':last').appendTo(minColEl);
+                }
+            });
+        };
+
+        var getColumnWithMaxLaunchers = function() {
+            var columnEls = $(selectors.columns);
+            var maxLauncherColEl = columnEls.eq(0);
+            var maxLauncherCount = 0;
+            columnEls.each(function(i, el) {
+                var launcherCount = $(el).children().length;
+                if (launcherCount > maxLauncherCount) {
+                    maxLauncherCount = launcherCount;
+                    maxLauncherColEl = $(el);
+                }
+            });
+
+            return maxLauncherColEl;
+        };
+
+        var getColumnWithMinLaunchers = function() {
+            var columnEls = $(selectors.columns);
+            var minLauncherColEl = columnEls.eq(0);
+            var minLauncherCount = minLauncherColEl.children().length;
+            columnEls.each(function(i, el) {
+                var launcherCount = $(el).children().length;
+                if (launcherCount < minLauncherCount) {
+                    minLauncherCount = launcherCount;
+                    minLauncherColEl = $(el);
+                }
+            });
+
+            return minLauncherColEl;
+        };
+
+        $(document).ready(function() {
+            if (window.location.href.indexOf('/authorized-apps/') >= 0) {
+                compressAppLaunchers();
+            }
+        });
+    })(up.jQuery);
+</script>
+     </section>
+    </footer>
+    <div id="region-page-bottom" class="container-fluid">
+     <div class="row">
+      <div class="col-sm-12">
+       <section id="portlet_u16l1n610" class="up-portlet-wrapper attachments"> 
+        <script src="/SimpleContentPortlet/js/fineuploader/fineuploader-3.3.0.js"></script> 
+        <link rel="stylesheet" type="text/css" href="/SimpleContentPortlet/js/fineuploader/fineuploader-3.3.0.css"> 
+        <link rel="stylesheet" type="text/css" href="/SimpleContentPortlet/css/attachments.css"> 
+        <div id="Pluto_3_u16l1n610_14_attachments"> 
+         <div class="lb_backdrop"></div> 
+         <div class="lb_container"> 
+          <div class="fl-widget portlet" role="section"> 
+           <div class="fl-widget-titlebar portlet-title" role="sectionhead"> 
+            <h2 role="heading">Attachments</h2> 
+           </div> 
+           <!-- end: portlet-title --> 
+           <div class="fl-widget-content portlet-body" role="main"> 
+            <div class="portlet-section" role="region"> 
+             <div class="lb_body"> 
+              <label>Filename</label> (optional)
+              <br> 
+              <input id="Pluto_3_u16l1n610_14_filename" type="text">
+              <br> 
+              <label>Source</label> (optional)
+              <br> 
+              <input id="Pluto_3_u16l1n610_14_source" type="text"> 
+              <br>
+              <br> 
+              <div id="Pluto_3_u16l1n610_14_file-uploader"></div> 
+             </div> 
+            </div> 
+            <div class="portlet-section" role="region"> 
+             <div class="lb_controls"> 
+              <input type="button" id="Pluto_3_u16l1n610_14_triggerUpload" class="btn btn-primary" value="Upload"> 
+              <input type="button" id="Pluto_3_u16l1n610_14_cancelUpload" class="btn btn-primary lb_close" value="Cancel"> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <script type="text/javascript">
+    var Pluto_3_u16l1n610_14_ = Pluto_3_u16l1n610_14_ || {};
+
+    
+        
+        
+            
+            Pluto_3_u16l1n610_14_.jQuery = up.jQuery;
+        
+    
+    
+    var upAttachments = upAttachments || {};
+
+    Pluto_3_u16l1n610_14_.jQuery(function () {
+        var $ = Pluto_3_u16l1n610_14_.jQuery;
+
+        var open_box = function()
+        {
+            var $ = Pluto_3_u16l1n610_14_.jQuery;
+            $("#Pluto_3_u16l1n610_14_attachments .lb_backdrop, #Pluto_3_u16l1n610_14_attachments .lb_container").animate({'opacity': '.50'}, 300, 'linear');
+            $("#Pluto_3_u16l1n610_14_attachments .lb_container").animate({'opacity': '1.00'}, 300, 'linear');
+            $("#Pluto_3_u16l1n610_14_attachments .lb_backdrop, #Pluto_3_u16l1n610_14_attachments .lb_container").css('display', 'block');
+        }
+
+        var close_box = function()
+        {
+            var $ = Pluto_3_u16l1n610_14_.jQuery;
+            $("#Pluto_3_u16l1n610_14_attachments .lb_backdrop, #Pluto_3_u16l1n610_14_attachments .lb_container").animate({'opacity':'0'}, 300, 'linear', function(){
+                $("#Pluto_3_u16l1n610_14_attachments .lb_backdrop, #Pluto_3_u16l1n610_14_attachments .lb_container").css('display', 'none');
+            });
+        }
+        
+        if (!upAttachments.show) {
+        	upAttachments = {
+        		hide: function() {
+        	        var $ = Pluto_3_u16l1n610_14_.jQuery;
+        	        $("#Pluto_3_u16l1n610_14_filename").val('');
+					$("#Pluto_3_u16l1n610_14_source").val('');
+        	        close_box();
+        	    },
+        	    show: function(callback) {
+        	        var $ = Pluto_3_u16l1n610_14_.jQuery;
+        	        var uploader = new qq.FineUploader({
+        	            element: $("#Pluto_3_u16l1n610_14_file-uploader")[0],
+
+    	                request: {
+        	                endpoint: "/SimpleContentPortlet/api/content/attach/local.json",
+        	                forceMultipart: true,
+        	                paramsInBody: true,
+        	                params: {
+        	                    filename: function () { return $("#Pluto_3_u16l1n610_14_filename").val(); },
+								source: function () { return $("#Pluto_3_u16l1n610_14_source").val(); }
+        	                }
+        	            },
+
+        	            multiple: false,
+
+        	            validation: {
+        	                allowedExtensions: [],
+        	                sizeLimit: 20971520,
+        	                stopOnFirstInvalidFile: true
+        	            },
+
+        	            autoUpload: false,
+
+        	            text: {
+        	                uploadButton: "Select File",
+        	                cancelButton: 'Cancel',
+        	                retryButton: 'Retry',
+        	                failUpload: 'Upload failed',
+        	                dragZone: 'Drop files here to upload',
+        	                formatProgress: "{percent}% of {total_size}",
+        	                waitingForResponse: "Processing..."
+        	            },
+
+        	            messages: {
+        	                typeError: "{file} has an invalid extension. Valid extension(s): {extensions}.",
+        	                sizeError: "{file} is too large, maximum file size is {sizeLimit}.",
+        	                minSizeError: "{file} is too small, minimum file size is {minSizeLimit}.",
+        	                emptyError: "{file} is empty, please select files again without it.",
+        	                noFilesError: "No files to upload.",
+        	                onLeave: "The files are being uploaded, if you leave now the upload will be cancelled."
+        	            },
+
+        	            debug: true,
+
+        	            callbacks: {
+        	                onSubmit: function (id, filename) {
+        	                    var $ = Pluto_3_u16l1n610_14_.jQuery;
+        	                },
+        	                onComplete: function (id, fileName, responseJSON) {
+        	                    var $ = Pluto_3_u16l1n610_14_.jQuery;
+        	                    delete responseJSON.success;
+        	                    callback(responseJSON);
+        	                },
+        	                showMessage: function (message) {
+        	                    var $ = Pluto_3_u16l1n610_14_.jQuery;
+        	                    $("#Pluto_3_u16l1n610_14_file-uploader").append('<div class="alert alert-error">' + message + '</div>');
+        	                }
+        	            }
+
+        	        });
+
+        	        $("#Pluto_3_u16l1n610_14_attachments .lb_close, #Pluto_3_u16l1n610_14_attachments .lb_backdrop").click(function () {
+        	            var $ = Pluto_3_u16l1n610_14_.jQuery;
+        	            uploader.reset();
+        	            $("#Pluto_3_u16l1n610_14_filename").val('');
+        	            close_box();
+        	        });
+
+        	        $("#Pluto_3_u16l1n610_14_triggerUpload").click(function () {
+        	            uploader.uploadStoredFiles();
+        	        })
+
+        	        open_box();
+        	    }
+        	};
+        }
+
+    });
+</script>
+       </section>
+       <section id="portlet_u16l1n620" class="up-portlet-wrapper google-analytics-config"> 
+        <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  
+  var up = up || {};
+  up.analytics = up.analytics || {};
+  up.analytics.model = {"defaultConfig":{"name":"UCR R`Space","propertyId":"UA-77518304-1","config":[],"dimensionGroups":[]},"hosts":[]};
+</script> 
+       </section>
+      </div>
+     </div>
+    </div>
+    <div id="config-lightbox" class="modal fade">
+     <div class="modal-dialog">
+      <div class="modal-content">
+       <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title">Configuration</h4>
+       </div>
+       <div class="modal-body">
+        <div class="loading"></div>
+        <div class="modal-body-content"></div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div id="portalDropWarning" class="drop-warning" style="display:none;">
+    <p>This portlet cannot be moved here. The portlet underneath is locked.</p>
+   </div>
+   <script type="text/javascript">
+
+        up.jQuery(document).ready(function() {
+
+            if(window.location.search.indexOf('redirectToDefault=true') > 0) {
+              up.jQuery('#up-notification').noty({text: 'It looks like the page you were attempting to go to does not exist so we redirected you here.', type: 'information'});
+            }
+
+            
+        });
+    </script>
+   <script type="text/javascript">
+                up.analytics = up.analytics || {};
+                up.analytics.host = 'portal.ucr.edu';
+                up.analytics.portletData = {"3_u16l1n610_14":{"fname":"attachments","executionTimeNano":1707464},"62_u16l1n511_14":{"fname":"compress-app-launchers","executionTimeNano":41787032},"80_u16l1n1110_14":{"fname":"login-redirect","executionTimeNano":31591265},"76_u16l1n109_14":{"fname":"ucriverside-logo","executionTimeNano":26838745},"201_u16l1n1111_14":{"fname":"auth-apps-filter","executionTimeNano":29430740},"6_u24l1n110_14":{"fname":"dynamic-respondr-skin","executionTimeNano":3585009},"47_u16l1n620_14":{"fname":"google-analytics-config","executionTimeNano":12984180},"17_u23l1n8_14":{"fname":"login-launcher","executionTimeNano":1418263},"32_u16l1n110_14":{"fname":"search-launcher","executionTimeNano":3406236},"72_u24l1n210_14":{"fname":"rspace-logo","executionTimeNano":38187542},"16_u16l1n510_14":{"fname":"legal-footer","executionTimeNano":603268},"46_u16l1n210_14":{"fname":"emergency-alert","executionTimeNano":2526575}};
+                up.analytics.pageData = {"urlState":"NORMAL","executionTimeNano":71370458,"tab":{"id":1,"fragmentName":"guest-lo","tabName":"Welcome","displayString":"Welcome (guest-lo)"}};
+            </script>
+  </div>
+ </body>
+</html>

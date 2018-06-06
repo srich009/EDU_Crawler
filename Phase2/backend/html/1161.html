@@ -1,0 +1,634 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+ <!--<![endif]-->
+ <head> 
+  <meta charset="utf-8"> 
+  <meta http-equiv="X-UA-Compatible" lang="en" content="IE=edge"> 
+  <title>UCR Online Giving: Search</title> 
+  <meta name="description" content="UCR Online Giving"> 
+  <meta name="viewport" content="width=device-width"> 
+  <link href="https://fast.fonts.com/cssapi/e3315127-3d6c-40f4-b227-65d8e078a0f5.css" rel="stylesheet" type="text/css"> 
+  <link href="/AdvanceOnlineGiving/Content/bootstrap.css" rel="stylesheet"> 
+  <link href="/AdvanceOnlineGiving/Content/site.css" rel="stylesheet"> 
+  <link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"> 
+  <script src="/AdvanceOnlineGiving/Scripts/modernizr-2.6.2.js"></script> 
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css"> 
+ </head> 
+ <body> 
+  <div class="container-flush"> 
+   <div class="header"> 
+    <img src="/AdvanceOnlineGiving/Content/images/logo.png" alt="UCR Online Giving - UC Riverside"> 
+   </div> 
+   <div class="navbar navbar-static-top" id="mainNav"> 
+    <div class="navbar-inner custom"> 
+     <div class="container"> 
+      <ul class="nav"> 
+       <li id="home" runat="server"><a href="/AdvanceOnlineGiving/">Home</a></li> 
+       <li id="search" runat="server"><a href="/AdvanceOnlineGiving/search">Search</a></li> 
+       <li><a href="https://www.ucr.edu/giving/how.html">Other Ways to Give</a></li> 
+       <li><a href="https://www.ucr.edu/giving/staff-directory.html">Contact Us</a></li> 
+       <li><a href="https://www.matchinggifts.com/ucr_iframe" onclick="window.open (this.href, 'child', 'height=350,width=600'); return false" target="_new">Matching Gifts</a></li> 
+      </ul> 
+      <ul class="nav pull-right"> 
+       <li class="dropdown" id="cartDrop"> <a href="#" class="dropdown-toggle">Gift Basket <b class="caret"></b></a> 
+        <div class="dropdown-menu" style="padding: 15px; min-width: 200px; text-align: center">
+         Your gift basket is empty
+        </div> </li> 
+       <li id="cartCheckout" class="dropdown"> <a href="/AdvanceOnlineGiving/Checkout">Check Out</a> </li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="container" style="width: 940px; color: #7b7a7a;" id="searchbox"> 
+    <div class="headerFonts"> 
+     <h2 style="line-height: 52px; margin-left: 30px; font-size: 20px; text-transform: uppercase">Search</h2> 
+    </div> 
+    <div class="container" style="background-color: #ecebeb;"> 
+     <div class="row-fluid"> 
+      <div class="span15"> 
+       <div class="span4" style="width: 36%;"> 
+        <div style="margin: 0 0 10px 15px; color: #0088cc;"> 
+         <strong>Browse funds</strong>&nbsp;
+         <br> 
+         <span style="font-size: 11px;">(click to show Departments)</span> 
+         <hr style="border-bottom: 1px solid #0088cc; margin: 0"> 
+        </div> 
+        <ul class="fundSearch">
+         <li><a href="#" class="select-link" style="font-weight: bold;" id="All" data-toggle="tab">SEARCH ALL&nbsp;</a></li>
+         <li style="padding-top:4px;padding-bottom:4px;"><a href="#" class="select-link" style="font-weight: bold;" id="Athletics" data-toggle="tab">Athletics<sub style="vertical-align: top;bottom: -0.6em;">(1)</sub></a>
+          <div class="slideUp">
+           <ul style="font-weight: bold; font-size: .9em;list-style-type: none;">
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Intercollegiate Athletics D01099" data-toggle="tab">Intercollegiate Athletics D01099</a></li>
+           </ul>
+          </div></li>
+         <li style="padding-top:4px;padding-bottom:4px;"><a href="#" class="select-link" style="font-weight: bold;" id="Bourns College of Engineering" data-toggle="tab">Bourns College of Engineering<sub style="vertical-align: top;bottom: -0.6em;">(8)</sub></a>
+          <div class="slideUp">
+           <ul style="font-weight: bold; font-size: .9em;list-style-type: none;">
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Bioengineering D01285" data-toggle="tab">Bioengineering D01285</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="CE-CERT D01007" data-toggle="tab">CE-CERT D01007</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Chemical/Environmental Engineering  D01005" data-toggle="tab">Chemical/Environmental Engineering D01005</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Computer Science &amp; Engineering  D01003" data-toggle="tab">Computer Science Engineering D01003</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Ctr for Nano Sci &amp; Engr D01258" data-toggle="tab">Ctr for Nano Sci Engr D01258</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Electrical &amp; Computer Engineering  D01004" data-toggle="tab">Electrical Computer Engineering D01004</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Engineering Deans Office  D01002" data-toggle="tab">Engineering Dean's Office D01002</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Mechanical Engineering  D01006" data-toggle="tab">Mechanical Engineering D01006</a></li>
+           </ul>
+          </div></li>
+         <li style="padding-top:4px;padding-bottom:4px;"><a href="#" class="select-link" style="font-weight: bold;" id="Chancellor/EVC" data-toggle="tab">Chancellor/EVC<sub style="vertical-align: top;bottom: -0.6em;">(4)</sub></a>
+          <div class="slideUp">
+           <ul style="font-weight: bold; font-size: .9em;list-style-type: none;">
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Chancellors Office - Gen Ops&nbsp;D01124" data-toggle="tab">Chancellor's Office - Gen Ops&nbsp;D01124</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Chancellors Office - Other D01125" data-toggle="tab">Chancellor's Office - Other D01125</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Govt &amp; Community Relations D01186" data-toggle="tab">Gov't Community Relations D01186</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Staff Assembly D01198" data-toggle="tab">Staff Assembly D01198</a></li>
+           </ul>
+          </div></li>
+         <li style="padding-top:4px;padding-bottom:4px;"><a href="#" class="select-link" style="font-weight: bold;" id="Coll of Hum, Arts &amp; Social Sciences" data-toggle="tab">Coll of Hum, Arts &amp; Social Sciences<sub style="vertical-align: top;bottom: -0.6em;">(26)</sub></a>
+          <div class="slideUp">
+           <ul style="font-weight: bold; font-size: .9em;list-style-type: none;">
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Anthropology D01025" data-toggle="tab">Anthropology D01025</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Art D01033" data-toggle="tab">Art D01033</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Center for Bibliographic Studies D01012" data-toggle="tab">Center for Bibliographic Studies D01012</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Center for Ideas and Society D01013" data-toggle="tab">Center for Ideas and Society D01013</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="CHASS Deans Office D01008" data-toggle="tab">CHASS Dean's Office D01008</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="CHASS Student Affairs D01010" data-toggle="tab">CHASS Student Affairs D01010</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Comparative Literature and Foreign Languages D01020" data-toggle="tab">Comparative Literature and Foreign Languages D01020</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Creative Writing D01035" data-toggle="tab">Creative Writing D01035</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Dance D01036" data-toggle="tab">Dance D01036</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Economics D01026" data-toggle="tab">Economics D01026</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="English D01018" data-toggle="tab">English D01018</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Ethnic Studies D01027" data-toggle="tab">Ethnic Studies D01027</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Gender &amp; Sexuality Studies D01032" data-toggle="tab">Gender Sexuality Studies D01032</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Hispanic Studies D01023" data-toggle="tab">Hispanic Studies D01023</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="History D01019" data-toggle="tab">History D01019</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="History of Art D01034" data-toggle="tab">History of Art D01034</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Liberal Studies &amp; Interdisc Prgs D01256" data-toggle="tab">Liberal Studies Interdisc Prgs D01256</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Media &amp; Cultural Studies D01303" data-toggle="tab">Media Cultural Studies D01303</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="MFA Writing Desert Campus D01283" data-toggle="tab">MFA Writing Desert Campus D01283</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Music D01037" data-toggle="tab">Music D01037</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Philosophy D01021" data-toggle="tab">Philosophy D01021</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Political Science D01029" data-toggle="tab">Political Science D01029</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Psychology D01030" data-toggle="tab">Psychology D01030</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Religious Studies D01022" data-toggle="tab">Religious Studies D01022</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Sociology D01031" data-toggle="tab">Sociology D01031</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Theatre D01038" data-toggle="tab">Theatre D01038</a></li>
+           </ul>
+          </div></li>
+         <li style="padding-top:4px;padding-bottom:4px;"><a href="#" class="select-link" style="font-weight: bold;" id="College of Nat &amp; Agr Sciences" data-toggle="tab">College of Nat &amp; Agr Sciences<sub style="vertical-align: top;bottom: -0.6em;">(25)</sub></a>
+          <div class="slideUp">
+           <ul style="font-weight: bold; font-size: .9em;list-style-type: none;">
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Agricultural Operations D01044" data-toggle="tab">Agricultural Operations D01044</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Biochemistry D01045" data-toggle="tab">Biochemistry D01045</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Biology D01046" data-toggle="tab">Biology D01046</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Botanic Gardens D01231" data-toggle="tab">Botanic Gardens D01231</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Botany &amp; Plant Sciences D01047" data-toggle="tab">Botany Plant Sciences D01047</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Center for Conservation Biology D01235" data-toggle="tab">Center for Conservation Biology D01235</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Center for Plant Cell Biology D01263" data-toggle="tab">Center for Plant Cell Biology D01263</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Chemistry D01054" data-toggle="tab">Chemistry D01054</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="CNAS Deans Office D01040" data-toggle="tab">CNAS Dean's Office D01040</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="CNAS UG Academic Advising Ctr D01306" data-toggle="tab">CNAS UG Academic Advising Ctr D01306</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="CNAS-Schol/Gifts/Endow D01335" data-toggle="tab">CNAS-Schol/Gifts/Endow D01335</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Earth Sciences D01055" data-toggle="tab">Earth Sciences D01055</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Entomology D01048" data-toggle="tab">Entomology D01048</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Environmental Sciences D01053" data-toggle="tab">Environmental Sciences D01053</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Environmental Toxicology Prgm D01252" data-toggle="tab">Environmental Toxicology Prgm D01252</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Institute of Genomics D01257" data-toggle="tab">Institute of Genomics D01257</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Mathematics D01056" data-toggle="tab">Mathematics D01056</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Molecular, Cell &amp; Systems Bio D01051" data-toggle="tab">Molecular, Cell Systems Bio D01051</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Natural Reserves D01049" data-toggle="tab">Natural Reserves D01049</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Nematology D01050" data-toggle="tab">Nematology D01050</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Physics and Astronomy D01057" data-toggle="tab">Physics and Astronomy D01057</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Plant Pathology &amp; Microbiology D01052" data-toggle="tab">Plant Pathology Microbiology D01052</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Science and Math Initiative D01288" data-toggle="tab">Science and Math Initiative D01288</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Statistics D01058" data-toggle="tab">Statistics D01058</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Stem Cell Center D01307" data-toggle="tab">Stem Cell Center D01307</a></li>
+           </ul>
+          </div></li>
+         <li style="padding-top:4px;padding-bottom:4px;"><a href="#" class="select-link" style="font-weight: bold;" id="Computing &amp; Communications" data-toggle="tab">Computing &amp; Communications<sub style="vertical-align: top;bottom: -0.6em;">(1)</sub></a>
+          <div class="slideUp">
+           <ul style="font-weight: bold; font-size: .9em;list-style-type: none;">
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="C&amp;C Associate Vice Chancellor D01129" data-toggle="tab">CC Associate Vice Chancellor D01129</a></li>
+           </ul>
+          </div></li>
+         <li style="padding-top:4px;padding-bottom:4px;"><a href="#" class="select-link" style="font-weight: bold;" id="Enrollment Management" data-toggle="tab">Enrollment Management<sub style="vertical-align: top;bottom: -0.6em;">(1)</sub></a>
+          <div class="slideUp">
+           <ul style="font-weight: bold; font-size: .9em;list-style-type: none;">
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Financial Aid D01171" data-toggle="tab">Financial Aid D01171</a></li>
+           </ul>
+          </div></li>
+         <li style="padding-top:4px;padding-bottom:4px;"><a href="#" class="select-link" style="font-weight: bold;" id="Finance &amp; Business Operations" data-toggle="tab">Finance &amp; Business Operations<sub style="vertical-align: top;bottom: -0.6em;">(1)</sub></a>
+          <div class="slideUp">
+           <ul style="font-weight: bold; font-size: .9em;list-style-type: none;">
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="UC Retirees Association D01218" data-toggle="tab">UC Retirees Association D01218</a></li>
+           </ul>
+          </div></li>
+         <li style="padding-top:4px;padding-bottom:4px;"><a href="#" class="select-link" style="font-weight: bold;" id="Graduate Division" data-toggle="tab">Graduate Division<sub style="vertical-align: top;bottom: -0.6em;">(2)</sub></a>
+          <div class="slideUp">
+           <ul style="font-weight: bold; font-size: .9em;list-style-type: none;">
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Graduate Division D01144" data-toggle="tab">Graduate Division D01144</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Graduate Student Financial Aid D01145" data-toggle="tab">Graduate Student Financial Aid D01145</a></li>
+           </ul>
+          </div></li>
+         <li style="padding-top:4px;padding-bottom:4px;"><a href="#" class="select-link" style="font-weight: bold;" id="International Affairs" data-toggle="tab">International Affairs<sub style="vertical-align: top;bottom: -0.6em;">(2)</sub></a>
+          <div class="slideUp">
+           <ul style="font-weight: bold; font-size: .9em;list-style-type: none;">
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Education Abroad D01358" data-toggle="tab">Education Abroad D01358</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="VP International Affairs Admin D01224" data-toggle="tab">VP International Affairs Admin D01224</a></li>
+           </ul>
+          </div></li>
+         <li style="padding-top:4px;padding-bottom:4px;"><a href="#" class="select-link" style="font-weight: bold;" id="Palm Desert Center" data-toggle="tab">Palm Desert Center<sub style="vertical-align: top;bottom: -0.6em;">(1)</sub></a>
+          <div class="slideUp">
+           <ul style="font-weight: bold; font-size: .9em;list-style-type: none;">
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Palm Desert Center D01280" data-toggle="tab">Palm Desert Center D01280</a></li>
+           </ul>
+          </div></li>
+         <li style="padding-top:4px;padding-bottom:4px;"><a href="#" class="select-link" style="font-weight: bold;" id="School of Business Administration" data-toggle="tab">School of Business Administration<sub style="vertical-align: top;bottom: -0.6em;">(1)</sub></a>
+          <div class="slideUp">
+           <ul style="font-weight: bold; font-size: .9em;list-style-type: none;">
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="School of Business Administration D01039" data-toggle="tab">School of Business Administration D01039</a></li>
+           </ul>
+          </div></li>
+         <li style="padding-top:4px;padding-bottom:4px;"><a href="#" class="select-link" style="font-weight: bold;" id="School of Education" data-toggle="tab">School of Education<sub style="vertical-align: top;bottom: -0.6em;">(1)</sub></a>
+          <div class="slideUp">
+           <ul style="font-weight: bold; font-size: .9em;list-style-type: none;">
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Graduate School of Education D01000" data-toggle="tab">Graduate School of Education D01000</a></li>
+           </ul>
+          </div></li>
+         <li style="padding-top:4px;padding-bottom:4px;"><a href="#" class="select-link" style="font-weight: bold;" id="School of Medicine" data-toggle="tab">School of Medicine<sub style="vertical-align: top;bottom: -0.6em;">(4)</sub></a>
+          <div class="slideUp">
+           <ul style="font-weight: bold; font-size: .9em;list-style-type: none;">
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="SOM - Student Affairs D02001" data-toggle="tab">SOM - Student Affairs D02001</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="SOM Gifts, End, Scholarship D02008" data-toggle="tab">SOM Gifts, End, Scholarship D02008</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="SOM Neuroscience D02016" data-toggle="tab">SOM Neuroscience D02016</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="SOM-Deans Office D02000" data-toggle="tab">SOM-Dean's Office D02000</a></li>
+           </ul>
+          </div></li>
+         <li style="padding-top:4px;padding-bottom:4px;"><a href="#" class="select-link" style="font-weight: bold;" id="School of Public Policy" data-toggle="tab">School of Public Policy<sub style="vertical-align: top;bottom: -0.6em;">(3)</sub></a>
+          <div class="slideUp">
+           <ul style="font-weight: bold; font-size: .9em;list-style-type: none;">
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="CSSD - Cntr for Sust Suburb Dev D01275" data-toggle="tab">CSSD - Cntr for Sust Suburb Dev D01275</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Pres Cntr for Crime and Justice Studies D01015" data-toggle="tab">Pres Cntr for Crime and Justice Studies D01015</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="SPP - Deans Office D01313" data-toggle="tab">SPP - Dean's Office D01313</a></li>
+           </ul>
+          </div></li>
+         <li style="padding-top:4px;padding-bottom:4px;"><a href="#" class="select-link" style="font-weight: bold;" id="UCR Arts Block" data-toggle="tab">UCR Arts Block<sub style="vertical-align: top;bottom: -0.6em;">(1)</sub></a>
+          <div class="slideUp">
+           <ul style="font-weight: bold; font-size: .9em;list-style-type: none;">
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="UCR ARTSBlock D01295" data-toggle="tab">UCR ARTSBlock D01295</a></li>
+           </ul>
+          </div></li>
+         <li style="padding-top:4px;padding-bottom:4px;"><a href="#" class="select-link" style="font-weight: bold;" id="Undergraduate Education" data-toggle="tab">Undergraduate Education<sub style="vertical-align: top;bottom: -0.6em;">(3)</sub></a>
+          <div class="slideUp">
+           <ul style="font-weight: bold; font-size: .9em;list-style-type: none;">
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Academic Resource Center D01176" data-toggle="tab">Academic Resource Center D01176</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Honors Program D01128" data-toggle="tab">Honors Program D01128</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Undergraduate Education D01272" data-toggle="tab">Undergraduate Education D01272</a></li>
+           </ul>
+          </div></li>
+         <li style="padding-top:4px;padding-bottom:4px;"><a href="#" class="select-link" style="font-weight: bold;" id="University Extension" data-toggle="tab">University Extension<sub style="vertical-align: top;bottom: -0.6em;">(4)</sub></a>
+          <div class="slideUp">
+           <ul style="font-weight: bold; font-size: .9em;list-style-type: none;">
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="UNEX - Education D01067" data-toggle="tab">UNEX - Education D01067</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="UNEX - Humanities D01066" data-toggle="tab">UNEX - Humanities D01066</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="UNEX - International Ed Pgms D01062" data-toggle="tab">UNEX - International Ed Pgms D01062</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="UNEX - Management &amp; Prof Pgms D01064" data-toggle="tab">UNEX - Management Prof Pgms D01064</a></li>
+           </ul>
+          </div></li>
+         <li style="padding-top:4px;padding-bottom:4px;"><a href="#" class="select-link" style="font-weight: bold;" id="University Library" data-toggle="tab">University Library<sub style="vertical-align: top;bottom: -0.6em;">(1)</sub></a>
+          <div class="slideUp">
+           <ul style="font-weight: bold; font-size: .9em;list-style-type: none;">
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="University Library D01090" data-toggle="tab">University Library D01090</a></li>
+           </ul>
+          </div></li>
+         <li style="padding-top:4px;padding-bottom:4px;"><a href="#" class="select-link" style="font-weight: bold;" id="Vice Chancellor - Research" data-toggle="tab">Vice Chancellor - Research<sub style="vertical-align: top;bottom: -0.6em;">(2)</sub></a>
+          <div class="slideUp">
+           <ul style="font-weight: bold; font-size: .9em;list-style-type: none;">
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="RED Research Centers D01238" data-toggle="tab">RED Research Centers D01238</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Vice Chancellor Research D01157" data-toggle="tab">Vice Chancellor Research D01157</a></li>
+           </ul>
+          </div></li>
+         <li style="padding-top:4px;padding-bottom:4px;"><a href="#" class="select-link" style="font-weight: bold;" id="Vice Chancellor - Student Affairs" data-toggle="tab">Vice Chancellor - Student Affairs<sub style="vertical-align: top;bottom: -0.6em;">(18)</sub></a>
+          <div class="slideUp">
+           <ul style="font-weight: bold; font-size: .9em;list-style-type: none;">
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="African Student Programs D01160" data-toggle="tab">African Student Programs D01160</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Asian Pacific Student Programs D01161" data-toggle="tab">Asian Pacific Student Programs D01161</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="AVC/Dean of Students&nbsp;D01164" data-toggle="tab">AVC/Dean of Students&nbsp;D01164</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Chicano Student Programs D01167" data-toggle="tab">Chicano Student Programs D01167</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Early Childhood Services D01115" data-toggle="tab">Early Childhood Services D01115</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Financial Aid D01171" data-toggle="tab">Financial Aid D01171</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Graduate Student Association D01084" data-toggle="tab">Graduate Student Association D01084</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="KUCR D01174" data-toggle="tab">KUCR D01174</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="LGBT Resource Center D01175" data-toggle="tab">LGBT Resource Center D01175</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Middle Eastern Student Center D01338" data-toggle="tab">Middle Eastern Student Center D01338</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Native American Student Program D01177" data-toggle="tab">Native American Student Program D01177</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Recreation/Student Rec Center D01117" data-toggle="tab">Recreation/Student Rec Center D01117</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Special Services D01178" data-toggle="tab">Special Services D01178</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Student Affairs Admin D01181" data-toggle="tab">Student Affairs Admin D01181</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Student Health Services D01165" data-toggle="tab">Student Health Services D01165</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Student Life D01179" data-toggle="tab">Student Life D01179</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Student Mental Health D01222" data-toggle="tab">Student Mental Health D01222</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Womens Resource Center D01182" data-toggle="tab">Women's Resource Center D01182</a></li>
+           </ul>
+          </div></li>
+         <li style="padding-top:4px;padding-bottom:4px;"><a href="#" class="select-link" style="font-weight: bold;" id="Vice Chancellor - University Advancement" data-toggle="tab">Vice Chancellor - University Advancement<sub style="vertical-align: top;bottom: -0.6em;">(5)</sub></a>
+          <div class="slideUp">
+           <ul style="font-weight: bold; font-size: .9em;list-style-type: none;">
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Alumni &amp; Constituent Relations D01187" data-toggle="tab">Alumni Constituent Relations D01187</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Alumni Association D01334" data-toggle="tab">Alumni Association D01334</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Development D01188" data-toggle="tab">Development D01188</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="Event Management &amp; Protocol D01184" data-toggle="tab">Event Management Protocol D01184</a></li>
+            <li style="padding-top:1px;padding-bottom:1px;"><a href="#" style="font-weight: 100;" class="select-links" id="VCUA Finance &amp; Administration D01216" data-toggle="tab">VCUA Finance Administration D01216</a></li>
+           </ul>
+          </div></li>
+        </ul> 
+       </div> 
+       <div class="span7" style="width: 61%;"> 
+        <label for="searchKey" style="font-weight: bold; font-size: 14px; color: #de9f26">Simply begin typing to find your fund</label> 
+        <input id="searchKey" type="text" class="input-block-level" style="width: 96%" placeholder="Search"> 
+        <input id="college" type="hidden"> 
+        <input id="department" type="hidden"> 
+        <input id="description" type="hidden"> 
+        <div class="row-fluid" id="noResults"> 
+         <div class="span12  well" style="width: 96%">
+           No results 
+         </div> 
+        </div> 
+        <div class="row-fluid" id="allResults" style="display: none"> 
+         <div class="span12  well" id="searchResults" style="width: 96%"> 
+         </div> 
+        </div> 
+        <div id="giveNowModal"></div> 
+        <div id="information"> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <script src="/AdvanceOnlineGiving/Scripts/jquery-1.10.2.js"></script> 
+   <script src="/AdvanceOnlineGiving/Scripts/bootstrap.js"></script> 
+   <script src="/AdvanceOnlineGiving/Scripts/jquery.unobtrusive-ajax.js"></script> 
+   <script src="/AdvanceOnlineGiving/Scripts/jquery.validate.js"></script> 
+   <script src="/AdvanceOnlineGiving/Scripts/jquery.validate.unobtrusive.js"></script> 
+   <script src="/AdvanceOnlineGiving/Scripts/ucr.common.js"></script> 
+   <script src="/AdvanceOnlineGiving/Scripts/jquery-ui-1.10.3.js"></script> 
+   <script type="text/javascript">
+        $('.select-link').click(function () {
+            $('div.slideUp').slideUp();
+            //    $('.fundSearch li').removeClass("active");
+            $(this).next("div").slideToggle();
+            $('input#college').val($(this).attr('id'));
+            $('input#searchKey').val('');
+            $('input#department').val('');
+            if ($('input#college').val() == 'All') {
+                $('input#college').val('');
+            }
+            search(' ');
+        });
+
+        $('.select-links').click(function () {
+            $('input#department').val($(this).attr('id'));
+            $('input#searchKey').val('');
+            $('.fundSearch li li').removeClass("active");
+            if ($('input#college').val() == 'All') {
+                $('input#college').val('');
+                $('input#department').val('');
+            }
+            search(' ');
+        });
+
+        function giveNow(fundId) {
+            if ($('#' + fundId).length == 0) {
+                $.get('search/getmodal/' + fundId, function (data) {
+                    $('#giveNowModal').html(data);
+                    $('form').removeData('validator');
+                    $.validator.unobtrusive.parse($('form'));
+                    $('#' + fundId).modal();
+                });
+            } else {
+                $('#' + fundId).modal();
+            }
+        }
+
+        function Information(fundId) {
+            if ($('#' + fundId).length == 0) {
+                $.get('search/information/' + fundId, function (data) {
+                    $('#information').html(data);
+                    $('form').removeData('validator');
+                    $.validator.unobtrusive.parse($('form'));
+                    $('#' + fundId + 'Information').modal();
+                });
+            } else {
+                $('#' + fundId + 'Information').modal();
+            }
+        }
+
+        $(document).ready(function () {
+
+            $('div.slideUp').slideUp();
+            $.getJSON('/AdvanceOnlineGiving/api/Fund')
+                              .done(function (data) {
+                                  funds = data;
+                                  var getDescription;
+                                  var description;
+                                  $.each(data, function (key, item) {
+                                      description = item.Description;
+                                      if (item.College != "") {
+                                          getDescription = "<strong>College:</strong> " + item.College + " " + $('input#college').val();
+                                      }
+                                      if (item.Department != "") {
+                                          if (getDescription != "") {
+                                              getDescription += "<br />";
+                                          }
+                                          getDescription += "<strong>Department:</strong> " + item.Department;
+                                      }
+                                      $('#searchResults').append('<section style="display:none;padding:10px;" id="' + item.FundId + 'sec"><a href="#" style="color:#356cb5;font-family:\'Trade Gothic W02 Bold 2\';font-size:1.2em;" onclick="giveNow(\'' + item.FundId + '\')">' + item.FundName + '</a>&nbsp;<a href="#ccModal" onclick="Information(\'' + item.FundId + '\')" style="margin-bottom: 10px;" class="btn btn-mini" data-toggle="modal"><strong>?</strong></a><span style="font-weight:bold;font-size:12px"><br />' + getDescription + '</span></section>');
+                                  });
+
+                                  $('#searchKey').keyup(function () {
+                                      search($(this).val(), data);
+                                  });
+
+                                  var params = {};
+                                  window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                                      params[key] = value.replace(/\+/g, ' ').replace(/\%20/g, ' ').replace(/\%2B/g, ' ').replace(/\%2C/g, ',').replace(/\%27/g, "'").replace(/\%26/g, "&").replace(/\%3A/g, ":");
+
+                                  });
+                                  if (params["key"] != null && params["key"].length > 0) {
+                                      $('#searchKey').val(params["key"]);
+                                      $('#searchKey').val(params["key"].replace('dept:', '').replace('col:', ''));
+                                      search(params["key"]);
+                                  }
+                              })
+                              .fail(function (jqXHR, textStatus, err) {
+                                  /*display error message */
+
+                              });
+
+
+        });
+
+        function search(searchKey) {
+
+            var isOpenModal = false;
+            var noMatch = true;
+            var area;
+            var searchKey = searchKey.toLowerCase();
+
+            if (searchKey.indexOf('z') >= 0) {
+                isOpenModal = true;
+                searchKey = searchKey.replace("z", "");
+                $('#searchKey').val(searchKey);
+            }
+
+            if (searchKey.indexOf('dept:') >= 0) {
+                area = "dept";
+                searchKey = searchKey.replace("dept:", "");
+            }
+            if (searchKey.indexOf('col:') >= 0) {
+                area = "col";
+                searchKey = searchKey.replace("col:", "");
+            }
+
+            if (searchKey.length == 0) {
+                $('#searchResults section').hide();
+            }
+            else {
+                var college = $('input#college').val();
+                var department = $('input#department').val();
+
+                if (college == "VC - Public Service & Int")
+                    college = "VC - Public Service & Int'l Pr";
+
+                $.each(funds, function (key, item) {
+                    //if (item.FundName.toLowerCase().indexOf(searchKey) >= 0 || item.FundId.toLowerCase().indexOf(searchKey) >= 0 || item.Department.toLowerCase().indexOf(searchKey) >= 0 || item.College.toLowerCase().indexOf(searchKey) >= 0) {                                       
+                    if (area == "dept") {
+                        if (item.Department.toLowerCase() == searchKey) {
+                            if (item.FundId != ".") {
+                                $('#' + item.FundId + 'sec').show();
+                                noMatch = false;
+                            }
+                        }
+                        else {
+                            if (item.FundId != ".")
+                                $('#' + item.FundId + 'sec').hide();
+                        }
+                    } else {
+
+                        if (area == "col") {
+                            if (item.College.toLowerCase() == searchKey) {
+                                if (item.FundId != ".") {
+                                    $('#' + item.FundId + 'sec').show();
+                                    noMatch = false;
+                                }
+                            }
+                            else {
+                                if (item.FundId != ".")
+                                    $('#' + item.FundId + 'sec').hide();
+                            }
+                        } else {
+                            if (college != '' && department == '') {
+                                if ((college.toLowerCase() != '' ? item.College.toLowerCase() == college.toLowerCase() : '') && item.FundName.toLowerCase().indexOf(searchKey) >= 0) {
+                                    if (item.FundId != ".") {
+                                        $('#' + item.FundId + 'sec').show();
+                                        noMatch = false;
+                                    }
+                                }
+                                else {
+                                    if (item.FundId != ".")
+                                        $('#' + item.FundId + 'sec').hide();
+                                }
+                            }
+                            if (college != '' && department != '') {
+                                if ((department.toLowerCase() != '' ? item.Department.toLowerCase().replace("'", "") == department.toLowerCase().replace("'", "") : '') && (college.toLowerCase() != '' ? item.College.toLowerCase().replace("'", "") == college.toLowerCase().replace("'", "") : '') && (item.FundName.toLowerCase().indexOf(searchKey) >= 0)) {
+                                    if (item.FundId != ".") {
+                                        $('#' + item.FundId + 'sec').show();
+                                        noMatch = false;
+                                    }
+                                }
+                                else {
+                                    if (item.FundId != ".")
+                                        $('#' + item.FundId + 'sec').hide();
+                                }
+                            }
+                            if (college == '' && department == '') {
+                                //if (item.FundName.toLowerCase().indexOf(searchKey) >= 0) {
+                                if (item.FundName.toLowerCase().indexOf(searchKey) >= 0 || item.FundId.toLowerCase().indexOf(searchKey) >= 0 || item.Department.toLowerCase().indexOf(searchKey) >= 0 || item.College.toLowerCase().indexOf(searchKey) >= 0) {
+                                    if (item.FundId != ".") {
+                                        $('#' + item.FundId + 'sec').show();
+                                        noMatch = false;
+                                    }
+                                }
+                                else {
+                                    if (item.FundId != ".")
+                                        $('#' + item.FundId + 'sec').hide();
+                                }
+                            }
+                        }
+                    }
+                });
+
+                if (isOpenModal) {
+                    giveNow(searchKey);
+                }
+            }
+            if (noMatch) {
+                $('#allResults').hide();
+                $('#noResults').show();
+            } else {
+                $('#allResults').show();
+                $('#noResults').hide();
+            }
+        }
+    </script> 
+   <script type="text/javascript">
+        $('#displayMessage').hide();
+
+        function validateForm() {
+            $('#displayMessage').show();
+        }
+    </script> 
+   <script type="text/javascript">
+            $(document).ready(function () {
+                $('#Captcha_Captcha').val('');
+                $('#closeFeedBack').click(function () {
+                    $('#feedBackModal').css('display', 'none');
+                });
+
+                $("#Profile_StateId").show();
+                $("#Profile_State").hide();
+            });
+
+            $("#Profile_CountryId").change(function () {
+                var isUS = $(this).val();
+                $('#labelState').addClass('required');
+                if (isUS == '68') {
+                    $("#Profile_StateId").show();
+                    $("#Profile_State").hide();
+                } else {
+                    $('#labelState').removeClass('required');
+                    $("#Profile_StateId").hide();
+                    $("#Profile_State").show();
+                }
+            });
+
+            var date1Month = new Date();
+            var month1 = "";
+            var date1 = "";
+            var year1 = "3";
+
+            $(document).ready(function () {
+                var date = new Date();
+                var currentMonth = date.getMonth();
+                var currentDate = date.getDate() + 1;
+                var currentYear = date.getFullYear();
+
+                var date5Months = new Date();
+                date5Months.setMonth(date5Months.getMonth() + 5);
+                var month5 = date5Months.getMonth();
+                var date5 = date5Months.getDate() + 1;
+                var year5 = date5Months.getFullYear();
+
+                var date2Years = new Date();
+                date2Years.setFullYear(date2Years.getFullYear() + 2);
+                date2Years.setMonth(date2Years.getMonth() + 5);
+                var month2 = date2Years.getMonth();
+                var date2 = date2Years.getDate() + 1;
+                var year2 = date2Years.getFullYear();
+
+                var date1Month = new Date();
+                date1Month.setMonth(date1Month.getMonth() + 1);
+                var month1 = date1Month.getMonth();
+                var date1 = date1Month.getDate() + 1;
+                var year1 = date1Month.getFullYear();
+
+                $(function () {
+                    $(".datepicker").datepicker(({
+                        dateFormat: 'mm/dd/yy',
+                        dateonly: true,
+                        clickInput: true,
+                        minDate: new Date(currentYear, currentMonth, currentDate),
+                        maxDate: new Date(year5, month5, date5)
+                    }));
+                });
+
+                $(function () {
+                    $(".datepickerEnd").datepicker(({
+                        dateFormat: 'mm/dd/yy',
+                        clickInput: true,
+                        dateonly: true,
+                        minDate: new Date(year1, month1, date1),
+                        maxDate: new Date(year2, month2, date2)
+                    }));
+                });
+
+                $(":radio").click(function () {
+                    $('.datepicker').val('');
+                });
+
+                $(":radio").click(function () {
+                    $('.datepickerEnd').val('');
+                });
+
+            });
+
+        </script> 
+   <script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+            ga('create', 'UA-45784498-1', 'ucr.edu');
+            ga('send', 'pageview');
+
+        </script> 
+  </div>   
+ </body>
+</html>

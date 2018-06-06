@@ -1,0 +1,1229 @@
+<!doctype html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+ <head> 
+  <meta charset="utf-8">
+  <script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[f.now()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,t){s[t]=o(d+t,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(l+"tracer",[f.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return t.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],n),e}finally{c.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=o(l+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,f.now()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],4:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o,i){if(!d.aborted||i){e&&e(n,r,o);for(var a=t(o),u=m(n),c=u.length,f=0;f<c;f++)u[f].apply(a,r);var p=s[y[n]];return p&&p.push([b,n,r,a]),a}}function l(e,t){v[e]=m(e).concat(t)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(n)}function g(e,t){f(e,function(e,n){t=t||"feature",y[n]=t,t in s||(s[t]=[])})}var v={},y={},b={on:l,emit:n,get:w,listeners:m,context:t,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},p={},d=t.exports=o();d.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=h.info=NREUM.info,t=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return s.abort();f(y,function(t,n){e[t]||(e[t]=n)}),c("mark",["onload",a()+h.offset],null,"api");var n=d.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),c=e("handle"),f=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=t.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script> 
+  <script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3051875-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");</script> 
+  <meta name="title" content="Arts and Culture | University of California, Riverside"> 
+  <link rel="canonical" href="https://www.ucr.edu/campus-life/arts-and-culture"> 
+  <meta name="description" content="Arts and Culture at UCR
+Whether you're a spectator or a participant, UCR's arts and cultural happenings will engage your senses, inspire your creativity, ignite your intellect, and spark your imagination.&nbsp;
+&nbsp;"> 
+  <meta name="Generator" content="Drupal 8 (https://www.drupal.org)"> 
+  <meta name="MobileOptimized" content="width"> 
+  <meta name="HandheldFriendly" content="true"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="shortcut icon" href="/profiles/custom/umbrella_acsf/themes/custom/ucr_umbrella/favicon.ico" type=""> 
+  <link rel="canonical" href="/campus-life/arts-and-culture"> 
+  <link rel="shortlink" href="/node/42"> 
+  <link rel="revision" href="/campus-life/arts-and-culture"> 
+  <title>Arts and Culture | University of California, Riverside</title> 
+  <link rel="stylesheet" href="/sites/g/files/rcwecm986/files/css/css_WFHQDQCwfQ9-BzTeBWx4atcbS30E6C0p40FP4f4DIks.css?p9v4fy" media="all"> 
+  <link rel="stylesheet" href="/sites/g/files/rcwecm986/files/css/css_FcyvT78NZpNVmGC6Aw7ZtS7vktbyrH_bVqOTufRZN60.css?p9v4fy" media="all"> 
+  <!--[if lte IE 8]>
+<script src="/sites/g/files/rcwecm986/files/js/js_VtafjXmRvoUgAzqzYTA3Wrjkx9wcWhjP0G4ZnnqRamA.js"></script>
+<![endif]--> 
+  <script src="/core/assets/vendor/modernizr/modernizr.min.js?v=3.3.1"></script> 
+ </head> 
+ <body class="layout path-node node--type-page"> 
+  <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas> 
+   <header> 
+    <div class="grid-container full"> 
+     <div class="grid-x"> 
+      <div class="cell small-order-2 medium-order-1 audience-container"> 
+       <div class="grid-container"> 
+        <div class="grid-x align-middle"> 
+         <nav role="navigation" aria-labelledby="block-audiencemenuleftside-menu" id="block-audiencemenuleftside" data-block-plugin-id="menu_block:audience-menu-left-side" class="general-menu"> 
+          <h2 class="visually-hidden" id="block-audiencemenuleftside-menu">Audience Menu Left Side</h2> 
+          <ul class="menu"> 
+           <li><a href="/alpha" target="_self" data-drupal-link-system-path="node/93">A to Z Listing</a> </li> 
+           <li><a href="https://campusmap.ucr.edu/" target="_self">Campus Map</a> </li> 
+           <li><a href="http://profiles.ucr.edu" target="_blank">Find People</a> </li> 
+           <li><a href="http://ucrtoday.ucr.edu" target="_self">News</a> </li> 
+          </ul> 
+         </nav> 
+         <div id="block-ucriversideaudiencesearchblock-3" data-block-plugin-id="ucr_global_audience_search"> 
+          <section class="google-search" role="search"> 
+           <form id="audience-search-form" action="https://www.ucr.edu/search.php"> 
+            <label class="show-for-sr" for="audience-search">Search for:</label> 
+            <input type="text" maxlength="255" id="audience-search" name="q" value="" placeholder=" "> 
+            <button type="submit" class="button show-for-small-only" value="">Search</button> 
+           </form> 
+          </section> 
+         </div> 
+         <nav role="navigation" aria-labelledby="block-quicklinks-menu" id="block-quicklinks" data-block-plugin-id="menu_block:quick-links" class="general-menu"> 
+          <h2 id="block-quicklinks-menu">Quick Links</h2> 
+          <ul class="vertical menu"> 
+           <li><a href="/about/visitors" target="_self" data-drupal-link-system-path="node/15">Visit</a> </li> 
+           <li><a href="http://events.ucr.edu" target="_self">Events</a> </li> 
+           <li><a href="http://givenow.ucr.edu" target="_self">Make a Gift</a> </li> 
+           <li><a href="http://campusmap.ucr.edu/" target="_self">Campus Map</a> </li> 
+           <li><a href="http://jobs.ucr.edu" target="_self">Jobs</a> </li> 
+           <li><a href="http://library.ucr.edu" target="_self">Library</a> </li> 
+           <li><a href="http://transportation.ucr.edu/" target="_self">Parking and Transportation</a> </li> 
+           <li><a href="/apply" target="_self" data-drupal-link-system-path="node/29">Apply</a> </li> 
+          </ul> 
+         </nav> 
+         <div class="cell shrink hide-for-large mobile-menu-expander-wrapper" data-responsive-toggle="main-menu-container" data-hide-for="large"> 
+          <button class="mdi mdi-menu button mobile-menu-expander" type="button" data-toggle="main-menu-container"> </button> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="cell small-order-1 medium-order-2 masthead-container"> 
+       <div class="grid-container"> 
+        <div class="grid-x align-middle"> 
+         <div class="cell shrink"> 
+          <a class="masthead-logo" href="/"> <span class="show-for-sr">UC Riverside</span> </a> 
+         </div> 
+         <div class="cell auto"> 
+          <h1 class="masthead-title"> <a href="/"> University of California, Riverside </a> </h1> 
+         </div> 
+         <div class="cell auto show-for-medium"> 
+          <p class="slogan">University of California, Riverside</p> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="cell small-order-3 medium-order-3 main-nav-bar"> 
+       <div class="main-menu-outer-container"> 
+        <div class="grid-container" id="main-menu-container" data-animate="slide-in-right slide-out-right"> 
+         <div class="grid-x"> 
+          <div class="cell" id="block-ucr-umbrella-main-menu" data-block-plugin-id="system_menu_block:main"> 
+           <ul id="main-menu"> 
+            <li> <a href="/about" target="_self" class="drop-down-arrow" data-drupal-link-system-path="node/6">About</a> 
+             <div> 
+              <ul class="accessible-megamenu-panel-group"> 
+               <li> <span target="_self" data-drupal-link-system-path="<front>">Column 1</span> 
+                <div> 
+                 <ul class="accessible-megamenu-panel-group"> 
+                  <li> <a href="/about" target="_self" data-drupal-link-system-path="node/6">About Overview</a> </li> 
+                  <li> <a href="/about/ranks-and-facts" target="_self" data-drupal-link-system-path="node/11">Ranks and Facts</a> </li> 
+                 </ul> 
+                </div> </li> 
+               <li> <span target="_self" data-drupal-link-system-path="<front>">Column 2</span> 
+                <div> 
+                 <ul class="accessible-megamenu-panel-group"> 
+                  <li> <a href="/about/impact" target="_self" data-drupal-link-system-path="node/12">Impacts</a> </li> 
+                  <li> <a href="/about/history" target="_self" data-drupal-link-system-path="node/14">History</a> </li> 
+                 </ul> 
+                </div> </li> 
+               <li> <span target="_self" data-drupal-link-system-path="<front>">Column 3</span> 
+                <div> 
+                 <ul class="accessible-megamenu-panel-group"> 
+                  <li> <a href="/about/visitors" target="_self" data-drupal-link-system-path="node/15">Visitors</a> </li> 
+                  <li> <a href="/about/international" target="_self" data-drupal-link-system-path="node/17">International</a> </li> 
+                 </ul> 
+                </div> </li> 
+               <li> <span target="_self" class="decorated-column-header" data-drupal-link-system-path="<front>">Find Information For...</span> 
+                <div> 
+                 <ul class="accessible-megamenu-panel-group"> 
+                  <li> <a href="/current-students" target="_self" data-drupal-link-system-path="node/53">Current Students</a> </li> 
+                  <li> <a href="http://admissions.ucr.edu" target="_blank">Prospective Students</a> </li> 
+                  <li> <a href="/faculty" target="_self" data-drupal-link-system-path="node/90">Faculty</a> </li> 
+                  <li> <a href="/staff" target="_self" data-drupal-link-system-path="node/94">Staff</a> </li> 
+                  <li> <a href="http://admissions.ucr.edu/admissions/parents.html" target="_blank">Parents</a> </li> 
+                  <li> <a href="http://alumni.ucr.edu" target="_blank">Alumni</a> </li> 
+                 </ul> 
+                </div> </li> 
+              </ul> 
+             </div> </li> 
+            <li> <a href="/academics" target="_self" class="drop-down-arrow" data-drupal-link-system-path="node/7">Academics</a> 
+             <div> 
+              <ul class="accessible-megamenu-panel-group"> 
+               <li> <span target="_self" data-drupal-link-system-path="<front>">Column 1</span> 
+                <div> 
+                 <ul class="accessible-megamenu-panel-group"> 
+                  <li> <a href="/academics" target="_self" data-drupal-link-system-path="node/7">Academics Overview</a> </li> 
+                  <li> <a href="/academics/undergraduate-majors" target="_self" data-drupal-link-system-path="node/22">Undergraduate Majors</a> </li> 
+                 </ul> 
+                </div> </li> 
+               <li> <span target="_self" data-drupal-link-system-path="<front>">Column 2</span> 
+                <div> 
+                 <ul class="accessible-megamenu-panel-group"> 
+                  <li> <a href="http://graduate.ucr.edu/grad_programs.html" target="_blank">Graduate Programs</a> </li> 
+                  <li> <a href="http://admissions.ucr.edu/academics/index.html" target="_blank">Colleges and Schools</a> </li> 
+                 </ul> 
+                </div> </li> 
+               <li> <span target="_self" data-drupal-link-system-path="<front>">Column 3</span> 
+                <div> 
+                 <ul class="accessible-megamenu-panel-group"> 
+                  <li> <a href="http://www.extension.ucr.edu" target="_blank">UCR Extension</a> </li> 
+                 </ul> 
+                </div> </li> 
+               <li> <span target="_self" class="decorated-column-header" data-drupal-link-system-path="<front>">Find Information For...</span> 
+                <div> 
+                 <ul class="accessible-megamenu-panel-group"> 
+                  <li> <a href="http://admissions.ucr.edu" target="_blank">Prospective Students</a> </li> 
+                  <li> <a href="/current-students" target="_self" data-drupal-link-system-path="node/53">Current Students</a> </li> 
+                  <li> <a href="/faculty" target="_self" data-drupal-link-system-path="node/90">Faculty</a> </li> 
+                  <li> <a href="/staff" target="_self" data-drupal-link-system-path="node/94">Staff</a> </li> 
+                  <li> <a href="http://admissions.ucr.edu/admissions/parents.html" target="_blank">Parents</a> </li> 
+                  <li> <a href="http://alumni.ucr.edu" target="_blank">Alumni</a> </li> 
+                 </ul> 
+                </div> </li> 
+              </ul> 
+             </div> </li> 
+            <li> <a href="/admissions" target="_self" class="drop-down-arrow" data-drupal-link-system-path="node/8">Admissions</a> 
+             <div> 
+              <ul class="accessible-megamenu-panel-group"> 
+               <li> <span target="_self" data-drupal-link-system-path="<front>">Column 1</span> 
+                <div> 
+                 <ul class="accessible-megamenu-panel-group"> 
+                  <li> <a href="/admissions" target="_self" data-drupal-link-system-path="node/8">Admissions Overview</a> </li> 
+                  <li> <a href="http://admissions.ucr.edu" target="_blank">Undergraduate Admissions</a> </li> 
+                 </ul> 
+                </div> </li> 
+               <li> <span target="_self" data-drupal-link-system-path="<front>">Column 2</span> 
+                <div> 
+                 <ul class="accessible-megamenu-panel-group"> 
+                  <li> <a href="http://graduate.ucr.edu/grad_admissions.html" target="_blank">Graduate Admissions</a> </li> 
+                  <li> <a href="http://admissions.ucr.edu/admissions/international/index.html" target="_blank">International Admissions</a> </li> 
+                 </ul> 
+                </div> </li> 
+               <li> <span target="_self" data-drupal-link-system-path="<front>">Column 3</span> 
+                <div> 
+                 <ul class="accessible-megamenu-panel-group"> 
+                  <li> <a href="http://admissions.ucr.edu/admissions/transfer/" target="_blank">Transfer Admissions</a> </li> 
+                  <li> <a href="http://admissions.ucr.edu/cost/index.html" target="_blank">Cost</a> </li> 
+                 </ul> 
+                </div> </li> 
+               <li> <span target="_self" class="decorated-column-header" data-drupal-link-system-path="<front>">Find Information For...</span> 
+                <div> 
+                 <ul class="accessible-megamenu-panel-group"> 
+                  <li> <a href="http://admissions.ucr.edu" target="_blank">Prospective Students</a> </li> 
+                  <li> <a href="/current-students" target="_self" data-drupal-link-system-path="node/53">Current Students</a> </li> 
+                  <li> <a href="/faculty" target="_self" data-drupal-link-system-path="node/90">Faculty</a> </li> 
+                  <li> <a href="/staff" target="_self" data-drupal-link-system-path="node/94">Staff</a> </li> 
+                  <li> <a href="http://admissions.ucr.edu/admissions/parents.html" target="_blank">Parents</a> </li> 
+                  <li> <a href="http://alumni.ucr.edu" target="_blank">Alumni</a> </li> 
+                 </ul> 
+                </div> </li> 
+              </ul> 
+             </div> </li> 
+            <li> <a href="/research" target="_self" class="drop-down-arrow" data-drupal-link-system-path="node/9">Research</a> 
+             <div> 
+              <ul class="accessible-megamenu-panel-group"> 
+               <li> <span target="_self" data-drupal-link-system-path="<front>">Column 1</span> 
+                <div> 
+                 <ul class="accessible-megamenu-panel-group"> 
+                  <li> <a href="/research" target="_self" data-drupal-link-system-path="node/9">Research Overview</a> </li> 
+                  <li> <a href="/research/undergrad-research" target="_self" data-drupal-link-system-path="node/30">Undergraduate Research</a> </li> 
+                 </ul> 
+                </div> </li> 
+               <li> <span target="_self" data-drupal-link-system-path="<front>">Column 2</span> 
+                <div> 
+                 <ul class="accessible-megamenu-panel-group"> 
+                  <li> <a href="http://graduate.ucr.edu/" target="_blank">Graduate Research</a> </li> 
+                  <li> <a href="/research/centers" target="_self" data-drupal-link-system-path="node/33">Centers and Facilities</a> </li> 
+                 </ul> 
+                </div> </li> 
+               <li> <span target="_self" data-drupal-link-system-path="<front>">Column 3</span> 
+                <div> 
+                 <ul class="accessible-megamenu-panel-group"> 
+                  <li> <a href="https://library.ucr.edu/" target="_blank">Library</a> </li> 
+                 </ul> 
+                </div> </li> 
+               <li> <span target="_self" class="decorated-column-header" data-drupal-link-system-path="<front>">Find Information For...</span> 
+                <div> 
+                 <ul class="accessible-megamenu-panel-group"> 
+                  <li> <a href="http://admissions.ucr.edu" target="_blank">Prospective Students</a> </li> 
+                  <li> <a href="/current-students" target="_self" data-drupal-link-system-path="node/53">Current Students</a> </li> 
+                  <li> <a href="/faculty" target="_self" data-drupal-link-system-path="node/90">Faculty</a> </li> 
+                  <li> <a href="/staff" target="_self" data-drupal-link-system-path="node/94">Staff</a> </li> 
+                  <li> <a href="http://admissions.ucr.edu/admissions/parents.html" target="_blank">Parents</a> </li> 
+                  <li> <a href="http://alumni.ucr.edu" target="_blank">Alumni</a> </li> 
+                 </ul> 
+                </div> </li> 
+              </ul> 
+             </div> </li> 
+            <li> <a href="/campus-life" target="_self" class="drop-down-arrow" data-drupal-link-system-path="node/10">Campus Life</a> 
+             <div> 
+              <ul class="accessible-megamenu-panel-group"> 
+               <li> <span target="_self" data-drupal-link-system-path="<front>">Column 1</span> 
+                <div> 
+                 <ul class="accessible-megamenu-panel-group"> 
+                  <li> <a href="/campus-life" target="_self" data-drupal-link-system-path="node/10">Campus Life Overview</a> </li> 
+                  <li> <a href="http://events.ucr.edu" target="_blank">Events</a> </li> 
+                  <li> <a href="http://campusmap.ucr.edu/" target="_blank">Map</a> </li> 
+                 </ul> 
+                </div> </li> 
+               <li> <span target="_self" data-drupal-link-system-path="<front>">Column 2</span> 
+                <div> 
+                 <ul class="accessible-megamenu-panel-group"> 
+                  <li> <a href="/campus-life/arts-and-culture" target="_self" data-drupal-link-system-path="node/42" class="is-active">Arts and Culture</a> </li> 
+                  <li> <a href="/campus-life/athletics-and-fitness" target="_self" data-drupal-link-system-path="node/43">Athletics and Fitness</a> </li> 
+                  <li> <a href="/campus-life/health-and-safety" target="_self" data-drupal-link-system-path="node/44">Health and Safety</a> </li> 
+                 </ul> 
+                </div> </li> 
+               <li> <span target="_self" data-drupal-link-system-path="<front>">Column 3</span> 
+                <div> 
+                 <ul class="accessible-megamenu-panel-group"> 
+                  <li> <a href="http://gardens.ucr.edu/" target="_blank">Botanic Gardens</a> </li> 
+                  <li> <a href="http://housing.ucr.edu/" target="_blank">Housing</a> </li> 
+                  <li> <a href="http://dining.ucr.edu" target="_blank">Dining</a> </li> 
+                  <li> <a href="/about/visitors" target="_self" data-drupal-link-system-path="node/15">About Riverside</a> </li> 
+                 </ul> 
+                </div> </li> 
+               <li> <span target="_self" class="decorated-column-header" data-drupal-link-system-path="<front>">Find Information For...</span> 
+                <div> 
+                 <ul class="accessible-megamenu-panel-group"> 
+                  <li> <a href="http://admissions.ucr.edu" target="_blank">Prospective Students</a> </li> 
+                  <li> <a href="/current-students" target="_self" data-drupal-link-system-path="node/53">Current Students</a> </li> 
+                  <li> <a href="/faculty" target="_self" data-drupal-link-system-path="node/90">Faculty</a> </li> 
+                  <li> <a href="/staff" target="_self" data-drupal-link-system-path="node/94">Staff</a> </li> 
+                  <li> <a href="http://admissions.ucr.edu/admissions/parents.html" target="_blank">Parents</a> </li> 
+                  <li> <a href="http://alumni.ucr.edu" target="_blank">Alumni</a> </li> 
+                 </ul> 
+                </div> </li> 
+              </ul> 
+             </div> </li> 
+            <li> <span target="_self" class="find-info-link" data-drupal-link-system-path="<front>">Find Information For...</span> 
+             <div> 
+              <ul class="accessible-megamenu-panel-group"> 
+               <li> <a href="http://admissions.ucr.edu" target="_blank">Prospective Students</a> </li> 
+               <li> <a href="/current-students" target="_self" data-drupal-link-system-path="node/53">Current Students</a> </li> 
+               <li> <a href="/faculty" target="_self" data-drupal-link-system-path="node/90">Faculty</a> </li> 
+               <li> <a href="/staff" target="_self" data-drupal-link-system-path="node/94">Staff</a> </li> 
+               <li> <a href="http://admissions.ucr.edu/admissions/parents.html" target="_blank">Parents</a> </li> 
+               <li> <a href="http://alumni.ucr.edu" target="_blank">Alumni</a> </li> 
+              </ul> 
+             </div> </li> 
+           </ul> 
+          </div> 
+         </div> 
+         <nav role="navigation" aria-labelledby="block-audiencemenuleftside-2-menu" id="block-audiencemenuleftside-2" data-block-plugin-id="menu_block:audience-menu-left-side" class="general-menu"> 
+          <h2 class="visually-hidden" id="block-audiencemenuleftside-2-menu">Audience Menu Left Side Mobile</h2> 
+          <ul class="menu"> 
+           <li><a href="/alpha" target="_self" data-drupal-link-system-path="node/93">A to Z Listing</a> </li> 
+           <li><a href="https://campusmap.ucr.edu/" target="_self">Campus Map</a> </li> 
+           <li><a href="http://profiles.ucr.edu" target="_blank">Find People</a> </li> 
+           <li><a href="http://ucrtoday.ucr.edu" target="_self">News</a> </li> 
+          </ul> 
+         </nav> 
+         <nav role="navigation" aria-labelledby="block-quicklinks-2-menu" id="block-quicklinks-2" data-block-plugin-id="menu_block:quick-links" class="general-menu"> 
+          <h2 id="block-quicklinks-2-menu">Quick Links Mobile</h2> 
+          <ul class="vertical menu"> 
+           <li><a href="/about/visitors" target="_self" data-drupal-link-system-path="node/15">Visit</a> </li> 
+           <li><a href="http://events.ucr.edu" target="_self">Events</a> </li> 
+           <li><a href="http://givenow.ucr.edu" target="_self">Make a Gift</a> </li> 
+           <li><a href="http://campusmap.ucr.edu/" target="_self">Campus Map</a> </li> 
+           <li><a href="http://jobs.ucr.edu" target="_self">Jobs</a> </li> 
+           <li><a href="http://library.ucr.edu" target="_self">Library</a> </li> 
+           <li><a href="http://transportation.ucr.edu/" target="_self">Parking and Transportation</a> </li> 
+           <li><a href="/apply" target="_self" data-drupal-link-system-path="node/29">Apply</a> </li> 
+          </ul> 
+         </nav> 
+         <nav role="navigation" aria-labelledby="block-mainnavigation-4-menu" id="block-mainnavigation-4" class="mobile-menu general-menu" data-block-plugin-id="menu_block:main"> 
+          <h2 class="visually-hidden" id="block-mainnavigation-4-menu">Main navigation (Mobile)</h2> 
+          <ul id="main-menu"> 
+           <li> <a href="/about" target="_self" class="drop-down-arrow" data-drupal-link-system-path="node/6">About</a> 
+            <div> 
+             <ul class="accessible-megamenu-panel-group"> 
+              <li> <span target="_self" data-drupal-link-system-path="<front>">Column 1</span> 
+               <div> 
+                <ul class="accessible-megamenu-panel-group"> 
+                 <li> <a href="/about" target="_self" data-drupal-link-system-path="node/6">About Overview</a> </li> 
+                 <li> <a href="/about/ranks-and-facts" target="_self" data-drupal-link-system-path="node/11">Ranks and Facts</a> </li> 
+                </ul> 
+               </div> </li> 
+              <li> <span target="_self" data-drupal-link-system-path="<front>">Column 2</span> 
+               <div> 
+                <ul class="accessible-megamenu-panel-group"> 
+                 <li> <a href="/about/impact" target="_self" data-drupal-link-system-path="node/12">Impacts</a> </li> 
+                 <li> <a href="/about/history" target="_self" data-drupal-link-system-path="node/14">History</a> </li> 
+                </ul> 
+               </div> </li> 
+              <li> <span target="_self" data-drupal-link-system-path="<front>">Column 3</span> 
+               <div> 
+                <ul class="accessible-megamenu-panel-group"> 
+                 <li> <a href="/about/visitors" target="_self" data-drupal-link-system-path="node/15">Visitors</a> </li> 
+                 <li> <a href="/about/international" target="_self" data-drupal-link-system-path="node/17">International</a> </li> 
+                </ul> 
+               </div> </li> 
+              <li> <span target="_self" class="decorated-column-header" data-drupal-link-system-path="<front>">Find Information For...</span> 
+               <div> 
+                <ul class="accessible-megamenu-panel-group"> 
+                 <li> <a href="/current-students" target="_self" data-drupal-link-system-path="node/53">Current Students</a> </li> 
+                 <li> <a href="http://admissions.ucr.edu" target="_blank">Prospective Students</a> </li> 
+                 <li> <a href="/faculty" target="_self" data-drupal-link-system-path="node/90">Faculty</a> </li> 
+                 <li> <a href="/staff" target="_self" data-drupal-link-system-path="node/94">Staff</a> </li> 
+                 <li> <a href="http://admissions.ucr.edu/admissions/parents.html" target="_blank">Parents</a> </li> 
+                 <li> <a href="http://alumni.ucr.edu" target="_blank">Alumni</a> </li> 
+                </ul> 
+               </div> </li> 
+             </ul> 
+            </div> </li> 
+           <li> <a href="/academics" target="_self" class="drop-down-arrow" data-drupal-link-system-path="node/7">Academics</a> 
+            <div> 
+             <ul class="accessible-megamenu-panel-group"> 
+              <li> <span target="_self" data-drupal-link-system-path="<front>">Column 1</span> 
+               <div> 
+                <ul class="accessible-megamenu-panel-group"> 
+                 <li> <a href="/academics" target="_self" data-drupal-link-system-path="node/7">Academics Overview</a> </li> 
+                 <li> <a href="/academics/undergraduate-majors" target="_self" data-drupal-link-system-path="node/22">Undergraduate Majors</a> </li> 
+                </ul> 
+               </div> </li> 
+              <li> <span target="_self" data-drupal-link-system-path="<front>">Column 2</span> 
+               <div> 
+                <ul class="accessible-megamenu-panel-group"> 
+                 <li> <a href="http://graduate.ucr.edu/grad_programs.html" target="_blank">Graduate Programs</a> </li> 
+                 <li> <a href="http://admissions.ucr.edu/academics/index.html" target="_blank">Colleges and Schools</a> </li> 
+                </ul> 
+               </div> </li> 
+              <li> <span target="_self" data-drupal-link-system-path="<front>">Column 3</span> 
+               <div> 
+                <ul class="accessible-megamenu-panel-group"> 
+                 <li> <a href="http://www.extension.ucr.edu" target="_blank">UCR Extension</a> </li> 
+                </ul> 
+               </div> </li> 
+              <li> <span target="_self" class="decorated-column-header" data-drupal-link-system-path="<front>">Find Information For...</span> 
+               <div> 
+                <ul class="accessible-megamenu-panel-group"> 
+                 <li> <a href="http://admissions.ucr.edu" target="_blank">Prospective Students</a> </li> 
+                 <li> <a href="/current-students" target="_self" data-drupal-link-system-path="node/53">Current Students</a> </li> 
+                 <li> <a href="/faculty" target="_self" data-drupal-link-system-path="node/90">Faculty</a> </li> 
+                 <li> <a href="/staff" target="_self" data-drupal-link-system-path="node/94">Staff</a> </li> 
+                 <li> <a href="http://admissions.ucr.edu/admissions/parents.html" target="_blank">Parents</a> </li> 
+                 <li> <a href="http://alumni.ucr.edu" target="_blank">Alumni</a> </li> 
+                </ul> 
+               </div> </li> 
+             </ul> 
+            </div> </li> 
+           <li> <a href="/admissions" target="_self" class="drop-down-arrow" data-drupal-link-system-path="node/8">Admissions</a> 
+            <div> 
+             <ul class="accessible-megamenu-panel-group"> 
+              <li> <span target="_self" data-drupal-link-system-path="<front>">Column 1</span> 
+               <div> 
+                <ul class="accessible-megamenu-panel-group"> 
+                 <li> <a href="/admissions" target="_self" data-drupal-link-system-path="node/8">Admissions Overview</a> </li> 
+                 <li> <a href="http://admissions.ucr.edu" target="_blank">Undergraduate Admissions</a> </li> 
+                </ul> 
+               </div> </li> 
+              <li> <span target="_self" data-drupal-link-system-path="<front>">Column 2</span> 
+               <div> 
+                <ul class="accessible-megamenu-panel-group"> 
+                 <li> <a href="http://graduate.ucr.edu/grad_admissions.html" target="_blank">Graduate Admissions</a> </li> 
+                 <li> <a href="http://admissions.ucr.edu/admissions/international/index.html" target="_blank">International Admissions</a> </li> 
+                </ul> 
+               </div> </li> 
+              <li> <span target="_self" data-drupal-link-system-path="<front>">Column 3</span> 
+               <div> 
+                <ul class="accessible-megamenu-panel-group"> 
+                 <li> <a href="http://admissions.ucr.edu/admissions/transfer/" target="_blank">Transfer Admissions</a> </li> 
+                 <li> <a href="http://admissions.ucr.edu/cost/index.html" target="_blank">Cost</a> </li> 
+                </ul> 
+               </div> </li> 
+              <li> <span target="_self" class="decorated-column-header" data-drupal-link-system-path="<front>">Find Information For...</span> 
+               <div> 
+                <ul class="accessible-megamenu-panel-group"> 
+                 <li> <a href="http://admissions.ucr.edu" target="_blank">Prospective Students</a> </li> 
+                 <li> <a href="/current-students" target="_self" data-drupal-link-system-path="node/53">Current Students</a> </li> 
+                 <li> <a href="/faculty" target="_self" data-drupal-link-system-path="node/90">Faculty</a> </li> 
+                 <li> <a href="/staff" target="_self" data-drupal-link-system-path="node/94">Staff</a> </li> 
+                 <li> <a href="http://admissions.ucr.edu/admissions/parents.html" target="_blank">Parents</a> </li> 
+                 <li> <a href="http://alumni.ucr.edu" target="_blank">Alumni</a> </li> 
+                </ul> 
+               </div> </li> 
+             </ul> 
+            </div> </li> 
+           <li> <a href="/research" target="_self" class="drop-down-arrow" data-drupal-link-system-path="node/9">Research</a> 
+            <div> 
+             <ul class="accessible-megamenu-panel-group"> 
+              <li> <span target="_self" data-drupal-link-system-path="<front>">Column 1</span> 
+               <div> 
+                <ul class="accessible-megamenu-panel-group"> 
+                 <li> <a href="/research" target="_self" data-drupal-link-system-path="node/9">Research Overview</a> </li> 
+                 <li> <a href="/research/undergrad-research" target="_self" data-drupal-link-system-path="node/30">Undergraduate Research</a> </li> 
+                </ul> 
+               </div> </li> 
+              <li> <span target="_self" data-drupal-link-system-path="<front>">Column 2</span> 
+               <div> 
+                <ul class="accessible-megamenu-panel-group"> 
+                 <li> <a href="http://graduate.ucr.edu/" target="_blank">Graduate Research</a> </li> 
+                 <li> <a href="/research/centers" target="_self" data-drupal-link-system-path="node/33">Centers and Facilities</a> </li> 
+                </ul> 
+               </div> </li> 
+              <li> <span target="_self" data-drupal-link-system-path="<front>">Column 3</span> 
+               <div> 
+                <ul class="accessible-megamenu-panel-group"> 
+                 <li> <a href="https://library.ucr.edu/" target="_blank">Library</a> </li> 
+                </ul> 
+               </div> </li> 
+              <li> <span target="_self" class="decorated-column-header" data-drupal-link-system-path="<front>">Find Information For...</span> 
+               <div> 
+                <ul class="accessible-megamenu-panel-group"> 
+                 <li> <a href="http://admissions.ucr.edu" target="_blank">Prospective Students</a> </li> 
+                 <li> <a href="/current-students" target="_self" data-drupal-link-system-path="node/53">Current Students</a> </li> 
+                 <li> <a href="/faculty" target="_self" data-drupal-link-system-path="node/90">Faculty</a> </li> 
+                 <li> <a href="/staff" target="_self" data-drupal-link-system-path="node/94">Staff</a> </li> 
+                 <li> <a href="http://admissions.ucr.edu/admissions/parents.html" target="_blank">Parents</a> </li> 
+                 <li> <a href="http://alumni.ucr.edu" target="_blank">Alumni</a> </li> 
+                </ul> 
+               </div> </li> 
+             </ul> 
+            </div> </li> 
+           <li> <a href="/campus-life" target="_self" class="drop-down-arrow" data-drupal-link-system-path="node/10">Campus Life</a> 
+            <div> 
+             <ul class="accessible-megamenu-panel-group"> 
+              <li> <span target="_self" data-drupal-link-system-path="<front>">Column 1</span> 
+               <div> 
+                <ul class="accessible-megamenu-panel-group"> 
+                 <li> <a href="/campus-life" target="_self" data-drupal-link-system-path="node/10">Campus Life Overview</a> </li> 
+                 <li> <a href="http://events.ucr.edu" target="_blank">Events</a> </li> 
+                 <li> <a href="http://campusmap.ucr.edu/" target="_blank">Map</a> </li> 
+                </ul> 
+               </div> </li> 
+              <li> <span target="_self" data-drupal-link-system-path="<front>">Column 2</span> 
+               <div> 
+                <ul class="accessible-megamenu-panel-group"> 
+                 <li> <a href="/campus-life/arts-and-culture" target="_self" data-drupal-link-system-path="node/42" class="is-active">Arts and Culture</a> </li> 
+                 <li> <a href="/campus-life/athletics-and-fitness" target="_self" data-drupal-link-system-path="node/43">Athletics and Fitness</a> </li> 
+                 <li> <a href="/campus-life/health-and-safety" target="_self" data-drupal-link-system-path="node/44">Health and Safety</a> </li> 
+                </ul> 
+               </div> </li> 
+              <li> <span target="_self" data-drupal-link-system-path="<front>">Column 3</span> 
+               <div> 
+                <ul class="accessible-megamenu-panel-group"> 
+                 <li> <a href="http://gardens.ucr.edu/" target="_blank">Botanic Gardens</a> </li> 
+                 <li> <a href="http://housing.ucr.edu/" target="_blank">Housing</a> </li> 
+                 <li> <a href="http://dining.ucr.edu" target="_blank">Dining</a> </li> 
+                 <li> <a href="/about/visitors" target="_self" data-drupal-link-system-path="node/15">About Riverside</a> </li> 
+                </ul> 
+               </div> </li> 
+              <li> <span target="_self" class="decorated-column-header" data-drupal-link-system-path="<front>">Find Information For...</span> 
+               <div> 
+                <ul class="accessible-megamenu-panel-group"> 
+                 <li> <a href="http://admissions.ucr.edu" target="_blank">Prospective Students</a> </li> 
+                 <li> <a href="/current-students" target="_self" data-drupal-link-system-path="node/53">Current Students</a> </li> 
+                 <li> <a href="/faculty" target="_self" data-drupal-link-system-path="node/90">Faculty</a> </li> 
+                 <li> <a href="/staff" target="_self" data-drupal-link-system-path="node/94">Staff</a> </li> 
+                 <li> <a href="http://admissions.ucr.edu/admissions/parents.html" target="_blank">Parents</a> </li> 
+                 <li> <a href="http://alumni.ucr.edu" target="_blank">Alumni</a> </li> 
+                </ul> 
+               </div> </li> 
+             </ul> 
+            </div> </li> 
+           <li> <span target="_self" class="find-info-link" data-drupal-link-system-path="<front>">Find Information For...</span> 
+            <div> 
+             <ul class="accessible-megamenu-panel-group"> 
+              <li> <a href="http://admissions.ucr.edu" target="_blank">Prospective Students</a> </li> 
+              <li> <a href="/current-students" target="_self" data-drupal-link-system-path="node/53">Current Students</a> </li> 
+              <li> <a href="/faculty" target="_self" data-drupal-link-system-path="node/90">Faculty</a> </li> 
+              <li> <a href="/staff" target="_self" data-drupal-link-system-path="node/94">Staff</a> </li> 
+              <li> <a href="http://admissions.ucr.edu/admissions/parents.html" target="_blank">Parents</a> </li> 
+              <li> <a href="http://alumni.ucr.edu" target="_blank">Alumni</a> </li> 
+             </ul> 
+            </div> </li> 
+          </ul> 
+         </nav>
+        </div>  
+        <div id="block-ucriversideaudiencesearchblock-4" data-block-plugin-id="ucr_global_audience_search"> 
+         <section class="google-search" role="search"> 
+          <form id="audience-search-form" action="https://www.ucr.edu/search.php"> 
+           <label class="show-for-sr" for="audience-search">Search for:</label> 
+           <input type="text" maxlength="255" id="audience-search" name="q" value="" placeholder=" "> 
+           <button type="submit" class="button show-for-small-only" value="">Search</button> 
+          </form> 
+         </section> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </header>
+  </div>   
+  <div id="content-container"> 
+   <div id="hero-panel-area"> 
+    <div class="views-element-container" id="block-views-block-header-banner-block-1" data-block-plugin-id="views_block:header_banner-block_1"> 
+     <div>
+      <div class="header-banner-view js-view-dom-id-40ace09dc485ca6a2916603fbf88c1a355a4db092669407f66f8d12fb07a2447"> 
+       <div class="views-row"> 
+        <div class="views-field views-field-field-header-banner">
+         <div class="field-content"> 
+          <img src="/sites/g/files/rcwecm986/files/styles/interior_page_banner/public/Arts-Culture_TopBanner.jpg?h=5075ceee&amp;itok=b8Wt1iRZ" width="1315" height="461" alt="Campus Life - Arts and Culture - Top Banner" typeof="foaf:Image"> 
+         </div>
+        </div>
+        <div class="views-field views-field-field-custom-title">
+         <div class="field-content">
+          Arts and Culture
+         </div>
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="grid-container primary-content-area"> 
+    <div class="grid-x grid-padding-x"> 
+     <div class="cell"> 
+     </div> 
+    </div> 
+    <div class="grid-x grid-padding-x"> 
+     <div class="cell"> 
+      <div id="block-breadcrumbs" data-block-plugin-id="system_breadcrumb_block"> 
+       <nav role="navigation" class="breadcrumb_container" aria-labelledby="system-breadcrumb"> 
+        <h2 id="system-breadcrumb" class="visually-hidden">Breadcrumb</h2> 
+        <ul class="breadcrumbs"> 
+         <li> <a href="/" class="mdi mdi-home breadcrumb_home"></a> </li> 
+         <li> <a href="/campus-life">Campus Life</a> </li> 
+         <li> <span>Arts and Culture</span> </li> 
+        </ul> 
+       </nav> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="grid-x grid-padding-x"> 
+     <div class="cell large-auto small-order-3 medium-order-3 large-order-2 pca-content"> 
+      <div> 
+       <div id="block-ucr-umbrella-content" data-block-plugin-id="system_main_block"> 
+        <article class="node node--type-page node--view-mode-full clearfix"> 
+         <div> 
+          <div class="grid-x grid-padding-x theme-template"> 
+           <div class="layout__region layout__region--top cell medium-12 large-12"> 
+            <div class="block-region-top"></div> 
+           </div> 
+           <div class="layout__region layout__region--first-above cell medium-6 large-8"> 
+            <div class="block-region-first-above">
+             <div data-block-plugin-id="entity_field:node:body"> 
+              <div class="page-body-wrapper"> 
+               <h1 class="separator-line-before">Arts and Culture at UCR</h1> 
+               <p>Whether you're a spectator or a participant, UCR's arts and cultural happenings will engage your senses, inspire your creativity, ignite your intellect, and spark your imagination.&nbsp;<br> &nbsp;<br> We feature world-class art exhibitions, thought-provoking films, and dynamic performances at our downtown Riverside <a href="https://artsblock.ucr.edu">UCR ARTSblock</a>.&nbsp;Nationally recognized, best-selling authors&nbsp;teach in our <a href="http://creativewriting.ucr.edu/index.html">distinguished writing program&nbsp;</a>and our <a href="https://www.youtube.com/watch?v=V13nPpoHpm4">MFA in Creative Writing and Writing for the Performing Arts Program</a>. Our interdisciplinary <a href="http://ideasandsociety.ucr.edu">Center for Ideas and Society</a> hosts lectures, forums, and conferences that involve campus and community members in the life of the mind. World-renowned writers and poets share their unique voices during our annual <a href="http://writersweek.ucr.edu/authors/">Writer's Week</a>, the longest running free literary event in California. &nbsp;Founded by UCR professor Tom Lutz, the <a href="https://lareviewofbooks.org/">Los Angeles Review of Books</a>&nbsp;publishes reviews, essays, and interviews with leading authors of the day. Plus UCR boasts not just <a href="https://www.poetryfoundation.org/poets/billy-collins">one</a> but <a href="http://magazinearchive.ucr.edu/998">two</a>&nbsp;U.S. Poet Laureates who help shape the way we think about our national identity.<br> &nbsp;<br> Our <a href="https://www.youtube.com/watch?v=DBDIfDqon3M">Gluck Fellows Program of the Arts</a> brings arts enrichment and education to thousands of students and families in our local community. &nbsp;Our annual <a href="https://events.ucr.edu/event/ucr_is_dancing_2018#.WrqZdS7wa70">UCR is Dancing</a>&nbsp;production showcases original choreography by UCR performers. Music fills the air each week thanks to year-round concerts, events, and outdoor music festivals like our annual <a href="https://www.youtube.com/watch?v=PF9fxsvSBYU">Block Party</a> and <a href="https://www.youtube.com/watch?v=EzDFL96s5ZU">Homecoming Scot&nbsp;Fest</a>. And nothing inspires our Highlander pride quite like the <a href="http://www.pipeband.ucr.edu">UCR Pipeband</a>.</p> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <div class="layout__region layout__region--second-above cell medium-6 large-4"> 
+            <div class="block-region-second-above"> 
+             <div data-block-plugin-id="block_content:65d8aff8-0d6d-421f-8939-dec2d71108c9" class="block block--quicklinks-sidebar-menu"> 
+              <h2 class="block-title">Related Topics</h2> 
+              <div class="grid-x grid-margin-x small-up-1 medium-up- large-up-"> 
+               <div class="field field--name-field-quicklinks field--type-entity-reference-revisions field--label-hidden field__items"> 
+                <div class="field__item"> 
+                 <div class="paragraph paragraph--type--quicklinks-sidebar paragraph--view-mode--default"> 
+                  <div class="field field--name-field-links field--type-link field--label-hidden field__items"> 
+                   <div class="field__item"> 
+                    <a href="/campus-life">Campus Life Overview</a> 
+                   </div> 
+                   <div class="field__item"> 
+                    <a href="/campus-life/arts-and-culture">Arts and Culture</a> 
+                   </div> 
+                   <div class="field__item"> 
+                    <a href="/campus-life/athletics-and-fitness">Athletics and Fitness</a> 
+                   </div> 
+                   <div class="field__item"> 
+                    <a href="/campus-life/health-and-safety">Health and Safety</a> 
+                   </div> 
+                   <div class="field__item"> 
+                    <a href="/about/visitors">About Riverside </a> 
+                   </div> 
+                  </div> 
+                 </div> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <div class="layout__region layout__region--middle layout__region layout__region--top cell medium-12 large-12"> 
+            <div class="block-region-middle"> 
+             <div data-block-plugin-id="block_content:f41352a3-65eb-4d20-a478-77f2a286cd27" class="block block--color-cta"> 
+              <h2 class="block-title">UCR ARTSblock</h2> 
+              <div class="widget-title-icon-wrapper"> 
+               <span class="widget-title-icon"><i class="mdi mdi-bell"></i></span> 
+              </div> 
+              <div class="ucr-custom-block grid-container full"> 
+               <div class="title-wrapper"> 
+               </div> 
+               <div class="grid-x small-up-1 medium-up-3 large-up-3 colorblock-cta-container" style=""> 
+                <div class="cell"> 
+                 <div class="paragraph paragraph--type--box-info paragraph--view-mode--default image-link"> 
+                  <div class="box-image"> 
+                   <div claass="color-overlay" style="background-color: #329AF0; ">
+                    &nbsp;
+                   </div> 
+                   <div class="field field--name-field-image field--type-image field--label-hidden field__items"> 
+                    <div class="field__item"> 
+                     <img src="/sites/g/files/rcwecm986/files/styles/color_block_cta/public/Photography_01.jpg?h=22ce1306&amp;itok=N9fAKMeV" width="406" height="406" alt="Photography Museum" typeof="foaf:Image"> 
+                    </div> 
+                   </div> 
+                  </div> 
+                  <div class="box-title" style="color: #1D3A61"> 
+                   <div class="field field--name-field-video-subtitle field--type-string field--label-hidden field__items"> 
+                    <div class="field__item">
+                      UCR/California Museum of Photography 
+                    </div> 
+                   </div> 
+                  </div> 
+                  <div class="box-button" style="background-color: #329AF0; "> 
+                   <div class="box-inner-button"> 
+                    <div class="field field--name-field-button-text-and-url field--type-link field--label-hidden field__items"> 
+                     <div class="field__item"> 
+                      <a href="http://artsblock.ucr.edu/Exhibition/cmptempclosed">MORE INFORMATION</a> 
+                     </div> 
+                    </div> 
+                   </div> 
+                  </div> 
+                 </div> 
+                </div> 
+                <div class="cell"> 
+                 <div class="paragraph paragraph--type--box-info paragraph--view-mode--default image-link"> 
+                  <div class="box-image"> 
+                   <div claass="color-overlay" style="background-color: #802244; ">
+                    &nbsp;
+                   </div> 
+                   <div class="field field--name-field-image field--type-image field--label-hidden field__items"> 
+                    <div class="field__item"> 
+                     <img src="/sites/g/files/rcwecm986/files/styles/color_block_cta/public/BarbaraCulver_02.jpg?h=22ce1306&amp;itok=EMfwPAGC" width="406" height="406" alt="Barbara and Art Culver Center of the Arts" typeof="foaf:Image"> 
+                    </div> 
+                   </div> 
+                  </div> 
+                  <div class="box-title" style="color: #1D3A61"> 
+                   <div class="field field--name-field-video-subtitle field--type-string field--label-hidden field__items"> 
+                    <div class="field__item">
+                      Barbara and Art Culver Center of the Arts 
+                    </div> 
+                   </div> 
+                  </div> 
+                  <div class="box-button" style="background-color: #802244; "> 
+                   <div class="box-inner-button"> 
+                    <div class="field field--name-field-button-text-and-url field--type-link field--label-hidden field__items"> 
+                     <div class="field__item"> 
+                      <a href="http://artsblock.ucr.edu">MORE INFORMATION</a> 
+                     </div> 
+                    </div> 
+                   </div> 
+                  </div> 
+                 </div> 
+                </div> 
+                <div class="cell"> 
+                 <div class="paragraph paragraph--type--box-info paragraph--view-mode--default image-link"> 
+                  <div class="box-image"> 
+                   <div claass="color-overlay" style="background-color: #FA5151; ">
+                    &nbsp;
+                   </div> 
+                   <div class="field field--name-field-image field--type-image field--label-hidden field__items"> 
+                    <div class="field__item"> 
+                     <img src="/sites/g/files/rcwecm986/files/styles/color_block_cta/public/Sweeney_03.jpg?h=22ce1306&amp;itok=U8UcRjZk" width="406" height="406" alt="Sweeney Art Gallery" typeof="foaf:Image"> 
+                    </div> 
+                   </div> 
+                  </div> 
+                  <div class="box-title" style="color: #1D3A61"> 
+                   <div class="field field--name-field-video-subtitle field--type-string field--label-hidden field__items"> 
+                    <div class="field__item">
+                      Sweeney Art Gallery 
+                    </div> 
+                   </div> 
+                  </div> 
+                  <div class="box-button" style="background-color: #FA5151; "> 
+                   <div class="box-inner-button"> 
+                    <div class="field field--name-field-button-text-and-url field--type-link field--label-hidden field__items"> 
+                     <div class="field__item"> 
+                      <a href="http://ucr.emuseum.com/#sthash.deowUplf.m2DmOE2J.dpbs">MORE INFORMATION</a> 
+                     </div> 
+                    </div> 
+                   </div> 
+                  </div> 
+                 </div> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="block--teaser-callout-slider " data-block-plugin-id="block_content:7b384451-3b8f-4bd1-a884-fbbd3bef822c"> 
+              <div class="field field--name-field-view field--type-viewfield field--label-hidden"> 
+               <div class="field__item field__item-label-hidden"> 
+                <div class="views-element-container">
+                 <div class="teaser-callout-slider js-view-dom-id-620f6724247daccc0b0519c56ec447369a0d6202ea9f0d8435a4d5275c417f2f"> 
+                  <div id="slick-views-teaser-callout-slider-default-1" class="slick slick--view--teaser-callout-slider slick--view--teaser-callout-slider--default slick--optionset--teaser-call-out">
+                   <div id="slick-views-teaser-callout-slider-default-1-slider" data-slick="{&quot;adaptiveHeight&quot;:true,&quot;dots&quot;:true,&quot;fade&quot;:true}" class="slick__slider">
+                    <div class="slick__slide slide slide--0">
+                     <div class="views-field views-field-field-tea">
+                      <div class="field-content">
+                       <div class="teaser-wrapper">
+                        <div class="teaser-image" style="background-image: url(/sites/g/files/rcwecm986/files/Campus%20Life%20-%20Arts%20-%2001.jpg); ">
+                         <div class="content-wrapper " style="background-color: RGBA(33,37,41,0.7);  color: #FFFFFF; ">
+                          <div class="teaser-section-title">
+                           <div class="field field--name-field-callout-title field--type-string field--label-hidden field__items">
+                            <div class="field__item">
+                              CULTURE ON CAMPUS 
+                            </div>
+                           </div>
+                          </div>
+                          <div class="teaser-title">
+                           <div class="field field--name-field-title field--type-string field--label-hidden field__items">
+                            <div class="field__item">
+                              Dance Program 
+                            </div>
+                           </div>
+                          </div>
+                          <div class="teaser-body">
+                           <div class="field field--name-field-callout-body field--type-text-long field--label-hidden field__items">
+                            <div class="field__item">
+                             <p>The UCR Department of Dance hosts many performances throughout the year.</p>
+                            </div>
+                           </div>
+                          </div>
+                          <div class="teaser-button">
+                           <div class="field field--name-field-button field--type-link field--label-hidden field__items">
+                            <div class="field__item">
+                             <a href="http://dance.ucr.edu/">SEE SCHEDULE</a>
+                            </div>
+                           </div>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="paragraph paragraph--type--teaser-callout-slider paragraph--view-mode--default tabs-panel" id="">
+                         <div class="body">
+                          <div class="field field--name-field-callout-body field--type-text-long field--label-hidden field__items">
+                           <div class="field__item">
+                            <p>The UCR Department of Dance hosts many performances throughout the year.</p>
+                           </div>
+                          </div>
+                         </div>
+                        </div>
+                       </div>
+                      </div>
+                     </div>
+                    </div>
+                    <div class="slick__slide slide slide--1">
+                     <div class="views-field views-field-field-tea">
+                      <div class="field-content">
+                       <div class="teaser-wrapper">
+                        <div class="teaser-image" style="background-image: url(/sites/g/files/rcwecm986/files/Campus%20Life%20-%20Arts%20-%2002.jpg); ">
+                         <div class="content-wrapper " style="background-color: RGBA(33,37,41,0.7);  color: #FFFFFF; ">
+                          <div class="teaser-section-title">
+                           <div class="field field--name-field-callout-title field--type-string field--label-hidden field__items">
+                            <div class="field__item">
+                              CULTURE ON CAMPUS 
+                            </div>
+                           </div>
+                          </div>
+                          <div class="teaser-title">
+                           <div class="field field--name-field-title field--type-string field--label-hidden field__items">
+                            <div class="field__item">
+                              Theatre, Film, and Digital Production 
+                            </div>
+                           </div>
+                          </div>
+                          <div class="teaser-body">
+                           <div class="field field--name-field-callout-body field--type-text-long field--label-hidden field__items">
+                            <div class="field__item">
+                             <p>UCR Department of Theater, Film, &amp; Digital Production brings a new season of fresh performances every year.</p>
+                            </div>
+                           </div>
+                          </div>
+                          <div class="teaser-button">
+                           <div class="field field--name-field-button field--type-link field--label-hidden field__items">
+                            <div class="field__item">
+                             <a href="https://theatre.ucr.edu/">LEARN MORE</a>
+                            </div>
+                           </div>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="paragraph paragraph--type--teaser-callout-slider paragraph--view-mode--default tabs-panel" id="">
+                         <div class="body">
+                          <div class="field field--name-field-callout-body field--type-text-long field--label-hidden field__items">
+                           <div class="field__item">
+                            <p>UCR Department of Theater, Film, &amp; Digital Production brings a new season of fresh performances every year.</p>
+                           </div>
+                          </div>
+                         </div>
+                        </div>
+                       </div>
+                      </div>
+                     </div>
+                    </div>
+                    <div class="slick__slide slide slide--2">
+                     <div class="views-field views-field-field-tea">
+                      <div class="field-content">
+                       <div class="teaser-wrapper">
+                        <div class="teaser-image" style="background-image: url(/sites/g/files/rcwecm986/files/Campus%20Life%20-%20Arts%20-%2004.jpg); ">
+                         <div class="content-wrapper " style="background-color: RGBA(33,37,41,0.7);  color: #FFFFFF; ">
+                          <div class="teaser-section-title">
+                           <div class="field field--name-field-callout-title field--type-string field--label-hidden field__items">
+                            <div class="field__item">
+                              CULTURE ON CAMPUS 
+                            </div>
+                           </div>
+                          </div>
+                          <div class="teaser-title">
+                           <div class="field field--name-field-title field--type-string field--label-hidden field__items">
+                            <div class="field__item">
+                              Music Programs 
+                            </div>
+                           </div>
+                          </div>
+                          <div class="teaser-body">
+                           <div class="field field--name-field-callout-body field--type-text-long field--label-hidden field__items">
+                            <div class="field__item">
+                             <p>UCR Department of Music consists of 18 ensembles including a Bagpipe ensemble and a Taiko ensemble. All ensembles perform regularly around campus.</p>
+                            </div>
+                           </div>
+                          </div>
+                          <div class="teaser-button">
+                           <div class="field field--name-field-button field--type-link field--label-hidden field__items">
+                            <div class="field__item">
+                             <a href="https://music.ucr.edu/news-events/">SEE EVENTS</a>
+                            </div>
+                           </div>
+                          </div>
+                         </div>
+                        </div>
+                        <div class="paragraph paragraph--type--teaser-callout-slider paragraph--view-mode--default tabs-panel" id="">
+                         <div class="body">
+                          <div class="field field--name-field-callout-body field--type-text-long field--label-hidden field__items">
+                           <div class="field__item">
+                            <p>UCR Department of Music consists of 18 ensembles including a Bagpipe ensemble and a Taiko ensemble. All ensembles perform regularly around campus.</p>
+                           </div>
+                          </div>
+                         </div>
+                        </div>
+                       </div>
+                      </div>
+                     </div>
+                    </div>
+                   </div>
+                   <nav class="slick__arrow">
+                    <button type="button" data-role="none" class="slick-prev" aria-label="Previous" tabindex="0" role="button">Previous</button>
+                    <button type="button" data-role="none" class="slick-next" aria-label="Next" tabindex="0" role="button">Next</button>
+                   </nav>
+                  </div> 
+                 </div> 
+                </div> 
+               </div> 
+              </div> 
+             </div>
+             <div class="block--simple-block-body " data-block-plugin-id="block_content:bd7c5f33-ca72-40ec-8bbf-bd68496ee5d5"> 
+              <div class="field field--name-body field--type-text-with-summary field--label-hidden field__items"> 
+               <div class="field__item"> 
+                <h2 class="separator-line-before">Campus Experiences</h2> 
+               </div> 
+              </div> 
+             </div> 
+             <div data-block-plugin-id="block_content:0871abba-8ba9-442a-8dff-548c5764ea09" class="block block--image-link-grid"> 
+              <div class="ucr-custom-block grid-container full"> 
+               <div class="grid-x small-up-1 medium-up-2 large-up-4 image-grid-container" style=""> 
+                <div class="cell"> 
+                 <div class="paragraph paragraph--type--box paragraph--view-mode--default image-link"> 
+                  <div class="box-image"> 
+                   <div class="field field--name-field-image field--type-image field--label-hidden field__items"> 
+                    <div class="field__item"> 
+                     <img src="/sites/g/files/rcwecm986/files/styles/grid_4_column/public/01_EntomologyMuseum.png?h=0e403d73&amp;itok=T9qHhLC1" width="325" height="325" alt="Entomology Museum" typeof="foaf:Image"> 
+                    </div> 
+                   </div> 
+                  </div> 
+                  <div class="box-title"> 
+                   <div class="field field--name-field-title field--type-string field--label-hidden field__items"> 
+                    <div class="field__item">
+                      Entomology Museum 
+                    </div> 
+                   </div> 
+                  </div> 
+                  <div class="box-button" style="background-color: #3AA4DC; "> 
+                   <div class="box-inner-button"> 
+                    <div class="field field--name-field-button-text-and-url field--type-link field--label-hidden field__items"> 
+                     <div class="field__item"> 
+                      <a href="https://entmuseum.ucr.edu/">MORE INFORMATION</a> 
+                     </div> 
+                    </div> 
+                   </div> 
+                  </div> 
+                 </div> 
+                </div> 
+                <div class="cell"> 
+                 <div class="paragraph paragraph--type--box paragraph--view-mode--default image-link"> 
+                  <div class="box-image"> 
+                   <div class="field field--name-field-image field--type-image field--label-hidden field__items"> 
+                    <div class="field__item"> 
+                     <img src="/sites/g/files/rcwecm986/files/styles/grid_4_column/public/Rside.jpg?h=acd354fb&amp;itok=zh2ayVZt" width="325" height="325" alt="R'Side Student Events" typeof="foaf:Image"> 
+                    </div> 
+                   </div> 
+                  </div> 
+                  <div class="box-title"> 
+                   <div class="field field--name-field-title field--type-string field--label-hidden field__items"> 
+                    <div class="field__item">
+                      R'Side Student Events 
+                    </div> 
+                   </div> 
+                  </div> 
+                  <div class="box-button" style="background-color: #D6336B; "> 
+                   <div class="box-inner-button"> 
+                    <div class="field field--name-field-button-text-and-url field--type-link field--label-hidden field__items"> 
+                     <div class="field__item"> 
+                      <a href="http://rside.ucr.edu">MORE INFORMATION</a> 
+                     </div> 
+                    </div> 
+                   </div> 
+                  </div> 
+                 </div> 
+                </div> 
+                <div class="cell"> 
+                 <div class="paragraph paragraph--type--box paragraph--view-mode--default image-link"> 
+                  <div class="box-image"> 
+                   <div class="field field--name-field-image field--type-image field--label-hidden field__items"> 
+                    <div class="field__item"> 
+                     <img src="/sites/g/files/rcwecm986/files/styles/grid_4_column/public/03_BotanicGardens_0.png?h=0e403d73&amp;itok=Wow1cbvo" width="325" height="325" alt="Botanic Gardens" typeof="foaf:Image"> 
+                    </div> 
+                   </div> 
+                  </div> 
+                  <div class="box-title"> 
+                   <div class="field field--name-field-title field--type-string field--label-hidden field__items"> 
+                    <div class="field__item">
+                      UCR Botanic Gardens 
+                    </div> 
+                   </div> 
+                  </div> 
+                  <div class="box-button" style="background-color: #FA5151; "> 
+                   <div class="box-inner-button"> 
+                    <div class="field field--name-field-button-text-and-url field--type-link field--label-hidden field__items"> 
+                     <div class="field__item"> 
+                      <a href="http://gardens.ucr.edu">MORE INFORMATION</a> 
+                     </div> 
+                    </div> 
+                   </div> 
+                  </div> 
+                 </div> 
+                </div> 
+                <div class="cell"> 
+                 <div class="paragraph paragraph--type--box paragraph--view-mode--default image-link"> 
+                  <div class="box-image"> 
+                   <div class="field field--name-field-image field--type-image field--label-hidden field__items"> 
+                    <div class="field__item"> 
+                     <img src="/sites/g/files/rcwecm986/files/styles/grid_4_column/public/04_CreatrLab.png?h=0e403d73&amp;itok=OGNHbSd2" width="325" height="325" alt="Creat'R Lab" typeof="foaf:Image"> 
+                    </div> 
+                   </div> 
+                  </div> 
+                  <div class="box-title"> 
+                   <div class="field field--name-field-title field--type-string field--label-hidden field__items"> 
+                    <div class="field__item">
+                      Creat'R Lab 
+                    </div> 
+                   </div> 
+                  </div> 
+                  <div class="box-button" style="background-color: #1D3A61; "> 
+                   <div class="box-inner-button"> 
+                    <div class="field field--name-field-button-text-and-url field--type-link field--label-hidden field__items"> 
+                     <div class="field__item"> 
+                      <a href="https://library.ucr.edu/research-services/creativity-and-discovery/creatr-lab">MORE INFORMATION</a> 
+                     </div> 
+                    </div> 
+                   </div> 
+                  </div> 
+                 </div> 
+                </div> 
+                <div class="cell"> 
+                 <div class="paragraph paragraph--type--box paragraph--view-mode--default image-link"> 
+                  <div class="box-image"> 
+                   <div class="field field--name-field-image field--type-image field--label-hidden field__items"> 
+                    <div class="field__item"> 
+                     <img src="/sites/g/files/rcwecm986/files/styles/grid_4_column/public/05_Eaton.png?h=0e403d73&amp;itok=qBo-C7FG" width="325" height="325" alt="Eaton Collection" typeof="foaf:Image"> 
+                    </div> 
+                   </div> 
+                  </div> 
+                  <div class="box-title"> 
+                   <div class="field field--name-field-title field--type-string field--label-hidden field__items"> 
+                    <div class="field__item">
+                      Eaton Collection 
+                    </div> 
+                   </div> 
+                  </div> 
+                  <div class="box-button" style="background-color: #3AA4DC; "> 
+                   <div class="box-inner-button"> 
+                    <div class="field field--name-field-button-text-and-url field--type-link field--label-hidden field__items"> 
+                     <div class="field__item"> 
+                      <a href="http://eaton.ucr.edu/">MORE INFORMATION</a> 
+                     </div> 
+                    </div> 
+                   </div> 
+                  </div> 
+                 </div> 
+                </div> 
+                <div class="cell"> 
+                 <div class="paragraph paragraph--type--box paragraph--view-mode--default image-link"> 
+                  <div class="box-image"> 
+                   <div class="field field--name-field-image field--type-image field--label-hidden field__items"> 
+                    <div class="field__item"> 
+                     <img src="/sites/g/files/rcwecm986/files/styles/grid_4_column/public/06_MusicLibrary.png?h=0e403d73&amp;itok=0JhjwdLE" width="325" height="325" alt="Music Library" typeof="foaf:Image"> 
+                    </div> 
+                   </div> 
+                  </div> 
+                  <div class="box-title"> 
+                   <div class="field field--name-field-title field--type-string field--label-hidden field__items"> 
+                    <div class="field__item">
+                      Music Library 
+                    </div> 
+                   </div> 
+                  </div> 
+                  <div class="box-button" style="background-color: #D6336B; "> 
+                   <div class="box-inner-button"> 
+                    <div class="field field--name-field-button-text-and-url field--type-link field--label-hidden field__items"> 
+                     <div class="field__item"> 
+                      <a href="https://library.ucr.edu/libraries/music-library">MORE INFORMATION</a> 
+                     </div> 
+                    </div> 
+                   </div> 
+                  </div> 
+                 </div> 
+                </div> 
+                <div class="cell"> 
+                 <div class="paragraph paragraph--type--box paragraph--view-mode--default image-link"> 
+                  <div class="box-image"> 
+                   <div class="field field--name-field-image field--type-image field--label-hidden field__items"> 
+                    <div class="field__item"> 
+                     <img src="/sites/g/files/rcwecm986/files/styles/grid_4_column/public/07_SpecialCollections.png?h=0e403d73&amp;itok=03-HyAAx" width="325" height="325" alt="Special Collections" typeof="foaf:Image"> 
+                    </div> 
+                   </div> 
+                  </div> 
+                  <div class="box-title"> 
+                   <div class="field field--name-field-title field--type-string field--label-hidden field__items"> 
+                    <div class="field__item">
+                      Special Collections 
+                    </div> 
+                   </div> 
+                  </div> 
+                  <div class="box-button" style="background-color: #FA5151; "> 
+                   <div class="box-inner-button"> 
+                    <div class="field field--name-field-button-text-and-url field--type-link field--label-hidden field__items"> 
+                     <div class="field__item"> 
+                      <a href="https://library.ucr.edu/libraries/special-collections-university-archives">MORE INFORMATION</a> 
+                     </div> 
+                    </div> 
+                   </div> 
+                  </div> 
+                 </div> 
+                </div> 
+                <div class="cell"> 
+                 <div class="paragraph paragraph--type--box paragraph--view-mode--default image-link"> 
+                  <div class="box-image"> 
+                   <div class="field field--name-field-image field--type-image field--label-hidden field__items"> 
+                    <div class="field__item"> 
+                     <img src="/sites/g/files/rcwecm986/files/styles/grid_4_column/public/08_TuskegeeAirmen.png?h=0e403d73&amp;itok=0lY8rDfR" width="325" height="325" alt="Tuskegee Airmen" typeof="foaf:Image"> 
+                    </div> 
+                   </div> 
+                  </div> 
+                  <div class="box-title"> 
+                   <div class="field field--name-field-title field--type-string field--label-hidden field__items"> 
+                    <div class="field__item">
+                      Tuskegee Airmen Exhibit 
+                    </div> 
+                   </div> 
+                  </div> 
+                  <div class="box-button" style="background-color: #1D3A61; "> 
+                   <div class="box-inner-button"> 
+                    <div class="field field--name-field-button-text-and-url field--type-link field--label-hidden field__items"> 
+                     <div class="field__item"> 
+                      <a href="https://library.ucr.edu/collections/tuskegee-airmen-collections">MORE INFORMATION</a> 
+                     </div> 
+                    </div> 
+                   </div> 
+                  </div> 
+                 </div> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </article> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <footer> 
+   <div class="grid-container"> 
+    <div class="grid-x grid-padding-x align-center"> 
+     <div class="cell footer-google-search" id="block-ucriversidefootersearchblock-2" data-block-plugin-id="ucr_global_footer_search"> 
+      <section class="google-search"> 
+       <form action="https://www.ucr.edu/search.php"> 
+        <label class="show-for-sr" for="footer-search">Search for:</label> 
+        <input type="text" maxlength="255" id="footer-search" name="q" value="" placeholder=" "> 
+       </form> 
+      </section> 
+     </div> 
+    </div> 
+    <div class="grid-x grid-padding-x footer-columns"> 
+     <div class="cell medium-auto"> 
+      <section class="footer-item ucr-footer-info"> 
+       <span class="footer-logo"><span class="show-for-sr">University of California, Riverside</span></span> 
+       <address> <p>900 University Ave.<br> Riverside, CA 92521</p> <p>Tel: (951) 827-1012</p> </address> 
+       <ul class="footer-links"> 
+        <li><a href="http://library.ucr.edu/" target="_blank">UCR Library</a></li> 
+        <li><a href="http://campusstatus.ucr.edu/" target="_blank">Campus Status</a></li> 
+        <li><a href="http://campusstore.ucr.edu/" target="_blank">Campus Store</a></li> 
+        <li><a href="http://jobs.ucr.edu" target="_blank">Career Opportunities</a></li> 
+        <li><a href="http://diversity.ucr.edu/" target="_blank">Diversity</a></li> 
+        <li><a href="http://campusmap.ucr.edu/" target="_blank">Maps and Directions</a></li> 
+        <li><a href="/about/visitors">Visit UCR</a></li> 
+       </ul> 
+      </section> 
+     </div> 
+     <div class="cell medium-auto"> 
+      <section class="footer-item footer-dept-info" id="block-ucriversidefooterdeptinformationblock-2" data-block-plugin-id="ucr_global_footer_dept_info"> 
+       <h3>University Communications</h3> 
+       <address class="address_2"> <p> <a href="http://campusmap.ucr.edu/?loc=HINHL" target="_blank"> 1156 Hinderaker Hall </a><br> </p> <p> Tel: (951) 827-1012<br> E-mail: <a href="mailto:webmaster@ucr.edu">webmaster@ucr.edu</a> </p> </address> 
+       <p> <a class="link-img link-img-location" href="http://campusmap.ucr.edu/?loc=HINHL" target="_blank"> Find Us<br><br> <img src="/themes/custom/ucr_default/images/googlemap.png" alt="Find Us"></a> </p> 
+      </section> 
+      <section class="UcrGlobalFooterFollowUsBlock"> 
+       <p class="social-title">Follow US:</p> 
+       <div class="social-link"> 
+        <a href="https://www.facebook.com/UCRiverside/" target="_blank" class="button mdi mdi-facebook" title="Facebook"><span class="show-for-sr">Facebook</span></a> 
+        <a href="https://twitter.com/UCRiverside" target="_blank" class="button mdi mdi-twitter" title="Twitter"><span class="show-for-sr">Twitter</span></a> 
+        <a href="https://www.youtube.com/UCRiverside" target="_blank" class="button mdi mdi-youtube-play" title="YouTube"><span class="show-for-sr">YouTube</span></a> 
+        <a href="https://www.instagram.com/ucriversideofficial/" target="_blank" class="button mdi mdi-instagram" title="Instagram"><span class="show-for-sr">Instagram</span></a> 
+        <a href="https://www.linkedin.com/school/university-of-california-riverside/" target="_blank" class="button mdi mdi-linkedin" title="LinkedIn"><span class="show-for-sr">LinkedIn</span></a> 
+       </div> 
+      </section> 
+     </div> 
+     <div class="cell medium-auto"> 
+      <nav role="navigation" aria-labelledby="block-ucriversiderelatedlinks-2-menu" id="block-ucriversiderelatedlinks-2" data-block-plugin-id="menu_block:ucr-related-links-menu" class="general-menu"> 
+       <h2 id="block-ucriversiderelatedlinks-2-menu">UC Riverside Related Links</h2> 
+       <ul class="vertical menu"> 
+        <li><a href="http://admissions.ucr.edu" target="_self">UCR Admissions</a> </li> 
+        <li><a href="http://admissions.ucr.edu/academics/index.html" target="_self">Colleges and Schools</a> </li> 
+        <li><a href="http://graduate.ucr.edu" target="_self">Graduate Division</a> </li> 
+        <li><a href="/giving" target="_self" data-drupal-link-system-path="node/558">Support UCR</a> </li> 
+        <li><a href="http://careers.ucr.edu/" target="_self">UCR Career Center</a> </li> 
+        <li><a href="https://www.ucrhealth.org/home/" target="_self">UCR Health</a> </li> 
+        <li><a href="http://jobs.ucr.edu" target="_self">UCR Jobs</a> </li> 
+        <li><a href="https://ucrtoday.ucr.edu/" target="_self">UCRToday</a> </li> 
+       </ul> 
+      </nav> 
+      <div class="block--basic " id="block-ucrtobaccofree" data-block-plugin-id="block_content:b0ebddf5-5266-4474-9321-98363ab00dd0"> 
+       <div class="field field--name-body field--type-text-with-summary field--label-hidden field__items"> 
+        <div class="field__item"> 
+         <p><a href="http://tobaccofree.ucr.edu/" target="_blank" title="Tobacco Free"></a></p>
+         <article class="embedded-entity">
+          <a href="http://tobaccofree.ucr.edu/" target="_blank" title="Tobacco Free"><img src="/sites/g/files/rcwecm986/files/UCR-TOBACCO-FREE.png" alt="ucr tobacco free" title="ucr tobacco free logo" typeof="foaf:Image"></a>
+         </article>
+         <p></p> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="site-legal-footer"> 
+    <div class="grid-container"> 
+     <div class="grid-x grid-padding-x"> 
+      <div class="cell"> 
+       <ul> 
+        <!--<li><a href="/feedback" title="Send Feedback E-mail">Feedback</a></li>--> 
+        <li><a href="http://www.ucr.edu/privacy.html">Privacy Policy</a></li> 
+        <li><a href="http://www.ucr.edu/terms.html">Terms and Conditions</a></li> 
+        <li>© 2018 Regents of the University of California</li> 
+       </ul> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </footer>  
+  <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/42","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","ajaxPageState":{"libraries":"blazy\/loading,colorbox\/plain,colorbox_inline\/colorbox_inline,colorbox_load\/colorbox_load,core\/html5shiv,google_analytics\/google_analytics,ng_lightbox\/ng_lightbox,slick\/slick.load,system\/base,ucr_umbrella\/global-css,ucr_umbrella\/global-js,ucr_umbrella\/twocol_bricks_75_25,views\/views.module","theme":"ucr_umbrella","theme_token":null},"ajaxTrustedUrl":[],"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px"},"google_analytics":{"trackOutbound":true,"trackMailto":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":true},"slick":{"accessibility":true,"adaptiveHeight":false,"autoplay":false,"autoplaySpeed":3000,"pauseOnHover":true,"pauseOnDotsHover":false,"arrows":true,"downArrow":false,"downArrowTarget":"","downArrowOffset":0,"centerMode":false,"centerPadding":"50px","dots":false,"dotsClass":"slick-dots","draggable":true,"fade":false,"focusOnSelect":false,"infinite":true,"initialSlide":0,"lazyLoad":"ondemand","mouseWheel":false,"randomize":false,"rtl":false,"rows":1,"slidesPerRow":1,"slide":"","slidesToShow":1,"slidesToScroll":1,"speed":500,"swipe":true,"swipeToSlide":false,"edgeFriction":0.34999999999999998,"touchMove":true,"touchThreshold":5,"useCSS":true,"cssEase":"ease","cssEaseBezier":"","cssEaseOverride":"","useTransform":true,"easing":"linear","variableWidth":false,"vertical":false,"verticalSwiping":false,"waitForAnimate":true},"ajax":[],"user":{"uid":0,"permissionsHash":"191a86fe5ca26157187c24cfdb5c0da88fdb3a64a251cef8e2bbf99d52e1f83f"}}</script> 
+  <script src="/sites/g/files/rcwecm986/files/js/js_nKryhvexh7BBsBF0hqt5kt6MBQ5EYyeU9AvNpTEnJeo.js"></script> 
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"07d404edfe","applicationID":"99508828","transactionName":"MVZSYRNWCxBZB0wIWggccVYVXgoNFxRZBlA5UFFWCVI=","queueTime":0,"applicationTime":44,"atts":"HRFRF1tMGB4=","errorBeacon":"bam.nr-data.net","agent":""}</script> 
+ </body>
+</html>

@@ -1,70 +1,552 @@
-<!--[if IE ]><![endif]--><!doctype html>
-<!--[if IE 8 ]> <html class="no-js lt-ie9 ie8" lang="en" data-ng-app="ua5App" data-ng-cloak data-app> <![endif]-->
-<!--[if IE 9 ]> <html class="no-js lt-ie10 ie9" lang="en" data-ng-app="ua5App" data-ng-cloak data-app> <![endif]-->
-<!--[if (gte IE 10)|!(IE)]><!-->
-<html class="no-js" lang="en" data-ng-app="ua5App" ng-strict-di="true" data-ng-cloak data-app>
- <!--<![endif]-->
- <head data-ng-controller="MetaCtrl"> 
-  <meta charset="utf-8"> 
-  <meta name="fragment" content="!"> 
-  <base href="/"> 
-  <!--[if lt IE 9]>
-          <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]--> 
-  <link href="_build/app.css?v=1492121561" rel="stylesheet" type="text/css"> 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"> 
-  <title ng-bind="meta.prefix + meta.title + meta.suffix ">
-            UCLA Arts: School of the Arts and Architecture
-        </title> 
-  <meta name="google-site-verification" content="C_eQe6kAfe5UvrD8CXhWeer6LJGDkaQzeg63m1Dobks"> 
-  <meta property="og:title" ng-attr-content="{{ meta.prefix }}{{ meta.title }}{{ meta.suffix }}" content="UCLA Arts: School of the Arts and Architecture"> 
-  <meta name="description" ng-attr-content="{{ meta.description }}" content="Introduction by the Dean, calendar of events, admissions information and student services."> 
-  <meta property="og:description" ng-attr-content="{{ meta.description }}" content="Introduction by the Dean, calendar of events, admissions information and student services."> 
-  <meta property="og:image" ng-attr-content="{{ meta.image }}" content="http://di79x7a4whson.cloudfront.net/assets/img/ucla-arts-share-img.jpg"> 
-  <meta property="og:site_name" content="UCLA Arts: School of the Arts and Architecture"> 
-  <meta property="og:url" ng-attr-content="{{ meta.ogUrl }}" content="http://arts.ucla.edu"> 
-  <meta property="og:type" content="website"> 
-  <meta name="twitter:card" content="summary_large_image"> 
-  <meta name="twitter:site" content="@UCLAarts"> 
-  <meta name="twitter:title" ng-attr-content="{{ meta.prefix }}{{ meta.title }}{{ meta.suffix }}" content="UCLA Arts: School of the Arts and Architecture"> 
-  <meta property="twitter:image" ng-attr-content="{{ meta.image }}" content="http://di79x7a4whson.cloudfront.net/assets/img/ucla-arts-share-img.jpg"> 
-  <meta property="twitter:description" ng-attr-content="{{ meta.description }}" content="Introduction by the Dean, calendar of events, admissions information and student services."> 
-  <link href="assets/img/favicon.ico" rel="icon" type="image/png"> 
+<!doctype html>
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+  <meta http-equiv="Expires" content="0"> 
+  <meta name="Description" content=""> 
+  <meta name="Author" content=""> 
+  <meta name="keywords" content=""> 
+  <meta name="copyright" content=""> 
+  <meta name="geo.country" content=""> 
+  <title>
+         
+         Interviewing
+         
+         
+      </title> 
+  <link rel="stylesheet" type="text/css" href="http://careers.ucr.edu/css/_global.import.css"> 
+  <link rel="stylesheet" type="text/css" media="all" href="http://careers.ucr.edu/css/masthead.css"> 
+  <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css"> 
+  <link type="text/css" rel="stylesheet" media="all" href="http://careers.ucr.edu/css/default.local.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="http://careers.ucr.edu/scripts/jquery.controls.local.js"></script>
+  <style type="text/css">
+                                .watermark
+                                {
+                                   background-image: url('../images/google_custom_search_watermark.gif');
+                                   background-repeat: no-repeat;
+                                }
+
+                                .normal
+                                {
+                                }
+                                
+                                #height21 > * 
+                                {
+                                        margin: 2px;
+                                }
+        </style>
+  <script type="text/javascript">
+        function Search() {
+            window.location = "http://www.ucr.edu/search.php?q=" + document.getElementById("search-textbox").value; return false;
+        }
+
+                function OnFocus()
+                { 
+                        document.getElementById("search-textbox").className = "normal";   
+                }
+
+                function OnBlur()
+                {
+                        var textValue = document.getElementById("search-textbox").value;
+                        if (textValue.length == 0)
+                        {
+                                document.getElementById("search-textbox").className = "watermark";
+                        }
+                        else
+                        {
+                                document.getElementById("search-textbox").className = "normal";
+                        }
+                }
+      </script>
   <script>
-            //-- Google Analytics
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-            ga('create', 'UA-1965480-1', 'auto');
-            var _gaq = _gaq || [];
-            _gaq.push(['_setDomainName', 'none']);
-        </script> 
-  <!-- Facebook Pixel Code --> 
-  <script>
-            !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-            n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-            n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-            t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-            document,'script','https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '1029684393768296');
-            fbq('track', "PageView");
-        </script> 
-  <noscript>
-   &lt;img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1029684393768296&amp;amp;ev=PageView&amp;amp;noscript=1"&gt;
-  </noscript> 
-  <!-- End Facebook Pixel Code --> 
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-503078-7', 'ucr.edu');
+  ga('require', 'displayfeatures');
+  ga('send', 'pageview');
+
+</script>
  </head> 
  <body> 
-  <div id="fb-root"></div> 
-  <div side-nav side-nav-text="UCLA Arts Resources" side-nav-sref="home.resources({slug:'about'})" side-nav-side="right"> 
+  <div class="pagewrapper"> 
+   <hr> 
+   <div id="brandingbar">
+    <img class="overlay" src="http://careers.ucr.edu/images/mastheadoverlay.png" alt="overlay" border="0">
+    <h2 style="left: 0px; top: 0px"><span class="accessibility">University of California, Riverside</span><a title="UCR Home Page" href="http://www.ucr.edu/"><img width="150" height="53" title="UCR Home page" alt="UCR" src="http://careers.ucr.edu/images/ucr_logo.gif"></a></h2> 
+   </div> 
   </div> 
-  <div side-nav side-nav-text="UCLA Arts Community" side-nav-sref="home.community" side-nav-side="left"> 
+  <div id="masthead" class="mastheadbg">
+   <a href="http://careers.ucr.edu/index.html"></a>
   </div> 
-  <div global-header></div> 
-  <div global-header-mobile></div> 
-  <div ui-view ng-animate="'view'"></div> 
-  <script src="_build/vendor.js?v=1492121559"></script> 
-  <script src="_build/app.js?v=1492121562"></script>   
+  <hr> 
+  <div class="breadcrumbs"> 
+   <p class="bcinnerwrapper"><a title="UCR Home" href="http://www.ucr.edu/">UCR Home</a> &gt; <a title="UCR Card" href="http://vcsa.ucr.edu/">VCSA</a> &gt; <a title="Home" href="http://careers.ucr.edu/">Home</a> &gt; Interviewing </p> 
+  </div> 
+  <div class="pagewrapper"> 
+   <div id="search"> 
+    <div id="nav_utility"> 
+     <ul> 
+      <li><a href="http://www.ucr.edu/alpha.html">A to Z Listing</a></li> 
+      <li><a href="http://www.campusmap.ucr.edu/">Campus Map</a></li> 
+      <li><a href="http://www.ucr.edu/find_people.php">Find People</a></li> 
+     </ul> 
+    </div> 
+    <div class="valign" id="height21">
+     <label>Search for:</label>
+     <input id="search-textbox" type="text" class="watermark" onfocus="OnFocus()" onblur="OnBlur()" title="search">
+     <input type="button" value="Go" onclick="Search()">
+    </div> 
+   </div> 
+   <hr> 
+   <div id="content"> 
+    <h2 id="pagetitleman"> Interviewing &nbsp; </h2> 
+    <div id="sidebar"> 
+     <div class="nav"> 
+      <ul> 
+       <li><a href="http://careers.ucr.edu/index.html">Home</a></li> 
+      </ul> 
+      <ul class="themenav"> 
+       <li class="nav_inline2_last"> <h3>Who Are You?</h3> 
+        <ul> 
+         <li> | <a href="http://careers.ucr.edu/audience/students.html" title="Students">Students</a></li> 
+         <li> | <a href="http://careers.ucr.edu/audience/gradstudents.html" title="Graduate Students">Graduate Students</a></li> 
+         <li> | <a href="http://careers.ucr.edu/audience/employers.html" title="Employers">Employers</a></li> 
+         <li> | <a href="http://careers.ucr.edu/audience/alumni.html" title="Alumni">Alumni</a></li> 
+         <li> | <a href="http://careers.ucr.edu/audience/stafffaculty.html" title="Staff &amp; Faculty">Staff &amp; Faculty</a></li> 
+         <li> | <a href="http://careers.ucr.edu/audience/parents.html" title="Parents &amp; Family">Parents &amp; Family</a></li> 
+        </ul> </li> 
+      </ul> 
+      <ul> 
+       <li><a title="Employer Resources" href="http://careers.ucr.edu/employertools/employertools.html">Employer Resources</a>
+        <ul> 
+         <li><a title="Post a Job" href="http://careers.ucr.edu/employertools/postajob/postajob.html">Post a Job</a></li> 
+         <li><a href="http://careers.ucr.edu/employertools/soccep.html">Student On-Campus Employment Program</a></li> 
+         <li><a title="Recruit on Campus" href="http://careers.ucr.edu/employertools/recruitoncampus/index.html">Recruit on Campus</a>
+          <ul> 
+           <li><a title="On-Campus Interviews" href="http://careers.ucr.edu/employertools/recruitoncampus/oncampusinterviews.html">On-Campus Interviews</a></li> 
+           <li><a title="Calendar" href="http://careers.ucr.edu/employertools/recruitoncampus/calendar.html">Calendar</a></li> 
+           <li><a href="http://www.ucr.edu/about/facts.html" title="Facts About UCR" target="new">Facts About UCR</a></li> 
+           <li><a href="http://sara.ucr.edu/main_menu.html?id=degree" title="Facts about Majors and Enrollment" target="new">Facts about Majors and Enrollment</a></li> 
+           <li><a title="Student On-Campus Employment Program " href="http://careers.ucr.edu/employertools/soccep.html">Student On-Campus Employment Program </a></li> 
+          </ul> </li> 
+         <li><a href="http://careers.ucr.edu/employertools/careerfairs/careerfairs.html">Career Fairs</a></li> 
+         <li><a title="Internship Program" href="http://careers.ucr.edu/employertools/internshipprogram/internshipprogram.html">Internship Program</a></li> 
+         <li><a title="Work Study" href="http://careers.ucr.edu/employertools/workstudy/workstudy.html">Work Study</a></li> 
+         <li><a title="Community Service" href="http://careers.ucr.edu/employertools/communityservice.html">Community Service</a></li> 
+         <li><a title="Partnerships and Involvement" href="http://careers.ucr.edu/employertools/partnerinvolvement/index.html">Partnerships and Involvement</a>
+          <ul> 
+           <li><a title="Alliance Partners" href="http://careers.ucr.edu/employertools/partnerinvolvement/alliancepartners.html">Alliance Partners</a></li> 
+          </ul> </li> 
+        </ul> </li> 
+      </ul> 
+      <ul> 
+       <li><a href="http://careers.ucr.edu/employertools/careerfairs/careerfairs.html">Career Fairs for Employers</a></li> 
+       <li><a href="http://careers.ucr.edu/graduate-professional-school/index.html">Graduate and Professional School Representative Resources </a>
+        <ul> 
+         <li><a title="Our Staff" href="http://careers.ucr.edu/graduate-professional-school/recruit-on-campus.html">Recruit on Campus</a></li> 
+        </ul> </li> 
+       <li><a title="Student Jobs and Internships" href="http://careers.ucr.edu/jobs/jobs.html">Student Jobs and Internships</a>
+        <ul> 
+         <li><a title="Suggested Websites" href="http://careers.ucr.edu/jobs/joblistings/joblistings.html">Suggested Websites</a></li> 
+         <li><a title="Internships" href="http://careers.ucr.edu/jobs/internships/internships.html">Internships</a>
+          <ul> 
+           <li><a title="WINtersnships!" href="http://careers.ucr.edu/jobs/internships/listings.html">Other Internship Listings</a></li> 
+           <li><a title="WINtersnships!" href="http://careers.ucr.edu/jobs/internships/show-off-internship.html">Show off Your Internship! </a></li> 
+          </ul> </li> 
+         <li><a title="On-Campus Interviews" href="http://careers.ucr.edu/jobs/oci/oncampusinterviews.html">On-Campus Interviews</a></li> 
+         <li><a title="Work-Study Program" href="http://careers.ucr.edu/jobs/workstudy/index.html">Work-Study Program</a>
+          <ul> 
+           <li><a title="Work-Study Program" href="http://careers.ucr.edu/jobs/workstudy/workstudy-process.html">Work-Study Process</a></li> 
+           <li><a title="Work-Study Program" href="http://careers.ucr.edu/jobs/workstudy/workstudy-faq.html">Work-Study FAQ</a></li> 
+          </ul> </li> 
+         <li><a title="Work Abroad" href="http://careers.ucr.edu/jobs/workabroad/workabroad.html">Work Abroad</a></li> 
+         <li><a title="Avoid Scams" href="http://careers.ucr.edu/jobs/fraudandprivacyconcerns/fraudandprivacyconcerns.html">Avoid Scams and Fraud</a></li> 
+         <li><a title="Community Service" href="http://careers.ucr.edu/jobs/communityservice.html">Community Service</a></li> 
+        </ul> </li> 
+      </ul> 
+      <ul> 
+       <li><a title="Job Search Strategies" href="http://careers.ucr.edu/essentialjobsearch/essentialjobsearchskills.html">Job Search Strategies</a>
+        <ul> 
+         <li><a title="How to Search for a Job" href="http://careers.ucr.edu/essentialjobsearch/lookforjob/howtolookforajob.html">How to Search for a Job</a></li> 
+         <li><a title="Resumes" href="http://careers.ucr.edu/essentialjobsearch/resumes.html">Resumes</a></li> 
+         <li><a title="Industries and Salaries" href="http://careers.ucr.edu/essentialjobsearch/research.html">Industries and Salaries</a></li> 
+         <li><a title="Networking" href="http://careers.ucr.edu/essentialjobsearch/networking/networking.html">Networking</a></li> 
+         <li><a title="Interviewing" href="http://careers.ucr.edu/essentialjobsearch/successfulinterviews/successfulinterviews.html">Interviewing</a></li> 
+         <li><a title="Interviewing" href="http://careers.ucr.edu/essentialjobsearch/rcloset.html">R'Professional Career Closet</a></li> 
+         <li><a title="Life After College" href="http://careers.ucr.edu/essentialjobsearch/lifeaftercollege.html">Life After College</a></li> 
+         <li><a title="References" href="http://careers.ucr.edu/essentialjobsearch/recommendation/recommendationthankyouletters.html">References</a></li> 
+        </ul> </li> 
+      </ul> 
+      <ul> 
+       <li><a title="Career Planning" href="http://careers.ucr.edu/careerplanningcounseling/careerplanningcounseling.html">Career Planning</a>
+        <ul> 
+         <li><a title="What Can I Do With a Degree in.." href="http://careers.ucr.edu/careerplanningcounseling/careersmajor/careersmajor.html">Careers in Your Major</a></li> 
+         <li><a title="Milestones" href="http://careers.ucr.edu/careerplanningcounseling/milestones/milestones.html">College-Specific Milestones</a>
+          <ul> 
+           <li><a href="http://careers.ucr.edu/careerplanningcounseling/milestones/bcoe.html">BCOE</a></li> 
+           <li><a href="http://careers.ucr.edu/careerplanningcounseling/milestones/chass.html">CHASS</a></li> 
+           <li><a href="http://careers.ucr.edu/careerplanningcounseling/milestones/cnas.html">CNAS</a></li> 
+           <li><a href="http://careers.ucr.edu/careerplanningcounseling/milestones/soba.html">SOBA</a></li> 
+          </ul> </li> 
+         <li><a title="Freshman - Senior Game Plan" href="http://careers.ucr.edu/careerplanningcounseling/freshmanseniorgameplan.html">First Year-Senior Career Plan </a></li> 
+         <li><a href="https://ucrcareerreadiness.tumblr.com" title="Career Readiness Blog" target="new">Career Readiness Blog</a></li> 
+         <li><a href="http://careers.ucr.edu/careerplanningcounseling/career-profiles/index.html" target="new">Student Spotlight</a></li> 
+         <li><a href="http://careers.ucr.edu/careerplanningcounseling/guidance-programs.html" target="new">Career Development Programs </a></li> 
+        </ul> </li> 
+      </ul> 
+      <ul> 
+       <li><a title="Career Fairs and Workshops" href="http://careers.ucr.edu/careerfairsworkshops/careerfairsworkshops.html">Career Fairs and Workshops for Students</a>
+        <ul> 
+         <li><a href="http://careers.ucr.edu/careerfairsworkshops/workshops.html">Workshops</a></li> 
+         <li><a href="http://careers.ucr.edu/careerfairsworkshops/calendar.html">Printable Calendar </a></li> 
+         <li><a href="http://careers.ucr.edu/careerfairsworkshops/discovery.html">Job Discovery Series</a></li> 
+         <li><a title="RSVP for Events" href="http://careers.ucr.edu/careerfairsworkshops/rsvpforevents/rsvpforevents.html">RSVP for Events</a></li> 
+         <li><a title="Request a Program" href="http://ucriverside.az1.qualtrics.com/jfe/form/SV_emlKWNK4Fnh5Jn7 ">Request a Program</a></li> 
+         <li><a href="http://careers.ucr.edu/careerfairsworkshops/featured.html">Featured Employer</a></li> 
+         <li><a href="http://careers.ucr.edu/careerfairsworkshops/studentappreciation.html">National Student Employment Week </a></li> 
+        </ul> </li> 
+      </ul> 
+      <ul> 
+       <li><a title="Virtual Career Center" href="http://careers.ucr.edu/onlineservices/onlineworkshopsresources/multimedia.html">Virtual Career Center</a>
+        <ul> 
+         <li><a title="SCOTLink" href="http://careers.ucr.edu/onlineservices/scotlink/scotlink.html">SCOTLink</a></li> 
+         <li><a title="Videos" href="http://careers.ucr.edu/onlineservices/podcastsvideos/podcastsvideos.html">Videos</a></li> 
+         <li><a title="Social Media" href="http://careers.ucr.edu/onlineservices/onlineworkshopsresources/socialmedia.html">Social Media</a>
+          <ul> 
+           <li><a title="Social Media" href="http://careers.ucr.edu/onlineservices/onlineworkshopsresources/socialmediaweek.html">Social Media Week</a></li> 
+          </ul> </li> 
+        </ul> </li> 
+      </ul> 
+      <ul> 
+       <li><a title="Preparing for Graduate &amp; Professional Schools" href="http://careers.ucr.edu/gradschoolportal/graduateschoolandprofessionalprograms.html">Preparing for Graduate &amp; Professional Schools</a>
+        <ul> 
+         <li><a title="What is Graduate School?" href="http://careers.ucr.edu/gradschoolportal/graduateoffer/graduateschooloffer.html">What is Graduate School?</a></li> 
+         <li><a title="How and When Do I Apply?" href="http://careers.ucr.edu/gradschoolportal/applicationtools/applicationtools.html">How and When Do I Apply?</a></li> 
+         <li><a title="What Tests Are Required?" href="http://careers.ucr.edu/gradschoolportal/testpreparation/testpreparation.html">What Tests Are Required?</a></li> 
+         <li><a title="How Do I Pay for Grad School?" href="http://careers.ucr.edu/gradschoolportal/payinggradschool/payingforgraduateschool.html">How Do I Pay for Grad School?</a></li> 
+         <li><a title="How Do I Get Letters of Recommendation?" href="http://careers.ucr.edu/gradschoolportal/gradletterofref/graduateschoollettersofreference.html">How Do I Get Letters of Recommendation?</a></li> 
+        </ul> </li> 
+      </ul> 
+      <ul> 
+       <li><a title="About Us" href="http://careers.ucr.edu/aboutus/aboutus.html">About Us</a>
+        <ul> 
+         <li><a title="Our Staff" href="http://careers.ucr.edu/aboutus/staffdirectory.html">Our Staff</a></li> 
+         <li><a title="Make an Appointment" href="http://careers.ucr.edu/aboutus/makeanappointment/makeanappointment.html">Make an Appointment</a></li> 
+         <li><a title="Career Peers" href="http://careers.ucr.edu/aboutus/careerpeers/careerpeers.html">Career Peers</a></li> 
+        </ul> </li> 
+      </ul> 
+     </div> 
+    </div> 
+    <hr> 
+    <div id="main"> 
+     <style type="text/css">
+      .column2 {
+      width: 450px !important;
+      }
+      .stripNavL {
+      left: 4px !important;
+      background:transparent url(../../images/glider_previous_bttn.png) no-repeat scroll center center;
+
+      }
+      .stripNavR {
+      right: 2px !important;
+      background:transparent url(../../images/glider_next_bttn.png) no-repeat scroll center center;
+
+      }
+
+      .stripViewer {
+      background: #F0F4F7 url(../../images/sliderbg-dress.png) repeat-x;
+      border:medium none;
+      width:450px !important;
+      }
+
+      .slider-wrap {
+      background-color:#F1F3F6;
+      height:368px;
+      margin:20px 0;
+      position:relative;
+      width:450px;
+      }
+      .stripNavL, .stripNavR {
+      top:324px;
+      }
+
+    </style> 
+     <p>&nbsp;</p> 
+     <div id="ctl00_ctl00_PlaceHolderMainBase_PlaceHolderMain_ctl00__ControlWrapper_RichImageField" style="display: inline;">
+      <span dir=""> <img style="border: 0px solid;" src="../../images/successful_interviewing.jpg" alt="Successful Interviewing" border="0"> </span>&nbsp; 
+     </div> 
+     <div class="column23"> 
+      <div id="ctl00_ctl00_PlaceHolderMainBase_PlaceHolderMain_ctl01__ControlWrapper_RichHtmlField" style="display: inline;"> 
+       <h3>How to Ace Your Interview</h3> 
+       <p>A great resume gets you in the door, but a great interview gets you the job. We can help you stand out in a positive, memorable way.<br><br></p> 
+      </div> 
+      <div id="accordion"> 
+       <!-- 1 --> 
+       <h3>Prepare</h3> 
+       <div> 
+        <ul> 
+         <li><a href="../research.html">Research the company</a>&nbsp;before your interview. <a href="https://ucr-csm.symplicity.com/students/" target="_blank">Log in to SCOTLink </a>and access Career Insider, CareerShift and Glassdoor for company details. </li> 
+         <li>Come to a Career Center Interview Skills Workshop. Get guidance on what to wear, what to say, which questions might be asked and more. All students are welcome. </li> 
+         <li>Browse our interview skills resources. &nbsp;You can also view slides from our <a href="../../docs/14-15%20Interview%20Skills.pdf" target="_blank">Interview Skills Workshop</a>. &nbsp; </li> 
+         <li>See a list of <a href="../../docs/inappropriatequestions.pdf" target="_blank">questions an interviewer should never ask you.</a>&nbsp; &nbsp; </li> 
+        </ul> 
+        <p><em>* For a <strong>2nd interview</strong>, please review some do's and don'ts tips&nbsp;<a href="http://www.quintcareers.com/second_interviewing-dos-donts.html" target="_blank">here</a>. &nbsp;</em></p> 
+       </div> 
+       <!-- 2 --> 
+       <h3>Practice</h3> 
+       <div> 
+        <ol> 
+         <li><strong>Practice online.</strong> <br> Use our <a href="https://ucr-csm.symplicity.com/students/" target="_blank">Mock Interview</a> program in <a href="https://ucr-csm.symplicity.com/students/" target="_blank">SCOTLink</a>&nbsp;to practice your Q &amp; A skills with mock interviews.&nbsp; </li> 
+         <li><strong>Schedule an interview</strong> critique appointment with us. <br>Call us and make an appointment. We can critique your efforts professionally. </li> 
+        </ol> 
+       </div> 
+       <!-- 3 --> 
+       <h3>On the Big Day</h3> 
+       <div> 
+        <ul> 
+         <li><strong>Arrive 10-15 minutes before your interview.</strong> Get accurate directions and know how trafﬁc will impact your travel time. </li> 
+         <li>T<strong>urn off your phone!</strong> The interviewer should have your full attention. Being distracted by calls, texts, etc. demonstrates a lack of interest in the company and the job. </li> 
+         <li><strong>Smile. Relax. Be confident.</strong> Even if you don’t feel like it! Interviewers want to connect with you as a person. Try to be yourself even if you’re nervous. </li> 
+         <li><strong>Bring extra</strong> resumes, a pen and paper, questions, a list of references, recruiter contact information and parking/emergency money. </li> 
+        </ul> 
+       </div> 
+       <!-- 4 --> 
+       <h3>Say 'Thank You'</h3> 
+       <div> 
+        <p>Follow up with a thank-you note or email within 24 hours of the interview. A personal thank-you note conveys to employers that you understand etiquette and appreciate their time and consideration. <a href="https://auth.ucr.edu/cas/login?service=https%3A%2F%2Fucr-csm.symplicity.com%2Fsso%2Fstudents%2Flogin" target="_blank">SCOTLink's Resume Builder </a>has a great thank-you-note builder. </p> 
+       </div> 
+       <!-- 5 --> 
+       <h3>Respond to an Offer</h3> 
+       <div> 
+        <p>It is the goal of the UC Riverside Career Center to support students’ career decisions and employers’ recruitment goals. In an effort to meet these goals, we have developed the following guidelines for students to consider in the job search process. We have also developed a set of <a href="../../employertools/recruitoncampus/oncampusinterviews.html">guidelines for employers</a>. </p> 
+        <p><strong>Timing for Offers and Decisions</strong></p> 
+        <p>While the UC Riverside Career Center does not require employers to provide a specific amount of time for you to consider an offer, a common standard is two weeks. For Fall 2017, if you are offered a full-time position at the end of your summer internship, we have asked that employers not require a decision until <u>October 27, 2017</u>. If you need more time to consider an offer, contact the employer. Employers are encouraged but not required to give additional time whenever possible. </p> 
+        <p><strong>Making an Informed Decision</strong></p> 
+        <p>It is best to accept or reject an offer only after careful consideration. Most offer letters will include the following: start date, salary, benefits, bonuses, and a deadline for accepting or rejecting the offer. If the compensation structure is all or partly based on commission, employers are advised to provide an accurate estimate of first year earnings. If a formal offer does not follow a verbal offer or if you would like clarification about the written terms, follow up with the employer immediately. </p> 
+        <p><strong>Exploding Offers/Excessive Pressure</strong></p> 
+        <p>The UC Riverside Career Center’s guidelines are in alignment with the National Association of Colleges and Employers <a href="http://www.naceweb.org/principles/" target="_blank">Principles of Professional Practice</a>, which suggest the two week offer period. Offer periods that are significantly shorter than two weeks or those that pressure students to make a decision on the spot are referred to as Exploding Offers, and are considered inappropriate by NACE and the UC Riverside Career Center. Common examples of exploding offers are: </p> 
+        <ul> 
+         <li>Requiring candidates to accept offers within 24-48 hours.</li> 
+         <li>Bonuses that are only available to candidates who accept immediately.</li> 
+         <li>Offering fewer location options if the candidate waits to accept.</li> 
+        </ul> 
+        <p>If you have received an exploding offer and would like assistance in navigating a conversation with your potential employer, please contact the Career Center. </p> 
+        <p><strong>Accepting or Rejecting an Offer</strong></p> 
+        <p>You should notify the employer of your decision after you have:</p> 
+        <ul> 
+         <li>Reviewed the offer,</li> 
+         <li>Negotiated salary and/or benefits, if appropriate, and</li> 
+         <li>Determined that you are going to accept or reject the offer.</li> 
+        </ul> 
+        <p>Your response should be communicated within the agreed upon time frame. If you have received other offers or are in the process of interviewing with another employer, you are advised to notify the other organizations of your decision. </p> 
+        <p><strong>Reneging on an Offer</strong></p> 
+        <p>After accepting an offer (verbally or in writing), please understand that you have agreed to work for a particular employer. Reneging (rejecting an offer after accepting it) has many consequences both for your career and for other UC Riverside students. Personally, you will likely burn a bridge with that employer, another UCR student may have missed on receiving an offer, and in a larger community sense, an employer may decide to stop recruiting at UC Riverside altogether. As such, the Career Center does not endorse this behavior. To avoid having to renege on an offer, students are advised to not accept an offer and continue interviewing until a more preferable opportunity comes along. While uncommon, the Career Center does recognize that reneging an offer is unavoidable. Should you find yourself in this situation and need guidance in your communication with an employer, please contact the Career Center. </p> 
+       </div> 
+      </div> 
+      <h3><br>Dress for Success </h3> 
+      <p>First impressions can make or break an interview. Dressing appropriately is key. Use this slide show to learn the difference between “business casual” and “business formal.” If you need additional assistance, please <a href="../../aboutus/aboutus.html">stop by the Career Center</a>. </p> 
+      <!-- Slider Starts --> 
+      <div class="slider-wrap"> 
+       <div id="slider1" class="csw"> 
+        <div class="panelContainer"> 
+         <div class="panel" title="Panel 1"> 
+          <div class="wrapper"> 
+           <div class="column2"> 
+            <div id="ctl00_ctl00_PlaceHolderMainBase_PlaceHolderMain_ctl02__ControlWrapper_RichHtmlField" style="display: inline;">
+             <img style="border: 0px solid;" src="../../images/essentialjob_slide1.jpg" alt="image 1" border="0">
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <!-- END Panel-1 --> 
+         <div class="panel" title="Panel 2"> 
+          <div class="wrapper"> 
+           <div class="column2"> 
+            <div id="ctl00_ctl00_PlaceHolderMainBase_PlaceHolderMain_ctl03__ControlWrapper_RichHtmlField" style="display: inline;">
+             <img style="border: 0px solid;" src="../../images/essentialjob_slide2.jpg" alt="image 2" border="0">
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <!-- END Panel-2 --> 
+         <div class="panel" title="Panel 3"> 
+          <div class="wrapper"> 
+           <div class="column2"> 
+            <div id="ctl00_ctl00_PlaceHolderMainBase_PlaceHolderMain_ctl04__ControlWrapper_RichHtmlField" style="display: inline;">
+             <img style="border: 0px solid;" src="../../images/essentialjob_slide3.jpg" alt="image 3" border="0">
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <!-- END Panel-3 --> 
+         <div class="panel" title="Panel 4"> 
+          <div class="wrapper"> 
+           <div class="column2"> 
+            <div id="ctl00_ctl00_PlaceHolderMainBase_PlaceHolderMain_ctl05__ControlWrapper_RichHtmlField" style="display: inline;">
+             <img style="border: 0px solid;" src="../../images/essentialjob_slide4.jpg" alt="image 4" border="0">
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <!-- END Panel-4 --> 
+         <div class="panel" title="Panel 5"> 
+          <div class="wrapper"> 
+           <div class="column2"> 
+            <div id="ctl00_ctl00_PlaceHolderMainBase_PlaceHolderMain_ctl06__ControlWrapper_RichHtmlField" style="display: inline;">
+             <img style="border: 0px solid;" src="../../images/essentialjob_slide5.jpg" alt="image 5" border="0">
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <!-- END Panel-5 --> 
+         <div class="panel" title="Panel 6"> 
+          <div class="wrapper"> 
+           <div class="column2"> 
+            <div id="ctl00_ctl00_PlaceHolderMainBase_PlaceHolderMain_ctl07__ControlWrapper_RichHtmlField" style="display: inline;">
+             <img style="border: 0px solid;" src="../../images/essentialjob_slide6.jpg" alt="image 6" border="0">
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <!-- END Panel-5 --> 
+        </div> 
+        <!-- END Panel Container --> 
+       </div> 
+       <!-- END SLIDER1 --> 
+      </div> 
+      <!-- END Slider Wrap --> 
+     </div> 
+     <div class="column3R"> 
+      <div class="scotlinkSocialIconsFlush"> 
+       <div class="scotlinkSocialIconsFlush">
+        <img class="scotLinkLogo" src="http://careers.ucr.edu/images/scotlinklogo.gif" alt="ScotLink" width="220" height="58">
+        <a title="Employer Login" href="https://ucr-csm.symplicity.com/employers/"><img src="http://careers.ucr.edu/images/employerloginbtn.png" alt="Employer Login" width="78" height="22"></a>
+        <a title="Student Login" href="http://ucr-csm.symplicity.com/sso/students"><img src="http://careers.ucr.edu/images/studentloginbtn.png" alt="Student Login" width="72" height="22"></a>
+        <a title="Alumni Login" href="https://ucr-csm.symplicity.com/students/"><img src="http://careers.ucr.edu/images/alumniloginbtn.png" alt="Alumni Login" width="70" height="22"></a> 
+        <br> 
+        <ul class="socialNetworkingLinks" style="margin-left: 5px; overflow: hidden;"> 
+         <li><a class="facebookIcon" title="Facebook" href="http://www.facebook.com/pages/Riverside-CA/UC-Riverside-Career-Center/109114256884?ref=ts" target="_blank">&nbsp;</a></li> 
+         <li><a class="linkedinIcon" title="LinkedIn" href="http://www.linkedin.com/groups?gid=88920&amp;trk" target="_blank">&nbsp;</a></li> 
+         <li><a class="twitterIcon" title="Twitter" href="http://twitter.com/ucrcareercenter" target="_blank">&nbsp;</a></li> 
+         <li><a class="youtubeIcon" title="YouTube" href="http://www.youtube.com/user/UCRCareerCenter" target="_blank">&nbsp;</a></li> 
+         <li><a class="pinterestIcon" title="Pinterest" href="http://www.pinterest.com/ucrcareercenter/" target="_blank">&nbsp;</a></li> 
+         <li><a class="instagramIcon" title="Instagram" href="http://instagram.com/ucrcareercenter/" target="_blank">&nbsp;</a></li> 
+        </ul> 
+       </div> 
+      </div> 
+      <div id="ctl00_ctl00_PlaceHolderMainBase_PlaceHolderMain_ctl02__ControlWrapper_RichHtmlField" style="display: inline;"> 
+       <ul class="big_links fullWidth"> 
+        <li><a href="../../careerfairsworkshops/careerfairsworkshops.html"> <img style="width: 138px; height: 46px; border: 1px solid;" src="../../images/recruitoncampus_calendar_banner.jpg" alt="Job Listings" height="43" border="1"><br><strong>Attend A Workshop!</strong>See the latest events. </a></li> 
+        <li><a href="https://ucr-csm.symplicity.com/sso/students/index.php?s=resource&amp;ss=video_interviews&amp;mode=list&amp;tab=recommended" target="_blank"> <img src="../../images/workstudyprogram.gif.jpg" alt="Works Study Program" width="132" height="48"><br><strong>Mock Interview&nbsp;</strong>Practice your interview skills&nbsp;online. </a></li> 
+        <li><a href="../research.html"> <img style="border: 1px solid;" src="../../images/requestprogram.gif" alt="insider information" border="1"><br><strong>Company Research</strong>Learn the facts before the interview. </a></li> 
+       </ul> 
+      </div> 
+     </div> 
+     <script type="text/javascript" src="../../scripts/jquery.easing.1.2.js"></script> 
+     <script type="text/javascript" src="../../scripts/jquery.easing-compatibility.1.2.js"></script> 
+     <script type="text/javascript" src="../../scripts/jquery.coda-slider.1.1.1.js"></script> 
+     <script type="text/javascript">// 
+$(function() {
+      $( "#accordion" ).accordion({
+      heightStyle: "content",
+      collapsible: true,
+      active: false
+      });
+      });
+$(function() {
+      $('div#slider1').codaSlider();
+      });
+// </script> 
+    </div>
+    <br class="clear">
+   </div> 
+  </div>
+  <br class="clear">
+  <div class="footerwrapper"> 
+   <h2>More Information</h2> 
+   <div class="pagewrapper"> 
+    <div class="prefooter"> 
+     <div class="column49"> 
+      <h3>General Campus Information</h3> 
+      <address><span class="vcard"><strong><span class="fn org">University of California, Riverside</span></strong><br><span class="adr"><span class="street-address">900 University Ave.</span><br><span class="locality">Riverside</span>, <span class="region">CA</span>&nbsp;<span class="postal-code">92521</span><br></span> Tel: <span class="tel">(951) 827-1012</span><br><br></span></address> 
+      <ul class="footer_links"> 
+       <li><a href="http://library.ucr.edu/">UCR Libraries</a></li> 
+       <li><a href="http://campusstatus.ucr.edu/">Campus Status</a></li> 
+       <li><a href="http://campusstore.ucr.edu/">Campus Store</a></li> 
+       <li><a href="http://www.ucr.edu/employment.html">Career Opportunities</a></li> 
+       <li><a href="http://diversity.ucr.edu/">Diversity</a></li> 
+       <li><a href="http://www.ucr.edu/about/directions.html">Maps and Directions</a></li> 
+       <li><a href="http://admissions.ucr.edu/VisitUCR">Visit UCR</a></li> 
+      </ul> 
+     </div> 
+     <div class="column49"> 
+      <h3>Department Information</h3> 
+      <table border="0" cellpadding="0" cellspacing="0" width="100%"> 
+       <tbody>
+        <tr> 
+         <td valign="top"> 
+          <div> 
+           <address><strong>Career Center</strong><br><a href="http://campusmap.ucr.edu/?loc=SURGE" title="Campus Map">Career Center Plaza</a><br><br> Tel: (951) 827-3631<br> Fax: (951) 827-2447<br> Student Questions: <a href="mailto:careercounseling@ucr.edu">careercounseling@ucr.edu</a><br> Employer Questions: <a href="mailto:careerrecruiting@ucr.edu">careerrecruiting@ucr.edu</a></address> 
+          </div> </td> 
+        </tr> 
+       </tbody>
+      </table> 
+     </div> 
+     <div class="column49R"> 
+      <h3>Related Links</h3> 
+      <ul> 
+       <li><a href="http://agsm.ucr.edu/career_services/">AGSM MBA Career Services</a></li> 
+       <li><a href="http://finaid.ucr.edu/">Financial Aid</a></li> 
+       <li><a href="http://vcsa.ucr.edu/">Student Affairs</a></li> 
+       <li><a href="http://hr.ucr.edu/">Human Resources</a></li> 
+      </ul> 
+     </div>
+     <br class="clear">
+    </div> 
+    <div id="nav_footer"> 
+     <h3 class="accessibility">Campuswide Navigation</h3> 
+     <ul> 
+      <li><a id="nav_footer_home" href="http://www.ucr.edu/"><span>Home</span></a></li> 
+      <li><a id="nav_footer_about_ucr" href="http://www.ucr.edu/about/"><span>About UCR</span></a></li> 
+      <li><a id="nav_footer_academics" href="http://www.ucr.edu/academics/"><span>Academics</span></a></li> 
+      <li><a id="nav_footer_admissions" href="http://admissions.ucr.edu"><span>Admissions</span></a></li> 
+      <li><a id="nav_footer_athletics" href="http://www.ucr.edu/athletics/"><span>Athletics</span></a></li> 
+      <li><a id="nav_footer_happenings" href="http://www.ucr.edu/happenings/"><span>Happenings</span></a></li> 
+      <li><a id="nav_footer_research" href="http://www.ucr.edu/research/"><span>Research</span></a></li> 
+      <li><a id="nav_footer_resources" href="http://www.ucr.edu/resources/"><span>Campus Resources</span></a></li> 
+      <li><a id="nav_footer_giving" href="http://www.ucr.edu/giving/"><span>Giving to UCR</span></a></li> 
+     </ul>
+     <br>
+     <div class="row disclaimer"> 
+      <div class="container">
+       <a name="msg"> 
+        <div class="disclaimer" style="color:#000000; text-align: left;">
+         <strong>DISCLAIMER:</strong> This information is accurate and reliable at time of posting, but may change without notice. Please contact the department for the most up-to-date information. 
+        </div></a>
+      </div> 
+     </div> 
+    </div> 
+    <h3 class="accessibility">Footer</h3> 
+    <div id="footer"> 
+     <ul> 
+      <li><a href="http://www.ucr.edu/privacy.html">Privacy Policy</a></li> 
+      <li><a href="http://www.ucr.edu/terms.html">Terms and Conditions</a></li> 
+      <li>© <script language="JavaScript" type="text/javascript">
+					  	var now = new Date();
+						var currentYear = now.getFullYear();
+						document.write(currentYear);
+					</script> Regents of the University of California</li> 
+      <li> <a href="http://cms-prod-1.ucr.edu/10?skin=oucampus&amp;account=D01287&amp;site=vcsa-careercenter&amp;action=de&amp;path=/essentialjobsearch/successfulinterviews/successfulinterviews.pcf" target="_top">Last Modified: 4/26/18</a> </li> 
+      <li><a id="disclaimer" href="#msg">Disclaimer</a></li> 
+     </ul> 
+    </div> 
+   </div> 
+  </div>  
  </body>
 </html>

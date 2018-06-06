@@ -1,362 +1,288 @@
-<!doctype html>
-<html class="no-js desktop" lang="en-US">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
  <head> 
-  <meta charset="utf-8"> 
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-  <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0"> 
-  <title>Student Support | UCLA</title> 
-  <meta name="description" content="UCLA advances knowledge, addresses pressing societal needs and creates a university enriched by diverse perspectives where all individuals can flourish."> 
-  <meta name="keywords" content="UCLA, University of California Los Angeles, Bruins, equity, diversity, inclusion, arts, art, college, institution, architecture, engineering, hyperloop, romela, brain, philanthropy, STEM, anderson, law, magazine, alumni, community, optimist, optimists, optimism"> 
-  <meta name="google-site-verification" content="QS5gayPg38zC46YsAx4a9c3v4qTBkn-R69g90pQgpB0"> 
-  <meta property="twitter:account_id" content="18918483"> 
-  <link rel="shortcut icon" href="/img/favicon.ico"> 
-  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png"> 
-  <link rel="stylesheet" href="/css/main.css"> 
-  <link rel="stylesheet" href="/css/responsive.css"> 
-  <link rel="stylesheet" href="/css/print.css" media="print"> 
-  <!--LET THERE BE TAKE OVER CSS--> 
-  <script src="/js/modernizr.js"></script> 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> 
-  <script src="/js/analytics.js"></script> 
-  <!--[if lte IE 6]><script src="/js/ie6/ie6-upgrade.min.js"></script><![endif]--> 
-  <script type="application/ld+json">
-	{ "@context": "http://schema.org", "@type": "Organization", "url": "http://www.ucla.edu/", "logo": "http://www.ucla.edu/img/ucla-logotype-google.jpg" }
-	</script> 
-  <!--IMAGE CACHE--> 
- </head>
- <body>
-  <a id="feedback" href="https://www.research.net/r/GatewayWebsiteFeedback"></a>  
-  <div id="ie6Warning"></div> 
-  <!-- Page Wrap --> 
-  <div id="page-wrap"> 
-   <!-- Skip Nav --> 
-   <div id="skip-nav"> 
-    <a href="#audience-nav">Skip to Navigation</a> 
-    <a href="#searchbox">Skip to Search</a> 
-    <a href="#container">Skip to Main Content</a> 
-    <a href="#footer">Skip to Footer Links</a> 
+  <title>MyUCR | Login</title> 
+  <style type="text/css">
+        .login-button {
+            -webkit-appearance: none;
+            -moz-appearance: button;
+            /*appearance: button;*/
+
+            text-decoration: none;
+            color: #fff;
+            background-color: #0275d8;
+            border-color: #0275d8;
+
+            display: inline-block;
+            font-weight: 400;
+            line-height: 1.25;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            border: 1px solid transparent;
+            padding: .5rem 1rem;
+            font-size: 1rem;
+            border-radius: .25rem;
+        }
+
+        .login-button:hover {
+            color: #fff;
+            text-decoration: none;
+            background-color: #025aa5;
+            border-color: #01549b;
+        }
+
+        .login-button:active {
+            color: #fff;
+            text-decoration: none;
+            background-color: #014682;
+            border-color: #01315a;
+        }
+
+        .login-button:focus {
+            color: #fff;
+            text-decoration: none;
+            outline: thin dotted #333;
+            outline: 5px auto -webkit-focus-ring-color;
+            outline-offset: -2px;
+        }
+        .spotlight-blue{
+            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+0,2989d8+50,207cca+51,7db9e8+100;Blue+Gloss+Default */
+            background: #3b679e; /* Old browsers */
+            background: -moz-linear-gradient(top,  #3b679e 0%, #2b88d9 50%, #207cca 51%, #7db9e8 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(top,  #3b679e 0%,#2b88d9 50%,#207cca 51%,#7db9e8 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to bottom,  #3b679e 0%,#2b88d9 50%,#207cca 51%,#7db9e8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3b679e', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
+
+        }
+        .spotlight-gold{
+            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f9c667+0,f79621+100;Orange+3D+%234 */
+            background: #f9c667; /* Old browsers */
+            background: -moz-linear-gradient(top,  #f9c667 0%, #f79621 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(top,  #f9c667 0%,#f79621 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to bottom,  #f9c667 0%,#f79621 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9c667', endColorstr='#f79621',GradientType=0 ); /* IE6-9 */
+        }
+        .spotlight-green{
+            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#b0d4e3+0,88bacf+100;Grey+3D+%233 */
+            background: #7DBDBA; /* Old browsers */
+            background: -moz-linear-gradient(top,  #7DBDBA 0%, #88bacf 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(top,  #7DBDBA 0%,#88bacf 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to bottom,  #7DBDBA 0%,#88bacf 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7DBDBA', endColorstr='#88bacf',GradientType=0 ); /* IE6-9 */            
+        }
+        .spotlight-blue, .spotlight-gold, .spotlight-green{
+            width:300px;
+            min-height:85px;
+            margin-bottom:25px;
+            display:block;
+            float:right;
+        }
+        .spotlight-gold span, .spotlight-blue span, .spotlight-green span{
+            font-size:2em;      
+            color:#fff;
+            height:auto;
+            display:none;
+        }
+        .spotlight-stretch{
+            height:100%;
+            width:100%;
+        }
+                
+        .float-right{
+            float:right;
+        }
+        .float-left{
+            float:left;
+        }
+        .no-mtop{
+            margin-top:0!important;
+        }
+        .no-border-btm{
+            border-bottom:none !important;
+        }
+       
+    </style> 
+  <title>
+	MyUCR
+</title> 
+  <!-- CSS Links --> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="CACHE-CONTROL" content="NO-CACHE">
+  <link rel="shortcut icon" href="Images/icons/favicon.ico">
+  <link rel="stylesheet" href="Styles/blueprint/screen.css" type="text/css" media="screen, projection">
+  <link rel="stylesheet" href="Styles/blueprint/print.css" type="text/css" media="print">
+  <link rel="stylesheet" href="Styles/template/templateLayout.css" type="text/css" media="screen, projection">
+  <link rel="stylesheet" href="Styles/template/templateContent.css" type="text/css" media="screen, projection">
+  <link rel="Stylesheet" href="Styles/New/StyleSheet.css" type="text/css"> 
+  <!--[if IE]><link rel="stylesheet" href="css/blueprint/lib/ie.css" type="text/css" media="screen, projection" /><![endif]--> 
+  <link href="styles/admissions-web/typographyBluePrint.min.css" rel="stylesheet">
+  <link href="styles/admissions-web/960.min.css" rel="stylesheet">
+  <link href="styles/admissions-web/nav.min.css" rel="stylesheet">
+  <link href="Styles/Old/local.css" rel="stylesheet">
+  <link href="styles/admissions-web/genericBody.min.css" rel="stylesheet">
+  <link href="styles/admissions-web/iconSections.min.css" rel="stylesheet">
+  <link href="styles/admissions-web/footer.min.css" rel="stylesheet"> 
+  <script src="Scripts/jquery-1.3.2.min.js" type="text/javascript"></script> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script> 
+  <!-- Below is used to link to reserouces in external JS files --> 
+  <script src="https://vcsaweb.ucr.edu/admissions/Scripts/app.min.js?39d273" type="text/javascript"></script> 
+  <script src="Scripts/functionCalls.js" type="text/javascript"></script> 
+  <script src="Scripts/password-strength.js" type="text/javascript"></script> 
+  <style type="text/css">
+        #headerWrapper{
+            margin-top:0px !important;
+        }
+        .mastHeadTop{
+            background: url('images/core/header.jpg');
+            background-position:center;
+            background-size:cover;
+            min-height:100px;
+        }
+        .myucr-logo{
+            margin-top:30px;
+            min-height:70px;
+        }
+        .ucr-logo{
+            margin-top:30px;
+        }
+    </style>
+ </head> 
+ <body> 
+  <form name="aspnetForm" method="post" action="./" id="aspnetForm"> 
+   <div> 
+    <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTk0Njk0ODk2NWRkHvrIKwjlH5ne0iVafJHme/iagtI1UrHMg3KaDdGG7Tw="> 
    </div> 
-   <!-- End Skip Nav --> 
-   <!-- Top Bar --> 
-   <div id="top-bar"> 
-    <div id="top-bar-content"> 
-     <div id="weather"></div> 
-     <!-- Audience Nav --> 
-     <div id="top-bar-nav" role="navigation">
-      <ul id="audience-nav"> 
-       <li><a href="/students/prospective-students">Prospective Students</a></li>
-       <li><a href="/students/current-students">Current Students</a></li>
-       <li><a href="/faculty">Faculty</a></li>
-       <li><a href="https://campusservices.ucla.edu/">Staff</a></li>
-       <li><a href="/alumni">Alumni</a></li>
-       <li><a href="/parents-and-families">Parents &amp; Families</a></li> 
-      </ul>
-     </div> 
-     <!-- End Audience Nav --> 
-    </div> 
+   <div> 
+    <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="C2EE9ABB"> 
    </div> 
-   <!-- End Top Bar --> 
-   <span id="print-logo"><img src="/img/logo-print.gif" alt="UCLA logo"></span> 
-   <!-- Header --> 
-   <div id="header" role="banner"> 
-    <!-- Header Content --> 
-    <div id="header-content"> 
-     <!-- UCLA --> 
-     <h1 id="logo"><a href="/">UCLA</a></h1> 
-     <!-- Responsive Buttons --> 
-     <div id="mobile-buttons" role="navigation"> 
-      <a href="http://m.ucla.edu/?utm_source=ucla.edu%2Bresponsive%2Bhomepage&amp;utm_medium=Apps%2Bbutton&amp;utm_campaign=UCLA%2Bmobile%2Breferral%2Bfrom%2Bgateway" id="mobile">Apps<span></span></a> 
-      <a href="#" id="nav-control">Menu<span></span></a> 
-     </div> 
-     <div id="header-nav"> 
-      <!-- Search Box --> 
-      <div id="searchbox"> 
-       <form id="searchform" name="searchform" role="search" method="get" action="#"> 
-        <script>
-			var adaSearchFix = function() {
-				$('img.gsc-branding-img').attr("alt", "Google Custom Search Branding");
-				$('input.gsc-search-button').attr('alt', "Google Custom Search Button");
-				$( '<label for="gsc-i-id1" class="ada-hidden">Search ucla.edu</label>' ).insertBefore( "input.gsc-input" );
-			};
-			window.__gcse = {
-				callback: adaSearchFix
-			};
-			(function() {
-   			var cx = '012032391866852527378:_8-ptelfefk';
-   			var gcse = document.createElement('script');
-				gcse.type = 'text/javascript';
-				gcse.async = true;
-				gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-				var s = document.getElementsByTagName('script')[0];
-				s.parentNode.insertBefore(gcse, s);
-			})();
-		</script> 
-        <gcse:searchbox-only enableautocomplete="false" resultsurl="http://www.ucla.edu/search"></gcse:searchbox-only> 
-       </form> 
-      </div> 
-      <!-- Main Nav --> 
-      <div id="main-nav-wrapper" role="navigation">
-       <ul id="main-nav">
-        <li><a href="/about" class="dropdown-link">ABOUT</a>
-         <ul class="dropdown-wrapper" role="region" aria-live="polite"> 
-          <li>
-           <ul class="nav-column">
-            <li><a href="/about/">Overview</a></li>
-            <li><a href="/about/chancellor">Chancellor</a></li>
-            <li><a href="/about/leadership">Leadership</a></li>
-           </ul>
-           <ul class="nav-column">
-            <li><a href="/about/mission-and-values">Mission &amp; Values</a></li>
-            <li><a href="/about/facts-and-figures">Facts &amp; Figures</a></li>
-            <li><a href="/about/awards-and-honors">Awards &amp; Honors</a></li>
-           </ul>
-           <ul class="nav-column">
-            <li><a href="/about/history">History</a></li>
-            <li><a href="/about/impact-and-accomplishments">Impact &amp; Accomplishments</a></li>
-            <li><a href="/about/iconic-and-influential-alumni">Iconic &amp; Influential Alumni</a></li>
-           </ul>
-           <ul class="nav-column">
-            <li><a href="/about/rankings">Rankings</a></li>
-            <li><a href="/about/centers-and-institutes">Centers &amp; Institutes</a></li>
-            <li><a href="/about/careers">Careers</a></li>
-           </ul><a href="" class="close">Close (X)</a> </li> 
-         </ul> </li> 
-        <li><a href="/academics" class="dropdown-link">ACADEMICS</a>
-         <ul class="dropdown-wrapper" role="region" aria-live="polite"> 
-          <li>
-           <ul class="nav-column">
-            <li><a href="/academics/">Overview</a></li>
-            <li><a href="/academics/undergraduate-education">Undergraduate Education</a></li>
-            <li><a href="/academics/graduate-and-professional-education">Graduate &amp; Professional Education</a></li>
-           </ul>
-           <ul class="nav-column">
-            <li><a href="/academics/continuing-education">Continuing Education</a></li>
-            <li><a href="/academics/academic-opportunities">Academic Opportunities</a></li>
-            <li><a href="/academics/faculty">Faculty</a></li>
-           </ul>
-           <ul class="nav-column">
-            <li><a href="/academics/departments-and-programs">Departments &amp; Programs</a></li>
-            <li><a href="/academics/libraries">Libraries</a></li>
-           </ul><a href="" class="close">Close (X)</a> </li> 
-         </ul> </li> 
-        <li><a href="/admission" class="dropdown-link">ADMISSION</a>
-         <ul class="dropdown-wrapper" role="region" aria-live="polite"> 
-          <li>
-           <ul class="nav-column">
-            <li><a href="/admission/">Admission Overview</a></li>
-            <li><a href="/admission/undergraduate-admission">Undergraduate Admission</a></li>
-            <li><a href="/admission/graduate-admission">Graduate Admission</a></li>
-           </ul>
-           <ul class="nav-column">
-            <li><a href="/admission/extension-enrollment">Extension Enrollment</a></li>
-            <li><a href="/admission/international-admission">International Admission</a></li>
-            <li><a href="/admission/transfer-admission">Transfer Admission</a></li>
-           </ul>
-           <ul class="nav-column">
-            <li><a href="/admission/affordability">Affordability &amp; Financial Aid</a></li>
-           </ul><a href="" class="close">Close (X)</a> </li> 
-         </ul> </li> 
-        <li><a href="/ucla-in-the-community" class="dropdown-link">UCLA IN THE COMMUNITY</a>
-         <ul class="dropdown-wrapper" role="region" aria-live="polite"> 
-          <li>
-           <ul class="nav-column">
-            <li><a href="/ucla-in-the-community/">Overview</a></li>
-            <li><a href="/ucla-in-the-community/community-programs-and-partnerships">Community Programs &amp; Partnerships</a></li>
-            <li><a href="/ucla-in-the-community/k-12-education-programs-and-resources">K-12 Education Programs &amp; Resources</a></li>
-           </ul>
-           <ul class="nav-column">
-            <li><a href="/ucla-in-the-community/academic-programs">Academic Programs</a></li>
-            <li><a href="/ucla-in-the-community/health-care">Health Care</a></li>
-            <li><a href="/ucla-in-the-community/arts-and-culture">Arts &amp; Culture</a></li>
-           </ul><a href="" class="close">Close (X)</a> </li> 
-         </ul> </li> 
-        <li><a href="/the-arts" class="dropdown-link">THE ARTS</a>
-         <ul class="dropdown-wrapper" role="region" aria-live="polite"> 
-          <li>
-           <ul class="nav-column">
-            <li><a href="/the-arts/">Arts Overview</a></li>
-            <li><a href="/the-arts/school-of-the-arts-and-architecture">School of the Arts and Architecture</a></li>
-            <li><a href="/the-arts/school-of-music">Herb Alpert School of Music</a></li>
-           </ul>
-           <ul class="nav-column">
-            <li><a href="/the-arts/school-of-theater-film-and-television">School of Theater, Film and Television</a></li>
-            <li><a href="/the-arts/performing-arts">Performing Arts</a></li>
-            <li><a href="/the-arts/museums">Museums</a></li>
-           </ul>
-           <ul class="nav-column">
-            <li><a href="/the-arts/arts-in-the-community">Arts In The Community</a></li>
-           </ul><a href="" class="close">Close (X)</a> </li> 
-         </ul> </li> 
-        <li><a href="/campus-life" class="active dropdown-link">CAMPUS LIFE</a>
-         <ul class="dropdown-wrapper" role="region" aria-live="polite"> 
-          <li>
-           <ul class="nav-column">
-            <li><a href="/campus-life/">Overview</a></li>
-            <li><a href="/campus-life/values">Values</a></li>
-            <li><a href="/campus-life/housing-and-dining">Housing &amp; Dining</a></li>
-           </ul>
-           <ul class="nav-column">
-            <li><a href="/campus-life/la-lifestyle">LA Lifestyle</a></li>
-            <li><a href="/campus-life/health-and-safety">Health &amp; Safety</a></li>
-            <li><a href="/campus-life/clubs-organizations-and-recreation">Clubs, Organizations &amp; Recreation</a></li>
-           </ul>
-           <ul class="nav-column">
-            <li><a href="/campus-life/student-support">Student Support</a></li>
-           </ul><a href="" class="close">Close (X)</a> </li> 
-         </ul> </li> 
-        <li><a href="/health-system" class="dropdown-link">HEALTH SYSTEM</a>
-         <ul class="dropdown-wrapper" role="region" aria-live="polite"> 
-          <li>
-           <ul class="nav-column">
-            <li><a href="/health-system/">Overview</a></li>
-            <li><a href="/health-system/for-patients">For Patients</a></li>
-            <li><a href="/health-system/for-healthcare-professionals">For Healthcare Professionals</a></li>
-           </ul>
-           <ul class="nav-column">
-            <li><a href="/health-system/education">Education</a></li>
-            <li><a href="/health-system/continuing-education">Continuing Education</a></li>
-            <li><a href="/health-system/giving-back-to-ucla">Giving Back to UCLA</a></li>
-           </ul><a href="" class="close">Close (X)</a> </li> 
-         </ul> </li> 
-        <li><a href="/research" class="dropdown-link">RESEARCH</a>
-         <ul class="dropdown-wrapper" role="region" aria-live="polite"> 
-          <li>
-           <ul class="nav-column">
-            <li><a href="/research/">Overview</a></li>
-            <li><a href="/research/research-across-campus">Research Across Campus</a></li>
-            <li><a href="/research/undergraduate-research">Undergraduate Research</a></li>
-           </ul>
-           <ul class="nav-column">
-            <li><a href="/research/graduate-research">Graduate Research</a></li>
-            <li><a href="/research/entrepreneurship">Research and Entrepreneurship</a></li>
-            <li><a href="/research/libraries">Libraries</a></li>
-           </ul>
-           <ul class="nav-column">
-            <li><a href="/research/administration-overview">Administration Overview</a></li>
-           </ul><a href="" class="close">Close (X)</a> </li> 
-         </ul> </li> 
-        <li><a href="/athletics">ATHLETICS</a></li> 
-       </ul>
-       <div id="dropdown-spacer"></div>
-      </div> 
-      <!-- Callout Nav --> 
-      <ul id="callout-nav"> 
-       <li><a href="/visit">Visit</a></li> 
-       <li><a href="/apply">Apply</a></li> 
-       <li><a href="http://giveto.ucla.edu/?utm_campaign=UCLA-Gateway&amp;utm_source=Gateway-Header&amp;utm_medium=website&amp;utm_content=Give+Now+Button">Give</a></li> 
-      </ul> 
-     </div> 
-    </div> 
-    <!-- End Header Content --> 
-   </div> 
-   <!-- End Header --> 
-   <!-- Container --> 
-   <div id="container"> 
-    <!-- Banner & Nav --> 
-    <div id="nav-image-holder"> 
-     <img src="/img/banners/campus-life/student-support.jpg" id="hero-image" alt="Outside of historic Royce Hall"> 
-     <ul id="secondary-nav" role="navigation"> 
-      <li><a href="/campus-life/">OVERVIEW</a></li>
-      <li><a href="/campus-life/values">VALUES</a></li>
-      <li><a href="/campus-life/housing-and-dining">HOUSING &amp; DINING</a></li>
-      <li><a href="/campus-life/la-lifestyle">LA LIFESTYLE</a></li>
-      <li><a href="/campus-life/health-and-safety">HEALTH &amp; SAFETY</a></li>
-      <li><a href="/campus-life/clubs-organizations-and-recreation">CLUBS, ORGANIZATIONS &amp; RECREATION</a></li>
-      <li><a href="/campus-life/student-support" class="active">STUDENT SUPPORT</a></li> 
-     </ul> 
-    </div> 
-    <!-- End Banner & Nav --> 
-    <!-- Main --> 
-    <div id="main-content" role="main"> 
-     <h2 id="page-header">Student Support</h2> 
-     <!-- Section --> 
-     <div class="section clear-fix"> 
-      <div class="left-column"> 
-       <span class="callout callout-headline">At UCLA, we ensure the success of our students through a variety of support centers and programs. </span> 
-       <p>The <a href="http://career.ucla.edu">UCLA Career Center</a> provides comprehensive services and resources to aid students, alumni and employers. From the first day of freshman year through every level of graduate study, the center helps students unify their academic and career goals. Using your desired career outcomes as a guide, we help you customize your course selection and find mentorship and internship opportunities. And even as alumni, our career center will help you transition from one career to another. Because once you're a Bruin, you're always a Bruin.</p> 
-       <p>Our incoming student community exceeds 13,000 undergraduates and graduates every year, and we offer an array of support services to ease the transition to UCLA. For international students, the <a href="http://www.internationalcenter.ucla.edu/">Dashew Center</a> provides a wide variety of services, including assistance with immigration regulations, neighborhood orientation and programs in English conversation. For freshmen and transfer students, our <a href="http://www.newstudents.ucla.edu">New Student and Transition Programs</a> offer orientation programs and the College Summer Institute.</p> 
-       <img src="/img/content-images/stats-campus-life-support.gif" class="offset-left" alt="At UCLA, you're not alone—-even when you're far from home."> 
-      </div> 
-      <div class="right-column"> 
-       <img src="/img/content-images/campus-life-support.jpg" class="offset-right" alt="Enjoying a picnic at the Sunset Canyon Recreation Center"> 
-      </div> 
-     </div> 
-     <!-- End section --> 
-    </div> 
-    <!-- End Main --> 
-   </div> 
-   <!-- End Container --> 
-   <div id="footer-push"></div> 
-  </div> 
-  <!-- End Page Wrap --> 
-  <!-- social media --> 
-  <div id="social-media"> 
-   <a href="http://www.facebook.com/uclabruins" class="facebook"><span>UCLA on Facebook</span></a> 
-   <a href="http://twitter.com/ucla" class="twitter"><span>UCLA on Twitter</span></a> 
-   <a href="http://www.instagram.com/ucla" class="instagram"><span>UCLA on Instagram</span></a> 
-   <a href="https://www.snapchat.com/add/uclaofficial" class="snapchat"><span>UCLA on Snapchat</span></a> 
-   <a href="https://www.linkedin.com/company/ucla" class="linkedin"><span>UCLA on LinkedIn</span></a> 
-   <a href="https://www.youtube.com/user/UCLA" class="youtube"><span>UCLA on YouTube</span></a> 
-  </div> 
-  <!-- Footer --> 
-  <div id="footer" class="footer"> 
-   <div id="footer-content"> 
-    <div class="footer-wrapper"> 
-     <div class="other-links"> 
-      <div class="wrapper"> 
-       <div class="row-fluid"> 
-        <div class="span-2"> 
-         <a class="ucla-logo" href="/"> <p class="ucla-logo-white"><span class="ada-hidden">UCLA.edu Homepage</span></p> </a> 
+   <div id="headerWrapper" class="mastHeadTop"> 
+    <div class="container_16"> 
+     <div id="masthead" class="clearfix"> 
+      <div class="grid_16"> 
+       <div class=""> 
+        <div class="grid_8 alpha "> 
+         <img class="myucr-logo" src="images/core/logo-myucr.gif" alt="MyUCR"> 
         </div> 
-        <div class="span-2 footer-nav"> 
-         <em class="column-header">Information</em> 
-         <ul class="footer-nav-links"> 
-          <li> <a href="/about/careers" class="text-link"> <span>Careers</span> </a> </li> 
-          <li> <a href="http://www.directory.ucla.edu/" class="text-link"> <span>Directory</span> </a> </li> 
-          <li> <a href="/contact" class="text-link"> <span>Contact</span> </a> </li> 
-          <li> <a href="http://www.registrar.ucla.edu/Calendars/Overview" class="text-link"> <span>Academic Calendar</span> </a> </li> 
-          <li> <a href="/maps-directions-parking/" class="text-link"> <span>Maps, Directions</span> </a> </li> 
-          <li> <a href="https://main.transportation.ucla.edu/campus-parking" class="text-link"> <span>Parking &amp; Transportation</span> </a> </li> 
-          <li> <a href="https://www.emergency.ucla.edu/" class="text-link"> <span>Emergency</span> </a> </li> 
-         </ul> 
-        </div> 
-        <div class="span-2 get-involved"> 
-         <em class="column-header">Campus Values</em> 
-         <ul class="get-involved-links"> 
-          <li> <a href="https://equity.ucla.edu/" class="text-link"> <span>Equity, Diversity &amp; Inclusion</span> </a> </li> 
-          <li> <a href="/environment-and-sustainability" class="text-link"> <span>Environment &amp; Sustainability</span> </a> </li> 
-          <li> <a href="http://www.truebruin.ucla.edu/" class="text-link"> <span>True Bruin Statement</span> </a> </li> 
-          <li> <a href="http://volunteer.ucla.edu/" class="text-link"> <span>Volunteerism</span> </a> </li> 
-         </ul> 
-        </div> 
-        <div class="span-2 stay-informed"> 
-         <em class="column-header">Event Venues</em> 
-         <ul class="stay-informed-links"> 
-          <li> <a href="http://luskinconferencecenter.ucla.edu" class="text-link"> <span>Luskin Conference Center</span> </a> </li> 
-          <li> <a href="https://www.events.ucla.edu/" class="text-link"> <span>Event Planning</span> </a> </li> 
-          <li> <a href="http://uclaevents.com/filming-and-photography/" class="text-link"> <span>Film Production</span> </a> </li> 
-         </ul> 
+        <div class="grid_8 omega"> 
+         <img class="ucr-logo" src="images/core/logo.png" alt="UCR" style="float:right;"> 
         </div> 
        </div> 
       </div> 
      </div> 
-     <div class="legal"> 
-      <div class="wrapper"> 
-       <span class="copyright">©2018 Regents of the <a href="http://www.universityofcalifornia.edu">University of California</a></span> 
-       <span class="terms"><a href="/terms-of-use">Terms of Use</a></span> 
-       <span><a href="/accessibility">Accessibility</a></span> 
+     <!-- end Header Wrapper --> 
+    </div> 
+   </div> 
+   <div id="mainContent"> 
+    <div id="page-body" class="container full_height" style="border-bottom:none;"> 
+     <div id="ctl00_BodyPlaceholder_pnlOpen"> 
+      <div class="container_16 clearfix"> 
+       <div class="grid_16"> 
+        <div class="grid_10 alpha"> 
+         <span id="ctl00_BodyPlaceholder_lblLoginButton"><p>If you have your NetID and UCR password, <a href="cas.aspx" class="button login-button">Log In</a> to your MyUCR account to see your official admission status. <a href="https://ldap.ucr.edu/ldap/passwd/">Forgot your password</a>? </p></span> 
+         <!--p><a href="https://ldap.ucr.edu/ldap/passwd/">Forgot your password</a>?</p--> 
+         <p>If you applied for admission but have not created a <strong>MyUCR</strong> password, please locate the email sent to you from UC Riverside Undergraduate Admissions that contained log in instructions and a link to create a password. If you have already tried to create a password using that link but were unsuccessful, you will need to contact Undergraduate Admissions to obtain a new link.</p> 
+         <p> If you cannot locate the email, please contact the Office of Undergraduate Admissions at <a href="Tel:1-951-827-3411">(951) 827-3411</a> or <a href="mailto:admissions@ucr.edu">admissions@ucr.edu</a>. </p> 
+         <p>If you have not yet applied to UC Riverside, visit the Admission <a href="http://admissions.ucr.edu">website</a> to learn more about why UC Riverside is right for you.</p> 
+         <p>Get up close and personal with UC Riverside - <a href="http://visit.ucr.edu">Schedule</a> a tour with a UCR student as your guide, or take a virtual tour!</p> 
+         <p>Forgot your username (NetID) or don’t have one? Please contact the office of Undergraduate Admissions at <a href="Tel:1-951-827-3411">951-827-3411</a>.</p> 
+         <p><i>Note: For MyUCR to function correctly, please use a current version of <b>Internet Explorer</b> or <b>Firefox</b> web browser. Also, please make sure Javascript is enabled in your browser.</i></p> 
+        </div> 
+        <div class="grid_6 omega"> 
+         <div class="spotlight no-border-btm"> 
+          <a href="http://admissions.ucr.edu/about-ucr/index.html#rankings" target="_blank"> <img alt="Admissions Notifications" class="" src="images/core/spotlight/spotlight-1.jpg"> </a> 
+         </div> 
+         <div class="spotlight no-border-btm"> 
+          <a href="http://admissions.ucr.edu" target="_blank"> <img alt="UC Riverside" class="" src="images/core/spotlight/spotlight-2.jpg"> </a> 
+         </div> 
+         <div class="spotlight no-border-btm"> 
+          <a href="http://visit.ucr.edu" target="_blank"> <img alt="UC Riverside Virtual Tours" class="" src="images/core/spotlight/spotlight-3.jpg"> </a> 
+         </div> 
+        </div> 
+       </div> 
       </div> 
      </div> 
     </div> 
    </div> 
-  </div> 
-  <!-- End Footer --> 
-  <!-- Scripts --> 
-  <script src="/js/respond.js"></script> 
-  <script src="/js/plugins.js"></script> 
-  <script src="/js/global.js"></script> 
-  <script src="/js/responsive.js"></script> 
-  <script src="/js/search.js"></script> 
-  <script src="/js/weather.js"></script>   
+   <div class="footerwrapper"> 
+    <div class="container_16"> 
+     <div class="prefooter alt-1-1-3 clearfix"> 
+      <div class="grid_5"> 
+       <h3> General Campus Information</h3> 
+       <address> <span class="vcard"><strong><span class="fn org">University of California, Riverside</span></strong><br> <span class="adr"><span class="street-address">900 University Ave.</span><br> <span class="locality">Riverside</span>, <span class="region">CA</span> <span class="postal-code"> 92521</span><br> </span>Tel: <span class="tel">(951) 827-1012</span> </span> </address> 
+       <ul class="footer_links"> 
+        <li><a href="http://library.ucr.edu/">UCR Libraries</a></li> 
+        <li><a href="http://campusstatus.ucr.edu/">Campus Status</a></li> 
+        <li><a href="http://campusstore.ucr.edu/">Campus Store</a></li> 
+        <li><a href="http://www.ucr.edu/employment.html">Career Opportunities</a></li> 
+        <li><a href="http://diversity.ucr.edu/">Diversity</a></li> 
+        <li><a href="http://www.ucr.edu/about/directions.html">Maps and Directions</a></li> 
+        <li><a href="http://admissions.ucr.edu/visit-ucr/index.html">Visit UCR</a></li> 
+       </ul> 
+      </div> 
+      <div class="grid_5"> 
+       <h3> School Information</h3> 
+       <address> <strong>UCR Admissions</strong><br> <a href="http://campusmap.ucr.edu/campusMap.php?loc=SSB" title="Campus Map">3106 Student Services Building</a><br> <br> Tel: (951) 827-3411<br> Fax: (951) 827-6344<br> E-mail: <a href="mailto:admissions@ucr.edu?subject=Website%20Inquiry">admissions@ucr.edu</a></address> 
+       <ul class="footer_links"> 
+        <li><a id="footer_link_facebook" class="footer_link_icon" href="https://www.facebook.com/ucradmissions?bcode=q099X" title="external site: Facebook">Visit UCR Admissions Facebook page</a></li> 
+        <li><a id="footer_link_twitter" class="footer_link_icon" href="http://twitter.com/ucradmissions" title="external site: Twitter">Follow UCR Admissions on Twitter</a></li> 
+        <li><a id="footer_link_tumblr" class="footer_link_icon" href="http://lifeatucr.tumblr.com"> Read about UCR Student Life on Tumblr</a></li> 
+       </ul> 
+      </div> 
+      <div class="grid_6"> 
+       <h3> Related Links</h3> 
+       <ul class="relatedLinks"> 
+        <li><a href="http://www.universityofcalifornia.edu/admissions/how-to-apply/apply-online/index.html"> Apply to UC Riverside </a></li> 
+        <li><a href="http://my.ucr.edu">MyUCR Account</a></li> 
+        <li><a href="http://finaid.ucr.edu/Pages/default.aspx">Financial Aid </a></li> 
+        <li><a href="http://promise.ucr.edu/">Living the Promise </a></li> 
+        <li><a href="http://rside.ucr.edu/">R'Side </a></li> 
+        <li><a href="http://tartansoul.ucr.edu/">Tartan Soul</a></li> 
+        <li><a href="http://gohighlanders.com/splash.aspx?id=splash_226">GO Highlanders</a></li> 
+       </ul> 
+       <p class="footer_info"> <img src="https://my.ucr.edu/Images/footer.jpg" alt="" width="120" height="103"> <strong>UCR Undergraduate Admissions</strong> is committed to providing you with the highest level of service. We serve prospective students, their families, and educators, and enroll a highly diverse and academically accomplished student body. </p> 
+      </div> 
+     </div> 
+     <div id="nav_footer" class="clearfix"> 
+      <ul> 
+       <li><a id="nav_footer_home" href="http://www.ucr.edu/"><span>Home</span></a></li>
+       <li> <a id="nav_footer_about_ucr" href="http://www.ucr.edu/about/"><span>About UCR</span></a></li>
+       <li> <a id="nav_footer_academics" href="http://www.ucr.edu/academics/"><span>Academics</span></a></li>
+       <li> <a id="nav_footer_athletics" href="http://www.ucr.edu/athletics/"><span>Athletics</span></a></li>
+       <li> <a id="nav_footer_happenings" href="http://www.ucr.edu/happenings/"><span>Happenings</span></a></li>
+       <li> <a id="nav_footer_research" href="http://www.ucr.edu/research/"><span>Research</span></a></li>
+       <li> <a id="nav_footer_resources" href="http://www.ucr.edu/resources/"><span>Campus Resources</span></a></li>
+       <li> <a id="nav_footer_giving" href="http://www.ucr.edu/giving/"><span>Giving to UCR</span></a></li>
+      </ul> 
+     </div> 
+     <div id="footer"> 
+      <ul> 
+       <li><a href="http://medschool.ucr.edu/sendmail.html" accesskey="9" title="Send Feedback E-mail"> Feedback</a></li> 
+       <li><a href="http://www.ucr.edu/privacy.html">Privacy Policy</a></li> 
+       <li><a href="http://www.ucr.edu/terms.html" accesskey="8" title="Terms and Conditions"> Terms and Conditions</a></li> 
+       <li>© 2015 Regents of the University of California</li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </form> 
+  <script type="text/javascript">
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+  m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-165997-1', 'ucr.edu');
+        ga('require', 'displayfeatures');
+        ga('send', 'pageview');
+
+    </script>   
  </body>
 </html>

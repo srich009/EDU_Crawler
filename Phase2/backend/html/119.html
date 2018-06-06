@@ -1,436 +1,1637 @@
 <!doctype html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
  <head> 
-  <meta charset="utf-8"> 
-  <meta content="IE=edge" http-equiv="X-UA-Compatible"> 
-  <meta content="initial-scale=1.0" name="viewport"> 
-  <meta content="7MiYjX2ZghMOWvtKRWlar--c6mD2ose5EcbQFQ6szFA" name="google-site-verification"> 
-  <title>Blink: Information for UC San Diego Faculty &amp; Staff</title> 
-  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"> 
-  <meta content="University of California, San Diego" name="ORGANIZATION"> 
-  <meta content="index,follow,noarchive" name="robots"> 
-  <meta content="Blink" name="SITE"> 
-  <meta content="Blink: Information for UC San Diego Faculty &amp; Staff" name="PAGETITLE"> 
-  <meta content="Blink provides information for UC San Diego faculty and staff.  " name="DESCRIPTION"> 
-  <link rel="stylesheet" href="//blink.ucsd.edu/_resources/css/bootstrap.min.css"> 
-  <link rel="stylesheet" href="//blink.ucsd.edu/_resources/css/bootstrap-responsive.min.css"> 
-  <link rel="stylesheet" href="//www.ucsd.edu/common/cwp/3.2.0/base-min.css"> 
-  <link rel="stylesheet" href="//www.ucsd.edu/common/cwp/3.2.0/cms-min.css"> 
-  <!-- Site-specific CSS files --> 
-  <link href="_resources/css/homepage.css" media="all" rel="stylesheet" type="text/css"> 
-  <script src="//www.ucsd.edu/common/cwp/3.2.0/base-min.js"></script> 
-  <script src="//www.ucsd.edu/common/cwp/3.2.0/cms-min.js"></script> 
-  <script src="_resources/js/blink-cookies-min.js"></script> 
-  <!--[if lt IE 9]>
-<link rel="stylesheet" href="//blink.ucsd.edu/_resources/css/tdr_search2-ie.css">
+  <meta charset="utf-8">
+  <script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[f.now()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,t){s[t]=o(d+t,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(l+"tracer",[f.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return t.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],n),e}finally{c.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=o(l+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,f.now()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],4:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o,i){if(!d.aborted||i){e&&e(n,r,o);for(var a=t(o),u=m(n),c=u.length,f=0;f<c;f++)u[f].apply(a,r);var p=s[y[n]];return p&&p.push([b,n,r,a]),a}}function l(e,t){v[e]=m(e).concat(t)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(n)}function g(e,t){f(e,function(e,n){t=t||"feature",y[n]=t,t in s||(s[t]=[])})}var v={},y={},b={on:l,emit:n,get:w,listeners:m,context:t,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},p={},d=t.exports=o();d.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=h.info=NREUM.info,t=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return s.abort();f(y,function(t,n){e[t]||(e[t]=n)}),c("mark",["onload",a()+h.offset],null,"api");var n=d.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),c=e("handle"),f=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=t.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script> 
+  <script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3051875-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");</script> 
+  <meta name="title" content="Faculty | University of California, Riverside"> 
+  <link rel="canonical" href="http://www.ucr.edu/faculty"> 
+  <meta name="Generator" content="Drupal 8 (https://www.drupal.org)"> 
+  <meta name="MobileOptimized" content="width"> 
+  <meta name="HandheldFriendly" content="true"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="shortcut icon" href="/profiles/custom/umbrella_acsf/themes/custom/ucr_umbrella/favicon.ico" type=""> 
+  <link rel="canonical" href="/faculty"> 
+  <link rel="shortlink" href="/node/90"> 
+  <link rel="revision" href="/faculty"> 
+  <title>Faculty | University of California, Riverside</title> 
+  <link rel="stylesheet" href="/sites/g/files/rcwecm986/files/css/css_WFHQDQCwfQ9-BzTeBWx4atcbS30E6C0p40FP4f4DIks.css?p9v4fy" media="all"> 
+  <link rel="stylesheet" href="/sites/g/files/rcwecm986/files/css/css_r9h4bY_u8hasCc7PDLJiFvlcrIMGIiq4TiZrtZdQt7Y.css?p9v4fy" media="all"> 
+  <!--[if lte IE 8]>
+<script src="/sites/g/files/rcwecm986/files/js/js_VtafjXmRvoUgAzqzYTA3Wrjkx9wcWhjP0G4ZnnqRamA.js"></script>
 <![endif]--> 
-  <!-- Site-specific javascript files --> 
-  <script src="_resources/js/myblink-homepage.js" type="text/javascript"></script> 
-  <script src="_resources/js/sso-manager.js" type="text/javascript"></script> 
-  <script type="text/javascript" src="//www.ucsd.edu/common/_emergency-broadcast/message.js"></script> 
+  <script src="/core/assets/vendor/modernizr/modernizr.min.js?v=3.3.1"></script> 
  </head> 
- <body> 
-  <div id="uc-emergency"></div> 
-  <div id="tdr_login">
-   <!-- Start page controls --> 
-   <span class="tdr_login_content"></span> 
-   <!-- End page controls --> 
-  </div> 
-  <div id="tdr_title"> 
-   <div id="tdr_title_content">
-    <a href="http://www.ucsd.edu" id="tdr_title_ucsd_title">UC San Diego</a> 
-    <div id="tdr_title_page_title"> 
-     <a href="/"> Faculty &amp; Staff </a> 
+ <body class="layout path-node node--type-page"> 
+  <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas> 
+   <header> 
+    <div class="grid-container full"> 
+     <div class="grid-x"> 
+      <div class="cell small-order-2 medium-order-1 audience-container"> 
+       <div class="grid-container"> 
+        <div class="grid-x align-middle"> 
+         <nav role="navigation" aria-labelledby="block-audiencemenuleftside-menu" id="block-audiencemenuleftside" data-block-plugin-id="menu_block:audience-menu-left-side" class="general-menu"> 
+          <h2 class="visually-hidden" id="block-audiencemenuleftside-menu">Audience Menu Left Side</h2> 
+          <ul class="menu"> 
+           <li><a href="/alpha" target="_self" data-drupal-link-system-path="node/93">A to Z Listing</a> </li> 
+           <li><a href="https://campusmap.ucr.edu/" target="_self">Campus Map</a> </li> 
+           <li><a href="http://profiles.ucr.edu" target="_blank">Find People</a> </li> 
+           <li><a href="http://ucrtoday.ucr.edu" target="_self">News</a> </li> 
+          </ul> 
+         </nav> 
+         <div id="block-ucriversideaudiencesearchblock-3" data-block-plugin-id="ucr_global_audience_search"> 
+          <section class="google-search" role="search"> 
+           <form id="audience-search-form" action="https://www.ucr.edu/search.php"> 
+            <label class="show-for-sr" for="audience-search">Search for:</label> 
+            <input type="text" maxlength="255" id="audience-search" name="q" value="" placeholder=" "> 
+            <button type="submit" class="button show-for-small-only" value="">Search</button> 
+           </form> 
+          </section> 
+         </div> 
+         <nav role="navigation" aria-labelledby="block-quicklinks-menu" id="block-quicklinks" data-block-plugin-id="menu_block:quick-links" class="general-menu"> 
+          <h2 id="block-quicklinks-menu">Quick Links</h2> 
+          <ul class="vertical menu"> 
+           <li><a href="/about/visitors" target="_self" data-drupal-link-system-path="node/15">Visit</a> </li> 
+           <li><a href="http://events.ucr.edu" target="_self">Events</a> </li> 
+           <li><a href="http://givenow.ucr.edu" target="_self">Make a Gift</a> </li> 
+           <li><a href="http://campusmap.ucr.edu/" target="_self">Campus Map</a> </li> 
+           <li><a href="http://jobs.ucr.edu" target="_self">Jobs</a> </li> 
+           <li><a href="http://library.ucr.edu" target="_self">Library</a> </li> 
+           <li><a href="http://transportation.ucr.edu/" target="_self">Parking and Transportation</a> </li> 
+           <li><a href="/apply" target="_self" data-drupal-link-system-path="node/29">Apply</a> </li> 
+          </ul> 
+         </nav> 
+         <div class="cell shrink hide-for-large mobile-menu-expander-wrapper" data-responsive-toggle="main-menu-container" data-hide-for="large"> 
+          <button class="mdi mdi-menu button mobile-menu-expander" type="button" data-toggle="main-menu-container"> </button> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="cell small-order-1 medium-order-2 masthead-container"> 
+       <div class="grid-container"> 
+        <div class="grid-x align-middle"> 
+         <div class="cell shrink"> 
+          <a class="masthead-logo" href="/"> <span class="show-for-sr">UC Riverside</span> </a> 
+         </div> 
+         <div class="cell auto"> 
+          <h1 class="masthead-title"> <a href="/"> University of California, Riverside </a> </h1> 
+         </div> 
+         <div class="cell auto show-for-medium"> 
+          <p class="slogan">University of California, Riverside</p> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="cell small-order-3 medium-order-3 main-nav-bar"> 
+       <div class="main-menu-outer-container"> 
+        <div class="grid-container" id="main-menu-container" data-animate="slide-in-right slide-out-right"> 
+         <div class="grid-x"> 
+          <div class="cell" id="block-ucr-umbrella-main-menu" data-block-plugin-id="system_menu_block:main"> 
+           <ul id="main-menu"> 
+            <li> <a href="/about" target="_self" class="drop-down-arrow" data-drupal-link-system-path="node/6">About</a> 
+             <div> 
+              <ul class="accessible-megamenu-panel-group"> 
+               <li> <span target="_self" data-drupal-link-system-path="<front>">Column 1</span> 
+                <div> 
+                 <ul class="accessible-megamenu-panel-group"> 
+                  <li> <a href="/about" target="_self" data-drupal-link-system-path="node/6">About Overview</a> </li> 
+                  <li> <a href="/about/ranks-and-facts" target="_self" data-drupal-link-system-path="node/11">Ranks and Facts</a> </li> 
+                 </ul> 
+                </div> </li> 
+               <li> <span target="_self" data-drupal-link-system-path="<front>">Column 2</span> 
+                <div> 
+                 <ul class="accessible-megamenu-panel-group"> 
+                  <li> <a href="/about/impact" target="_self" data-drupal-link-system-path="node/12">Impacts</a> </li> 
+                  <li> <a href="/about/history" target="_self" data-drupal-link-system-path="node/14">History</a> </li> 
+                 </ul> 
+                </div> </li> 
+               <li> <span target="_self" data-drupal-link-system-path="<front>">Column 3</span> 
+                <div> 
+                 <ul class="accessible-megamenu-panel-group"> 
+                  <li> <a href="/about/visitors" target="_self" data-drupal-link-system-path="node/15">Visitors</a> </li> 
+                  <li> <a href="/about/international" target="_self" data-drupal-link-system-path="node/17">International</a> </li> 
+                 </ul> 
+                </div> </li> 
+               <li> <span target="_self" class="decorated-column-header" data-drupal-link-system-path="<front>">Find Information For...</span> 
+                <div> 
+                 <ul class="accessible-megamenu-panel-group"> 
+                  <li> <a href="/current-students" target="_self" data-drupal-link-system-path="node/53">Current Students</a> </li> 
+                  <li> <a href="http://admissions.ucr.edu" target="_blank">Prospective Students</a> </li> 
+                  <li> <a href="/faculty" target="_self" data-drupal-link-system-path="node/90" class="is-active">Faculty</a> </li> 
+                  <li> <a href="/staff" target="_self" data-drupal-link-system-path="node/94">Staff</a> </li> 
+                  <li> <a href="http://admissions.ucr.edu/admissions/parents.html" target="_blank">Parents</a> </li> 
+                  <li> <a href="http://alumni.ucr.edu" target="_blank">Alumni</a> </li> 
+                 </ul> 
+                </div> </li> 
+              </ul> 
+             </div> </li> 
+            <li> <a href="/academics" target="_self" class="drop-down-arrow" data-drupal-link-system-path="node/7">Academics</a> 
+             <div> 
+              <ul class="accessible-megamenu-panel-group"> 
+               <li> <span target="_self" data-drupal-link-system-path="<front>">Column 1</span> 
+                <div> 
+                 <ul class="accessible-megamenu-panel-group"> 
+                  <li> <a href="/academics" target="_self" data-drupal-link-system-path="node/7">Academics Overview</a> </li> 
+                  <li> <a href="/academics/undergraduate-majors" target="_self" data-drupal-link-system-path="node/22">Undergraduate Majors</a> </li> 
+                 </ul> 
+                </div> </li> 
+               <li> <span target="_self" data-drupal-link-system-path="<front>">Column 2</span> 
+                <div> 
+                 <ul class="accessible-megamenu-panel-group"> 
+                  <li> <a href="http://graduate.ucr.edu/grad_programs.html" target="_blank">Graduate Programs</a> </li> 
+                  <li> <a href="http://admissions.ucr.edu/academics/index.html" target="_blank">Colleges and Schools</a> </li> 
+                 </ul> 
+                </div> </li> 
+               <li> <span target="_self" data-drupal-link-system-path="<front>">Column 3</span> 
+                <div> 
+                 <ul class="accessible-megamenu-panel-group"> 
+                  <li> <a href="http://www.extension.ucr.edu" target="_blank">UCR Extension</a> </li> 
+                 </ul> 
+                </div> </li> 
+               <li> <span target="_self" class="decorated-column-header" data-drupal-link-system-path="<front>">Find Information For...</span> 
+                <div> 
+                 <ul class="accessible-megamenu-panel-group"> 
+                  <li> <a href="http://admissions.ucr.edu" target="_blank">Prospective Students</a> </li> 
+                  <li> <a href="/current-students" target="_self" data-drupal-link-system-path="node/53">Current Students</a> </li> 
+                  <li> <a href="/faculty" target="_self" data-drupal-link-system-path="node/90" class="is-active">Faculty</a> </li> 
+                  <li> <a href="/staff" target="_self" data-drupal-link-system-path="node/94">Staff</a> </li> 
+                  <li> <a href="http://admissions.ucr.edu/admissions/parents.html" target="_blank">Parents</a> </li> 
+                  <li> <a href="http://alumni.ucr.edu" target="_blank">Alumni</a> </li> 
+                 </ul> 
+                </div> </li> 
+              </ul> 
+             </div> </li> 
+            <li> <a href="/admissions" target="_self" class="drop-down-arrow" data-drupal-link-system-path="node/8">Admissions</a> 
+             <div> 
+              <ul class="accessible-megamenu-panel-group"> 
+               <li> <span target="_self" data-drupal-link-system-path="<front>">Column 1</span> 
+                <div> 
+                 <ul class="accessible-megamenu-panel-group"> 
+                  <li> <a href="/admissions" target="_self" data-drupal-link-system-path="node/8">Admissions Overview</a> </li> 
+                  <li> <a href="http://admissions.ucr.edu" target="_blank">Undergraduate Admissions</a> </li> 
+                 </ul> 
+                </div> </li> 
+               <li> <span target="_self" data-drupal-link-system-path="<front>">Column 2</span> 
+                <div> 
+                 <ul class="accessible-megamenu-panel-group"> 
+                  <li> <a href="http://graduate.ucr.edu/grad_admissions.html" target="_blank">Graduate Admissions</a> </li> 
+                  <li> <a href="http://admissions.ucr.edu/admissions/international/index.html" target="_blank">International Admissions</a> </li> 
+                 </ul> 
+                </div> </li> 
+               <li> <span target="_self" data-drupal-link-system-path="<front>">Column 3</span> 
+                <div> 
+                 <ul class="accessible-megamenu-panel-group"> 
+                  <li> <a href="http://admissions.ucr.edu/admissions/transfer/" target="_blank">Transfer Admissions</a> </li> 
+                  <li> <a href="http://admissions.ucr.edu/cost/index.html" target="_blank">Cost</a> </li> 
+                 </ul> 
+                </div> </li> 
+               <li> <span target="_self" class="decorated-column-header" data-drupal-link-system-path="<front>">Find Information For...</span> 
+                <div> 
+                 <ul class="accessible-megamenu-panel-group"> 
+                  <li> <a href="http://admissions.ucr.edu" target="_blank">Prospective Students</a> </li> 
+                  <li> <a href="/current-students" target="_self" data-drupal-link-system-path="node/53">Current Students</a> </li> 
+                  <li> <a href="/faculty" target="_self" data-drupal-link-system-path="node/90" class="is-active">Faculty</a> </li> 
+                  <li> <a href="/staff" target="_self" data-drupal-link-system-path="node/94">Staff</a> </li> 
+                  <li> <a href="http://admissions.ucr.edu/admissions/parents.html" target="_blank">Parents</a> </li> 
+                  <li> <a href="http://alumni.ucr.edu" target="_blank">Alumni</a> </li> 
+                 </ul> 
+                </div> </li> 
+              </ul> 
+             </div> </li> 
+            <li> <a href="/research" target="_self" class="drop-down-arrow" data-drupal-link-system-path="node/9">Research</a> 
+             <div> 
+              <ul class="accessible-megamenu-panel-group"> 
+               <li> <span target="_self" data-drupal-link-system-path="<front>">Column 1</span> 
+                <div> 
+                 <ul class="accessible-megamenu-panel-group"> 
+                  <li> <a href="/research" target="_self" data-drupal-link-system-path="node/9">Research Overview</a> </li> 
+                  <li> <a href="/research/undergrad-research" target="_self" data-drupal-link-system-path="node/30">Undergraduate Research</a> </li> 
+                 </ul> 
+                </div> </li> 
+               <li> <span target="_self" data-drupal-link-system-path="<front>">Column 2</span> 
+                <div> 
+                 <ul class="accessible-megamenu-panel-group"> 
+                  <li> <a href="http://graduate.ucr.edu/" target="_blank">Graduate Research</a> </li> 
+                  <li> <a href="/research/centers" target="_self" data-drupal-link-system-path="node/33">Centers and Facilities</a> </li> 
+                 </ul> 
+                </div> </li> 
+               <li> <span target="_self" data-drupal-link-system-path="<front>">Column 3</span> 
+                <div> 
+                 <ul class="accessible-megamenu-panel-group"> 
+                  <li> <a href="https://library.ucr.edu/" target="_blank">Library</a> </li> 
+                 </ul> 
+                </div> </li> 
+               <li> <span target="_self" class="decorated-column-header" data-drupal-link-system-path="<front>">Find Information For...</span> 
+                <div> 
+                 <ul class="accessible-megamenu-panel-group"> 
+                  <li> <a href="http://admissions.ucr.edu" target="_blank">Prospective Students</a> </li> 
+                  <li> <a href="/current-students" target="_self" data-drupal-link-system-path="node/53">Current Students</a> </li> 
+                  <li> <a href="/faculty" target="_self" data-drupal-link-system-path="node/90" class="is-active">Faculty</a> </li> 
+                  <li> <a href="/staff" target="_self" data-drupal-link-system-path="node/94">Staff</a> </li> 
+                  <li> <a href="http://admissions.ucr.edu/admissions/parents.html" target="_blank">Parents</a> </li> 
+                  <li> <a href="http://alumni.ucr.edu" target="_blank">Alumni</a> </li> 
+                 </ul> 
+                </div> </li> 
+              </ul> 
+             </div> </li> 
+            <li> <a href="/campus-life" target="_self" class="drop-down-arrow" data-drupal-link-system-path="node/10">Campus Life</a> 
+             <div> 
+              <ul class="accessible-megamenu-panel-group"> 
+               <li> <span target="_self" data-drupal-link-system-path="<front>">Column 1</span> 
+                <div> 
+                 <ul class="accessible-megamenu-panel-group"> 
+                  <li> <a href="/campus-life" target="_self" data-drupal-link-system-path="node/10">Campus Life Overview</a> </li> 
+                  <li> <a href="http://events.ucr.edu" target="_blank">Events</a> </li> 
+                  <li> <a href="http://campusmap.ucr.edu/" target="_blank">Map</a> </li> 
+                 </ul> 
+                </div> </li> 
+               <li> <span target="_self" data-drupal-link-system-path="<front>">Column 2</span> 
+                <div> 
+                 <ul class="accessible-megamenu-panel-group"> 
+                  <li> <a href="/campus-life/arts-and-culture" target="_self" data-drupal-link-system-path="node/42">Arts and Culture</a> </li> 
+                  <li> <a href="/campus-life/athletics-and-fitness" target="_self" data-drupal-link-system-path="node/43">Athletics and Fitness</a> </li> 
+                  <li> <a href="/campus-life/health-and-safety" target="_self" data-drupal-link-system-path="node/44">Health and Safety</a> </li> 
+                 </ul> 
+                </div> </li> 
+               <li> <span target="_self" data-drupal-link-system-path="<front>">Column 3</span> 
+                <div> 
+                 <ul class="accessible-megamenu-panel-group"> 
+                  <li> <a href="http://gardens.ucr.edu/" target="_blank">Botanic Gardens</a> </li> 
+                  <li> <a href="http://housing.ucr.edu/" target="_blank">Housing</a> </li> 
+                  <li> <a href="http://dining.ucr.edu" target="_blank">Dining</a> </li> 
+                  <li> <a href="/about/visitors" target="_self" data-drupal-link-system-path="node/15">About Riverside</a> </li> 
+                 </ul> 
+                </div> </li> 
+               <li> <span target="_self" class="decorated-column-header" data-drupal-link-system-path="<front>">Find Information For...</span> 
+                <div> 
+                 <ul class="accessible-megamenu-panel-group"> 
+                  <li> <a href="http://admissions.ucr.edu" target="_blank">Prospective Students</a> </li> 
+                  <li> <a href="/current-students" target="_self" data-drupal-link-system-path="node/53">Current Students</a> </li> 
+                  <li> <a href="/faculty" target="_self" data-drupal-link-system-path="node/90" class="is-active">Faculty</a> </li> 
+                  <li> <a href="/staff" target="_self" data-drupal-link-system-path="node/94">Staff</a> </li> 
+                  <li> <a href="http://admissions.ucr.edu/admissions/parents.html" target="_blank">Parents</a> </li> 
+                  <li> <a href="http://alumni.ucr.edu" target="_blank">Alumni</a> </li> 
+                 </ul> 
+                </div> </li> 
+              </ul> 
+             </div> </li> 
+            <li> <span target="_self" class="find-info-link" data-drupal-link-system-path="<front>">Find Information For...</span> 
+             <div> 
+              <ul class="accessible-megamenu-panel-group"> 
+               <li> <a href="http://admissions.ucr.edu" target="_blank">Prospective Students</a> </li> 
+               <li> <a href="/current-students" target="_self" data-drupal-link-system-path="node/53">Current Students</a> </li> 
+               <li> <a href="/faculty" target="_self" data-drupal-link-system-path="node/90" class="is-active">Faculty</a> </li> 
+               <li> <a href="/staff" target="_self" data-drupal-link-system-path="node/94">Staff</a> </li> 
+               <li> <a href="http://admissions.ucr.edu/admissions/parents.html" target="_blank">Parents</a> </li> 
+               <li> <a href="http://alumni.ucr.edu" target="_blank">Alumni</a> </li> 
+              </ul> 
+             </div> </li> 
+           </ul> 
+          </div> 
+         </div> 
+         <nav role="navigation" aria-labelledby="block-audiencemenuleftside-2-menu" id="block-audiencemenuleftside-2" data-block-plugin-id="menu_block:audience-menu-left-side" class="general-menu"> 
+          <h2 class="visually-hidden" id="block-audiencemenuleftside-2-menu">Audience Menu Left Side Mobile</h2> 
+          <ul class="menu"> 
+           <li><a href="/alpha" target="_self" data-drupal-link-system-path="node/93">A to Z Listing</a> </li> 
+           <li><a href="https://campusmap.ucr.edu/" target="_self">Campus Map</a> </li> 
+           <li><a href="http://profiles.ucr.edu" target="_blank">Find People</a> </li> 
+           <li><a href="http://ucrtoday.ucr.edu" target="_self">News</a> </li> 
+          </ul> 
+         </nav> 
+         <nav role="navigation" aria-labelledby="block-quicklinks-2-menu" id="block-quicklinks-2" data-block-plugin-id="menu_block:quick-links" class="general-menu"> 
+          <h2 id="block-quicklinks-2-menu">Quick Links Mobile</h2> 
+          <ul class="vertical menu"> 
+           <li><a href="/about/visitors" target="_self" data-drupal-link-system-path="node/15">Visit</a> </li> 
+           <li><a href="http://events.ucr.edu" target="_self">Events</a> </li> 
+           <li><a href="http://givenow.ucr.edu" target="_self">Make a Gift</a> </li> 
+           <li><a href="http://campusmap.ucr.edu/" target="_self">Campus Map</a> </li> 
+           <li><a href="http://jobs.ucr.edu" target="_self">Jobs</a> </li> 
+           <li><a href="http://library.ucr.edu" target="_self">Library</a> </li> 
+           <li><a href="http://transportation.ucr.edu/" target="_self">Parking and Transportation</a> </li> 
+           <li><a href="/apply" target="_self" data-drupal-link-system-path="node/29">Apply</a> </li> 
+          </ul> 
+         </nav> 
+         <nav role="navigation" aria-labelledby="block-mainnavigation-4-menu" id="block-mainnavigation-4" class="mobile-menu general-menu" data-block-plugin-id="menu_block:main"> 
+          <h2 class="visually-hidden" id="block-mainnavigation-4-menu">Main navigation (Mobile)</h2> 
+          <ul id="main-menu"> 
+           <li> <a href="/about" target="_self" class="drop-down-arrow" data-drupal-link-system-path="node/6">About</a> 
+            <div> 
+             <ul class="accessible-megamenu-panel-group"> 
+              <li> <span target="_self" data-drupal-link-system-path="<front>">Column 1</span> 
+               <div> 
+                <ul class="accessible-megamenu-panel-group"> 
+                 <li> <a href="/about" target="_self" data-drupal-link-system-path="node/6">About Overview</a> </li> 
+                 <li> <a href="/about/ranks-and-facts" target="_self" data-drupal-link-system-path="node/11">Ranks and Facts</a> </li> 
+                </ul> 
+               </div> </li> 
+              <li> <span target="_self" data-drupal-link-system-path="<front>">Column 2</span> 
+               <div> 
+                <ul class="accessible-megamenu-panel-group"> 
+                 <li> <a href="/about/impact" target="_self" data-drupal-link-system-path="node/12">Impacts</a> </li> 
+                 <li> <a href="/about/history" target="_self" data-drupal-link-system-path="node/14">History</a> </li> 
+                </ul> 
+               </div> </li> 
+              <li> <span target="_self" data-drupal-link-system-path="<front>">Column 3</span> 
+               <div> 
+                <ul class="accessible-megamenu-panel-group"> 
+                 <li> <a href="/about/visitors" target="_self" data-drupal-link-system-path="node/15">Visitors</a> </li> 
+                 <li> <a href="/about/international" target="_self" data-drupal-link-system-path="node/17">International</a> </li> 
+                </ul> 
+               </div> </li> 
+              <li> <span target="_self" class="decorated-column-header" data-drupal-link-system-path="<front>">Find Information For...</span> 
+               <div> 
+                <ul class="accessible-megamenu-panel-group"> 
+                 <li> <a href="/current-students" target="_self" data-drupal-link-system-path="node/53">Current Students</a> </li> 
+                 <li> <a href="http://admissions.ucr.edu" target="_blank">Prospective Students</a> </li> 
+                 <li> <a href="/faculty" target="_self" data-drupal-link-system-path="node/90" class="is-active">Faculty</a> </li> 
+                 <li> <a href="/staff" target="_self" data-drupal-link-system-path="node/94">Staff</a> </li> 
+                 <li> <a href="http://admissions.ucr.edu/admissions/parents.html" target="_blank">Parents</a> </li> 
+                 <li> <a href="http://alumni.ucr.edu" target="_blank">Alumni</a> </li> 
+                </ul> 
+               </div> </li> 
+             </ul> 
+            </div> </li> 
+           <li> <a href="/academics" target="_self" class="drop-down-arrow" data-drupal-link-system-path="node/7">Academics</a> 
+            <div> 
+             <ul class="accessible-megamenu-panel-group"> 
+              <li> <span target="_self" data-drupal-link-system-path="<front>">Column 1</span> 
+               <div> 
+                <ul class="accessible-megamenu-panel-group"> 
+                 <li> <a href="/academics" target="_self" data-drupal-link-system-path="node/7">Academics Overview</a> </li> 
+                 <li> <a href="/academics/undergraduate-majors" target="_self" data-drupal-link-system-path="node/22">Undergraduate Majors</a> </li> 
+                </ul> 
+               </div> </li> 
+              <li> <span target="_self" data-drupal-link-system-path="<front>">Column 2</span> 
+               <div> 
+                <ul class="accessible-megamenu-panel-group"> 
+                 <li> <a href="http://graduate.ucr.edu/grad_programs.html" target="_blank">Graduate Programs</a> </li> 
+                 <li> <a href="http://admissions.ucr.edu/academics/index.html" target="_blank">Colleges and Schools</a> </li> 
+                </ul> 
+               </div> </li> 
+              <li> <span target="_self" data-drupal-link-system-path="<front>">Column 3</span> 
+               <div> 
+                <ul class="accessible-megamenu-panel-group"> 
+                 <li> <a href="http://www.extension.ucr.edu" target="_blank">UCR Extension</a> </li> 
+                </ul> 
+               </div> </li> 
+              <li> <span target="_self" class="decorated-column-header" data-drupal-link-system-path="<front>">Find Information For...</span> 
+               <div> 
+                <ul class="accessible-megamenu-panel-group"> 
+                 <li> <a href="http://admissions.ucr.edu" target="_blank">Prospective Students</a> </li> 
+                 <li> <a href="/current-students" target="_self" data-drupal-link-system-path="node/53">Current Students</a> </li> 
+                 <li> <a href="/faculty" target="_self" data-drupal-link-system-path="node/90" class="is-active">Faculty</a> </li> 
+                 <li> <a href="/staff" target="_self" data-drupal-link-system-path="node/94">Staff</a> </li> 
+                 <li> <a href="http://admissions.ucr.edu/admissions/parents.html" target="_blank">Parents</a> </li> 
+                 <li> <a href="http://alumni.ucr.edu" target="_blank">Alumni</a> </li> 
+                </ul> 
+               </div> </li> 
+             </ul> 
+            </div> </li> 
+           <li> <a href="/admissions" target="_self" class="drop-down-arrow" data-drupal-link-system-path="node/8">Admissions</a> 
+            <div> 
+             <ul class="accessible-megamenu-panel-group"> 
+              <li> <span target="_self" data-drupal-link-system-path="<front>">Column 1</span> 
+               <div> 
+                <ul class="accessible-megamenu-panel-group"> 
+                 <li> <a href="/admissions" target="_self" data-drupal-link-system-path="node/8">Admissions Overview</a> </li> 
+                 <li> <a href="http://admissions.ucr.edu" target="_blank">Undergraduate Admissions</a> </li> 
+                </ul> 
+               </div> </li> 
+              <li> <span target="_self" data-drupal-link-system-path="<front>">Column 2</span> 
+               <div> 
+                <ul class="accessible-megamenu-panel-group"> 
+                 <li> <a href="http://graduate.ucr.edu/grad_admissions.html" target="_blank">Graduate Admissions</a> </li> 
+                 <li> <a href="http://admissions.ucr.edu/admissions/international/index.html" target="_blank">International Admissions</a> </li> 
+                </ul> 
+               </div> </li> 
+              <li> <span target="_self" data-drupal-link-system-path="<front>">Column 3</span> 
+               <div> 
+                <ul class="accessible-megamenu-panel-group"> 
+                 <li> <a href="http://admissions.ucr.edu/admissions/transfer/" target="_blank">Transfer Admissions</a> </li> 
+                 <li> <a href="http://admissions.ucr.edu/cost/index.html" target="_blank">Cost</a> </li> 
+                </ul> 
+               </div> </li> 
+              <li> <span target="_self" class="decorated-column-header" data-drupal-link-system-path="<front>">Find Information For...</span> 
+               <div> 
+                <ul class="accessible-megamenu-panel-group"> 
+                 <li> <a href="http://admissions.ucr.edu" target="_blank">Prospective Students</a> </li> 
+                 <li> <a href="/current-students" target="_self" data-drupal-link-system-path="node/53">Current Students</a> </li> 
+                 <li> <a href="/faculty" target="_self" data-drupal-link-system-path="node/90" class="is-active">Faculty</a> </li> 
+                 <li> <a href="/staff" target="_self" data-drupal-link-system-path="node/94">Staff</a> </li> 
+                 <li> <a href="http://admissions.ucr.edu/admissions/parents.html" target="_blank">Parents</a> </li> 
+                 <li> <a href="http://alumni.ucr.edu" target="_blank">Alumni</a> </li> 
+                </ul> 
+               </div> </li> 
+             </ul> 
+            </div> </li> 
+           <li> <a href="/research" target="_self" class="drop-down-arrow" data-drupal-link-system-path="node/9">Research</a> 
+            <div> 
+             <ul class="accessible-megamenu-panel-group"> 
+              <li> <span target="_self" data-drupal-link-system-path="<front>">Column 1</span> 
+               <div> 
+                <ul class="accessible-megamenu-panel-group"> 
+                 <li> <a href="/research" target="_self" data-drupal-link-system-path="node/9">Research Overview</a> </li> 
+                 <li> <a href="/research/undergrad-research" target="_self" data-drupal-link-system-path="node/30">Undergraduate Research</a> </li> 
+                </ul> 
+               </div> </li> 
+              <li> <span target="_self" data-drupal-link-system-path="<front>">Column 2</span> 
+               <div> 
+                <ul class="accessible-megamenu-panel-group"> 
+                 <li> <a href="http://graduate.ucr.edu/" target="_blank">Graduate Research</a> </li> 
+                 <li> <a href="/research/centers" target="_self" data-drupal-link-system-path="node/33">Centers and Facilities</a> </li> 
+                </ul> 
+               </div> </li> 
+              <li> <span target="_self" data-drupal-link-system-path="<front>">Column 3</span> 
+               <div> 
+                <ul class="accessible-megamenu-panel-group"> 
+                 <li> <a href="https://library.ucr.edu/" target="_blank">Library</a> </li> 
+                </ul> 
+               </div> </li> 
+              <li> <span target="_self" class="decorated-column-header" data-drupal-link-system-path="<front>">Find Information For...</span> 
+               <div> 
+                <ul class="accessible-megamenu-panel-group"> 
+                 <li> <a href="http://admissions.ucr.edu" target="_blank">Prospective Students</a> </li> 
+                 <li> <a href="/current-students" target="_self" data-drupal-link-system-path="node/53">Current Students</a> </li> 
+                 <li> <a href="/faculty" target="_self" data-drupal-link-system-path="node/90" class="is-active">Faculty</a> </li> 
+                 <li> <a href="/staff" target="_self" data-drupal-link-system-path="node/94">Staff</a> </li> 
+                 <li> <a href="http://admissions.ucr.edu/admissions/parents.html" target="_blank">Parents</a> </li> 
+                 <li> <a href="http://alumni.ucr.edu" target="_blank">Alumni</a> </li> 
+                </ul> 
+               </div> </li> 
+             </ul> 
+            </div> </li> 
+           <li> <a href="/campus-life" target="_self" class="drop-down-arrow" data-drupal-link-system-path="node/10">Campus Life</a> 
+            <div> 
+             <ul class="accessible-megamenu-panel-group"> 
+              <li> <span target="_self" data-drupal-link-system-path="<front>">Column 1</span> 
+               <div> 
+                <ul class="accessible-megamenu-panel-group"> 
+                 <li> <a href="/campus-life" target="_self" data-drupal-link-system-path="node/10">Campus Life Overview</a> </li> 
+                 <li> <a href="http://events.ucr.edu" target="_blank">Events</a> </li> 
+                 <li> <a href="http://campusmap.ucr.edu/" target="_blank">Map</a> </li> 
+                </ul> 
+               </div> </li> 
+              <li> <span target="_self" data-drupal-link-system-path="<front>">Column 2</span> 
+               <div> 
+                <ul class="accessible-megamenu-panel-group"> 
+                 <li> <a href="/campus-life/arts-and-culture" target="_self" data-drupal-link-system-path="node/42">Arts and Culture</a> </li> 
+                 <li> <a href="/campus-life/athletics-and-fitness" target="_self" data-drupal-link-system-path="node/43">Athletics and Fitness</a> </li> 
+                 <li> <a href="/campus-life/health-and-safety" target="_self" data-drupal-link-system-path="node/44">Health and Safety</a> </li> 
+                </ul> 
+               </div> </li> 
+              <li> <span target="_self" data-drupal-link-system-path="<front>">Column 3</span> 
+               <div> 
+                <ul class="accessible-megamenu-panel-group"> 
+                 <li> <a href="http://gardens.ucr.edu/" target="_blank">Botanic Gardens</a> </li> 
+                 <li> <a href="http://housing.ucr.edu/" target="_blank">Housing</a> </li> 
+                 <li> <a href="http://dining.ucr.edu" target="_blank">Dining</a> </li> 
+                 <li> <a href="/about/visitors" target="_self" data-drupal-link-system-path="node/15">About Riverside</a> </li> 
+                </ul> 
+               </div> </li> 
+              <li> <span target="_self" class="decorated-column-header" data-drupal-link-system-path="<front>">Find Information For...</span> 
+               <div> 
+                <ul class="accessible-megamenu-panel-group"> 
+                 <li> <a href="http://admissions.ucr.edu" target="_blank">Prospective Students</a> </li> 
+                 <li> <a href="/current-students" target="_self" data-drupal-link-system-path="node/53">Current Students</a> </li> 
+                 <li> <a href="/faculty" target="_self" data-drupal-link-system-path="node/90" class="is-active">Faculty</a> </li> 
+                 <li> <a href="/staff" target="_self" data-drupal-link-system-path="node/94">Staff</a> </li> 
+                 <li> <a href="http://admissions.ucr.edu/admissions/parents.html" target="_blank">Parents</a> </li> 
+                 <li> <a href="http://alumni.ucr.edu" target="_blank">Alumni</a> </li> 
+                </ul> 
+               </div> </li> 
+             </ul> 
+            </div> </li> 
+           <li> <span target="_self" class="find-info-link" data-drupal-link-system-path="<front>">Find Information For...</span> 
+            <div> 
+             <ul class="accessible-megamenu-panel-group"> 
+              <li> <a href="http://admissions.ucr.edu" target="_blank">Prospective Students</a> </li> 
+              <li> <a href="/current-students" target="_self" data-drupal-link-system-path="node/53">Current Students</a> </li> 
+              <li> <a href="/faculty" target="_self" data-drupal-link-system-path="node/90" class="is-active">Faculty</a> </li> 
+              <li> <a href="/staff" target="_self" data-drupal-link-system-path="node/94">Staff</a> </li> 
+              <li> <a href="http://admissions.ucr.edu/admissions/parents.html" target="_blank">Parents</a> </li> 
+              <li> <a href="http://alumni.ucr.edu" target="_blank">Alumni</a> </li> 
+             </ul> 
+            </div> </li> 
+          </ul> 
+         </nav>
+        </div>  
+        <div id="block-ucriversideaudiencesearchblock-4" data-block-plugin-id="ucr_global_audience_search"> 
+         <section class="google-search" role="search"> 
+          <form id="audience-search-form" action="https://www.ucr.edu/search.php"> 
+           <label class="show-for-sr" for="audience-search">Search for:</label> 
+           <input type="text" maxlength="255" id="audience-search" name="q" value="" placeholder=" "> 
+           <button type="submit" class="button show-for-small-only" value="">Search</button> 
+          </form> 
+         </section> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
     </div> 
-    <a class="search-button" id="tdr_title_search_link">Search</a> 
-    <a id="tdr_title_menu_link">Menu</a>
-   </div> 
-  </div> 
-  <div id="tdr_search">
-   <script src="https://www.google.com/jsapi" type="text/javascript">// <![CDATA[
-
-// ]]></script> 
-   <script type="text/javascript">// <![CDATA[
-google.load('search', '1');
-google.setOnLoadCallback(function() {
-    if(document.getElementById('q') != null){
-        google.search.CustomSearchControl.attachAutoCompletion(
-        '004685874581245502426:palsaetk1kk',
-        document.getElementById('q'),
-        'sitesearch');
-    }
-
-    if(document.getElementById('search-term') != null){
-        google.search.CustomSearchControl.attachAutoCompletion(
-        '004685874581245502426:palsaetk1kk',
-        document.getElementById('search-term'),
-        'sitesearch-box');
-    }
-});
-// ]]></script> 
-   <script src="https://www.google.com/cse/brand?form=%20sitesearch%20&amp;lang=en" type="text/javascript">// <![CDATA[
-
-// ]]></script> 
-   <script src="https://www.google.com/cse/brand?form=%20sitesearch-box%20&amp;lang=en" type="text/javascript">// <![CDATA[
-
-// ]]></script> 
-   <script type="text/javascript">// <![CDATA[
-var radioHandler = function() {
-                                if (this.checked == true) {
-                                        this.className = "active";
-                                        $("#" + this.id + "-label").each(function() {
-                                                this.className = "active";
-                                        });
-                                } else {
-                                        this.className = "inactive";
-                                        $("#" + this.id + "-label").each(function() {
-                                                this.className = "inactive";
-                                        });
-                                }
-        }
-
-        $(document).ready(function() {
-                $("#tdr_search2_content input[type=radio]").click(function() {
-                        $("input[type=radio]", this.form).each(radioHandler);
-                });
-                $("#tdr_search2_content input[type=radio]").each(radioHandler);
-
-                $('#sitesearch').on('submit', function() { if ($('#search-scope2').is(':checked')) { var q = $('#q').val() + ' more:cascade-cwp'; var loc = 'https://act.ucsd.edu/cwp/tools/search?search-scope=default_collection&q='+q+'&site=blink2'; window.location.href = loc; return false; } });
-
-        });
-// ]]></script> 
-   <div class="container"> 
-    <div id="tdr_search_content">
-     <form action="/search/index.html" id="cse-search-box" method="get" style="float: left;">
-      <fieldset>
-       <legend>Search</legend> 
-       <label>Search:</label> 
-       <span id="site-1"> <input checked id="search-scope1" name="search-scope" style="border: 0px none; width: 10px;" type="radio" value="blink2"> <label for="search-scope1" id="search-scope1-label">This Site</label> &nbsp; </span> 
-       <span id="site-2"> <input id="search-scope2" name="search-scope" style="border: 0px none; width: 10px;" type="radio" value="default_collection"> <label for="search-scope2" id="search-scope2-label">All UCSD Sites</label> &nbsp; </span> 
-       <input id="search-term" name="search-term" size="20" type="text"> 
-       <button alt="Submit button" type="submit">Search!</button>
-      </fieldset>
-      <input name="site" type="hidden" value="blink2">
-     </form>
-     <form action="https://act.ucsd.edu/directory/search" id="peoplesearch" method="get" style="float: right;">
-      <fieldset>
-       <legend>Find Faculty/Staff</legend> 
-       <label for="search-scope3">Find Faculty/Staff</label> 
-       <input name="jlinkevent" type="hidden" value="Redirect"> 
-       <input name="entry" size="20" type="text"> 
-       <button alt="Submit button" type="submit">Search!</button>
-      </fieldset>
-      <input name="site" type="hidden" value="blink2">
-     </form>
+   </header>
+  </div>   
+  <div id="content-container"> 
+   <div id="hero-panel-area"> 
+    <div class="views-element-container" id="block-views-block-header-banner-block-1" data-block-plugin-id="views_block:header_banner-block_1"> 
+     <div>
+      <div class="header-banner-view js-view-dom-id-926b2b1db357b691036e369d54169e0189b1c023bb15e29846be03cba5f84a21"> 
+       <div class="views-row"> 
+        <div class="views-field views-field-field-header-banner">
+         <div class="field-content"> 
+          <img src="/sites/g/files/rcwecm986/files/styles/interior_page_banner/public/Faculty-Hero_2.jpg?h=b8626526&amp;itok=JJv0MUYK" width="1315" height="461" alt="Faculty-Hero" typeof="foaf:Image"> 
+         </div>
+        </div>
+        <div class="views-field views-field-field-custom-title">
+         <div class="field-content">
+          Faculty
+         </div>
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <div id="block-heroslideshow" data-block-plugin-id="entity_field:node:field_hero_slideshow"> 
+     <div class="field field--name-field-hero-slideshow field--type-entity-reference-revisions field--label-above field__items"> 
+      <div class="field__label">
+       Hero Slideshow
+      </div> 
+      <div class="field__item"> 
+       <div class="paragraph paragraph--type--hero-slideshow paragraph--view-mode--default"> 
+        <div class="field field--name-field-paragraph-hero-view field--type-viewfield field--label-hidden"> 
+         <div class="field__item field__item-label-hidden"> 
+          <div class="views-element-container">
+           <div class="video-slideshow js-view-dom-id-d8e6f581fcc1d9ec5a8da78c1a0a8fda19a935381030aa4ff0956802d262bf43"> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
     </div> 
    </div> 
-   <div id="tdr_search_content-2">
-    <form action="/search/index.html" id="cse-search-box" method="get">
-     <label for="search-scope">Search</label>
-     <select id="search-scope" name="search-scope"> <option selected value="blink2">This Site</option> <option value="default_collection">All UCSD Sites</option> <option value="faculty-staff">Faculty/Staff</option> </select>
-     <label for="search-term" id="search-term-label">Search Term</label> 
-     <input class="search-term" id="search-term" name="search-term" size="20" type="search"> 
-     <input name="client" type="hidden" value="google-csbe"> 
-     <input alt="Submit button" class="search-button" type="submit" value="Search"> 
-     <input name="site" type="hidden" value="blink2">
-    </form>
-   </div>
-  </div> 
-  <div class="tdr_fonts" id="tdr_content"> 
-   <div id="tdr_content_content">
-    <!-- display the main content --> 
-    <div class="navbar"> 
-     <div class="navbar-inner"> 
-      <div class="container">
-       <button class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse" type="button">Menu</button> 
-       <span id="logo"><a class="brand" href="http://blink.ucsd.edu">Blink: Information for UC San Diego Faculty and Staff</a></span> 
-       <div class="nav-collapse collapse pull-right"> 
-        <ul class="nav"> 
-         <li class="dropdown" id="blink"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Blink Topics</a> 
-          <ul class="dropdown-menu"> 
-           <li><a href="buy-pay/index.html">Buy &amp; Pay</a></li> 
-           <li><a href="facilities/index.html">Facilities &amp; Services</a></li> 
-           <li><a href="faculty/index.html">Faculty Resources</a></li> 
-           <li><a href="finance/index.html">Finance</a></li> 
-           <li><a href="HR/index.html">Human Resources</a></li> 
-           <li><a href="research/index.html">Research</a></li> 
-           <li><a href="safety/index.html">Safety</a></li> 
-           <li><a href="instructors/index.html">Student / Class Info</a></li> 
-           <li><a href="technology/index.html">Technology</a></li> 
-           <li><a href="travel/index.html">Travel</a></li> 
-          </ul> </li> 
-         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Personal Tools</a> 
-          <ul class="dropdown-menu"> 
-           <li><a href="https://atyourserviceonline.ucop.edu/ayso/">At Your Service via AYSO</a></li> 
-           <li><a href="http://ayso.ucsd.edu">At Your Service via SSO</a></li> 
-           <li><a href="http://ucnet.universityofcalifornia.edu/compensation-and-benefits/total-compensation-calculator.php">Compensation Calculator</a></li> 
-           <li><a href="http://edben.ucsd.edu">Educational Benefits</a></li> 
-           <li><a href="https://jobs.ucsd.edu/bulletin/default.aspx">Job Bulletin</a></li> 
-           <li><a href="https://act.ucsd.edu/mydirectory/updater">My Directory</a></li> 
-           <li><a href="http://myleavebalances.ucsd.edu">My LeaveBalances</a></li> 
-           <li><a href="http://mytime.ucsd.edu">My Time (Online)</a></li> 
-           <li><a href="https://act.ucsd.edu/employeeTimesheets/timesheets">My Time (Paper)</a></li> 
-           <li><a href="http://uclearning.ucsd.edu">My Training</a></li> 
-           <li><a href="http://mytravel.ucsd.edu">My Travel</a></li> 
-           <li><a href="http://skillportsso.ucsd.edu/">SkillSoft eLearning</a></li> 
-           <li><a href="http://uclearning.ucsd.edu">UC Learning Center</a></li> 
-           <li><a href="http://ucnet.universityofcalifornia.edu/">UCnet</a></li> 
-           <li class="more"><a href="http://blink.ucsd.edu/_tool-page/index.html">All tools</a></li> 
-          </ul> </li> 
-         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Business Tools</a> 
-          <ul class="dropdown-menu"> 
-           <li><a href="http://aps.ucsd.edu/training/apol/index.html">AP On-Line</a></li> 
-           <li><a href="https://ask.ucsd.edu/">ASK (BFSupport)</a></li> 
-           <li><a href="http://cams.ucsd.edu/">CAMS</a></li> 
-           <li><a href="http://booktravel.ucsd.edu/">Connexxus</a></li> 
-           <li><a href="http://control-tracker.ucsd.edu">Control Tracker</a></li> 
-           <li><a href="http://blink.ucsd.edu/finance/accounting/deficit/">Deficit Balance Analytics</a></li> 
-           <li><a href="http://employeelink.ucsd.edu/">EmployeeLink</a></li> 
-           <li><a href="https://act.ucsd.edu/financial">FinancialLink</a></li> 
-           <li><a href="https://hireonline.ucsd.edu/">HireOnline</a></li> 
-           <li><a href="http://jdonline.ucsd.edu/">JDOnline</a></li> 
-           <li><a href="http://marketplace.ucsd.edu/">Marketplace</a></li> 
-           <li><a href="http://myapprovals.ucsd.edu">MyApprovals</a></li> 
-           <li><a href="http://myevents.ucsd.edu/">MyEvents</a></li> 
-           <li><a href="http://myfunds.ucsd.edu">MyFunds</a></li> 
-           <li><a href="http://mymobilebill.ucsd.edu">MyMobileBill</a></li> 
-           <li><a href="https://act.ucsd.edu/mypayments/inbox.htm">MyPayments</a></li> 
-           <li><a href="http://mytravel.ucsd.edu">MyTravel</a></li> 
-           <li><a href="https://crm.ucsd.edu/hr">Onboarding</a></li> 
-           <li><a href="http://foundation.ucsd.edu/accounting/star.html">STAR</a></li> 
-           <li><a href="http://hr.ucsd.edu/tpp/">Title &amp; Pay Look-up</a></li> 
-           <li class="more"><a href="http://blink.ucsd.edu/_tool-page/index.html">All tools</a></li> 
-          </ul> </li> 
-         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Instruction Tools</a> 
-          <ul class="dropdown-menu"> 
-           <li><a href="http://www.assist.org/web-assist/welcome.html">ASSIST</a></li> 
-           <li><a href="https://act.ucsd.edu/cgi-bin/blink.pl/4/faculty/student/advanced_class_list.pl">Class lists</a></li> 
-           <li><a href="faculty/instruction/tech-guide/classroom/details.html">Classroom details</a></li> 
-           <li><a href="https://myccr.ucsd.edu/home.htm">Co-Curricular Record</a></li> 
-           <li><a href="https://act.ucsd.edu/studentDarsFacultyAudit/viewgroup.htm">View DARS audits</a></li> 
-           <li><a href="http://egrades.ucsd.edu/">eGrades</a></li> 
-           <li><a href="https://act.ucsd.edu/cgi-bin/blink.pl/4/faculty/resource/enroll_list.pl">Enrollment/waitlists</a></li> 
-           <li><a href="https://act.ucsd.edu/cgi-bin/blink.pl/5/faculty/student/student_name_lookup.pl">Find a student</a></li> 
-           <li><a href="http://ucsd.edu/catalog/">General Catalog</a></li> 
-           <li><a href="https://act.ucsd.edu/cgi-bin/blink.pl/4/faculty/student/major_list.pl">Majors list</a></li> 
-           <li><a href="https://act.ucsd.edu/cgi-bin/blink.pl/4/faculty/student/minor_list.pl">Minors list</a></li> 
-           <li><a href="https://act.ucsd.edu/cgi-bin/blink.pl/4/faculty/queries.html">Queries</a></li> 
-           <li><a href="https://act.ucsd.edu/studentRegistration/status?registrationEvent=checkStatus">Registration status</a></li> 
-           <li><a href="https://act.ucsd.edu/cgi-bin/blink.pl/1/faculty/schedule_of_classes.pl">Schedule of Classes</a></li> 
-           <li><a href="https://act.ucsd.edu/studentdirectory/search">Student Directory</a></li> 
-           <li><a href="https://act.ucsd.edu/cgi-bin/blink.pl/4/faculty/student/audit/">Term audit</a></li> 
-           <li><a href="http://tritoned.ucsd.edu/">TritonEd</a></li> 
-           <li class="more"><a href="http://blink.ucsd.edu/_tool-page/index.html">All tools</a></li> 
-          </ul> </li> 
-         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Research Tools</a> 
-          <ul class="dropdown-menu"> 
-           <li><a href="http://emta.ucsd.edu/">eMTA</a></li> 
-           <li><a href="https://epd.ucsd.edu/coeus">ePD</a></li> 
-           <li><a href="research/data-analysis/erap-reporting-project/reports.html">ERAP Reports</a></li> 
-           <li><a href="https://act.ucsd.edu/GoogleResearchDirectory/research">Faculty Expertise</a></li> 
-           <li><a href="http://myeffort.ucsd.edu">MyEffort</a></li> 
-           <li><a href="http://ehs.ucsd.edu/myresearchsafety/">My Research Safety</a></li> 
-           <li><a href="http://rapids.ucsd.edu/">RAPIDS</a></li> 
-           <li><a href="http://ora.ucsd.edu/sharedfacilities/">Shared Facilities</a></li> 
-           <li><a href="https://bfs.ucsd.edu/start">Award Financial Training</a></li> 
-           <li><a href="http://blink.ucsd.edu/_tool-page/index.html">All tools</a></li> 
-          </ul> </li> 
+   <div class="grid-container primary-content-area"> 
+    <div class="grid-x grid-padding-x"> 
+     <div class="cell"> 
+     </div> 
+    </div> 
+    <div class="grid-x grid-padding-x"> 
+     <div class="cell"> 
+      <div id="block-breadcrumbs" data-block-plugin-id="system_breadcrumb_block"> 
+       <nav role="navigation" class="breadcrumb_container" aria-labelledby="system-breadcrumb"> 
+        <h2 id="system-breadcrumb" class="visually-hidden">Breadcrumb</h2> 
+        <ul class="breadcrumbs"> 
+         <li> <a href="/" class="mdi mdi-home breadcrumb_home"></a> </li> 
+         <li> <span>Faculty</span> </li> 
         </ul> 
+       </nav> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="grid-x grid-padding-x"> 
+     <div class="cell large-auto small-order-3 medium-order-3 large-order-2 pca-content"> 
+      <div> 
+       <div id="block-ucr-umbrella-content" data-block-plugin-id="system_main_block"> 
+        <article class="node node--type-page node--view-mode-full clearfix"> 
+         <div> 
+          <div class="one-column"> 
+           <div class="main-region"> 
+            <div class="block-region-main">
+             <div data-block-plugin-id="entity_field:node:body"> 
+              <div class="page-body-wrapper"> 
+               <h1 class="separator-line-before"> 
+                <!--[if gte mso 9]><p><xml><br />
+ <o:OfficeDocumentSettings><br />
+  <o:AllowPNG/><br />
+ </o:OfficeDocumentSettings><br />
+</xml><![endif]--><p></p> 
+                <!--[if gte mso 9]><p><xml><br />
+ <w:WordDocument><br />
+  <w:View>Normal</w:View><br />
+  <w:Zoom>0</w:Zoom><br />
+  <w:TrackMoves/><br />
+  <w:TrackFormatting/><br />
+  <w:PunctuationKerning/><br />
+  <w:ValidateAgainstSchemas/><br />
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid><br />
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent><br />
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText><br />
+  <w:DoNotPromoteQF/><br />
+  <w:LidThemeOther>EN-US</w:LidThemeOther><br />
+  <w:LidThemeAsian>X-NONE</w:LidThemeAsian><br />
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript><br />
+  <w:Compatibility><br />
+   <w:BreakWrappedTables/><br />
+   <w:SnapToGridInCell/><br />
+   <w:WrapTextWithPunct/><br />
+   <w:UseAsianBreakRules/><br />
+   <w:DontGrowAutofit/><br />
+   <w:SplitPgBreakAndParaMark/><br />
+   <w:EnableOpenTypeKerning/><br />
+   <w:DontFlipMirrorIndents/><br />
+   <w:OverrideTableStyleHps/><br />
+  </w:Compatibility><br />
+  <m:mathPr><br />
+   <m:mathFont m:val="Cambria Math"/><br />
+   <m:brkBin m:val="before"/><br />
+   <m:brkBinSub m:val="&#45;-"/><br />
+   <m:smallFrac m:val="off"/><br />
+   <m:dispDef/><br />
+   <m:lMargin m:val="0"/><br />
+   <m:rMargin m:val="0"/><br />
+   <m:defJc m:val="centerGroup"/><br />
+   <m:wrapIndent m:val="1440"/><br />
+   <m:intLim m:val="subSup"/><br />
+   <m:naryLim m:val="undOvr"/><br />
+  </m:mathPr></w:WordDocument><br />
+</xml><![endif]--><p></p> 
+                <!--[if gte mso 9]><p><xml><br />
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="false"<br />
+  DefSemiHidden="false" DefQFormat="false" DefPriority="99"<br />
+  LatentStyleCount="375"><br />
+  <w:LsdException Locked="false" Priority="0" QFormat="true" Name="Normal"/><br />
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 1"/><br />
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"<br />
+   UnhideWhenUsed="true" QFormat="true" Name="heading 2"/><br />
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"<br />
+   UnhideWhenUsed="true" QFormat="true" Name="heading 3"/><br />
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"<br />
+   UnhideWhenUsed="true" QFormat="true" Name="heading 4"/><br />
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"<br />
+   UnhideWhenUsed="true" QFormat="true" Name="heading 5"/><br />
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"<br />
+   UnhideWhenUsed="true" QFormat="true" Name="heading 6"/><br />
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"<br />
+   UnhideWhenUsed="true" QFormat="true" Name="heading 7"/><br />
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"<br />
+   UnhideWhenUsed="true" QFormat="true" Name="heading 8"/><br />
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"<br />
+   UnhideWhenUsed="true" QFormat="true" Name="heading 9"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="index 1"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="index 2"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="index 3"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="index 4"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="index 5"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="index 6"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="index 7"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="index 8"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="index 9"/><br />
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"<br />
+   UnhideWhenUsed="true" Name="toc 1"/><br />
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"<br />
+   UnhideWhenUsed="true" Name="toc 2"/><br />
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"<br />
+   UnhideWhenUsed="true" Name="toc 3"/><br />
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"<br />
+   UnhideWhenUsed="true" Name="toc 4"/><br />
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"<br />
+   UnhideWhenUsed="true" Name="toc 5"/><br />
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"<br />
+   UnhideWhenUsed="true" Name="toc 6"/><br />
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"<br />
+   UnhideWhenUsed="true" Name="toc 7"/><br />
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"<br />
+   UnhideWhenUsed="true" Name="toc 8"/><br />
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"<br />
+   UnhideWhenUsed="true" Name="toc 9"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Normal Indent"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="footnote text"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="annotation text"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="header"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="footer"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="index heading"/><br />
+  <w:LsdException Locked="false" Priority="35" SemiHidden="true"<br />
+   UnhideWhenUsed="true" QFormat="true" Name="caption"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="table of figures"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="envelope address"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="envelope return"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="footnote reference"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="annotation reference"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="line number"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="page number"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="endnote reference"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="endnote text"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="table of authorities"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="macro"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="toa heading"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="List"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="List Bullet"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="List Number"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="List 2"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="List 3"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="List 4"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="List 5"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="List Bullet 2"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="List Bullet 3"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="List Bullet 4"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="List Bullet 5"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="List Number 2"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="List Number 3"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="List Number 4"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="List Number 5"/><br />
+  <w:LsdException Locked="false" Priority="10" QFormat="true" Name="Title"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Closing"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Signature"/><br />
+  <w:LsdException Locked="false" Priority="1" SemiHidden="true"<br />
+   UnhideWhenUsed="true" Name="Default Paragraph Font"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Body Text"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Body Text Indent"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="List Continue"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="List Continue 2"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="List Continue 3"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="List Continue 4"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="List Continue 5"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Message Header"/><br />
+  <w:LsdException Locked="false" Priority="11" QFormat="true" Name="Subtitle"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Salutation"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Date"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Body Text First Indent"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Body Text First Indent 2"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Note Heading"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Body Text 2"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Body Text 3"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Body Text Indent 2"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Body Text Indent 3"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Block Text"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Hyperlink"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="FollowedHyperlink"/><br />
+  <w:LsdException Locked="false" Priority="22" QFormat="true" Name="Strong"/><br />
+  <w:LsdException Locked="false" Priority="20" QFormat="true" Name="Emphasis"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Document Map"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Plain Text"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="E-mail Signature"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="HTML Top of Form"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="HTML Bottom of Form"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Normal (Web)"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="HTML Acronym"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="HTML Address"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="HTML Cite"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="HTML Code"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="HTML Definition"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="HTML Keyboard"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="HTML Preformatted"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="HTML Sample"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="HTML Typewriter"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="HTML Variable"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Normal Table"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="annotation subject"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="No List"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Outline List 1"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Outline List 2"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Outline List 3"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Table Simple 1"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Table Simple 2"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Table Simple 3"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Table Classic 1"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Table Classic 2"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Table Classic 3"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Table Classic 4"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Table Colorful 1"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Table Colorful 2"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Table Colorful 3"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Table Columns 1"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Table Columns 2"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Table Columns 3"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Table Columns 4"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Table Columns 5"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Table Grid 1"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Table Grid 2"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Table Grid 3"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Table Grid 4"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Table Grid 5"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Table Grid 6"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Table Grid 7"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Table Grid 8"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Table List 1"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Table List 2"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Table List 3"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Table List 4"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Table List 5"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Table List 6"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Table List 7"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Table List 8"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Table 3D effects 1"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Table 3D effects 2"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Table 3D effects 3"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Table Contemporary"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Table Elegant"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Table Professional"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Table Subtle 1"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Table Subtle 2"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Table Web 1"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Table Web 2"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Table Web 3"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Balloon Text"/><br />
+  <w:LsdException Locked="false" Priority="39" Name="Table Grid"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Table Theme"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" Name="Placeholder Text"/><br />
+  <w:LsdException Locked="false" Priority="1" QFormat="true" Name="No Spacing"/><br />
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading"/><br />
+  <w:LsdException Locked="false" Priority="61" Name="Light List"/><br />
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid"/><br />
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1"/><br />
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2"/><br />
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1"/><br />
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2"/><br />
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1"/><br />
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2"/><br />
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3"/><br />
+  <w:LsdException Locked="false" Priority="70" Name="Dark List"/><br />
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading"/><br />
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List"/><br />
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid"/><br />
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 1"/><br />
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 1"/><br />
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 1"/><br />
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 1"/><br />
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 1"/><br />
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 1"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" Name="Revision"/><br />
+  <w:LsdException Locked="false" Priority="34" QFormat="true"<br />
+   Name="List Paragraph"/><br />
+  <w:LsdException Locked="false" Priority="29" QFormat="true" Name="Quote"/><br />
+  <w:LsdException Locked="false" Priority="30" QFormat="true"<br />
+   Name="Intense Quote"/><br />
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 1"/><br />
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 1"/><br />
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 1"/><br />
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 1"/><br />
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 1"/><br />
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 1"/><br />
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 1"/><br />
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 1"/><br />
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 2"/><br />
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 2"/><br />
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 2"/><br />
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 2"/><br />
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 2"/><br />
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 2"/><br />
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 2"/><br />
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 2"/><br />
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 2"/><br />
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 2"/><br />
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 2"/><br />
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 2"/><br />
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 2"/><br />
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 2"/><br />
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 3"/><br />
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 3"/><br />
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 3"/><br />
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 3"/><br />
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 3"/><br />
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 3"/><br />
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 3"/><br />
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 3"/><br />
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 3"/><br />
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 3"/><br />
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 3"/><br />
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 3"/><br />
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 3"/><br />
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 3"/><br />
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 4"/><br />
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 4"/><br />
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 4"/><br />
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 4"/><br />
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 4"/><br />
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 4"/><br />
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 4"/><br />
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 4"/><br />
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 4"/><br />
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 4"/><br />
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 4"/><br />
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 4"/><br />
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 4"/><br />
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 4"/><br />
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 5"/><br />
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 5"/><br />
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 5"/><br />
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 5"/><br />
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 5"/><br />
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 5"/><br />
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 5"/><br />
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 5"/><br />
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 5"/><br />
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 5"/><br />
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 5"/><br />
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 5"/><br />
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 5"/><br />
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 5"/><br />
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 6"/><br />
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 6"/><br />
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 6"/><br />
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 6"/><br />
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 6"/><br />
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 6"/><br />
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 6"/><br />
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 6"/><br />
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 6"/><br />
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 6"/><br />
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 6"/><br />
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 6"/><br />
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 6"/><br />
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 6"/><br />
+  <w:LsdException Locked="false" Priority="19" QFormat="true"<br />
+   Name="Subtle Emphasis"/><br />
+  <w:LsdException Locked="false" Priority="21" QFormat="true"<br />
+   Name="Intense Emphasis"/><br />
+  <w:LsdException Locked="false" Priority="31" QFormat="true"<br />
+   Name="Subtle Reference"/><br />
+  <w:LsdException Locked="false" Priority="32" QFormat="true"<br />
+   Name="Intense Reference"/><br />
+  <w:LsdException Locked="false" Priority="33" QFormat="true" Name="Book Title"/><br />
+  <w:LsdException Locked="false" Priority="37" SemiHidden="true"<br />
+   UnhideWhenUsed="true" Name="Bibliography"/><br />
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"<br />
+   UnhideWhenUsed="true" QFormat="true" Name="TOC Heading"/><br />
+  <w:LsdException Locked="false" Priority="41" Name="Plain Table 1"/><br />
+  <w:LsdException Locked="false" Priority="42" Name="Plain Table 2"/><br />
+  <w:LsdException Locked="false" Priority="43" Name="Plain Table 3"/><br />
+  <w:LsdException Locked="false" Priority="44" Name="Plain Table 4"/><br />
+  <w:LsdException Locked="false" Priority="45" Name="Plain Table 5"/><br />
+  <w:LsdException Locked="false" Priority="40" Name="Grid Table Light"/><br />
+  <w:LsdException Locked="false" Priority="46" Name="Grid Table 1 Light"/><br />
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2"/><br />
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3"/><br />
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4"/><br />
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark"/><br />
+  <w:LsdException Locked="false" Priority="51" Name="Grid Table 6 Colorful"/><br />
+  <w:LsdException Locked="false" Priority="52" Name="Grid Table 7 Colorful"/><br />
+  <w:LsdException Locked="false" Priority="46"<br />
+   Name="Grid Table 1 Light Accent 1"/><br />
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 1"/><br />
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 1"/><br />
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 1"/><br />
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 1"/><br />
+  <w:LsdException Locked="false" Priority="51"<br />
+   Name="Grid Table 6 Colorful Accent 1"/><br />
+  <w:LsdException Locked="false" Priority="52"<br />
+   Name="Grid Table 7 Colorful Accent 1"/><br />
+  <w:LsdException Locked="false" Priority="46"<br />
+   Name="Grid Table 1 Light Accent 2"/><br />
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 2"/><br />
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 2"/><br />
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 2"/><br />
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 2"/><br />
+  <w:LsdException Locked="false" Priority="51"<br />
+   Name="Grid Table 6 Colorful Accent 2"/><br />
+  <w:LsdException Locked="false" Priority="52"<br />
+   Name="Grid Table 7 Colorful Accent 2"/><br />
+  <w:LsdException Locked="false" Priority="46"<br />
+   Name="Grid Table 1 Light Accent 3"/><br />
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 3"/><br />
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 3"/><br />
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 3"/><br />
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 3"/><br />
+  <w:LsdException Locked="false" Priority="51"<br />
+   Name="Grid Table 6 Colorful Accent 3"/><br />
+  <w:LsdException Locked="false" Priority="52"<br />
+   Name="Grid Table 7 Colorful Accent 3"/><br />
+  <w:LsdException Locked="false" Priority="46"<br />
+   Name="Grid Table 1 Light Accent 4"/><br />
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 4"/><br />
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 4"/><br />
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 4"/><br />
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 4"/><br />
+  <w:LsdException Locked="false" Priority="51"<br />
+   Name="Grid Table 6 Colorful Accent 4"/><br />
+  <w:LsdException Locked="false" Priority="52"<br />
+   Name="Grid Table 7 Colorful Accent 4"/><br />
+  <w:LsdException Locked="false" Priority="46"<br />
+   Name="Grid Table 1 Light Accent 5"/><br />
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 5"/><br />
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 5"/><br />
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 5"/><br />
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 5"/><br />
+  <w:LsdException Locked="false" Priority="51"<br />
+   Name="Grid Table 6 Colorful Accent 5"/><br />
+  <w:LsdException Locked="false" Priority="52"<br />
+   Name="Grid Table 7 Colorful Accent 5"/><br />
+  <w:LsdException Locked="false" Priority="46"<br />
+   Name="Grid Table 1 Light Accent 6"/><br />
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 6"/><br />
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 6"/><br />
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 6"/><br />
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 6"/><br />
+  <w:LsdException Locked="false" Priority="51"<br />
+   Name="Grid Table 6 Colorful Accent 6"/><br />
+  <w:LsdException Locked="false" Priority="52"<br />
+   Name="Grid Table 7 Colorful Accent 6"/><br />
+  <w:LsdException Locked="false" Priority="46" Name="List Table 1 Light"/><br />
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2"/><br />
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3"/><br />
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4"/><br />
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark"/><br />
+  <w:LsdException Locked="false" Priority="51" Name="List Table 6 Colorful"/><br />
+  <w:LsdException Locked="false" Priority="52" Name="List Table 7 Colorful"/><br />
+  <w:LsdException Locked="false" Priority="46"<br />
+   Name="List Table 1 Light Accent 1"/><br />
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 1"/><br />
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 1"/><br />
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 1"/><br />
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 1"/><br />
+  <w:LsdException Locked="false" Priority="51"<br />
+   Name="List Table 6 Colorful Accent 1"/><br />
+  <w:LsdException Locked="false" Priority="52"<br />
+   Name="List Table 7 Colorful Accent 1"/><br />
+  <w:LsdException Locked="false" Priority="46"<br />
+   Name="List Table 1 Light Accent 2"/><br />
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 2"/><br />
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 2"/><br />
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 2"/><br />
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 2"/><br />
+  <w:LsdException Locked="false" Priority="51"<br />
+   Name="List Table 6 Colorful Accent 2"/><br />
+  <w:LsdException Locked="false" Priority="52"<br />
+   Name="List Table 7 Colorful Accent 2"/><br />
+  <w:LsdException Locked="false" Priority="46"<br />
+   Name="List Table 1 Light Accent 3"/><br />
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 3"/><br />
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 3"/><br />
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 3"/><br />
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 3"/><br />
+  <w:LsdException Locked="false" Priority="51"<br />
+   Name="List Table 6 Colorful Accent 3"/><br />
+  <w:LsdException Locked="false" Priority="52"<br />
+   Name="List Table 7 Colorful Accent 3"/><br />
+  <w:LsdException Locked="false" Priority="46"<br />
+   Name="List Table 1 Light Accent 4"/><br />
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 4"/><br />
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 4"/><br />
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 4"/><br />
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 4"/><br />
+  <w:LsdException Locked="false" Priority="51"<br />
+   Name="List Table 6 Colorful Accent 4"/><br />
+  <w:LsdException Locked="false" Priority="52"<br />
+   Name="List Table 7 Colorful Accent 4"/><br />
+  <w:LsdException Locked="false" Priority="46"<br />
+   Name="List Table 1 Light Accent 5"/><br />
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 5"/><br />
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 5"/><br />
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 5"/><br />
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 5"/><br />
+  <w:LsdException Locked="false" Priority="51"<br />
+   Name="List Table 6 Colorful Accent 5"/><br />
+  <w:LsdException Locked="false" Priority="52"<br />
+   Name="List Table 7 Colorful Accent 5"/><br />
+  <w:LsdException Locked="false" Priority="46"<br />
+   Name="List Table 1 Light Accent 6"/><br />
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 6"/><br />
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 6"/><br />
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 6"/><br />
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 6"/><br />
+  <w:LsdException Locked="false" Priority="51"<br />
+   Name="List Table 6 Colorful Accent 6"/><br />
+  <w:LsdException Locked="false" Priority="52"<br />
+   Name="List Table 7 Colorful Accent 6"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Mention"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Smart Hyperlink"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Hashtag"/><br />
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"<br />
+   Name="Unresolved Mention"/><br />
+ </w:LatentStyles><br />
+</xml><![endif]--><p></p> 
+                <!--[if gte mso 10]><style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;}
+</style><p><![endif]--><p></p> 
+                <!--StartFragment--><p>The Place to Teach, Learn and Grow</p></h1> 
+               <p>UCR provides our faculty members with the resources, support and stimulation needed to achieve their goals and educate our future leaders. We are dedicated to supporting our faculty in their efforts to make a positive difference in the world.</p> 
+               <p>Our university has a commitment to excellence and a proven track record of innovation and collaboration. Every day, our faculty brings an entrepreneurial spirit to education, showcasing what a public university is capable of in the 21st century. Our diverse team of faculty members have made a global impact, while gaining a reputation for leadership in innovation throughout Southern California.</p> 
+               <p class="MsoNormal"> </p> 
+               <p>
+                <!--EndFragment--></p> 
+              </div> 
+             </div> 
+             <div class="block--button_bar " data-block-plugin-id="block_content:b83478eb-d9cf-4c59-a3ab-a99ad50cce98"> 
+              <div class="item-wrapper"> 
+               <div class="field__item"> 
+                <a href="https://profiles.ucr.edu/app/home">Departmental Websites</a> 
+               </div> 
+               <div class="field__item"> 
+                <a href="https://www.universityofcalifornia.edu/uc-system/working-uc">Working at UC</a> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="block--teaser-callout-slider " data-block-plugin-id="block_content:0756c283-f130-440d-880d-71c87dcbeb72"> 
+              <div class="field field--name-field-view field--type-viewfield field--label-hidden"> 
+               <div class="field__item field__item-label-hidden"> 
+                <div class="views-element-container">
+                 <div class="teaser-callout-slider js-view-dom-id-0d87af1dd16d0a93524eab9136d5fe087d8e0461cbafb553d80176ae67e41a7e"> 
+                  <div id="slick-views-teaser-callout-slider-default-1" class="slick unslick slick--view--teaser-callout-slider slick--view--teaser-callout-slider--default slick--optionset--teaser-call-out slick--less">
+                   <div class="slick__slide slide slide--0">
+                    <div class="views-field views-field-field-tea">
+                     <div class="field-content">
+                      <div class="teaser-wrapper">
+                       <div class="teaser-image" style="background-image: url(/sites/g/files/rcwecm986/files/Banner_Senate.jpg); ">
+                        <div class="content-wrapper Orientation
+                
+        right" style="background-color: RGBA(33,37,41,0.8);  ">
+                         <div class="teaser-section-title">
+                          <div class="field field--name-field-callout-title field--type-string field--label-hidden field__items">
+                           <div class="field__item">
+                             Campus Life 
+                           </div>
+                          </div>
+                         </div>
+                         <div class="teaser-title">
+                          <div class="field field--name-field-title field--type-string field--label-hidden field__items">
+                           <div class="field__item">
+                             Academic Senate 
+                           </div>
+                          </div>
+                         </div>
+                         <div class="teaser-body">
+                          <div class="field field--name-field-callout-body field--type-text-long field--label-hidden field__items">
+                           <div class="field__item">
+                            <p>The voice of UCR faculty and a major conduit for faculty initiatives,&nbsp;the Academic Senate is a partner in the shared governance model of UC Riverside, overseeing the university's educational course.</p>
+                           </div>
+                          </div>
+                         </div>
+                         <div class="teaser-button">
+                          <div class="field field--name-field-button field--type-link field--label-hidden field__items">
+                           <div class="field__item">
+                            <a href="http://senate.ucr.edu/">Academic Senate</a>
+                           </div>
+                          </div>
+                         </div>
+                        </div>
+                       </div>
+                       <div class="paragraph paragraph--type--teaser-callout-slider paragraph--view-mode--default tabs-panel" id="">
+                        <div class="body">
+                         <div class="field field--name-field-callout-body field--type-text-long field--label-hidden field__items">
+                          <div class="field__item">
+                           <p>The voice of UCR faculty and a major conduit for faculty initiatives,&nbsp;the Academic Senate is a partner in the shared governance model of UC Riverside, overseeing the university's educational course.</p>
+                          </div>
+                         </div>
+                        </div>
+                       </div>
+                      </div>
+                     </div>
+                    </div>
+                   </div>
+                  </div> 
+                 </div> 
+                </div> 
+               </div> 
+              </div> 
+             </div>
+             <div class="block--teaser-callout-slider " data-block-plugin-id="block_content:d617c08c-77e9-4d88-8610-22c53b55e5e2"> 
+              <div class="field field--name-field-view field--type-viewfield field--label-hidden"> 
+               <div class="field__item field__item-label-hidden"> 
+                <div class="views-element-container">
+                 <div class="teaser-callout-slider js-view-dom-id-bcd0a25231db72783c5127169a151baa899b7a31be70885dbeb969e88637eb03"> 
+                  <div id="slick-views-teaser-callout-slider-default-2" class="slick slick--view--teaser-callout-slider slick--view--teaser-callout-slider--default slick--optionset--teaser-call-out">
+                   <div id="slick-views-teaser-callout-slider-default-2-slider" data-slick="{&quot;adaptiveHeight&quot;:true,&quot;dots&quot;:true,&quot;fade&quot;:true}" class="slick__slider">
+                    <div class="slick__slide slide slide--0">
+                     <div class="views-field views-field-field-tea">
+                      <div class="field-content">
+                       <div class="teaser-wrapper">
+                        <div class="teaser-image" style="background-image: url(/sites/g/files/rcwecm986/files/our-campus.jpg); ">
+                         <div class="content-wrapper Orientation
+                
+        left" style="background-color: RGBA(128,34,68,1);  ">
+                          <div class="teaser-section-title">
+                           <div class="field field--name-field-callout-title field--type-string field--label-hidden field__items">
+                            <div class="field__item">
+                              Why UC Riverside? 
+                            </div>
+                           </div>
+                          </div>
+                          <div class="teaser-title">
+                           <div class="field field--name-field-title field--type-string field--label-hidden field__items">
+                            <div class="field__item">
+                              Our Campus 
+                            </div>
+                           </div>
+                          </div>
+                          <div class="teaser-body">
+                           <div class="field field--name-field-callout-body field--type-text-long field--label-hidden field__items">
+                            <div class="field__item">
+                             <ul>
+                              <li>UCR is home to state-of-the art facilities, laboratories, and offices.</li>
+                              <li>Campus is located in great proximity to Los Angeles, San Diego and Orange County’s metropolitan areas at a much lower cost of living.</li>
+                              <li>Riverside is less than an hour drive to beautiful and diverse recreation areas, surrounding mountain, desert, lake, and beach landscapes.</li>
+                             </ul>
+                            </div>
+                           </div>
+                          </div>
+                          <div class="teaser-button"></div>
+                         </div>
+                        </div>
+                        <div class="paragraph paragraph--type--teaser-callout-slider paragraph--view-mode--default tabs-panel" id="">
+                         <div class="body">
+                          <div class="field field--name-field-callout-body field--type-text-long field--label-hidden field__items">
+                           <div class="field__item">
+                            <ul>
+                             <li>UCR is home to state-of-the art facilities, laboratories, and offices.</li>
+                             <li>Campus is located in great proximity to Los Angeles, San Diego and Orange County’s metropolitan areas at a much lower cost of living.</li>
+                             <li>Riverside is less than an hour drive to beautiful and diverse recreation areas, surrounding mountain, desert, lake, and beach landscapes.</li>
+                            </ul>
+                           </div>
+                          </div>
+                         </div>
+                        </div>
+                       </div>
+                      </div>
+                     </div>
+                    </div>
+                    <div class="slick__slide slide slide--1">
+                     <div class="views-field views-field-field-tea">
+                      <div class="field-content">
+                       <div class="teaser-wrapper">
+                        <div class="teaser-image" style="background-image: url(/sites/g/files/rcwecm986/files/research.jpg); ">
+                         <div class="content-wrapper Orientation
+                
+        right" style="background-color: RGBA(250,81,81,1);  ">
+                          <div class="teaser-section-title">
+                           <div class="field field--name-field-callout-title field--type-string field--label-hidden field__items">
+                            <div class="field__item">
+                              Why UC Riverside? 
+                            </div>
+                           </div>
+                          </div>
+                          <div class="teaser-title">
+                           <div class="field field--name-field-title field--type-string field--label-hidden field__items">
+                            <div class="field__item">
+                              Our Research 
+                            </div>
+                           </div>
+                          </div>
+                          <div class="teaser-body">
+                           <div class="field field--name-field-callout-body field--type-text-long field--label-hidden field__items">
+                            <div class="field__item">
+                             <p>With a reputation for innovation, UCR is a place where dedicated researches get the support and resources they need to make great strides. Our faculty members continually make discoveries that drive change, causing positive economic, scientific, and social shifts across the globe.</p>
+                            </div>
+                           </div>
+                          </div>
+                          <div class="teaser-button"></div>
+                         </div>
+                        </div>
+                        <div class="paragraph paragraph--type--teaser-callout-slider paragraph--view-mode--default tabs-panel" id="">
+                         <div class="body">
+                          <div class="field field--name-field-callout-body field--type-text-long field--label-hidden field__items">
+                           <div class="field__item">
+                            <p>With a reputation for innovation, UCR is a place where dedicated researches get the support and resources they need to make great strides. Our faculty members continually make discoveries that drive change, causing positive economic, scientific, and social shifts across the globe.</p>
+                           </div>
+                          </div>
+                         </div>
+                        </div>
+                       </div>
+                      </div>
+                     </div>
+                    </div>
+                    <div class="slick__slide slide slide--2">
+                     <div class="views-field views-field-field-tea">
+                      <div class="field-content">
+                       <div class="teaser-wrapper">
+                        <div class="teaser-image" style="background-image: url(/sites/g/files/rcwecm986/files/our-people.jpg); ">
+                         <div class="content-wrapper Orientation
+                
+        left" style="background-color: RGBA(99,126,164,1);  ">
+                          <div class="teaser-section-title">
+                           <div class="field field--name-field-callout-title field--type-string field--label-hidden field__items">
+                            <div class="field__item">
+                              Why UC Riverside? 
+                            </div>
+                           </div>
+                          </div>
+                          <div class="teaser-title">
+                           <div class="field field--name-field-title field--type-string field--label-hidden field__items">
+                            <div class="field__item">
+                              Our People 
+                            </div>
+                           </div>
+                          </div>
+                          <div class="teaser-body">
+                           <div class="field field--name-field-callout-body field--type-text-long field--label-hidden field__items">
+                            <div class="field__item">
+                             <p>UC Riverside’s 850 faculty members range from established professors in the prime of their research to budding academics bringing exciting new ideas to established fields of study. A team of visionaries, our strength is in our diversity.</p>
+                            </div>
+                           </div>
+                          </div>
+                          <div class="teaser-button"></div>
+                         </div>
+                        </div>
+                        <div class="paragraph paragraph--type--teaser-callout-slider paragraph--view-mode--default tabs-panel" id="">
+                         <div class="body">
+                          <div class="field field--name-field-callout-body field--type-text-long field--label-hidden field__items">
+                           <div class="field__item">
+                            <p>UC Riverside’s 850 faculty members range from established professors in the prime of their research to budding academics bringing exciting new ideas to established fields of study. A team of visionaries, our strength is in our diversity.</p>
+                           </div>
+                          </div>
+                         </div>
+                        </div>
+                       </div>
+                      </div>
+                     </div>
+                    </div>
+                   </div>
+                   <nav class="slick__arrow">
+                    <button type="button" data-role="none" class="slick-prev" aria-label="Previous" tabindex="0" role="button">Previous</button>
+                    <button type="button" data-role="none" class="slick-next" aria-label="Next" tabindex="0" role="button">Next</button>
+                   </nav>
+                  </div> 
+                 </div> 
+                </div> 
+               </div> 
+              </div> 
+             </div>
+             <div class="block--simple-block-body " data-block-plugin-id="block_content:2da54f6e-a786-4587-9782-9c9c57e84460"> 
+              <div class="field field--name-body field--type-text-with-summary field--label-hidden field__items"> 
+               <div class="field__item"> 
+                <h1 class="separator-line-before">Office of Academic Personnel</h1> 
+                <p>The <a href="http://academicpersonnel.ucr.edu" title="Office of Academic Personnel">Office of Academic Personnel</a> facilitates the recruitment, development, and retention of world-class academics.</p> 
+                <p>The office oversees issues that are key to the hiring and advancement of academic employees on campus, including the appointment of faculty, merit reviews, and promotions for faculty and other academic employees.&nbsp;</p> 
+                <p>The office also handles employment matters for lecturers, adjunct professors, librarians and other academic employees whose work supports the university's mission.</p> 
+                <p>Monthly meetings and quarterly forums give employees access to experts in such fields as conflict resolution, student counseling, budget, legal matters, and other issues often faced by department chairs.</p> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="block--button_bar " data-block-plugin-id="block_content:c9d78c1d-5cc5-4fef-85fe-c2b1275075fe"> 
+              <h2 class="block--button_bar ">Resources for Faculty</h2> 
+              <div class="item-wrapper"> 
+               <div class="field__item"> 
+                <a href="http://ecs.ucr.edu/">Child care</a> 
+               </div> 
+               <div class="field__item"> 
+                <a href="http://parking.ucr.edu/">Transportation</a> 
+               </div> 
+               <div class="field__item"> 
+                <a href="http://umbrella.ucr.staging-preview.com/about/visitors">Visit</a> 
+               </div> 
+               <div class="field__item"> 
+                <a href="https://ucrtoday.ucr.edu/inside-ucr">CAMPUS NEWS: INSIDE UCR</a> 
+               </div> 
+              </div> 
+             </div> 
+             <div class="block--button_bar " data-block-plugin-id="block_content:1b37b6f9-9ae9-4764-9f29-a7796d72fac2"> 
+              <div class="item-wrapper"> 
+               <div class="field__item"> 
+                <a href="http://provost.ucr.edu/cluster-hiring/">Academic Searches</a> 
+               </div> 
+               <div class="field__item"> 
+                <a href="http://provost.ucr.edu">Provost Priorities</a> 
+               </div> 
+               <div class="field__item"> 
+                <a href="https://ucnet.universityofcalifornia.edu/compensation-and-benefits/index.html">Outstanding Benefits</a> 
+               </div> 
+               <div class="field__item"> 
+                <a href="http://hr.ucr.edu/">Human Resources</a> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </article> 
        </div> 
-       <!--/.nav-collapse -->
       </div> 
      </div> 
-    </div> 
-    <div id="topnews"> 
-     <div class="flexslider"> 
-      <ul class="slides"> 
-       <li><a href="https://go.ucsd.edu/2FHw848"><img alt="From left, MFA candidates Yonatan Gebeyehu and DeLeon Dallas at the Graduate Actor Student Showcase in Los Angeles. Photos by Erik Jepsen/ UC San Diego Publications" src="_images/homepage/lead-news/general-ucsd/graduate-actor-student-showcase-2018.jpg"></a> <p class="flex-caption"> <a href="https://go.ucsd.edu/2FHw848">From students to the stage</a> </p> </li> 
-       <li><a href="https://go.ucsd.edu/2reSAxn"><img alt="Police with new automated external defibrillators" src="_images/homepage/lead-news/police-aed.jpg"></a> <p class="flex-caption"> <a href="https://go.ucsd.edu/2reSAxn">UC San Diego Police Department has 10 new Powerheart® G5 AED units</a> </p> </li> 
-       <li><a href="https://go.ucsd.edu/2jiBs5v"><img alt="Dolphins jumping" src="_images/homepage/lead-news/dolphins-jumping-large.jpg"></a> <p class="flex-caption"> <a href="https://go.ucsd.edu/2jiBs5v">Flourish in May: Special events for Mental Health Awareness Month</a> </p> </li> 
-      </ul> 
-      <div class="controls"></div> 
-     </div> 
-     <ul id="secondary_news"> 
-      <li><a href="http://go.ucsd.edu/2t5Y0Ke" title="Chancellor's blog: Broadening the path to higher education"><img alt="Chancellor’s Associates Scholarship Program" src="_images/homepage/chancellor-blog/chancellor-associates-scholarship-program-2018.jpg"></a> <p class="secondary-caption"> <a href="http://go.ucsd.edu/2t5Y0Ke">Chancellor's blog: Broadening the path to higher education</a> </p></li> 
-      <li><a href="https://go.ucsd.edu/2rfKc0H" title="Is your family growing by two feet? Attend the Expectant Parent Workshop: May 9"><img alt="Baby shoes" src="_images/homepage/baby-shoes.jpg"></a> <p class="secondary-caption"> <a href="https://go.ucsd.edu/2rfKc0H">Is your family growing by two feet? Attend the Expectant Parent Workshop: May 9</a> </p></li> 
-      <li><a href="https://go.ucsd.edu/2GVawWZ" title="Register for UCSD Extension: Team Inspiration Techniques, May 12"><img alt="UCSD Extension class" src="_images/homepage/ucsd-extension.jpg"></a> <p class="secondary-caption"> <a href="https://go.ucsd.edu/2GVawWZ">Register for UCSD Extension: Team Inspiration Techniques, May 12</a> </p></li> 
-      <li><a href="https://go.ucsd.edu/2HINMq3" title="Gender bias, sexism and stereotypes in STEM with Latina feminist Patricia Valoy: May 10"><img alt="Patricia Valoy" src="_images/homepage/patricia-valoy.jpg"></a> <p class="secondary-caption"> <a href="https://go.ucsd.edu/2HINMq3">Gender bias, sexism and stereotypes in STEM with Latina feminist Patricia Valoy: May 10</a> </p></li> 
-     </ul> 
-     <hr class="clearing" style="clear: both; background: transparent; color: #fff; margin: 0; padding: 0; height: 0;"> 
-    </div> 
-    <div class="col" id="col_1_of_4">
-     <h2>MyBlink</h2> 
-     <div style="vertical-align: top; padding-right: 15px;"> 
-      <ul class="styled" id="_myblink_toolbox"> 
-       <li><a href="#">Activate MyBlink</a></li> 
-      </ul> 
-     </div>
-    </div> 
-    <div class="col" id="col_2_of_4"> 
-     <h2>Important Dates</h2> 
-     <dl> 
-      <dt>
-       May 4
-      </dt> 
-      <dd>
-       <a href="http://blink.ucsd.edu/sponsor/BFS/divisions/general-accounting/ledger-dates.html">Ledger Cutoff</a>
-      </dd> 
-      <dt>
-       May 11
-      </dt> 
-      <dd>
-       <a href="http://blink.ucsd.edu/finance/accounting/expense-transfers/index.html#Overview-and-Deadlines">EPET due date</a>
-      </dd> 
-      <dt>
-       May 16
-      </dt> 
-      <dd>
-       <a href="http://www-bfs.ucsd.edu/pay/pdf/cal18.pdf">Biweekly pay date (PDF)</a>
-      </dd> 
-      <dt>
-       May 28
-      </dt> 
-      <dd>
-       <a href="https://blink.ucsd.edu/HR/benefits/time-off/holidays.html">Memorial Day observance</a>
-      </dd> 
-      <dt>
-       May 30
-      </dt> 
-      <dd>
-       <a href="http://www-bfs.ucsd.edu/pay/pdf/cal18.pdf">Biweekly pay date (PDF)</a>
-      </dd> 
-      <dt>
-       June 1
-      </dt> 
-      <dd>
-       <a href="http://www-bfs.ucsd.edu/pay/pdf/cal18.pdf">Monthly pay date (PDF)</a>
-      </dd> 
-      <dt>
-       June 1
-      </dt> 
-      <dd>
-       <a href="http://blink.ucsd.edu/finance/accounting/expense-transfers/index.html#Overview-and-Deadlines">ENPET due date</a>
-       <a href="HR/benefits/time-off/holidays.html"></a>
-      </dd> 
-     </dl> 
-     <a href="sponsor/blink/resources/calendars/index.html">More calendars ...</a> 
-    </div> 
-    <div class="col" id="col_3_of_4"> 
-     <h2>Popular on Blink</h2> 
-     <div></div> 
-     <ul> 
-      <li><a href="http://blink.ucsd.edu/technology/help-desk/directory/departments-quick/index.html">Department Directory Listing</a></li> 
-      <li><a href="http://ucsd.edu/about/a-to-z-index/index.html">A–Z Site Index</a></li> 
-      <li><a href="instructors/resources/academic/calendars/2017.html">Academic Calendar 2017–2018</a></li> 
-      <li><a href="http://transportation.ucsd.edu/">Transportation Services</a></li> 
-      <li><a href="sponsor/scspoc/ideawave/index.html">IdeaWave</a></li> 
-      <li><a href="http://blink.ucsd.edu/technology/email/tasks/web.html">Checking Your UCSD Email from the Web</a></li> 
-      <li><a href="technology/email/upgrade/index.html">Email Upgrade</a></li> 
-      <li><a href="http://blink.ucsd.edu/technology/network/access/">UC San Diego Accounts and Passwords</a></li> 
-      <li><a href="http://blink.ucsd.edu/technology/file-sharing/skype/download.html">How to Download the Skype for Business (Lync) Client</a></li> 
-      <li><a href="finance/payroll/timekeeping/mte/index.html">MyTime Entry Overview</a></li> 
-     </ul> 
-     <h2>Tip of the Week</h2> 
-     <ul> 
-      <li> <p><a href="https://go.ucsd.edu/2IH5cUe">Get started with Zoom video and web conferencing</a></p> </li> 
-     </ul> 
-     <p style="text-align: right;"><em>Have a tip? <a href="mailto:cwo@ucsd.edu">Let us know</a>.</em></p> 
-    </div> 
-    <div class="col" id="col_4_of_4"> 
-     <div class="system-status status"> 
-      <h2>System Status</h2> 
-      <p class="system-status-message"></p> 
-     </div> 
-     <div class="status email"> 
-      <h2><a href="http://mail.ucsd.edu">UCSD email</a></h2> 
-      <p><a href="http://mail.ucsd.edu">Connect to UCSD-Exchange mail</a></p> 
-     </div> 
-     <div class="status shuttle"> 
-      <h2><a class="nounderline" href="http://www.ucsdbus.com/map?showHeader=0">Shuttle Status</a></h2> 
-      <p>See real-time locations and estimated arrivals of campus shuttles.</p> 
-     </div> 
-     <div class="status maplink"> 
-      <h2><a href="http://act.ucsd.edu/maps/?traffic=1">Maps &amp; Traffic</a></h2> 
-      <p>Locate campus buildings and services with<span data-mce-mark="1" style="line-height: 1.2;">&nbsp;current traffic conditions.</span></p> 
-     </div> 
-     <script src="_resources/js/site-specific.js" type="text/javascript">// <![CDATA[
-
-// ]]></script> 
-     <div class="box_2" id="wthr-widget"> 
-      <div class="wthr_box"> 
-       <h3 class="wthr">Weather</h3> 
-       <div class="ws-icon" id="ws-icon-w">
-        <img alt="Current Weather" id="weather-img" style="visibility: hidden;">
-       </div> 
-       <div class="ws-data" id="weather-temp"></div> 
-      </div> 
-      <div class="srf_box"> 
-       <h3 class="srf">Surf</h3> 
-       <div class="ws-icon" id="ws-icon-s"></div> 
-       <div class="ws-data" id="weather-surf"></div> 
-      </div> 
-      <a href="http://forecast.io/#/f/32.8829929,-117.2409542" id="full-w">7-day forecast</a>
-     </div> 
-     <script type="text/javascript">// <![CDATA[
-function jsonpCallback(jsonStr) {
-        var json = JSON.parse(jsonStr);
-        $('#_myblink_toolbox').html(json.message);
-    }
-    
-function myBlinkLogout() {
-    // delete cookie
-    document.cookie = '_myblink_user=; Path=/; domain=.ucsd.edu; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-    $.ajax('https://act.ucsd.edu/myblink-client/bookmarks/j-logout.htm');
-}
-// ]]></script> 
-     <script src="https://act.ucsd.edu/myblink-client/bookmarks/getItemsV2.htm" type="text/javascript">// <![CDATA[
-
-// ]]></script>
     </div> 
    </div> 
   </div> 
-  <div id="tdr_footer"> 
-   <div id="tdr_footer_content"> 
-    <div id="tdr_address"> 
-     <span id="tdr_address_place">UC San Diego</span> 
-     <span id="tdr_address_street">9500 Gilman Dr.</span> 
-     <span id="tdr_address_city_state_zip">La Jolla, CA 92093</span> 
-     <span id="tdr_address_phone">(858) 534-2230</span> 
+  <footer> 
+   <div class="grid-container"> 
+    <div class="grid-x grid-padding-x align-center"> 
+     <div class="cell footer-google-search" id="block-ucriversidefootersearchblock-2" data-block-plugin-id="ucr_global_footer_search"> 
+      <section class="google-search"> 
+       <form action="https://www.ucr.edu/search.php"> 
+        <label class="show-for-sr" for="footer-search">Search for:</label> 
+        <input type="text" maxlength="255" id="footer-search" name="q" value="" placeholder=" "> 
+       </form> 
+      </section> 
+     </div> 
     </div> 
-    <div id="tdr_copyright">
-     Copyright ©
-     <span id="tdr_copyright_year">2018</span> Regents of the University of California. All rights reserved.
+    <div class="grid-x grid-padding-x footer-columns"> 
+     <div class="cell medium-auto"> 
+      <section class="footer-item ucr-footer-info"> 
+       <span class="footer-logo"><span class="show-for-sr">University of California, Riverside</span></span> 
+       <address> <p>900 University Ave.<br> Riverside, CA 92521</p> <p>Tel: (951) 827-1012</p> </address> 
+       <ul class="footer-links"> 
+        <li><a href="http://library.ucr.edu/" target="_blank">UCR Library</a></li> 
+        <li><a href="http://campusstatus.ucr.edu/" target="_blank">Campus Status</a></li> 
+        <li><a href="http://campusstore.ucr.edu/" target="_blank">Campus Store</a></li> 
+        <li><a href="http://jobs.ucr.edu" target="_blank">Career Opportunities</a></li> 
+        <li><a href="http://diversity.ucr.edu/" target="_blank">Diversity</a></li> 
+        <li><a href="http://campusmap.ucr.edu/" target="_blank">Maps and Directions</a></li> 
+        <li><a href="/about/visitors">Visit UCR</a></li> 
+       </ul> 
+      </section> 
+     </div> 
+     <div class="cell medium-auto"> 
+      <section class="footer-item footer-dept-info" id="block-ucriversidefooterdeptinformationblock-2" data-block-plugin-id="ucr_global_footer_dept_info"> 
+       <h3>University Communications</h3> 
+       <address class="address_2"> <p> <a href="http://campusmap.ucr.edu/?loc=HINHL" target="_blank"> 1156 Hinderaker Hall </a><br> </p> <p> Tel: (951) 827-1012<br> E-mail: <a href="mailto:webmaster@ucr.edu">webmaster@ucr.edu</a> </p> </address> 
+       <p> <a class="link-img link-img-location" href="http://campusmap.ucr.edu/?loc=HINHL" target="_blank"> Find Us<br><br> <img src="/themes/custom/ucr_default/images/googlemap.png" alt="Find Us"></a> </p> 
+      </section> 
+      <section class="UcrGlobalFooterFollowUsBlock"> 
+       <p class="social-title">Follow US:</p> 
+       <div class="social-link"> 
+        <a href="https://www.facebook.com/UCRiverside/" target="_blank" class="button mdi mdi-facebook" title="Facebook"><span class="show-for-sr">Facebook</span></a> 
+        <a href="https://twitter.com/UCRiverside" target="_blank" class="button mdi mdi-twitter" title="Twitter"><span class="show-for-sr">Twitter</span></a> 
+        <a href="https://www.youtube.com/UCRiverside" target="_blank" class="button mdi mdi-youtube-play" title="YouTube"><span class="show-for-sr">YouTube</span></a> 
+        <a href="https://www.instagram.com/ucriversideofficial/" target="_blank" class="button mdi mdi-instagram" title="Instagram"><span class="show-for-sr">Instagram</span></a> 
+        <a href="https://www.linkedin.com/school/university-of-california-riverside/" target="_blank" class="button mdi mdi-linkedin" title="LinkedIn"><span class="show-for-sr">LinkedIn</span></a> 
+       </div> 
+      </section> 
+     </div> 
+     <div class="cell medium-auto"> 
+      <nav role="navigation" aria-labelledby="block-ucriversiderelatedlinks-2-menu" id="block-ucriversiderelatedlinks-2" data-block-plugin-id="menu_block:ucr-related-links-menu" class="general-menu"> 
+       <h2 id="block-ucriversiderelatedlinks-2-menu">UC Riverside Related Links</h2> 
+       <ul class="vertical menu"> 
+        <li><a href="http://admissions.ucr.edu" target="_self">UCR Admissions</a> </li> 
+        <li><a href="http://admissions.ucr.edu/academics/index.html" target="_self">Colleges and Schools</a> </li> 
+        <li><a href="http://graduate.ucr.edu" target="_self">Graduate Division</a> </li> 
+        <li><a href="/giving" target="_self" data-drupal-link-system-path="node/558">Support UCR</a> </li> 
+        <li><a href="http://careers.ucr.edu/" target="_self">UCR Career Center</a> </li> 
+        <li><a href="https://www.ucrhealth.org/home/" target="_self">UCR Health</a> </li> 
+        <li><a href="http://jobs.ucr.edu" target="_self">UCR Jobs</a> </li> 
+        <li><a href="https://ucrtoday.ucr.edu/" target="_self">UCRToday</a> </li> 
+       </ul> 
+      </nav> 
+      <div class="block--basic " id="block-ucrtobaccofree" data-block-plugin-id="block_content:b0ebddf5-5266-4474-9321-98363ab00dd0"> 
+       <div class="field field--name-body field--type-text-with-summary field--label-hidden field__items"> 
+        <div class="field__item"> 
+         <p><a href="http://tobaccofree.ucr.edu/" target="_blank" title="Tobacco Free"></a></p>
+         <article class="embedded-entity">
+          <a href="http://tobaccofree.ucr.edu/" target="_blank" title="Tobacco Free"><img src="/sites/g/files/rcwecm986/files/UCR-TOBACCO-FREE.png" alt="ucr tobacco free" title="ucr tobacco free logo" typeof="foaf:Image"></a>
+         </article>
+         <p></p> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
     </div> 
-    <ul id="tdr_footer_links"> 
-     <li><a href="http://ucsd.edu/about/terms-of-use.html">Terms &amp; Conditions</a></li> 
-     <li id="tdr_footer_feedback"> <a href="https://eforms.ucsd.edu/view.php?id=252329">Feedback</a> </li> 
-    </ul> 
-    <script src="https://cdn.ucsd.edu/cms/decorator-4.5/scripts/decorator.js" type="text/javascript"></script> 
-    <script type="text/javascript">
-    (function($) {
-        $(document).ready(function() {
-                    initFooter("https://eforms.ucsd.edu/view.php?id=252329");
-                    initCopyright();
-        });
-    })(jQuery);
-    </script> 
-    <script type="text/javascript">
-// <![CDATA[
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-3409104-3', 'auto');
-  ga('send', 'pageview');
-// ]]>
-</script> 
    </div> 
-   <script src="_resources/js/bootstrap.min.js" type="text/javascript">
-</script> 
-   <script src="//act.ucsd.edu/cwp/homepage/psweather" type="text/javascript"> </script> 
-   <script src="_resources/js/weather-widget.js" type="text/javascript">
-</script> 
-  </div>  
+   <div class="site-legal-footer"> 
+    <div class="grid-container"> 
+     <div class="grid-x grid-padding-x"> 
+      <div class="cell"> 
+       <ul> 
+        <!--<li><a href="/feedback" title="Send Feedback E-mail">Feedback</a></li>--> 
+        <li><a href="http://www.ucr.edu/privacy.html">Privacy Policy</a></li> 
+        <li><a href="http://www.ucr.edu/terms.html">Terms and Conditions</a></li> 
+        <li>© 2018 Regents of the University of California</li> 
+       </ul> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </footer>  
+  <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/90","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","ajaxPageState":{"libraries":"blazy\/loading,colorbox\/plain,colorbox_inline\/colorbox_inline,colorbox_load\/colorbox_load,core\/html5shiv,google_analytics\/google_analytics,ng_lightbox\/ng_lightbox,slick\/slick.load,system\/base,ucr_umbrella\/global-css,ucr_umbrella\/global-js,views\/views.module","theme":"ucr_umbrella","theme_token":null},"ajaxTrustedUrl":[],"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px"},"google_analytics":{"trackOutbound":true,"trackMailto":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":true},"slick":{"accessibility":true,"adaptiveHeight":false,"autoplay":false,"autoplaySpeed":3000,"pauseOnHover":true,"pauseOnDotsHover":false,"arrows":true,"downArrow":false,"downArrowTarget":"","downArrowOffset":0,"centerMode":false,"centerPadding":"50px","dots":false,"dotsClass":"slick-dots","draggable":true,"fade":false,"focusOnSelect":false,"infinite":true,"initialSlide":0,"lazyLoad":"ondemand","mouseWheel":false,"randomize":false,"rtl":false,"rows":1,"slidesPerRow":1,"slide":"","slidesToShow":1,"slidesToScroll":1,"speed":500,"swipe":true,"swipeToSlide":false,"edgeFriction":0.34999999999999998,"touchMove":true,"touchThreshold":5,"useCSS":true,"cssEase":"ease","cssEaseBezier":"","cssEaseOverride":"","useTransform":true,"easing":"linear","variableWidth":false,"vertical":false,"verticalSwiping":false,"waitForAnimate":true},"ajax":[],"user":{"uid":0,"permissionsHash":"191a86fe5ca26157187c24cfdb5c0da88fdb3a64a251cef8e2bbf99d52e1f83f"}}</script> 
+  <script src="/sites/g/files/rcwecm986/files/js/js_nKryhvexh7BBsBF0hqt5kt6MBQ5EYyeU9AvNpTEnJeo.js"></script> 
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"07d404edfe","applicationID":"99508828","transactionName":"MVZSYRNWCxBZB0wIWggccVYVXgoNFxRZBlA5UFFWCVI=","queueTime":0,"applicationTime":61,"atts":"HRFRF1tMGB4=","errorBeacon":"bam.nr-data.net","agent":""}</script> 
  </body>
 </html>

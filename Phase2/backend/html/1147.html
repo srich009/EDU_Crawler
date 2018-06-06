@@ -1,0 +1,49 @@
+<html>
+ <head> 
+  <title>Course Request And Maintenance System Page</title> 
+  <script language="JavaScript" src="docs/crams.js"></script> 
+  <script language="JavaScript" src="docs/crams_window.js"></script> 
+ </head> 
+ <body text="000000" link="0000ff" vlink="7f004f" alink="4A00ff"> 
+  <map name="UCRsign"> <area SHAPE="RECT" COORDS="15,03,80,60" HREF="http://www.ucr.edu/"> </map> 
+  <map name="Links"> <area SHAPE="RECT" COORDS="170,4,260,20" HREF="approver.logout"> <area SHAPE="RECT" COORDS="309,4,410,20" HREF="http://oneclick.ucr.edu/"> <area SHAPE="RECT" COORDS="455,4,552,20" HREF="http://www.ucr.edu/"> <area SHAPE="RECT" COORDS="630,4,680,20" HREF="javascript:void(0)" onclick="newWindowToDisplay('http://crams.registrar.ucr.edu')"> </map> 
+  <map name="MainTabs"> <area SHAPE="RECT" COORDS="6,7,71,34" HREF="approver.Display_College_Department"> <area SHAPE="RECT" COORDS="79,9,159,34" HREF="approver.Display_Course_Identification"> <area SHAPE="RECT" COORDS="170,10,254,34" HREF="approver.Display_Units_Off_Hrs_Preq"> <area SHAPE="RECT" COORDS="264,10,340,34" HREF="approver.Display_Course_Description"> <area SHAPE="RECT" COORDS="354,10,425,35" HREF="approver.Display_Instructors"> <area SHAPE="RECT" COORDS="441,9,530,34" HREF="approver.Display_Other_Courses_Programs"> <area SHAPE="RECT" COORDS="543,9,616,34" HREF="approver.Display_Approvals"> <area SHAPE="RECT" COORDS="630,10,693,34" HREF="approver.Display_Comments"> <area SHAPE="RECT" COORDS="705,9,746,36" HREF="approver.Display_Chats"> </map> 
+  <img SRC="docs/courseheader4.gif" ALT="UCR Course Request And Maintenance System Page" border="0" usemap="#UCRsign"> 
+  <br> 
+  <br> 
+  <form ACTION="approver.Chk_user" METHOD="POST"> 
+   <table border="0"> 
+    <tbody>
+     <tr> 
+      <td>Username</td> 
+      <td> </td> 
+      <td> </td> 
+      <td> </td> 
+      <td> </td> 
+      <td> </td> 
+      <td><input TYPE="text" NAME="iuser" SIZE="16" MAXLENGTH="20"></td> 
+     </tr> 
+     <tr> 
+      <td>Password</td> 
+      <td> </td> 
+      <td> </td> 
+      <td> </td> 
+      <td> </td> 
+      <td> </td> 
+      <td><input TYPE="password" NAME="ipasswd" SIZE="16" MAXLENGTH="20"></td> 
+     </tr> 
+    </tbody>
+   </table> 
+   <br> 
+   <br> 
+   <input TYPE="submit" NAME="iaction" VALUE="Login"> 
+   <input TYPE="reset" VALUE="Reset">  
+  </form> 
+  <br> 
+  <br> 
+  <br> 
+  <br> 
+  <br> 
+  <img SRC="docs/ucrtrailer4.jpg" border="0" usemap="#Links">   
+ </body>
+</html>
