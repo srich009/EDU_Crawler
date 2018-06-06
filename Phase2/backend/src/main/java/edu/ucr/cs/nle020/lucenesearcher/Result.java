@@ -21,13 +21,13 @@ public class Result
         this.url = url;
         this.score = score;
     }
-	/*
+	
     public int getId() {
-        return id;
+        return docId;
     }
 
     public void setId(int id) {
-        this.id = id;
+        this.docId = id;
     }
 
     public String getTitle() {
@@ -54,17 +54,18 @@ public class Result
         this.snippet = snippet;
     }
 
-    public double getScore() {
+    public float getScore() {
         return score;
     }
 
-    public void setScore(Double score) {
+    public void setScore(float score) {
         this.score = score;
     }
-	*/
+	
 
     @Override
     public String toString() {
-        return String.format("Article[id=%d, title=%s, url=%s, snippet=%s, score=%f]", id, title, url, snippet, score);
+        System.out.println("got this far");
+        return String.format("Article[id=%d, title=%s, url=%s, snippet=%s, score=%f]", docId, title, url, snippet, score);
     }
 }

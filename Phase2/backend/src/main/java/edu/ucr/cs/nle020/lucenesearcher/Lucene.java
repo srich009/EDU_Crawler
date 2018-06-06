@@ -117,10 +117,11 @@ public class Lucene
         
         //Number of websites to return
         int topHitCount = count;
-        
+        System.out.println("got here far");
         //Search Index for hits that match the query most
         ScoreDoc[] hits = indexSearcher.search(query,topHitCount).scoreDocs;
 
+        System.out.println("returned indexsearcher");
         // Iterate through the results: 
         //   -Assuming they are sorted by rank high to low already
         List<Result> results = new ArrayList<Result>();
@@ -128,6 +129,8 @@ public class Lucene
         {
             Document hitDoc = indexSearcher.doc(hits[lucRank].doc);
             
+            System.out.println(hitDoc.get("score"));
+
             // get document number from hashmap
             int docID = docMap.get(hitDoc.get("url"));
 
@@ -136,12 +139,13 @@ public class Lucene
             						Float.parseFloat(hitDoc.get("score")) ) );
             
         }
+        System.out.println("made results array");
 
 
-		if (withPR==("Sure")) {
+		if (withPR.equals("true")) {
 			Collections.sort(results, new ResultComp());
 		}
-
+        System.out.println("sorted");
         for (int rank = 0; rank < results.size(); ++rank) 
         {
 	            //grab document associated with position
@@ -178,7 +182,7 @@ public class Lucene
                 
 	            results.get(rank).snippet = snip1;
 		}
-
+        System.out.println("about to close");
 	    indexReader.close();
 	    a_directory.close();
 	    return results;
