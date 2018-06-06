@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
  * https://lucene.apache.org/core/7_3_0/core/overview-summary.html#overview.description
  */
 @RestController
+@CrossOrigin("*")
 public class LuceneController 
 {
     @GetMapping("/search")
