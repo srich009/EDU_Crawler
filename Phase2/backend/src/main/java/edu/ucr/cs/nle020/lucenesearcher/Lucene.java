@@ -129,14 +129,13 @@ public class Lucene
         {
             Document hitDoc = indexSearcher.doc(hits[lucRank].doc);
             
-            System.out.println(hitDoc.get("score"));
+            System.out.println(hitDoc.get("pageRank"));
 
             // get document number from hashmap
             int docID = docMap.get(hitDoc.get("url"));
 
-            results.add( new Result( docID, lucRank+1, Float.parseFloat(hitDoc.get("pageRank")), 
-            						hitDoc.get("title"), hitDoc.get("url"), 
-            						Float.parseFloat(hitDoc.get("score")) ) );
+            results.add( new Result( docID, lucRank+1, 0.0f/*Float.parseFloat(hitDoc.get("pageRank"))*/, 
+            						hitDoc.get("title"), hitDoc.get("url"), 0.0f ));
             
         }
         System.out.println("made results array");
