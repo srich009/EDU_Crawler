@@ -1,17 +1,17 @@
 package edu.ucr.cs.nle020.lucenesearcher;
 
 //jsoup
-import org.jsoup.Jsoup;
+// import org.jsoup.Jsoup;
 
 // lucene
-import org.apache.lucene.document.Document;
+// import org.apache.lucene.document.Document;
 
 // imports
-import java.util.*;
+// import java.util.*;
 import java.util.List;
 import java.util.Arrays;
 import java.util.ArrayList;
-import java.io.File;
+// import java.io.File;
 
 
 public class snipper
