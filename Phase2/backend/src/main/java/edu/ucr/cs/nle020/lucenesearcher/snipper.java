@@ -82,7 +82,7 @@ public class snipper
     {
         for(String s : lst)
         {
-            if(s.equals(str))
+            if( (s.toUpperCase()).equals(str.toUpperCase()) )
             {
                 return true;
             }
