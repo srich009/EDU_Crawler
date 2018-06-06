@@ -128,6 +128,7 @@ public class Lucene
         for (int lucRank = 0; lucRank < hits.length; ++lucRank) 
         {
             Document hitDoc = indexSearcher.doc(hits[lucRank].doc);
+            float lucScore =  hits[lucRank].score;
             
             System.out.println(hitDoc.get("pageRank"));
 
@@ -135,7 +136,7 @@ public class Lucene
             int docID = docMap.get(hitDoc.get("url"));
 
             results.add( new Result( docID, lucRank+1, 0.0f/*Float.parseFloat(hitDoc.get("pageRank"))*/, 
-            						hitDoc.get("title"), hitDoc.get("url"), 0.0f ));
+            						hitDoc.get("title"), hitDoc.get("url"), lucScore ));
             
         }
         System.out.println("made results array");

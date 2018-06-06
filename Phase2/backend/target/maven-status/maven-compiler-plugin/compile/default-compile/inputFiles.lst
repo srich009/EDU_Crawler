@@ -1,7 +1,7 @@
-/home/jake/Desktop/EDU_Crawler/Phase2/backend/src/main/java/edu/ucr/cs/nle020/lucenesearcher/Result.java
-/home/jake/Desktop/EDU_Crawler/Phase2/backend/src/main/java/edu/ucr/cs/nle020/lucenesearcher/LuceneSearcherApplication.java
-/home/jake/Desktop/EDU_Crawler/Phase2/backend/src/main/java/edu/ucr/cs/nle020/lucenesearcher/soup.java
-/home/jake/Desktop/EDU_Crawler/Phase2/backend/src/main/java/edu/ucr/cs/nle020/lucenesearcher/Page.java
-/home/jake/Desktop/EDU_Crawler/Phase2/backend/src/main/java/edu/ucr/cs/nle020/lucenesearcher/Lucene.java
-/home/jake/Desktop/EDU_Crawler/Phase2/backend/src/main/java/edu/ucr/cs/nle020/lucenesearcher/LuceneController.java
-/home/jake/Desktop/EDU_Crawler/Phase2/backend/src/main/java/edu/ucr/cs/nle020/lucenesearcher/snipper.java
+/home/duluoz/Desktop/srich009/EDU_Crawler/Phase2/backend/src/main/java/edu/ucr/cs/nle020/lucenesearcher/LuceneController.java
+/home/duluoz/Desktop/srich009/EDU_Crawler/Phase2/backend/src/main/java/edu/ucr/cs/nle020/lucenesearcher/snipper.java
+/home/duluoz/Desktop/srich009/EDU_Crawler/Phase2/backend/src/main/java/edu/ucr/cs/nle020/lucenesearcher/Lucene.java
+/home/duluoz/Desktop/srich009/EDU_Crawler/Phase2/backend/src/main/java/edu/ucr/cs/nle020/lucenesearcher/soup.java
+/home/duluoz/Desktop/srich009/EDU_Crawler/Phase2/backend/src/main/java/edu/ucr/cs/nle020/lucenesearcher/Page.java
+/home/duluoz/Desktop/srich009/EDU_Crawler/Phase2/backend/src/main/java/edu/ucr/cs/nle020/lucenesearcher/LuceneSearcherApplication.java
+/home/duluoz/Desktop/srich009/EDU_Crawler/Phase2/backend/src/main/java/edu/ucr/cs/nle020/lucenesearcher/Result.java
