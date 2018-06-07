@@ -45,7 +45,6 @@
     left: -1px;
     top: -4px;
     height: 1.8em;
-
     margin-right: .8em;
     border-radius: 4px 0 0 4px;
   }
@@ -53,7 +52,7 @@
     display: block;
     font-size: small;
     color: black;
-    padding: 0.8em 0.7em 0 0.7em;
+    padding: 0.8em 0.7em 0 30px;
     background-color: #EEE;
     line-height: 1em;
     position: relative;
@@ -61,7 +60,8 @@
     top: -4px;
     height: 1.8em;
     /*margin-right: .8em;*/
-    border-radius: 4px 0 0 4px;
+    border-radius: 0 0 4px 4px;
+    overflow: hidden;
   }
   h1 {
     color: #369;
