@@ -4,18 +4,19 @@
     </div>
     <div class="flex-item">
       <h1>{{ title }}</h1>
-      <input #searchBox id="search-box"
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <input #searchBox id="search-box" type="text" placeholder="Search.." style="width: 500px;"
         (keyup.enter)="search(searchBox.value, numResult.value)"/>
       <button class="popup"
         (click)="search(searchBox.value, numResult.value)" 
-        (click)="myFunction()">Search
+        (click)="myFunction()"><i class="fa fa-search"></i>
         <span class="popuptext" id="myPopup">Nhat</span>
     </button>
-    <br>
+    <div style="display: block; padding: 3px;">
       <input type="radio" name="YesNo" (click)="setPR('false')" checked> Lucene
       <input type="radio" name="YesNo" (click)="setPR('true')"> Lucene with PageRank
-      <br>
-      <input #numResult type="text" name="numResults" value=10>
+      <div style="display:inline-block; padding-left: 30px;"># Results: <input #numResult type="text" name="numResults" value=10></div>
+    </div>
     </div>
 </div>
 
