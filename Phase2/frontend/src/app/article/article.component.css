@@ -46,7 +46,7 @@
     top: -4px;
     height: 1.8em;
     margin-right: .8em;
-    border-radius: 4px 0 0 4px;
+    border-radius: 4px 4px 0 0;
   }
   .articles .content{
     display: block;
@@ -62,6 +62,7 @@
     /*margin-right: .8em;*/
     border-radius: 0 0 4px 4px;
     overflow: hidden;
+    min-height: 20px;
   }
   h1 {
     color: #369;

@@ -8,8 +8,7 @@
       <input #searchBox id="search-box" type="text" placeholder="Search.." style="width: 500px;"
         (keyup.enter)="search(searchBox.value, numResult.value)"/>
       <button class="popup"
-        (click)="search(searchBox.value, numResult.value)" 
-        (click)="myFunction()"><i class="fa fa-search"></i>
+        (click)="search(searchBox.value, numResult.value); myFunction();"><i class="fa fa-search"></i>
         <span class="popuptext" id="myPopup">Nhat</span>
     </button>
     <div style="display: block; padding: 3px;">

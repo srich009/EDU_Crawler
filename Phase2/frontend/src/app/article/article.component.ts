@@ -24,7 +24,6 @@ export class ArticleComponent implements OnInit {
   }
 
   search(query: string, numResults: number) {
-
     this.articleService.getArticles(query, this.pageRank, numResults)
         .subscribe(articles => this.articles = articles);
   }
