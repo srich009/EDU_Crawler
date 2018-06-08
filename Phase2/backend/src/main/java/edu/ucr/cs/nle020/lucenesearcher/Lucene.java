@@ -138,7 +138,7 @@ public class Lucene
             // get document number from hashmap
             int docID = docMap.get(hitDoc.get("url"));
 
-            results.add( new Result( docID, lucRank+1, 0.0f/*Float.parseFloat(hitDoc.get("pageRank"))*/, 
+            results.add( new Result( docID, lucRank+1, Float.parseFloat(hitDoc.get("pageRank")), 
             						hitDoc.get("title"), hitDoc.get("url"), lucScore ));
             
         }
