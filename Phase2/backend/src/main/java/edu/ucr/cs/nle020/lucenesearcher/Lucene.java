@@ -116,7 +116,7 @@ public class Lucene
         Query query = parser.parse(input);
         
         //Number of websites to return
-        int topHitCount = count;
+        int topHitCount = count*10;
         System.out.println("got here far");
         //Search Index for hits that match the query most
         ScoreDoc[] hits = indexSearcher.search(query,topHitCount).scoreDocs;
@@ -125,6 +125,9 @@ public class Lucene
         // Iterate through the results: 
         //   -Assuming they are sorted by rank high to low already
         List<Result> results = new ArrayList<Result>();
+        if (hits.length < (count-1)*10){
+            return results;
+        } 
         for (int lucRank = 0; lucRank < hits.length; ++lucRank) 
         {
             Document hitDoc = indexSearcher.doc(hits[lucRank].doc);
@@ -141,11 +144,19 @@ public class Lucene
         }
         System.out.println("made results array");
 
-
 		if (withPR.equals("true")) {
 			Collections.sort(results, new ResultComp());
-		}
+        }
         System.out.println("sorted");
+
+        //subset for page
+        if (hits.length < count*10){
+            results = results.subList((count-1)*10, hits.length);
+        }
+        else {
+            results = results.subList((count-1)*10, count*10);
+        }
+
         for (int rank = 0; rank < results.size(); ++rank) 
         {
 	            //grab document associated with position

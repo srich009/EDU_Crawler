@@ -61,7 +61,7 @@
     height: 1.8em;
     /*margin-right: .8em;*/
     border-radius: 0 0 4px 4px;
-    overflow: hidden;
+    /*overflow: hidden;*/
     min-height: 20px;
   }
   h1 {
@@ -163,6 +163,11 @@ input[id="search-box"]{
 }
 
 input[name="numResults"]{
-  width:30px;
+  width:40px;
   text-align: center;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+   opacity: 1;
 }

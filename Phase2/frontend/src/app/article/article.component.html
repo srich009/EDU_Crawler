@@ -5,7 +5,7 @@
     <div class="flex-item">
       <h1>{{ title }}</h1>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-      <input #searchBox id="search-box" type="text" placeholder="Search.." style="width: 500px;"
+      <input #searchBox id="search-box" type="text" placeholder="Search.." style="width: 500px;" autofocus
         (keyup.enter)="search(searchBox.value, numResult.value)"/>
       <button class="popup"
         (click)="search(searchBox.value, numResult.value); myFunction();"><i class="fa fa-search"></i>
@@ -13,8 +13,9 @@
     </button>
     <div style="display: block; padding: 3px;">
       <input type="radio" name="YesNo" (click)="setPR('false')" checked> Lucene
-      <input type="radio" name="YesNo" (click)="setPR('true')"> Lucene with PageRank
-      <div style="display:inline-block; padding-left: 30px;"># Results: <input #numResult type="text" name="numResults" value=10></div>
+      <input type="radio" name="YesNo" (click)="setPR('true')"> Lucene with PageRank  
+      <div style="display:inline-block; padding-left: 30px;">Page# <input #numResult type="number" name="numResults" 
+              value=1 min=1 (keyup.enter)="search(searchBox.value, numResult.value);" (click)="search(searchBox.value, numResult.value);"></div>
     </div>
     </div>
 </div>
@@ -22,9 +23,9 @@
 <h2 *ngIf="articles">Relevant Articles:</h2>
 <ul class="articles" *ngIf="articles">
   <li *ngFor="let article of articles"
-    (click)="onClick(article)">
+    (click)="onClick(article)" >
     <span class="badge">{{article.score}}</span>    
-    <span>{{article.title | uppercase}}</span>    
+    <span >{{article.title | uppercase}}</span>    
     <span class ="content">{{article.snippet}}</span>  
   </li>
 </ul>
