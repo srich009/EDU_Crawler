@@ -125,7 +125,7 @@ public class Lucene
         // Iterate through the results: 
         //   -Assuming they are sorted by rank high to low already
         List<Result> results = new ArrayList<Result>();
-        if (hits.length < (count-1)*10){
+        if (hits.length < (count-1)*10 && (count-1)*10 != 0){
             return results;
         } 
         for (int lucRank = 0; lucRank < hits.length; ++lucRank) 
