@@ -41,15 +41,15 @@ public class Lucene_Indexer {
 		
 		System.out.println("-> inside Indexer Main");
 		String currFolder = args[0];
-		String indFolder = currFolder + "../backend/indx";
+		String indFolder = currFolder + "/../backend/indx";
 		Path dirPath = Paths.get(indFolder);
-		String pagesFolder = currFolder + "../backend/html";
+		String pagesFolder = currFolder + "/../backend/html";
 		Integer numDocs = Integer.parseInt(args[1]);
 		
 		try {
 			//Grab manifest information and put in hashmap
 			// grab the manifest
-			String manLocation = pagesFolder + "\\0-manifest.txt";    
+			String manLocation = pagesFolder + "/0-manifest.txt";    
 		    File manFile = new File(manLocation);
 			org.jsoup.nodes.Document manifest = Jsoup.parse(manFile, "UTF-8");
 			String manText = manifest.text();
@@ -85,7 +85,7 @@ public class Lucene_Indexer {
 				try {
 					//System.out.println("Starting " + i);
 					//grab document associated with #i
-					String docIFile = pagesFolder + "\\" + i + ".html";	    
+					String docIFile = pagesFolder + "/" + i + ".html";	    
 				    File docInput = new File(docIFile);
 					org.jsoup.nodes.Document doc = Jsoup.parse(docInput, "UTF-8");
 					
@@ -164,7 +164,7 @@ public class Lucene_Indexer {
 		for (Integer i = 1; i <= numDocs; i++) {
 			try {
 				//grab document associated with #i
-				String docIFile = folder + "\\" + i + ".html";	    
+				String docIFile = folder + "/" + i + ".html";	    
 			    File docInput = new File(docIFile);
 				org.jsoup.nodes.Document doc = Jsoup.parse(docInput, "UTF-8");
 				//grab outgoing links of that document
